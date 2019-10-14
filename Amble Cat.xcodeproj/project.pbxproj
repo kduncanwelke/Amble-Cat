@@ -1,0 +1,645 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2DE860E923552B3B00227A86 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE860E823552B3B00227A86 /* AppDelegate.swift */; };
+		2DE860EB23552B3B00227A86 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE860EA23552B3B00227A86 /* SceneDelegate.swift */; };
+		2DE860ED23552B3B00227A86 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE860EC23552B3B00227A86 /* ViewController.swift */; };
+		2DE860F023552B3B00227A86 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DE860EE23552B3B00227A86 /* Main.storyboard */; };
+		2DE860F223552B3C00227A86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DE860F123552B3C00227A86 /* Assets.xcassets */; };
+		2DE860F523552B3C00227A86 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DE860F323552B3C00227A86 /* LaunchScreen.storyboard */; };
+		2DE8610023552B3C00227A86 /* Amble_CatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE860FF23552B3C00227A86 /* Amble_CatTests.swift */; };
+		2DE8610B23552B3D00227A86 /* Amble_CatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE8610A23552B3D00227A86 /* Amble_CatUITests.swift */; };
+		2DE8611C23552CAA00227A86 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DE8611B23552CAA00227A86 /* HealthKit.framework */; };
+		2DE8611E23552CF200227A86 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DE8611D23552CF200227A86 /* Charts.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2DE860FC23552B3C00227A86 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2DE860DD23552B3B00227A86 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2DE860E423552B3B00227A86;
+			remoteInfo = "Amble Cat";
+		};
+		2DE8610723552B3D00227A86 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2DE860DD23552B3B00227A86 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2DE860E423552B3B00227A86;
+			remoteInfo = "Amble Cat";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2DE860E523552B3B00227A86 /* Amble Cat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Amble Cat.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2DE860E823552B3B00227A86 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2DE860EA23552B3B00227A86 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		2DE860EC23552B3B00227A86 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2DE860EF23552B3B00227A86 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2DE860F123552B3C00227A86 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2DE860F423552B3C00227A86 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2DE860F623552B3C00227A86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2DE860FB23552B3C00227A86 /* Amble CatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Amble CatTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2DE860FF23552B3C00227A86 /* Amble_CatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Amble_CatTests.swift; sourceTree = "<group>"; };
+		2DE8610123552B3D00227A86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2DE8610623552B3D00227A86 /* Amble CatUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Amble CatUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2DE8610A23552B3D00227A86 /* Amble_CatUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Amble_CatUITests.swift; sourceTree = "<group>"; };
+		2DE8610C23552B3D00227A86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2DE8611923552CAA00227A86 /* Amble CatDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Amble CatDebug.entitlements"; sourceTree = "<group>"; };
+		2DE8611B23552CAA00227A86 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		2DE8611D23552CF200227A86 /* Charts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Charts.framework; path = Carthage/Build/iOS/Charts.framework; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2DE860E223552B3B00227A86 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2DE8611C23552CAA00227A86 /* HealthKit.framework in Frameworks */,
+				2DE8611E23552CF200227A86 /* Charts.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2DE860F823552B3C00227A86 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2DE8610323552B3D00227A86 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2DE860DC23552B3B00227A86 = {
+			isa = PBXGroup;
+			children = (
+				2DE860E723552B3B00227A86 /* Amble Cat */,
+				2DE860FE23552B3C00227A86 /* Amble CatTests */,
+				2DE8610923552B3D00227A86 /* Amble CatUITests */,
+				2DE860E623552B3B00227A86 /* Products */,
+				2DE8611A23552CAA00227A86 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		2DE860E623552B3B00227A86 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2DE860E523552B3B00227A86 /* Amble Cat.app */,
+				2DE860FB23552B3C00227A86 /* Amble CatTests.xctest */,
+				2DE8610623552B3D00227A86 /* Amble CatUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2DE860E723552B3B00227A86 /* Amble Cat */ = {
+			isa = PBXGroup;
+			children = (
+				2DE8611923552CAA00227A86 /* Amble CatDebug.entitlements */,
+				2DE860E823552B3B00227A86 /* AppDelegate.swift */,
+				2DE860EA23552B3B00227A86 /* SceneDelegate.swift */,
+				2DE860EC23552B3B00227A86 /* ViewController.swift */,
+				2DE860EE23552B3B00227A86 /* Main.storyboard */,
+				2DE860F123552B3C00227A86 /* Assets.xcassets */,
+				2DE860F323552B3C00227A86 /* LaunchScreen.storyboard */,
+				2DE860F623552B3C00227A86 /* Info.plist */,
+			);
+			path = "Amble Cat";
+			sourceTree = "<group>";
+		};
+		2DE860FE23552B3C00227A86 /* Amble CatTests */ = {
+			isa = PBXGroup;
+			children = (
+				2DE860FF23552B3C00227A86 /* Amble_CatTests.swift */,
+				2DE8610123552B3D00227A86 /* Info.plist */,
+			);
+			path = "Amble CatTests";
+			sourceTree = "<group>";
+		};
+		2DE8610923552B3D00227A86 /* Amble CatUITests */ = {
+			isa = PBXGroup;
+			children = (
+				2DE8610A23552B3D00227A86 /* Amble_CatUITests.swift */,
+				2DE8610C23552B3D00227A86 /* Info.plist */,
+			);
+			path = "Amble CatUITests";
+			sourceTree = "<group>";
+		};
+		2DE8611A23552CAA00227A86 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2DE8611D23552CF200227A86 /* Charts.framework */,
+				2DE8611B23552CAA00227A86 /* HealthKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2DE860E423552B3B00227A86 /* Amble Cat */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2DE8610F23552B3D00227A86 /* Build configuration list for PBXNativeTarget "Amble Cat" */;
+			buildPhases = (
+				2DE860E123552B3B00227A86 /* Sources */,
+				2DE860E223552B3B00227A86 /* Frameworks */,
+				2DE860E323552B3B00227A86 /* Resources */,
+				2DE8611823552C4400227A86 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Amble Cat";
+			productName = "Amble Cat";
+			productReference = 2DE860E523552B3B00227A86 /* Amble Cat.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2DE860FA23552B3C00227A86 /* Amble CatTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2DE8611223552B3D00227A86 /* Build configuration list for PBXNativeTarget "Amble CatTests" */;
+			buildPhases = (
+				2DE860F723552B3C00227A86 /* Sources */,
+				2DE860F823552B3C00227A86 /* Frameworks */,
+				2DE860F923552B3C00227A86 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2DE860FD23552B3C00227A86 /* PBXTargetDependency */,
+			);
+			name = "Amble CatTests";
+			productName = "Amble CatTests";
+			productReference = 2DE860FB23552B3C00227A86 /* Amble CatTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		2DE8610523552B3D00227A86 /* Amble CatUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2DE8611523552B3D00227A86 /* Build configuration list for PBXNativeTarget "Amble CatUITests" */;
+			buildPhases = (
+				2DE8610223552B3D00227A86 /* Sources */,
+				2DE8610323552B3D00227A86 /* Frameworks */,
+				2DE8610423552B3D00227A86 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2DE8610823552B3D00227A86 /* PBXTargetDependency */,
+			);
+			name = "Amble CatUITests";
+			productName = "Amble CatUITests";
+			productReference = 2DE8610623552B3D00227A86 /* Amble CatUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2DE860DD23552B3B00227A86 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+				ORGANIZATIONNAME = "Kate Duncan-Welke";
+				TargetAttributes = {
+					2DE860E423552B3B00227A86 = {
+						CreatedOnToolsVersion = 11.0;
+					};
+					2DE860FA23552B3C00227A86 = {
+						CreatedOnToolsVersion = 11.0;
+						TestTargetID = 2DE860E423552B3B00227A86;
+					};
+					2DE8610523552B3D00227A86 = {
+						CreatedOnToolsVersion = 11.0;
+						TestTargetID = 2DE860E423552B3B00227A86;
+					};
+				};
+			};
+			buildConfigurationList = 2DE860E023552B3B00227A86 /* Build configuration list for PBXProject "Amble Cat" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2DE860DC23552B3B00227A86;
+			productRefGroup = 2DE860E623552B3B00227A86 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2DE860E423552B3B00227A86 /* Amble Cat */,
+				2DE860FA23552B3C00227A86 /* Amble CatTests */,
+				2DE8610523552B3D00227A86 /* Amble CatUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2DE860E323552B3B00227A86 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2DE860F523552B3C00227A86 /* LaunchScreen.storyboard in Resources */,
+				2DE860F223552B3C00227A86 /* Assets.xcassets in Resources */,
+				2DE860F023552B3B00227A86 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2DE860F923552B3C00227A86 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2DE8610423552B3D00227A86 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2DE8611823552C4400227A86 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Charts.framework",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Charts.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2DE860E123552B3B00227A86 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2DE860ED23552B3B00227A86 /* ViewController.swift in Sources */,
+				2DE860E923552B3B00227A86 /* AppDelegate.swift in Sources */,
+				2DE860EB23552B3B00227A86 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2DE860F723552B3C00227A86 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2DE8610023552B3C00227A86 /* Amble_CatTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2DE8610223552B3D00227A86 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2DE8610B23552B3D00227A86 /* Amble_CatUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2DE860FD23552B3C00227A86 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2DE860E423552B3B00227A86 /* Amble Cat */;
+			targetProxy = 2DE860FC23552B3C00227A86 /* PBXContainerItemProxy */;
+		};
+		2DE8610823552B3D00227A86 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2DE860E423552B3B00227A86 /* Amble Cat */;
+			targetProxy = 2DE8610723552B3D00227A86 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		2DE860EE23552B3B00227A86 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2DE860EF23552B3B00227A86 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		2DE860F323552B3C00227A86 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2DE860F423552B3C00227A86 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2DE8610D23552B3D00227A86 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		2DE8610E23552B3D00227A86 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2DE8611023552B3D00227A86 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Amble Cat/Amble CatDebug.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = A8R365GJ52;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = "Amble Cat/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kduncan-welke.Amble-Cat";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2DE8611123552B3D00227A86 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = A8R365GJ52;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = "Amble Cat/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kduncan-welke.Amble-Cat";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		2DE8611323552B3D00227A86 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = A8R365GJ52;
+				INFOPLIST_FILE = "Amble CatTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kduncan-welke.Amble-CatTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Amble Cat.app/Amble Cat";
+			};
+			name = Debug;
+		};
+		2DE8611423552B3D00227A86 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = A8R365GJ52;
+				INFOPLIST_FILE = "Amble CatTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kduncan-welke.Amble-CatTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Amble Cat.app/Amble Cat";
+			};
+			name = Release;
+		};
+		2DE8611623552B3D00227A86 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = A8R365GJ52;
+				INFOPLIST_FILE = "Amble CatUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kduncan-welke.Amble-CatUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Amble Cat";
+			};
+			name = Debug;
+		};
+		2DE8611723552B3D00227A86 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = A8R365GJ52;
+				INFOPLIST_FILE = "Amble CatUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kduncan-welke.Amble-CatUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Amble Cat";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2DE860E023552B3B00227A86 /* Build configuration list for PBXProject "Amble Cat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2DE8610D23552B3D00227A86 /* Debug */,
+				2DE8610E23552B3D00227A86 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2DE8610F23552B3D00227A86 /* Build configuration list for PBXNativeTarget "Amble Cat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2DE8611023552B3D00227A86 /* Debug */,
+				2DE8611123552B3D00227A86 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2DE8611223552B3D00227A86 /* Build configuration list for PBXNativeTarget "Amble CatTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2DE8611323552B3D00227A86 /* Debug */,
+				2DE8611423552B3D00227A86 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2DE8611523552B3D00227A86 /* Build configuration list for PBXNativeTarget "Amble CatUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2DE8611623552B3D00227A86 /* Debug */,
+				2DE8611723552B3D00227A86 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2DE860DD23552B3B00227A86 /* Project object */;
+}
