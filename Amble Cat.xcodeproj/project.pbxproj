@@ -17,6 +17,9 @@
 		2DE8610B23552B3D00227A86 /* Amble_CatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE8610A23552B3D00227A86 /* Amble_CatUITests.swift */; };
 		2DE8611C23552CAA00227A86 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DE8611B23552CAA00227A86 /* HealthKit.framework */; };
 		2DE8611E23552CF200227A86 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DE8611D23552CF200227A86 /* Charts.framework */; };
+		2DE904D0235638790036C08A /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE904CF235638790036C08A /* StatisticsViewController.swift */; };
+		2DE904D2235639DE0036C08A /* HealthDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE904D1235639DE0036C08A /* HealthDataManager.swift */; };
+		2DE904D523563C710036C08A /* HealthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE904D423563C710036C08A /* HealthStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +57,9 @@
 		2DE8611923552CAA00227A86 /* Amble CatDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Amble CatDebug.entitlements"; sourceTree = "<group>"; };
 		2DE8611B23552CAA00227A86 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		2DE8611D23552CF200227A86 /* Charts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Charts.framework; path = Carthage/Build/iOS/Charts.framework; sourceTree = "<group>"; };
+		2DE904CF235638790036C08A /* StatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
+		2DE904D1235639DE0036C08A /* HealthDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthDataManager.swift; sourceTree = "<group>"; };
+		2DE904D423563C710036C08A /* HealthStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,7 +116,8 @@
 				2DE8611923552CAA00227A86 /* Amble CatDebug.entitlements */,
 				2DE860E823552B3B00227A86 /* AppDelegate.swift */,
 				2DE860EA23552B3B00227A86 /* SceneDelegate.swift */,
-				2DE860EC23552B3B00227A86 /* ViewController.swift */,
+				2DE904D3235639F30036C08A /* Models */,
+				2DE904CE23562CD90036C08A /* Views */,
 				2DE860EE23552B3B00227A86 /* Main.storyboard */,
 				2DE860F123552B3C00227A86 /* Assets.xcassets */,
 				2DE860F323552B3C00227A86 /* LaunchScreen.storyboard */,
@@ -144,6 +151,24 @@
 				2DE8611B23552CAA00227A86 /* HealthKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2DE904CE23562CD90036C08A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2DE860EC23552B3B00227A86 /* ViewController.swift */,
+				2DE904CF235638790036C08A /* StatisticsViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2DE904D3235639F30036C08A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2DE904D1235639DE0036C08A /* HealthDataManager.swift */,
+				2DE904D423563C710036C08A /* HealthStore.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -301,8 +326,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				2DE860ED23552B3B00227A86 /* ViewController.swift in Sources */,
+				2DE904D523563C710036C08A /* HealthStore.swift in Sources */,
 				2DE860E923552B3B00227A86 /* AppDelegate.swift in Sources */,
+				2DE904D2235639DE0036C08A /* HealthDataManager.swift in Sources */,
 				2DE860EB23552B3B00227A86 /* SceneDelegate.swift in Sources */,
+				2DE904D0235638790036C08A /* StatisticsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
