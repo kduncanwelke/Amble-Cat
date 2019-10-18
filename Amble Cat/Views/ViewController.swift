@@ -21,12 +21,14 @@ class ViewController: UIViewController {
      @IBOutlet weak var pointsLabel: UILabel!
      @IBOutlet weak var collectView: UIView!
      @IBOutlet weak var collectText: UILabel!
+     @IBOutlet weak var catArt: UIImageView!
      
      
      // MARK: Variables
 
      let userDefaultDate = "userDefaultDate"
      var earned = 0
+     let blinkAnimation: [UIImage] = [#imageLiteral(resourceName: "lucy"),#imageLiteral(resourceName: "blink1"),#imageLiteral(resourceName: "blink2"),#imageLiteral(resourceName: "blink3"),#imageLiteral(resourceName: "blink1"),#imageLiteral(resourceName: "blink1"),#imageLiteral(resourceName: "lucy")]
    
      override func viewDidLoad() {
           super.viewDidLoad()
@@ -85,6 +87,13 @@ class ViewController: UIViewController {
                 self.queryDistanceHistory()
             }
         }
+          
+          catArt.animationImages = blinkAnimation
+          catArt.animationDuration = 1.0
+          catArt.animationRepeatCount = 1
+          catArt.startAnimating()
+          
+          TimerManager.beginTimer(with: catArt)
     }
     
      // MARK: Custom functions
@@ -128,6 +137,7 @@ class ViewController: UIViewController {
          
           // otherwise rewrite data
           let newTotal = Currency.userTotal + amount
+          Currency.userTotal = newTotal
           currentCurrency.total = Int64(newTotal)
          
           do {
