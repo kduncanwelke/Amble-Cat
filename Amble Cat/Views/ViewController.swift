@@ -8,26 +8,39 @@
 
 import UIKit
 import HealthKit
+import CoreData
 
 class ViewController: UIViewController {
     
-    // MARK: IBOutlets
-    
-    @IBOutlet weak var stepsLabel: UILabel!
-    @IBOutlet weak var distanceLabel: UILabel!
-    @IBOutlet weak var stepsYesterday: UILabel!
-    
-    
-    // MARK: Variables
-    
+     // MARK: IBOutlets
+
+     @IBOutlet weak var stepsLabel: UILabel!
+     @IBOutlet weak var distanceLabel: UILabel!
+     @IBOutlet weak var stepsYesterday: UILabel!
+     @IBOutlet weak var currentsBackground: UIView!
+     @IBOutlet weak var pointsLabel: UILabel!
+     @IBOutlet weak var collectView: UIView!
+     @IBOutlet weak var collectText: UILabel!
+     
+     
+     // MARK: Variables
+
+     let userDefaultDate = "userDefaultDate"
+     var earned = 0
    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+     override func viewDidLoad() {
+          super.viewDidLoad()
+          // Do any additional setup after loading the view.
+          
+          currentsBackground.layer.cornerRadius = 20
+          collectView.layer.cornerRadius = 20
+          collectView.isHidden = true
+          
+          loadCurrency()
         
-        let healthKitTypes: Set = [ HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)!, HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.distanceWalkingRunning)! ]
-        
-        HealthStore.store.requestAuthorization(toShare: healthKitTypes, read: healthKitTypes) { (bool, error) in
+          let healthKitTypes: Set = [ HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)!, HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.distanceWalkingRunning)! ]
+   
+          HealthStore.store.requestAuthorization(toShare: healthKitTypes, read: healthKitTypes) { [unowned self] (bool, error) in
             if (bool) {
                 self.getSteps { (result) in
                     DispatchQueue.main.async {
@@ -45,19 +58,101 @@ class ViewController: UIViewController {
                 
                 self.querySteps { (result) in
                     DispatchQueue.main.async {
-                        self.stepsYesterday.text = "\(Int(result)) Steps Yesterday"
+                        let steps = Int(result)
+                        self.stepsYesterday.text = "\(steps) Steps Yesterday"
+                       
+                        let date = Date()
+                        let calendar = Calendar.current
+                        let dateToCompare = calendar.component(.day , from: date)
+
+                        let userDefaultDate = UserDefaults.standard.integer(forKey: "userDefaultDate")
+
+                        if userDefaultDate != dateToCompare {
+                             if steps >= 1000 {
+                                   let thousands = Int(steps / 1000)
+                                   self.earned = 10 * thousands
+                                   
+                                   self.collectView.isHidden = false
+                                   self.collectText.text = "You earned \(self.earned) Paw Points for walking \(steps) steps yesterday!"
+                                   UserDefaults.standard.set(dateToCompare, forKey: self.userDefaultDate)
+                              }
+                        } else {
+                           print("same day")
+                        }
                     }
                 }
                 
                 self.queryDistanceHistory()
             }
         }
-
     }
     
-    // MARK: Custom functions
+     // MARK: Custom functions
+     
+     func loadCurrency() {
+         var managedContext = CoreDataManager.shared.managedObjectContext
+         var fetchRequest = NSFetchRequest<Points>(entityName: "Points")
+         
+          do {
+               var result = try managedContext.fetch(fetchRequest)
+               if let total = result.first {
+                    Currency.userTotal = Int(total.total)
+               }
+               print("total loaded")
+             
+          } catch let error as NSError {
+               //showAlert(title: "Could not retrieve data", message: "\(error.userInfo)")
+          }
+     }
+     
+     func saveCurrency(with amount: Int) {
+         var managedContext = CoreDataManager.shared.managedObjectContext
+         
+         // save currency anew if it doesn't exist (like on app initial launch)
+          guard let currentCurrency = Currency.loaded else {
+               let pointSave = Points(context: managedContext)
+          
+               pointSave.total = Int64(amount)
+               Currency.userTotal = amount
+           
+               do {
+                    try managedContext.save()
+                    print("saved")
+               } catch {
+                    // this should never be displayed but is here to cover the possibility
+                    //showAlert(title: "Save failed", message: "Notice: Data has not successfully been saved.")
+               }
+          
+               return
+          }
+         
+          // otherwise rewrite data
+          let newTotal = Currency.userTotal + amount
+          currentCurrency.total = Int64(newTotal)
+         
+          do {
+               try managedContext.save()
+               print("resave successful")
+          } catch {
+               // this should never be displayed but is here to cover the possibility
+               //showAlert(title: "Save failed", message: "Notice: Data has not successfully been saved.")
+          }
+     }
     
-    func getSteps(completion: @escaping (Double) -> Void) {
+     func isAppAlreadyLaunchedOnce() -> Bool {
+          let defaults = UserDefaults.standard
+
+          if let isAppAlreadyLaunchedOnce = defaults.string(forKey: "isAppAlreadyLaunchedOnce") {
+            print("App already launched : \(isAppAlreadyLaunchedOnce)")
+            return true
+          } else {
+            defaults.set(true, forKey: "isAppAlreadyLaunchedOnce")
+            print("App launched first time")
+            return false
+          }
+     }
+    
+     func getSteps(completion: @escaping (Double) -> Void) {
         let type = HKQuantityType.quantityType(forIdentifier: .stepCount)!
             
         let now = Date()
@@ -95,9 +190,9 @@ class ViewController: UIViewController {
         }
         
         HealthStore.store.execute(query)
-    }
-    
-    func getDistance(completion: @escaping (Double) -> Void) {
+     }
+
+     func getDistance(completion: @escaping (Double) -> Void) {
         let type = HKQuantityType.quantityType(forIdentifier: .distanceWalkingRunning)!
             
         let now = Date()
@@ -135,10 +230,10 @@ class ViewController: UIViewController {
         }
         
         HealthStore.store.execute(query)
-    }
+     }
     
     
-    func querySteps(completion: @escaping (Double) -> Void) {
+     func querySteps(completion: @escaping (Double) -> Void) {
         let type = HKQuantityType.quantityType(forIdentifier: .stepCount)!
         let calendar = NSCalendar.current
         let interval = NSDateComponents()
@@ -183,9 +278,9 @@ class ViewController: UIViewController {
             }
         }
         HealthStore.store.execute(stepsQuery)
-    }
-    
-    func queryDistanceHistory() {
+     }
+
+     func queryDistanceHistory() {
         let type = HKQuantityType.quantityType(forIdentifier: .distanceWalkingRunning)!
         let calendar = NSCalendar.current
         let interval = NSDateComponents()
@@ -219,16 +314,21 @@ class ViewController: UIViewController {
         }
         
         HealthStore.store.execute(distanceQuery)
-    }
+     }
+
+
     
-    
-    
-    // MARK: IBActions
-    
-    @IBAction func viewStatsPressed(_ sender: UIButton) {
+     // MARK: IBActions
+
+     @IBAction func viewStatsPressed(_ sender: UIButton) {
         performSegue(withIdentifier: "viewStatistics", sender: Any?.self)
-    }
+     }
     
+     @IBAction func collectButtonTapped(_ sender: UIButton) {
+          collectView.isHidden = true
+          saveCurrency(with: earned)
+          pointsLabel.text = "\(Currency.userTotal) Paw Points"
+     }
 }
 
 
