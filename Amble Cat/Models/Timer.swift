@@ -17,8 +17,6 @@ class TimerManager {
     static func beginTimer(with image: UIImageView) {
         
         timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
-            print("Timer fired!")
-            print("\(seconds)")
             seconds += 1
             
             if seconds == 5 {

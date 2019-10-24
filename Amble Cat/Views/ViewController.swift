@@ -27,16 +27,17 @@ class ViewController: UIViewController {
      // MARK: Variables
 
      let userDefaultDate = "userDefaultDate"
-     var earned = 0
+     var earned = 200
      let blinkAnimation: [UIImage] = [#imageLiteral(resourceName: "lucy"),#imageLiteral(resourceName: "blink1"),#imageLiteral(resourceName: "blink2"),#imageLiteral(resourceName: "blink3"),#imageLiteral(resourceName: "blink1"),#imageLiteral(resourceName: "blink1"),#imageLiteral(resourceName: "lucy")]
    
      override func viewDidLoad() {
           super.viewDidLoad()
           // Do any additional setup after loading the view.
           
+          NotificationCenter.default.addObserver(self, selector: #selector(refreshPoints), name: NSNotification.Name(rawValue: "refreshPoints"), object: nil)
+          
           currentsBackground.layer.cornerRadius = 20
           collectView.layer.cornerRadius = 20
-          collectView.isHidden = true
           
           loadCurrency()
         
@@ -69,18 +70,18 @@ class ViewController: UIViewController {
 
                         let userDefaultDate = UserDefaults.standard.integer(forKey: "userDefaultDate")
 
-                        if userDefaultDate != dateToCompare {
-                             if steps >= 1000 {
-                                   let thousands = Int(steps / 1000)
-                                   self.earned = 10 * thousands
-                                   
-                                   self.collectView.isHidden = false
+                       // if userDefaultDate != dateToCompare {
+                         //    if steps >= 1000 {
+                          //         let thousands = Int(steps / 1000)
+                            //       self.earned = 10 * thousands
+                                   self.earned = 200
+                                   self.view.bringSubviewToFront(self.collectView)
                                    self.collectText.text = "You earned \(self.earned) Paw Points for walking \(steps) steps yesterday!"
-                                   UserDefaults.standard.set(dateToCompare, forKey: self.userDefaultDate)
-                              }
-                        } else {
-                           print("same day")
-                        }
+                          //         UserDefaults.standard.set(dateToCompare, forKey: self.userDefaultDate)
+                     //         }
+                       // } else {
+                         //  print("same day")
+                      //  }
                     }
                 }
                 
@@ -95,8 +96,12 @@ class ViewController: UIViewController {
           
           TimerManager.beginTimer(with: catArt)
     }
-    
+	
      // MARK: Custom functions
+     
+     @objc func refreshPoints() {
+          pointsLabel.text = "\(Currency.userTotal) Paw Points"
+     }
      
      func loadCurrency() {
          var managedContext = CoreDataManager.shared.managedObjectContext
@@ -105,16 +110,19 @@ class ViewController: UIViewController {
           do {
                var result = try managedContext.fetch(fetchRequest)
                if let total = result.first {
+                    print(total.total)
+                    Currency.loaded = total
                     Currency.userTotal = Int(total.total)
+					pointsLabel.text = "\(Currency.userTotal) Paw Points"
                }
-               print("total loaded")
+			   print("total loaded")
              
           } catch let error as NSError {
                //showAlert(title: "Could not retrieve data", message: "\(error.userInfo)")
           }
      }
      
-     func saveCurrency(with amount: Int) {
+     func addCurrency(with amount: Int) {
          var managedContext = CoreDataManager.shared.managedObjectContext
          
          // save currency anew if it doesn't exist (like on app initial launch)
@@ -333,11 +341,17 @@ class ViewController: UIViewController {
      @IBAction func viewStatsPressed(_ sender: UIButton) {
         performSegue(withIdentifier: "viewStatistics", sender: Any?.self)
      }
+     
+     @IBAction func storePressed(_ sender: UIButton) {
+          performSegue(withIdentifier: "goToStore", sender: Any?.self)
+     }
+     
     
      @IBAction func collectButtonTapped(_ sender: UIButton) {
-          collectView.isHidden = true
-          saveCurrency(with: earned)
+          self.view.sendSubviewToBack(collectView)
+          addCurrency(with: earned)
           pointsLabel.text = "\(Currency.userTotal) Paw Points"
+          loadCurrency()
      }
 }
 
