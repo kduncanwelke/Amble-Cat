@@ -14,7 +14,18 @@ struct StoreItem {
     let id: Int64
     let name: String
     let price: Int
+    let shopImage: UIImage
     let image: UIImage
     let description: String
+    let type: ItemType
+    
+    enum ItemType {
+        case bed
+        case bowl
+        case toy
+        case picture
+        case floor
+        case wall
+    }
     
 }

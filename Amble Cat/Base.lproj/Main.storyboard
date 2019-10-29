@@ -210,16 +210,22 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="bedArt" destination="kmY-BW-XTE" id="pfb-wD-xdg"/>
+                        <outlet property="bowlArt" destination="nCD-I7-M00" id="X5A-Qm-i5S"/>
                         <outlet property="catArt" destination="DDC-oI-SfS" id="Xyg-J8-sJM"/>
                         <outlet property="collectText" destination="ew8-TJ-l6D" id="Duc-tZ-Iwa"/>
                         <outlet property="collectView" destination="XQe-xt-KWk" id="2xZ-dv-MJ8"/>
                         <outlet property="currentsBackground" destination="5w5-VM-nPb" id="Vic-CI-aju"/>
                         <outlet property="distanceLabel" destination="M16-a4-U2n" id="udj-dC-Rwt"/>
+                        <outlet property="floorArt" destination="oFB-lV-nW2" id="zx9-4Z-z2f"/>
+                        <outlet property="pictureArt" destination="xqr-Er-2jF" id="KSL-3i-Jj4"/>
                         <outlet property="pointsLabel" destination="IrE-at-fz9" id="o9n-Gx-LIy"/>
                         <outlet property="stepsLabel" destination="nRU-5R-Tmo" id="duM-LE-BVi"/>
                         <outlet property="stepsYesterday" destination="qbV-vj-AYP" id="EiQ-21-7gF"/>
                         <outlet property="tapDate" destination="ZAu-A7-MUJ" id="C44-mv-ayr"/>
                         <outlet property="tapSteps" destination="hiH-zX-a9j" id="VwJ-6U-BhA"/>
+                        <outlet property="toyArt" destination="EGI-IM-dbU" id="D8I-fd-BTK"/>
+                        <outlet property="wallArt" destination="ZX0-Qb-1jX" id="yBZ-fr-0gS"/>
                         <segue destination="edN-Ly-Sbe" kind="showDetail" identifier="viewStatistics" id="bYH-FW-lFG"/>
                         <segue destination="a4u-U3-FqG" kind="show" identifier="goToStore" id="t8C-Rc-FlI"/>
                     </connections>

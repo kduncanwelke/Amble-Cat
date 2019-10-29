@@ -22,6 +22,12 @@ class ViewController: UIViewController {
      @IBOutlet weak var collectView: UIView!
      @IBOutlet weak var collectText: UILabel!
      @IBOutlet weak var catArt: UIImageView!
+     @IBOutlet weak var bedArt: UIImageView!
+     @IBOutlet weak var bowlArt: UIImageView!
+     @IBOutlet weak var toyArt: UIImageView!
+     @IBOutlet weak var pictureArt: UIImageView!
+     @IBOutlet weak var floorArt: UIImageView!
+     @IBOutlet weak var wallArt: UIImageView!
      
      
      // MARK: Variables
@@ -36,10 +42,13 @@ class ViewController: UIViewController {
           
           NotificationCenter.default.addObserver(self, selector: #selector(refreshPoints), name: NSNotification.Name(rawValue: "refreshPoints"), object: nil)
           
+           NotificationCenter.default.addObserver(self, selector: #selector(decorChanged), name: NSNotification.Name(rawValue: "decorChanged"), object: nil)
+          
           currentsBackground.layer.cornerRadius = 20
           collectView.layer.cornerRadius = 20
           
           loadCurrency()
+          loadEquipment()
         
           let healthKitTypes: Set = [ HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)!, HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.distanceWalkingRunning)! ]
    
@@ -70,18 +79,18 @@ class ViewController: UIViewController {
 
                         let userDefaultDate = UserDefaults.standard.integer(forKey: "userDefaultDate")
 
-                       // if userDefaultDate != dateToCompare {
-                         //    if steps >= 1000 {
-                          //         let thousands = Int(steps / 1000)
-                            //       self.earned = 10 * thousands
+                        if userDefaultDate != dateToCompare {
+                             if steps >= 1000 {
+                                   let thousands = Int(steps / 1000)
+                                   self.earned = 10 * thousands
                                    self.earned = 200
                                    self.view.bringSubviewToFront(self.collectView)
                                    self.collectText.text = "You earned \(self.earned) Paw Points for walking \(steps) steps yesterday!"
-                          //         UserDefaults.standard.set(dateToCompare, forKey: self.userDefaultDate)
-                     //         }
-                       // } else {
-                         //  print("same day")
-                      //  }
+                                   UserDefaults.standard.set(dateToCompare, forKey: self.userDefaultDate)
+                              }
+                        } else {
+                           print("same day")
+                        }
                     }
                 }
                 
@@ -103,6 +112,11 @@ class ViewController: UIViewController {
           pointsLabel.text = "\(Currency.userTotal) Paw Points"
      }
      
+     @objc func decorChanged() {
+          guard let item = StoreInventory.inventoryDictionary[DecorManager.bedID] else { return }
+          bedArt.image = item.image
+     }
+     
      func loadCurrency() {
          var managedContext = CoreDataManager.shared.managedObjectContext
          var fetchRequest = NSFetchRequest<Points>(entityName: "Points")
@@ -120,6 +134,41 @@ class ViewController: UIViewController {
           } catch let error as NSError {
                //showAlert(title: "Could not retrieve data", message: "\(error.userInfo)")
           }
+     }
+     
+     func loadEquipment() {
+          // load purchase status
+          var managedContext = CoreDataManager.shared.managedObjectContext
+          var fetchRequest = NSFetchRequest<Equipped>(entityName: "Equipped")
+          
+          do {
+               var result = try managedContext.fetch(fetchRequest)
+               if let loaded = result.first {
+                    DecorManager.equipped = loaded
+                    DecorManager.bedID = loaded.bed
+                    DecorManager.bowlID = loaded.bowl
+                    DecorManager.floorID = loaded.floor
+                    DecorManager.pictureID = loaded.picture
+                    DecorManager.toyID = loaded.toy
+                    DecorManager.wallID = loaded.wall
+                    
+                    print("equipment loaded")
+               }
+          } catch let error as NSError {
+               // showAlert(title: "Could not retrieve data", message: "\(error.userInfo)")
+          }
+          
+          guard DecorManager.equipped != nil else {
+               // if nothing was loaded, there are no changes to make
+               return
+          }
+          
+          bedArt.image = StoreInventory.inventoryDictionary[DecorManager.bedID]?.image
+          bowlArt.image = StoreInventory.inventoryDictionary[DecorManager.bowlID]?.image
+          floorArt.image = StoreInventory.inventoryDictionary[DecorManager.floorID]?.image
+          pictureArt.image = StoreInventory.inventoryDictionary[DecorManager.pictureID]?.image
+          toyArt.image = StoreInventory.inventoryDictionary[DecorManager.toyID]?.image
+          wallArt.image = StoreInventory.inventoryDictionary[DecorManager.wallID]?.image
      }
      
      func addCurrency(with amount: Int) {

@@ -120,6 +120,47 @@ class StoreViewController: UIViewController, UICollectionViewDelegate, UICollect
         }
     }
     
+    func saveEquipment() {
+        var managedContext = CoreDataManager.shared.managedObjectContext
+        
+        guard let previousSave = DecorManager.equipped else {
+            // no save was loaded so this is a new save
+            
+            let equipment = Equipped(context: managedContext)
+            
+            equipment.bed = DecorManager.bedID
+            equipment.bowl = DecorManager.bowlID
+            equipment.floor = DecorManager.floorID
+            equipment.picture = DecorManager.pictureID
+            equipment.toy = DecorManager.toyID
+            equipment.wall = DecorManager.wallID
+            
+            do {
+                try managedContext.save()
+                print("decor saved")
+            } catch {
+                // show alert
+            }
+            
+            return
+        }
+        
+        // previous save exists, simply overwrite
+        previousSave.bed = DecorManager.bedID
+        previousSave.bowl = DecorManager.bowlID
+        previousSave.floor = DecorManager.floorID
+        previousSave.picture = DecorManager.pictureID
+        previousSave.toy = DecorManager.toyID
+        previousSave.wall = DecorManager.wallID
+        
+        do {
+            try managedContext.save()
+            print("decor resaved")
+        } catch {
+            // show alert
+        }
+    }
+    
     /*
     // MARK: - Navigation
 
@@ -139,6 +180,7 @@ class StoreViewController: UIViewController, UICollectionViewDelegate, UICollect
 	
 	@IBAction func dismissPressed(_ sender: UIButton) {
 		self.dismiss(animated: true, completion: nil)
+        saveEquipment()
 	}
     
     @IBAction func okPressed(_ sender: UIButton) {
@@ -190,7 +232,7 @@ extension StoreViewController: UICollectionViewDataSource {
             item = StoreInventory.unpurchased[indexPath.row]
         }
 		
-		cell.cellImage.image = item.image
+		cell.cellImage.image = item.shopImage
 		cell.cellName.text = item.name
 		
         if let purchaseState = Purchases.purchaseStatus[item.id] {
@@ -235,6 +277,24 @@ extension StoreViewController: UICollectionViewDataSource {
         if let purchaseState = Purchases.purchaseStatus[item.id] {
             if purchaseState {
                 print("purchased")
+                
+                switch item.type {
+                case .bed:
+                     DecorManager.bedID = item.id
+                case .bowl:
+                    DecorManager.bowlID = item.id
+                case .floor:
+                    DecorManager.floorID = item.id
+                case .picture:
+                    DecorManager.pictureID = item.id
+                case .toy:
+                    DecorManager.toyID = item.id
+                case .wall:
+                    DecorManager.wallID = item.id
+                }
+                
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "decorChanged"), object: nil)
+               
                 return
             }
         } else {
