@@ -248,6 +248,12 @@ extension StoreViewController: UICollectionViewDataSource {
             cell.purchasedLabel.isHidden = true
             cell.cellPrice.text = "\(item.price)"
         }
+        
+        if item.id == DecorManager.bedID || item.id == DecorManager.bowlID || item.id == DecorManager.floorID || item.id == DecorManager.pictureID || item.id == DecorManager.toyID || item.id == DecorManager.wallID {
+            cell.backgroundColor = UIColor(red:0.40, green:0.90, blue:1.00, alpha:1.0)
+        } else {
+            cell.backgroundColor = UIColor(red:0.98, green:1.00, blue:0.88, alpha:1.0)
+        }
 		
 		return cell
 	}
@@ -261,49 +267,54 @@ extension StoreViewController: UICollectionViewDataSource {
 	}
 	
 	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        if segmentedControl.selectedSegmentIndex == 0 {
-            selection = StoreInventory.inventory[indexPath.row]
-        } else if segmentedControl.selectedSegmentIndex == 1 {
-            selection = StoreInventory.purchased[indexPath.row]
-        } else {
-            selection = StoreInventory.unpurchased[indexPath.row]
-        }
-        
-        index = indexPath
-        
-        guard let item = selection else { return }
-        
-        if let purchaseState = Purchases.purchaseStatus[item.id] {
-            if purchaseState {
-                print("purchased")
-                
-                switch item.type {
-                case .bed:
-                     DecorManager.bedID = item.id
-                case .bowl:
-                    DecorManager.bowlID = item.id
-                case .floor:
-                    DecorManager.floorID = item.id
-                case .picture:
-                    DecorManager.pictureID = item.id
-                case .toy:
-                    DecorManager.toyID = item.id
-                case .wall:
-                    DecorManager.wallID = item.id
-                }
-                
-                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "decorChanged"), object: nil)
-               
-                return
-            }
-        } else {
-            if Currency.userTotal < item.price {
-                // show alert for insufficient funds
-                self.view.bringSubviewToFront(insufficientFundsView)
+        if let cell = collectionView.cellForItem(at: indexPath) as? StoreCollectionViewCell {
+
+            cell.animatePress()
+            if segmentedControl.selectedSegmentIndex == 0 {
+                selection = StoreInventory.inventory[indexPath.row]
+            } else if segmentedControl.selectedSegmentIndex == 1 {
+                selection = StoreInventory.purchased[indexPath.row]
             } else {
-                // confirm purchase
-                self.view.bringSubviewToFront(confirmPurchaseView)
+                selection = StoreInventory.unpurchased[indexPath.row]
+            }
+            
+            index = indexPath
+            
+            guard let item = selection else { return }
+            
+            if let purchaseState = Purchases.purchaseStatus[item.id] {
+                if purchaseState {
+                    print("purchased")
+                    
+                    switch item.type {
+                    case .bed:
+                        DecorManager.bedID = item.id
+                    case .bowl:
+                        DecorManager.bowlID = item.id
+                    case .floor:
+                        DecorManager.floorID = item.id
+                    case .picture:
+                        DecorManager.pictureID = item.id
+                    case .toy:
+                        DecorManager.toyID = item.id
+                    case .wall:
+                        DecorManager.wallID = item.id
+                    }
+                    
+                    collectionView.reloadData()
+                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "decorChanged"), object: nil)
+                       
+                    return
+                    
+                }
+            } else {
+                if Currency.userTotal < item.price {
+                    // show alert for insufficient funds
+                    self.view.bringSubviewToFront(insufficientFundsView)
+                } else {
+                    // confirm purchase
+                    self.view.bringSubviewToFront(confirmPurchaseView)
+                }
             }
         }
 		

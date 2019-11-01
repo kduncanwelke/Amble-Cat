@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2D0C3CFB2363A7E300EA064A /* DecorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0C3CFA2363A7E300EA064A /* DecorManager.swift */; };
+		2D3E67E4236C9D3B00A80612 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3E67E3236C9D3B00A80612 /* Extensions.swift */; };
 		2D6FCA86235A169500560CB2 /* Data.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2D6FCA84235A169500560CB2 /* Data.xcdatamodeld */; };
 		2D6FCA88235A1D7500560CB2 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6FCA87235A1D7500560CB2 /* Currency.swift */; };
 		2D6FCA8A235A1DFC00560CB2 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6FCA89235A1DFC00560CB2 /* CoreDataManager.swift */; };
@@ -51,6 +52,7 @@
 
 /* Begin PBXFileReference section */
 		2D0C3CFA2363A7E300EA064A /* DecorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecorManager.swift; sourceTree = "<group>"; };
+		2D3E67E3236C9D3B00A80612 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		2D6FCA85235A169500560CB2 /* Data.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Data.xcdatamodel; sourceTree = "<group>"; };
 		2D6FCA87235A1D7500560CB2 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		2D6FCA89235A1DFC00560CB2 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 				2DE904D3235639F30036C08A /* Models */,
 				2DE904CE23562CD90036C08A /* Views */,
 				2DE860EE23552B3B00227A86 /* Main.storyboard */,
+				2D3E67E3236C9D3B00A80612 /* Extensions.swift */,
 				2DE860F123552B3C00227A86 /* Assets.xcassets */,
 				2DE860F323552B3C00227A86 /* LaunchScreen.storyboard */,
 				2D6FCA8B235A1E0000560CB2 /* Core Data */,
@@ -377,6 +380,7 @@
 				2DE860EB23552B3B00227A86 /* SceneDelegate.swift in Sources */,
 				2D6FCA8A235A1DFC00560CB2 /* CoreDataManager.swift in Sources */,
 				2D6FCA86235A169500560CB2 /* Data.xcdatamodeld in Sources */,
+				2D3E67E4236C9D3B00A80612 /* Extensions.swift in Sources */,
 				2DE904D0235638790036C08A /* StatisticsViewController.swift in Sources */,
 				2D7146CE235BB6BB0064B576 /* StoreItem.swift in Sources */,
 			);
