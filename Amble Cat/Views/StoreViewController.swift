@@ -25,6 +25,16 @@ class StoreViewController: UIViewController, UICollectionViewDelegate, UICollect
     var selection: StoreItem?
     var index: IndexPath?
     
+    var isDoneAnimating = false {
+        didSet {
+            if isDoneAnimating {
+                print("set")
+                collectionView.reloadData()
+                isDoneAnimating = false
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -269,7 +279,10 @@ extension StoreViewController: UICollectionViewDataSource {
 	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let cell = collectionView.cellForItem(at: indexPath) as? StoreCollectionViewCell {
 
-            cell.animatePress()
+            cell.animatePress(completion: { 
+                self.isDoneAnimating = true
+            })
+        
             if segmentedControl.selectedSegmentIndex == 0 {
                 selection = StoreInventory.inventory[indexPath.row]
             } else if segmentedControl.selectedSegmentIndex == 1 {
@@ -301,7 +314,6 @@ extension StoreViewController: UICollectionViewDataSource {
                         DecorManager.wallID = item.id
                     }
                     
-                    collectionView.reloadData()
                     NotificationCenter.default.post(name: NSNotification.Name(rawValue: "decorChanged"), object: nil)
                        
                     return
