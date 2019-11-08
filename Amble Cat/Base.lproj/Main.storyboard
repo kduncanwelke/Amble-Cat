@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -283,14 +283,40 @@
                                     <action selector="dismissTapped:" destination="edN-Ly-Sbe" eventType="touchUpInside" id="Y9e-8F-M3N"/>
                                 </connections>
                             </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="4bt-eb-d3g">
+                                <rect key="frame" x="20" y="162" width="374" height="20.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hyC-Na-jP4">
+                                        <rect key="frame" x="0.0" y="0.0" width="118" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Steps" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O9J-ix-8ro">
+                                        <rect key="frame" x="128" y="0.0" width="118" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HhO-Xu-6aV">
+                                        <rect key="frame" x="256" y="0.0" width="118" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.87126804889999998" green="0.76537494039999998" blue="0.69084578109999994" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="8wf-QQ-F6S" firstAttribute="leading" secondItem="44q-xn-kxS" secondAttribute="leading" constant="20" id="0Eg-Xt-kSx"/>
+                            <constraint firstItem="8wf-QQ-F6S" firstAttribute="top" secondItem="4bt-eb-d3g" secondAttribute="bottom" constant="17" id="BEH-Re-kYX"/>
+                            <constraint firstItem="4bt-eb-d3g" firstAttribute="leading" secondItem="44q-xn-kxS" secondAttribute="leading" constant="20" id="E7N-Ey-Vho"/>
                             <constraint firstItem="36d-UQ-qdW" firstAttribute="centerX" secondItem="fhF-EE-wec" secondAttribute="centerX" id="HeD-BN-ReK"/>
                             <constraint firstItem="44q-xn-kxS" firstAttribute="trailing" secondItem="8wf-QQ-F6S" secondAttribute="trailing" constant="20" id="K4v-ca-IYV"/>
                             <constraint firstItem="04g-2y-GvS" firstAttribute="top" secondItem="44q-xn-kxS" secondAttribute="top" constant="200" id="f2O-mW-1vF"/>
                             <constraint firstItem="44q-xn-kxS" firstAttribute="trailing" secondItem="04g-2y-GvS" secondAttribute="trailing" id="gMw-eH-9D2"/>
+                            <constraint firstItem="44q-xn-kxS" firstAttribute="trailing" secondItem="4bt-eb-d3g" secondAttribute="trailing" constant="20" id="gbD-pe-JDN"/>
                             <constraint firstItem="04g-2y-GvS" firstAttribute="top" secondItem="8wf-QQ-F6S" secondAttribute="bottom" constant="25" id="mdh-2P-ah1"/>
                             <constraint firstItem="04g-2y-GvS" firstAttribute="leading" secondItem="44q-xn-kxS" secondAttribute="leading" id="tnE-Xp-ikA"/>
                             <constraint firstItem="44q-xn-kxS" firstAttribute="bottom" secondItem="36d-UQ-qdW" secondAttribute="bottom" constant="50" id="xvM-Lt-la7"/>
