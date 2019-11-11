@@ -34,7 +34,7 @@ class ViewController: UIViewController {
 
      let userDefaultDate = "userDefaultDate"
      var earned = 200
-     let blinkAnimation: [UIImage] = [#imageLiteral(resourceName: "lucy"),#imageLiteral(resourceName: "blink1"),#imageLiteral(resourceName: "blink2"),#imageLiteral(resourceName: "blink3"),#imageLiteral(resourceName: "blink1"),#imageLiteral(resourceName: "blink1"),#imageLiteral(resourceName: "lucy")]
+     let blinkAnimation: [UIImage] = [#imageLiteral(resourceName: "lucytail2.png"),#imageLiteral(resourceName: "lucytail2.png"),#imageLiteral(resourceName: "blink1.png"),#imageLiteral(resourceName: "blink2.png"),#imageLiteral(resourceName: "blink3.png"),#imageLiteral(resourceName: "blink2.png"),#imageLiteral(resourceName: "blink1.png")]
    
      override func viewDidLoad() {
           super.viewDidLoad()
@@ -113,8 +113,14 @@ class ViewController: UIViewController {
      }
      
      @objc func decorChanged() {
-          guard let item = StoreInventory.inventoryDictionary[DecorManager.bedID] else { return }
-          bedArt.image = item.image
+          guard let bed = StoreInventory.inventoryDictionary[DecorManager.bedID], let bowl = StoreInventory.inventoryDictionary[DecorManager.bowlID], let floor = StoreInventory.inventoryDictionary[DecorManager.floorID], let picture = StoreInventory.inventoryDictionary[DecorManager.pictureID], let toy = StoreInventory.inventoryDictionary[DecorManager.toyID], let wall = StoreInventory.inventoryDictionary[DecorManager.wallID] else { return }
+          
+          bedArt.image = bed.image
+          bowlArt.image = bowl.image
+          floorArt.image = floor.image
+          pictureArt.image = picture.image
+          toyArt.image = toy.image
+          wallArt.image = wall.image
      }
      
      func loadCurrency() {
