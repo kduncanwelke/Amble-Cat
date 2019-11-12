@@ -18,6 +18,8 @@ class StoreViewController: UIViewController, UICollectionViewDelegate, UICollect
     @IBOutlet var insufficientFundsView: UIView!
     @IBOutlet weak var confirmPurchaseView: UIView!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
+    @IBOutlet weak var dimView: UIView!
+    @IBOutlet weak var areYouSureLabel: UILabel!
     
     
     // MARK: Variables
@@ -39,6 +41,10 @@ class StoreViewController: UIViewController, UICollectionViewDelegate, UICollect
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        confirmPurchaseView.layer.cornerRadius = 20
+        insufficientFundsView.layer.cornerRadius = 20
+        
+        dimView.isHidden = true
 		collectionView.dataSource = self
 		collectionView.delegate = self
         pawPoints.text = "\(Currency.userTotal)"
@@ -144,6 +150,7 @@ class StoreViewController: UIViewController, UICollectionViewDelegate, UICollect
             equipment.picture = DecorManager.pictureID
             equipment.toy = DecorManager.toyID
             equipment.wall = DecorManager.wallID
+            equipment.window = DecorManager.windowID
             
             do {
                 try managedContext.save()
@@ -162,6 +169,7 @@ class StoreViewController: UIViewController, UICollectionViewDelegate, UICollect
         previousSave.picture = DecorManager.pictureID
         previousSave.toy = DecorManager.toyID
         previousSave.wall = DecorManager.wallID
+        previousSave.window = DecorManager.windowID
         
         do {
             try managedContext.save()
@@ -194,14 +202,15 @@ class StoreViewController: UIViewController, UICollectionViewDelegate, UICollect
 	}
     
     @IBAction func okPressed(_ sender: UIButton) {
-       self.view.sendSubviewToBack(insufficientFundsView)
+        self.view.sendSubviewToBack(insufficientFundsView)
+        dimView.isHidden = true
     }
     
     @IBAction func purchase(_ sender: UIButton) {
+        dimView.isHidden = true
         self.view.sendSubviewToBack(confirmPurchaseView)
-        guard let item = selection else {
-            print("return")
-            return }
+        
+        guard let item = selection else { return }
         
         subtractCurrency(with: item.price)
         pawPoints.text = "\(Currency.userTotal)"
@@ -215,6 +224,7 @@ class StoreViewController: UIViewController, UICollectionViewDelegate, UICollect
     
     @IBAction func cancelPurchase(_ sender: UIButton) {
         self.view.sendSubviewToBack(confirmPurchaseView)
+        dimView.isHidden = true
     }
 }
 
@@ -259,7 +269,7 @@ extension StoreViewController: UICollectionViewDataSource {
             cell.cellPrice.text = "\(item.price)"
         }
         
-        if item.id == DecorManager.bedID || item.id == DecorManager.bowlID || item.id == DecorManager.floorID || item.id == DecorManager.pictureID || item.id == DecorManager.toyID || item.id == DecorManager.wallID {
+        if item.id == DecorManager.bedID || item.id == DecorManager.bowlID || item.id == DecorManager.floorID || item.id == DecorManager.pictureID || item.id == DecorManager.toyID || item.id == DecorManager.wallID || item.id == DecorManager.windowID {
             cell.backgroundColor = UIColor(red:0.40, green:0.90, blue:1.00, alpha:1.0)
         } else {
             cell.backgroundColor = UIColor(red:0.98, green:1.00, blue:0.88, alpha:1.0)
@@ -278,7 +288,7 @@ extension StoreViewController: UICollectionViewDataSource {
 	
 	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let cell = collectionView.cellForItem(at: indexPath) as? StoreCollectionViewCell {
-
+                        
             cell.animatePress(completion: { 
                 self.isDoneAnimating = true
             })
@@ -312,6 +322,8 @@ extension StoreViewController: UICollectionViewDataSource {
                         DecorManager.toyID = item.id
                     case .wall:
                         DecorManager.wallID = item.id
+                    case .window:
+                        DecorManager.windowID = item.id
                     }
                     
                     NotificationCenter.default.post(name: NSNotification.Name(rawValue: "decorChanged"), object: nil)
@@ -320,11 +332,14 @@ extension StoreViewController: UICollectionViewDataSource {
                     
                 }
             } else {
+                dimView.isHidden = false
+                
                 if Currency.userTotal < item.price {
                     // show alert for insufficient funds
                     self.view.bringSubviewToFront(insufficientFundsView)
                 } else {
                     // confirm purchase
+                    areYouSureLabel.text = "Are you sure you want to buy the \(item.name)?"
                     self.view.bringSubviewToFront(confirmPurchaseView)
                 }
             }

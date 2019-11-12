@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14903" systemVersion="18G103" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15508" systemVersion="18G103" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Equipped" representedClassName="Equipped" syncable="YES" codeGenerationType="class">
         <attribute name="bed" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="bowl" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
@@ -7,6 +7,7 @@
         <attribute name="picture" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="toy" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="wall" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="window" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
     </entity>
     <entity name="Points" representedClassName="Points" syncable="YES" codeGenerationType="class">
         <attribute name="total" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
@@ -16,8 +17,8 @@
         <attribute name="isPurchased" attributeType="Boolean" usesScalarValueType="YES"/>
     </entity>
     <elements>
+        <element name="Equipped" positionX="-63" positionY="0" width="128" height="148"/>
         <element name="Points" positionX="-63" positionY="-18" width="128" height="58"/>
         <element name="PurchaseState" positionX="-63" positionY="-9" width="128" height="73"/>
-        <element name="Equipped" positionX="-63" positionY="0" width="128" height="133"/>
     </elements>
 </model>

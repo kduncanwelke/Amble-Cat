@@ -28,6 +28,8 @@ class ViewController: UIViewController {
      @IBOutlet weak var pictureArt: UIImageView!
      @IBOutlet weak var floorArt: UIImageView!
      @IBOutlet weak var wallArt: UIImageView!
+     @IBOutlet weak var windowArt: UIImageView!
+     @IBOutlet weak var dimView: UIView!
      
      
      // MARK: Variables
@@ -39,6 +41,7 @@ class ViewController: UIViewController {
      override func viewDidLoad() {
           super.viewDidLoad()
           // Do any additional setup after loading the view.
+          dimView.isHidden = true
           
           NotificationCenter.default.addObserver(self, selector: #selector(refreshPoints), name: NSNotification.Name(rawValue: "refreshPoints"), object: nil)
           
@@ -81,9 +84,10 @@ class ViewController: UIViewController {
 
                         if userDefaultDate != dateToCompare {
                              if steps >= 1000 {
+                                   self.dimView.isHidden = false
                                    let thousands = Int(steps / 1000)
                                    self.earned = 10 * thousands
-                                   self.earned = 200
+                                   //self.earned = 200
                                    self.view.bringSubviewToFront(self.collectView)
                                    self.collectText.text = "You earned \(self.earned) Paw Points for walking \(steps) steps yesterday!"
                                    UserDefaults.standard.set(dateToCompare, forKey: self.userDefaultDate)
@@ -113,7 +117,7 @@ class ViewController: UIViewController {
      }
      
      @objc func decorChanged() {
-          guard let bed = StoreInventory.inventoryDictionary[DecorManager.bedID], let bowl = StoreInventory.inventoryDictionary[DecorManager.bowlID], let floor = StoreInventory.inventoryDictionary[DecorManager.floorID], let picture = StoreInventory.inventoryDictionary[DecorManager.pictureID], let toy = StoreInventory.inventoryDictionary[DecorManager.toyID], let wall = StoreInventory.inventoryDictionary[DecorManager.wallID] else { return }
+          guard let bed = StoreInventory.inventoryDictionary[DecorManager.bedID], let bowl = StoreInventory.inventoryDictionary[DecorManager.bowlID], let floor = StoreInventory.inventoryDictionary[DecorManager.floorID], let picture = StoreInventory.inventoryDictionary[DecorManager.pictureID], let toy = StoreInventory.inventoryDictionary[DecorManager.toyID], let wall = StoreInventory.inventoryDictionary[DecorManager.wallID], let window = StoreInventory.inventoryDictionary[DecorManager.windowID] else { return }
           
           bedArt.image = bed.image
           bowlArt.image = bowl.image
@@ -121,6 +125,7 @@ class ViewController: UIViewController {
           pictureArt.image = picture.image
           toyArt.image = toy.image
           wallArt.image = wall.image
+          windowArt.image = window.image
      }
      
      func loadCurrency() {
@@ -157,6 +162,7 @@ class ViewController: UIViewController {
                     DecorManager.pictureID = loaded.picture
                     DecorManager.toyID = loaded.toy
                     DecorManager.wallID = loaded.wall
+                    DecorManager.windowID = loaded.window
                     
                     print("equipment loaded")
                }
@@ -175,6 +181,7 @@ class ViewController: UIViewController {
           pictureArt.image = StoreInventory.inventoryDictionary[DecorManager.pictureID]?.image
           toyArt.image = StoreInventory.inventoryDictionary[DecorManager.toyID]?.image
           wallArt.image = StoreInventory.inventoryDictionary[DecorManager.wallID]?.image
+          windowArt.image = StoreInventory.inventoryDictionary[DecorManager.windowID]?.image
      }
      
      func addCurrency(with amount: Int) {
@@ -403,6 +410,7 @@ class ViewController: UIViewController {
      
     
      @IBAction func collectButtonTapped(_ sender: UIButton) {
+          dimView.isHidden = true
           self.view.sendSubviewToBack(collectView)
           addCurrency(with: earned)
           pointsLabel.text = "\(Currency.userTotal) Paw Points"
