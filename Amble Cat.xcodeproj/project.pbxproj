@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2D0C3CFB2363A7E300EA064A /* DecorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0C3CFA2363A7E300EA064A /* DecorManager.swift */; };
+		2D3583C1237CC1F3005A6C56 /* AnimationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3583C0237CC1F3005A6C56 /* AnimationManager.swift */; };
 		2D3E67E4236C9D3B00A80612 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3E67E3236C9D3B00A80612 /* Extensions.swift */; };
 		2D6FCA86235A169500560CB2 /* Data.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2D6FCA84235A169500560CB2 /* Data.xcdatamodeld */; };
 		2D6FCA88235A1D7500560CB2 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6FCA87235A1D7500560CB2 /* Currency.swift */; };
@@ -52,6 +53,7 @@
 
 /* Begin PBXFileReference section */
 		2D0C3CFA2363A7E300EA064A /* DecorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecorManager.swift; sourceTree = "<group>"; };
+		2D3583C0237CC1F3005A6C56 /* AnimationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationManager.swift; sourceTree = "<group>"; };
 		2D3E67E3236C9D3B00A80612 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		2D6FCA85235A169500560CB2 /* Data.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Data.xcdatamodel; sourceTree = "<group>"; };
 		2D6FCA87235A1D7500560CB2 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 				2D7146CF235BB8560064B576 /* StoreInventory.swift */,
 				2DA5595F2360FE50006B3B9D /* PurchaseState.swift */,
 				2D0C3CFA2363A7E300EA064A /* DecorManager.swift */,
+				2D3583C0237CC1F3005A6C56 /* AnimationManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -372,6 +375,7 @@
 				2DE904D523563C710036C08A /* HealthStore.swift in Sources */,
 				2D7146D0235BB8560064B576 /* StoreInventory.swift in Sources */,
 				2D0C3CFB2363A7E300EA064A /* DecorManager.swift in Sources */,
+				2D3583C1237CC1F3005A6C56 /* AnimationManager.swift in Sources */,
 				2DE860E923552B3B00227A86 /* AppDelegate.swift in Sources */,
 				2D6FCA8D235A596100560CB2 /* Timer.swift in Sources */,
 				2DE904D2235639DE0036C08A /* HealthDataManager.swift in Sources */,

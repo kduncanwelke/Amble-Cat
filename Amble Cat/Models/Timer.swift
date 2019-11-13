@@ -23,6 +23,16 @@ class TimerManager {
                 image.startAnimating()
             } else if seconds == 6 {
                 seconds = 0
+                
+                let tailTwitch = Bool.random()
+               
+                if tailTwitch {
+                    image.animationImages = AnimationManager.tailAnimation
+                    image.startAnimating()
+                    seconds = 5
+                } else {
+                    image.animationImages = AnimationManager.blinkAnimation
+                }
             } else {
                 image.stopAnimating()
             }

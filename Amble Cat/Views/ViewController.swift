@@ -36,7 +36,6 @@ class ViewController: UIViewController {
 
      let userDefaultDate = "userDefaultDate"
      var earned = 200
-     let blinkAnimation: [UIImage] = [#imageLiteral(resourceName: "lucytail2.png"),#imageLiteral(resourceName: "lucytail2.png"),#imageLiteral(resourceName: "blink1.png"),#imageLiteral(resourceName: "blink2.png"),#imageLiteral(resourceName: "blink3.png"),#imageLiteral(resourceName: "blink2.png"),#imageLiteral(resourceName: "blink1.png")]
    
      override func viewDidLoad() {
           super.viewDidLoad()
@@ -102,7 +101,7 @@ class ViewController: UIViewController {
             }
         }
           
-          catArt.animationImages = blinkAnimation
+          catArt.animationImages = AnimationManager.blinkAnimation
           catArt.animationDuration = 1.0
           catArt.animationRepeatCount = 1
           catArt.startAnimating()
