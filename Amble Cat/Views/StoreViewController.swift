@@ -146,8 +146,10 @@ class StoreViewController: UIViewController, UICollectionViewDelegate, UICollect
             
             equipment.bed = DecorManager.bedID
             equipment.bowl = DecorManager.bowlID
+            equipment.decor = DecorManager.decorID
             equipment.floor = DecorManager.floorID
             equipment.picture = DecorManager.pictureID
+            equipment.rug = DecorManager.rugID
             equipment.toy = DecorManager.toyID
             equipment.wall = DecorManager.wallID
             equipment.window = DecorManager.windowID
@@ -165,8 +167,10 @@ class StoreViewController: UIViewController, UICollectionViewDelegate, UICollect
         // previous save exists, simply overwrite
         previousSave.bed = DecorManager.bedID
         previousSave.bowl = DecorManager.bowlID
+        previousSave.decor = DecorManager.decorID
         previousSave.floor = DecorManager.floorID
         previousSave.picture = DecorManager.pictureID
+        previousSave.rug = DecorManager.rugID
         previousSave.toy = DecorManager.toyID
         previousSave.wall = DecorManager.wallID
         previousSave.window = DecorManager.windowID
@@ -314,10 +318,14 @@ extension StoreViewController: UICollectionViewDataSource {
                         DecorManager.bedID = item.id
                     case .bowl:
                         DecorManager.bowlID = item.id
+                    case .decor:
+                        DecorManager.decorID = item.id
                     case .floor:
                         DecorManager.floorID = item.id
                     case .picture:
                         DecorManager.pictureID = item.id
+                    case .rug:
+                        DecorManager.rugID = item.id
                     case .toy:
                         DecorManager.toyID = item.id
                     case .wall:

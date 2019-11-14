@@ -135,7 +135,13 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="floor" translatesAutoresizingMaskIntoConstraints="NO" id="oFB-lV-nW2">
                                 <rect key="frame" x="0.0" y="156.5" width="414" height="414"/>
                             </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="norug" translatesAutoresizingMaskIntoConstraints="NO" id="fbB-UU-SLQ">
+                                <rect key="frame" x="0.0" y="156.5" width="414" height="414"/>
+                            </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="picture" translatesAutoresizingMaskIntoConstraints="NO" id="xqr-Er-2jF">
+                                <rect key="frame" x="0.0" y="156.5" width="414" height="414"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="norug" translatesAutoresizingMaskIntoConstraints="NO" id="RIM-GI-Cjl">
                                 <rect key="frame" x="0.0" y="156.5" width="414" height="414"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bed" translatesAutoresizingMaskIntoConstraints="NO" id="kmY-BW-XTE">
@@ -144,10 +150,22 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bowl" translatesAutoresizingMaskIntoConstraints="NO" id="nCD-I7-M00">
                                 <rect key="frame" x="0.0" y="156.5" width="414" height="414"/>
                             </imageView>
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lucyeat1" translatesAutoresizingMaskIntoConstraints="NO" id="fZ1-FX-vxC">
+                                <rect key="frame" x="0.0" y="156.5" width="414" height="414"/>
+                            </imageView>
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lucyloaf1" translatesAutoresizingMaskIntoConstraints="NO" id="baZ-7B-Yr5">
+                                <rect key="frame" x="0.0" y="156.5" width="414" height="414"/>
+                            </imageView>
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lucysleep1" translatesAutoresizingMaskIntoConstraints="NO" id="JCi-eP-TVG">
+                                <rect key="frame" x="0.0" y="156.5" width="414" height="414"/>
+                            </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mouse" translatesAutoresizingMaskIntoConstraints="NO" id="EGI-IM-dbU">
                                 <rect key="frame" x="0.0" y="156.5" width="414" height="414"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lucytail2" translatesAutoresizingMaskIntoConstraints="NO" id="DDC-oI-SfS">
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lucyplay1" translatesAutoresizingMaskIntoConstraints="NO" id="gHD-Zz-Cl6">
+                                <rect key="frame" x="0.0" y="156.5" width="414" height="414"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lucytail2" translatesAutoresizingMaskIntoConstraints="NO" id="DDC-oI-SfS">
                                 <rect key="frame" x="20.5" y="177" width="373" height="372.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="DDC-oI-SfS" secondAttribute="height" multiplier="1:1" id="YuB-vM-kt6"/>
@@ -173,6 +191,8 @@
                             <constraint firstItem="nRU-5R-Tmo" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="15" id="08t-W2-F6x"/>
                             <constraint firstItem="oFB-lV-nW2" firstAttribute="centerX" secondItem="ZX0-Qb-1jX" secondAttribute="centerX" id="18p-TV-BvT"/>
                             <constraint firstItem="fMR-QH-gwU" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="1RU-zB-npA"/>
+                            <constraint firstItem="gHD-Zz-Cl6" firstAttribute="centerX" secondItem="ZX0-Qb-1jX" secondAttribute="centerX" id="1Wg-eu-j8V"/>
+                            <constraint firstItem="baZ-7B-Yr5" firstAttribute="width" secondItem="ZX0-Qb-1jX" secondAttribute="width" id="2oW-90-6D0"/>
                             <constraint firstAttribute="bottom" secondItem="eSF-Uv-Mba" secondAttribute="bottom" constant="50" id="3DY-DM-sla"/>
                             <constraint firstItem="DDC-oI-SfS" firstAttribute="height" secondItem="ZX0-Qb-1jX" secondAttribute="height" multiplier="0.9" id="3fW-2g-vPY"/>
                             <constraint firstItem="EGI-IM-dbU" firstAttribute="height" secondItem="ZX0-Qb-1jX" secondAttribute="height" id="4gX-CW-aLc"/>
@@ -184,6 +204,8 @@
                             <constraint firstItem="ZX0-Qb-1jX" firstAttribute="centerY" secondItem="DDC-oI-SfS" secondAttribute="centerY" id="7DS-PV-HnO"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="M16-a4-U2n" secondAttribute="trailing" constant="20" id="7Hu-7n-QA9"/>
                             <constraint firstItem="ZX0-Qb-1jX" firstAttribute="top" secondItem="5w5-VM-nPb" secondAttribute="bottom" constant="8" id="8PZ-dP-taS"/>
+                            <constraint firstItem="gHD-Zz-Cl6" firstAttribute="width" secondItem="ZX0-Qb-1jX" secondAttribute="width" id="9u5-gH-EXg"/>
+                            <constraint firstItem="fbB-UU-SLQ" firstAttribute="width" secondItem="ZX0-Qb-1jX" secondAttribute="width" id="BCs-tt-3KL"/>
                             <constraint firstItem="kmY-BW-XTE" firstAttribute="width" secondItem="ZX0-Qb-1jX" secondAttribute="width" id="DCL-oM-jvq"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nRU-5R-Tmo" secondAttribute="trailing" constant="20" id="DSo-FY-ebe"/>
                             <constraint firstItem="ZX0-Qb-1jX" firstAttribute="top" secondItem="5w5-VM-nPb" secondAttribute="bottom" constant="8" id="G0I-ae-mC5"/>
@@ -191,11 +213,21 @@
                             <constraint firstItem="e59-3N-6cE" firstAttribute="height" secondItem="ZX0-Qb-1jX" secondAttribute="height" id="HPH-pF-Wmg"/>
                             <constraint firstItem="xqr-Er-2jF" firstAttribute="height" secondItem="ZX0-Qb-1jX" secondAttribute="height" id="I0E-jj-0LS"/>
                             <constraint firstItem="oFB-lV-nW2" firstAttribute="centerY" secondItem="ZX0-Qb-1jX" secondAttribute="centerY" id="IYi-Dc-U31"/>
+                            <constraint firstItem="fZ1-FX-vxC" firstAttribute="height" secondItem="ZX0-Qb-1jX" secondAttribute="height" id="Iae-ds-Rdt"/>
+                            <constraint firstItem="fZ1-FX-vxC" firstAttribute="centerX" secondItem="ZX0-Qb-1jX" secondAttribute="centerX" id="JeK-mD-Ima"/>
+                            <constraint firstItem="JCi-eP-TVG" firstAttribute="width" secondItem="ZX0-Qb-1jX" secondAttribute="width" id="K1A-dK-tgc"/>
                             <constraint firstAttribute="bottom" secondItem="fMR-QH-gwU" secondAttribute="bottom" id="KqZ-mz-cEo"/>
                             <constraint firstItem="nCD-I7-M00" firstAttribute="height" secondItem="ZX0-Qb-1jX" secondAttribute="height" id="LPk-MD-Ycp"/>
+                            <constraint firstItem="fZ1-FX-vxC" firstAttribute="centerY" secondItem="ZX0-Qb-1jX" secondAttribute="centerY" id="LcX-7L-FtR"/>
+                            <constraint firstItem="RIM-GI-Cjl" firstAttribute="width" secondItem="ZX0-Qb-1jX" secondAttribute="width" id="LkY-lB-PaK"/>
                             <constraint firstItem="e59-3N-6cE" firstAttribute="centerX" secondItem="ZX0-Qb-1jX" secondAttribute="centerX" id="M89-A2-pbP"/>
                             <constraint firstItem="fMR-QH-gwU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="MGv-AI-zIR"/>
+                            <constraint firstItem="fbB-UU-SLQ" firstAttribute="centerY" secondItem="ZX0-Qb-1jX" secondAttribute="centerY" id="Nye-bF-kGn"/>
+                            <constraint firstItem="RIM-GI-Cjl" firstAttribute="centerX" secondItem="ZX0-Qb-1jX" secondAttribute="centerX" id="PHZ-yD-RI9"/>
+                            <constraint firstItem="RIM-GI-Cjl" firstAttribute="height" secondItem="ZX0-Qb-1jX" secondAttribute="height" id="PXt-0W-UHP"/>
+                            <constraint firstItem="baZ-7B-Yr5" firstAttribute="centerY" secondItem="ZX0-Qb-1jX" secondAttribute="centerY" id="Toc-g8-Bep"/>
                             <constraint firstItem="M16-a4-U2n" firstAttribute="centerY" secondItem="IrE-at-fz9" secondAttribute="centerY" id="X6z-IL-Uls"/>
+                            <constraint firstItem="baZ-7B-Yr5" firstAttribute="height" secondItem="ZX0-Qb-1jX" secondAttribute="height" id="YMR-sn-O4m"/>
                             <constraint firstItem="xqr-Er-2jF" firstAttribute="width" secondItem="ZX0-Qb-1jX" secondAttribute="width" id="a3u-la-OCD"/>
                             <constraint firstItem="nCD-I7-M00" firstAttribute="centerX" secondItem="ZX0-Qb-1jX" secondAttribute="centerX" id="aAF-Ax-BAU"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ydI-ox-BmT" secondAttribute="trailing" constant="20" id="apP-hR-58j"/>
@@ -203,24 +235,34 @@
                             <constraint firstItem="EGI-IM-dbU" firstAttribute="centerX" secondItem="ZX0-Qb-1jX" secondAttribute="centerX" id="bnW-ww-CCs"/>
                             <constraint firstItem="EGI-IM-dbU" firstAttribute="centerY" secondItem="ZX0-Qb-1jX" secondAttribute="centerY" id="c3c-eD-bXz"/>
                             <constraint firstItem="eSF-Uv-Mba" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cM2-ib-vvS"/>
+                            <constraint firstItem="JCi-eP-TVG" firstAttribute="centerX" secondItem="ZX0-Qb-1jX" secondAttribute="centerX" id="ca5-Kf-fxP"/>
                             <constraint firstItem="XQe-xt-KWk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="70" id="dHf-6S-Mhr"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5w5-VM-nPb" secondAttribute="trailing" constant="10" id="eEc-QT-6O4"/>
                             <constraint firstItem="kmY-BW-XTE" firstAttribute="centerX" secondItem="ZX0-Qb-1jX" secondAttribute="centerX" id="egv-QP-sjH"/>
                             <constraint firstItem="e59-3N-6cE" firstAttribute="centerY" secondItem="ZX0-Qb-1jX" secondAttribute="centerY" id="etg-CT-au9"/>
                             <constraint firstItem="ydI-ox-BmT" firstAttribute="top" secondItem="ZX0-Qb-1jX" secondAttribute="bottom" constant="15" id="gDF-ZC-Kjo"/>
+                            <constraint firstItem="RIM-GI-Cjl" firstAttribute="centerY" secondItem="ZX0-Qb-1jX" secondAttribute="centerY" id="iZ3-8b-EA6"/>
                             <constraint firstItem="nCD-I7-M00" firstAttribute="width" secondItem="ZX0-Qb-1jX" secondAttribute="width" id="jpE-1J-Imi"/>
                             <constraint firstItem="ZX0-Qb-1jX" firstAttribute="centerX" secondItem="DDC-oI-SfS" secondAttribute="centerX" id="kEy-b9-pW3"/>
                             <constraint firstAttribute="trailing" secondItem="ZX0-Qb-1jX" secondAttribute="trailing" id="l8T-ls-9lJ"/>
+                            <constraint firstItem="JCi-eP-TVG" firstAttribute="height" secondItem="ZX0-Qb-1jX" secondAttribute="height" id="lHB-NK-LoH"/>
+                            <constraint firstItem="fbB-UU-SLQ" firstAttribute="height" secondItem="ZX0-Qb-1jX" secondAttribute="height" id="m8X-uW-7Dt"/>
                             <constraint firstItem="xqr-Er-2jF" firstAttribute="centerY" secondItem="ZX0-Qb-1jX" secondAttribute="centerY" id="mYe-DL-iAx"/>
                             <constraint firstItem="oFB-lV-nW2" firstAttribute="width" secondItem="ZX0-Qb-1jX" secondAttribute="width" id="ool-x9-e6A"/>
                             <constraint firstItem="5w5-VM-nPb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="opc-BS-lzf"/>
                             <constraint firstItem="ZX0-Qb-1jX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="p6y-qi-K1S"/>
                             <constraint firstItem="M16-a4-U2n" firstAttribute="top" secondItem="nRU-5R-Tmo" secondAttribute="bottom" id="rF6-xD-96t"/>
+                            <constraint firstItem="gHD-Zz-Cl6" firstAttribute="height" secondItem="ZX0-Qb-1jX" secondAttribute="height" id="rOW-XQ-nSX"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="XQe-xt-KWk" secondAttribute="trailing" constant="70" id="rtU-xY-s4L"/>
+                            <constraint firstItem="fbB-UU-SLQ" firstAttribute="centerX" secondItem="ZX0-Qb-1jX" secondAttribute="centerX" id="soB-t7-sVZ"/>
+                            <constraint firstItem="gHD-Zz-Cl6" firstAttribute="centerY" secondItem="ZX0-Qb-1jX" secondAttribute="centerY" id="toM-rA-vKT"/>
                             <constraint firstItem="oFB-lV-nW2" firstAttribute="height" secondItem="ZX0-Qb-1jX" secondAttribute="height" id="uoD-Bm-zME"/>
                             <constraint firstItem="fMR-QH-gwU" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="xYJ-we-f2U"/>
                             <constraint firstItem="xqr-Er-2jF" firstAttribute="centerX" secondItem="ZX0-Qb-1jX" secondAttribute="centerX" id="xbF-S4-My4"/>
+                            <constraint firstItem="fZ1-FX-vxC" firstAttribute="width" secondItem="ZX0-Qb-1jX" secondAttribute="width" id="xcL-Vz-0ge"/>
+                            <constraint firstItem="JCi-eP-TVG" firstAttribute="centerY" secondItem="ZX0-Qb-1jX" secondAttribute="centerY" id="xeq-2u-OW3"/>
                             <constraint firstItem="DDC-oI-SfS" firstAttribute="width" secondItem="ZX0-Qb-1jX" secondAttribute="width" multiplier="0.9" id="xxb-JS-1m7"/>
+                            <constraint firstItem="baZ-7B-Yr5" firstAttribute="centerX" secondItem="ZX0-Qb-1jX" secondAttribute="centerX" id="ySR-0j-kVT"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -231,11 +273,17 @@
                         <outlet property="collectText" destination="ew8-TJ-l6D" id="Duc-tZ-Iwa"/>
                         <outlet property="collectView" destination="XQe-xt-KWk" id="2xZ-dv-MJ8"/>
                         <outlet property="currentsBackground" destination="5w5-VM-nPb" id="Vic-CI-aju"/>
+                        <outlet property="decorArt" destination="RIM-GI-Cjl" id="P2h-QP-WDd"/>
                         <outlet property="dimView" destination="fMR-QH-gwU" id="s7Y-OY-9LC"/>
                         <outlet property="distanceLabel" destination="M16-a4-U2n" id="udj-dC-Rwt"/>
+                        <outlet property="eatArt" destination="fZ1-FX-vxC" id="7ll-7E-tv8"/>
                         <outlet property="floorArt" destination="oFB-lV-nW2" id="zx9-4Z-z2f"/>
+                        <outlet property="loafArt" destination="baZ-7B-Yr5" id="y9A-i6-huN"/>
                         <outlet property="pictureArt" destination="xqr-Er-2jF" id="KSL-3i-Jj4"/>
+                        <outlet property="playArt" destination="gHD-Zz-Cl6" id="hrG-5b-w0g"/>
                         <outlet property="pointsLabel" destination="IrE-at-fz9" id="o9n-Gx-LIy"/>
+                        <outlet property="rugArt" destination="fbB-UU-SLQ" id="P3r-5a-xJl"/>
+                        <outlet property="sleepArt" destination="JCi-eP-TVG" id="Hgc-dd-Bkj"/>
                         <outlet property="stepsLabel" destination="nRU-5R-Tmo" id="duM-LE-BVi"/>
                         <outlet property="stepsYesterday" destination="qbV-vj-AYP" id="EiQ-21-7gF"/>
                         <outlet property="tapDate" destination="ZAu-A7-MUJ" id="C44-mv-ayr"/>
@@ -654,8 +702,13 @@
         <image name="bed" width="1000" height="1000"/>
         <image name="bowl" width="1000" height="1000"/>
         <image name="floor" width="1000" height="1000"/>
+        <image name="lucyeat1" width="1000" height="1000"/>
+        <image name="lucyloaf1" width="1000" height="1000"/>
+        <image name="lucyplay1" width="1000" height="1000"/>
+        <image name="lucysleep1" width="1000" height="1000"/>
         <image name="lucytail2" width="1000" height="1000"/>
         <image name="mouse" width="1000" height="1000"/>
+        <image name="norug" width="1000" height="1000"/>
         <image name="paw" width="100" height="100"/>
         <image name="picture" width="1000" height="1000"/>
         <image name="wall" width="1000" height="1000"/>

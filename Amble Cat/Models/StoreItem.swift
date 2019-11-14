@@ -22,9 +22,11 @@ struct StoreItem {
     enum ItemType {
         case bed
         case bowl
+        case decor
         case toy
         case picture
         case floor
+        case rug
         case wall
         case window
     }

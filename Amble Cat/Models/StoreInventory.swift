@@ -108,9 +108,29 @@ struct StoreInventory {
     static let oceanView = StoreItem(id: 31, name: "Ocean Scene", price: 1500, shopImage: #imageLiteral(resourceName: "shopocean.png"), image: #imageLiteral(resourceName: "ocean.png"), description: "Ocean View", type: .window)
     
     static let nightView = StoreItem(id: 36, name: "Night Scene", price: 1800, shopImage: #imageLiteral(resourceName: "shopnight.png"), image: #imageLiteral(resourceName: "night.png"), description: "Night View", type: .window)
-	
     
-	static var inventory = [bowl, blueBowl, greenBowl, yellowBowl, whiteBowl, blackBowl, bed, yellowBed, greenBed, pinkBed, whiteBed, blackBed, mouse, ball, candycane, cupcake, doughnut, fish, picture, sunset, cat, forest, abstract, wall, yellowWall, mintWall, greyWall, redWall, stripedWall, pawprintWall, basicView, mountainView, winterView, farmView, oceanView, nightView, floor, darkFloor, whiteFloor, blondFloor, redFloor, blackFloor]
+    static let frostView = StoreItem(id: 48, name: "Frosty Scene", price: 1500, shopImage: #imageLiteral(resourceName: "shopfrost.png"), image: #imageLiteral(resourceName: "frost.png"), description: "Frost View", type: .window)
+    
+    
+    // Rugs
+    static let noRug = StoreItem(id: 42, name: "No Rug", price: 0, shopImage: #imageLiteral(resourceName: "shopnorug.png"), image:#imageLiteral(resourceName: "norug.png"), description: "No Rug", type: .rug)
+    
+    static let redRug = StoreItem(id: 43, name: "Red Rug", price: 500, shopImage: #imageLiteral(resourceName: "shopredrug.png"), image: #imageLiteral(resourceName: "redrug.png"), description: "Red Round Rug", type: .rug)
+	
+    static let tanRug = StoreItem(id: 44, name: "Tan Rug", price: 500, shopImage: #imageLiteral(resourceName: "shoptanrug.png"), image: #imageLiteral(resourceName: "tanrug.png"), description: "Tan Round Rug", type: .rug)
+    
+    static let ecruRug = StoreItem(id: 45, name: "Ecru Rug", price: 500, shopImage: #imageLiteral(resourceName: "shopecrurug.png"), image: #imageLiteral(resourceName: "ecrurug.png"), description: "Ecru Round Rug", type: .rug)
+    
+    static let christmasRug = StoreItem(id: 46, name: "Red and Green Rug", price: 800, shopImage: #imageLiteral(resourceName: "redandgreenrugshop.png"), image: #imageLiteral(resourceName: "redandgreenrug.png"), description: "Red/Green Round Rug", type: .rug)
+    
+    static let blueRug = StoreItem(id: 47, name: "Blue Rug", price: 500, shopImage: #imageLiteral(resourceName: "shoprugblue.png"), image: #imageLiteral(resourceName: "bluerug.png"), description: "Blue Round Rug", type: .rug)
+    
+    // Decor
+    static let holly = StoreItem(id: 49, name: "Holly Hanging", price: 800, shopImage: #imageLiteral(resourceName: "shopholly.png"), image: #imageLiteral(resourceName: "holly.png"), description: "Blue Round Rug", type: .decor)
+    
+    static let noDecor = StoreItem(id: 50, name: "No Decor", price: 0, shopImage: #imageLiteral(resourceName: "shopnorug.png"), image: #imageLiteral(resourceName: "norug.png"), description: "No Decor", type: .decor)
+    
+	static var inventory = [bowl, blueBowl, greenBowl, yellowBowl, whiteBowl, blackBowl, bed, yellowBed, greenBed, pinkBed, whiteBed, blackBed, mouse, ball, candycane, cupcake, doughnut, fish, picture, sunset, cat, forest, abstract, noDecor, holly, wall, yellowWall, mintWall, greyWall, redWall, stripedWall, pawprintWall, basicView, mountainView, winterView, farmView, oceanView, frostView, nightView, floor, noRug, redRug, tanRug, blueRug, ecruRug, christmasRug, darkFloor, whiteFloor, blondFloor, redFloor, blackFloor]
     
     static let inventoryDictionary: [Int64: StoreItem] = [
         0: bowl,
@@ -154,7 +174,16 @@ struct StoreInventory {
         38: blackBed,
         39: stripedWall,
         40: candycane,
-        41: mintWall
+        41: mintWall,
+        42: noRug,
+        43: redRug,
+        44: tanRug,
+        45: ecruRug,
+        46: christmasRug,
+        47: blueRug,
+        48: frostView,
+        49: holly,
+        50: noDecor
     ]
     
     static var purchased: [StoreItem] = []

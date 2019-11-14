@@ -21,12 +21,20 @@ class ViewController: UIViewController {
      @IBOutlet weak var pointsLabel: UILabel!
      @IBOutlet weak var collectView: UIView!
      @IBOutlet weak var collectText: UILabel!
+     
      @IBOutlet weak var catArt: UIImageView!
+     @IBOutlet weak var sleepArt: UIImageView!
+     @IBOutlet weak var eatArt: UIImageView!
+     @IBOutlet weak var playArt: UIImageView!
+     @IBOutlet weak var loafArt: UIImageView!
+     
      @IBOutlet weak var bedArt: UIImageView!
      @IBOutlet weak var bowlArt: UIImageView!
+     @IBOutlet weak var decorArt: UIImageView!
      @IBOutlet weak var toyArt: UIImageView!
      @IBOutlet weak var pictureArt: UIImageView!
      @IBOutlet weak var floorArt: UIImageView!
+     @IBOutlet weak var rugArt: UIImageView!
      @IBOutlet weak var wallArt: UIImageView!
      @IBOutlet weak var windowArt: UIImageView!
      @IBOutlet weak var dimView: UIView!
@@ -101,27 +109,87 @@ class ViewController: UIViewController {
             }
         }
           
-          catArt.animationImages = AnimationManager.blinkAnimation
-          catArt.animationDuration = 1.0
-          catArt.animationRepeatCount = 1
-          catArt.startAnimating()
-          
-          TimerManager.beginTimer(with: catArt)
+          beginAnimation()
     }
 	
      // MARK: Custom functions
+     
+     func beginAnimation() {
+          let animation = Int.random(in: 1...5)
+          
+          print(animation)
+          if animation == 1 {
+               catArt.isHidden = false
+               sleepArt.isHidden = true
+               eatArt.isHidden = true
+               playArt.isHidden = true
+               loafArt.isHidden = true
+               
+               catArt.animationImages = AnimationManager.blinkAnimation
+               catArt.animationDuration = 1.0
+               catArt.animationRepeatCount = 1
+               catArt.startAnimating()
+               
+               TimerManager.beginTimer(with: catArt)
+          } else if animation == 2 {
+               catArt.isHidden = true
+               sleepArt.isHidden = false
+               eatArt.isHidden = true
+               playArt.isHidden = true
+               loafArt.isHidden = true
+               
+               sleepArt.animationImages = AnimationManager.sleepAnimation
+               sleepArt.animationDuration = 4.0
+               sleepArt.startAnimating()
+          } else if animation == 3 {
+               catArt.isHidden = true
+               sleepArt.isHidden = true
+               eatArt.isHidden = false
+               playArt.isHidden = true
+               loafArt.isHidden = true
+               
+               eatArt.animationImages = AnimationManager.eatAnimation
+               eatArt.animationDuration = 1.0
+               eatArt.startAnimating()
+          } else if animation == 4 {
+               catArt.isHidden = true
+               sleepArt.isHidden = true
+               eatArt.isHidden = true
+               playArt.isHidden = false
+               loafArt.isHidden = true
+               
+               playArt.animationImages = AnimationManager.playAnimation
+               playArt.animationDuration = 2.0
+               playArt.startAnimating()
+          } else if animation == 5 {
+               catArt.isHidden = true
+               sleepArt.isHidden = true
+               eatArt.isHidden = true
+               playArt.isHidden = true
+               loafArt.isHidden = false
+               
+               loafArt.animationImages = AnimationManager.loafAnimation
+               loafArt.animationDuration = 1.5
+               loafArt.animationRepeatCount = 1
+               loafArt.startAnimating()
+               
+               TimerManager.beginTimer(with: loafArt)
+          }
+     }
      
      @objc func refreshPoints() {
           pointsLabel.text = "\(Currency.userTotal) Paw Points"
      }
      
      @objc func decorChanged() {
-          guard let bed = StoreInventory.inventoryDictionary[DecorManager.bedID], let bowl = StoreInventory.inventoryDictionary[DecorManager.bowlID], let floor = StoreInventory.inventoryDictionary[DecorManager.floorID], let picture = StoreInventory.inventoryDictionary[DecorManager.pictureID], let toy = StoreInventory.inventoryDictionary[DecorManager.toyID], let wall = StoreInventory.inventoryDictionary[DecorManager.wallID], let window = StoreInventory.inventoryDictionary[DecorManager.windowID] else { return }
+          guard let bed = StoreInventory.inventoryDictionary[DecorManager.bedID], let bowl = StoreInventory.inventoryDictionary[DecorManager.bowlID], let decor = StoreInventory.inventoryDictionary[DecorManager.decorID], let floor = StoreInventory.inventoryDictionary[DecorManager.floorID], let picture = StoreInventory.inventoryDictionary[DecorManager.pictureID], let rug = StoreInventory.inventoryDictionary[DecorManager.rugID], let toy = StoreInventory.inventoryDictionary[DecorManager.toyID], let wall = StoreInventory.inventoryDictionary[DecorManager.wallID], let window = StoreInventory.inventoryDictionary[DecorManager.windowID] else { return }
           
           bedArt.image = bed.image
           bowlArt.image = bowl.image
+          decorArt.image = decor.image
           floorArt.image = floor.image
           pictureArt.image = picture.image
+          rugArt.image = rug.image
           toyArt.image = toy.image
           wallArt.image = wall.image
           windowArt.image = window.image
@@ -157,8 +225,10 @@ class ViewController: UIViewController {
                     DecorManager.equipped = loaded
                     DecorManager.bedID = loaded.bed
                     DecorManager.bowlID = loaded.bowl
+                    DecorManager.decorID = loaded.decor
                     DecorManager.floorID = loaded.floor
                     DecorManager.pictureID = loaded.picture
+                    DecorManager.rugID = loaded.rug
                     DecorManager.toyID = loaded.toy
                     DecorManager.wallID = loaded.wall
                     DecorManager.windowID = loaded.window
@@ -176,8 +246,10 @@ class ViewController: UIViewController {
           
           bedArt.image = StoreInventory.inventoryDictionary[DecorManager.bedID]?.image
           bowlArt.image = StoreInventory.inventoryDictionary[DecorManager.bowlID]?.image
+          decorArt.image = StoreInventory.inventoryDictionary[DecorManager.decorID]?.image
           floorArt.image = StoreInventory.inventoryDictionary[DecorManager.floorID]?.image
           pictureArt.image = StoreInventory.inventoryDictionary[DecorManager.pictureID]?.image
+          rugArt.image = StoreInventory.inventoryDictionary[DecorManager.rugID]?.image
           toyArt.image = StoreInventory.inventoryDictionary[DecorManager.toyID]?.image
           wallArt.image = StoreInventory.inventoryDictionary[DecorManager.wallID]?.image
           windowArt.image = StoreInventory.inventoryDictionary[DecorManager.windowID]?.image
