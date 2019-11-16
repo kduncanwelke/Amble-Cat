@@ -44,4 +44,8 @@ class TimerManager {
         timer?.fire()
     }
 
+    static func stopTimer() {
+        timer?.invalidate()
+        seconds = 0
+    }
 }

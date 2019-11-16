@@ -95,6 +95,7 @@ class StatisticsViewController: UIViewController {
     
     @IBAction func dismissTapped(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "refreshView"), object: nil)
     }
 
 }

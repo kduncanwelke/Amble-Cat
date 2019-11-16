@@ -19,6 +19,7 @@
 		2D7146D2235BBE440064B576 /* StoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7146D1235BBE440064B576 /* StoreViewController.swift */; };
 		2D7146D4235BBF130064B576 /* StoreCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7146D3235BBF130064B576 /* StoreCollectionViewCell.swift */; };
 		2DA559602360FE50006B3B9D /* PurchaseState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA5595F2360FE50006B3B9D /* PurchaseState.swift */; };
+		2DDE569523809B9800398454 /* CareState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DDE569423809B9800398454 /* CareState.swift */; };
 		2DE860E923552B3B00227A86 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE860E823552B3B00227A86 /* AppDelegate.swift */; };
 		2DE860EB23552B3B00227A86 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE860EA23552B3B00227A86 /* SceneDelegate.swift */; };
 		2DE860ED23552B3B00227A86 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE860EC23552B3B00227A86 /* ViewController.swift */; };
@@ -64,6 +65,7 @@
 		2D7146D1235BBE440064B576 /* StoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreViewController.swift; sourceTree = "<group>"; };
 		2D7146D3235BBF130064B576 /* StoreCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreCollectionViewCell.swift; sourceTree = "<group>"; };
 		2DA5595F2360FE50006B3B9D /* PurchaseState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseState.swift; sourceTree = "<group>"; };
+		2DDE569423809B9800398454 /* CareState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareState.swift; sourceTree = "<group>"; };
 		2DE860E523552B3B00227A86 /* Amble Cat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Amble Cat.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DE860E823552B3B00227A86 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2DE860EA23552B3B00227A86 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -206,6 +208,7 @@
 				2D6FCA8C235A596100560CB2 /* Timer.swift */,
 				2DE904D423563C710036C08A /* HealthStore.swift */,
 				2D6FCA87235A1D7500560CB2 /* Currency.swift */,
+				2DDE569423809B9800398454 /* CareState.swift */,
 				2D7146CD235BB6BB0064B576 /* StoreItem.swift */,
 				2D7146CF235BB8560064B576 /* StoreInventory.swift */,
 				2DA5595F2360FE50006B3B9D /* PurchaseState.swift */,
@@ -375,6 +378,7 @@
 				2DE904D523563C710036C08A /* HealthStore.swift in Sources */,
 				2D7146D0235BB8560064B576 /* StoreInventory.swift in Sources */,
 				2D0C3CFB2363A7E300EA064A /* DecorManager.swift in Sources */,
+				2DDE569523809B9800398454 /* CareState.swift in Sources */,
 				2D3583C1237CC1F3005A6C56 /* AnimationManager.swift in Sources */,
 				2DE860E923552B3B00227A86 /* AppDelegate.swift in Sources */,
 				2D6FCA8D235A596100560CB2 /* Timer.swift in Sources */,

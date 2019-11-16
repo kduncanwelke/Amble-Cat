@@ -25,8 +25,12 @@ class ViewController: UIViewController {
      @IBOutlet weak var catArt: UIImageView!
      @IBOutlet weak var sleepArt: UIImageView!
      @IBOutlet weak var eatArt: UIImageView!
+     @IBOutlet weak var drinkArt: UIImageView!
      @IBOutlet weak var playArt: UIImageView!
      @IBOutlet weak var loafArt: UIImageView!
+     
+     @IBOutlet weak var food: UIImageView!
+     @IBOutlet weak var water: UIImageView!
      
      @IBOutlet weak var bedArt: UIImageView!
      @IBOutlet weak var bowlArt: UIImageView!
@@ -36,6 +40,7 @@ class ViewController: UIViewController {
      @IBOutlet weak var floorArt: UIImageView!
      @IBOutlet weak var rugArt: UIImageView!
      @IBOutlet weak var wallArt: UIImageView!
+     @IBOutlet weak var waterBowlArt: UIImageView!
      @IBOutlet weak var windowArt: UIImageView!
      @IBOutlet weak var dimView: UIView!
      
@@ -52,13 +57,25 @@ class ViewController: UIViewController {
           
           NotificationCenter.default.addObserver(self, selector: #selector(refreshPoints), name: NSNotification.Name(rawValue: "refreshPoints"), object: nil)
           
-           NotificationCenter.default.addObserver(self, selector: #selector(decorChanged), name: NSNotification.Name(rawValue: "decorChanged"), object: nil)
+          NotificationCenter.default.addObserver(self, selector: #selector(decorChanged), name: NSNotification.Name(rawValue: "decorChanged"), object: nil)
+          
+          NotificationCenter.default.addObserver(self, selector: #selector(refreshView), name: NSNotification.Name(rawValue: "refreshView"), object: nil)
+          
           
           currentsBackground.layer.cornerRadius = 20
           collectView.layer.cornerRadius = 20
           
+          loadCareState()
           loadCurrency()
           loadEquipment()
+          
+          if CareState.hasBeenFed {
+               food.isHidden = false
+          }
+          
+          if CareState.hasBeenWatered {
+               water.isHidden = false
+          }
         
           let healthKitTypes: Set = [ HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)!, HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.distanceWalkingRunning)! ]
    
@@ -83,25 +100,14 @@ class ViewController: UIViewController {
                         let steps = Int(result)
                         self.stepsYesterday.text = "\(steps) Steps Yesterday"
                        
-                        let date = Date()
-                        let calendar = Calendar.current
-                        let dateToCompare = calendar.component(.day , from: date)
-
-                        let userDefaultDate = UserDefaults.standard.integer(forKey: "userDefaultDate")
-
-                        if userDefaultDate != dateToCompare {
-                             if steps >= 1000 {
-                                   self.dimView.isHidden = false
-                                   let thousands = Int(steps / 1000)
-                                   self.earned = 10 * thousands
-                                   //self.earned = 200
-                                   self.view.bringSubviewToFront(self.collectView)
-                                   self.collectText.text = "You earned \(self.earned) Paw Points for walking \(steps) steps yesterday!"
-                                   UserDefaults.standard.set(dateToCompare, forKey: self.userDefaultDate)
-                              }
-                        } else {
-                           print("same day")
-                        }
+                         if self.isSameDay() == false && steps >= 1000 {
+                              self.dimView.isHidden = false
+                              let thousands = Int(steps / 1000)
+                              self.earned = 10 * thousands
+                              //self.earned = 200
+                              self.view.bringSubviewToFront(self.collectView)
+                              self.collectText.text = "You earned \(self.earned) Paw Points for walking \(steps) steps yesterday!"
+                         }
                     }
                 }
                 
@@ -114,14 +120,49 @@ class ViewController: UIViewController {
 	
      // MARK: Custom functions
      
+     func isSameDay() -> Bool {
+          let date = Date()
+          let calendar = Calendar.current
+          let dateToCompare = calendar.component(.day , from: date)
+          
+          let userDefaultDate = UserDefaults.standard.integer(forKey: "userDefaultDate")
+          
+          if userDefaultDate != dateToCompare {
+               UserDefaults.standard.set(dateToCompare, forKey: self.userDefaultDate)
+               return false
+          } else {
+               return true
+          }
+     }
+     
      func beginAnimation() {
-          let animation = Int.random(in: 1...5)
+          var range = [1,2,3,4]
+          
+          if CareState.hasBeenFed && CareState.hasBeenWatered {
+               range = [1,2,3,4,5,6]
+          } else if CareState.hasBeenFed {
+               range = [1,2,3,4,5]
+          } else if CareState.hasBeenWatered {
+               range = [1,2,3,4,6]
+          }
+          
+          let animation = range.randomElement() //Int.random(in: 1...max)
+          
+          TimerManager.stopTimer()
+          catArt.stopAnimating()
+          sleepArt.stopAnimating()
+          playArt.stopAnimating()
+          loafArt.stopAnimating()
+          eatArt.stopAnimating()
+          drinkArt.stopAnimating()
+          
           
           print(animation)
           if animation == 1 {
                catArt.isHidden = false
                sleepArt.isHidden = true
                eatArt.isHidden = true
+               drinkArt.isHidden = true
                playArt.isHidden = true
                loafArt.isHidden = true
                
@@ -135,6 +176,7 @@ class ViewController: UIViewController {
                catArt.isHidden = true
                sleepArt.isHidden = false
                eatArt.isHidden = true
+               drinkArt.isHidden = true
                playArt.isHidden = true
                loafArt.isHidden = true
                
@@ -144,27 +186,21 @@ class ViewController: UIViewController {
           } else if animation == 3 {
                catArt.isHidden = true
                sleepArt.isHidden = true
-               eatArt.isHidden = false
-               playArt.isHidden = true
-               loafArt.isHidden = true
-               
-               eatArt.animationImages = AnimationManager.eatAnimation
-               eatArt.animationDuration = 1.0
-               eatArt.startAnimating()
-          } else if animation == 4 {
-               catArt.isHidden = true
-               sleepArt.isHidden = true
                eatArt.isHidden = true
+               drinkArt.isHidden = true
                playArt.isHidden = false
                loafArt.isHidden = true
                
                playArt.animationImages = AnimationManager.playAnimation
                playArt.animationDuration = 2.0
                playArt.startAnimating()
-          } else if animation == 5 {
+               
+               TimerManager.beginTimer(with: playArt)
+          } else if animation == 4 {
                catArt.isHidden = true
                sleepArt.isHidden = true
                eatArt.isHidden = true
+               drinkArt.isHidden = true
                playArt.isHidden = true
                loafArt.isHidden = false
                
@@ -174,6 +210,43 @@ class ViewController: UIViewController {
                loafArt.startAnimating()
                
                TimerManager.beginTimer(with: loafArt)
+          } else if animation == 5 {
+               catArt.isHidden = true
+               sleepArt.isHidden = true
+               eatArt.isHidden = false
+               drinkArt.isHidden = true
+               playArt.isHidden = true
+               loafArt.isHidden = true
+               
+               eatArt.animationImages = AnimationManager.eatAnimation
+               eatArt.animationDuration = 1.0
+               eatArt.startAnimating()
+          } else if animation == 6 {
+               catArt.isHidden = true
+               sleepArt.isHidden = true
+               eatArt.isHidden = true
+               drinkArt.isHidden = false
+               playArt.isHidden = true
+               loafArt.isHidden = true
+               
+               drinkArt.animationImages = AnimationManager.drinkAnimation
+               drinkArt.animationDuration = 1.0
+               drinkArt.startAnimating()
+          }
+     }
+     
+     func checkCareProgress() {
+          if CareState.hasBeenFed && CareState.hasBeenWatered {
+               CareState.daysCaredFor += 1
+          }
+          
+          if CareState.daysCaredFor == 7 {
+               dimView.isHidden = false
+               earned = 50
+               view.bringSubviewToFront(collectView)
+               collectText.text = "You earned \(self.earned) Paw Points for taking care of your cat for 7 days in a row!"
+               
+               CareState.daysCaredFor = 0
           }
      }
      
@@ -181,8 +254,12 @@ class ViewController: UIViewController {
           pointsLabel.text = "\(Currency.userTotal) Paw Points"
      }
      
+     @objc func refreshView() {
+          beginAnimation()
+     }
+     
      @objc func decorChanged() {
-          guard let bed = StoreInventory.inventoryDictionary[DecorManager.bedID], let bowl = StoreInventory.inventoryDictionary[DecorManager.bowlID], let decor = StoreInventory.inventoryDictionary[DecorManager.decorID], let floor = StoreInventory.inventoryDictionary[DecorManager.floorID], let picture = StoreInventory.inventoryDictionary[DecorManager.pictureID], let rug = StoreInventory.inventoryDictionary[DecorManager.rugID], let toy = StoreInventory.inventoryDictionary[DecorManager.toyID], let wall = StoreInventory.inventoryDictionary[DecorManager.wallID], let window = StoreInventory.inventoryDictionary[DecorManager.windowID] else { return }
+          guard let bed = StoreInventory.inventoryDictionary[DecorManager.bedID], let bowl = StoreInventory.inventoryDictionary[DecorManager.bowlID], let decor = StoreInventory.inventoryDictionary[DecorManager.decorID], let floor = StoreInventory.inventoryDictionary[DecorManager.floorID], let picture = StoreInventory.inventoryDictionary[DecorManager.pictureID], let rug = StoreInventory.inventoryDictionary[DecorManager.rugID], let toy = StoreInventory.inventoryDictionary[DecorManager.toyID], let wall = StoreInventory.inventoryDictionary[DecorManager.wallID], let water = StoreInventory.inventoryDictionary[DecorManager.waterID], let window = StoreInventory.inventoryDictionary[DecorManager.windowID] else { return }
           
           bedArt.image = bed.image
           bowlArt.image = bowl.image
@@ -192,6 +269,7 @@ class ViewController: UIViewController {
           rugArt.image = rug.image
           toyArt.image = toy.image
           wallArt.image = wall.image
+          waterBowlArt.image = water.image
           windowArt.image = window.image
      }
      
@@ -214,6 +292,77 @@ class ViewController: UIViewController {
           }
      }
      
+     func loadCareState() {
+          var managedContext = CoreDataManager.shared.managedObjectContext
+          var fetchRequest = NSFetchRequest<CareStatus>(entityName: "CareStatus")
+          
+          do {
+               var result = try managedContext.fetch(fetchRequest)
+               if let result = result.first {
+                    
+                    if isSameDay() == false {
+                         if result.hasBeenFed && result.hasBeenWatered {
+                              CareState.daysCaredFor = result.daysOfConsecutiveCare + 1
+                         } else {
+                              CareState.daysCaredFor = 0
+                         }
+                         
+                         CareState.hasBeenFed = false
+                         CareState.hasBeenWatered = false
+                    } else {
+                         CareState.care = result
+                         CareState.hasBeenFed = result.hasBeenFed
+                         CareState.hasBeenWatered = result.hasBeenWatered
+                         CareState.daysCaredFor = result.daysOfConsecutiveCare
+                    }
+               }
+               print("care loaded")
+               
+          } catch let error as NSError {
+               //showAlert(title: "Could not retrieve data", message: "\(error.userInfo)")
+          }
+     }
+     
+     func updateCare() {
+          var managedContext = CoreDataManager.shared.managedObjectContext
+          
+          // save currency anew if it doesn't exist (like on app initial launch)
+          guard let currentCare = CareState.care else {
+               let careSave = CareStatus(context: managedContext)
+               
+               careSave.hasBeenFed = CareState.hasBeenFed
+               careSave.hasBeenWatered = CareState.hasBeenWatered
+               careSave.daysOfConsecutiveCare = CareState.daysCaredFor
+               print(CareState.hasBeenFed)
+               print(CareState.hasBeenWatered)
+               print(CareState.daysCaredFor)
+               do {
+                    try managedContext.save()
+                    print("saved")
+               } catch {
+                    // this should never be displayed but is here to cover the possibility
+                    //showAlert(title: "Save failed", message: "Notice: Data has not successfully been saved.")
+               }
+               
+               return
+          }
+          
+          currentCare.hasBeenFed = CareState.hasBeenFed
+          currentCare.hasBeenWatered = CareState.hasBeenWatered
+          currentCare.daysOfConsecutiveCare = CareState.daysCaredFor
+          print(CareState.hasBeenFed)
+          print(CareState.hasBeenWatered)
+          print(CareState.daysCaredFor)
+          
+          do {
+               try managedContext.save()
+               print("resave successful")
+          } catch {
+               // this should never be displayed but is here to cover the possibility
+               //showAlert(title: "Save failed", message: "Notice: Data has not successfully been saved.")
+          }
+     }
+     
      func loadEquipment() {
           // load purchase status
           var managedContext = CoreDataManager.shared.managedObjectContext
@@ -231,6 +380,7 @@ class ViewController: UIViewController {
                     DecorManager.rugID = loaded.rug
                     DecorManager.toyID = loaded.toy
                     DecorManager.wallID = loaded.wall
+                    DecorManager.waterID = loaded.waterbowl
                     DecorManager.windowID = loaded.window
                     
                     print("equipment loaded")
@@ -252,6 +402,7 @@ class ViewController: UIViewController {
           rugArt.image = StoreInventory.inventoryDictionary[DecorManager.rugID]?.image
           toyArt.image = StoreInventory.inventoryDictionary[DecorManager.toyID]?.image
           wallArt.image = StoreInventory.inventoryDictionary[DecorManager.wallID]?.image
+          waterBowlArt.image = StoreInventory.inventoryDictionary[DecorManager.waterID]?.image
           windowArt.image = StoreInventory.inventoryDictionary[DecorManager.windowID]?.image
      }
      
@@ -471,6 +622,31 @@ class ViewController: UIViewController {
     
      // MARK: IBActions
 
+     @IBAction func foodPressed(_ sender: UIButton) {
+          if CareState.hasBeenFed {
+               return
+          } else {
+               food.isHidden = false
+               CareState.hasBeenFed = true
+               
+               checkCareProgress()
+               updateCare()
+          }
+     }
+     
+     
+     @IBAction func waterPressed(_ sender: UIButton) {
+          if CareState.hasBeenWatered {
+               return
+          } else {
+               water.isHidden = false
+               CareState.hasBeenWatered = true
+               
+               checkCareProgress()
+               updateCare()
+          }
+     }
+     
      @IBAction func viewStatsPressed(_ sender: UIButton) {
         performSegue(withIdentifier: "viewStatistics", sender: Any?.self)
      }

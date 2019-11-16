@@ -25,6 +25,17 @@ struct StoreInventory {
     static let blackBowl = StoreItem(id: 37, name: "Black Bowl", price: 500, shopImage: #imageLiteral(resourceName: "shopbowlblack.png"), image: #imageLiteral(resourceName: "blackbowl.png"), description: "Basic Black Bowl", type: .bowl)
     
     
+    // Water Bowls
+    static let blueWaterBowl = StoreItem(id: 51, name: "Blue Water Bowl", price: 250, shopImage: #imageLiteral(resourceName: "shopbluewaterbowl.png"), image: #imageLiteral(resourceName: "bluewaterbowl.png"), description: "Basic Water Bowl", type: .waterbowl)
+    
+    static let greenWaterBowl = StoreItem(id: 52, name: "Green Water Bowl", price: 250, shopImage: #imageLiteral(resourceName: "shopgreenwaterbowl.png"), image: #imageLiteral(resourceName: "greenwaterbowl.png"), description: "Green Water Bowl", type: .waterbowl)
+    
+    static let yellowWaterBowl = StoreItem(id: 53, name: "Yellow Water Bowl", price: 250, shopImage: #imageLiteral(resourceName: "shopyellowwaterbowl.png"), image: #imageLiteral(resourceName: "yellowwaterbowl.png"), description: "Yellow Water Bowl", type: .waterbowl)
+    
+    static let whiteWaterBowl = StoreItem(id: 54, name: "White Water Bowl", price: 450, shopImage: #imageLiteral(resourceName: "shopwhitewaterbowl.png"), image: #imageLiteral(resourceName: "whitebowl.png"), description: "White Water Bowl", type: .waterbowl)
+    
+    static let blackWaterBowl = StoreItem(id: 55, name: "Black Water Bowl", price: 450, shopImage: #imageLiteral(resourceName: "shopblackwaterbowl.png"), image: #imageLiteral(resourceName: "blackwaterbowl.png"), description: "Black Water Bowl", type: .waterbowl)
+    
     
     // Toys
     static let mouse = StoreItem(id: 1, name: "Mouse", price: 0, shopImage: #imageLiteral(resourceName: "shopmouse"), image: #imageLiteral(resourceName: "mouse"), description: "Basic Mouse", type: .toy)
@@ -125,12 +136,13 @@ struct StoreInventory {
     
     static let blueRug = StoreItem(id: 47, name: "Blue Rug", price: 500, shopImage: #imageLiteral(resourceName: "shoprugblue.png"), image: #imageLiteral(resourceName: "bluerug.png"), description: "Blue Round Rug", type: .rug)
     
+    
     // Decor
     static let holly = StoreItem(id: 49, name: "Holly Hanging", price: 800, shopImage: #imageLiteral(resourceName: "shopholly.png"), image: #imageLiteral(resourceName: "holly.png"), description: "Blue Round Rug", type: .decor)
     
     static let noDecor = StoreItem(id: 50, name: "No Decor", price: 0, shopImage: #imageLiteral(resourceName: "shopnorug.png"), image: #imageLiteral(resourceName: "norug.png"), description: "No Decor", type: .decor)
     
-	static var inventory = [bowl, blueBowl, greenBowl, yellowBowl, whiteBowl, blackBowl, bed, yellowBed, greenBed, pinkBed, whiteBed, blackBed, mouse, ball, candycane, cupcake, doughnut, fish, picture, sunset, cat, forest, abstract, noDecor, holly, wall, yellowWall, mintWall, greyWall, redWall, stripedWall, pawprintWall, basicView, mountainView, winterView, farmView, oceanView, frostView, nightView, floor, noRug, redRug, tanRug, blueRug, ecruRug, christmasRug, darkFloor, whiteFloor, blondFloor, redFloor, blackFloor]
+	static var inventory = [bowl, blueBowl, greenBowl, yellowBowl, whiteBowl, blackBowl, blueWaterBowl, greenWaterBowl, yellowWaterBowl, whiteWaterBowl, blackWaterBowl, bed, yellowBed, greenBed, pinkBed, whiteBed, blackBed, mouse, ball, candycane, cupcake, doughnut, fish, picture, sunset, cat, forest, abstract, noDecor, holly, wall, yellowWall, mintWall, greyWall, redWall, stripedWall, pawprintWall, basicView, mountainView, winterView, farmView, oceanView, frostView, nightView, floor, noRug, redRug, tanRug, blueRug, ecruRug, christmasRug, darkFloor, whiteFloor, blondFloor, redFloor, blackFloor]
     
     static let inventoryDictionary: [Int64: StoreItem] = [
         0: bowl,
@@ -183,7 +195,12 @@ struct StoreInventory {
         47: blueRug,
         48: frostView,
         49: holly,
-        50: noDecor
+        50: noDecor,
+        51: blueWaterBowl,
+        52: greenWaterBowl,
+        53: yellowWaterBowl,
+        54: whiteWaterBowl,
+        55: blackWaterBowl
     ]
     
     static var purchased: [StoreItem] = []

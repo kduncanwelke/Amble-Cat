@@ -28,6 +28,7 @@ struct StoreItem {
         case floor
         case rug
         case wall
+        case waterbowl
         case window
     }
     

@@ -152,6 +152,7 @@ class StoreViewController: UIViewController, UICollectionViewDelegate, UICollect
             equipment.rug = DecorManager.rugID
             equipment.toy = DecorManager.toyID
             equipment.wall = DecorManager.wallID
+            equipment.waterbowl = DecorManager.waterID
             equipment.window = DecorManager.windowID
             
             do {
@@ -173,6 +174,7 @@ class StoreViewController: UIViewController, UICollectionViewDelegate, UICollect
         previousSave.rug = DecorManager.rugID
         previousSave.toy = DecorManager.toyID
         previousSave.wall = DecorManager.wallID
+        previousSave.waterbowl = DecorManager.waterID
         previousSave.window = DecorManager.windowID
         
         do {
@@ -203,6 +205,7 @@ class StoreViewController: UIViewController, UICollectionViewDelegate, UICollect
 	@IBAction func dismissPressed(_ sender: UIButton) {
 		self.dismiss(animated: true, completion: nil)
         saveEquipment()
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "refreshView"), object: nil)
 	}
     
     @IBAction func okPressed(_ sender: UIButton) {
@@ -273,7 +276,7 @@ extension StoreViewController: UICollectionViewDataSource {
             cell.cellPrice.text = "\(item.price)"
         }
         
-        if item.id == DecorManager.bedID || item.id == DecorManager.bowlID || item.id == DecorManager.floorID || item.id == DecorManager.pictureID || item.id == DecorManager.toyID || item.id == DecorManager.wallID || item.id == DecorManager.windowID {
+        if item.id == DecorManager.bedID || item.id == DecorManager.bowlID || item.id == DecorManager.decorID || item.id == DecorManager.floorID || item.id == DecorManager.pictureID || item.id == DecorManager.rugID || item.id == DecorManager.toyID || item.id == DecorManager.wallID || item.id == DecorManager.waterID || item.id == DecorManager.windowID {
             cell.backgroundColor = UIColor(red:0.40, green:0.90, blue:1.00, alpha:1.0)
         } else {
             cell.backgroundColor = UIColor(red:0.98, green:1.00, blue:0.88, alpha:1.0)
@@ -330,6 +333,8 @@ extension StoreViewController: UICollectionViewDataSource {
                         DecorManager.toyID = item.id
                     case .wall:
                         DecorManager.wallID = item.id
+                    case .waterbowl:
+                        DecorManager.waterID = item.id
                     case .window:
                         DecorManager.windowID = item.id
                     }
