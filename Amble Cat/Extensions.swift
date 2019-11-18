@@ -21,4 +21,15 @@ extension UIView {
              completion()
         })
     }
+    
+    func animateHeart() {
+        print("animate heart")
+        UIView.animate(withDuration: 0.2, animations: {
+            self.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
+        }, completion: { [unowned self] _ in
+            UIView.animate(withDuration: 0.2) {
+                self.transform = CGAffineTransform.identity
+            }
+        })
+    }
 }

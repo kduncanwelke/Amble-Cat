@@ -22,6 +22,8 @@ class ViewController: UIViewController {
      @IBOutlet weak var collectView: UIView!
      @IBOutlet weak var collectText: UILabel!
      
+     @IBOutlet var hearts: [UIImageView]!
+     
      @IBOutlet weak var catArt: UIImageView!
      @IBOutlet weak var sleepArt: UIImageView!
      @IBOutlet weak var eatArt: UIImageView!
@@ -68,14 +70,6 @@ class ViewController: UIViewController {
           loadCareState()
           loadCurrency()
           loadEquipment()
-          
-          if CareState.hasBeenFed {
-               food.isHidden = false
-          }
-          
-          if CareState.hasBeenWatered {
-               water.isHidden = false
-          }
         
           let healthKitTypes: Set = [ HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)!, HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.distanceWalkingRunning)! ]
    
@@ -238,6 +232,8 @@ class ViewController: UIViewController {
      func checkCareProgress() {
           if CareState.hasBeenFed && CareState.hasBeenWatered {
                CareState.daysCaredFor += 1
+               
+               updateHearts()
           }
           
           if CareState.daysCaredFor == 7 {
@@ -245,8 +241,17 @@ class ViewController: UIViewController {
                earned = 50
                view.bringSubviewToFront(collectView)
                collectText.text = "You earned \(self.earned) Paw Points for taking care of your cat for 7 days in a row!"
-               
-               CareState.daysCaredFor = 0
+          }
+     }
+     
+     func updateHearts() {
+          for heart in hearts {
+               if heart.tag <= CareState.daysCaredFor {
+                    heart.image = UIImage(named: "heart")
+                    heart.animateHeart()
+               } else {
+                    heart.image = UIImage(named: "heartempty")
+               }
           }
      }
      
@@ -297,25 +302,47 @@ class ViewController: UIViewController {
           var fetchRequest = NSFetchRequest<CareStatus>(entityName: "CareStatus")
           
           do {
-               var result = try managedContext.fetch(fetchRequest)
-               if let result = result.first {
+               var resultArray = try managedContext.fetch(fetchRequest)
+               if let result = resultArray.first {
                     
+                    // check if it's a new day
                     if isSameDay() == false {
                          if result.hasBeenFed && result.hasBeenWatered {
-                              CareState.daysCaredFor = result.daysOfConsecutiveCare + 1
+                              
+                              // if seven days of consistent care have passed, reset
+                              if result.daysOfConsecutiveCare == 7 {
+                                   CareState.daysCaredFor = 0
+                              } else {
+                                   // otherwise add care days
+                                   CareState.daysCaredFor = result.daysOfConsecutiveCare + 1
+                              }
                          } else {
+                              print("zero")
+                              // save doesn't show care for previous day, so reset value
                               CareState.daysCaredFor = 0
                          }
                          
+                         CareState.care = result
                          CareState.hasBeenFed = false
                          CareState.hasBeenWatered = false
                     } else {
+                         // same day, don't change consecutive care fays
                          CareState.care = result
                          CareState.hasBeenFed = result.hasBeenFed
                          CareState.hasBeenWatered = result.hasBeenWatered
                          CareState.daysCaredFor = result.daysOfConsecutiveCare
                     }
                }
+              
+               if CareState.hasBeenFed {
+                    food.isHidden = false
+               }
+               
+               if CareState.hasBeenWatered {
+                    water.isHidden = false
+               }
+               
+               updateHearts()
                print("care loaded")
                
           } catch let error as NSError {
@@ -631,6 +658,7 @@ class ViewController: UIViewController {
                
                checkCareProgress()
                updateCare()
+               loadCareState()
           }
      }
      
@@ -644,6 +672,7 @@ class ViewController: UIViewController {
                
                checkCareProgress()
                updateCare()
+               loadCareState()
           }
      }
      

@@ -76,14 +76,72 @@
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="dP6-ha-i7f">
+                                        <rect key="frame" x="8" y="33" width="140" height="20"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heartempty" translatesAutoresizingMaskIntoConstraints="NO" id="Aau-FS-gRL">
+                                                <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="Aau-FS-gRL" secondAttribute="height" multiplier="1:1" id="tJA-V5-4GU"/>
+                                                </constraints>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heartempty" translatesAutoresizingMaskIntoConstraints="NO" id="bR4-er-kHv">
+                                                <rect key="frame" x="20" y="0.0" width="20" height="20"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="bR4-er-kHv" secondAttribute="height" multiplier="1:1" id="ydw-5x-h3B"/>
+                                                </constraints>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="3" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heartempty" translatesAutoresizingMaskIntoConstraints="NO" id="Pkq-e3-j2w">
+                                                <rect key="frame" x="40" y="0.0" width="20" height="20"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="Pkq-e3-j2w" secondAttribute="height" multiplier="1:1" id="fPU-La-uiN"/>
+                                                </constraints>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="4" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heartempty" translatesAutoresizingMaskIntoConstraints="NO" id="T3A-AO-RfR">
+                                                <rect key="frame" x="60" y="0.0" width="20" height="20"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="T3A-AO-RfR" secondAttribute="height" multiplier="1:1" id="2R9-bm-eEM"/>
+                                                </constraints>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="5" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heartempty" translatesAutoresizingMaskIntoConstraints="NO" id="rez-TH-Lvx">
+                                                <rect key="frame" x="80" y="0.0" width="20" height="20"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="rez-TH-Lvx" secondAttribute="height" multiplier="1:1" id="NSJ-Mr-ppO"/>
+                                                </constraints>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="6" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heartempty" translatesAutoresizingMaskIntoConstraints="NO" id="z7N-xn-IM6">
+                                                <rect key="frame" x="100" y="0.0" width="20" height="20"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="z7N-xn-IM6" secondAttribute="height" multiplier="1:1" id="Ms7-0g-oxJ"/>
+                                                </constraints>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="7" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heartempty" translatesAutoresizingMaskIntoConstraints="NO" id="NHD-ey-dcA">
+                                                <rect key="frame" x="120" y="0.0" width="20" height="20"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="NHD-ey-dcA" secondAttribute="height" multiplier="1:1" id="JLI-6B-LNv"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="rez-TH-Lvx" firstAttribute="width" secondItem="rez-TH-Lvx" secondAttribute="height" multiplier="1:1" id="5CK-Lp-hsz"/>
+                                            <constraint firstItem="Pkq-e3-j2w" firstAttribute="width" secondItem="Pkq-e3-j2w" secondAttribute="height" multiplier="1:1" id="6Ii-Zf-5d4"/>
+                                            <constraint firstAttribute="height" constant="20" id="DIr-V6-PcM"/>
+                                            <constraint firstItem="T3A-AO-RfR" firstAttribute="width" secondItem="T3A-AO-RfR" secondAttribute="height" multiplier="1:1" id="eI7-OQ-8hF"/>
+                                            <constraint firstItem="NHD-ey-dcA" firstAttribute="width" secondItem="NHD-ey-dcA" secondAttribute="height" multiplier="1:1" id="f1N-fl-ANV"/>
+                                            <constraint firstItem="bR4-er-kHv" firstAttribute="width" secondItem="bR4-er-kHv" secondAttribute="height" multiplier="1:1" id="kNB-0a-rKY"/>
+                                            <constraint firstItem="z7N-xn-IM6" firstAttribute="width" secondItem="z7N-xn-IM6" secondAttribute="height" multiplier="1:1" id="r9Y-bL-xfv"/>
+                                        </constraints>
+                                    </stackView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.98251623189971338" green="1" blue="0.88263598273263966" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="sMr-uU-cWy" firstAttribute="top" secondItem="r4s-VS-ylj" secondAttribute="bottom" constant="25" id="5dG-AJ-zHr"/>
                                     <constraint firstAttribute="bottom" secondItem="sMr-uU-cWy" secondAttribute="bottom" constant="8.5" id="E4q-1o-Ra2"/>
+                                    <constraint firstItem="dP6-ha-i7f" firstAttribute="top" secondItem="r4s-VS-ylj" secondAttribute="bottom" id="IVa-Zx-EGU"/>
                                     <constraint firstItem="r4s-VS-ylj" firstAttribute="top" secondItem="5w5-VM-nPb" secondAttribute="top" constant="10" id="Ovf-73-m5q"/>
                                     <constraint firstItem="r4s-VS-ylj" firstAttribute="leading" secondItem="5w5-VM-nPb" secondAttribute="leading" constant="10" id="juJ-0K-dpS"/>
                                     <constraint firstItem="IrE-at-fz9" firstAttribute="leading" secondItem="sMr-uU-cWy" secondAttribute="trailing" constant="8" id="m2w-o2-cK0"/>
+                                    <constraint firstItem="dP6-ha-i7f" firstAttribute="leading" secondItem="5w5-VM-nPb" secondAttribute="leading" constant="8" id="ttA-Vy-taM"/>
                                     <constraint firstItem="IrE-at-fz9" firstAttribute="centerY" secondItem="sMr-uU-cWy" secondAttribute="centerY" id="xTg-5r-QdU"/>
                                     <constraint firstItem="sMr-uU-cWy" firstAttribute="leading" secondItem="5w5-VM-nPb" secondAttribute="leading" constant="10" id="xxA-JJ-oQ5"/>
                                 </constraints>
@@ -314,6 +372,11 @@
                             <constraint firstItem="baZ-7B-Yr5" firstAttribute="centerX" secondItem="ZX0-Qb-1jX" secondAttribute="centerX" id="ySR-0j-kVT"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="fMR-QH-gwU"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="bedArt" destination="kmY-BW-XTE" id="pfb-wD-xdg"/>
@@ -344,6 +407,13 @@
                         <outlet property="water" destination="MMt-ix-rmm" id="OZn-y1-pF1"/>
                         <outlet property="waterBowlArt" destination="nr0-kZ-WzT" id="FeU-Wn-AYN"/>
                         <outlet property="windowArt" destination="e59-3N-6cE" id="BuH-eX-bzd"/>
+                        <outletCollection property="hearts" destination="Aau-FS-gRL" collectionClass="NSMutableArray" id="uZw-TS-QdZ"/>
+                        <outletCollection property="hearts" destination="bR4-er-kHv" collectionClass="NSMutableArray" id="L1S-hN-cXN"/>
+                        <outletCollection property="hearts" destination="Pkq-e3-j2w" collectionClass="NSMutableArray" id="bNh-7h-lVJ"/>
+                        <outletCollection property="hearts" destination="T3A-AO-RfR" collectionClass="NSMutableArray" id="ASd-7O-qa3"/>
+                        <outletCollection property="hearts" destination="rez-TH-Lvx" collectionClass="NSMutableArray" id="NLE-03-sVx"/>
+                        <outletCollection property="hearts" destination="z7N-xn-IM6" collectionClass="NSMutableArray" id="mmN-DC-Fbu"/>
+                        <outletCollection property="hearts" destination="NHD-ey-dcA" collectionClass="NSMutableArray" id="3C2-qk-0Nh"/>
                         <segue destination="edN-Ly-Sbe" kind="showDetail" identifier="viewStatistics" id="bYH-FW-lFG"/>
                         <segue destination="a4u-U3-FqG" kind="show" identifier="goToStore" id="t8C-Rc-FlI"/>
                     </connections>
@@ -757,6 +827,7 @@
         <image name="bowl" width="1000" height="1000"/>
         <image name="floor" width="1000" height="1000"/>
         <image name="food" width="1000" height="1000"/>
+        <image name="heartempty" width="90" height="90"/>
         <image name="lucydrink1" width="1000" height="1000"/>
         <image name="lucyeat1" width="1000" height="1000"/>
         <image name="lucyloaf1" width="1000" height="1000"/>
