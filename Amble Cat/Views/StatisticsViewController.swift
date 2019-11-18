@@ -26,7 +26,13 @@ class StatisticsViewController: UIViewController {
         // Do any additional setup after loading the view.
         graphView.delegate = self
         
-        updateChart()
+        HealthStore.store.requestAuthorization(toShare: HealthStore.healthKitTypes, read: HealthStore.healthKitTypes) { [unowned self] (bool, error) in
+            if (bool) {
+                DispatchQueue.main.async {
+                     self.updateChart()
+                }
+            }
+        }
     }
     
     
@@ -35,7 +41,7 @@ class StatisticsViewController: UIViewController {
     func updateChart() {
         var entries: [BarChartDataEntry] = []
         
-        for i in 0..<HealthDataManager.stepHistory.count {
+        for i in 0..<7 {
             var entry = BarChartDataEntry(x: Double(i), y: HealthDataManager.stepHistory[i])
             entries.append(entry)
         }
@@ -91,7 +97,123 @@ class StatisticsViewController: UIViewController {
     }
     */
     
+    func querySteps(completion: @escaping (Double) -> Void) {
+        let type = HKQuantityType.quantityType(forIdentifier: .stepCount)!
+        let calendar = NSCalendar.current
+        let interval = NSDateComponents()
+        interval.day = 1
+        
+        var anchorComponents = calendar.dateComponents([.day, .month, .year], from: NSDate() as Date)
+        anchorComponents.hour = 0
+        let anchorDate = calendar.date(from: anchorComponents)
+        
+        // Define 1-day intervals starting from 0:00
+        let stepsQuery = HKStatisticsCollectionQuery(quantityType: type, quantitySamplePredicate: nil, options: .cumulativeSum, anchorDate: anchorDate!, intervalComponents: interval as DateComponents)
+        
+        // Set the results handler
+        stepsQuery.initialResultsHandler = {query, results, error in
+            let today = Date()
+            
+            guard let endDate = calendar.date(byAdding: .day, value: HealthDataManager.startDate, to: today, wrappingComponents: false), let startDate = calendar.date(byAdding: .day, value: HealthDataManager.endDate, to: endDate, wrappingComponents: false) else { return }
+            
+            if let myResults = results {
+                myResults.enumerateStatistics(from: startDate, to: endDate) { statistics, stop in
+                    
+                    if let quantity = statistics.sumQuantity() {
+                        let date = statistics.startDate
+                        let steps = quantity.doubleValue(for: HKUnit.count())
+                        print("\(date): steps = \(steps)")
+                        
+                        HealthDataManager.stepHistory.insert(steps, at: 0)
+                        HealthDataManager.dates.insert(date, at: 0)
+                    } else {
+                        let date = statistics.startDate
+                        let steps = 0.0
+                        print("\(date): steps = \(steps)")
+                        
+                        HealthDataManager.stepHistory.insert(steps, at: 0)
+                        HealthDataManager.dates.insert(date, at: 0)
+                    }
+                }
+                
+                DispatchQueue.main.async {
+                    completion(HealthDataManager.stepHistory[0])
+                }
+            }
+        }
+        HealthStore.store.execute(stepsQuery)
+    }
+    
+    func queryDistanceHistory() {
+        let type = HKQuantityType.quantityType(forIdentifier: .distanceWalkingRunning)!
+        let calendar = NSCalendar.current
+        let interval = NSDateComponents()
+        interval.day = 1
+        
+        var anchorComponents = calendar.dateComponents([.day, .month, .year], from: NSDate() as Date)
+        anchorComponents.hour = 0
+        let anchorDate = calendar.date(from: anchorComponents)
+        
+        // Define 1-day intervals starting from 0:00
+        let distanceQuery = HKStatisticsCollectionQuery(quantityType: type, quantitySamplePredicate: nil, options: .cumulativeSum, anchorDate: anchorDate!, intervalComponents: interval as DateComponents)
+        
+        // Set the results handler
+        distanceQuery.initialResultsHandler = {query, results, error in
+            let today = Date()
+            
+            guard let endDate = calendar.date(byAdding: .day, value: HealthDataManager.startDate, to: today, wrappingComponents: false), let startDate = calendar.date(byAdding: .day, value: HealthDataManager.endDate, to: endDate, wrappingComponents: false) else { return }
+            
+            if let myResults = results {
+                myResults.enumerateStatistics(from: startDate, to: endDate) { statistics, stop in
+                    
+                    if let sum = statistics.sumQuantity() {
+                        let distance = sum.doubleValue(for: HKUnit.meter())
+                        HealthDataManager.distances.insert(distance, at: 0)
+                    } else {
+                        let distance = 0.0
+                        HealthDataManager.distances.insert(distance, at: 0)
+                    }
+                }
+            }
+        }
+        
+        HealthStore.store.execute(distanceQuery)
+    }
+    
     // MARK: IBActions
+    
+    @IBAction func nextTapped(_ sender: UIButton) {
+        if HealthDataManager.startDate < -1 {
+            HealthDataManager.startDate += 7
+            HealthDataManager.endDate += 7
+            
+            querySteps { [unowned self] (result) in
+                DispatchQueue.main.async {
+                    self.updateChart()
+                }
+            }
+            
+            queryDistanceHistory()
+        } else {
+            // earliest date is being shown
+            return
+        }
+    }
+    
+    
+    @IBAction func previousTapped(_ sender: UIButton) {
+        HealthDataManager.startDate -= 7
+        HealthDataManager.endDate -= 7
+        
+        querySteps { [unowned self] (result) in
+            DispatchQueue.main.async {
+                self.updateChart()
+            }
+        }
+        
+        queryDistanceHistory()
+    }
+    
     
     @IBAction func dismissTapped(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)

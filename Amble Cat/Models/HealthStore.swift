@@ -11,7 +11,9 @@ import HealthKit
 
 struct HealthStore {
     
-     public static let store = HKHealthStore()
+    public static let store = HKHealthStore()
+    
+    static let healthKitTypes: Set = [ HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)!, HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.distanceWalkingRunning)! ]
     
 }
 

@@ -71,14 +71,13 @@ class ViewController: UIViewController {
           loadCurrency()
           loadEquipment()
         
-          let healthKitTypes: Set = [ HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)!, HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.distanceWalkingRunning)! ]
-   
-          HealthStore.store.requestAuthorization(toShare: healthKitTypes, read: healthKitTypes) { [unowned self] (bool, error) in
-            if (bool) {
+          
+          HealthStore.store.requestAuthorization(toShare: HealthStore.healthKitTypes, read: HealthStore.healthKitTypes) { [unowned self] (bool, error) in
+          if (bool) {
                 self.getSteps { (result) in
                     DispatchQueue.main.async {
                         let stepCount = String(Int(result))
-                        self.stepsLabel.text = "\(stepCount) steps"
+                        self.stepsLabel.text = "\(stepCount)"
                     }
                 }
                 
@@ -88,7 +87,7 @@ class ViewController: UIViewController {
                         self.distanceLabel.text = "\(distance) meters"
                     }
                 }
-                
+           
                 self.querySteps { (result) in
                     DispatchQueue.main.async {
                         let steps = Int(result)
@@ -104,8 +103,8 @@ class ViewController: UIViewController {
                          }
                     }
                 }
-                
-                self.queryDistanceHistory()
+           
+               self.queryDistanceHistory()
             }
         }
           
@@ -293,7 +292,7 @@ class ViewController: UIViewController {
 			   print("total loaded")
              
           } catch let error as NSError {
-               //showAlert(title: "Could not retrieve data", message: "\(error.userInfo)")
+               showAlert(title: "Could not retrieve data", message: "\(error.userInfo)")
           }
      }
      
@@ -346,7 +345,7 @@ class ViewController: UIViewController {
                print("care loaded")
                
           } catch let error as NSError {
-               //showAlert(title: "Could not retrieve data", message: "\(error.userInfo)")
+               showAlert(title: "Could not retrieve data", message: "\(error.userInfo)")
           }
      }
      
@@ -368,7 +367,7 @@ class ViewController: UIViewController {
                     print("saved")
                } catch {
                     // this should never be displayed but is here to cover the possibility
-                    //showAlert(title: "Save failed", message: "Notice: Data has not successfully been saved.")
+                    showAlert(title: "Save failed", message: "Notice: Data has not successfully been saved.")
                }
                
                return
@@ -386,7 +385,7 @@ class ViewController: UIViewController {
                print("resave successful")
           } catch {
                // this should never be displayed but is here to cover the possibility
-               //showAlert(title: "Save failed", message: "Notice: Data has not successfully been saved.")
+               showAlert(title: "Save failed", message: "Notice: Data has not successfully been saved.")
           }
      }
      
@@ -413,7 +412,7 @@ class ViewController: UIViewController {
                     print("equipment loaded")
                }
           } catch let error as NSError {
-               // showAlert(title: "Could not retrieve data", message: "\(error.userInfo)")
+                showAlert(title: "Could not retrieve data", message: "\(error.userInfo)")
           }
           
           guard DecorManager.equipped != nil else {
@@ -448,7 +447,7 @@ class ViewController: UIViewController {
                     print("saved")
                } catch {
                     // this should never be displayed but is here to cover the possibility
-                    //showAlert(title: "Save failed", message: "Notice: Data has not successfully been saved.")
+                    showAlert(title: "Save failed", message: "Notice: Data has not successfully been saved.")
                }
           
                return
@@ -464,7 +463,7 @@ class ViewController: UIViewController {
                print("resave successful")
           } catch {
                // this should never be displayed but is here to cover the possibility
-               //showAlert(title: "Save failed", message: "Notice: Data has not successfully been saved.")
+               showAlert(title: "Save failed", message: "Notice: Data has not successfully been saved.")
           }
      }
     
@@ -480,6 +479,8 @@ class ViewController: UIViewController {
             return false
           }
      }
+     
+     // MARK: Healthkit
     
      func getSteps(completion: @escaping (Double) -> Void) {
         let type = HKQuantityType.quantityType(forIdentifier: .stepCount)!

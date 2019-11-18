@@ -69,7 +69,7 @@ class StoreViewController: UIViewController, UICollectionViewDelegate, UICollect
                 print("resave successful")
             } catch {
                 // this should never be displayed but is here to cover the possibility
-                //showAlert(title: "Save failed", message: "Notice: Data has not successfully been saved.")
+                showAlert(title: "Save failed", message: "Notice: Data has not successfully been saved.")
             }
         } else {
             print("currency loaded is nil")
@@ -89,7 +89,7 @@ class StoreViewController: UIViewController, UICollectionViewDelegate, UICollect
                 Purchases.purchaseStatus[purchase.id] = purchase.isPurchased
             }
         } catch let error as NSError {
-           // showAlert(title: "Could not retrieve data", message: "\(error.userInfo)")
+            showAlert(title: "Could not retrieve data", message: "\(error.userInfo)")
         }
         
         StoreInventory.unpurchased.removeAll()
@@ -121,7 +121,7 @@ class StoreViewController: UIViewController, UICollectionViewDelegate, UICollect
             print("saved")
         } catch {
             // this should never be displayed but is here to cover the possibility
-            //showAlert(title: "Save failed", message: "Notice: Data has not successfully been saved.")
+            showAlert(title: "Save failed", message: "Notice: Data has not successfully been saved.")
         }
         
         StoreInventory.unpurchased.removeAll()

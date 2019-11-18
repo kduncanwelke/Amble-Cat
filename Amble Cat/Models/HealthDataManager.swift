@@ -14,4 +14,13 @@ struct HealthDataManager {
     static var dates: [Date] = []
     static var distances: [Double] = []
     
+    static var startDate = -1
+    static var endDate = -6
+}
+
+
+struct GraphManager {
+    
+    static var startIndex = 0
+    static var endIndex = 6
 }
