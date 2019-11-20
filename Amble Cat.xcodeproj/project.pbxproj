@@ -19,6 +19,11 @@
 		2D7146D2235BBE440064B576 /* StoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7146D1235BBE440064B576 /* StoreViewController.swift */; };
 		2D7146D4235BBF130064B576 /* StoreCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7146D3235BBF130064B576 /* StoreCollectionViewCell.swift */; };
 		2DA559602360FE50006B3B9D /* PurchaseState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA5595F2360FE50006B3B9D /* PurchaseState.swift */; };
+		2DC80B862384A932006841AE /* PawShopTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC80B852384A932006841AE /* PawShopTableViewCell.swift */; };
+		2DC80B882384AC62006841AE /* PawShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC80B872384AC62006841AE /* PawShopViewController.swift */; };
+		2DC80B8A2384ADDF006841AE /* StoreObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC80B892384ADDF006841AE /* StoreObserver.swift */; };
+		2DC80B8C2384AF23006841AE /* Products.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC80B8B2384AF23006841AE /* Products.swift */; };
+		2DC80B922384B314006841AE /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DC80B912384B314006841AE /* StoreKit.framework */; };
 		2DDE569523809B9800398454 /* CareState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DDE569423809B9800398454 /* CareState.swift */; };
 		2DE860E923552B3B00227A86 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE860E823552B3B00227A86 /* AppDelegate.swift */; };
 		2DE860EB23552B3B00227A86 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE860EA23552B3B00227A86 /* SceneDelegate.swift */; };
@@ -65,6 +70,11 @@
 		2D7146D1235BBE440064B576 /* StoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreViewController.swift; sourceTree = "<group>"; };
 		2D7146D3235BBF130064B576 /* StoreCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreCollectionViewCell.swift; sourceTree = "<group>"; };
 		2DA5595F2360FE50006B3B9D /* PurchaseState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseState.swift; sourceTree = "<group>"; };
+		2DC80B852384A932006841AE /* PawShopTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PawShopTableViewCell.swift; sourceTree = "<group>"; };
+		2DC80B872384AC62006841AE /* PawShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PawShopViewController.swift; sourceTree = "<group>"; };
+		2DC80B892384ADDF006841AE /* StoreObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreObserver.swift; sourceTree = "<group>"; };
+		2DC80B8B2384AF23006841AE /* Products.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Products.swift; sourceTree = "<group>"; };
+		2DC80B912384B314006841AE /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		2DDE569423809B9800398454 /* CareState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareState.swift; sourceTree = "<group>"; };
 		2DE860E523552B3B00227A86 /* Amble Cat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Amble Cat.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DE860E823552B3B00227A86 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -93,6 +103,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DC80B922384B314006841AE /* StoreKit.framework in Frameworks */,
 				2DE8611C23552CAA00227A86 /* HealthKit.framework in Frameworks */,
 				2DE8611E23552CF200227A86 /* Charts.framework in Frameworks */,
 			);
@@ -122,6 +133,44 @@
 				2D6FCA84235A169500560CB2 /* Data.xcdatamodeld */,
 			);
 			path = "Core Data";
+			sourceTree = "<group>";
+		};
+		2DC80B8D2384AF58006841AE /* HealthKit */ = {
+			isa = PBXGroup;
+			children = (
+				2DE904D1235639DE0036C08A /* HealthDataManager.swift */,
+				2DE904D423563C710036C08A /* HealthStore.swift */,
+			);
+			path = HealthKit;
+			sourceTree = "<group>";
+		};
+		2DC80B8E2384AF67006841AE /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				2D6FCA8C235A596100560CB2 /* Timer.swift */,
+				2D3583C0237CC1F3005A6C56 /* AnimationManager.swift */,
+			);
+			path = Animation;
+			sourceTree = "<group>";
+		};
+		2DC80B8F2384AF7E006841AE /* Decor Shop */ = {
+			isa = PBXGroup;
+			children = (
+				2D7146CD235BB6BB0064B576 /* StoreItem.swift */,
+				2D7146CF235BB8560064B576 /* StoreInventory.swift */,
+				2DA5595F2360FE50006B3B9D /* PurchaseState.swift */,
+				2D0C3CFA2363A7E300EA064A /* DecorManager.swift */,
+			);
+			path = "Decor Shop";
+			sourceTree = "<group>";
+		};
+		2DC80B902384AF96006841AE /* Purchases */ = {
+			isa = PBXGroup;
+			children = (
+				2DC80B892384ADDF006841AE /* StoreObserver.swift */,
+				2DC80B8B2384AF23006841AE /* Products.swift */,
+			);
+			path = Purchases;
 			sourceTree = "<group>";
 		};
 		2DE860DC23552B3B00227A86 = {
@@ -184,6 +233,7 @@
 		2DE8611A23552CAA00227A86 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2DC80B912384B314006841AE /* StoreKit.framework */,
 				2DE8611D23552CF200227A86 /* Charts.framework */,
 				2DE8611B23552CAA00227A86 /* HealthKit.framework */,
 			);
@@ -197,6 +247,8 @@
 				2D7146D1235BBE440064B576 /* StoreViewController.swift */,
 				2D7146D3235BBF130064B576 /* StoreCollectionViewCell.swift */,
 				2DE904CF235638790036C08A /* StatisticsViewController.swift */,
+				2DC80B872384AC62006841AE /* PawShopViewController.swift */,
+				2DC80B852384A932006841AE /* PawShopTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -204,16 +256,12 @@
 		2DE904D3235639F30036C08A /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				2DE904D1235639DE0036C08A /* HealthDataManager.swift */,
-				2D6FCA8C235A596100560CB2 /* Timer.swift */,
-				2DE904D423563C710036C08A /* HealthStore.swift */,
+				2DC80B8D2384AF58006841AE /* HealthKit */,
+				2DC80B8E2384AF67006841AE /* Animation */,
 				2D6FCA87235A1D7500560CB2 /* Currency.swift */,
 				2DDE569423809B9800398454 /* CareState.swift */,
-				2D7146CD235BB6BB0064B576 /* StoreItem.swift */,
-				2D7146CF235BB8560064B576 /* StoreInventory.swift */,
-				2DA5595F2360FE50006B3B9D /* PurchaseState.swift */,
-				2D0C3CFA2363A7E300EA064A /* DecorManager.swift */,
-				2D3583C0237CC1F3005A6C56 /* AnimationManager.swift */,
+				2DC80B8F2384AF7E006841AE /* Decor Shop */,
+				2DC80B902384AF96006841AE /* Purchases */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -382,14 +430,18 @@
 				2D3583C1237CC1F3005A6C56 /* AnimationManager.swift in Sources */,
 				2DE860E923552B3B00227A86 /* AppDelegate.swift in Sources */,
 				2D6FCA8D235A596100560CB2 /* Timer.swift in Sources */,
+				2DC80B882384AC62006841AE /* PawShopViewController.swift in Sources */,
+				2DC80B8C2384AF23006841AE /* Products.swift in Sources */,
 				2DE904D2235639DE0036C08A /* HealthDataManager.swift in Sources */,
 				2D7146D2235BBE440064B576 /* StoreViewController.swift in Sources */,
 				2D6FCA88235A1D7500560CB2 /* Currency.swift in Sources */,
 				2DE860EB23552B3B00227A86 /* SceneDelegate.swift in Sources */,
+				2DC80B8A2384ADDF006841AE /* StoreObserver.swift in Sources */,
 				2D6FCA8A235A1DFC00560CB2 /* CoreDataManager.swift in Sources */,
 				2D6FCA86235A169500560CB2 /* Data.xcdatamodeld in Sources */,
 				2D3E67E4236C9D3B00A80612 /* Extensions.swift in Sources */,
 				2DE904D0235638790036C08A /* StatisticsViewController.swift in Sources */,
+				2DC80B862384A932006841AE /* PawShopTableViewCell.swift in Sources */,
 				2D7146CE235BB6BB0064B576 /* StoreItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -575,7 +627,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.kduncan-welke.Amble-Cat";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kduncan-welke.AmbleCat";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

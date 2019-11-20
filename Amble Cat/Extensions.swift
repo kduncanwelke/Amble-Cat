@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import StoreKit
 
 extension UIViewController {
     func showAlert(title: String, message: String) {
@@ -51,5 +52,15 @@ extension UIView {
                 self.transform = CGAffineTransform.identity
             }
         })
+    }
+}
+
+extension SKProduct {
+    // cost of the product formatted in the local currency.
+    var regularPrice: String? {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currency
+        formatter.locale = self.priceLocale
+        return formatter.string(from: self.price)
     }
 }

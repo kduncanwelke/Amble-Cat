@@ -313,7 +313,7 @@ class ViewController: UIViewController {
                                    CareState.daysCaredFor = 0
                               } else {
                                    // otherwise add care days
-                                   CareState.daysCaredFor = result.daysOfConsecutiveCare + 1
+                                   //CareState.daysCaredFor = result.daysOfConsecutiveCare + 1
                               }
                          } else {
                               print("zero")
@@ -685,7 +685,10 @@ class ViewController: UIViewController {
           performSegue(withIdentifier: "goToStore", sender: Any?.self)
      }
      
-    
+     @IBAction func pointShopPressed(_ sender: UIButton) {
+          performSegue(withIdentifier: "goToPointShop", sender: Any?.self)
+     }
+     
      @IBAction func collectButtonTapped(_ sender: UIButton) {
           dimView.isHidden = true
           self.view.sendSubviewToBack(collectView)
