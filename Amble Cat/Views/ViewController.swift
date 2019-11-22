@@ -63,6 +63,8 @@ class ViewController: UIViewController {
           
           NotificationCenter.default.addObserver(self, selector: #selector(refreshView), name: NSNotification.Name(rawValue: "refreshView"), object: nil)
           
+           NotificationCenter.default.addObserver(self, selector: #selector(addPurchasedCurrency), name: NSNotification.Name(rawValue: "addPurchasedCurrency"), object: nil)
+          
           
           currentsBackground.layer.cornerRadius = 20
           collectView.layer.cornerRadius = 20
@@ -96,8 +98,7 @@ class ViewController: UIViewController {
                          if self.isSameDay() == false && steps >= 1000 {
                               self.dimView.isHidden = false
                               let thousands = Int(steps / 1000)
-                              self.earned = 10 * thousands
-                              //self.earned = 200
+                              Currency.toAdd = 10 * thousands
                               self.view.bringSubviewToFront(self.collectView)
                               self.collectText.text = "You earned \(self.earned) Paw Points for walking \(steps) steps yesterday!"
                          }
@@ -112,6 +113,10 @@ class ViewController: UIViewController {
     }
 	
      // MARK: Custom functions
+     
+     @objc func addPurchasedCurrency() {
+          addCurrency(with: Currency.toAdd)
+     }
      
      func isSameDay() -> Bool {
           let date = Date()
@@ -450,6 +455,7 @@ class ViewController: UIViewController {
                     showAlert(title: "Save failed", message: "Notice: Data has not successfully been saved.")
                }
           
+               Currency.toAdd = 0
                return
           }
          
@@ -457,7 +463,8 @@ class ViewController: UIViewController {
           let newTotal = Currency.userTotal + amount
           Currency.userTotal = newTotal
           currentCurrency.total = Int64(newTotal)
-         
+          Currency.toAdd = 0
+          
           do {
                try managedContext.save()
                print("resave successful")
@@ -692,7 +699,7 @@ class ViewController: UIViewController {
      @IBAction func collectButtonTapped(_ sender: UIButton) {
           dimView.isHidden = true
           self.view.sendSubviewToBack(collectView)
-          addCurrency(with: earned)
+          addCurrency(with: Currency.toAdd)
           pointsLabel.text = "\(Currency.userTotal) Paw Points"
           loadCurrency()
      }

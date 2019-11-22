@@ -10,4 +10,9 @@ import Foundation
 
 struct Products {
     public static let oneHundredPoints = "AmbleCat_100Points"
+    
+    public static let productQuantities = [
+        "AmbleCat_100Points" : 100
+    ]
 }
+

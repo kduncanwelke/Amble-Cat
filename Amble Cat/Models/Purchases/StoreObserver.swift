@@ -30,13 +30,11 @@ class StoreObserver: NSObject, SKPaymentTransactionObserver {
                 print("deferred")
             // The purchase was successful.
             case .purchased:
-                if !transaction.downloads.isEmpty {
-                    queue.start(transaction.downloads)
-                }
+                complete(transaction: transaction)
                 print("purchase succeeded")
             // The transaction failed.
             case .failed:
-                queue.finishTransaction(transaction)
+                fail(transaction: transaction)
                 print("failed")
             // There are restored products.
             case .restored:
@@ -77,6 +75,22 @@ class StoreObserver: NSObject, SKPaymentTransactionObserver {
     func buy(_ product: SKProduct) {
         let payment = SKMutablePayment(product: product)
         SKPaymentQueue.default().add(payment)
+    }
+    
+    private func complete(transaction: SKPaymentTransaction) {
+        print("complete...")
+        SKPaymentQueue.default().finishTransaction(transaction)
+    }
+    
+    private func fail(transaction: SKPaymentTransaction) {
+        print("fail...")
+        if let transactionError = transaction.error as NSError?,
+            let localizedDescription = transaction.error?.localizedDescription,
+            transactionError.code != SKError.paymentCancelled.rawValue {
+            print("Transaction Error: \(localizedDescription)")
+        }
+        
+        SKPaymentQueue.default().finishTransaction(transaction)
     }
     
     // do not need?

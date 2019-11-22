@@ -15,7 +15,7 @@ class PawShopTableViewCell: UITableViewCell {
     @IBOutlet weak var picture: UIImageView!
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var details: UILabel!
-    @IBOutlet weak var button: UIButton!
+    @IBOutlet weak var price: UILabel!
     
     
     override func awakeFromNib() {
@@ -27,10 +27,5 @@ class PawShopTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
-    }
-
-    // MARK: IBActions
-    
-    @IBAction func purchaseTapped(_ sender: UIButton) {
     }
 }

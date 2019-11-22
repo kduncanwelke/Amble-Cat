@@ -12,4 +12,5 @@ struct Currency {
     
     static var userTotal = 0
     static var loaded: Points?
+    static var toAdd = 0
 }

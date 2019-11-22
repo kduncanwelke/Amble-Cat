@@ -1,0 +1,24 @@
+PODS:
+  - Charts (3.4.0):
+    - Charts/Core (= 3.4.0)
+  - Charts/Core (3.4.0)
+  - OpenSSL-Universal (1.0.2.19):
+    - OpenSSL-Universal/Static (= 1.0.2.19)
+  - OpenSSL-Universal/Static (1.0.2.19)
+
+DEPENDENCIES:
+  - Charts
+  - OpenSSL-Universal
+
+SPEC REPOS:
+  trunk:
+    - Charts
+    - OpenSSL-Universal
+
+SPEC CHECKSUMS:
+  Charts: 74c9f256eaf0460c0c416522d1cf8c634ea6b286
+  OpenSSL-Universal: 8b48cc0d10c1b2923617dfe5c178aa9ed2689355
+
+PODFILE CHECKSUM: 769091b3a2a66412e15f51844f8bc94a78d96f76
+
+COCOAPODS: 1.8.4

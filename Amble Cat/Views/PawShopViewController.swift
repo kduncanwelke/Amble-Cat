@@ -9,6 +9,7 @@
 import UIKit
 import StoreKit
 
+
 class PawShopViewController: UIViewController, UITableViewDelegate {
 
     // MARK: IBOutlets
@@ -16,13 +17,13 @@ class PawShopViewController: UIViewController, UITableViewDelegate {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var pawPointTotal: UILabel!
     
-    
     // MARK: Variables
     
     var request: SKProductsRequest!
     var products = [SKProduct]()
     var hasLoaded = false
-    var fake = ["thing"]
+    var receipt: Receipt?
+    var pawPoints = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,12 +33,87 @@ class PawShopViewController: UIViewController, UITableViewDelegate {
         tableView.delegate = self
         tableView.tableFooterView = UIView()
         
+        pawPointTotal.text = "\(Currency.userTotal)"
+        
         getProducts()
         
+        if Receipt.isReceiptPresent() {
+            validateReceipt()
+        } else {
+            refreshReceipt()
+        }
     }
     
 
     // MARK: Custom functions
+    
+    func refreshReceipt() {
+      //  verificationStatus.text = "Requesting refresh of receipt."
+       // verificationStatus.textColor = .green
+        print("Requesting refresh of receipt.")
+        let refreshRequest = SKReceiptRefreshRequest()
+        refreshRequest.delegate = self
+        refreshRequest.start()
+    }
+    
+    func validateReceipt() {
+       // verificationStatus.text = "Validating Receipt..."
+       // verificationStatus.textColor = .green
+        
+        receipt = Receipt()
+        if let receiptStatus = receipt?.receiptStatus {
+        //    verificationStatus.text = receiptStatus.rawValue
+            guard receiptStatus == .validationSuccess else {
+                // If verification didn't succeed, then show status in red and clear other fields
+         //       verificationStatus.textColor = .red
+           //     bundleIdentifier.text = ""
+             //   bundleVersion.text = ""
+               // expirationDate.text = ""
+                //originalAppVersion.text = ""
+                //receiptCreationDate.text = ""
+                print(receiptStatus)
+                print("not valid")
+                return
+            }
+            
+            print("valid")
+            print(receipt?.inAppReceipts.first?.productIdentifier)
+            DispatchQueue.main.async {
+                Currency.toAdd = self.pawPoints
+                print(self.pawPoints)
+                
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "addPurchasedCurrency"), object: nil)
+                
+                self.pawPointTotal.text = "\(Currency.userTotal)"
+                
+            }
+            
+            // If verification succeed, we show information contained in the receipt
+          //  verificationStatus.textColor = .green
+           // bundleIdentifier.text = "Bundle Identifier: \(receipt!.bundleIdString!)"
+            //bundleVersion.text = "Bundle Version: \(receipt!.bundleVersionString!)"
+            
+          /*  if let originalVersion = receipt?.originalAppVersion {
+                originalAppVersion.text = "Original Version: \(originalVersion)"
+            } else {
+                originalAppVersion.text = "Not Provided"
+            }
+            
+            if let receiptExpirationDate = receipt?.expirationDate {
+                expirationDate.text = "Expiration Date: \(formatDateForUI(receiptExpirationDate))"
+            } else {
+                expirationDate.text = "Not Provided."
+            }
+            
+            if let receiptCreation = receipt?.receiptCreationDate {
+                receiptCreationDate.text = "Receipt Creation Date: \(formatDateForUI(receiptCreation))"
+            } else {
+                receiptCreationDate.text = "Not Provided."
+            }*/
+            
+            
+        }
+    }
     
     func getProducts() {
         var isAuthorizedForPayments: Bool {
@@ -92,9 +168,28 @@ extension PawShopViewController: UITableViewDataSource {
         item = products[indexPath.row]
         
         cell.title.text = item.localizedTitle
-        cell.details.text = "\(item.price)"
+        cell.price.text = "\(item.price)"
+        cell.details.text = item.localizedDescription
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // purchase item
+        tableView.cellForRow(at: indexPath)?.animatePress {
+        }
+        
+        let isAuthorizedForPayments = SKPaymentQueue.canMakePayments()
+        
+        if isAuthorizedForPayments && !products.isEmpty {
+            StoreObserver.iapObserver.buy(products[indexPath.row])
+            
+            guard let points = Products.productQuantities[products[indexPath.row].productIdentifier] else { return }
+            
+            pawPoints = points
+        } else {
+            showAlert(title: "Payments not authorized", message: "This device is not permitted to process payments")
+        }
     }
 }
 
@@ -121,5 +216,12 @@ extension PawShopViewController: SKProductsRequestDelegate {
     func request(_ request: SKRequest, didFailWithError error: Error) {
         print("Failed to load list of products.")
         print("Error: \(error.localizedDescription)")
+    }
+    
+    func requestDidFinish(_ request: SKRequest) {
+        if Receipt.isReceiptPresent() {
+            print("Verifying newly refreshed receipt.")
+            validateReceipt()
+        }
     }
 }
