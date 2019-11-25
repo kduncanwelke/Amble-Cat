@@ -29,6 +29,8 @@ class PawShopViewController: UIViewController, UITableViewDelegate {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        NotificationCenter.default.addObserver(self, selector: #selector(updatePoints), name: NSNotification.Name(rawValue: "updatePoints"), object: nil)
+        
         tableView.dataSource = self
         tableView.delegate = self
         tableView.tableFooterView = UIView()
@@ -39,13 +41,26 @@ class PawShopViewController: UIViewController, UITableViewDelegate {
         
         if Receipt.isReceiptPresent() {
             validateReceipt()
+            print("validate on load")
         } else {
             refreshReceipt()
+            print("refresh on load")
         }
     }
     
 
     // MARK: Custom functions
+    
+    @objc func updatePoints() {
+        Currency.toAdd = pawPoints
+        print(pawPoints)
+        
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "addPurchasedCurrency"), object: nil)
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "refreshPoints"), object: nil)
+        
+        pawPointTotal.text = "\(Currency.userTotal)"
+        pawPoints = 0
+    }
     
     func refreshReceipt() {
       //  verificationStatus.text = "Requesting refresh of receipt."
@@ -57,20 +72,10 @@ class PawShopViewController: UIViewController, UITableViewDelegate {
     }
     
     func validateReceipt() {
-       // verificationStatus.text = "Validating Receipt..."
-       // verificationStatus.textColor = .green
-        
         receipt = Receipt()
         if let receiptStatus = receipt?.receiptStatus {
         //    verificationStatus.text = receiptStatus.rawValue
             guard receiptStatus == .validationSuccess else {
-                // If verification didn't succeed, then show status in red and clear other fields
-         //       verificationStatus.textColor = .red
-           //     bundleIdentifier.text = ""
-             //   bundleVersion.text = ""
-               // expirationDate.text = ""
-                //originalAppVersion.text = ""
-                //receiptCreationDate.text = ""
                 print(receiptStatus)
                 print("not valid")
                 return
@@ -78,40 +83,6 @@ class PawShopViewController: UIViewController, UITableViewDelegate {
             
             print("valid")
             print(receipt?.inAppReceipts.first?.productIdentifier)
-            DispatchQueue.main.async {
-                Currency.toAdd = self.pawPoints
-                print(self.pawPoints)
-                
-                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "addPurchasedCurrency"), object: nil)
-                
-                self.pawPointTotal.text = "\(Currency.userTotal)"
-                
-            }
-            
-            // If verification succeed, we show information contained in the receipt
-          //  verificationStatus.textColor = .green
-           // bundleIdentifier.text = "Bundle Identifier: \(receipt!.bundleIdString!)"
-            //bundleVersion.text = "Bundle Version: \(receipt!.bundleVersionString!)"
-            
-          /*  if let originalVersion = receipt?.originalAppVersion {
-                originalAppVersion.text = "Original Version: \(originalVersion)"
-            } else {
-                originalAppVersion.text = "Not Provided"
-            }
-            
-            if let receiptExpirationDate = receipt?.expirationDate {
-                expirationDate.text = "Expiration Date: \(formatDateForUI(receiptExpirationDate))"
-            } else {
-                expirationDate.text = "Not Provided."
-            }
-            
-            if let receiptCreation = receipt?.receiptCreationDate {
-                receiptCreationDate.text = "Receipt Creation Date: \(formatDateForUI(receiptCreation))"
-            } else {
-                receiptCreationDate.text = "Not Provided."
-            }*/
-            
-            
         }
     }
     

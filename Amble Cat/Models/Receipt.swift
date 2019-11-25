@@ -189,11 +189,7 @@ class Receipt {
     }
     
     private func validateSigning(_ receipt: UnsafeMutablePointer<PKCS7>?) -> Bool {
-        guard
-            let rootCertUrl = Bundle.main
-                .url(forResource: "AppleIncRootCertificate", withExtension: "cer"),
-            let rootCertData = try? Data(contentsOf: rootCertUrl)
-            else {
+        guard let rootCertUrl = Bundle.main.url(forResource: "AppleIncRootCertificate", withExtension: "cer"), let rootCertData = try? Data(contentsOf: rootCertUrl) else {
                 receiptStatus = .invalidAppleRootCertificate
                 return false
         }
@@ -210,6 +206,7 @@ class Receipt {
         //OPENSSL_init_crypto(UInt64(OPENSSL_INIT_ADD_ALL_DIGESTS), nil)
 
         let verificationResult = PKCS7_verify(receipt, nil, store, nil, nil, 0)
+        print("\(verificationResult)")
         guard verificationResult == 1  else {
             receiptStatus = .failedAppleSignature
             return false

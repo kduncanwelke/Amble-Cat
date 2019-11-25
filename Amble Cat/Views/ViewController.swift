@@ -63,7 +63,7 @@ class ViewController: UIViewController {
           
           NotificationCenter.default.addObserver(self, selector: #selector(refreshView), name: NSNotification.Name(rawValue: "refreshView"), object: nil)
           
-           NotificationCenter.default.addObserver(self, selector: #selector(addPurchasedCurrency), name: NSNotification.Name(rawValue: "addPurchasedCurrency"), object: nil)
+          NotificationCenter.default.addObserver(self, selector: #selector(addPurchasedCurrency), name: NSNotification.Name(rawValue: "addPurchasedCurrency"), object: nil)
           
           
           currentsBackground.layer.cornerRadius = 20
@@ -317,20 +317,18 @@ class ViewController: UIViewController {
                               if result.daysOfConsecutiveCare == 7 {
                                    CareState.daysCaredFor = 0
                               } else {
-                                   // otherwise add care days
-                                   //CareState.daysCaredFor = result.daysOfConsecutiveCare + 1
+                                   // otherwise don't reset
                               }
                          } else {
                               print("zero")
                               // save doesn't show care for previous day, so reset value
                               CareState.daysCaredFor = 0
+                              CareState.care = result
+                              CareState.hasBeenFed = false
+                              CareState.hasBeenWatered = false
                          }
-                         
-                         CareState.care = result
-                         CareState.hasBeenFed = false
-                         CareState.hasBeenWatered = false
                     } else {
-                         // same day, don't change consecutive care fays
+                         // same day, don't change consecutive care days
                          CareState.care = result
                          CareState.hasBeenFed = result.hasBeenFed
                          CareState.hasBeenWatered = result.hasBeenWatered

@@ -24,6 +24,7 @@
 		2D7146D2235BBE440064B576 /* StoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7146D1235BBE440064B576 /* StoreViewController.swift */; };
 		2D7146D4235BBF130064B576 /* StoreCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7146D3235BBF130064B576 /* StoreCollectionViewCell.swift */; };
 		2DA559602360FE50006B3B9D /* PurchaseState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA5595F2360FE50006B3B9D /* PurchaseState.swift */; };
+		2DB0EB07238C8EF5003CBCB7 /* AppleIncRootCertificate.cer in Resources */ = {isa = PBXBuildFile; fileRef = 2DB0EB06238C8EF5003CBCB7 /* AppleIncRootCertificate.cer */; };
 		2DC80B862384A932006841AE /* PawShopTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC80B852384A932006841AE /* PawShopTableViewCell.swift */; };
 		2DC80B882384AC62006841AE /* PawShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC80B872384AC62006841AE /* PawShopViewController.swift */; };
 		2DC80B8A2384ADDF006841AE /* StoreObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC80B892384ADDF006841AE /* StoreObserver.swift */; };
@@ -86,6 +87,7 @@
 		2D7146D1235BBE440064B576 /* StoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreViewController.swift; sourceTree = "<group>"; };
 		2D7146D3235BBF130064B576 /* StoreCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreCollectionViewCell.swift; sourceTree = "<group>"; };
 		2DA5595F2360FE50006B3B9D /* PurchaseState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseState.swift; sourceTree = "<group>"; };
+		2DB0EB06238C8EF5003CBCB7 /* AppleIncRootCertificate.cer */ = {isa = PBXFileReference; lastKnownFileType = file; name = AppleIncRootCertificate.cer; path = ../../../../../../Downloads/AppleIncRootCertificate.cer; sourceTree = "<group>"; };
 		2DC80B852384A932006841AE /* PawShopTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PawShopTableViewCell.swift; sourceTree = "<group>"; };
 		2DC80B872384AC62006841AE /* PawShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PawShopViewController.swift; sourceTree = "<group>"; };
 		2DC80B892384ADDF006841AE /* StoreObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreObserver.swift; sourceTree = "<group>"; };
@@ -238,6 +240,7 @@
 			children = (
 				2DE8611923552CAA00227A86 /* Amble CatDebug.entitlements */,
 				2DE860E823552B3B00227A86 /* AppDelegate.swift */,
+				2DB0EB06238C8EF5003CBCB7 /* AppleIncRootCertificate.cer */,
 				2DE860EA23552B3B00227A86 /* SceneDelegate.swift */,
 				2DE904D3235639F30036C08A /* Models */,
 				2DE904CE23562CD90036C08A /* Views */,
@@ -424,6 +427,7 @@
 			files = (
 				2DE860F523552B3C00227A86 /* LaunchScreen.storyboard in Resources */,
 				2DE860F223552B3C00227A86 /* Assets.xcassets in Resources */,
+				2DB0EB07238C8EF5003CBCB7 /* AppleIncRootCertificate.cer in Resources */,
 				2DE860F023552B3B00227A86 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

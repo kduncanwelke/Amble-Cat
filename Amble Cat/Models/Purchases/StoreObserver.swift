@@ -32,6 +32,7 @@ class StoreObserver: NSObject, SKPaymentTransactionObserver {
             case .purchased:
                 complete(transaction: transaction)
                 print("purchase succeeded")
+                 NotificationCenter.default.post(name: NSNotification.Name(rawValue: "updatePoints"), object: nil)
             // The transaction failed.
             case .failed:
                 fail(transaction: transaction)
@@ -44,30 +45,6 @@ class StoreObserver: NSObject, SKPaymentTransactionObserver {
                 print("restored")
             default:
                 break
-            }
-        }
-    }
-    
-    func paymentQueue(_ queue: SKPaymentQueue, updatedDownloads downloads: [SKDownload]) {
-        for download in downloads {
-            
-            if download == downloads.last {
-                StoreObserver.isComplete = true
-            }
-            
-            switch download.state {
-            case .active:
-                print("active")
-            case .cancelled:
-                print("cancelled")
-            case .failed:
-                print("failed")
-            case .paused:
-                print("paused")
-            case .waiting:
-                print("waiting")
-            case .finished:
-                print("finished")
             }
         }
     }
