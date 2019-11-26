@@ -32,7 +32,7 @@ class StoreObserver: NSObject, SKPaymentTransactionObserver {
             case .purchased:
                 complete(transaction: transaction)
                 print("purchase succeeded")
-                 NotificationCenter.default.post(name: NSNotification.Name(rawValue: "updatePoints"), object: nil)
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "updatePoints"), object: nil)
             // The transaction failed.
             case .failed:
                 fail(transaction: transaction)
@@ -69,10 +69,4 @@ class StoreObserver: NSObject, SKPaymentTransactionObserver {
         
         SKPaymentQueue.default().finishTransaction(transaction)
     }
-    
-    // do not need?
-    func restore() {
-        SKPaymentQueue.default().restoreCompletedTransactions()
-    }
-
 }

@@ -8,7 +8,7 @@
 
 import UIKit
 import StoreKit
-
+import Network
 
 class PawShopViewController: UIViewController, UITableViewDelegate {
 
@@ -39,17 +39,40 @@ class PawShopViewController: UIViewController, UITableViewDelegate {
         
         getProducts()
         
-        if Receipt.isReceiptPresent() {
-            validateReceipt()
-            print("validate on load")
-        } else {
-            refreshReceipt()
-            print("refresh on load")
+        NetworkMonitor.monitor.pathUpdateHandler = { [weak self] path in
+            if path.status == .satisfied {
+                print("connection successful")
+                NetworkMonitor.connection = true
+                
+                self?.networkRestored()
+                
+                if Receipt.isReceiptPresent() {
+                    self?.validateReceipt()
+                    print("validate on load")
+                } else {
+                    self?.refreshReceipt()
+                    print("refresh on load")
+                }
+            } else {
+                print("no connection")
+                NetworkMonitor.connection = false
+                
+                self?.showAlert(title: "Network Failed", message: "Purchases cannot be accessed - please check your network connection")
+            }
         }
+        
+        let queue = DispatchQueue(label: "Monitor")
+        NetworkMonitor.monitor.start(queue: queue)
     }
     
 
     // MARK: Custom functions
+    
+    func networkRestored() {
+        if products.isEmpty {
+            getProducts()
+        }
+    }
     
     @objc func updatePoints() {
         Currency.toAdd = pawPoints
@@ -63,8 +86,6 @@ class PawShopViewController: UIViewController, UITableViewDelegate {
     }
     
     func refreshReceipt() {
-      //  verificationStatus.text = "Requesting refresh of receipt."
-       // verificationStatus.textColor = .green
         print("Requesting refresh of receipt.")
         let refreshRequest = SKReceiptRefreshRequest()
         refreshRequest.delegate = self
@@ -74,15 +95,10 @@ class PawShopViewController: UIViewController, UITableViewDelegate {
     func validateReceipt() {
         receipt = Receipt()
         if let receiptStatus = receipt?.receiptStatus {
-        //    verificationStatus.text = receiptStatus.rawValue
             guard receiptStatus == .validationSuccess else {
                 print(receiptStatus)
-                print("not valid")
                 return
             }
-            
-            print("valid")
-            print(receipt?.inAppReceipts.first?.productIdentifier)
         }
     }
     
@@ -153,11 +169,15 @@ extension PawShopViewController: UITableViewDataSource {
         let isAuthorizedForPayments = SKPaymentQueue.canMakePayments()
         
         if isAuthorizedForPayments && !products.isEmpty {
-            StoreObserver.iapObserver.buy(products[indexPath.row])
-            
-            guard let points = Products.productQuantities[products[indexPath.row].productIdentifier] else { return }
-            
-            pawPoints = points
+            if NetworkMonitor.connection {
+                StoreObserver.iapObserver.buy(products[indexPath.row])
+                
+                guard let points = Products.productQuantities[products[indexPath.row].productIdentifier] else { return }
+                
+                pawPoints = points
+            } else {
+                return
+            }
         } else {
             showAlert(title: "Payments not authorized", message: "This device is not permitted to process payments")
         }
@@ -191,7 +211,6 @@ extension PawShopViewController: SKProductsRequestDelegate {
     
     func requestDidFinish(_ request: SKRequest) {
         if Receipt.isReceiptPresent() {
-            print("Verifying newly refreshed receipt.")
             validateReceipt()
         }
     }

@@ -203,8 +203,6 @@ class Receipt {
         let store = X509_STORE_new()
         X509_STORE_add_cert(store, rootCertX509)
         
-        //OPENSSL_init_crypto(UInt64(OPENSSL_INIT_ADD_ALL_DIGESTS), nil)
-
         let verificationResult = PKCS7_verify(receipt, nil, store, nil, nil, 0)
         print("\(verificationResult)")
         guard verificationResult == 1  else {

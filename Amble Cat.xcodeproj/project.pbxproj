@@ -23,6 +23,7 @@
 		2D7146D0235BB8560064B576 /* StoreInventory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7146CF235BB8560064B576 /* StoreInventory.swift */; };
 		2D7146D2235BBE440064B576 /* StoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7146D1235BBE440064B576 /* StoreViewController.swift */; };
 		2D7146D4235BBF130064B576 /* StoreCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7146D3235BBF130064B576 /* StoreCollectionViewCell.swift */; };
+		2DA2E41F238DD71700541771 /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA2E41E238DD71700541771 /* NetworkMonitor.swift */; };
 		2DA559602360FE50006B3B9D /* PurchaseState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA5595F2360FE50006B3B9D /* PurchaseState.swift */; };
 		2DB0EB07238C8EF5003CBCB7 /* AppleIncRootCertificate.cer in Resources */ = {isa = PBXBuildFile; fileRef = 2DB0EB06238C8EF5003CBCB7 /* AppleIncRootCertificate.cer */; };
 		2DC80B862384A932006841AE /* PawShopTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC80B852384A932006841AE /* PawShopTableViewCell.swift */; };
@@ -86,6 +87,7 @@
 		2D7146CF235BB8560064B576 /* StoreInventory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreInventory.swift; sourceTree = "<group>"; };
 		2D7146D1235BBE440064B576 /* StoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreViewController.swift; sourceTree = "<group>"; };
 		2D7146D3235BBF130064B576 /* StoreCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreCollectionViewCell.swift; sourceTree = "<group>"; };
+		2DA2E41E238DD71700541771 /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
 		2DA5595F2360FE50006B3B9D /* PurchaseState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseState.swift; sourceTree = "<group>"; };
 		2DB0EB06238C8EF5003CBCB7 /* AppleIncRootCertificate.cer */ = {isa = PBXFileReference; lastKnownFileType = file; name = AppleIncRootCertificate.cer; path = ../../../../../../Downloads/AppleIncRootCertificate.cer; sourceTree = "<group>"; };
 		2DC80B852384A932006841AE /* PawShopTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PawShopTableViewCell.swift; sourceTree = "<group>"; };
@@ -310,6 +312,7 @@
 				2DC80B8F2384AF7E006841AE /* Decor Shop */,
 				2DC80B902384AF96006841AE /* Purchases */,
 				2D064FAD2387193A00257315 /* Receipt.swift */,
+				2DA2E41E238DD71700541771 /* NetworkMonitor.swift */,
 				2D064FB323872EEC00257315 /* Helpers.swift */,
 				2D064FB123872A6B00257315 /* ReceiptItem.swift */,
 			);
@@ -563,6 +566,7 @@
 				2D7146D0235BB8560064B576 /* StoreInventory.swift in Sources */,
 				2D0C3CFB2363A7E300EA064A /* DecorManager.swift in Sources */,
 				2DDE569523809B9800398454 /* CareState.swift in Sources */,
+				2DA2E41F238DD71700541771 /* NetworkMonitor.swift in Sources */,
 				2D3583C1237CC1F3005A6C56 /* AnimationManager.swift in Sources */,
 				2DE860E923552B3B00227A86 /* AppDelegate.swift in Sources */,
 				2D6FCA8D235A596100560CB2 /* Timer.swift in Sources */,

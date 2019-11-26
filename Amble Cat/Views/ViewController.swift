@@ -50,7 +50,7 @@ class ViewController: UIViewController {
      // MARK: Variables
 
      let userDefaultDate = "userDefaultDate"
-     var earned = 200
+     var earned = 0
    
      override func viewDidLoad() {
           super.viewDidLoad()
@@ -69,6 +69,7 @@ class ViewController: UIViewController {
           currentsBackground.layer.cornerRadius = 20
           collectView.layer.cornerRadius = 20
           
+          updateCare()
           loadCareState()
           loadCurrency()
           loadEquipment()
@@ -95,7 +96,12 @@ class ViewController: UIViewController {
                         let steps = Int(result)
                         self.stepsYesterday.text = "\(steps) Steps Yesterday"
                        
-                         if self.isSameDay() == false && steps >= 1000 {
+                         let date = Date()
+                         let calendar = Calendar.current
+                         let dateToCompare = calendar.component(.day , from: date)
+                         let userDefaultDate = UserDefaults.standard.integer(forKey: "userDefaultDate")
+                         
+                         if userDefaultDate != dateToCompare && steps >= 1000 {
                               self.dimView.isHidden = false
                               let thousands = Int(steps / 1000)
                               Currency.toAdd = 10 * thousands
@@ -124,7 +130,7 @@ class ViewController: UIViewController {
           let dateToCompare = calendar.component(.day , from: date)
           
           let userDefaultDate = UserDefaults.standard.integer(forKey: "userDefaultDate")
-          
+         
           if userDefaultDate != dateToCompare {
                UserDefaults.standard.set(dateToCompare, forKey: self.userDefaultDate)
                return false
@@ -234,6 +240,9 @@ class ViewController: UIViewController {
      }
      
      func checkCareProgress() {
+          print("care progress")
+          print(CareState.hasBeenFed)
+          print(CareState.hasBeenWatered)
           if CareState.hasBeenFed && CareState.hasBeenWatered {
                CareState.daysCaredFor += 1
                
@@ -249,6 +258,7 @@ class ViewController: UIViewController {
      }
      
      func updateHearts() {
+          print(CareState.daysCaredFor)
           for heart in hearts {
                if heart.tag <= CareState.daysCaredFor {
                     heart.image = UIImage(named: "heart")
@@ -318,16 +328,24 @@ class ViewController: UIViewController {
                                    CareState.daysCaredFor = 0
                               } else {
                                    // otherwise don't reset
+                                   CareState.daysCaredFor = result.daysOfConsecutiveCare
                               }
-                         } else {
+                         } else if result.hasBeenFed == false && result.hasBeenWatered == false {
                               print("zero")
                               // save doesn't show care for previous day, so reset value
                               CareState.daysCaredFor = 0
                               CareState.care = result
                               CareState.hasBeenFed = false
                               CareState.hasBeenWatered = false
+                         } else if result.hasBeenFed {
+                              CareState.hasBeenFed = true
+                              print("fed")
+                         } else if result.hasBeenWatered {
+                              CareState.hasBeenWatered = true
+                              print("watered")
                          }
                     } else {
+                         print("same day")
                          // same day, don't change consecutive care days
                          CareState.care = result
                          CareState.hasBeenFed = result.hasBeenFed
@@ -664,7 +682,6 @@ class ViewController: UIViewController {
                
                checkCareProgress()
                updateCare()
-               loadCareState()
           }
      }
      
@@ -678,7 +695,6 @@ class ViewController: UIViewController {
                
                checkCareProgress()
                updateCare()
-               loadCareState()
           }
      }
      
