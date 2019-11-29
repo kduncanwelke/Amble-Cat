@@ -211,6 +211,9 @@
 			children = (
 				2DC80B892384ADDF006841AE /* StoreObserver.swift */,
 				2DC80B8B2384AF23006841AE /* Products.swift */,
+				2D064FAD2387193A00257315 /* Receipt.swift */,
+				2D064FB323872EEC00257315 /* Helpers.swift */,
+				2D064FB123872A6B00257315 /* ReceiptItem.swift */,
 			);
 			path = Purchases;
 			sourceTree = "<group>";
@@ -311,10 +314,7 @@
 				2DDE569423809B9800398454 /* CareState.swift */,
 				2DC80B8F2384AF7E006841AE /* Decor Shop */,
 				2DC80B902384AF96006841AE /* Purchases */,
-				2D064FAD2387193A00257315 /* Receipt.swift */,
 				2DA2E41E238DD71700541771 /* NetworkMonitor.swift */,
-				2D064FB323872EEC00257315 /* Helpers.swift */,
-				2D064FB123872A6B00257315 /* ReceiptItem.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";

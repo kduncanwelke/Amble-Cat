@@ -94,7 +94,7 @@ class PawShopViewController: UIViewController, UITableViewDelegate {
     
     func validateReceipt() {
         receipt = Receipt()
-        if let receiptStatus = receipt?.receiptStatus {
+        if let receiptStatus = receipt?.status {
             guard receiptStatus == .validationSuccess else {
                 print(receiptStatus)
                 return

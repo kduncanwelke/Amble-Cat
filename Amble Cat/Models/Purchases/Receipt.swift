@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-enum ReceiptStatus: String {
+enum Status: String {
     case validationSuccess = "This receipt is valid."
     case noReceiptPresent = "A receipt was not found on this device."
     case unknownFailure = "An unexpected failure occurred during verification."
@@ -27,7 +27,7 @@ enum ReceiptStatus: String {
 }
 
 class Receipt {
-    var receiptStatus: ReceiptStatus?
+    var status: Status?
     var bundleIdString: String?
     var bundleVersionString: String?
     var bundleIdData: Data?
@@ -49,27 +49,20 @@ class Receipt {
     }
     
     init() {
-        guard let payload = loadReceipt() else {
-            return
-        }
+        guard let payload = find() else { return }
         
-        guard validateSigning(payload) else {
-            return
-        }
+        guard check(payload) else { return }
         
-        readReceipt(payload)
-        validateReceipt()
+        beginReading(payload)
+        confirm()
     }
     
-    private func loadReceipt() -> UnsafeMutablePointer<PKCS7>? {
+    private func find() -> UnsafeMutablePointer<PKCS7>? {
         // Load the receipt into a Data object
-        guard
-            let receiptUrl = Bundle.main.appStoreReceiptURL,
-            let receiptData = try? Data(contentsOf: receiptUrl)
-            else {
-                receiptStatus = .noReceiptPresent
+        guard let receiptUrl = Bundle.main.appStoreReceiptURL, let receiptData = try? Data(contentsOf: receiptUrl) else {
+                status = .noReceiptPresent
                 return nil
-        }
+            }
         
         let receiptBIO = BIO_new(BIO_s_mem())
         let receiptBytes: [UInt8] = .init(receiptData)
@@ -78,92 +71,99 @@ class Receipt {
         let receiptPKCS7 = d2i_PKCS7_bio(receiptBIO, nil)
         BIO_free(receiptBIO)
     
-        guard receiptPKCS7 != nil else {
-            receiptStatus = .unknownReceiptFormat
+        guard let receipt = receiptPKCS7 else {
+            status = .unknownReceiptFormat
             return nil
         }
         
-        guard OBJ_obj2nid(receiptPKCS7!.pointee.type) == NID_pkcs7_signed else {
-            receiptStatus = .invalidPKCS7Signature
+        guard OBJ_obj2nid(receipt.pointee.type) == NID_pkcs7_signed else {
+            status = .invalidPKCS7Signature
             return nil
         }
         
         // Check that the container contains data
-        let receiptContents = receiptPKCS7!.pointee.d.sign.pointee.contents
+        let receiptContents = receipt.pointee.d.sign.pointee.contents
+        
         guard OBJ_obj2nid(receiptContents?.pointee.type) == NID_pkcs7_data else {
-            receiptStatus = .invalidPKCS7Type
+            status = .invalidPKCS7Type
             return nil
         }
         
-        return receiptPKCS7
+        return receipt
     }
     
-    private func readReceipt(_ receiptPKCS7: UnsafeMutablePointer<PKCS7>?) {
+    private func beginReading(_ receiptPKCS7: UnsafeMutablePointer<PKCS7>?) {
         // Get a pointer to the start and end of the ASN.1 payload
         let receiptSign = receiptPKCS7?.pointee.d.sign
-        let octets = receiptSign?.pointee.contents.pointee.d.data
-        var ptr = UnsafePointer(octets?.pointee.data)
-        let end = ptr!.advanced(by: Int(octets!.pointee.length))
+       
+        guard let octets = receiptSign?.pointee.contents.pointee.d.data else { return }
+        
+        var ptr = UnsafePointer(octets.pointee.data)
+        
+        guard let end = ptr?.advanced(by: Int(octets.pointee.length)) else { return }
         
         var type: Int32 = 0
         var xclass: Int32 = 0
         var length: Int = 0
         
-        ASN1_get_object(&ptr, &length, &type, &xclass, ptr!.distance(to: end))
+        guard let pointer = ptr else { return }
+        
+        ASN1_get_object(&ptr, &length, &type, &xclass, pointer.distance(to: end))
+        
         guard type == V_ASN1_SET else {
-            receiptStatus = .unexpectedASN1Type
+            status = .unexpectedASN1Type
             return
         }
         
         // 1
-        while ptr! < end {
+        while pointer < end {
             // 2
-            ASN1_get_object(&ptr, &length, &type, &xclass, ptr!.distance(to: end))
+            ASN1_get_object(&ptr, &length, &type, &xclass, pointer.distance(to: end))
+            
             guard type == V_ASN1_SEQUENCE else {
-                receiptStatus = .unexpectedASN1Type
+                status = .unexpectedASN1Type
                 return
             }
             
             // 3
-            guard let attributeType = readASN1Integer(ptr: &ptr, maxLength: length) else {
-                receiptStatus = .unexpectedASN1Type
+            guard let attributeType = readInteger(ptr: &ptr, maxLength: length) else {
+                status = .unexpectedASN1Type
                 return
             }
             
             // 4
-            guard let _ = readASN1Integer(ptr: &ptr, maxLength: ptr!.distance(to: end)) else {
-                receiptStatus = .unexpectedASN1Type
+            guard let _ = readInteger(ptr: &ptr, maxLength: pointer.distance(to: end)) else {
+                status = .unexpectedASN1Type
                 return
             }
             
             // 5
-            ASN1_get_object(&ptr, &length, &type, &xclass, ptr!.distance(to: end))
+            ASN1_get_object(&ptr, &length, &type, &xclass, pointer.distance(to: end))
+            
             guard type == V_ASN1_OCTET_STRING else {
-                receiptStatus = .unexpectedASN1Type
+                status = .unexpectedASN1Type
                 return
             }
             
             switch attributeType {
             case 2: // The bundle identifier
                 var stringStartPtr = ptr
-                bundleIdString = readASN1String(ptr: &stringStartPtr, maxLength: length)
-                bundleIdData = readASN1Data(ptr: ptr!, length: length)
+                bundleIdString = readString(ptr: &stringStartPtr, maxLength: length)
+                bundleIdData = readData(ptr: pointer, length: length)
                 
             case 3: // Bundle version
                 var stringStartPtr = ptr
-                bundleVersionString = readASN1String(ptr: &stringStartPtr, maxLength: length)
+                bundleVersionString = readString(ptr: &stringStartPtr, maxLength: length)
                 
             case 4: // Opaque value
-                let dataStartPtr = ptr!
-                opaqueData = readASN1Data(ptr: dataStartPtr, length: length)
+                opaqueData = readData(ptr: pointer, length: length)
                 
             case 5: // Computed GUID (SHA-1 Hash)
-                let dataStartPtr = ptr!
-                hashData = readASN1Data(ptr: dataStartPtr, length: length)
+                hashData = readData(ptr: pointer, length: length)
                 
             case 12: // Receipt Creation Date
                 var dateStartPtr = ptr
-                receiptCreationDate = readASN1Date(ptr: &dateStartPtr, maxLength: length)
+                receiptCreationDate = readDate(ptr: &dateStartPtr, maxLength: length)
                 
             case 17: // IAP Receipt
                 var iapStartPtr = ptr
@@ -173,24 +173,24 @@ class Receipt {
                 }
             case 19: // Original App Version
                 var stringStartPtr = ptr
-                originalAppVersion = readASN1String(ptr: &stringStartPtr, maxLength: length)
+                originalAppVersion = readString(ptr: &stringStartPtr, maxLength: length)
                 
             case 21: // Expiration Date
                 var dateStartPtr = ptr
-                expirationDate = readASN1Date(ptr: &dateStartPtr, maxLength: length)
+                expirationDate = readDate(ptr: &dateStartPtr, maxLength: length)
                 
             default: // Ignore other attributes in receipt
                 print("Not processing attribute type: \(attributeType)")
             }
             
             // Advance pointer to the next item
-            ptr = ptr!.advanced(by: length)
+            ptr = pointer.advanced(by: length)
         }
     }
     
-    private func validateSigning(_ receipt: UnsafeMutablePointer<PKCS7>?) -> Bool {
+    private func check(_ receipt: UnsafeMutablePointer<PKCS7>?) -> Bool {
         guard let rootCertUrl = Bundle.main.url(forResource: "AppleIncRootCertificate", withExtension: "cer"), let rootCertData = try? Data(contentsOf: rootCertUrl) else {
-                receiptStatus = .invalidAppleRootCertificate
+                status = .invalidAppleRootCertificate
                 return false
         }
         
@@ -205,81 +205,84 @@ class Receipt {
         
         let verificationResult = PKCS7_verify(receipt, nil, store, nil, nil, 0)
         print("\(verificationResult)")
+        
         guard verificationResult == 1  else {
-            receiptStatus = .failedAppleSignature
+            status = .failedAppleSignature
             return false
         }
         
         return true
     }
     
-    private func validateReceipt() {
-        guard
-            let idString = bundleIdString,
-            let version = bundleVersionString,
-            let _ = opaqueData,
-            let hash = hashData
-            else {
-                receiptStatus = .missingComponent
+    private func confirm() {
+        guard let idString = bundleIdString, let version = bundleVersionString, let _ = opaqueData, let hash = hashData else {
+                status = .missingComponent
                 return
         }
         
         // Check the bundle identifier
         guard let appBundleId = Bundle.main.bundleIdentifier else {
-            receiptStatus = .unknownFailure
+            status = .unknownFailure
             return
         }
         
         guard idString == appBundleId else {
-            receiptStatus = .invalidBundleIdentifier
+            status = .invalidBundleIdentifier
             return
         }
         
         // Check the version
         guard let appVersionString =
             Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String else {
-                receiptStatus = .unknownFailure
+                status = .unknownFailure
                 return
         }
+        
         guard version == appVersionString else {
-            receiptStatus = .invalidVersionIdentifier
+            status = .invalidVersionIdentifier
             return
         }
         
         // Check the GUID hash
-        let guidHash = computeHash()
+        let guidHash = hashy()
+        
         guard hash == guidHash else {
-            receiptStatus = .invalidHash
+            status = .invalidHash
             return
         }
     }
         
-    private func getDeviceIdentifier() -> Data {
+    private func getIdentifier() -> Data? {
         let device = UIDevice.current
-        var uuid = device.identifierForVendor!.uuid
+        guard var uuid = device.identifierForVendor?.uuid else { return nil }
+        
         let addr = withUnsafePointer(to: &uuid) { (p) -> UnsafeRawPointer in
             UnsafeRawPointer(p)
         }
+        
         let data = Data(bytes: addr, count: 16)
         return data
     }
     
-    private func computeHash() -> Data {
-        let identifierData = getDeviceIdentifier()
+    private func hashy() -> Data? {
+        guard let identifierData = getIdentifier() else { return nil }
         var ctx = SHA_CTX()
         SHA1_Init(&ctx)
+        
+        guard let opaque = opaqueData, let bundle = bundleIdData else { return nil }
         
         let identifierBytes: [UInt8] = .init(identifierData)
         SHA1_Update(&ctx, identifierBytes, identifierData.count)
         
-        let opaqueBytes: [UInt8] = .init(opaqueData!)
-        SHA1_Update(&ctx, opaqueBytes, opaqueData!.count)
+        let opaqueBytes: [UInt8] = .init(opaque)
+        SHA1_Update(&ctx, opaqueBytes, opaque.count)
         
-        let bundleBytes: [UInt8] = .init(bundleIdData!)
-        SHA1_Update(&ctx, bundleBytes, bundleIdData!.count)
+        let bundleBytes: [UInt8] = .init(bundle)
+        SHA1_Update(&ctx, bundleBytes, bundle.count)
         
         var hash: [UInt8] = .init(repeating: 0, count: 20)
         SHA1_Final(&hash, &ctx)
+        
         return Data(bytes: hash, count: 20)
     }
 }

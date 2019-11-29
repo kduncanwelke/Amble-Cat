@@ -69,12 +69,10 @@ class ViewController: UIViewController {
           currentsBackground.layer.cornerRadius = 20
           collectView.layer.cornerRadius = 20
           
-          updateCare()
           loadCareState()
           loadCurrency()
           loadEquipment()
         
-          
           HealthStore.store.requestAuthorization(toShare: HealthStore.healthKitTypes, read: HealthStore.healthKitTypes) { [unowned self] (bool, error) in
           if (bool) {
                 self.getSteps { (result) in
@@ -373,7 +371,7 @@ class ViewController: UIViewController {
      func updateCare() {
           var managedContext = CoreDataManager.shared.managedObjectContext
           
-          // save currency anew if it doesn't exist (like on app initial launch)
+          // save care anew if it doesn't exist (like on app initial launch)
           guard let currentCare = CareState.care else {
                let careSave = CareStatus(context: managedContext)
                
