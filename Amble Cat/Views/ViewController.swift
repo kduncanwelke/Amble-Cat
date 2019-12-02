@@ -99,7 +99,7 @@ class ViewController: UIViewController {
                          let dateToCompare = calendar.component(.day , from: date)
                          let userDefaultDate = UserDefaults.standard.integer(forKey: "userDefaultDate")
                          
-                         if userDefaultDate != dateToCompare && steps >= 1000 {
+                         if self.isSameDay() == false && steps >= 1000 {
                               self.dimView.isHidden = false
                               let thousands = Int(steps / 1000)
                               Currency.toAdd = 10 * thousands
@@ -239,12 +239,9 @@ class ViewController: UIViewController {
      
      func checkCareProgress() {
           print("care progress")
-          print(CareState.hasBeenFed)
-          print(CareState.hasBeenWatered)
+         
           if CareState.hasBeenFed && CareState.hasBeenWatered {
                CareState.daysCaredFor += 1
-               
-               updateHearts()
           }
           
           if CareState.daysCaredFor == 7 {
@@ -253,9 +250,12 @@ class ViewController: UIViewController {
                view.bringSubviewToFront(collectView)
                collectText.text = "You earned \(self.earned) Paw Points for taking care of your cat for 7 days in a row!"
           }
+          
+          saveCare()
      }
      
      func updateHearts() {
+          print("update hearts")
           print(CareState.daysCaredFor)
           for heart in hearts {
                if heart.tag <= CareState.daysCaredFor {
@@ -316,39 +316,36 @@ class ViewController: UIViewController {
           do {
                var resultArray = try managedContext.fetch(fetchRequest)
                if let result = resultArray.first {
-                    
-                    // check if it's a new day
-                    if isSameDay() == false {
-                         if result.hasBeenFed && result.hasBeenWatered {
-                              
+                    let calendar = Calendar.current
+                    print(result.dateOfLastCare)
+                    // check if last care day was yesterday
+                    if let careDay = result.dateOfLastCare {
+                         if calendar.isDateInYesterday(careDay) {
+                              print("yesterday")
                               // if seven days of consistent care have passed, reset
                               if result.daysOfConsecutiveCare == 7 {
                                    CareState.daysCaredFor = 0
+                                   CareState.care = result
                               } else {
                                    // otherwise don't reset
                                    CareState.daysCaredFor = result.daysOfConsecutiveCare
+                                   CareState.care = result
                               }
-                         } else if result.hasBeenFed == false && result.hasBeenWatered == false {
-                              print("zero")
-                              // save doesn't show care for previous day, so reset value
-                              CareState.daysCaredFor = 0
+                         } else if calendar.isDateInToday(careDay) {
+                              print("today")
+                              CareState.daysCaredFor = result.daysOfConsecutiveCare
+                              CareState.hasBeenFed = result.hasBeenFed
+                              CareState.hasBeenWatered = result.hasBeenWatered
                               CareState.care = result
-                              CareState.hasBeenFed = false
-                              CareState.hasBeenWatered = false
-                         } else if result.hasBeenFed {
-                              CareState.hasBeenFed = true
-                              print("fed")
-                         } else if result.hasBeenWatered {
-                              CareState.hasBeenWatered = true
-                              print("watered")
+                         } else {
+                              print("not yesterday")
+                              // last care was not yesterday nor today
+                              CareState.care = result
+                              CareState.daysCaredFor = 0
                          }
                     } else {
-                         print("same day")
-                         // same day, don't change consecutive care days
                          CareState.care = result
-                         CareState.hasBeenFed = result.hasBeenFed
-                         CareState.hasBeenWatered = result.hasBeenWatered
-                         CareState.daysCaredFor = result.daysOfConsecutiveCare
+                         print("no date")
                     }
                }
               
@@ -368,7 +365,7 @@ class ViewController: UIViewController {
           }
      }
      
-     func updateCare() {
+     func saveCare() {
           var managedContext = CoreDataManager.shared.managedObjectContext
           
           // save care anew if it doesn't exist (like on app initial launch)
@@ -378,6 +375,15 @@ class ViewController: UIViewController {
                careSave.hasBeenFed = CareState.hasBeenFed
                careSave.hasBeenWatered = CareState.hasBeenWatered
                careSave.daysOfConsecutiveCare = CareState.daysCaredFor
+               
+               CareState.care = careSave
+               
+               if CareState.hasBeenFed && CareState.hasBeenWatered {
+                    careSave.dateOfLastCare = Date()
+                    print("date save")
+                    print(careSave.dateOfLastCare)
+               }
+               
                print(CareState.hasBeenFed)
                print(CareState.hasBeenWatered)
                print(CareState.daysCaredFor)
@@ -389,12 +395,22 @@ class ViewController: UIViewController {
                     showAlert(title: "Save failed", message: "Notice: Data has not successfully been saved.")
                }
                
+               updateHearts()
                return
           }
           
           currentCare.hasBeenFed = CareState.hasBeenFed
           currentCare.hasBeenWatered = CareState.hasBeenWatered
           currentCare.daysOfConsecutiveCare = CareState.daysCaredFor
+          
+          CareState.care = currentCare
+          
+          if CareState.hasBeenFed && CareState.hasBeenWatered {
+               currentCare.dateOfLastCare = Date()
+               print("date save")
+               print(currentCare.dateOfLastCare)
+          }
+          
           print(CareState.hasBeenFed)
           print(CareState.hasBeenWatered)
           print(CareState.daysCaredFor)
@@ -406,6 +422,8 @@ class ViewController: UIViewController {
                // this should never be displayed but is here to cover the possibility
                showAlert(title: "Save failed", message: "Notice: Data has not successfully been saved.")
           }
+          
+          updateHearts()
      }
      
      func loadEquipment() {
@@ -679,7 +697,6 @@ class ViewController: UIViewController {
                CareState.hasBeenFed = true
                
                checkCareProgress()
-               updateCare()
           }
      }
      
@@ -692,7 +709,6 @@ class ViewController: UIViewController {
                CareState.hasBeenWatered = true
                
                checkCareProgress()
-               updateCare()
           }
      }
      
