@@ -102,6 +102,7 @@ class ViewController: UIViewController {
                          if self.isSameDay() == false && steps >= 1000 {
                               self.dimView.isHidden = false
                               let thousands = Int(steps / 1000)
+                              self.earned = 10 * thousands
                               Currency.toAdd = 10 * thousands
                               self.view.bringSubviewToFront(self.collectView)
                               self.collectText.text = "You earned \(self.earned) Paw Points for walking \(steps) steps yesterday!"

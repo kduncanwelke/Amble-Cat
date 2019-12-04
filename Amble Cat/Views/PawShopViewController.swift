@@ -108,7 +108,7 @@ class PawShopViewController: UIViewController, UITableViewDelegate {
         }
         
         if isAuthorizedForPayments {
-            validate(productIdentifiers: [Products.oneHundredPoints])
+            validate(productIdentifiers: [Products.fiftyPoints, Products.oneHundredPoints, Products.oneHundredFiftyPoints, Products.twoHundredPoints, Products.threeHundredFiftyPoints, Products.fiveHundredPoints, Products.oneThousandPoints, Products.oneThousandFiveHundredPoints, Products.twoThousandPoints, Products.threeThousandPoints, Products.fiveThousandPoints, Products.tenThousandPoints])
         }
     }
     
@@ -193,6 +193,10 @@ extension PawShopViewController: SKProductsRequestDelegate {
                 print(product.price)
                 print(product.priceLocale)
             }
+            
+            products.sort(by: { (p0, p1) -> Bool in
+                return p0.price.floatValue < p1.price.floatValue
+            }) 
             
             DispatchQueue.main.async { [weak self] in
                 self?.tableView.reloadData()
