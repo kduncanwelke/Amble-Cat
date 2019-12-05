@@ -166,11 +166,11 @@
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h7s-p0-YVI">
                                         <rect key="frame" x="121" y="0.0" width="112" height="30"/>
-                                        <color key="backgroundColor" red="0.98251623190000004" green="1" blue="0.88263598269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.43911131310000001" green="0.38925293989999998" blue="0.35359854169999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                         <color key="tintColor" red="0.0" green="0.85604780970000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="   View History   ">
-                                            <color key="titleColor" red="0.43911131314870466" green="0.38925293994492116" blue="0.35359854170988797" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleColor" red="0.87058823529999996" green="0.76470588240000004" blue="0.69019607839999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="viewStatsPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="z6q-NL-YWG"/>
@@ -422,6 +422,7 @@
                         <outlet property="eatArt" destination="fZ1-FX-vxC" id="7ll-7E-tv8"/>
                         <outlet property="floorArt" destination="oFB-lV-nW2" id="zx9-4Z-z2f"/>
                         <outlet property="food" destination="49U-Ns-ugK" id="G43-yw-pKK"/>
+                        <outlet property="historyButton" destination="h7s-p0-YVI" id="qLn-sU-TEI"/>
                         <outlet property="loafArt" destination="baZ-7B-Yr5" id="y9A-i6-huN"/>
                         <outlet property="pictureArt" destination="xqr-Er-2jF" id="KSL-3i-Jj4"/>
                         <outlet property="playArt" destination="gHD-Zz-Cl6" id="hrG-5b-w0g"/>
@@ -492,11 +493,11 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="36d-UQ-qdW">
-                                <rect key="frame" x="168" y="782" width="78" height="30"/>
-                                <color key="backgroundColor" red="0.98251623190000004" green="1" blue="0.88263598269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="168" y="802" width="78" height="30"/>
+                                <color key="backgroundColor" red="0.43911131310000001" green="0.38925293989999998" blue="0.35359854169999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                 <state key="normal" title="   Dismiss   ">
-                                    <color key="titleColor" red="0.43911131310000001" green="0.38925293989999998" blue="0.35359854169999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" red="0.87058823529999996" green="0.76470588240000004" blue="0.69019607839999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="dismissTapped:" destination="edN-Ly-Sbe" eventType="touchUpInside" id="Y9e-8F-M3N"/>
@@ -537,31 +538,49 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="jhw-Z7-MMY">
-                                <rect key="frame" x="102" y="520" width="210" height="30"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="jhw-Z7-MMY">
+                                <rect key="frame" x="70.5" y="520" width="273" height="52"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="28S-mI-xiU">
-                                        <rect key="frame" x="0.0" y="0.0" width="106" height="30"/>
-                                        <state key="normal" title="Forward 7 Days"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="28S-mI-xiU">
+                                        <rect key="frame" x="0.0" y="0.0" width="121.5" height="52"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="28S-mI-xiU" secondAttribute="height" multiplier="2.33:1" id="3xW-l2-pDR"/>
+                                        </constraints>
+                                        <state key="normal" image="back"/>
                                         <connections>
                                             <action selector="nextTapped:" destination="edN-Ly-Sbe" eventType="touchUpInside" id="7xT-pP-IhC"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qcg-uA-Y9s">
-                                        <rect key="frame" x="126" y="0.0" width="84" height="30"/>
-                                        <state key="normal" title="Back 7 Days"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qcg-uA-Y9s">
+                                        <rect key="frame" x="151.5" y="0.0" width="121.5" height="52"/>
+                                        <state key="normal" image="forward"/>
                                         <connections>
                                             <action selector="previousTapped:" destination="edN-Ly-Sbe" eventType="touchUpInside" id="irt-kj-AKN"/>
                                         </connections>
                                     </button>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Next Week" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qcz-K6-KGe">
+                                <rect key="frame" x="96" y="580" width="70" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Previous Week" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u7d-KR-vjY">
+                                <rect key="frame" x="235" y="580" width="95.5" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.87058823529411766" green="0.76470588235294112" blue="0.69019607843137254" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="8wf-QQ-F6S" firstAttribute="leading" secondItem="44q-xn-kxS" secondAttribute="leading" constant="20" id="0Eg-Xt-kSx"/>
+                            <constraint firstItem="jhw-Z7-MMY" firstAttribute="width" secondItem="fhF-EE-wec" secondAttribute="width" multiplier="0.66" id="1O7-a1-O6x"/>
+                            <constraint firstItem="u7d-KR-vjY" firstAttribute="centerX" secondItem="Qcg-uA-Y9s" secondAttribute="centerX" id="3xI-61-soL"/>
                             <constraint firstItem="8wf-QQ-F6S" firstAttribute="top" secondItem="4bt-eb-d3g" secondAttribute="bottom" constant="17" id="BEH-Re-kYX"/>
                             <constraint firstItem="4bt-eb-d3g" firstAttribute="leading" secondItem="44q-xn-kxS" secondAttribute="leading" constant="20" id="E7N-Ey-Vho"/>
+                            <constraint firstItem="qcz-K6-KGe" firstAttribute="centerX" secondItem="28S-mI-xiU" secondAttribute="centerX" id="F9B-kN-Bex"/>
                             <constraint firstItem="36d-UQ-qdW" firstAttribute="centerX" secondItem="fhF-EE-wec" secondAttribute="centerX" id="HeD-BN-ReK"/>
                             <constraint firstItem="44q-xn-kxS" firstAttribute="trailing" secondItem="8wf-QQ-F6S" secondAttribute="trailing" constant="20" id="K4v-ca-IYV"/>
                             <constraint firstItem="a2L-Ie-zTp" firstAttribute="centerX" secondItem="fhF-EE-wec" secondAttribute="centerX" id="UbT-Fn-v3H"/>
@@ -571,15 +590,18 @@
                             <constraint firstItem="04g-2y-GvS" firstAttribute="top" secondItem="44q-xn-kxS" secondAttribute="top" constant="200" id="f2O-mW-1vF"/>
                             <constraint firstItem="44q-xn-kxS" firstAttribute="trailing" secondItem="04g-2y-GvS" secondAttribute="trailing" id="gMw-eH-9D2"/>
                             <constraint firstItem="44q-xn-kxS" firstAttribute="trailing" secondItem="4bt-eb-d3g" secondAttribute="trailing" constant="20" id="gbD-pe-JDN"/>
+                            <constraint firstItem="u7d-KR-vjY" firstAttribute="top" secondItem="jhw-Z7-MMY" secondAttribute="bottom" constant="8" id="hFa-5a-TDu"/>
                             <constraint firstItem="04g-2y-GvS" firstAttribute="top" secondItem="8wf-QQ-F6S" secondAttribute="bottom" constant="25" id="mdh-2P-ah1"/>
                             <constraint firstItem="BD8-OP-0cl" firstAttribute="top" secondItem="a2L-Ie-zTp" secondAttribute="bottom" constant="14" id="mki-64-9vo"/>
                             <constraint firstItem="BD8-OP-0cl" firstAttribute="centerX" secondItem="fhF-EE-wec" secondAttribute="centerX" id="qdw-6A-s5I"/>
+                            <constraint firstItem="qcz-K6-KGe" firstAttribute="top" secondItem="jhw-Z7-MMY" secondAttribute="bottom" constant="8" id="s1Y-UB-fIh"/>
                             <constraint firstItem="04g-2y-GvS" firstAttribute="leading" secondItem="44q-xn-kxS" secondAttribute="leading" id="tnE-Xp-ikA"/>
-                            <constraint firstItem="44q-xn-kxS" firstAttribute="bottom" secondItem="36d-UQ-qdW" secondAttribute="bottom" constant="50" id="xvM-Lt-la7"/>
+                            <constraint firstItem="44q-xn-kxS" firstAttribute="bottom" secondItem="36d-UQ-qdW" secondAttribute="bottom" constant="30" id="xvM-Lt-la7"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="44q-xn-kxS"/>
                     </view>
                     <connections>
+                        <outlet property="dismissButton" destination="36d-UQ-qdW" id="84D-Na-jL0"/>
                         <outlet property="graphView" destination="04g-2y-GvS" id="98s-Om-Y8F"/>
                         <outlet property="tapDate" destination="ZAu-A7-MUJ" id="85d-Ul-HDr"/>
                         <outlet property="tapDistance" destination="ZhB-vv-VRK" id="DaY-Yo-YMX"/>
@@ -698,9 +720,9 @@
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e8l-Eh-sBp">
                                 <rect key="frame" x="168" y="802" width="78" height="30"/>
-                                <color key="backgroundColor" red="0.98251623190000004" green="1" blue="0.88263598269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.43911131310000001" green="0.38925293989999998" blue="0.35359854169999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="   Dismiss   ">
-                                    <color key="titleColor" red="0.43911131310000001" green="0.38925293989999998" blue="0.35359854169999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" red="0.87058823529999996" green="0.76470588240000004" blue="0.69019607839999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="dismissPressed:" destination="puM-ZC-pgh" eventType="touchUpInside" id="fCs-FD-dmQ"/>
@@ -731,6 +753,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="pea-gl-6NY"/>
                     <connections>
+                        <outlet property="dismissButton" destination="e8l-Eh-sBp" id="Yhn-6d-V5X"/>
                         <outlet property="pawPointTotal" destination="5sD-uS-Tzx" id="gAB-Vx-CYc"/>
                         <outlet property="tableView" destination="Bz4-3S-FNX" id="Etj-QP-hSd"/>
                     </connections>
@@ -843,27 +866,27 @@
                                 <rect key="frame" x="20" y="174" width="374" height="608"/>
                                 <color key="backgroundColor" red="0.87126804889999998" green="0.76537494039999998" blue="0.69084578109999994" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="0.0" id="nsk-a3-gkq">
-                                    <size key="itemSize" width="145" height="180"/>
+                                    <size key="itemSize" width="160" height="200"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="storeCell" id="Noa-dY-IIK" customClass="StoreCollectionViewCell" customModule="Amble_Cat" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="145" height="180"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="160" height="200"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="1y4-kT-bdO">
-                                            <rect key="frame" x="0.0" y="0.0" width="145" height="180"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="160" height="200"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ktB-XG-kIX">
-                                                    <rect key="frame" x="10" y="120.5" width="125" height="20.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ktB-XG-kIX">
+                                                    <rect key="frame" x="10" y="120.5" width="140" height="40.5"/>
                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="LB9-yN-aOQ">
-                                                    <rect key="frame" x="40" y="148" width="65" height="20.5"/>
+                                                    <rect key="frame" x="47.5" y="168" width="65" height="20.5"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="paw" translatesAutoresizingMaskIntoConstraints="NO" id="egY-VZ-UuE">
                                                             <rect key="frame" x="0.0" y="0.5" width="20" height="20"/>
@@ -881,13 +904,13 @@
                                                     </subviews>
                                                 </stackView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Purchased" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iKa-bs-aIC">
-                                                    <rect key="frame" x="34" y="148" width="77.5" height="21"/>
+                                                    <rect key="frame" x="41.5" y="168" width="77.5" height="21"/>
                                                     <fontDescription key="fontDescription" type="italicSystem" pointSize="16"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LDV-LF-za8">
-                                                    <rect key="frame" x="20.5" y="8" width="104.5" height="104.5"/>
+                                                    <rect key="frame" x="28" y="8" width="104.5" height="104.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="104.5" id="cKc-PQ-WAR"/>
                                                         <constraint firstAttribute="width" secondItem="LDV-LF-za8" secondAttribute="height" multiplier="1:1" id="qJz-iE-yQi"/>
@@ -927,9 +950,9 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lyf-0S-IDj">
                                 <rect key="frame" x="178" y="802" width="58" height="30"/>
-                                <color key="backgroundColor" red="0.98251623190000004" green="1" blue="0.88263598269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.43911131310000001" green="0.38925293989999998" blue="0.35359854169999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="   Back   ">
-                                    <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleColor" red="0.87058823529999996" green="0.76470588240000004" blue="0.69019607839999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="dismissPressed:" destination="a4u-U3-FqG" eventType="touchUpInside" id="XcU-EJ-QfM"/>
@@ -1008,6 +1031,7 @@
                     <navigationItem key="navigationItem" id="hGb-AN-iJm"/>
                     <connections>
                         <outlet property="areYouSureLabel" destination="63G-Sk-ydG" id="w0L-9z-HD6"/>
+                        <outlet property="backButton" destination="Lyf-0S-IDj" id="yIp-vG-z4S"/>
                         <outlet property="collectionView" destination="qX2-rb-aAr" id="yND-RC-jxY"/>
                         <outlet property="confirmPurchaseView" destination="b2Q-AA-KJ8" id="tJ1-dk-Dvu"/>
                         <outlet property="dimView" destination="mf9-B9-z1l" id="bbI-7O-2Gs"/>
@@ -1022,6 +1046,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="back" width="600" height="257"/>
         <image name="basicwindow" width="1000" height="1000"/>
         <image name="bed" width="1000" height="1000"/>
         <image name="bluewaterbowl" width="1000" height="1000"/>
@@ -1031,6 +1056,7 @@
         <image name="feed" width="300" height="300"/>
         <image name="floor" width="1000" height="1000"/>
         <image name="food" width="1000" height="1000"/>
+        <image name="forward" width="600" height="257"/>
         <image name="givewater" width="300" height="300"/>
         <image name="heartempty" width="90" height="90"/>
         <image name="lucydrink1" width="1000" height="1000"/>

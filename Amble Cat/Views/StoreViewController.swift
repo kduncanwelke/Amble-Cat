@@ -20,6 +20,7 @@ class StoreViewController: UIViewController, UICollectionViewDelegate, UICollect
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var dimView: UIView!
     @IBOutlet weak var areYouSureLabel: UILabel!
+    @IBOutlet weak var backButton: UIButton!
     
     
     // MARK: Variables
@@ -43,6 +44,7 @@ class StoreViewController: UIViewController, UICollectionViewDelegate, UICollect
         // Do any additional setup after loading the view.
         confirmPurchaseView.layer.cornerRadius = 20
         insufficientFundsView.layer.cornerRadius = 20
+        backButton.layer.cornerRadius = 10
         
         dimView.isHidden = true
 		collectionView.dataSource = self
@@ -286,7 +288,8 @@ extension StoreViewController: UICollectionViewDataSource {
 	}
 	
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-		let cellWidth : CGFloat = 145.0
+        let cellWidth : CGFloat = min(200.0, ((self.view.frame.size.width - 10)/2))
+        print((self.view.frame.size.width - 10)/2)
 		
 		let numberOfCells = floor(self.view.frame.size.width / cellWidth)
 		let edgeInsets = (self.view.frame.size.width - (numberOfCells * cellWidth)) / (numberOfCells * 2)

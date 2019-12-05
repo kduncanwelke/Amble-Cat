@@ -18,6 +18,7 @@ class StatisticsViewController: UIViewController {
     @IBOutlet weak var tapDate: UILabel!
     @IBOutlet weak var tapSteps: UILabel!
     @IBOutlet weak var tapDistance: UILabel!
+    @IBOutlet weak var dismissButton: UIButton!
     
 
     override func viewDidLoad() {
@@ -25,6 +26,7 @@ class StatisticsViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         graphView.delegate = self
+        dismissButton.layer.cornerRadius = 10
         
         HealthStore.store.requestAuthorization(toShare: HealthStore.healthKitTypes, read: HealthStore.healthKitTypes) { [unowned self] (bool, error) in
             if (bool) {

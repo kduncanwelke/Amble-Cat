@@ -46,6 +46,8 @@ class ViewController: UIViewController {
      @IBOutlet weak var windowArt: UIImageView!
      @IBOutlet weak var dimView: UIView!
      
+     @IBOutlet weak var historyButton: UIButton!
+     
      
      // MARK: Variables
 
@@ -68,6 +70,7 @@ class ViewController: UIViewController {
           
           currentsBackground.layer.cornerRadius = 20
           collectView.layer.cornerRadius = 20
+          historyButton.layer.cornerRadius = 10
           
           loadCareState()
           loadCurrency()
@@ -141,12 +144,18 @@ class ViewController: UIViewController {
      func beginAnimation() {
           var range = [1,2,3,4]
           
-          if CareState.hasBeenFed && CareState.hasBeenWatered {
+          if CareState.hasBeenFed && CareState.hasBeenWatered && CareState.daysCaredFor > 3 {
                range = [1,2,3,4,5,6]
-          } else if CareState.hasBeenFed {
+          } else if CareState.hasBeenFed && CareState.hasBeenWatered {
+               range = [1,2,3,5,6]
+          } else if CareState.hasBeenFed && CareState.daysCaredFor > 3 {
                range = [1,2,3,4,5]
-          } else if CareState.hasBeenWatered {
+          } else if CareState.hasBeenWatered && CareState.daysCaredFor > 3 {
                range = [1,2,3,4,6]
+          } else if CareState.hasBeenFed {
+               range = [1,2,3,5]
+          } else if CareState.hasBeenWatered {
+               range = [1,2,3,6]
           }
           
           let animation = range.randomElement() //Int.random(in: 1...max)
@@ -396,7 +405,10 @@ class ViewController: UIViewController {
                     showAlert(title: "Save failed", message: "Notice: Data has not successfully been saved.")
                }
                
-               updateHearts()
+               if CareState.hasBeenFed && CareState.hasBeenWatered {
+                    updateHearts()
+               }
+               
                return
           }
           
@@ -424,7 +436,9 @@ class ViewController: UIViewController {
                showAlert(title: "Save failed", message: "Notice: Data has not successfully been saved.")
           }
           
-          updateHearts()
+          if CareState.hasBeenFed && CareState.hasBeenWatered {
+               updateHearts()
+          }
      }
      
      func loadEquipment() {

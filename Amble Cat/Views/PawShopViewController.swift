@@ -16,6 +16,8 @@ class PawShopViewController: UIViewController, UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var pawPointTotal: UILabel!
+    @IBOutlet weak var dismissButton: UIButton!
+    
     
     // MARK: Variables
     
@@ -34,6 +36,7 @@ class PawShopViewController: UIViewController, UITableViewDelegate {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.tableFooterView = UIView()
+        dismissButton.layer.cornerRadius = 10
         
         pawPointTotal.text = "\(Currency.userTotal)"
         
@@ -157,6 +160,7 @@ extension PawShopViewController: UITableViewDataSource {
         cell.title.text = item.localizedTitle
         cell.price.text = "\(item.price)"
         cell.details.text = item.localizedDescription
+        cell.picture.image = Products.productImages[item.productIdentifier] 
         
         return cell
     }
