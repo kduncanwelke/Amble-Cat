@@ -49,3 +49,35 @@ class TimerManager {
         seconds = 0
     }
 }
+
+
+class TextTimer {
+    
+    static var seconds = 0
+    static var timer: Timer?
+    static var isRunning = false
+    
+    static func beginTimer(with label: UILabel, text: [Character]) {
+        isRunning = true
+        timer = Timer.scheduledTimer(withTimeInterval: 0.07, repeats: true) { timer in
+           
+            label.text?.append(text[seconds])
+           
+            if seconds == text.count-1 {
+                timer.invalidate()
+                seconds = 0
+                isRunning = false
+            } else {
+                seconds += 1
+            }
+        }
+        
+        timer?.fire()
+    }
+    
+    static func stopTimer() {
+        timer?.invalidate()
+        seconds = 0
+        isRunning = false
+    }
+}

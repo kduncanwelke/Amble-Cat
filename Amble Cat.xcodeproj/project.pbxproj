@@ -23,6 +23,7 @@
 		2D7146D0235BB8560064B576 /* StoreInventory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7146CF235BB8560064B576 /* StoreInventory.swift */; };
 		2D7146D2235BBE440064B576 /* StoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7146D1235BBE440064B576 /* StoreViewController.swift */; };
 		2D7146D4235BBF130064B576 /* StoreCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7146D3235BBF130064B576 /* StoreCollectionViewCell.swift */; };
+		2D8867102399C4EC00DACD85 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D88670F2399C4EC00DACD85 /* TutorialViewController.swift */; };
 		2DA2E41F238DD71700541771 /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA2E41E238DD71700541771 /* NetworkMonitor.swift */; };
 		2DA559602360FE50006B3B9D /* PurchaseState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA5595F2360FE50006B3B9D /* PurchaseState.swift */; };
 		2DB0EB07238C8EF5003CBCB7 /* AppleIncRootCertificate.cer in Resources */ = {isa = PBXBuildFile; fileRef = 2DB0EB06238C8EF5003CBCB7 /* AppleIncRootCertificate.cer */; };
@@ -87,6 +88,7 @@
 		2D7146CF235BB8560064B576 /* StoreInventory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreInventory.swift; sourceTree = "<group>"; };
 		2D7146D1235BBE440064B576 /* StoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreViewController.swift; sourceTree = "<group>"; };
 		2D7146D3235BBF130064B576 /* StoreCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreCollectionViewCell.swift; sourceTree = "<group>"; };
+		2D88670F2399C4EC00DACD85 /* TutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
 		2DA2E41E238DD71700541771 /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
 		2DA5595F2360FE50006B3B9D /* PurchaseState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseState.swift; sourceTree = "<group>"; };
 		2DB0EB06238C8EF5003CBCB7 /* AppleIncRootCertificate.cer */ = {isa = PBXFileReference; lastKnownFileType = file; name = AppleIncRootCertificate.cer; path = ../../../../../../Downloads/AppleIncRootCertificate.cer; sourceTree = "<group>"; };
@@ -297,6 +299,7 @@
 			children = (
 				2DE860EC23552B3B00227A86 /* ViewController.swift */,
 				2D7146D1235BBE440064B576 /* StoreViewController.swift */,
+				2D88670F2399C4EC00DACD85 /* TutorialViewController.swift */,
 				2D7146D3235BBF130064B576 /* StoreCollectionViewCell.swift */,
 				2DE904CF235638790036C08A /* StatisticsViewController.swift */,
 				2DC80B872384AC62006841AE /* PawShopViewController.swift */,
@@ -581,6 +584,7 @@
 				2D064FB223872A6B00257315 /* ReceiptItem.swift in Sources */,
 				2D6FCA8A235A1DFC00560CB2 /* CoreDataManager.swift in Sources */,
 				2D6FCA86235A169500560CB2 /* Data.xcdatamodeld in Sources */,
+				2D8867102399C4EC00DACD85 /* TutorialViewController.swift in Sources */,
 				2D3E67E4236C9D3B00A80612 /* Extensions.swift in Sources */,
 				2DE904D0235638790036C08A /* StatisticsViewController.swift in Sources */,
 				2D064FB423872EEC00257315 /* Helpers.swift in Sources */,

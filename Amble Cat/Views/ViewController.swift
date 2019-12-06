@@ -45,8 +45,9 @@ class ViewController: UIViewController {
      @IBOutlet weak var waterBowlArt: UIImageView!
      @IBOutlet weak var windowArt: UIImageView!
      @IBOutlet weak var dimView: UIView!
-     
      @IBOutlet weak var historyButton: UIButton!
+     
+     @IBOutlet weak var containerView: UIView!
      
      
      // MARK: Variables
@@ -67,6 +68,7 @@ class ViewController: UIViewController {
           
           NotificationCenter.default.addObserver(self, selector: #selector(addPurchasedCurrency), name: NSNotification.Name(rawValue: "addPurchasedCurrency"), object: nil)
           
+          NotificationCenter.default.addObserver(self, selector: #selector(hideTutorial), name: NSNotification.Name(rawValue: "hideTutorial"), object: nil)
           
           currentsBackground.layer.cornerRadius = 20
           collectView.layer.cornerRadius = 20
@@ -75,6 +77,13 @@ class ViewController: UIViewController {
           loadCareState()
           loadCurrency()
           loadEquipment()
+          
+          if isAppAlreadyLaunchedOnce() {
+               containerView.isHidden = true
+          } else {
+               containerView.isHidden = false
+               dimView.isHidden = false
+          }
         
           HealthStore.store.requestAuthorization(toShare: HealthStore.healthKitTypes, read: HealthStore.healthKitTypes) { [unowned self] (bool, error) in
           if (bool) {
@@ -118,12 +127,18 @@ class ViewController: UIViewController {
         }
           
           beginAnimation()
+          
     }
 	
      // MARK: Custom functions
      
      @objc func addPurchasedCurrency() {
           addCurrency(with: Currency.toAdd)
+     }
+     
+     @objc func hideTutorial() {
+          containerView.isHidden = true
+          dimView.isHidden = true
      }
      
      func isSameDay() -> Bool {
@@ -142,7 +157,7 @@ class ViewController: UIViewController {
      }
      
      func beginAnimation() {
-          var range = [1,2,3,4]
+          var range = [1,2,3]
           
           if CareState.hasBeenFed && CareState.hasBeenWatered && CareState.daysCaredFor > 3 {
                range = [1,2,3,4,5,6]
@@ -266,11 +281,14 @@ class ViewController: UIViewController {
      
      func updateHearts() {
           print("update hearts")
-          print(CareState.daysCaredFor)
+       
           for heart in hearts {
                if heart.tag <= CareState.daysCaredFor {
                     heart.image = UIImage(named: "heart")
-                    heart.animateHeart()
+                    
+                    if heart.tag == CareState.daysCaredFor {
+                         heart.animateHeart()
+                    }
                } else {
                     heart.image = UIImage(named: "heartempty")
                }
@@ -367,7 +385,15 @@ class ViewController: UIViewController {
                     water.isHidden = false
                }
                
-               updateHearts()
+               for heart in hearts {
+                    if heart.tag <= CareState.daysCaredFor {
+                         heart.image = UIImage(named: "heart")
+                         
+                    } else {
+                         heart.image = UIImage(named: "heartempty")
+                    }
+               }
+               
                print("care loaded")
                
           } catch let error as NSError {
@@ -700,7 +726,6 @@ class ViewController: UIViewController {
         HealthStore.store.execute(distanceQuery)
      }
 
-
     
      // MARK: IBActions
 
@@ -728,7 +753,7 @@ class ViewController: UIViewController {
      }
      
      @IBAction func viewStatsPressed(_ sender: UIButton) {
-        performSegue(withIdentifier: "viewStatistics", sender: Any?.self)
+          performSegue(withIdentifier: "viewStatistics", sender: Any?.self)
      }
      
      @IBAction func storePressed(_ sender: UIButton) {

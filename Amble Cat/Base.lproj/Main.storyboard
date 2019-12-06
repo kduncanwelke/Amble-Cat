@@ -306,6 +306,15 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.34812389960000001" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OX7-Dv-0hi">
+                                <rect key="frame" x="50" y="134" width="314" height="628"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="OX7-Dv-0hi" secondAttribute="height" multiplier="3:6" id="NNd-gq-mkC"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="pK4-wp-oWq" kind="embed" identifier="embedTutorial" id="TBs-bL-ZTZ"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" red="0.87126804894715026" green="0.7653749403754232" blue="0.6908457811027624" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -359,6 +368,7 @@
                             <constraint firstItem="MMt-ix-rmm" firstAttribute="centerX" secondItem="ZX0-Qb-1jX" secondAttribute="centerX" id="STO-VE-szz"/>
                             <constraint firstItem="baZ-7B-Yr5" firstAttribute="centerY" secondItem="ZX0-Qb-1jX" secondAttribute="centerY" id="Toc-g8-Bep"/>
                             <constraint firstItem="bkc-qa-Nsi" firstAttribute="centerX" secondItem="ydI-ox-BmT" secondAttribute="centerX" id="VuX-rb-9It"/>
+                            <constraint firstItem="OX7-Dv-0hi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="WBF-UW-XF6"/>
                             <constraint firstItem="baZ-7B-Yr5" firstAttribute="height" secondItem="ZX0-Qb-1jX" secondAttribute="height" id="YMR-sn-O4m"/>
                             <constraint firstAttribute="trailing" secondItem="PED-9s-e5Y" secondAttribute="trailing" constant="20" id="Z7S-nl-2kL"/>
                             <constraint firstItem="xqr-Er-2jF" firstAttribute="width" secondItem="ZX0-Qb-1jX" secondAttribute="width" id="a3u-la-OCD"/>
@@ -375,6 +385,7 @@
                             <constraint firstItem="kmY-BW-XTE" firstAttribute="centerX" secondItem="ZX0-Qb-1jX" secondAttribute="centerX" id="egv-QP-sjH"/>
                             <constraint firstItem="e59-3N-6cE" firstAttribute="centerY" secondItem="ZX0-Qb-1jX" secondAttribute="centerY" id="etg-CT-au9"/>
                             <constraint firstItem="Yyv-Z3-Pe8" firstAttribute="top" secondItem="PED-9s-e5Y" secondAttribute="bottom" constant="8" id="g5z-Gb-3Sg"/>
+                            <constraint firstItem="OX7-Dv-0hi" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="gZ9-Zn-LL1"/>
                             <constraint firstItem="RIM-GI-Cjl" firstAttribute="centerY" secondItem="ZX0-Qb-1jX" secondAttribute="centerY" id="iZ3-8b-EA6"/>
                             <constraint firstItem="nCD-I7-M00" firstAttribute="width" secondItem="ZX0-Qb-1jX" secondAttribute="width" id="jpE-1J-Imi"/>
                             <constraint firstItem="49U-Ns-ugK" firstAttribute="width" secondItem="ZX0-Qb-1jX" secondAttribute="width" id="jw8-PG-dor"/>
@@ -391,6 +402,7 @@
                             <constraint firstItem="ZX0-Qb-1jX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="p6y-qi-K1S"/>
                             <constraint firstItem="49U-Ns-ugK" firstAttribute="centerX" secondItem="ZX0-Qb-1jX" secondAttribute="centerX" id="pPc-Pp-1gj"/>
                             <constraint firstItem="gHD-Zz-Cl6" firstAttribute="height" secondItem="ZX0-Qb-1jX" secondAttribute="height" id="rOW-XQ-nSX"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="OX7-Dv-0hi" secondAttribute="trailing" constant="50" id="rlG-GL-aHa"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="XQe-xt-KWk" secondAttribute="trailing" constant="70" id="rtU-xY-s4L"/>
                             <constraint firstItem="fbB-UU-SLQ" firstAttribute="centerX" secondItem="ZX0-Qb-1jX" secondAttribute="centerX" id="soB-t7-sVZ"/>
                             <constraint firstItem="gHD-Zz-Cl6" firstAttribute="centerY" secondItem="ZX0-Qb-1jX" secondAttribute="centerY" id="toM-rA-vKT"/>
@@ -414,6 +426,7 @@
                         <outlet property="catArt" destination="DDC-oI-SfS" id="Xyg-J8-sJM"/>
                         <outlet property="collectText" destination="ew8-TJ-l6D" id="Duc-tZ-Iwa"/>
                         <outlet property="collectView" destination="XQe-xt-KWk" id="2xZ-dv-MJ8"/>
+                        <outlet property="containerView" destination="OX7-Dv-0hi" id="G07-zZ-Tw6"/>
                         <outlet property="currentsBackground" destination="5w5-VM-nPb" id="Vic-CI-aju"/>
                         <outlet property="decorArt" destination="RIM-GI-Cjl" id="P2h-QP-WDd"/>
                         <outlet property="dimView" destination="fMR-QH-gwU" id="s7Y-OY-9LC"/>
@@ -1044,6 +1057,88 @@
             </objects>
             <point key="canvasLocation" x="847.82608695652175" y="844.41964285714278"/>
         </scene>
+        <!--Tutorial View Controller-->
+        <scene sceneID="pqI-Pq-5kJ">
+            <objects>
+                <viewController id="pK4-wp-oWq" customClass="TutorialViewController" customModule="Amble_Cat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bIk-zp-vvk">
+                        <rect key="frame" x="0.0" y="0.0" width="314" height="628"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ovO-Ax-ufO">
+                                <rect key="frame" x="20" y="103.5" width="274" height="50.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="anF-oh-T5D">
+                                        <rect key="frame" x="15" y="15" width="244" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="anF-oh-T5D" secondAttribute="bottom" constant="15" id="ViJ-eF-zwu"/>
+                                    <constraint firstItem="anF-oh-T5D" firstAttribute="leading" secondItem="ovO-Ax-ufO" secondAttribute="leading" constant="15" id="XPB-bS-cEB"/>
+                                    <constraint firstItem="anF-oh-T5D" firstAttribute="top" secondItem="ovO-Ax-ufO" secondAttribute="top" constant="15" id="fWQ-4a-tg9"/>
+                                    <constraint firstAttribute="trailing" secondItem="anF-oh-T5D" secondAttribute="trailing" constant="15" id="j4t-2N-3oh"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9VC-LP-NTp">
+                                <rect key="frame" x="118" y="568" width="78" height="30"/>
+                                <color key="backgroundColor" red="0.43911131310000001" green="0.38925293989999998" blue="0.35359854169999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="   Dismiss   ">
+                                    <color key="titleColor" red="0.87058823529999996" green="0.76470588240000004" blue="0.69019607839999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="dismissPressed:" destination="pK4-wp-oWq" eventType="touchUpInside" id="9W0-qs-6pN"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sitblink1" translatesAutoresizingMaskIntoConstraints="NO" id="Rkf-Wa-9Mt">
+                                <rect key="frame" x="0.0" y="120" width="314" height="314"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Rkf-Wa-9Mt" secondAttribute="height" multiplier="1:1" id="DZz-JV-eL4"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SrH-IE-nnK">
+                                <rect key="frame" x="107" y="414" width="100" height="50"/>
+                                <color key="backgroundColor" red="1" green="0.46274509800000002" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="Agu-EQ-6mI"/>
+                                    <constraint firstAttribute="height" constant="50" id="s1t-WP-Q1d"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                <state key="normal" title="   Next   ">
+                                    <color key="titleColor" red="0.98431372549999996" green="1" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="nextPressed:" destination="pK4-wp-oWq" eventType="touchUpInside" id="iGP-h5-UCg"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.87058823529999996" green="0.76470588240000004" blue="0.69019607839999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Rkf-Wa-9Mt" firstAttribute="leading" secondItem="bIk-zp-vvk" secondAttribute="leading" id="1zB-ge-aQz"/>
+                            <constraint firstAttribute="trailing" secondItem="Rkf-Wa-9Mt" secondAttribute="trailing" id="94g-Ua-hbS"/>
+                            <constraint firstAttribute="trailing" secondItem="ovO-Ax-ufO" secondAttribute="trailing" constant="20" id="9D1-ck-g4E"/>
+                            <constraint firstItem="9VC-LP-NTp" firstAttribute="centerX" secondItem="bIk-zp-vvk" secondAttribute="centerX" id="Tg6-CM-LWQ"/>
+                            <constraint firstItem="Rkf-Wa-9Mt" firstAttribute="top" secondItem="ovO-Ax-ufO" secondAttribute="bottom" constant="-34" id="VhU-bm-aLE"/>
+                            <constraint firstItem="ovO-Ax-ufO" firstAttribute="leading" secondItem="bIk-zp-vvk" secondAttribute="leading" constant="20" id="YiB-8j-GbQ"/>
+                            <constraint firstItem="Rkf-Wa-9Mt" firstAttribute="top" secondItem="bIk-zp-vvk" secondAttribute="top" constant="120" id="al2-ek-40v"/>
+                            <constraint firstItem="SrH-IE-nnK" firstAttribute="top" secondItem="Rkf-Wa-9Mt" secondAttribute="bottom" constant="-20" id="eb2-9n-tKY"/>
+                            <constraint firstItem="SrH-IE-nnK" firstAttribute="centerX" secondItem="bIk-zp-vvk" secondAttribute="centerX" id="rWD-vT-qva"/>
+                            <constraint firstAttribute="bottom" secondItem="9VC-LP-NTp" secondAttribute="bottom" constant="30" id="zK2-Nx-yXv"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="catImage" destination="Rkf-Wa-9Mt" id="5ab-hV-MO6"/>
+                        <outlet property="nextButton" destination="SrH-IE-nnK" id="1Sh-s6-gQi"/>
+                        <outlet property="tutorialText" destination="anF-oh-T5D" id="2g5-GC-oQA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vYa-E3-fPC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-654" y="220"/>
+        </scene>
     </scenes>
     <resources>
         <image name="back" width="600" height="257"/>
@@ -1070,6 +1165,7 @@
         <image name="paw" width="100" height="100"/>
         <image name="picture" width="1000" height="1000"/>
         <image name="pointshop" width="300" height="300"/>
+        <image name="sitblink1" width="1000" height="1000"/>
         <image name="wall" width="1000" height="1000"/>
         <image name="water" width="1000" height="1000"/>
     </resources>
