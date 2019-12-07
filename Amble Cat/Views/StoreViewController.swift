@@ -292,13 +292,16 @@ extension StoreViewController: UICollectionViewDataSource {
         print((self.view.frame.size.width - 10)/2)
 		
 		let numberOfCells = floor(self.view.frame.size.width / cellWidth)
-		let edgeInsets = (self.view.frame.size.width - (numberOfCells * cellWidth)) / (numberOfCells * 2)
+		let edgeInsets = (self.view.frame.size.width - (numberOfCells * cellWidth)) // / (numberOfCells * 2)
+        print(edgeInsets)
 		return UIEdgeInsets(top: 0, left: edgeInsets, bottom: 20, right: edgeInsets)
 	}
 	
 	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let cell = collectionView.cellForItem(at: indexPath) as? StoreCollectionViewCell {
                         
+            Sound.playSound(number: Sounds.blopSound.number)
+            
             cell.animatePress(completion: { 
                 self.isDoneAnimating = true
             })

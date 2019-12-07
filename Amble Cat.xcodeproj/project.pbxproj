@@ -23,6 +23,9 @@
 		2D7146D0235BB8560064B576 /* StoreInventory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7146CF235BB8560064B576 /* StoreInventory.swift */; };
 		2D7146D2235BBE440064B576 /* StoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7146D1235BBE440064B576 /* StoreViewController.swift */; };
 		2D7146D4235BBF130064B576 /* StoreCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7146D3235BBF130064B576 /* StoreCollectionViewCell.swift */; };
+		2D789157239C40FE00053B4E /* Sounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D789156239C40FE00053B4E /* Sounds.swift */; };
+		2D789159239C414700053B4E /* Blop-Mark_DiAngelo-79054334.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2D789158239C414700053B4E /* Blop-Mark_DiAngelo-79054334.wav */; };
+		2D78915B239C43F300053B4E /* Ting-Popup_Pixels-349896185.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2D78915A239C43F300053B4E /* Ting-Popup_Pixels-349896185.wav */; };
 		2D8867102399C4EC00DACD85 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D88670F2399C4EC00DACD85 /* TutorialViewController.swift */; };
 		2DA2E41F238DD71700541771 /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA2E41E238DD71700541771 /* NetworkMonitor.swift */; };
 		2DA559602360FE50006B3B9D /* PurchaseState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA5595F2360FE50006B3B9D /* PurchaseState.swift */; };
@@ -88,6 +91,9 @@
 		2D7146CF235BB8560064B576 /* StoreInventory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreInventory.swift; sourceTree = "<group>"; };
 		2D7146D1235BBE440064B576 /* StoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreViewController.swift; sourceTree = "<group>"; };
 		2D7146D3235BBF130064B576 /* StoreCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreCollectionViewCell.swift; sourceTree = "<group>"; };
+		2D789156239C40FE00053B4E /* Sounds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sounds.swift; sourceTree = "<group>"; };
+		2D789158239C414700053B4E /* Blop-Mark_DiAngelo-79054334.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Blop-Mark_DiAngelo-79054334.wav"; sourceTree = "<group>"; };
+		2D78915A239C43F300053B4E /* Ting-Popup_Pixels-349896185.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Ting-Popup_Pixels-349896185.wav"; sourceTree = "<group>"; };
 		2D88670F2399C4EC00DACD85 /* TutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
 		2DA2E41E238DD71700541771 /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
 		2DA5595F2360FE50006B3B9D /* PurchaseState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseState.swift; sourceTree = "<group>"; };
@@ -253,6 +259,8 @@
 				2DE904CE23562CD90036C08A /* Views */,
 				2DE860EE23552B3B00227A86 /* Main.storyboard */,
 				2D064FB02387227B00257315 /* Header.h */,
+				2D789158239C414700053B4E /* Blop-Mark_DiAngelo-79054334.wav */,
+				2D78915A239C43F300053B4E /* Ting-Popup_Pixels-349896185.wav */,
 				2D3E67E3236C9D3B00A80612 /* Extensions.swift */,
 				2DE860F123552B3C00227A86 /* Assets.xcassets */,
 				2DE860F323552B3C00227A86 /* LaunchScreen.storyboard */,
@@ -318,6 +326,7 @@
 				2DC80B8F2384AF7E006841AE /* Decor Shop */,
 				2DC80B902384AF96006841AE /* Purchases */,
 				2DA2E41E238DD71700541771 /* NetworkMonitor.swift */,
+				2D789156239C40FE00053B4E /* Sounds.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -432,8 +441,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				2DE860F523552B3C00227A86 /* LaunchScreen.storyboard in Resources */,
+				2D789159239C414700053B4E /* Blop-Mark_DiAngelo-79054334.wav in Resources */,
 				2DE860F223552B3C00227A86 /* Assets.xcassets in Resources */,
 				2DB0EB07238C8EF5003CBCB7 /* AppleIncRootCertificate.cer in Resources */,
+				2D78915B239C43F300053B4E /* Ting-Popup_Pixels-349896185.wav in Resources */,
 				2DE860F023552B3B00227A86 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -572,6 +583,7 @@
 				2DA2E41F238DD71700541771 /* NetworkMonitor.swift in Sources */,
 				2D3583C1237CC1F3005A6C56 /* AnimationManager.swift in Sources */,
 				2DE860E923552B3B00227A86 /* AppDelegate.swift in Sources */,
+				2D789157239C40FE00053B4E /* Sounds.swift in Sources */,
 				2D6FCA8D235A596100560CB2 /* Timer.swift in Sources */,
 				2DC80B882384AC62006841AE /* PawShopViewController.swift in Sources */,
 				2DC80B8C2384AF23006841AE /* Products.swift in Sources */,

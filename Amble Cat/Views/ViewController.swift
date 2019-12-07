@@ -74,6 +74,10 @@ class ViewController: UIViewController {
           collectView.layer.cornerRadius = 20
           historyButton.layer.cornerRadius = 10
           
+          // load sounds
+          Sound.loadSound(number: &Sounds.blopSound.number, resourceName: Sounds.blopSound.resourceName, type: Sounds.blopSound.type)
+          Sound.loadSound(number: &Sounds.tingSound.number, resourceName: Sounds.tingSound.resourceName, type: Sounds.tingSound.type)
+          
           loadCareState()
           loadCurrency()
           loadEquipment()
@@ -288,6 +292,7 @@ class ViewController: UIViewController {
                     
                     if heart.tag == CareState.daysCaredFor {
                          heart.animateHeart()
+                         Sound.playSound(number: Sounds.tingSound.number)
                     }
                } else {
                     heart.image = UIImage(named: "heartempty")
@@ -736,6 +741,7 @@ class ViewController: UIViewController {
                food.isHidden = false
                CareState.hasBeenFed = true
                
+               Sound.playSound(number: Sounds.blopSound.number)
                checkCareProgress()
           }
      }
@@ -748,6 +754,7 @@ class ViewController: UIViewController {
                water.isHidden = false
                CareState.hasBeenWatered = true
                
+               Sound.playSound(number: Sounds.blopSound.number)
                checkCareProgress()
           }
      }

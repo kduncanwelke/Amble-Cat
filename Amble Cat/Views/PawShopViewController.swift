@@ -167,6 +167,8 @@ extension PawShopViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // purchase item
+        Sound.playSound(number: Sounds.blopSound.number)
+        
         tableView.cellForRow(at: indexPath)?.animatePress {
         }
         
