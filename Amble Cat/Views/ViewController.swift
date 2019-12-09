@@ -77,6 +77,10 @@ class ViewController: UIViewController {
           // load sounds
           Sound.loadSound(number: &Sounds.blopSound.number, resourceName: Sounds.blopSound.resourceName, type: Sounds.blopSound.type)
           Sound.loadSound(number: &Sounds.tingSound.number, resourceName: Sounds.tingSound.resourceName, type: Sounds.tingSound.type)
+          Sound.loadSound(number: &Sounds.registerSound.number, resourceName: Sounds.registerSound.resourceName, type: Sounds.registerSound.type)
+          Sound.loadSound(number: &Sounds.meowSound.number, resourceName: Sounds.meowSound.resourceName, type: Sounds.meowSound.type)
+          Sound.loadSound(number: &Sounds.chirpSound.number, resourceName: Sounds.chirpSound.resourceName, type: Sounds.chirpSound.type)
+          Sound.loadSound(number: &Sounds.failSound.number, resourceName: Sounds.failSound.resourceName, type: Sounds.failSound.type)
           
           loadCareState()
           loadCurrency()
@@ -120,6 +124,7 @@ class ViewController: UIViewController {
                               let thousands = Int(steps / 1000)
                               self.earned = 10 * thousands
                               Currency.toAdd = 10 * thousands
+                              Sound.playSound(number: Sounds.meowSound.number)
                               self.view.bringSubviewToFront(self.collectView)
                               self.collectText.text = "You earned \(self.earned) Paw Points for walking \(steps) steps yesterday!"
                          }
@@ -161,23 +166,23 @@ class ViewController: UIViewController {
      }
      
      func beginAnimation() {
-          var range = [1,2,3]
+          var range = [1,2,3,7]
           
           if CareState.hasBeenFed && CareState.hasBeenWatered && CareState.daysCaredFor > 3 {
-               range = [1,2,3,4,5,6]
+               range = [1,2,3,4,5,6,7]
           } else if CareState.hasBeenFed && CareState.hasBeenWatered {
-               range = [1,2,3,5,6]
+               range = [1,2,3,5,6,7]
           } else if CareState.hasBeenFed && CareState.daysCaredFor > 3 {
-               range = [1,2,3,4,5]
+               range = [1,2,3,4,5,7]
           } else if CareState.hasBeenWatered && CareState.daysCaredFor > 3 {
-               range = [1,2,3,4,6]
+               range = [1,2,3,4,6,7]
           } else if CareState.hasBeenFed {
-               range = [1,2,3,5]
+               range = [1,2,3,5,7]
           } else if CareState.hasBeenWatered {
-               range = [1,2,3,6]
+               range = [1,2,3,6,7]
           }
           
-          let animation = range.randomElement() //Int.random(in: 1...max)
+          let animation = 7// range.randomElement()
           
           TimerManager.stopTimer()
           catArt.stopAnimating()
@@ -263,6 +268,20 @@ class ViewController: UIViewController {
                drinkArt.animationImages = AnimationManager.drinkAnimation
                drinkArt.animationDuration = 1.0
                drinkArt.startAnimating()
+          } else if animation == 7 {
+               catArt.isHidden = false
+               sleepArt.isHidden = true
+               eatArt.isHidden = true
+               drinkArt.isHidden = true
+               playArt.isHidden = true
+               loafArt.isHidden = true
+               
+               catArt.animationImages = AnimationManager.sitBlinkAnimation
+               catArt.animationDuration = 1.0
+               catArt.animationRepeatCount = 1
+               catArt.startAnimating()
+               
+               TimerManager.beginTimer(with: catArt)
           }
      }
      
@@ -276,8 +295,10 @@ class ViewController: UIViewController {
           if CareState.daysCaredFor == 7 {
                dimView.isHidden = false
                earned = 50
+               Currency.toAdd = earned
+               Sound.playSound(number: Sounds.meowSound.number)
                view.bringSubviewToFront(collectView)
-               collectText.text = "You earned \(self.earned) Paw Points for taking care of your cat for 7 days in a row!"
+               collectText.text = "You earned \(earned) Paw Points for taking care of Lucy for 7 days in a row!"
           }
           
           saveCare()
@@ -772,6 +793,7 @@ class ViewController: UIViewController {
      }
      
      @IBAction func collectButtonTapped(_ sender: UIButton) {
+          Sound.playSound(number: Sounds.tingSound.number)
           dimView.isHidden = true
           self.view.sendSubviewToBack(collectView)
           addCurrency(with: Currency.toAdd)

@@ -35,6 +35,10 @@
 		2DC80B8A2384ADDF006841AE /* StoreObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC80B892384ADDF006841AE /* StoreObserver.swift */; };
 		2DC80B8C2384AF23006841AE /* Products.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC80B8B2384AF23006841AE /* Products.swift */; };
 		2DC80B922384B314006841AE /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DC80B912384B314006841AE /* StoreKit.framework */; };
+		2DCB2B5B239ECF760080DC93 /* Blastwave_FX_CashRegister_S08IN.92.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2DCB2B5A239ECF750080DC93 /* Blastwave_FX_CashRegister_S08IN.92.mp3 */; };
+		2DCB2B5D239EF00A0080DC93 /* animals_cat_meow_002.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2DCB2B5C239EF0090080DC93 /* animals_cat_meow_002.mp3 */; };
+		2DCB2B5F239EF3B40080DC93 /* animals_cat_meow_003.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2DCB2B5E239EF3B40080DC93 /* animals_cat_meow_003.mp3 */; };
+		2DCB2B61239EF6980080DC93 /* sound_ex_machina_Buttons+-+Glass+Button.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2DCB2B60239EF6980080DC93 /* sound_ex_machina_Buttons+-+Glass+Button.mp3 */; };
 		2DDE569523809B9800398454 /* CareState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DDE569423809B9800398454 /* CareState.swift */; };
 		2DE860E923552B3B00227A86 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE860E823552B3B00227A86 /* AppDelegate.swift */; };
 		2DE860EB23552B3B00227A86 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE860EA23552B3B00227A86 /* SceneDelegate.swift */; };
@@ -103,6 +107,10 @@
 		2DC80B892384ADDF006841AE /* StoreObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreObserver.swift; sourceTree = "<group>"; };
 		2DC80B8B2384AF23006841AE /* Products.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Products.swift; sourceTree = "<group>"; };
 		2DC80B912384B314006841AE /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		2DCB2B5A239ECF750080DC93 /* Blastwave_FX_CashRegister_S08IN.92.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Blastwave_FX_CashRegister_S08IN.92.mp3; sourceTree = "<group>"; };
+		2DCB2B5C239EF0090080DC93 /* animals_cat_meow_002.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = animals_cat_meow_002.mp3; sourceTree = "<group>"; };
+		2DCB2B5E239EF3B40080DC93 /* animals_cat_meow_003.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = animals_cat_meow_003.mp3; sourceTree = "<group>"; };
+		2DCB2B60239EF6980080DC93 /* sound_ex_machina_Buttons+-+Glass+Button.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "sound_ex_machina_Buttons+-+Glass+Button.mp3"; sourceTree = "<group>"; };
 		2DDE569423809B9800398454 /* CareState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareState.swift; sourceTree = "<group>"; };
 		2DE860E523552B3B00227A86 /* Amble Cat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Amble Cat.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DE860E823552B3B00227A86 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -226,6 +234,19 @@
 			path = Purchases;
 			sourceTree = "<group>";
 		};
+		2DCB2B62239F087C0080DC93 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				2D789158239C414700053B4E /* Blop-Mark_DiAngelo-79054334.wav */,
+				2DCB2B5C239EF0090080DC93 /* animals_cat_meow_002.mp3 */,
+				2DCB2B60239EF6980080DC93 /* sound_ex_machina_Buttons+-+Glass+Button.mp3 */,
+				2DCB2B5E239EF3B40080DC93 /* animals_cat_meow_003.mp3 */,
+				2D78915A239C43F300053B4E /* Ting-Popup_Pixels-349896185.wav */,
+				2DCB2B5A239ECF750080DC93 /* Blastwave_FX_CashRegister_S08IN.92.mp3 */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
 		2DE860DC23552B3B00227A86 = {
 			isa = PBXGroup;
 			children = (
@@ -259,8 +280,7 @@
 				2DE904CE23562CD90036C08A /* Views */,
 				2DE860EE23552B3B00227A86 /* Main.storyboard */,
 				2D064FB02387227B00257315 /* Header.h */,
-				2D789158239C414700053B4E /* Blop-Mark_DiAngelo-79054334.wav */,
-				2D78915A239C43F300053B4E /* Ting-Popup_Pixels-349896185.wav */,
+				2DCB2B62239F087C0080DC93 /* Sounds */,
 				2D3E67E3236C9D3B00A80612 /* Extensions.swift */,
 				2DE860F123552B3C00227A86 /* Assets.xcassets */,
 				2DE860F323552B3C00227A86 /* LaunchScreen.storyboard */,
@@ -440,9 +460,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DCB2B61239EF6980080DC93 /* sound_ex_machina_Buttons+-+Glass+Button.mp3 in Resources */,
+				2DCB2B5F239EF3B40080DC93 /* animals_cat_meow_003.mp3 in Resources */,
 				2DE860F523552B3C00227A86 /* LaunchScreen.storyboard in Resources */,
 				2D789159239C414700053B4E /* Blop-Mark_DiAngelo-79054334.wav in Resources */,
+				2DCB2B5D239EF00A0080DC93 /* animals_cat_meow_002.mp3 in Resources */,
 				2DE860F223552B3C00227A86 /* Assets.xcassets in Resources */,
+				2DCB2B5B239ECF760080DC93 /* Blastwave_FX_CashRegister_S08IN.92.mp3 in Resources */,
 				2DB0EB07238C8EF5003CBCB7 /* AppleIncRootCertificate.cer in Resources */,
 				2D78915B239C43F300053B4E /* Ting-Popup_Pixels-349896185.wav in Resources */,
 				2DE860F023552B3B00227A86 /* Main.storyboard in Resources */,

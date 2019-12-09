@@ -32,7 +32,7 @@ class StoreObserver: NSObject, SKPaymentTransactionObserver {
             case .purchased:
                 complete(transaction: transaction)
                 print("purchase succeeded")
-                Sound.playSound(number: Sounds.tingSound.number)
+                Sound.playSound(number: Sounds.registerSound.number)
                 NotificationCenter.default.post(name: NSNotification.Name(rawValue: "updatePoints"), object: nil)
             // The transaction failed.
             case .failed:

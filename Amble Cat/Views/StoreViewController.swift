@@ -228,7 +228,9 @@ class StoreViewController: UIViewController, UICollectionViewDelegate, UICollect
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "refreshPoints"), object: nil)
         
         savePurchaseState()
+        Sound.playSound(number: Sounds.tingSound.number)
         collectionView.reloadData()
+        
     }
     
     @IBAction func cancelPurchase(_ sender: UIButton) {
@@ -302,7 +304,7 @@ extension StoreViewController: UICollectionViewDataSource {
                         
             Sound.playSound(number: Sounds.blopSound.number)
             
-            cell.animatePress(completion: { 
+            cell.animatePress(completion: { [unowned self] in
                 self.isDoneAnimating = true
             })
         
@@ -355,9 +357,11 @@ extension StoreViewController: UICollectionViewDataSource {
                 
                 if Currency.userTotal < item.price {
                     // show alert for insufficient funds
+                    Sound.playSound(number: Sounds.failSound.number)
                     self.view.bringSubviewToFront(insufficientFundsView)
                 } else {
                     // confirm purchase
+                    Sound.playSound(number: Sounds.chirpSound.number)
                     areYouSureLabel.text = "Are you sure you want to buy the \(item.name)?"
                     self.view.bringSubviewToFront(confirmPurchaseView)
                 }

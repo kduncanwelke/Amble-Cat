@@ -212,7 +212,7 @@
                                 <rect key="frame" x="0.0" y="135.5" width="414" height="414"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lucytail2" translatesAutoresizingMaskIntoConstraints="NO" id="DDC-oI-SfS">
-                                <rect key="frame" x="20.5" y="156" width="373" height="373"/>
+                                <rect key="frame" x="0.0" y="135.5" width="414" height="414"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="DDC-oI-SfS" secondAttribute="height" multiplier="1:1" id="YuB-vM-kt6"/>
                                 </constraints>
@@ -325,7 +325,7 @@
                             <constraint firstItem="1Nq-BO-TyH" firstAttribute="centerX" secondItem="ZX0-Qb-1jX" secondAttribute="centerX" id="284-Cb-OOV"/>
                             <constraint firstItem="baZ-7B-Yr5" firstAttribute="width" secondItem="ZX0-Qb-1jX" secondAttribute="width" id="2oW-90-6D0"/>
                             <constraint firstAttribute="bottom" secondItem="eSF-Uv-Mba" secondAttribute="bottom" constant="20" id="3DY-DM-sla"/>
-                            <constraint firstItem="DDC-oI-SfS" firstAttribute="height" secondItem="ZX0-Qb-1jX" secondAttribute="height" multiplier="0.9" id="3fW-2g-vPY"/>
+                            <constraint firstItem="DDC-oI-SfS" firstAttribute="height" secondItem="ZX0-Qb-1jX" secondAttribute="height" id="3fW-2g-vPY"/>
                             <constraint firstItem="Rwa-Vs-Zr0" firstAttribute="top" secondItem="PED-9s-e5Y" secondAttribute="bottom" constant="8" id="4dJ-s7-PJ5"/>
                             <constraint firstItem="EGI-IM-dbU" firstAttribute="height" secondItem="ZX0-Qb-1jX" secondAttribute="height" id="4gX-CW-aLc"/>
                             <constraint firstItem="kmY-BW-XTE" firstAttribute="centerY" secondItem="ZX0-Qb-1jX" secondAttribute="centerY" id="4un-hq-apV"/>
@@ -415,7 +415,7 @@
                             <constraint firstItem="xqr-Er-2jF" firstAttribute="centerX" secondItem="ZX0-Qb-1jX" secondAttribute="centerX" id="xbF-S4-My4"/>
                             <constraint firstItem="fZ1-FX-vxC" firstAttribute="width" secondItem="ZX0-Qb-1jX" secondAttribute="width" id="xcL-Vz-0ge"/>
                             <constraint firstItem="JCi-eP-TVG" firstAttribute="centerY" secondItem="ZX0-Qb-1jX" secondAttribute="centerY" id="xeq-2u-OW3"/>
-                            <constraint firstItem="DDC-oI-SfS" firstAttribute="width" secondItem="ZX0-Qb-1jX" secondAttribute="width" multiplier="0.9" id="xxb-JS-1m7"/>
+                            <constraint firstItem="DDC-oI-SfS" firstAttribute="width" secondItem="ZX0-Qb-1jX" secondAttribute="width" id="xxb-JS-1m7"/>
                             <constraint firstItem="baZ-7B-Yr5" firstAttribute="centerX" secondItem="ZX0-Qb-1jX" secondAttribute="centerX" id="ySR-0j-kVT"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -1071,11 +1071,11 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="anF-oh-T5D">
                                         <rect key="frame" x="15" y="15" width="244" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="anF-oh-T5D" secondAttribute="bottom" constant="15" id="ViJ-eF-zwu"/>
                                     <constraint firstItem="anF-oh-T5D" firstAttribute="leading" secondItem="ovO-Ax-ufO" secondAttribute="leading" constant="15" id="XPB-bS-cEB"/>
@@ -1093,7 +1093,7 @@
                                     <action selector="dismissPressed:" destination="pK4-wp-oWq" eventType="touchUpInside" id="9W0-qs-6pN"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sitblink1" translatesAutoresizingMaskIntoConstraints="NO" id="Rkf-Wa-9Mt">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="10" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sitblink1" translatesAutoresizingMaskIntoConstraints="NO" id="Rkf-Wa-9Mt">
                                 <rect key="frame" x="0.0" y="120" width="314" height="314"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Rkf-Wa-9Mt" secondAttribute="height" multiplier="1:1" id="DZz-JV-eL4"/>
@@ -1128,6 +1128,7 @@
                             <constraint firstItem="SrH-IE-nnK" firstAttribute="centerX" secondItem="bIk-zp-vvk" secondAttribute="centerX" id="rWD-vT-qva"/>
                             <constraint firstAttribute="bottom" secondItem="9VC-LP-NTp" secondAttribute="bottom" constant="30" id="zK2-Nx-yXv"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="3a3-tr-8k6"/>
                     </view>
                     <connections>
                         <outlet property="catImage" destination="Rkf-Wa-9Mt" id="5ab-hV-MO6"/>

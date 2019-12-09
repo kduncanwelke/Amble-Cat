@@ -186,6 +186,8 @@ class StatisticsViewController: UIViewController {
     
     @IBAction func nextTapped(_ sender: UIButton) {
         if HealthDataManager.startDate < -1 {
+            Sound.playSound(number: Sounds.blopSound.number)
+            
             HealthDataManager.startDate += 7
             HealthDataManager.endDate += 7
             
@@ -204,6 +206,8 @@ class StatisticsViewController: UIViewController {
     
     
     @IBAction func previousTapped(_ sender: UIButton) {
+        Sound.playSound(number: Sounds.blopSound.number)
+        
         HealthDataManager.startDate -= 7
         HealthDataManager.endDate -= 7
         
