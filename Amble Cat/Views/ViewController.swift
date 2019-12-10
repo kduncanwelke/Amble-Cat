@@ -10,7 +10,7 @@ import UIKit
 import HealthKit
 import CoreData
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
      // MARK: IBOutlets
 
@@ -48,6 +48,7 @@ class ViewController: UIViewController {
      @IBOutlet weak var historyButton: UIButton!
      
      @IBOutlet weak var containerView: UIView!
+     @IBOutlet weak var collectionView: UICollectionView!
      
      
      // MARK: Variables
@@ -59,6 +60,10 @@ class ViewController: UIViewController {
           super.viewDidLoad()
           // Do any additional setup after loading the view.
           dimView.isHidden = true
+          collectView.isHidden = true
+          
+          collectionView.dataSource = self
+          collectionView.delegate = self
           
           NotificationCenter.default.addObserver(self, selector: #selector(refreshPoints), name: NSNotification.Name(rawValue: "refreshPoints"), object: nil)
           
@@ -121,6 +126,7 @@ class ViewController: UIViewController {
                          
                          if self.isSameDay() == false && steps >= 1000 {
                               self.dimView.isHidden = false
+                              self.collectView.isHidden = false
                               let thousands = Int(steps / 1000)
                               self.earned = 10 * thousands
                               Currency.toAdd = 10 * thousands
@@ -795,6 +801,7 @@ class ViewController: UIViewController {
      @IBAction func collectButtonTapped(_ sender: UIButton) {
           Sound.playSound(number: Sounds.tingSound.number)
           dimView.isHidden = true
+          collectView.isHidden = true
           self.view.sendSubviewToBack(collectView)
           addCurrency(with: Currency.toAdd)
           pointsLabel.text = "\(Currency.userTotal) Paw Points"
@@ -803,3 +810,89 @@ class ViewController: UIViewController {
 }
 
 
+extension ViewController: UICollectionViewDataSource {
+     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+          return Buttons.ButtonList.count
+     }
+     
+     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+          
+          if floor(collectionView.frame.size.height / 120.0) > 1 {
+               let height = collectionView.frame.size.height/2
+               return CGSize(width: height, height: height)
+          } else {
+               print("one row")
+               let width = (self.view.frame.size.width-20)/4
+               print(width)
+               return CGSize(width: width, height: (collectionView.frame.size.height))
+          }
+     }
+
+     
+     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+          let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "buttonCell", for: indexPath) as! ButtonCollectionViewCell
+          
+          var item: ButtonInfo
+          item = Buttons.ButtonList[indexPath.row]
+     
+          cell.cellButton.setBackgroundImage(item.image, for: .normal)
+          cell.cellText.text = item.text
+          
+          return cell
+     }
+     
+     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+          
+          if floor(collectionView.frame.size.height / 130.0) > 1 {
+               print("two rows")
+               let cellWidth : CGFloat = (self.view.frame.size.width - 10)/2
+               print(cellWidth)
+               let numberOfCells = floor(self.view.frame.size.width / cellWidth)
+               print(numberOfCells)
+               //let edgeInsets = (self.view.frame.size.width - (numberOfCells * cellWidth)) // / (numberOfCells * 2)
+               return UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
+          } else {
+               print("one row")
+               let cellWidth : CGFloat = (self.view.frame.size.width - 10)/4
+               print(cellWidth)
+               let numberOfCells = floor(self.view.frame.size.width / cellWidth)
+               let edgeInsets = (self.view.frame.size.width - (numberOfCells * cellWidth)) // / (numberOfCells * 2)
+                print(numberOfCells)
+               return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+          }
+         
+     }
+     
+     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+          if let cell = collectionView.cellForItem(at: indexPath) as? ButtonCollectionViewCell {
+               
+               Sound.playSound(number: Sounds.blopSound.number)
+               
+               if indexPath.row == 0 {
+                    if CareState.hasBeenFed {
+                         return
+                    } else {
+                         food.isHidden = false
+                         CareState.hasBeenFed = true
+                         
+                         Sound.playSound(number: Sounds.blopSound.number)
+                         checkCareProgress()
+                    }
+               } else if indexPath.row == 1 {
+                    if CareState.hasBeenWatered {
+                         return
+                    } else {
+                         water.isHidden = false
+                         CareState.hasBeenWatered = true
+                         
+                         Sound.playSound(number: Sounds.blopSound.number)
+                         checkCareProgress()
+                    }
+               } else if indexPath.row == 2 {
+                     performSegue(withIdentifier: "goToStore", sender: Any?.self)
+               } else if indexPath.row == 3 {
+                     performSegue(withIdentifier: "goToPointShop", sender: Any?.self)
+               }
+          }
+     }
+}
