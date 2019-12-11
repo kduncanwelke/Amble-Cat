@@ -810,7 +810,39 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
 }
 
 
-extension ViewController: UICollectionViewDataSource {
+extension ViewController: UICollectionViewDataSource, ButtonTapDelegate {
+     func didTap(sender: ButtonCollectionViewCell) {
+          guard let path = self.collectionView.indexPath(for: sender) else { return }
+          
+          Sound.playSound(number: Sounds.blopSound.number)
+          
+          if path.row == 0 {
+               if CareState.hasBeenFed {
+                    return
+               } else {
+                    food.isHidden = false
+                    CareState.hasBeenFed = true
+                    
+                    Sound.playSound(number: Sounds.blopSound.number)
+                    checkCareProgress()
+               }
+          } else if path.row == 1 {
+               if CareState.hasBeenWatered {
+                    return
+               } else {
+                    water.isHidden = false
+                    CareState.hasBeenWatered = true
+                    
+                    Sound.playSound(number: Sounds.blopSound.number)
+                    checkCareProgress()
+               }
+          } else if path.row == 2 {
+               performSegue(withIdentifier: "goToStore", sender: Any?.self)
+          } else if path.row == 3 {
+               performSegue(withIdentifier: "goToPointShop", sender: Any?.self)
+          }
+     }
+     
      func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
           return Buttons.ButtonList.count
      }
@@ -818,7 +850,7 @@ extension ViewController: UICollectionViewDataSource {
      func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
           
           if floor(collectionView.frame.size.height / 120.0) > 1 {
-               let height = collectionView.frame.size.height/2
+               let height = (collectionView.frame.size.height)/2.5
                return CGSize(width: height, height: height)
           } else {
                print("one row")
@@ -838,6 +870,8 @@ extension ViewController: UICollectionViewDataSource {
           cell.cellButton.setBackgroundImage(item.image, for: .normal)
           cell.cellText.text = item.text
           
+          cell.buttonTapDelegate = self
+          
           return cell
      }
      
@@ -845,54 +879,30 @@ extension ViewController: UICollectionViewDataSource {
           
           if floor(collectionView.frame.size.height / 130.0) > 1 {
                print("two rows")
-               let cellWidth : CGFloat = (self.view.frame.size.width - 10)/2
-               print(cellWidth)
+               let cellWidth: CGFloat = (self.view.frame.size.width)/3
                let numberOfCells = floor(self.view.frame.size.width / cellWidth)
-               print(numberOfCells)
-               //let edgeInsets = (self.view.frame.size.width - (numberOfCells * cellWidth)) // / (numberOfCells * 2)
-               return UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
+               let edgeInsets = (self.view.frame.size.width - (2 * cellWidth)) / 2.5
+               
+               return UIEdgeInsets(top: 10, left: edgeInsets, bottom: 0, right: edgeInsets)
           } else {
                print("one row")
-               let cellWidth : CGFloat = (self.view.frame.size.width - 10)/4
+               let cellWidth: CGFloat = (self.view.frame.size.width)/4
                print(cellWidth)
                let numberOfCells = floor(self.view.frame.size.width / cellWidth)
-               let edgeInsets = (self.view.frame.size.width - (numberOfCells * cellWidth)) // / (numberOfCells * 2)
-                print(numberOfCells)
-               return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+               let edgeInsets = (self.view.frame.size.width - (numberOfCells * cellWidth)) / (numberOfCells + 1)
+              
+               return UIEdgeInsets(top: 0, left: edgeInsets, bottom: 0, right: edgeInsets)
           }
-         
      }
      
-     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-          if let cell = collectionView.cellForItem(at: indexPath) as? ButtonCollectionViewCell {
-               
-               Sound.playSound(number: Sounds.blopSound.number)
-               
-               if indexPath.row == 0 {
-                    if CareState.hasBeenFed {
-                         return
-                    } else {
-                         food.isHidden = false
-                         CareState.hasBeenFed = true
-                         
-                         Sound.playSound(number: Sounds.blopSound.number)
-                         checkCareProgress()
-                    }
-               } else if indexPath.row == 1 {
-                    if CareState.hasBeenWatered {
-                         return
-                    } else {
-                         water.isHidden = false
-                         CareState.hasBeenWatered = true
-                         
-                         Sound.playSound(number: Sounds.blopSound.number)
-                         checkCareProgress()
-                    }
-               } else if indexPath.row == 2 {
-                     performSegue(withIdentifier: "goToStore", sender: Any?.self)
-               } else if indexPath.row == 3 {
-                     performSegue(withIdentifier: "goToPointShop", sender: Any?.self)
-               }
+     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+          
+          if floor(collectionView.frame.size.height / 130.0) > 1 {
+               let height = (collectionView.frame.size.height)/2.5
+               let space = collectionView.frame.size.height - (height * 2)
+               return space / 2
+          } else {
+               return 1
           }
      }
 }

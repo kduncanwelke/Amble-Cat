@@ -10,9 +10,17 @@ import UIKit
 
 class ButtonCollectionViewCell: UICollectionViewCell {
   
+    weak var buttonTapDelegate: ButtonTapDelegate?
+    
     // MARK: IBOutlets
     
     @IBOutlet weak var cellButton: UIButton!
     @IBOutlet weak var cellText: UILabel!
+    
+    // MARK: IBActions
+    
+    @IBAction func buttonTapped(_ sender: UIButton) {
+        self.buttonTapDelegate?.didTap(sender: self)
+    }
     
 }

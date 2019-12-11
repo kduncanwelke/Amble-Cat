@@ -294,7 +294,7 @@ extension StoreViewController: UICollectionViewDataSource {
         print((self.view.frame.size.width - 10)/2)
 		
 		let numberOfCells = floor(self.view.frame.size.width / cellWidth)
-		let edgeInsets = (self.view.frame.size.width - (numberOfCells * cellWidth)) // / (numberOfCells * 2)
+		let edgeInsets = (self.view.frame.size.width - (numberOfCells * cellWidth)) / (numberOfCells + 1)
         print(edgeInsets)
 		return UIEdgeInsets(top: 0, left: edgeInsets, bottom: 20, right: edgeInsets)
 	}

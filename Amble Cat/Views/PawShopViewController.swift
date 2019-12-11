@@ -200,13 +200,17 @@ extension PawShopViewController: SKProductsRequestDelegate {
                 print(product.priceLocale)
             }
             
-            products.sort(by: { (p0, p1) -> Bool in
+            products.sort {
+                $0.price.compare($1.price) == ComparisonResult.orderedAscending
+            }
+           /* products.sort(by: { (p0, p1) -> Bool in
                 return p0.price.floatValue < p1.price.floatValue
-            }) 
+            })*/
             
             DispatchQueue.main.async { [weak self] in
                 self?.tableView.reloadData()
             }
+        
         }
         
         for invalidIdentifier in response.invalidProductIdentifiers {
