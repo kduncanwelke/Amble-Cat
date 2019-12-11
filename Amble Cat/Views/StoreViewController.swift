@@ -348,17 +348,17 @@ extension StoreViewController: UICollectionViewDataSource {
                     }
                     
                     NotificationCenter.default.post(name: NSNotification.Name(rawValue: "decorChanged"), object: nil)
-                       
-                    return
                     
+                    Sound.playSound(number: Sounds.tingSound.number)
+                    return
                 }
             } else {
                 dimView.isHidden = false
                 
                 if Currency.userTotal < item.price {
                     // show alert for insufficient funds
-                    Sound.playSound(number: Sounds.failSound.number)
                     self.view.bringSubviewToFront(insufficientFundsView)
+                    Sound.playSound(number: Sounds.failSound.number)
                 } else {
                     // confirm purchase
                     Sound.playSound(number: Sounds.chirpSound.number)

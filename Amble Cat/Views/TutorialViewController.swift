@@ -54,6 +54,7 @@ class TutorialViewController: UIViewController {
             print(index)
             if index == tutorial.count {
                 nextButton.isHidden = true
+                Sound.playSound(number: Sounds.chirpSound.number)
             }
         } else {
             return

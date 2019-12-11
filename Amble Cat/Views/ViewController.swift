@@ -377,7 +377,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                var resultArray = try managedContext.fetch(fetchRequest)
                if let result = resultArray.first {
                     let calendar = Calendar.current
-                    print(result.dateOfLastCare)
+                    
                     // check if last care day was yesterday
                     if let careDay = result.dateOfLastCare {
                          if calendar.isDateInYesterday(careDay) {

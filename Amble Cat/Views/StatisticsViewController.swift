@@ -74,6 +74,8 @@ class StatisticsViewController: UIViewController {
         
         graphView.rightAxis.enabled = false
         graphView.leftAxis.enabled = false
+        let emptyVals = [Highlight]()
+        graphView.highlightValues(emptyVals)
         
         dataSet.colors = ChartColorTemplates.joyful()
         graphView.notifyDataSetChanged()
@@ -87,6 +89,8 @@ class StatisticsViewController: UIViewController {
         tapSteps.text = "\(steps) steps"
         tapDate.text = string
         tapDistance.text = "\(Int(HealthDataManager.distances[0])) meters"
+        
+        graphView.animate(yAxisDuration: 0.5)
     }
 
     /*
