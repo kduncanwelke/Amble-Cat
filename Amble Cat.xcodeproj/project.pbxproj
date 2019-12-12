@@ -30,6 +30,7 @@
 		2D789159239C414700053B4E /* Blop-Mark_DiAngelo-79054334.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2D789158239C414700053B4E /* Blop-Mark_DiAngelo-79054334.wav */; };
 		2D78915B239C43F300053B4E /* Ting-Popup_Pixels-349896185.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2D78915A239C43F300053B4E /* Ting-Popup_Pixels-349896185.wav */; };
 		2D8867102399C4EC00DACD85 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D88670F2399C4EC00DACD85 /* TutorialViewController.swift */; };
+		2D9D68BF23A2C186005EBB35 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9D68BE23A2C186005EBB35 /* AboutViewController.swift */; };
 		2DA2E41F238DD71700541771 /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA2E41E238DD71700541771 /* NetworkMonitor.swift */; };
 		2DA559602360FE50006B3B9D /* PurchaseState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA5595F2360FE50006B3B9D /* PurchaseState.swift */; };
 		2DB0EB07238C8EF5003CBCB7 /* AppleIncRootCertificate.cer in Resources */ = {isa = PBXBuildFile; fileRef = 2DB0EB06238C8EF5003CBCB7 /* AppleIncRootCertificate.cer */; };
@@ -105,6 +106,7 @@
 		2D789158239C414700053B4E /* Blop-Mark_DiAngelo-79054334.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Blop-Mark_DiAngelo-79054334.wav"; sourceTree = "<group>"; };
 		2D78915A239C43F300053B4E /* Ting-Popup_Pixels-349896185.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Ting-Popup_Pixels-349896185.wav"; sourceTree = "<group>"; };
 		2D88670F2399C4EC00DACD85 /* TutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
+		2D9D68BE23A2C186005EBB35 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		2DA2E41E238DD71700541771 /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
 		2DA5595F2360FE50006B3B9D /* PurchaseState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseState.swift; sourceTree = "<group>"; };
 		2DB0EB06238C8EF5003CBCB7 /* AppleIncRootCertificate.cer */ = {isa = PBXFileReference; lastKnownFileType = file; name = AppleIncRootCertificate.cer; path = ../../../../../../Downloads/AppleIncRootCertificate.cer; sourceTree = "<group>"; };
@@ -339,6 +341,7 @@
 				2DE904CF235638790036C08A /* StatisticsViewController.swift */,
 				2DC80B872384AC62006841AE /* PawShopViewController.swift */,
 				2DC80B852384A932006841AE /* PawShopTableViewCell.swift */,
+				2D9D68BE23A2C186005EBB35 /* AboutViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -630,6 +633,7 @@
 				2DC80B8A2384ADDF006841AE /* StoreObserver.swift in Sources */,
 				2D064FB223872A6B00257315 /* ReceiptItem.swift in Sources */,
 				2D6FCA8A235A1DFC00560CB2 /* CoreDataManager.swift in Sources */,
+				2D9D68BF23A2C186005EBB35 /* AboutViewController.swift in Sources */,
 				2D6FCA86235A169500560CB2 /* Data.xcdatamodeld in Sources */,
 				2D8867102399C4EC00DACD85 /* TutorialViewController.swift in Sources */,
 				2D3E67E4236C9D3B00A80612 /* Extensions.swift in Sources */,

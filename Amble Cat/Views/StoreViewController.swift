@@ -239,6 +239,8 @@ class StoreViewController: UIViewController, UICollectionViewDelegate, UICollect
     }
 }
 
+// MARK: Collection View
+
 extension StoreViewController: UICollectionViewDataSource {
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if segmentedControl.selectedSegmentIndex == 0 {
@@ -290,12 +292,10 @@ extension StoreViewController: UICollectionViewDataSource {
 	}
 	
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        let cellWidth : CGFloat = min(200.0, ((self.view.frame.size.width - 10)/2))
-        print((self.view.frame.size.width - 10)/2)
-		
+        let cellWidth : CGFloat = min(200.0, ((self.view.frame.size.width - 10)/2))		
 		let numberOfCells = floor(self.view.frame.size.width / cellWidth)
 		let edgeInsets = (self.view.frame.size.width - (numberOfCells * cellWidth)) / (numberOfCells + 1)
-        print(edgeInsets)
+      
 		return UIEdgeInsets(top: 0, left: edgeInsets, bottom: 20, right: edgeInsets)
 	}
 	

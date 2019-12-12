@@ -24,3 +24,13 @@ struct GraphManager {
     static var startIndex = 0
     static var endIndex = 6
 }
+
+struct Measures {
+    static var preferred: Distance = .miles
+    static var loaded: Measurement?
+}
+
+enum Distance: String {
+    case meters = "Meters"
+    case miles = "Miles"
+}

@@ -16,6 +16,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
 
      @IBOutlet weak var stepsLabel: UILabel!
      @IBOutlet weak var distanceLabel: UILabel!
+     @IBOutlet weak var measurementLabel: UILabel!
+     
      @IBOutlet weak var stepsYesterday: UILabel!
      @IBOutlet weak var currentsBackground: UIView!
      @IBOutlet weak var pointsLabel: UILabel!
@@ -75,6 +77,11 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
           
           NotificationCenter.default.addObserver(self, selector: #selector(hideTutorial), name: NSNotification.Name(rawValue: "hideTutorial"), object: nil)
           
+          NotificationCenter.default.addObserver(self, selector: #selector(redoTutorial), name: NSNotification.Name(rawValue: "redoTutorial"), object: nil)
+          
+          NotificationCenter.default.addObserver(self, selector: #selector(unitChanged), name: NSNotification.Name(rawValue: "unitChanged"), object: nil)
+          
+          
           currentsBackground.layer.cornerRadius = 20
           collectView.layer.cornerRadius = 20
           historyButton.layer.cornerRadius = 10
@@ -90,6 +97,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
           loadCareState()
           loadCurrency()
           loadEquipment()
+          loadMeasure()
           
           if isAppAlreadyLaunchedOnce() {
                containerView.isHidden = true
@@ -98,54 +106,59 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                dimView.isHidden = false
           }
         
-          HealthStore.store.requestAuthorization(toShare: HealthStore.healthKitTypes, read: HealthStore.healthKitTypes) { [unowned self] (bool, error) in
-          if (bool) {
-                self.getSteps { (result) in
-                    DispatchQueue.main.async {
-                        let stepCount = String(Int(result))
-                        self.stepsLabel.text = "\(stepCount)"
-                    }
-                }
-                
-                self.getDistance { (result) in
-                    DispatchQueue.main.async {
-                        let distance = String(Int(result))
-                        self.distanceLabel.text = "\(distance) meters"
-                    }
-                }
-           
-                self.querySteps { (result) in
-                    DispatchQueue.main.async {
-                        let steps = Int(result)
-                        self.stepsYesterday.text = "\(steps) Steps Yesterday"
-                       
-                         let date = Date()
-                         let calendar = Calendar.current
-                         let dateToCompare = calendar.component(.day , from: date)
-                         let userDefaultDate = UserDefaults.standard.integer(forKey: "userDefaultDate")
-                         
-                         if self.isSameDay() == false && steps >= 1000 {
-                              self.dimView.isHidden = false
-                              self.collectView.isHidden = false
-                              let thousands = Int(steps / 1000)
-                              self.earned = 10 * thousands
-                              Currency.toAdd = 10 * thousands
-                              Sound.playSound(number: Sounds.meowSound.number)
-                              self.view.bringSubviewToFront(self.collectView)
-                              self.collectText.text = "You earned \(self.earned) Paw Points for walking \(steps) steps yesterday!"
-                         }
-                    }
-                }
-           
-               self.queryDistanceHistory()
-            }
-        }
+          requestHealthInfo()
           
           beginAnimation()
           
     }
 	
      // MARK: Custom functions
+     
+     func requestHealthInfo() {
+          HealthStore.store.requestAuthorization(toShare: HealthStore.healthKitTypes, read: HealthStore.healthKitTypes) { [unowned self] (bool, error) in
+               if (bool) {
+                    self.getSteps { (result) in
+                         DispatchQueue.main.async {
+                              let stepCount = String(Int(result))
+                              self.stepsLabel.text = "\(stepCount)"
+                         }
+                    }
+                    
+                    self.getDistance { (result) in
+                         DispatchQueue.main.async {
+                              let distance = String(Int(result))
+                              self.distanceLabel.text = "\(distance)"
+                              self.measurementLabel.text = "\(Measures.preferred.rawValue)"
+                         }
+                    }
+                    
+                    self.querySteps { (result) in
+                         DispatchQueue.main.async {
+                              let steps = Int(result)
+                              self.stepsYesterday.text = "\(steps) Steps Yesterday"
+                              
+                              let date = Date()
+                              let calendar = Calendar.current
+                              let dateToCompare = calendar.component(.day , from: date)
+                              let userDefaultDate = UserDefaults.standard.integer(forKey: "userDefaultDate")
+                              
+                              if self.isSameDay() == false && steps >= 1000 {
+                                   self.dimView.isHidden = false
+                                   self.collectView.isHidden = false
+                                   let thousands = Int(steps / 1000)
+                                   self.earned = 10 * thousands
+                                   Currency.toAdd = 10 * thousands
+                                   Sound.playSound(number: Sounds.meowSound.number)
+                                   self.view.bringSubviewToFront(self.collectView)
+                                   self.collectText.text = "You earned \(self.earned) Paw Points for walking \(steps) steps yesterday!"
+                              }
+                         }
+                    }
+                    
+                    self.queryDistanceHistory()
+               }
+          }
+     }
      
      @objc func addPurchasedCurrency() {
           addCurrency(with: Currency.toAdd)
@@ -154,6 +167,15 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
      @objc func hideTutorial() {
           containerView.isHidden = true
           dimView.isHidden = true
+     }
+     
+     @objc func redoTutorial() {
+          containerView.isHidden = false
+          dimView.isHidden = false
+     }
+     
+     @objc func unitChanged() {
+          requestHealthInfo()
      }
      
      func isSameDay() -> Bool {
@@ -188,7 +210,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                range = [1,2,3,6,7]
           }
           
-          let animation = 7// range.randomElement()
+          let animation = range.randomElement()
           
           TimerManager.stopTimer()
           catArt.stopAnimating()
@@ -198,8 +220,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
           eatArt.stopAnimating()
           drinkArt.stopAnimating()
           
-          
-          print(animation)
           if animation == 1 {
                catArt.isHidden = false
                sleepArt.isHidden = true
@@ -350,6 +370,27 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
           windowArt.image = window.image
      }
      
+     func loadMeasure() {
+          var managedContext = CoreDataManager.shared.managedObjectContext
+          var fetchRequest = NSFetchRequest<Measurement>(entityName: "Measurement")
+          
+          do {
+               var result = try managedContext.fetch(fetchRequest)
+               if let result = result.first {
+                    Measures.loaded = result
+                    if result.selection == "Miles" {
+                         Measures.preferred = Distance.miles
+                    } else if result.selection == "Meters" {
+                         Measures.preferred = Distance.meters
+                    }
+               }
+               print("measures loaded")
+               
+          } catch let error as NSError {
+               showAlert(title: "Could not retrieve data", message: "\(error.userInfo)")
+          }
+     }
+     
      func loadCurrency() {
          var managedContext = CoreDataManager.shared.managedObjectContext
          var fetchRequest = NSFetchRequest<Points>(entityName: "Points")
@@ -452,9 +493,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                     print(careSave.dateOfLastCare)
                }
                
-               print(CareState.hasBeenFed)
-               print(CareState.hasBeenWatered)
-               print(CareState.daysCaredFor)
                do {
                     try managedContext.save()
                     print("saved")
@@ -478,13 +516,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
           
           if CareState.hasBeenFed && CareState.hasBeenWatered {
                currentCare.dateOfLastCare = Date()
-               print("date save")
-               print(currentCare.dateOfLastCare)
           }
-          
-          print(CareState.hasBeenFed)
-          print(CareState.hasBeenWatered)
-          print(CareState.daysCaredFor)
           
           do {
                try managedContext.save()
@@ -583,12 +615,12 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
           let defaults = UserDefaults.standard
 
           if let isAppAlreadyLaunchedOnce = defaults.string(forKey: "isAppAlreadyLaunchedOnce") {
-            print("App already launched : \(isAppAlreadyLaunchedOnce)")
-            return true
+               print("App already launched : \(isAppAlreadyLaunchedOnce)")
+               return true
           } else {
-            defaults.set(true, forKey: "isAppAlreadyLaunchedOnce")
-            print("App launched first time")
-            return false
+               defaults.set(true, forKey: "isAppAlreadyLaunchedOnce")
+               print("App launched first time")
+               return false
           }
      }
      
@@ -649,7 +681,14 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                 result!.enumerateStatistics(from: startOfDay, to: now) { statistics, _ in
 
                 if let sum = statistics.sumQuantity() {
-                    resultCount = sum.doubleValue(for: HKUnit.meter())
+                    var measurement: HKUnit
+                    switch Measures.preferred {
+                    case .meters:
+                         measurement = HKUnit.meter()
+                    case .miles:
+                         measurement = HKUnit.mile()
+                    }
+                    resultCount = sum.doubleValue(for: measurement)
                 }
 
                 DispatchQueue.main.async {
@@ -745,7 +784,15 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                 myResults.enumerateStatistics(from: startDate, to: endDate) { statistics, stop in
                    
                     if let sum = statistics.sumQuantity() {
-                        let distance = sum.doubleValue(for: HKUnit.meter())
+                         var measurement: HKUnit
+                         switch Measures.preferred {
+                         case .meters:
+                              measurement = HKUnit.meter()
+                         case .miles:
+                              measurement = HKUnit.mile()
+                         }
+                         
+                        let distance = sum.doubleValue(for: measurement)
                         HealthDataManager.distances.insert(distance, at: 0)
                     } else {
                         let distance = 0.0
@@ -760,42 +807,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
 
     
      // MARK: IBActions
-
-     @IBAction func foodPressed(_ sender: UIButton) {
-          if CareState.hasBeenFed {
-               return
-          } else {
-               food.isHidden = false
-               CareState.hasBeenFed = true
-               
-               Sound.playSound(number: Sounds.blopSound.number)
-               checkCareProgress()
-          }
-     }
-     
-     
-     @IBAction func waterPressed(_ sender: UIButton) {
-          if CareState.hasBeenWatered {
-               return
-          } else {
-               water.isHidden = false
-               CareState.hasBeenWatered = true
-               
-               Sound.playSound(number: Sounds.blopSound.number)
-               checkCareProgress()
-          }
-     }
      
      @IBAction func viewStatsPressed(_ sender: UIButton) {
           performSegue(withIdentifier: "viewStatistics", sender: Any?.self)
-     }
-     
-     @IBAction func storePressed(_ sender: UIButton) {
-          performSegue(withIdentifier: "goToStore", sender: Any?.self)
-     }
-     
-     @IBAction func pointShopPressed(_ sender: UIButton) {
-          performSegue(withIdentifier: "goToPointShop", sender: Any?.self)
      }
      
      @IBAction func collectButtonTapped(_ sender: UIButton) {
@@ -807,8 +821,14 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
           pointsLabel.text = "\(Currency.userTotal) Paw Points"
           loadCurrency()
      }
+     
+     @IBAction func viewInfoTapped(_ sender: UIButton) {
+          performSegue(withIdentifier: "viewAbout", sender: Any?.self)
+     }
+     
 }
 
+// MARK: Collection View
 
 extension ViewController: UICollectionViewDataSource, ButtonTapDelegate {
      func didTap(sender: ButtonCollectionViewCell) {
@@ -880,7 +900,6 @@ extension ViewController: UICollectionViewDataSource, ButtonTapDelegate {
           if floor(collectionView.frame.size.height / 130.0) > 1 {
                print("two rows")
                let cellWidth: CGFloat = (self.view.frame.size.width)/3
-               let numberOfCells = floor(self.view.frame.size.width / cellWidth)
                let edgeInsets = (self.view.frame.size.width - (2 * cellWidth)) / 2.5
                
                return UIEdgeInsets(top: 10, left: edgeInsets, bottom: 0, right: edgeInsets)

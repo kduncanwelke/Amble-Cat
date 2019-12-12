@@ -15,6 +15,7 @@ class TutorialViewController: UIViewController {
     @IBOutlet weak var tutorialText: UILabel!
     @IBOutlet weak var catImage: UIImageView!
     @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet weak var dismissButton: UIButton!
     
     // MARK: Variables
     
@@ -27,6 +28,7 @@ class TutorialViewController: UIViewController {
 
         // Do any additional setup after loading the view.
       
+        dismissButton.layer.cornerRadius = 10
         catImage.animationImages = AnimationManager.sitBlinkAnimation
         catImage.animationDuration = 1.0
         catImage.animationRepeatCount = 1

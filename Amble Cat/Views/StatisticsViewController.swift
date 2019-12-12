@@ -88,7 +88,7 @@ class StatisticsViewController: UIViewController {
         let steps = Int(HealthDataManager.stepHistory[0])
         tapSteps.text = "\(steps) steps"
         tapDate.text = string
-        tapDistance.text = "\(Int(HealthDataManager.distances[0])) meters"
+        tapDistance.text = "\(Int(HealthDataManager.distances[0])) \(Measures.preferred.rawValue)"
         
         graphView.animate(yAxisDuration: 0.5)
     }
@@ -173,7 +173,15 @@ class StatisticsViewController: UIViewController {
                 myResults.enumerateStatistics(from: startDate, to: endDate) { statistics, stop in
                     
                     if let sum = statistics.sumQuantity() {
-                        let distance = sum.doubleValue(for: HKUnit.meter())
+                        var measurement: HKUnit
+                        switch Measures.preferred {
+                        case .meters:
+                            measurement = HKUnit.meter()
+                        case .miles:
+                            measurement = HKUnit.mile()
+                        }
+                        
+                        let distance = sum.doubleValue(for: measurement)
                         HealthDataManager.distances.insert(distance, at: 0)
                     } else {
                         let distance = 0.0
@@ -246,6 +254,6 @@ extension StatisticsViewController: ChartViewDelegate {
         tapDate.text = string
         let steps = Int(HealthDataManager.stepHistory[index])
         tapSteps.text = "\(steps) steps"
-        tapDistance.text = "\(Int(HealthDataManager.distances[index])) meters"
+        tapDistance.text = "\(Int(HealthDataManager.distances[index])) \(Measures.preferred.rawValue)"
     }
 }

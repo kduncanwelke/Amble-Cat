@@ -60,7 +60,7 @@ class PawShopViewController: UIViewController, UITableViewDelegate {
                 print("no connection")
                 NetworkMonitor.connection = false
                 
-                self?.showAlert(title: "Network Failed", message: "Purchases cannot be accessed - please check your network connection")
+                self?.showAlert(title: "Network Failed", message: "Purchases cannot be loaded - please check your network connection")
             }
         }
         
@@ -182,13 +182,16 @@ extension PawShopViewController: UITableViewDataSource {
                 
                 pawPoints = points
             } else {
-                return
+                showAlert(title: "Purchases unavailable", message: "Purchases cannot be processed without a network connection - please try again")
             }
         } else {
             showAlert(title: "Payments not authorized", message: "This device is not permitted to process payments")
         }
     }
 }
+
+
+// MARK: StoreKit
 
 extension PawShopViewController: SKProductsRequestDelegate {
     func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
