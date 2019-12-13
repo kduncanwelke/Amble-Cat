@@ -48,7 +48,7 @@ class StatisticsViewController: UIViewController {
             entries.append(entry)
         }
         
-        let dataSet = BarChartDataSet(entries: entries, label: "Past Week's Steps")
+        let dataSet = BarChartDataSet(entries: entries, label: "Steps")
         let data = BarChartData(dataSets: [dataSet])
         
         graphView.xAxis.valueFormatter = DefaultAxisValueFormatter(block: {(index, _) in

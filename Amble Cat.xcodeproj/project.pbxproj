@@ -843,7 +843,7 @@
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "/Users/kateduncan-welke/Documents/Stuffs/Treehouse/AmbleCat/Amble-Cat/Amble Cat/Header.h";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/Pods/OpenSSL-Universal/ios/include";
 			};
 			name = Debug;
@@ -880,7 +880,7 @@
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "/Users/kateduncan-welke/Documents/Stuffs/Treehouse/AmbleCat/Amble-Cat/Amble Cat/Header.h";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/Pods/OpenSSL-Universal/ios/include";
 			};
 			name = Release;

@@ -105,6 +105,20 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                containerView.isHidden = false
                dimView.isHidden = false
           }
+          
+          NetworkMonitor.monitor.pathUpdateHandler = { path in
+               if path.status == .satisfied {
+                    print("connection successful")
+                    NetworkMonitor.connection = true
+                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "networkRestored"), object: nil)
+               } else {
+                    print("no connection")
+                    NetworkMonitor.connection = false
+               }
+          }
+          
+          let queue = DispatchQueue(label: "Monitor")
+          NetworkMonitor.monitor.start(queue: queue)
         
           requestHealthInfo()
           
@@ -196,18 +210,20 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
      func beginAnimation() {
           var range = [1,2,3,7]
           
-          if CareState.hasBeenFed && CareState.hasBeenWatered && CareState.daysCaredFor > 3 {
+          if CareState.hasBeenFed && CareState.hasBeenWatered && CareState.daysCaredFor >= 5 {
                range = [1,2,3,4,5,6,7]
-          } else if CareState.hasBeenFed && CareState.hasBeenWatered {
+          } else if CareState.hasBeenFed && CareState.hasBeenWatered && CareState.daysCaredFor >= 3 {
                range = [1,2,3,5,6,7]
+          } else if CareState.hasBeenFed && CareState.hasBeenWatered {
+               range = [1,2,3,5,6]
           } else if CareState.hasBeenFed && CareState.daysCaredFor > 3 {
-               range = [1,2,3,4,5,7]
+               range = [1,2,3,4,5]
           } else if CareState.hasBeenWatered && CareState.daysCaredFor > 3 {
-               range = [1,2,3,4,6,7]
+               range = [1,2,3,4,6]
           } else if CareState.hasBeenFed {
-               range = [1,2,3,5,7]
+               range = [1,2,3,5]
           } else if CareState.hasBeenWatered {
-               range = [1,2,3,6,7]
+               range = [1,2,3,6]
           }
           
           let animation = range.randomElement()

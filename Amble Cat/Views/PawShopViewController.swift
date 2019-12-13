@@ -33,6 +33,8 @@ class PawShopViewController: UIViewController, UITableViewDelegate {
         // Do any additional setup after loading the view.
         NotificationCenter.default.addObserver(self, selector: #selector(updatePoints), name: NSNotification.Name(rawValue: "updatePoints"), object: nil)
         
+        NotificationCenter.default.addObserver(self, selector: #selector(networkRestored), name: NSNotification.Name(rawValue: "networkRestored"), object: nil)
+        
         tableView.dataSource = self
         tableView.delegate = self
         tableView.tableFooterView = UIView()
@@ -41,39 +43,23 @@ class PawShopViewController: UIViewController, UITableViewDelegate {
         pawPointTotal.text = "\(Currency.userTotal)"
         
         getProducts()
-        
-        NetworkMonitor.monitor.pathUpdateHandler = { [weak self] path in
-            if path.status == .satisfied {
-                print("connection successful")
-                NetworkMonitor.connection = true
-                
-                self?.networkRestored()
-                
-                if Receipt.isReceiptPresent() {
-                    self?.validateReceipt()
-                    print("validate on load")
-                } else {
-                    self?.refreshReceipt()
-                    print("refresh on load")
-                }
-            } else {
-                print("no connection")
-                NetworkMonitor.connection = false
-                
-                self?.showAlert(title: "Network Failed", message: "Purchases cannot be loaded - please check your network connection")
-            }
-        }
-        
-        let queue = DispatchQueue(label: "Monitor")
-        NetworkMonitor.monitor.start(queue: queue)
+ 
     }
     
 
     // MARK: Custom functions
     
-    func networkRestored() {
+    @objc func networkRestored() {
         if products.isEmpty {
             getProducts()
+        }
+        
+        if Receipt.isReceiptPresent() {
+            validateReceipt()
+            print("validate on load")
+        } else {
+            refreshReceipt()
+            print("refresh on load")
         }
     }
     
@@ -154,7 +140,7 @@ extension PawShopViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "pawShopCell", for: indexPath) as! PawShopTableViewCell
         
         var item: SKProduct
-        
+        print(indexPath.row)
         item = products[indexPath.row]
         
         cell.title.text = item.localizedTitle
@@ -195,16 +181,12 @@ extension PawShopViewController: UITableViewDataSource {
 
 extension PawShopViewController: SKProductsRequestDelegate {
     func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
-        if !response.products.isEmpty {
+        if response.products.count == Products.productQuantities.count {
             products = response.products
             for product in products {
                 print(product.localizedTitle)
                 print(product.price)
                 print(product.priceLocale)
-            }
-            
-            products.sort {
-                $0.price.compare($1.price) == ComparisonResult.orderedAscending
             }
             
             DispatchQueue.main.async { [weak self] in
