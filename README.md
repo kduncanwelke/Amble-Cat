@@ -1,7 +1,30 @@
 # Amble-Cat
-Cute step tracking
+Step tracking made cute!
 
 AmbleCat integrates with the Health app on a user's device, via Healthkit, to provide step tracking data in a fun and easy format. Current step count for the day is displayed in a 'currents' view, with complete step history displayed in graph format. The user cares for a cat, which acts as their companion, featuring cute art and a customizable room. By walking, a user earns Paw Points based on their step count. This in-app currency can then be used to spent in the decor shop to purchase new styles of items. Working towards new purchases helps provide a fun, simple motivation for a user to keep walking regularly. The app also features a Paw Point shop, which allows real money to be used for in-app purchases that will get the user more Paw Points to spend. 
+
+![Screenshot of the app Amble Cat](https://i.ibb.co/hd22b3P/Screen-Shot-2020-08-10-at-2-37-20-PM.png)
+
+## Description
+Amble Cat brings you step tracking with a twist!
+
+Enjoy the company of a feline friend, receive gifts for caring for her, and earn Paw Points in exchange for your daily steps! Spend your Paw Points in the decor shop to customize your cat's room to your liking - a variety of items creates constant new goals for you to work towards, for the more you walk the more Paw Points you'll earn, and the more you can spend!
+With an easy to use interface, cute art, a convenient graph view of step history, and integration with the Health app (Healthkit) to provide accurate step measurements, Amble Cat makes step tracking simple and rewarding!
+
+Features include:
+
+* Cute cat art with varied animations that change based on your care
+* Intuitive, easy to use interface with sound feedback
+* A short walkthrough tutorial
+* Hearts accrued for every consecutive day of care for your cat - fill them all and earn a surprise!
+* Earn Paw Points for your steps, and purchase new decor items to customize your cat's room
+* Wide variety of colors and styles of decor items to spend points on - the more you walk, the more items you can buy
+* Current status view with step count and distance covered
+* Step history displayed in a convenient graph view - tap a column to see details for any day
+* Equipment of purchased items via the Decor Shop, simply tap to apply (current selections shown in blue
+* In-app purchases of more Paw Points in the Paw Point shop (for those must-have decors)
+* The ability to toggle between mile and meter measurements
+* Don't forget to open the app daily to collect your points!
 
 ## Dependencies
 [Charts](https://github.com/danielgindi/Charts) is used in this project to provide graph views of data, and [OpenSSL-Universal](https://cocoapods.org/pods/OpenSSL-Universal) handles cryptography to help secure receipt validation. [Cocoapods](https://github.com/CocoaPods/CocoaPods) has been used as the dependency manager for this project - please refer to Cocoapods documentation for details.
