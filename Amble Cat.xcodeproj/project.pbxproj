@@ -13,6 +13,11 @@
 		2D064FB523873C4A00257315 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D064FAA2387018E00257315 /* libcrypto.a */; };
 		2D064FB623873C5B00257315 /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D064FA92387018D00257315 /* libssl.a */; };
 		2D0C3CFB2363A7E300EA064A /* DecorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0C3CFA2363A7E300EA064A /* DecorManager.swift */; };
+		2D123A8C25C9F50E005EBFEB /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D123A8B25C9F50E005EBFEB /* ViewModel.swift */; };
+		2D123A8E25CA009E005EBFEB /* ViewModel+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D123A8D25CA009E005EBFEB /* ViewModel+CoreData.swift */; };
+		2D220E3D25CB47CB00D02FE7 /* StoreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D220E3C25CB47CB00D02FE7 /* StoreViewModel.swift */; };
+		2D220E3F25CB5A9600D02FE7 /* PawShopViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D220E3E25CB5A9600D02FE7 /* PawShopViewModel.swift */; };
+		2D220E4125CB5B6B00D02FE7 /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D220E4025CB5B6B00D02FE7 /* StoreManager.swift */; };
 		2D27AA2B23A1687B00AF31D2 /* ButtonTapDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D27AA2A23A1687B00AF31D2 /* ButtonTapDelegate.swift */; };
 		2D353B9923A058A000C2E1AC /* ButtonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D353B9823A058A000C2E1AC /* ButtonCollectionViewCell.swift */; };
 		2D353B9B23A05A2200C2E1AC /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D353B9A23A05A2200C2E1AC /* Buttons.swift */; };
@@ -89,6 +94,11 @@
 		2D064FB123872A6B00257315 /* ReceiptItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptItem.swift; sourceTree = "<group>"; };
 		2D064FB323872EEC00257315 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		2D0C3CFA2363A7E300EA064A /* DecorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecorManager.swift; sourceTree = "<group>"; };
+		2D123A8B25C9F50E005EBFEB /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		2D123A8D25CA009E005EBFEB /* ViewModel+CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewModel+CoreData.swift"; sourceTree = "<group>"; };
+		2D220E3C25CB47CB00D02FE7 /* StoreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreViewModel.swift; sourceTree = "<group>"; };
+		2D220E3E25CB5A9600D02FE7 /* PawShopViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PawShopViewModel.swift; sourceTree = "<group>"; };
+		2D220E4025CB5B6B00D02FE7 /* StoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreManager.swift; sourceTree = "<group>"; };
 		2D27AA2A23A1687B00AF31D2 /* ButtonTapDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonTapDelegate.swift; sourceTree = "<group>"; };
 		2D353B9823A058A000C2E1AC /* ButtonCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCollectionViewCell.swift; sourceTree = "<group>"; };
 		2D353B9A23A05A2200C2E1AC /* Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
@@ -139,6 +149,7 @@
 		2DE904CF235638790036C08A /* StatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
 		2DE904D1235639DE0036C08A /* HealthDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthDataManager.swift; sourceTree = "<group>"; };
 		2DE904D423563C710036C08A /* HealthStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthStore.swift; sourceTree = "<group>"; };
+		2DF0E70223A7F84100924F4E /* Amble CatRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Amble CatRelease.entitlements"; sourceTree = "<group>"; };
 		3818FF6AF8E28BA0323F11B9 /* Pods-Amble CatTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Amble CatTests.debug.xcconfig"; path = "Target Support Files/Pods-Amble CatTests/Pods-Amble CatTests.debug.xcconfig"; sourceTree = "<group>"; };
 		421862C21F11840DBF92FA31 /* Pods-Amble Cat-Amble CatUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Amble Cat-Amble CatUITests.release.xcconfig"; path = "Target Support Files/Pods-Amble Cat-Amble CatUITests/Pods-Amble Cat-Amble CatUITests.release.xcconfig"; sourceTree = "<group>"; };
 		4E045E3AD807650B6A8840DF /* Pods-Amble Cat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Amble Cat.release.xcconfig"; path = "Target Support Files/Pods-Amble Cat/Pods-Amble Cat.release.xcconfig"; sourceTree = "<group>"; };
@@ -192,6 +203,26 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		2D123A8925C9F293005EBFEB /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				2DA2E41E238DD71700541771 /* NetworkMonitor.swift */,
+				2D27AA2A23A1687B00AF31D2 /* ButtonTapDelegate.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		2D123A8A25C9F4F0005EBFEB /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				2D123A8B25C9F50E005EBFEB /* ViewModel.swift */,
+				2D123A8D25CA009E005EBFEB /* ViewModel+CoreData.swift */,
+				2D220E3C25CB47CB00D02FE7 /* StoreViewModel.swift */,
+				2D220E3E25CB5A9600D02FE7 /* PawShopViewModel.swift */,
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
 		2D6FCA8B235A1E0000560CB2 /* Core Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -238,6 +269,7 @@
 				2D064FAD2387193A00257315 /* Receipt.swift */,
 				2D064FB323872EEC00257315 /* Helpers.swift */,
 				2D064FB123872A6B00257315 /* ReceiptItem.swift */,
+				2D220E4025CB5B6B00D02FE7 /* StoreManager.swift */,
 			);
 			path = Purchases;
 			sourceTree = "<group>";
@@ -245,6 +277,7 @@
 		2DCB2B62239F087C0080DC93 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				2D789156239C40FE00053B4E /* Sounds.swift */,
 				2D789158239C414700053B4E /* Blop-Mark_DiAngelo-79054334.wav */,
 				2DCB2B5C239EF0090080DC93 /* animals_cat_meow_002.mp3 */,
 				2DCB2B60239EF6980080DC93 /* sound_ex_machina_Buttons+-+Glass+Button.mp3 */,
@@ -280,11 +313,13 @@
 		2DE860E723552B3B00227A86 /* Amble Cat */ = {
 			isa = PBXGroup;
 			children = (
+				2DF0E70223A7F84100924F4E /* Amble CatRelease.entitlements */,
 				2DE8611923552CAA00227A86 /* Amble CatDebug.entitlements */,
 				2DE860E823552B3B00227A86 /* AppDelegate.swift */,
 				2DB0EB06238C8EF5003CBCB7 /* AppleIncRootCertificate.cer */,
 				2DE860EA23552B3B00227A86 /* SceneDelegate.swift */,
 				2DE904D3235639F30036C08A /* Models */,
+				2D123A8A25C9F4F0005EBFEB /* View Models */,
 				2DE904CE23562CD90036C08A /* Views */,
 				2DE860EE23552B3B00227A86 /* Main.storyboard */,
 				2D064FB02387227B00257315 /* Header.h */,
@@ -349,16 +384,14 @@
 		2DE904D3235639F30036C08A /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				2DC80B8D2384AF58006841AE /* HealthKit */,
 				2DC80B8E2384AF67006841AE /* Animation */,
+				2DC80B8D2384AF58006841AE /* HealthKit */,
 				2D6FCA87235A1D7500560CB2 /* Currency.swift */,
 				2DDE569423809B9800398454 /* CareState.swift */,
 				2DC80B8F2384AF7E006841AE /* Decor Shop */,
 				2DC80B902384AF96006841AE /* Purchases */,
-				2DA2E41E238DD71700541771 /* NetworkMonitor.swift */,
-				2D789156239C40FE00053B4E /* Sounds.swift */,
 				2D353B9A23A05A2200C2E1AC /* Buttons.swift */,
-				2D27AA2A23A1687B00AF31D2 /* ButtonTapDelegate.swift */,
+				2D123A8925C9F293005EBFEB /* Helpers */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -613,8 +646,10 @@
 				2DA559602360FE50006B3B9D /* PurchaseState.swift in Sources */,
 				2DE860ED23552B3B00227A86 /* ViewController.swift in Sources */,
 				2DE904D523563C710036C08A /* HealthStore.swift in Sources */,
+				2D220E3F25CB5A9600D02FE7 /* PawShopViewModel.swift in Sources */,
 				2D7146D0235BB8560064B576 /* StoreInventory.swift in Sources */,
 				2D0C3CFB2363A7E300EA064A /* DecorManager.swift in Sources */,
+				2D123A8C25C9F50E005EBFEB /* ViewModel.swift in Sources */,
 				2DDE569523809B9800398454 /* CareState.swift in Sources */,
 				2DA2E41F238DD71700541771 /* NetworkMonitor.swift in Sources */,
 				2D353B9B23A05A2200C2E1AC /* Buttons.swift in Sources */,
@@ -626,6 +661,7 @@
 				2D27AA2B23A1687B00AF31D2 /* ButtonTapDelegate.swift in Sources */,
 				2DC80B8C2384AF23006841AE /* Products.swift in Sources */,
 				2D064FAE2387193A00257315 /* Receipt.swift in Sources */,
+				2D123A8E25CA009E005EBFEB /* ViewModel+CoreData.swift in Sources */,
 				2DE904D2235639DE0036C08A /* HealthDataManager.swift in Sources */,
 				2D7146D2235BBE440064B576 /* StoreViewController.swift in Sources */,
 				2D6FCA88235A1D7500560CB2 /* Currency.swift in Sources */,
@@ -635,6 +671,8 @@
 				2D6FCA8A235A1DFC00560CB2 /* CoreDataManager.swift in Sources */,
 				2D9D68BF23A2C186005EBB35 /* AboutViewController.swift in Sources */,
 				2D6FCA86235A169500560CB2 /* Data.xcdatamodeld in Sources */,
+				2D220E4125CB5B6B00D02FE7 /* StoreManager.swift in Sources */,
+				2D220E3D25CB47CB00D02FE7 /* StoreViewModel.swift in Sources */,
 				2D8867102399C4EC00DACD85 /* TutorialViewController.swift in Sources */,
 				2D3E67E4236C9D3B00A80612 /* Extensions.swift in Sources */,
 				2DE904D0235638790036C08A /* StatisticsViewController.swift in Sources */,
@@ -789,7 +827,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -825,11 +863,13 @@
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "Amble Cat/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/Pods/OpenSSL-Universal/ios/lib";
+				MARKETING_VERSION = 1.4;
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lcrypto",
@@ -855,18 +895,22 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Amble Cat/Amble CatRelease.entitlements";
 				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = A8R365GJ52;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "Amble Cat/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/Pods/OpenSSL-Universal/ios/lib";
+				MARKETING_VERSION = 1.4;
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lcrypto",
@@ -915,6 +959,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = A8R365GJ52;
 				INFOPLIST_FILE = "Amble CatTests/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -958,6 +1003,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = A8R365GJ52;
 				INFOPLIST_FILE = "Amble CatUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (

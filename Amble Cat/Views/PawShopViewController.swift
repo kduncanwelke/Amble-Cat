@@ -18,11 +18,9 @@ class PawShopViewController: UIViewController, UITableViewDelegate {
     @IBOutlet weak var pawPointTotal: UILabel!
     @IBOutlet weak var dismissButton: UIButton!
     
-    
     // MARK: Variables
     
-    var request: SKProductsRequest!
-    var products = [SKProduct]()
+    let pawShopViewModel = PawShopViewModel()
     var hasLoaded = false
     var receipt: Receipt?
     var pawPoints = 0
@@ -40,9 +38,9 @@ class PawShopViewController: UIViewController, UITableViewDelegate {
         tableView.tableFooterView = UIView()
         dismissButton.layer.cornerRadius = 10
         
-        pawPointTotal.text = "\(Currency.userTotal)"
+        pawPointTotal.text = pawShopViewModel.getCurrencyString()
         
-        getProducts()
+        pawShopViewModel.getProducts()
  
     }
     
@@ -50,8 +48,8 @@ class PawShopViewController: UIViewController, UITableViewDelegate {
     // MARK: Custom functions
     
     @objc func networkRestored() {
-        if products.isEmpty {
-            getProducts()
+        if pawShopViewModel.isProductsEmpty() {
+            pawShopViewModel.getProducts()
         }
         
         if Receipt.isReceiptPresent() {
@@ -74,41 +72,7 @@ class PawShopViewController: UIViewController, UITableViewDelegate {
         pawPoints = 0
     }
     
-    func refreshReceipt() {
-        print("Requesting refresh of receipt.")
-        let refreshRequest = SKReceiptRefreshRequest()
-        refreshRequest.delegate = self
-        refreshRequest.start()
-    }
-    
-    func validateReceipt() {
-        receipt = Receipt()
-        if let receiptStatus = receipt?.status {
-            guard receiptStatus == .validationSuccess else {
-                print(receiptStatus)
-                return
-            }
-        }
-    }
-    
-    func getProducts() {
-        var isAuthorizedForPayments: Bool {
-            return SKPaymentQueue.canMakePayments()
-        }
-        
-        if isAuthorizedForPayments {
-            validate(productIdentifiers: [Products.fiftyPoints, Products.oneHundredPoints, Products.oneHundredFiftyPoints, Products.twoHundredPoints, Products.threeHundredFiftyPoints, Products.fiveHundredPoints, Products.oneThousandPoints, Products.oneThousandFiveHundredPoints, Products.twoThousandPoints, Products.threeThousandPoints, Products.fiveThousandPoints, Products.tenThousandPoints])
-        }
-    }
-    
-    func validate(productIdentifiers: [String]) {
-        let productIdentifiers = Set(productIdentifiers)
-        
-        request = SKProductsRequest(productIdentifiers: productIdentifiers)
-        request.delegate = self
-        request.start()
-    }
-    
+
     /*
     // MARK: - Navigation
 
@@ -133,20 +97,13 @@ extension PawShopViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return products.count
+        return pawShopViewModel.getProductsCount()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "pawShopCell", for: indexPath) as! PawShopTableViewCell
         
-        var item: SKProduct
-        print(indexPath.row)
-        item = products[indexPath.row]
-        
-        cell.title.text = item.localizedTitle
-        cell.price.text = "\(item.price)"
-        cell.details.text = item.localizedDescription
-        cell.picture.image = Products.productImages[item.productIdentifier] 
+        cell.configure(index: indexPath)
         
         return cell
     }
@@ -160,7 +117,7 @@ extension PawShopViewController: UITableViewDataSource {
         
         let isAuthorizedForPayments = SKPaymentQueue.canMakePayments()
         
-        if isAuthorizedForPayments && !products.isEmpty {
+        if isAuthorizedForPayments && !pawShopViewModel.isProductsEmpty() {
             if NetworkMonitor.connection {
                 StoreObserver.iapObserver.buy(products[indexPath.row])
                 

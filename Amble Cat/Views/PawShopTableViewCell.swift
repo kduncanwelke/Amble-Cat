@@ -17,6 +17,7 @@ class PawShopTableViewCell: UITableViewCell {
     @IBOutlet weak var details: UILabel!
     @IBOutlet weak var price: UILabel!
     
+    private let pawShopViewModel = PawShopViewModel()
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -27,5 +28,12 @@ class PawShopTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func configure(index: IndexPath) {
+        title.text = pawShopViewModel.getTitle(index: index)
+        price.text = pawShopViewModel.getPrice(index: index)
+        details.text = pawShopViewModel.getDescrip(index: index)
+        picture.image = pawShopViewModel.getImage(index: index)
     }
 }

@@ -84,7 +84,7 @@ class TutorialViewController: UIViewController {
         if TextTimer.isRunning {
             return
         } else if index < tutorial.count {
-             Sound.playSound(number: Sounds.blopSound.number)
+            Sound.playSound(number: Sounds.blopSound.number)
             changeText()
         } else {
             return

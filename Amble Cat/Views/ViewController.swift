@@ -55,8 +55,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
      
      // MARK: Variables
 
-     let userDefaultDate = "userDefaultDate"
      var earned = 0
+     private let viewModel = ViewModel()
    
      override func viewDidLoad() {
           super.viewDidLoad()
@@ -94,12 +94,14 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
           Sound.loadSound(number: &Sounds.chirpSound.number, resourceName: Sounds.chirpSound.resourceName, type: Sounds.chirpSound.type)
           Sound.loadSound(number: &Sounds.failSound.number, resourceName: Sounds.failSound.resourceName, type: Sounds.failSound.type)
           
-          loadCareState()
-          loadCurrency()
-          loadEquipment()
-          loadMeasure()
           
-          if isAppAlreadyLaunchedOnce() {
+          viewModel.loadCurrency()
+          viewModel.loadMeasure()
+          viewModel.loadCareState()
+          viewModel.loadEquipment()
+          
+          
+          if viewModel.isAppAlreadyLaunchedOnce() {
                containerView.isHidden = true
           } else {
                containerView.isHidden = false
@@ -123,12 +125,20 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
           requestHealthInfo()
           
           beginAnimation()
-          
     }
 	
      // MARK: Custom functions
      
+     func loadUI() {
+          pointsLabel.text = viewModel.setPointsLabel()
+          
+          food.isHidden = viewModel.showFood()
+          
+          water.isHidden = viewModel.showWater()
+     }
+     
      func requestHealthInfo() {
+          // FIXME: change to CMPedometer
           HealthStore.store.requestAuthorization(toShare: HealthStore.healthKitTypes, read: HealthStore.healthKitTypes) { [unowned self] (bool, error) in
                if (bool) {
                     self.getSteps { (result) in
@@ -156,7 +166,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                               let dateToCompare = calendar.component(.day , from: date)
                               let userDefaultDate = UserDefaults.standard.integer(forKey: "userDefaultDate")
                               
-                              if self.isSameDay() == false && steps >= 1000 {
+                              if self.viewModel.isSameDay() == false && steps >= 1000 {
                                    self.dimView.isHidden = false
                                    self.collectView.isHidden = false
                                    let thousands = Int(steps / 1000)
@@ -175,7 +185,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
      }
      
      @objc func addPurchasedCurrency() {
-          addCurrency(with: Currency.toAdd)
+          viewModel.addCurrency()
      }
      
      @objc func hideTutorial() {
@@ -192,18 +202,13 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
           requestHealthInfo()
      }
      
-     func isSameDay() -> Bool {
-          let date = Date()
-          let calendar = Calendar.current
-          let dateToCompare = calendar.component(.day , from: date)
-          
-          let userDefaultDate = UserDefaults.standard.integer(forKey: "userDefaultDate")
-         
-          if userDefaultDate != dateToCompare {
-               UserDefaults.standard.set(dateToCompare, forKey: self.userDefaultDate)
-               return false
-          } else {
-               return true
+     func updateCare() {
+          if viewModel.checkCareProgress() {
+               dimView.isHidden = false
+               Sound.playSound(number: Sounds.meowSound.number)
+               collectView.isHidden = false
+               view.bringSubviewToFront(collectView)
+               collectText.text = "You earned \(earned) Paw Points for taking care of Lucy for 7 days in a row!"
           }
      }
      
@@ -327,25 +332,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
           }
      }
      
-     func checkCareProgress() {
-          print("care progress")
-         
-          if CareState.hasBeenFed && CareState.hasBeenWatered {
-               CareState.daysCaredFor += 1
-          }
-          
-          if CareState.daysCaredFor == 7 {
-               dimView.isHidden = false
-               earned = 50
-               Currency.toAdd = earned
-               Sound.playSound(number: Sounds.meowSound.number)
-               view.bringSubviewToFront(collectView)
-               collectText.text = "You earned \(earned) Paw Points for taking care of Lucy for 7 days in a row!"
-          }
-          
-          saveCare()
-     }
-     
      func updateHearts() {
           print("update hearts")
        
@@ -372,274 +358,19 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
      }
      
      @objc func decorChanged() {
-          guard let bed = StoreInventory.inventoryDictionary[DecorManager.bedID], let bowl = StoreInventory.inventoryDictionary[DecorManager.bowlID], let decor = StoreInventory.inventoryDictionary[DecorManager.decorID], let floor = StoreInventory.inventoryDictionary[DecorManager.floorID], let picture = StoreInventory.inventoryDictionary[DecorManager.pictureID], let rug = StoreInventory.inventoryDictionary[DecorManager.rugID], let toy = StoreInventory.inventoryDictionary[DecorManager.toyID], let wall = StoreInventory.inventoryDictionary[DecorManager.wallID], let water = StoreInventory.inventoryDictionary[DecorManager.waterID], let window = StoreInventory.inventoryDictionary[DecorManager.windowID] else { return }
-          
-          bedArt.image = bed.image
-          bowlArt.image = bowl.image
-          decorArt.image = decor.image
-          floorArt.image = floor.image
-          pictureArt.image = picture.image
-          rugArt.image = rug.image
-          toyArt.image = toy.image
-          wallArt.image = wall.image
-          waterBowlArt.image = water.image
-          windowArt.image = window.image
+          bedArt.image = viewModel.getBedImage()
+          bowlArt.image = viewModel.getBowlImage()
+          decorArt.image = viewModel.getDecorImage()
+          floorArt.image = viewModel.getFloorImage()
+          pictureArt.image = viewModel.getPictureImage()
+          rugArt.image = viewModel.getRugImage()
+          toyArt.image = viewModel.getToyImage()
+          wallArt.image = viewModel.getWallImage()
+          waterBowlArt.image = viewModel.getWaterImage()
+          windowArt.image = viewModel.getWindowImage()
      }
-     
-     func loadMeasure() {
-          var managedContext = CoreDataManager.shared.managedObjectContext
-          var fetchRequest = NSFetchRequest<Measurement>(entityName: "Measurement")
-          
-          do {
-               var result = try managedContext.fetch(fetchRequest)
-               if let result = result.first {
-                    Measures.loaded = result
-                    if result.selection == "Miles" {
-                         Measures.preferred = Distance.miles
-                    } else if result.selection == "Meters" {
-                         Measures.preferred = Distance.meters
-                    }
-               }
-               print("measures loaded")
-               
-          } catch let error as NSError {
-               showAlert(title: "Could not retrieve data", message: "\(error.userInfo)")
-          }
-     }
-     
-     func loadCurrency() {
-         var managedContext = CoreDataManager.shared.managedObjectContext
-         var fetchRequest = NSFetchRequest<Points>(entityName: "Points")
-         
-          do {
-               var result = try managedContext.fetch(fetchRequest)
-               if let total = result.first {
-                    print(total.total)
-                    Currency.loaded = total
-                    Currency.userTotal = Int(total.total)
-					pointsLabel.text = "\(Currency.userTotal) Paw Points"
-               }
-			   print("total loaded")
-             
-          } catch let error as NSError {
-               showAlert(title: "Could not retrieve data", message: "\(error.userInfo)")
-          }
-     }
-     
-     func loadCareState() {
-          var managedContext = CoreDataManager.shared.managedObjectContext
-          var fetchRequest = NSFetchRequest<CareStatus>(entityName: "CareStatus")
-          
-          do {
-               var resultArray = try managedContext.fetch(fetchRequest)
-               if let result = resultArray.first {
-                    let calendar = Calendar.current
-                    
-                    // check if last care day was yesterday
-                    if let careDay = result.dateOfLastCare {
-                         if calendar.isDateInYesterday(careDay) {
-                              print("yesterday")
-                              // if seven days of consistent care have passed, reset
-                              if result.daysOfConsecutiveCare == 7 {
-                                   CareState.daysCaredFor = 0
-                                   CareState.care = result
-                              } else {
-                                   // otherwise don't reset
-                                   CareState.daysCaredFor = result.daysOfConsecutiveCare
-                                   CareState.care = result
-                              }
-                         } else if calendar.isDateInToday(careDay) {
-                              print("today")
-                              CareState.daysCaredFor = result.daysOfConsecutiveCare
-                              CareState.hasBeenFed = result.hasBeenFed
-                              CareState.hasBeenWatered = result.hasBeenWatered
-                              CareState.care = result
-                         } else {
-                              print("not yesterday")
-                              // last care was not yesterday nor today
-                              CareState.care = result
-                              CareState.daysCaredFor = 0
-                         }
-                    } else {
-                         CareState.care = result
-                         print("no date")
-                    }
-               }
-              
-               if CareState.hasBeenFed {
-                    food.isHidden = false
-               }
-               
-               if CareState.hasBeenWatered {
-                    water.isHidden = false
-               }
-               
-               for heart in hearts {
-                    if heart.tag <= CareState.daysCaredFor {
-                         heart.image = UIImage(named: "heart")
-                         
-                    } else {
-                         heart.image = UIImage(named: "heartempty")
-                    }
-               }
-               
-               print("care loaded")
-               
-          } catch let error as NSError {
-               showAlert(title: "Could not retrieve data", message: "\(error.userInfo)")
-          }
-     }
-     
-     func saveCare() {
-          var managedContext = CoreDataManager.shared.managedObjectContext
-          
-          // save care anew if it doesn't exist (like on app initial launch)
-          guard let currentCare = CareState.care else {
-               let careSave = CareStatus(context: managedContext)
-               
-               careSave.hasBeenFed = CareState.hasBeenFed
-               careSave.hasBeenWatered = CareState.hasBeenWatered
-               careSave.daysOfConsecutiveCare = CareState.daysCaredFor
-               
-               CareState.care = careSave
-               
-               if CareState.hasBeenFed && CareState.hasBeenWatered {
-                    careSave.dateOfLastCare = Date()
-                    print("date save")
-                    print(careSave.dateOfLastCare)
-               }
-               
-               do {
-                    try managedContext.save()
-                    print("saved")
-               } catch {
-                    // this should never be displayed but is here to cover the possibility
-                    showAlert(title: "Save failed", message: "Notice: Data has not successfully been saved.")
-               }
-               
-               if CareState.hasBeenFed && CareState.hasBeenWatered {
-                    updateHearts()
-               }
-               
-               return
-          }
-          
-          currentCare.hasBeenFed = CareState.hasBeenFed
-          currentCare.hasBeenWatered = CareState.hasBeenWatered
-          currentCare.daysOfConsecutiveCare = CareState.daysCaredFor
-          
-          CareState.care = currentCare
-          
-          if CareState.hasBeenFed && CareState.hasBeenWatered {
-               currentCare.dateOfLastCare = Date()
-          }
-          
-          do {
-               try managedContext.save()
-               print("resave successful")
-          } catch {
-               // this should never be displayed but is here to cover the possibility
-               showAlert(title: "Save failed", message: "Notice: Data has not successfully been saved.")
-          }
-          
-          if CareState.hasBeenFed && CareState.hasBeenWatered {
-               updateHearts()
-          }
-     }
-     
-     func loadEquipment() {
-          // load purchase status
-          var managedContext = CoreDataManager.shared.managedObjectContext
-          var fetchRequest = NSFetchRequest<Equipped>(entityName: "Equipped")
-          
-          do {
-               var result = try managedContext.fetch(fetchRequest)
-               if let loaded = result.first {
-                    DecorManager.equipped = loaded
-                    DecorManager.bedID = loaded.bed
-                    DecorManager.bowlID = loaded.bowl
-                    DecorManager.decorID = loaded.decor
-                    DecorManager.floorID = loaded.floor
-                    DecorManager.pictureID = loaded.picture
-                    DecorManager.rugID = loaded.rug
-                    DecorManager.toyID = loaded.toy
-                    DecorManager.wallID = loaded.wall
-                    DecorManager.waterID = loaded.waterbowl
-                    DecorManager.windowID = loaded.window
-                    
-                    print("equipment loaded")
-               }
-          } catch let error as NSError {
-                showAlert(title: "Could not retrieve data", message: "\(error.userInfo)")
-          }
-          
-          guard DecorManager.equipped != nil else {
-               // if nothing was loaded, there are no changes to make
-               return
-          }
-          
-          bedArt.image = StoreInventory.inventoryDictionary[DecorManager.bedID]?.image
-          bowlArt.image = StoreInventory.inventoryDictionary[DecorManager.bowlID]?.image
-          decorArt.image = StoreInventory.inventoryDictionary[DecorManager.decorID]?.image
-          floorArt.image = StoreInventory.inventoryDictionary[DecorManager.floorID]?.image
-          pictureArt.image = StoreInventory.inventoryDictionary[DecorManager.pictureID]?.image
-          rugArt.image = StoreInventory.inventoryDictionary[DecorManager.rugID]?.image
-          toyArt.image = StoreInventory.inventoryDictionary[DecorManager.toyID]?.image
-          wallArt.image = StoreInventory.inventoryDictionary[DecorManager.wallID]?.image
-          waterBowlArt.image = StoreInventory.inventoryDictionary[DecorManager.waterID]?.image
-          windowArt.image = StoreInventory.inventoryDictionary[DecorManager.windowID]?.image
-     }
-     
-     func addCurrency(with amount: Int) {
-         var managedContext = CoreDataManager.shared.managedObjectContext
-         
-         // save currency anew if it doesn't exist (like on app initial launch)
-          guard let currentCurrency = Currency.loaded else {
-               let pointSave = Points(context: managedContext)
-          
-               pointSave.total = Int64(amount)
-               Currency.userTotal = amount
-           
-               do {
-                    try managedContext.save()
-                    print("saved")
-               } catch {
-                    // this should never be displayed but is here to cover the possibility
-                    showAlert(title: "Save failed", message: "Notice: Data has not successfully been saved.")
-               }
-          
-               Currency.toAdd = 0
-               return
-          }
-         
-          // otherwise rewrite data
-          let newTotal = Currency.userTotal + amount
-          Currency.userTotal = newTotal
-          currentCurrency.total = Int64(newTotal)
-          Currency.toAdd = 0
-          
-          do {
-               try managedContext.save()
-               print("resave successful")
-          } catch {
-               // this should never be displayed but is here to cover the possibility
-               showAlert(title: "Save failed", message: "Notice: Data has not successfully been saved.")
-          }
-     }
-    
-     func isAppAlreadyLaunchedOnce() -> Bool {
-          let defaults = UserDefaults.standard
+ 
 
-          if let isAppAlreadyLaunchedOnce = defaults.string(forKey: "isAppAlreadyLaunchedOnce") {
-               print("App already launched : \(isAppAlreadyLaunchedOnce)")
-               return true
-          } else {
-               defaults.set(true, forKey: "isAppAlreadyLaunchedOnce")
-               print("App launched first time")
-               return false
-          }
-     }
-     
      // MARK: Healthkit
     
      func getSteps(completion: @escaping (Double) -> Void) {
@@ -833,9 +564,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
           dimView.isHidden = true
           collectView.isHidden = true
           self.view.sendSubviewToBack(collectView)
-          addCurrency(with: Currency.toAdd)
-          pointsLabel.text = "\(Currency.userTotal) Paw Points"
-          loadCurrency()
+          viewModel.addCurrency()
+          pointsLabel.text = viewModel.setPointsLabel()
+          viewModel.loadCurrency()
      }
      
      @IBAction func viewInfoTapped(_ sender: UIButton) {
@@ -853,24 +584,24 @@ extension ViewController: UICollectionViewDataSource, ButtonTapDelegate {
           Sound.playSound(number: Sounds.blopSound.number)
           
           if path.row == 0 {
-               if CareState.hasBeenFed {
+               if viewModel.hasBeenFed() {
                     return
                } else {
-                    food.isHidden = false
-                    CareState.hasBeenFed = true
+                    food.isHidden = viewModel.showFood()
+                    viewModel.feedCat()
                     
                     Sound.playSound(number: Sounds.blopSound.number)
-                    checkCareProgress()
+                    updateCare()
                }
           } else if path.row == 1 {
                if CareState.hasBeenWatered {
                     return
                } else {
-                    water.isHidden = false
-                    CareState.hasBeenWatered = true
+                    water.isHidden = viewModel.showWater()
+                    viewModel.waterCat()
                     
                     Sound.playSound(number: Sounds.blopSound.number)
-                    checkCareProgress()
+                    updateCare()
                }
           } else if path.row == 2 {
                performSegue(withIdentifier: "goToStore", sender: Any?.self)
