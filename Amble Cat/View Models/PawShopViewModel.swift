@@ -11,6 +11,21 @@ import StoreKit
 
 public class PawShopViewModel {
     
+    var toPurchase: SKProduct?
+    var receipt: Receipt?
+    
+    func setReceipt() {
+        receipt = Receipt()
+    }
+    
+    func getReceiptStatus() -> Status? {
+        return receipt?.status
+    }
+    
+    func setSelected(index: IndexPath) {
+        toPurchase = StoreManager.products[index.row]
+    }
+    
     func isProductsEmpty() -> Bool {
         return StoreManager.products.isEmpty
     }
@@ -23,55 +38,45 @@ public class PawShopViewModel {
         return StoreManager.products.count
     }
     
+    func addProducts(products: [SKProduct]) {
+        StoreManager.products = products
+    }
+
+    
     func getTitle(index: IndexPath) -> String {
-        return StoreManager.products[index].localizedTitle
+        return StoreManager.products[index.row].localizedTitle
     }
     
     func getPrice(index: IndexPath) -> String {
-        return StoreManager.products[index].price
+        return "\(StoreManager.products[index.row].price)"
     }
     
     func getDescrip(index: IndexPath) -> String {
-        return StoreManager.products[index].localizedDescription
+        return StoreManager.products[index.row].localizedDescription
     }
     
     func getImage(index: IndexPath) -> UIImage {
-        let item = StoreManager.products[index]
-        return Products.productImages[item.productIdentifier]
+        let item = StoreManager.products[index.row]
+        return Products.productImages[item.productIdentifier]!
     }
     
-    func getProducts() {
-        var isAuthorizedForPayments: Bool {
-            return SKPaymentQueue.canMakePayments()
-        }
-        
-        if isAuthorizedForPayments {
-            validate(productIdentifiers: [Products.fiftyPoints, Products.oneHundredPoints, Products.oneHundredFiftyPoints, Products.twoHundredPoints, Products.threeHundredFiftyPoints, Products.fiveHundredPoints, Products.oneThousandPoints, Products.oneThousandFiveHundredPoints, Products.twoThousandPoints, Products.threeThousandPoints, Products.fiveThousandPoints, Products.tenThousandPoints])
-        }
+    func addCurrency(amount: Int) {
+        Currency.toAdd = amount
     }
     
-    func validate(productIdentifiers: [String]) {
-        let productIdentifiers = Set(productIdentifiers)
-        
-        StoreManager.request = SKProductsRequest(productIdentifiers: productIdentifiers)
-        StoreManager.request.delegate = self
-        StoreManager.request.start()
+    func getProductIdentifiers() -> [String] {
+        return [Products.fiftyPoints, Products.oneHundredPoints, Products.oneHundredFiftyPoints, Products.twoHundredPoints, Products.threeHundredFiftyPoints, Products.fiveHundredPoints, Products.oneThousandPoints, Products.oneThousandFiveHundredPoints, Products.twoThousandPoints, Products.threeThousandPoints, Products.fiveThousandPoints, Products.tenThousandPoints]
     }
     
-    func refreshReceipt() {
-        print("Requesting refresh of receipt.")
-        let refreshRequest = SKReceiptRefreshRequest()
-        refreshRequest.delegate = self
-        refreshRequest.start()
+    func purchase(index: IndexPath) {
+        StoreObserver.iapObserver.buy(StoreManager.products[index.row])
     }
     
-    func validateReceipt() {
-        receipt = Receipt()
-        if let receiptStatus = receipt?.status {
-            guard receiptStatus == .validationSuccess else {
-                print(receiptStatus)
-                return
-            }
-        }
+    func checkIdentifier(index: IndexPath) -> Int? {
+        return Products.productQuantities[StoreManager.products[index.row].productIdentifier]
+    }
+    
+    func checkForReceipt() -> Bool {
+        return Receipt.isReceiptPresent()
     }
 }

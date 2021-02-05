@@ -68,6 +68,7 @@ class StoreViewController: UIViewController, UICollectionViewDelegate, UICollect
 	// MARK: IBOutlets
     
     @IBAction func segmentChanged(_ sender: UISegmentedControl) {
+        storeViewModel.switchSource(segment: segmentedControl.selectedSegmentIndex)
         collectionView.reloadData()
     }
 	

@@ -57,6 +57,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
 
      var earned = 0
      private let viewModel = ViewModel()
+     private let stepViewModel = StepViewModel()
    
      override func viewDidLoad() {
           super.viewDidLoad()
@@ -100,6 +101,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
           viewModel.loadCareState()
           viewModel.loadEquipment()
           
+          stepViewModel.getStepData()
           
           if viewModel.isAppAlreadyLaunchedOnce() {
                containerView.isHidden = true

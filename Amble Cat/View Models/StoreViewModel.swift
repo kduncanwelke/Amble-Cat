@@ -19,6 +19,16 @@ public class StoreViewModel {
         return "\(Currency.userTotal)"
     }
     
+    func switchSource(segment: Int) {
+        if segment == 0 {
+            currentSource = StoreInventory.inventory
+        } else if segment == 1 {
+            currentSource = StoreInventory.purchased
+        } else {
+            currentSource = StoreInventory.unpurchased
+        }
+    }
+    
     func retrieveCounts(segment: Int) -> Int {
         if segment == 0 {
             currentSource = StoreInventory.inventory
@@ -138,7 +148,7 @@ public class StoreViewModel {
         var managedContext = CoreDataManager.shared.managedObjectContext
         
         // save purchase status in core data
-        guard let item = selection else { return }
+        guard let item = selected else { return }
         let purchase = PurchaseState(context: managedContext)
         
         purchase.id = item.id

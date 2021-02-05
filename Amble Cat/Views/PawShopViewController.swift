@@ -22,7 +22,6 @@ class PawShopViewController: UIViewController, UITableViewDelegate {
     
     let pawShopViewModel = PawShopViewModel()
     var hasLoaded = false
-    var receipt: Receipt?
     var pawPoints = 0
     
     override func viewDidLoad() {
@@ -40,16 +39,15 @@ class PawShopViewController: UIViewController, UITableViewDelegate {
         
         pawPointTotal.text = pawShopViewModel.getCurrencyString()
         
-        pawShopViewModel.getProducts()
+        getProducts()
  
     }
-    
 
     // MARK: Custom functions
     
     @objc func networkRestored() {
         if pawShopViewModel.isProductsEmpty() {
-            pawShopViewModel.getProducts()
+            getProducts()
         }
         
         if Receipt.isReceiptPresent() {
@@ -62,16 +60,53 @@ class PawShopViewController: UIViewController, UITableViewDelegate {
     }
     
     @objc func updatePoints() {
-        Currency.toAdd = pawPoints
+        pawShopViewModel.addCurrency(amount: pawPoints)
         print(pawPoints)
         
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "addPurchasedCurrency"), object: nil)
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "refreshPoints"), object: nil)
         
-        pawPointTotal.text = "\(Currency.userTotal)"
+        pawPointTotal.text = pawShopViewModel.getCurrencyString()
         pawPoints = 0
     }
     
+    func validate(productIdentifiers: [String]) {
+        let productIdentifiers = Set(productIdentifiers)
+        
+        StoreManager.request = SKProductsRequest(productIdentifiers: productIdentifiers)
+        StoreManager.request.delegate = self
+        StoreManager.request.start()
+    }
+    
+    func getProducts() {
+        var isAuthorizedForPayments: Bool {
+            return SKPaymentQueue.canMakePayments()
+        }
+        
+        if isAuthorizedForPayments {
+            let identifiers = pawShopViewModel.getProductIdentifiers()
+            
+            validate(productIdentifiers: identifiers)
+        }
+    }
+    
+    func refreshReceipt() {
+        print("Requesting refresh of receipt.")
+        let refreshRequest = SKReceiptRefreshRequest()
+        refreshRequest.delegate = self
+        refreshRequest.start()
+    }
+    
+    func validateReceipt() {
+        pawShopViewModel.setReceipt()
+        
+        if let receiptStatus = pawShopViewModel.getReceiptStatus() {
+            guard receiptStatus == .validationSuccess else {
+                print(receiptStatus)
+                return
+            }
+        }
+    }
 
     /*
     // MARK: - Navigation
@@ -119,9 +154,9 @@ extension PawShopViewController: UITableViewDataSource {
         
         if isAuthorizedForPayments && !pawShopViewModel.isProductsEmpty() {
             if NetworkMonitor.connection {
-                StoreObserver.iapObserver.buy(products[indexPath.row])
+                pawShopViewModel.purchase(index: indexPath)
                 
-                guard let points = Products.productQuantities[products[indexPath.row].productIdentifier] else { return }
+                guard let points = pawShopViewModel.checkIdentifier(index: indexPath) else { return }
                 
                 pawPoints = points
             } else {
@@ -138,13 +173,9 @@ extension PawShopViewController: UITableViewDataSource {
 
 extension PawShopViewController: SKProductsRequestDelegate {
     func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
-        if response.products.count == Products.productQuantities.count {
-            products = response.products
-            for product in products {
-                print(product.localizedTitle)
-                print(product.price)
-                print(product.priceLocale)
-            }
+        if response.products.count == pawShopViewModel.getProductsCount() {
+            
+            pawShopViewModel.addProducts(products: response.products)
             
             DispatchQueue.main.async { [weak self] in
                 self?.tableView.reloadData()
@@ -162,7 +193,7 @@ extension PawShopViewController: SKProductsRequestDelegate {
     }
     
     func requestDidFinish(_ request: SKRequest) {
-        if Receipt.isReceiptPresent() {
+        if pawShopViewModel.checkForReceipt() {
             validateReceipt()
         }
     }
