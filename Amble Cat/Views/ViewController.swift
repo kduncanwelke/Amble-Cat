@@ -95,7 +95,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
           Sound.loadSound(number: &Sounds.chirpSound.number, resourceName: Sounds.chirpSound.resourceName, type: Sounds.chirpSound.type)
           Sound.loadSound(number: &Sounds.failSound.number, resourceName: Sounds.failSound.resourceName, type: Sounds.failSound.type)
           
-          
           viewModel.loadCurrency()
           viewModel.loadMeasure()
           viewModel.loadCareState()
@@ -124,66 +123,21 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
           let queue = DispatchQueue(label: "Monitor")
           NetworkMonitor.monitor.start(queue: queue)
         
-          requestHealthInfo()
           
           beginAnimation()
     }
 	
      // MARK: Custom functions
      
+     
      func loadUI() {
           pointsLabel.text = viewModel.setPointsLabel()
           
           food.isHidden = viewModel.showFood()
-          
           water.isHidden = viewModel.showWater()
-     }
-     
-     func requestHealthInfo() {
-          // FIXME: change to CMPedometer
-          HealthStore.store.requestAuthorization(toShare: HealthStore.healthKitTypes, read: HealthStore.healthKitTypes) { [unowned self] (bool, error) in
-               if (bool) {
-                    self.getSteps { (result) in
-                         DispatchQueue.main.async {
-                              let stepCount = String(Int(result))
-                              self.stepsLabel.text = "\(stepCount)"
-                         }
-                    }
-                    
-                    self.getDistance { (result) in
-                         DispatchQueue.main.async {
-                              let distance = String(Int(result))
-                              self.distanceLabel.text = "\(distance)"
-                              self.measurementLabel.text = "\(Measures.preferred.rawValue)"
-                         }
-                    }
-                    
-                    self.querySteps { (result) in
-                         DispatchQueue.main.async {
-                              let steps = Int(result)
-                              self.stepsYesterday.text = "\(steps) Steps Yesterday"
-                              
-                              let date = Date()
-                              let calendar = Calendar.current
-                              let dateToCompare = calendar.component(.day , from: date)
-                              let userDefaultDate = UserDefaults.standard.integer(forKey: "userDefaultDate")
-                              
-                              if self.viewModel.isSameDay() == false && steps >= 1000 {
-                                   self.dimView.isHidden = false
-                                   self.collectView.isHidden = false
-                                   let thousands = Int(steps / 1000)
-                                   self.earned = 10 * thousands
-                                   Currency.toAdd = 10 * thousands
-                                   Sound.playSound(number: Sounds.meowSound.number)
-                                   self.view.bringSubviewToFront(self.collectView)
-                                   self.collectText.text = "You earned \(self.earned) Paw Points for walking \(steps) steps yesterday!"
-                              }
-                         }
-                    }
-                    
-                    self.queryDistanceHistory()
-               }
-          }
+          
+          stepsLabel.text = "\(stepViewModel.stepsToday())"
+          distanceLabel.text = "\(stepViewModel.metersToday())"
      }
      
      @objc func addPurchasedCurrency() {
@@ -201,7 +155,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
      }
      
      @objc func unitChanged() {
-          requestHealthInfo()
+          // update unit
      }
      
      func updateCare() {
@@ -370,188 +324,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
           wallArt.image = viewModel.getWallImage()
           waterBowlArt.image = viewModel.getWaterImage()
           windowArt.image = viewModel.getWindowImage()
-     }
- 
-
-     // MARK: Healthkit
-    
-     func getSteps(completion: @escaping (Double) -> Void) {
-        let type = HKQuantityType.quantityType(forIdentifier: .stepCount)!
-            
-        let now = Date()
-        let startOfDay = Calendar.current.startOfDay(for: now)
-        var interval = DateComponents()
-        interval.day = 1
-        
-        let query = HKStatisticsCollectionQuery(quantityType: type, quantitySamplePredicate: nil, options: [.cumulativeSum], anchorDate: startOfDay, intervalComponents: interval)
-        
-        query.initialResultsHandler = { _, result, error in
-                var resultCount = 0.0
-                result!.enumerateStatistics(from: startOfDay, to: now) { statistics, _ in
-
-                if let sum = statistics.sumQuantity() {
-                    resultCount = sum.doubleValue(for: HKUnit.count())
-                }
-               
-                DispatchQueue.main.async {
-                    completion(resultCount)
-                }
-            }
-        }
-        
-        query.statisticsUpdateHandler = {
-            query, statistics, statisticsCollection, error in
-
-            // If new statistics are available
-            if let sum = statistics?.sumQuantity() {
-                let resultCount = sum.doubleValue(for: HKUnit.count())
-              
-                DispatchQueue.main.async {
-                    completion(resultCount)
-                }
-            }
-        }
-        
-        HealthStore.store.execute(query)
-     }
-
-     func getDistance(completion: @escaping (Double) -> Void) {
-        let type = HKQuantityType.quantityType(forIdentifier: .distanceWalkingRunning)!
-            
-        let now = Date()
-        let startOfDay = Calendar.current.startOfDay(for: now)
-        var interval = DateComponents()
-        interval.day = 1
-        
-        let query = HKStatisticsCollectionQuery(quantityType: type, quantitySamplePredicate: nil, options: [.cumulativeSum], anchorDate: startOfDay, intervalComponents: interval)
-        
-        query.initialResultsHandler = { _, result, error in
-                var resultCount = 0.0
-                result!.enumerateStatistics(from: startOfDay, to: now) { statistics, _ in
-
-                if let sum = statistics.sumQuantity() {
-                    var measurement: HKUnit
-                    switch Measures.preferred {
-                    case .meters:
-                         measurement = HKUnit.meter()
-                    case .miles:
-                         measurement = HKUnit.mile()
-                    }
-                    resultCount = sum.doubleValue(for: measurement)
-                }
-
-                DispatchQueue.main.async {
-                    completion(resultCount)
-                }
-            }
-        }
-        
-        query.statisticsUpdateHandler = {
-            query, statistics, statisticsCollection, error in
-
-            // If new statistics are available
-            if let sum = statistics?.sumQuantity() {
-                let resultCount = sum.doubleValue(for: HKUnit.meter())
-                
-                DispatchQueue.main.async {
-                    completion(resultCount)
-                }
-            }
-        }
-        
-        HealthStore.store.execute(query)
-     }
-    
-    
-     func querySteps(completion: @escaping (Double) -> Void) {
-        let type = HKQuantityType.quantityType(forIdentifier: .stepCount)!
-        let calendar = NSCalendar.current
-        let interval = NSDateComponents()
-        interval.day = 1
-
-        var anchorComponents = calendar.dateComponents([.day, .month, .year], from: NSDate() as Date)
-        anchorComponents.hour = 0
-        let anchorDate = calendar.date(from: anchorComponents)
-
-        // Define 1-day intervals starting from 0:00
-        let stepsQuery = HKStatisticsCollectionQuery(quantityType: type, quantitySamplePredicate: nil, options: .cumulativeSum, anchorDate: anchorDate!, intervalComponents: interval as DateComponents)
-
-        // Set the results handler
-        stepsQuery.initialResultsHandler = {query, results, error in
-            let today = Date()
-            
-            guard let endDate = calendar.date(byAdding: .day, value: -1, to: today, wrappingComponents: false), let startDate = calendar.date(byAdding: .day, value: -6, to: endDate, wrappingComponents: false) else { return }
-            
-            if let myResults = results {
-                myResults.enumerateStatistics(from: startDate, to: endDate) { statistics, stop in
-                   
-                if let quantity = statistics.sumQuantity() {
-                        let date = statistics.startDate
-                        let steps = quantity.doubleValue(for: HKUnit.count())
-                        print("\(date): steps = \(steps)")
-                      
-                        HealthDataManager.stepHistory.insert(steps, at: 0)
-                        HealthDataManager.dates.insert(date, at: 0)
-                } else {
-                        let date = statistics.startDate
-                        let steps = 0.0
-                        print("\(date): steps = \(steps)")
-                    
-                        HealthDataManager.stepHistory.insert(steps, at: 0)
-                        HealthDataManager.dates.insert(date, at: 0)
-                    }
-                }
-                
-                DispatchQueue.main.async {
-                    completion(HealthDataManager.stepHistory[0])
-                }
-            }
-        }
-        HealthStore.store.execute(stepsQuery)
-     }
-
-     func queryDistanceHistory() {
-        let type = HKQuantityType.quantityType(forIdentifier: .distanceWalkingRunning)!
-        let calendar = NSCalendar.current
-        let interval = NSDateComponents()
-        interval.day = 1
-
-        var anchorComponents = calendar.dateComponents([.day, .month, .year], from: NSDate() as Date)
-        anchorComponents.hour = 0
-        let anchorDate = calendar.date(from: anchorComponents)
-
-        // Define 1-day intervals starting from 0:00
-        let distanceQuery = HKStatisticsCollectionQuery(quantityType: type, quantitySamplePredicate: nil, options: .cumulativeSum, anchorDate: anchorDate!, intervalComponents: interval as DateComponents)
-
-        // Set the results handler
-        distanceQuery.initialResultsHandler = {query, results, error in
-            let today = Date()
-            
-            guard let endDate = calendar.date(byAdding: .day, value: -1, to: today, wrappingComponents: false), let startDate = calendar.date(byAdding: .day, value: -6, to: endDate, wrappingComponents: false) else { return }
-            
-            if let myResults = results {
-                myResults.enumerateStatistics(from: startDate, to: endDate) { statistics, stop in
-                   
-                    if let sum = statistics.sumQuantity() {
-                         var measurement: HKUnit
-                         switch Measures.preferred {
-                         case .meters:
-                              measurement = HKUnit.meter()
-                         case .miles:
-                              measurement = HKUnit.mile()
-                         }
-                         
-                        let distance = sum.doubleValue(for: measurement)
-                        HealthDataManager.distances.insert(distance, at: 0)
-                    } else {
-                        let distance = 0.0
-                        HealthDataManager.distances.insert(distance, at: 0)
-                    }
-                }
-            }
-        }
-        
-        HealthStore.store.execute(distanceQuery)
      }
 
     
