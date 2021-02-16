@@ -9,99 +9,25 @@
 import Foundation
 import UIKit
 
-enum AnimationStyle {
-    case blink
-    case sitBlink
-}
-
-class TimerManager {
+class AnimationTimer {
     
     static var seconds = 0
     static var timer: Timer?
-    static var style: AnimationStyle?
     
-    static func beginTimer(with image: UIImageView) {
-        
-        if image.animationImages == AnimationManager.blinkAnimation {
-            style = .blink
-        } else if image.animationImages == AnimationManager.sitBlinkAnimation {
-            style = .sitBlink
-        }
+    // timer for animations
+    static func beginTimer(repeatCount: Int) {
         
         timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
             seconds += 1
             
-            if seconds == 5 {
-                image.startAnimating()
-            } else if seconds == 6 {
-                seconds = 0
-                
-                if image.tag == 1 {
-                    let tailTwitch = Bool.random()
-                    
-                    if tailTwitch {
-                        image.animationImages = AnimationManager.tailAnimation
-                        image.startAnimating()
-                        seconds = 5
-                    } else {
-                        if style == .blink {
-                            image.animationImages = AnimationManager.blinkAnimation
-                        } else if style == .sitBlink {
-                            image.animationImages = AnimationManager.sitBlinkAnimation
-                        }
-                    }
-                }
-                
-            } else {
-                image.stopAnimating()
+            if seconds >= repeatCount {
+                stopTimer()
             }
         }
         
         timer?.fire()
     }
 
-    static func stopTimer() {
-        timer?.invalidate()
-        seconds = 0
-    }
-}
-
-
-class TutorialTimer {
-    
-    static var seconds = 0
-    static var timer: Timer?
-    
-    static func beginTimer(with image: UIImageView) {
-        
-        timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
-            seconds += 1
-            
-            
-            
-            if seconds == 5 {
-                image.startAnimating()
-            } else if seconds == 6 {
-                seconds = 0
-                
-                let tailTwitch = Bool.random()
-                
-                if tailTwitch {
-                    image.animationImages = AnimationManager.tailAnimation
-                    image.startAnimating()
-                    seconds = 5
-                } else {
-                    image.animationImages = AnimationManager.sitBlinkAnimation
-                }
-                
-            } else {
-                image.stopAnimating()
-            }
-        }
-        
-        timer?.fire()
-    }
-    
     static func stopTimer() {
         timer?.invalidate()
         seconds = 0

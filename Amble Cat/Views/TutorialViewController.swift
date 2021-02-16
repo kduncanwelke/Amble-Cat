@@ -29,11 +29,11 @@ class TutorialViewController: UIViewController {
         // Do any additional setup after loading the view.
       
         dismissButton.layer.cornerRadius = 10
-        catImage.animationImages = AnimationManager.sitBlinkAnimation
+        /*catImage.animationImages = AnimationManager.sitBlinkAnimation
         catImage.animationDuration = 1.0
         catImage.animationRepeatCount = 1
         catImage.startAnimating()
-        TutorialTimer.beginTimer(with: catImage)
+        TutorialTimer.beginTimer(with: catImage)*/
     }
     
     // MARK: Custom functions

@@ -27,15 +27,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
      @IBOutlet var hearts: [UIImageView]!
      
      @IBOutlet weak var catArt: UIImageView!
-     @IBOutlet weak var sleepArt: UIImageView!
-     @IBOutlet weak var eatArt: UIImageView!
-     @IBOutlet weak var drinkArt: UIImageView!
-     @IBOutlet weak var playArt: UIImageView!
-     @IBOutlet weak var loafArt: UIImageView!
-     
-     @IBOutlet weak var food: UIImageView!
-     @IBOutlet weak var water: UIImageView!
-     
+
      @IBOutlet weak var bedArt: UIImageView!
      @IBOutlet weak var bowlArt: UIImageView!
      @IBOutlet weak var decorArt: UIImageView!
@@ -63,7 +55,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
           super.viewDidLoad()
           // Do any additional setup after loading the view.
           dimView.isHidden = true
-          collectView.isHidden = true
           
           collectionView.dataSource = self
           collectionView.delegate = self
@@ -82,9 +73,10 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
           
           NotificationCenter.default.addObserver(self, selector: #selector(unitChanged), name: NSNotification.Name(rawValue: "unitChanged"), object: nil)
           
+          NotificationCenter.default.addObserver(self, selector: #selector(animationEnded), name: NSNotification.Name(rawValue: "animationEnded"), object: nil)
+          
           
           currentsBackground.layer.cornerRadius = 20
-          collectView.layer.cornerRadius = 20
           historyButton.layer.cornerRadius = 10
           
           // load sounds
@@ -123,21 +115,24 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
           let queue = DispatchQueue(label: "Monitor")
           NetworkMonitor.monitor.start(queue: queue)
         
-          
-          beginAnimation()
+          moveToMiddle()
+          //beginAnimation()
     }
 	
      // MARK: Custom functions
      
-     
      func loadUI() {
           pointsLabel.text = viewModel.setPointsLabel()
           
-          food.isHidden = viewModel.showFood()
-          water.isHidden = viewModel.showWater()
+          bowlArt.isHidden = viewModel.showFood()
+          waterBowlArt.isHidden = viewModel.showWater()
           
           stepsLabel.text = "\(stepViewModel.stepsToday())"
           distanceLabel.text = "\(stepViewModel.metersToday())"
+     }
+     
+     @objc func animationEnded() {
+          catArt.stopAnimating()
      }
      
      @objc func addPurchasedCurrency() {
@@ -162,9 +157,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
           if viewModel.checkCareProgress() {
                dimView.isHidden = false
                Sound.playSound(number: Sounds.meowSound.number)
-               collectView.isHidden = false
-               view.bringSubviewToFront(collectView)
-               collectText.text = "You earned \(earned) Paw Points for taking care of Lucy for 7 days in a row!"
           }
      }
      
@@ -188,104 +180,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
           }
           
           let animation = range.randomElement()
-          
-          TimerManager.stopTimer()
-          catArt.stopAnimating()
-          sleepArt.stopAnimating()
-          playArt.stopAnimating()
-          loafArt.stopAnimating()
-          eatArt.stopAnimating()
-          drinkArt.stopAnimating()
-          
-          if animation == 1 {
-               catArt.isHidden = false
-               sleepArt.isHidden = true
-               eatArt.isHidden = true
-               drinkArt.isHidden = true
-               playArt.isHidden = true
-               loafArt.isHidden = true
-               
-               catArt.animationImages = AnimationManager.blinkAnimation
-               catArt.animationDuration = 1.0
-               catArt.animationRepeatCount = 1
-               catArt.startAnimating()
-               
-               TimerManager.beginTimer(with: catArt)
-          } else if animation == 2 {
-               catArt.isHidden = true
-               sleepArt.isHidden = false
-               eatArt.isHidden = true
-               drinkArt.isHidden = true
-               playArt.isHidden = true
-               loafArt.isHidden = true
-               
-               sleepArt.animationImages = AnimationManager.sleepAnimation
-               sleepArt.animationDuration = 4.0
-               sleepArt.startAnimating()
-          } else if animation == 3 {
-               catArt.isHidden = true
-               sleepArt.isHidden = true
-               eatArt.isHidden = true
-               drinkArt.isHidden = true
-               playArt.isHidden = false
-               loafArt.isHidden = true
-               
-               playArt.animationImages = AnimationManager.playAnimation
-               playArt.animationDuration = 2.0
-               playArt.startAnimating()
-               
-               TimerManager.beginTimer(with: playArt)
-          } else if animation == 4 {
-               catArt.isHidden = true
-               sleepArt.isHidden = true
-               eatArt.isHidden = true
-               drinkArt.isHidden = true
-               playArt.isHidden = true
-               loafArt.isHidden = false
-               
-               loafArt.animationImages = AnimationManager.loafAnimation
-               loafArt.animationDuration = 1.5
-               loafArt.animationRepeatCount = 1
-               loafArt.startAnimating()
-               
-               TimerManager.beginTimer(with: loafArt)
-          } else if animation == 5 {
-               catArt.isHidden = true
-               sleepArt.isHidden = true
-               eatArt.isHidden = false
-               drinkArt.isHidden = true
-               playArt.isHidden = true
-               loafArt.isHidden = true
-               
-               eatArt.animationImages = AnimationManager.eatAnimation
-               eatArt.animationDuration = 1.0
-               eatArt.startAnimating()
-          } else if animation == 6 {
-               catArt.isHidden = true
-               sleepArt.isHidden = true
-               eatArt.isHidden = true
-               drinkArt.isHidden = false
-               playArt.isHidden = true
-               loafArt.isHidden = true
-               
-               drinkArt.animationImages = AnimationManager.drinkAnimation
-               drinkArt.animationDuration = 1.0
-               drinkArt.startAnimating()
-          } else if animation == 7 {
-               catArt.isHidden = false
-               sleepArt.isHidden = true
-               eatArt.isHidden = true
-               drinkArt.isHidden = true
-               playArt.isHidden = true
-               loafArt.isHidden = true
-               
-               catArt.animationImages = AnimationManager.sitBlinkAnimation
-               catArt.animationDuration = 1.0
-               catArt.animationRepeatCount = 1
-               catArt.startAnimating()
-               
-               TimerManager.beginTimer(with: catArt)
-          }
      }
      
      func updateHearts() {
@@ -336,8 +230,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
      @IBAction func collectButtonTapped(_ sender: UIButton) {
           Sound.playSound(number: Sounds.tingSound.number)
           dimView.isHidden = true
-          collectView.isHidden = true
-          self.view.sendSubviewToBack(collectView)
+          
+        
           viewModel.addCurrency()
           pointsLabel.text = viewModel.setPointsLabel()
           viewModel.loadCurrency()
@@ -361,7 +255,7 @@ extension ViewController: UICollectionViewDataSource, ButtonTapDelegate {
                if viewModel.hasBeenFed() {
                     return
                } else {
-                    food.isHidden = viewModel.showFood()
+                    bowlArt.isHidden = viewModel.showFood()
                     viewModel.feedCat()
                     
                     Sound.playSound(number: Sounds.blopSound.number)
@@ -371,7 +265,7 @@ extension ViewController: UICollectionViewDataSource, ButtonTapDelegate {
                if CareState.hasBeenWatered {
                     return
                } else {
-                    water.isHidden = viewModel.showWater()
+                    waterBowlArt.isHidden = viewModel.showWater()
                     viewModel.waterCat()
                     
                     Sound.playSound(number: Sounds.blopSound.number)

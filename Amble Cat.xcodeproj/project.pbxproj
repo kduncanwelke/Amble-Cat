@@ -39,6 +39,8 @@
 		2D96CA9D25CDFF4F00A89C32 /* StepViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D96CA9C25CDFF4F00A89C32 /* StepViewModel.swift */; };
 		2D9D68BF23A2C186005EBB35 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9D68BE23A2C186005EBB35 /* AboutViewController.swift */; };
 		2DA2E41F238DD71700541771 /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA2E41E238DD71700541771 /* NetworkMonitor.swift */; };
+		2DA3C65525DC716D004D831E /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA3C65425DC716D004D831E /* UIViewExtension.swift */; };
+		2DA3C65725DC7AD7004D831E /* ViewController+Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA3C65625DC7AD7004D831E /* ViewController+Animations.swift */; };
 		2DA559602360FE50006B3B9D /* PurchaseState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA5595F2360FE50006B3B9D /* PurchaseState.swift */; };
 		2DA998EC25CCAD4200344349 /* AboutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA998EB25CCAD4200344349 /* AboutViewModel.swift */; };
 		2DB0EB07238C8EF5003CBCB7 /* AppleIncRootCertificate.cer in Resources */ = {isa = PBXBuildFile; fileRef = 2DB0EB06238C8EF5003CBCB7 /* AppleIncRootCertificate.cer */; };
@@ -123,6 +125,8 @@
 		2D96CA9C25CDFF4F00A89C32 /* StepViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepViewModel.swift; sourceTree = "<group>"; };
 		2D9D68BE23A2C186005EBB35 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		2DA2E41E238DD71700541771 /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
+		2DA3C65425DC716D004D831E /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		2DA3C65625DC7AD7004D831E /* ViewController+Animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Animations.swift"; sourceTree = "<group>"; };
 		2DA5595F2360FE50006B3B9D /* PurchaseState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseState.swift; sourceTree = "<group>"; };
 		2DA998EB25CCAD4200344349 /* AboutViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AboutViewModel.swift; path = "Amble Cat/View Models/AboutViewModel.swift"; sourceTree = SOURCE_ROOT; };
 		2DB0EB06238C8EF5003CBCB7 /* AppleIncRootCertificate.cer */ = {isa = PBXFileReference; lastKnownFileType = file; name = AppleIncRootCertificate.cer; path = ../../../../../../Downloads/AppleIncRootCertificate.cer; sourceTree = "<group>"; };
@@ -213,6 +217,7 @@
 			isa = PBXGroup;
 			children = (
 				2DA2E41E238DD71700541771 /* NetworkMonitor.swift */,
+				2DA3C65425DC716D004D831E /* UIViewExtension.swift */,
 				2D27AA2A23A1687B00AF31D2 /* ButtonTapDelegate.swift */,
 			);
 			path = Helpers;
@@ -385,6 +390,7 @@
 			isa = PBXGroup;
 			children = (
 				2DE860EC23552B3B00227A86 /* ViewController.swift */,
+				2DA3C65625DC7AD7004D831E /* ViewController+Animations.swift */,
 				2D7146D1235BBE440064B576 /* StoreViewController.swift */,
 				2D7146D3235BBF130064B576 /* StoreCollectionViewCell.swift */,
 				2D353B9823A058A000C2E1AC /* ButtonCollectionViewCell.swift */,
@@ -676,7 +682,9 @@
 				2D6FCA8D235A596100560CB2 /* Timer.swift in Sources */,
 				2D96CA9B25CDFD4C00A89C32 /* Pedometer.swift in Sources */,
 				2DC80B882384AC62006841AE /* PawShopViewController.swift in Sources */,
+				2DA3C65725DC7AD7004D831E /* ViewController+Animations.swift in Sources */,
 				2D27AA2B23A1687B00AF31D2 /* ButtonTapDelegate.swift in Sources */,
+				2DA3C65525DC716D004D831E /* UIViewExtension.swift in Sources */,
 				2DC80B8C2384AF23006841AE /* Products.swift in Sources */,
 				2D064FAE2387193A00257315 /* Receipt.swift in Sources */,
 				2D123A8E25CA009E005EBFEB /* ViewModel+CoreData.swift in Sources */,
