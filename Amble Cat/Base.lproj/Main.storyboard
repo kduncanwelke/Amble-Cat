@@ -182,8 +182,11 @@
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bed" translatesAutoresizingMaskIntoConstraints="NO" id="kmY-BW-XTE">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
                                             </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="doughnut" translatesAutoresizingMaskIntoConstraints="NO" id="EGI-IM-dbU">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
+                                            </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="left" translatesAutoresizingMaskIntoConstraints="NO" id="2pe-Vp-Fyw">
-                                                <rect key="frame" x="264" y="234" width="150" height="106"/>
+                                                <rect key="frame" x="273" y="249" width="141" height="91"/>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="foodbowl" translatesAutoresizingMaskIntoConstraints="NO" id="nCD-I7-M00">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
@@ -191,12 +194,10 @@
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fountain" translatesAutoresizingMaskIntoConstraints="NO" id="nr0-kZ-WzT">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="doughnut" translatesAutoresizingMaskIntoConstraints="NO" id="EGI-IM-dbU">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
-                                            </imageView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
+                                            <constraint firstItem="2pe-Vp-Fyw" firstAttribute="height" secondItem="kLQ-UF-HE3" secondAttribute="height" multiplier="0.219807" id="2k9-1s-7IR"/>
                                             <constraint firstItem="e59-3N-6cE" firstAttribute="height" secondItem="kLQ-UF-HE3" secondAttribute="height" id="31V-o5-cAP"/>
                                             <constraint firstItem="fbB-UU-SLQ" firstAttribute="centerX" secondItem="kLQ-UF-HE3" secondAttribute="centerX" id="31n-aN-hOD"/>
                                             <constraint firstItem="bdQ-Et-KHy" firstAttribute="width" secondItem="kLQ-UF-HE3" secondAttribute="width" id="4Lj-T7-tsE"/>
@@ -216,7 +217,7 @@
                                             <constraint firstItem="oFB-lV-nW2" firstAttribute="height" secondItem="kLQ-UF-HE3" secondAttribute="height" id="Jyr-h8-eQm"/>
                                             <constraint firstItem="ZX0-Qb-1jX" firstAttribute="centerY" secondItem="kLQ-UF-HE3" secondAttribute="centerY" id="Kmt-A9-krg"/>
                                             <constraint firstItem="xqr-Er-2jF" firstAttribute="height" secondItem="kLQ-UF-HE3" secondAttribute="height" id="LZP-dx-pSj"/>
-                                            <constraint firstItem="2pe-Vp-Fyw" firstAttribute="width" secondItem="kLQ-UF-HE3" secondAttribute="width" multiplier="0.362319" id="M4m-Ip-1QO"/>
+                                            <constraint firstItem="2pe-Vp-Fyw" firstAttribute="width" secondItem="kLQ-UF-HE3" secondAttribute="width" multiplier="0.34" id="M4m-Ip-1QO"/>
                                             <constraint firstItem="e59-3N-6cE" firstAttribute="centerY" secondItem="kLQ-UF-HE3" secondAttribute="centerY" id="NMs-Qh-edh"/>
                                             <constraint firstItem="nr0-kZ-WzT" firstAttribute="centerX" secondItem="kLQ-UF-HE3" secondAttribute="centerX" id="Nkh-9p-f7e"/>
                                             <constraint firstAttribute="bottom" secondItem="2pe-Vp-Fyw" secondAttribute="bottom" constant="74" id="PN6-dp-pw0"/>
@@ -244,7 +245,6 @@
                                             <constraint firstItem="xqr-Er-2jF" firstAttribute="width" secondItem="kLQ-UF-HE3" secondAttribute="width" id="tqX-jA-Kaj"/>
                                             <constraint firstItem="nr0-kZ-WzT" firstAttribute="centerY" secondItem="kLQ-UF-HE3" secondAttribute="centerY" id="uIW-N7-H90"/>
                                             <constraint firstItem="RIM-GI-Cjl" firstAttribute="centerY" secondItem="kLQ-UF-HE3" secondAttribute="centerY" id="yJ5-1L-dxA"/>
-                                            <constraint firstItem="2pe-Vp-Fyw" firstAttribute="height" secondItem="kLQ-UF-HE3" secondAttribute="height" multiplier="0.256039" id="zDx-dV-lMi"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -1221,6 +1221,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="881-Zu-Gcs"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bqx-Cy-IBR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1243,7 +1244,7 @@
         <image name="lucyphoto" width="300" height="300"/>
         <image name="norug" width="1000" height="1000"/>
         <image name="paw" width="100" height="100"/>
-        <image name="picture" width="3000" height="3000"/>
+        <image name="picture" width="1000" height="1000"/>
         <image name="rug" width="3000" height="3000"/>
         <image name="sitblink1" width="1000" height="1000"/>
         <image name="wall" width="3000" height="3000"/>

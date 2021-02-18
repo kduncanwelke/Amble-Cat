@@ -99,10 +99,12 @@ struct AnimationManager {
     }
     
     static let back: [UIImage] = [#imageLiteral(resourceName: "back.png")]
-    static let drinking: [UIImage] = [#imageLiteral(resourceName: "drink1.png"),#imageLiteral(resourceName: "drink2.png")]
+    static let drinking: [UIImage] = [#imageLiteral(resourceName: "drink1.png"),#imageLiteral(resourceName: "drink2.png"),#imageLiteral(resourceName: "drink3.png")]
     static let eating: [UIImage] = [#imageLiteral(resourceName: "eating1.png"),#imageLiteral(resourceName: "eating2.png")]
     static let frontSit: [UIImage] = [#imageLiteral(resourceName: "front.png"),#imageLiteral(resourceName: "sitblink.png")]
     static let play: [UIImage] = [#imageLiteral(resourceName: "play1.png"),#imageLiteral(resourceName: "play2.png")]
     static let sleep: [UIImage] = [#imageLiteral(resourceName: "sleep1.png"),#imageLiteral(resourceName: "sleep2.png")]
     static let wash: [UIImage] = [#imageLiteral(resourceName: "washing1.png"),#imageLiteral(resourceName: "washing2.png"),#imageLiteral(resourceName: "washing3.png"),#imageLiteral(resourceName: "washing4.png")]
+    
+    static let fountain: [UIImage] = [#imageLiteral(resourceName: "fountain.png"),#imageLiteral(resourceName: "fountain2.png")]
 }

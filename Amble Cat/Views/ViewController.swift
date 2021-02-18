@@ -115,7 +115,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
           let queue = DispatchQueue(label: "Monitor")
           NetworkMonitor.monitor.start(queue: queue)
         
-          moveToMiddle()
+          animateWater()
           //beginAnimation()
     }
 	
@@ -133,6 +133,10 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
      
      @objc func animationEnded() {
           catArt.stopAnimating()
+          
+          catArt.animationImages = AnimationManager.play
+          catArt.animationDuration = 1.5
+          catArt.startAnimating()
      }
      
      @objc func addPurchasedCurrency() {
@@ -224,7 +228,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
      // MARK: IBActions
      
      @IBAction func viewStatsPressed(_ sender: UIButton) {
-          performSegue(withIdentifier: "viewStatistics", sender: Any?.self)
+          moveToToy()
+          //performSegue(withIdentifier: "viewStatistics", sender: Any?.self)
      }
      
      @IBAction func collectButtonTapped(_ sender: UIButton) {

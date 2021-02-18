@@ -14,10 +14,73 @@ extension ViewController {
     func moveToMiddle() {
         print("move")
         catArt.animationImages = AnimationManager.walking
+        catArt.animationDuration = 0.5
         catArt.startAnimating()
-        let middleDestination = CGPoint(x: wallArt.frame.width/2, y: wallArt.frame.height/3)
+        let middleDestination = CGPoint(x: wallArt.frame.width/2, y: wallArt.frame.height/1.8)
         
         catArt.move(to: middleDestination, duration: 2.0, options: UIView.AnimationOptions.curveEaseOut)
         AnimationManager.location = .middle
+    }
+    
+    func moveToWater() {
+        print("water")
+        catArt.animationImages = AnimationManager.walking
+        catArt.animationDuration = 0.5
+        catArt.startAnimating()
+        let waterDestination = CGPoint(x: wallArt.frame.width/2.13, y: wallArt.frame.height/1.3)
+        
+        catArt.move(to: waterDestination, duration: 2.0, options: UIView.AnimationOptions.curveEaseOut)
+        AnimationManager.location = .water
+    }
+    
+    func drink() {
+        catArt.animationImages = AnimationManager.drinking
+        catArt.animationDuration = 1.0
+        catArt.startAnimating()
+    }
+    
+    func moveToBed() {
+        print("bed")
+        catArt.animationImages = AnimationManager.walking
+        catArt.animationDuration = 0.5
+        catArt.startAnimating()
+        let bedDestination = CGPoint(x: wallArt.frame.width/1.26, y: wallArt.frame.height/1.85)
+        
+        catArt.move(to: bedDestination, duration: 2.0, options: UIView.AnimationOptions.curveEaseOut)
+        AnimationManager.location = .bed
+    }
+    
+    func sleep() {
+        catArt.animationImages = AnimationManager.sleep
+        catArt.animationDuration = 3.0
+        catArt.startAnimating()
+    }
+    
+    func moveToToy() {
+        print("toy")
+        catArt.animationImages = AnimationManager.walking
+        catArt.animationDuration = 0.5
+        catArt.startAnimating()
+        let toyDestination = CGPoint(x: wallArt.frame.width/3.5, y: wallArt.frame.height/1.45)
+        
+        catArt.move(to: toyDestination, duration: 3.0, options: UIView.AnimationOptions.curveEaseOut)
+        AnimationManager.location = .water
+    }
+    
+    func moveToBath() {
+        print("bath")
+        catArt.animationImages = AnimationManager.walking
+        catArt.animationDuration = 0.5
+        catArt.startAnimating()
+        let bathDestination = CGPoint(x: wallArt.frame.width/3.5, y: wallArt.frame.height/1.85)
+        
+        catArt.move(to: bathDestination, duration: 2.0, options: UIView.AnimationOptions.curveEaseOut)
+        AnimationManager.location = .water
+    }
+    
+    func animateWater() {
+        waterBowlArt.animationImages = AnimationManager.fountain
+        waterBowlArt.animationDuration = 0.5
+        waterBowlArt.startAnimating()
     }
 }
