@@ -22,6 +22,23 @@ extension ViewController {
         AnimationManager.location = .middle
     }
     
+    func moveToFood() {
+        print("food")
+        catArt.animationImages = AnimationManager.walking
+        catArt.animationDuration = 0.5
+        catArt.startAnimating()
+        let foodDestination = CGPoint(x: wallArt.frame.width/1.2, y: wallArt.frame.height/1.43)
+        
+        catArt.move(to: foodDestination, duration: 2.0, options: UIView.AnimationOptions.curveEaseOut)
+        AnimationManager.location = .food
+    }
+    
+    func eat() {
+        catArt.animationImages = AnimationManager.eating
+        catArt.animationDuration = 1.5
+        catArt.startAnimating()
+    }
+    
     func moveToWater() {
         print("water")
         catArt.animationImages = AnimationManager.walking
@@ -64,7 +81,13 @@ extension ViewController {
         let toyDestination = CGPoint(x: wallArt.frame.width/3.5, y: wallArt.frame.height/1.45)
         
         catArt.move(to: toyDestination, duration: 3.0, options: UIView.AnimationOptions.curveEaseOut)
-        AnimationManager.location = .water
+        AnimationManager.location = .toy
+    }
+    
+    func play() {
+        catArt.animationImages = AnimationManager.play
+        catArt.animationDuration = 1.5
+        catArt.startAnimating()
     }
     
     func moveToBath() {
@@ -72,10 +95,17 @@ extension ViewController {
         catArt.animationImages = AnimationManager.walking
         catArt.animationDuration = 0.5
         catArt.startAnimating()
-        let bathDestination = CGPoint(x: wallArt.frame.width/3.5, y: wallArt.frame.height/1.85)
+        let bathDestination = CGPoint(x: wallArt.frame.width/3.6, y: wallArt.frame.height/1.93)
         
         catArt.move(to: bathDestination, duration: 2.0, options: UIView.AnimationOptions.curveEaseOut)
-        AnimationManager.location = .water
+        AnimationManager.location = .bath
+    }
+    
+    func wash() {
+        bathEdge.isHidden = false
+        catArt.animationImages = AnimationManager.wash
+        catArt.animationDuration = 2.0
+        catArt.startAnimating()
     }
     
     func animateWater() {

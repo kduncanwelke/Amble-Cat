@@ -127,11 +127,19 @@ public class ViewModel {
         return "\(Currency.userTotal) Paw Points"
     }
     
-    func showFood() -> Bool {
-        return CareState.hasBeenFed
+    func showFood() -> UIImage {
+        if CareState.hasBeenFed {
+            return Bowls.fullBowls[DecorManager.bowlID] ?? #imageLiteral(resourceName: "foodbowlpink.png")
+        } else {
+            return StoreInventory.inventoryDictionary[DecorManager.bowlID]?.image ?? #imageLiteral(resourceName: "foodbowlpink.png")
+        }
     }
     
-    func showWater() -> Bool {
-        return CareState.hasBeenWatered
+    func showWater() -> UIImage? {
+        if CareState.hasBeenWatered {
+            return nil
+        } else {
+            return StoreInventory.inventoryDictionary[DecorManager.waterID]?.image ?? #imageLiteral(resourceName: "nowaterblue.png")
+        }
     }
 }

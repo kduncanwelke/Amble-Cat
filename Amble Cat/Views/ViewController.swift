@@ -38,6 +38,10 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
      @IBOutlet weak var wallArt: UIImageView!
      @IBOutlet weak var waterBowlArt: UIImageView!
      @IBOutlet weak var windowArt: UIImageView!
+     
+     @IBOutlet weak var bath: UIImageView!
+     @IBOutlet weak var bathEdge: UIImageView!
+     
      @IBOutlet weak var dimView: UIView!
      @IBOutlet weak var historyButton: UIButton!
      
@@ -123,20 +127,23 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
      
      func loadUI() {
           pointsLabel.text = viewModel.setPointsLabel()
-          
-          bowlArt.isHidden = viewModel.showFood()
-          waterBowlArt.isHidden = viewModel.showWater()
-          
           stepsLabel.text = "\(stepViewModel.stepsToday())"
           distanceLabel.text = "\(stepViewModel.metersToday())"
+          bowlArt.image = viewModel.showFood()
+          loadWater()
+     }
+     
+     func loadWater() {
+          if let empty = viewModel.showWater() {
+               waterBowlArt.image = empty
+          } else {
+               animateWater()
+          }
      }
      
      @objc func animationEnded() {
           catArt.stopAnimating()
-          
-          catArt.animationImages = AnimationManager.play
-          catArt.animationDuration = 1.5
-          catArt.startAnimating()
+          play()
      }
      
      @objc func addPurchasedCurrency() {
@@ -260,7 +267,7 @@ extension ViewController: UICollectionViewDataSource, ButtonTapDelegate {
                if viewModel.hasBeenFed() {
                     return
                } else {
-                    bowlArt.isHidden = viewModel.showFood()
+                    bowlArt.image = viewModel.showFood()
                     viewModel.feedCat()
                     
                     Sound.playSound(number: Sounds.blopSound.number)
@@ -270,7 +277,7 @@ extension ViewController: UICollectionViewDataSource, ButtonTapDelegate {
                if CareState.hasBeenWatered {
                     return
                } else {
-                    waterBowlArt.isHidden = viewModel.showWater()
+                    loadWater()
                     viewModel.waterCat()
                     
                     Sound.playSound(number: Sounds.blopSound.number)

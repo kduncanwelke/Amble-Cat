@@ -106,5 +106,19 @@ struct AnimationManager {
     static let sleep: [UIImage] = [#imageLiteral(resourceName: "sleep1.png"),#imageLiteral(resourceName: "sleep2.png")]
     static let wash: [UIImage] = [#imageLiteral(resourceName: "washing1.png"),#imageLiteral(resourceName: "washing2.png"),#imageLiteral(resourceName: "washing3.png"),#imageLiteral(resourceName: "washing4.png")]
     
-    static let fountain: [UIImage] = [#imageLiteral(resourceName: "fountain.png"),#imageLiteral(resourceName: "fountain2.png")]
+    static var fountain: [UIImage] {
+        get {
+            if DecorManager.waterID == 51 { // blue
+                return [#imageLiteral(resourceName: "fountainblue1.png"),#imageLiteral(resourceName: "fountainblue2.png")]
+            } else if DecorManager.waterID == 52 { // green
+                return [#imageLiteral(resourceName: "fountaingreen1.png"),#imageLiteral(resourceName: "fountaingreen2.png")]
+            } else if DecorManager.waterID == 53 { // yellow
+                return [#imageLiteral(resourceName: "fountainyellow1.png"),#imageLiteral(resourceName: "fountainyellow2.png")]
+            } else if DecorManager.waterID == 54 { // white
+                return [#imageLiteral(resourceName: "fountainwhite1.png"),#imageLiteral(resourceName: "fountainwhite2.png")]
+            } else { // black
+                return [#imageLiteral(resourceName: "fountainblack1.png"),#imageLiteral(resourceName: "fountainblack2.png")]
+            }
+        }
+    }
 }

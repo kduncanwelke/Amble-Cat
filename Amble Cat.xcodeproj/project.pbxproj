@@ -37,6 +37,7 @@
 		2D8867102399C4EC00DACD85 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D88670F2399C4EC00DACD85 /* TutorialViewController.swift */; };
 		2D96CA9B25CDFD4C00A89C32 /* Pedometer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D96CA9A25CDFD4C00A89C32 /* Pedometer.swift */; };
 		2D96CA9D25CDFF4F00A89C32 /* StepViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D96CA9C25CDFF4F00A89C32 /* StepViewModel.swift */; };
+		2D9B0E0125E45E52009D75ED /* Bowls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9B0E0025E45E52009D75ED /* Bowls.swift */; };
 		2D9D68BF23A2C186005EBB35 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9D68BE23A2C186005EBB35 /* AboutViewController.swift */; };
 		2DA2E41F238DD71700541771 /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA2E41E238DD71700541771 /* NetworkMonitor.swift */; };
 		2DA3C65525DC716D004D831E /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA3C65425DC716D004D831E /* UIViewExtension.swift */; };
@@ -123,6 +124,7 @@
 		2D88670F2399C4EC00DACD85 /* TutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
 		2D96CA9A25CDFD4C00A89C32 /* Pedometer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pedometer.swift; sourceTree = "<group>"; };
 		2D96CA9C25CDFF4F00A89C32 /* StepViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepViewModel.swift; sourceTree = "<group>"; };
+		2D9B0E0025E45E52009D75ED /* Bowls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bowls.swift; sourceTree = "<group>"; };
 		2D9D68BE23A2C186005EBB35 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		2DA2E41E238DD71700541771 /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
 		2DA3C65425DC716D004D831E /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
@@ -278,6 +280,7 @@
 				2D7146CF235BB8560064B576 /* StoreInventory.swift */,
 				2DA5595F2360FE50006B3B9D /* PurchaseState.swift */,
 				2D0C3CFA2363A7E300EA064A /* DecorManager.swift */,
+				2D9B0E0025E45E52009D75ED /* Bowls.swift */,
 			);
 			path = "Decor Shop";
 			sourceTree = "<group>";
@@ -678,6 +681,7 @@
 				2D353B9B23A05A2200C2E1AC /* Buttons.swift in Sources */,
 				2D3583C1237CC1F3005A6C56 /* AnimationManager.swift in Sources */,
 				2DE860E923552B3B00227A86 /* AppDelegate.swift in Sources */,
+				2D9B0E0125E45E52009D75ED /* Bowls.swift in Sources */,
 				2D789157239C40FE00053B4E /* Sounds.swift in Sources */,
 				2D6FCA8D235A596100560CB2 /* Timer.swift in Sources */,
 				2D96CA9B25CDFD4C00A89C32 /* Pedometer.swift in Sources */,

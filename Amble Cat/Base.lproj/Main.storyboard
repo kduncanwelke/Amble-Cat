@@ -155,7 +155,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kLQ-UF-HE3">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wall" translatesAutoresizingMaskIntoConstraints="NO" id="ZX0-Qb-1jX">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bluewall" translatesAutoresizingMaskIntoConstraints="NO" id="ZX0-Qb-1jX">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="ZX0-Qb-1jX" secondAttribute="height" multiplier="1:1" id="bfA-Z0-OLM"/>
@@ -164,10 +164,10 @@
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="window" translatesAutoresizingMaskIntoConstraints="NO" id="e59-3N-6cE">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="floor" translatesAutoresizingMaskIntoConstraints="NO" id="oFB-lV-nW2">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="floorbrown" translatesAutoresizingMaskIntoConstraints="NO" id="oFB-lV-nW2">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rug" translatesAutoresizingMaskIntoConstraints="NO" id="fbB-UU-SLQ">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="none" translatesAutoresizingMaskIntoConstraints="NO" id="fbB-UU-SLQ">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bath" translatesAutoresizingMaskIntoConstraints="NO" id="bdQ-Et-KHy">
@@ -176,10 +176,10 @@
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="picture" translatesAutoresizingMaskIntoConstraints="NO" id="xqr-Er-2jF">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="norug" translatesAutoresizingMaskIntoConstraints="NO" id="RIM-GI-Cjl">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="none" translatesAutoresizingMaskIntoConstraints="NO" id="RIM-GI-Cjl">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bed" translatesAutoresizingMaskIntoConstraints="NO" id="kmY-BW-XTE">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bedblue" translatesAutoresizingMaskIntoConstraints="NO" id="kmY-BW-XTE">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="doughnut" translatesAutoresizingMaskIntoConstraints="NO" id="EGI-IM-dbU">
@@ -188,10 +188,13 @@
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="left" translatesAutoresizingMaskIntoConstraints="NO" id="2pe-Vp-Fyw">
                                                 <rect key="frame" x="273" y="249" width="141" height="91"/>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="foodbowl" translatesAutoresizingMaskIntoConstraints="NO" id="nCD-I7-M00">
+                                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bathedge" translatesAutoresizingMaskIntoConstraints="NO" id="lG3-Ds-PDX">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fountain" translatesAutoresizingMaskIntoConstraints="NO" id="nr0-kZ-WzT">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bowlpink" translatesAutoresizingMaskIntoConstraints="NO" id="nCD-I7-M00">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nowaterblue" translatesAutoresizingMaskIntoConstraints="NO" id="nr0-kZ-WzT">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
                                             </imageView>
                                         </subviews>
@@ -221,6 +224,7 @@
                                             <constraint firstItem="e59-3N-6cE" firstAttribute="centerY" secondItem="kLQ-UF-HE3" secondAttribute="centerY" id="NMs-Qh-edh"/>
                                             <constraint firstItem="nr0-kZ-WzT" firstAttribute="centerX" secondItem="kLQ-UF-HE3" secondAttribute="centerX" id="Nkh-9p-f7e"/>
                                             <constraint firstAttribute="bottom" secondItem="2pe-Vp-Fyw" secondAttribute="bottom" constant="74" id="PN6-dp-pw0"/>
+                                            <constraint firstItem="lG3-Ds-PDX" firstAttribute="centerY" secondItem="ZX0-Qb-1jX" secondAttribute="centerY" id="Sh5-R6-Vwa"/>
                                             <constraint firstItem="oFB-lV-nW2" firstAttribute="centerX" secondItem="kLQ-UF-HE3" secondAttribute="centerX" id="UJx-b9-Dxg"/>
                                             <constraint firstItem="fbB-UU-SLQ" firstAttribute="centerY" secondItem="kLQ-UF-HE3" secondAttribute="centerY" id="UmX-Hr-pLD"/>
                                             <constraint firstItem="nCD-I7-M00" firstAttribute="height" secondItem="kLQ-UF-HE3" secondAttribute="height" id="VLl-2X-gw7"/>
@@ -230,6 +234,7 @@
                                             <constraint firstItem="bdQ-Et-KHy" firstAttribute="centerY" secondItem="kLQ-UF-HE3" secondAttribute="centerY" id="XeW-Ie-Ftd"/>
                                             <constraint firstItem="fbB-UU-SLQ" firstAttribute="height" secondItem="kLQ-UF-HE3" secondAttribute="height" id="Xx6-6F-phQ"/>
                                             <constraint firstItem="e59-3N-6cE" firstAttribute="width" secondItem="kLQ-UF-HE3" secondAttribute="width" id="YN6-v9-ahk"/>
+                                            <constraint firstItem="lG3-Ds-PDX" firstAttribute="centerX" secondItem="ZX0-Qb-1jX" secondAttribute="centerX" id="aNr-Zf-Mv6"/>
                                             <constraint firstItem="oFB-lV-nW2" firstAttribute="width" secondItem="kLQ-UF-HE3" secondAttribute="width" id="bk2-Yi-hzI"/>
                                             <constraint firstItem="ZX0-Qb-1jX" firstAttribute="height" secondItem="kLQ-UF-HE3" secondAttribute="height" id="c8t-MH-1W5"/>
                                             <constraint firstItem="nCD-I7-M00" firstAttribute="width" secondItem="kLQ-UF-HE3" secondAttribute="width" id="d3d-WB-mVb"/>
@@ -239,9 +244,11 @@
                                             <constraint firstItem="RIM-GI-Cjl" firstAttribute="height" secondItem="kLQ-UF-HE3" secondAttribute="height" id="jfY-qL-euX"/>
                                             <constraint firstItem="EGI-IM-dbU" firstAttribute="width" secondItem="kLQ-UF-HE3" secondAttribute="width" id="loJ-F0-lRs"/>
                                             <constraint firstItem="bdQ-Et-KHy" firstAttribute="centerX" secondItem="kLQ-UF-HE3" secondAttribute="centerX" id="mE0-tG-Cii"/>
+                                            <constraint firstItem="lG3-Ds-PDX" firstAttribute="height" secondItem="ZX0-Qb-1jX" secondAttribute="height" id="oee-HB-MOJ"/>
                                             <constraint firstItem="ZX0-Qb-1jX" firstAttribute="width" secondItem="kLQ-UF-HE3" secondAttribute="width" id="ohF-SD-JLp"/>
                                             <constraint firstItem="bdQ-Et-KHy" firstAttribute="height" secondItem="kLQ-UF-HE3" secondAttribute="height" id="p58-or-ZjN"/>
                                             <constraint firstItem="RIM-GI-Cjl" firstAttribute="width" secondItem="kLQ-UF-HE3" secondAttribute="width" id="p6S-S2-vlr"/>
+                                            <constraint firstItem="lG3-Ds-PDX" firstAttribute="width" secondItem="ZX0-Qb-1jX" secondAttribute="width" id="sq1-QL-heZ"/>
                                             <constraint firstItem="xqr-Er-2jF" firstAttribute="width" secondItem="kLQ-UF-HE3" secondAttribute="width" id="tqX-jA-Kaj"/>
                                             <constraint firstItem="nr0-kZ-WzT" firstAttribute="centerY" secondItem="kLQ-UF-HE3" secondAttribute="centerY" id="uIW-N7-H90"/>
                                             <constraint firstItem="RIM-GI-Cjl" firstAttribute="centerY" secondItem="kLQ-UF-HE3" secondAttribute="centerY" id="yJ5-1L-dxA"/>
@@ -369,6 +376,8 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="bath" destination="bdQ-Et-KHy" id="oXE-PJ-FTp"/>
+                        <outlet property="bathEdge" destination="lG3-Ds-PDX" id="sbo-tg-hft"/>
                         <outlet property="bedArt" destination="kmY-BW-XTE" id="pfb-wD-xdg"/>
                         <outlet property="bowlArt" destination="nCD-I7-M00" id="X5A-Qm-i5S"/>
                         <outlet property="catArt" destination="2pe-Vp-Fyw" id="GGP-EN-Fsx"/>
@@ -1226,28 +1235,28 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bqx-Cy-IBR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="280" y="-299"/>
+            <point key="canvasLocation" x="361" y="-1012"/>
         </scene>
     </scenes>
     <resources>
         <image name="bath" width="3000" height="3000"/>
-        <image name="bed" width="3000" height="3000"/>
+        <image name="bathedge" width="3000" height="3000"/>
+        <image name="bedblue" width="3000" height="3000"/>
+        <image name="bluewall" width="3000" height="3000"/>
+        <image name="bowlpink" width="3000" height="3000"/>
         <image name="coins" width="900" height="900"/>
         <image name="doughnut" width="3000" height="3000"/>
         <image name="feed" width="300" height="300"/>
-        <image name="floor" width="3000" height="3000"/>
-        <image name="foodbowl" width="3000" height="3000"/>
-        <image name="fountain" width="3000" height="3000"/>
+        <image name="floorbrown" width="3000" height="3000"/>
         <image name="heartempty" width="90" height="90"/>
         <image name="infobutton" width="25" height="25"/>
         <image name="left" width="1000" height="653"/>
         <image name="lucyphoto" width="300" height="300"/>
-        <image name="norug" width="1000" height="1000"/>
+        <image name="none" width="3000" height="3000"/>
+        <image name="nowaterblue" width="3000" height="3000"/>
         <image name="paw" width="100" height="100"/>
-        <image name="picture" width="1000" height="1000"/>
-        <image name="rug" width="3000" height="3000"/>
+        <image name="picture" width="3000" height="3000"/>
         <image name="sitblink1" width="1000" height="1000"/>
-        <image name="wall" width="3000" height="3000"/>
         <image name="window" width="3000" height="3000"/>
     </resources>
 </document>

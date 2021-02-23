@@ -11,8 +11,9 @@ import UIKit
 
 struct StoreInventory {
     
+    // FIXME: change images
     // Bowls
-    static let bowl = StoreItem(id: 0, name: "Pink Food Bowl", price: 0, shopImage: #imageLiteral(resourceName: "shopbowl"), image: #imageLiteral(resourceName: "bowl"), description: "Basic Food Bowl", type: .bowl)
+    static let bowl = StoreItem(id: 0, name: "Pink Food Bowl", price: 0, shopImage: #imageLiteral(resourceName: "shopbowl"), image: #imageLiteral(resourceName: "bowlpink.png"), description: "Basic Food Bowl", type: .bowl)
     
     static let blueBowl = StoreItem(id: 14, name: "Blue Food Bowl", price: 300, shopImage: #imageLiteral(resourceName: "shopbowlblue"), image: #imageLiteral(resourceName: "bluebowl"), description: "Basic Blue Bowl", type: .bowl)
     
