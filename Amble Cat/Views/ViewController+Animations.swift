@@ -11,6 +11,38 @@ import UIKit
 
 extension ViewController {
     
+    func beginAnimation() {
+        var staying = Bool.random()
+    }
+    
+    func sit() {
+        catArt.image = AnimationManager.sitDown
+    }
+    
+    func frontSit() {
+        catArt.animationImages = AnimationManager.frontSit
+        catArt.animationDuration = 1.0
+        catArt.animationRepeatCount = 1
+        catArt.startAnimating()
+    }
+    
+    func stand() {
+        catArt.image = AnimationManager.standUp
+    }
+    
+    func sitTail() {
+        catArt.animationImages = AnimationManager.sitTail
+        catArt.animationDuration = 2.0
+        catArt.startAnimating()
+    }
+    
+    func sitBlink() {
+        catArt.animationImages = AnimationManager.sitBlink
+        catArt.animationDuration = 3.0
+        catArt.animationRepeatCount = 1
+        catArt.startAnimating()
+    }
+    
     func moveToMiddle() {
         print("move")
         catArt.animationImages = AnimationManager.walking
@@ -27,7 +59,7 @@ extension ViewController {
         catArt.animationImages = AnimationManager.walking
         catArt.animationDuration = 0.5
         catArt.startAnimating()
-        let foodDestination = CGPoint(x: wallArt.frame.width/1.2, y: wallArt.frame.height/1.43)
+        let foodDestination = CGPoint(x: wallArt.frame.width/1.2, y: wallArt.frame.height/1.2)
         
         catArt.move(to: foodDestination, duration: 2.0, options: UIView.AnimationOptions.curveEaseOut)
         AnimationManager.location = .food
@@ -112,5 +144,49 @@ extension ViewController {
         waterBowlArt.animationImages = AnimationManager.fountain
         waterBowlArt.animationDuration = 0.5
         waterBowlArt.startAnimating()
+    }
+    
+    func moveToRight() {
+        print("right")
+        catArt.animationImages = AnimationManager.walking
+        catArt.animationDuration = 0.5
+        catArt.startAnimating()
+        let rightDestination = CGPoint(x: wallArt.frame.width/1.2, y: wallArt.frame.height/1.6)
+        
+        catArt.move(to: rightDestination, duration: 2.0, options: UIView.AnimationOptions.curveEaseOut)
+        AnimationManager.location = .right
+    }
+    
+    func moveToLowerRight() {
+        print("lower right")
+        catArt.animationImages = AnimationManager.walking
+        catArt.animationDuration = 0.5
+        catArt.startAnimating()
+        let lowerRightDestination = CGPoint(x: wallArt.frame.width/1.5, y: wallArt.frame.height/1.2)
+        
+        catArt.move(to: lowerRightDestination, duration: 2.0, options: UIView.AnimationOptions.curveEaseOut)
+        AnimationManager.location = .lowerRight
+    }
+    
+    func moveToLeft() {
+        print("left")
+        catArt.animationImages = AnimationManager.walking
+        catArt.animationDuration = 0.5
+        catArt.startAnimating()
+        let rightDestination = CGPoint(x: wallArt.frame.width/5, y: wallArt.frame.height/1.6)
+        
+        catArt.move(to: rightDestination, duration: 2.0, options: UIView.AnimationOptions.curveEaseOut)
+        AnimationManager.location = .left
+    }
+    
+    func moveToLowerLeft() {
+        print("lower left")
+        catArt.animationImages = AnimationManager.walking
+        catArt.animationDuration = 0.5
+        catArt.startAnimating()
+        let lowerLeftDestination = CGPoint(x: wallArt.frame.width/4, y: wallArt.frame.height/1.2)
+        
+        catArt.move(to: lowerLeftDestination, duration: 2.0, options: UIView.AnimationOptions.curveEaseOut)
+        AnimationManager.location = .lowerLeft
     }
 }

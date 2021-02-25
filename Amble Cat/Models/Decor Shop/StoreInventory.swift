@@ -15,31 +15,31 @@ struct StoreInventory {
     // Bowls
     static let bowl = StoreItem(id: 0, name: "Pink Food Bowl", price: 0, shopImage: #imageLiteral(resourceName: "shopbowl"), image: #imageLiteral(resourceName: "bowlpink.png"), description: "Basic Food Bowl", type: .bowl)
     
-    static let blueBowl = StoreItem(id: 14, name: "Blue Food Bowl", price: 300, shopImage: #imageLiteral(resourceName: "shopbowlblue"), image: #imageLiteral(resourceName: "bluebowl"), description: "Basic Blue Bowl", type: .bowl)
+    static let blueBowl = StoreItem(id: 14, name: "Blue Food Bowl", price: 300, shopImage: #imageLiteral(resourceName: "shopbowlblue"), image: #imageLiteral(resourceName: "bowlblue.png"), description: "Basic Blue Bowl", type: .bowl)
     
-    static let greenBowl = StoreItem(id: 15, name: "Green Food Bowl", price: 300, shopImage: #imageLiteral(resourceName: "shopbowlgreen"), image: #imageLiteral(resourceName: "greenbowl"), description: "Basic Green Bowl", type: .bowl)
+    static let greenBowl = StoreItem(id: 15, name: "Green Food Bowl", price: 300, shopImage: #imageLiteral(resourceName: "shopbowlgreen"), image: #imageLiteral(resourceName: "bowlgreen.png"), description: "Basic Green Bowl", type: .bowl)
     
-    static let yellowBowl = StoreItem(id: 16, name: "Yellow Food Bowl", price: 300, shopImage: #imageLiteral(resourceName: "shopbowlyellow"), image: #imageLiteral(resourceName: "yellowbowl"), description: "Basic Yellow Bowl", type: .bowl)
+    static let yellowBowl = StoreItem(id: 16, name: "Yellow Food Bowl", price: 300, shopImage: #imageLiteral(resourceName: "shopbowlyellow"), image: #imageLiteral(resourceName: "bowlyellow.png"), description: "Basic Yellow Bowl", type: .bowl)
     
-    static let whiteBowl = StoreItem(id: 17, name: "White Food Bowl", price: 500, shopImage: #imageLiteral(resourceName: "shopbowlwhite"), image: #imageLiteral(resourceName: "whitebowl"), description: "Basic White Bowl", type: .bowl)
+    static let whiteBowl = StoreItem(id: 17, name: "White Food Bowl", price: 500, shopImage: #imageLiteral(resourceName: "shopbowlwhite"), image: #imageLiteral(resourceName: "bowlwhite.png"), description: "Basic White Bowl", type: .bowl)
     
-    static let blackBowl = StoreItem(id: 37, name: "Black Food Bowl", price: 500, shopImage: #imageLiteral(resourceName: "shopbowlblack.png"), image: #imageLiteral(resourceName: "blackbowl.png"), description: "Basic Black Bowl", type: .bowl)
+    static let blackBowl = StoreItem(id: 37, name: "Black Food Bowl", price: 500, shopImage: #imageLiteral(resourceName: "shopbowlblack.png"), image: #imageLiteral(resourceName: "bowlblack.png"), description: "Basic Black Bowl", type: .bowl)
     
     
     // Water Bowls
-    static let blueWaterBowl = StoreItem(id: 51, name: "Blue Water Bowl", price: 250, shopImage: #imageLiteral(resourceName: "shopbluewaterbowl.png"), image: #imageLiteral(resourceName: "bluewaterbowl.png"), description: "Basic Water Bowl", type: .waterbowl)
+    static let blueWaterBowl = StoreItem(id: 51, name: "Blue Water Bowl", price: 250, shopImage: #imageLiteral(resourceName: "shopbluewaterbowl.png"), image: #imageLiteral(resourceName: "nowaterblue.png"), description: "Basic Water Bowl", type: .waterbowl)
     
-    static let greenWaterBowl = StoreItem(id: 52, name: "Green Water Bowl", price: 250, shopImage: #imageLiteral(resourceName: "shopgreenwaterbowl.png"), image: #imageLiteral(resourceName: "greenwaterbowl.png"), description: "Green Water Bowl", type: .waterbowl)
+    static let greenWaterBowl = StoreItem(id: 52, name: "Green Water Bowl", price: 250, shopImage: #imageLiteral(resourceName: "shopgreenwaterbowl.png"), image: #imageLiteral(resourceName: "nowatergreen.png"), description: "Green Water Bowl", type: .waterbowl)
     
-    static let yellowWaterBowl = StoreItem(id: 53, name: "Yellow Water Bowl", price: 250, shopImage: #imageLiteral(resourceName: "shopyellowwaterbowl.png"), image: #imageLiteral(resourceName: "yellowwaterbowl.png"), description: "Yellow Water Bowl", type: .waterbowl)
+    static let yellowWaterBowl = StoreItem(id: 53, name: "Yellow Water Bowl", price: 250, shopImage: #imageLiteral(resourceName: "shopyellowwaterbowl.png"), image: #imageLiteral(resourceName: "nowateryellow.png"), description: "Yellow Water Bowl", type: .waterbowl)
     
-    static let whiteWaterBowl = StoreItem(id: 54, name: "White Water Bowl", price: 450, shopImage: #imageLiteral(resourceName: "shopwhitewaterbowl.png"), image: #imageLiteral(resourceName: "whitebowl.png"), description: "White Water Bowl", type: .waterbowl)
+    static let whiteWaterBowl = StoreItem(id: 54, name: "White Water Bowl", price: 450, shopImage: #imageLiteral(resourceName: "shopwhitewaterbowl.png"), image: #imageLiteral(resourceName: "nowaterwhite.png"), description: "White Water Bowl", type: .waterbowl)
     
-    static let blackWaterBowl = StoreItem(id: 55, name: "Black Water Bowl", price: 450, shopImage: #imageLiteral(resourceName: "shopblackwaterbowl.png"), image: #imageLiteral(resourceName: "blackwaterbowl.png"), description: "Black Water Bowl", type: .waterbowl)
+    static let blackWaterBowl = StoreItem(id: 55, name: "Black Water Bowl", price: 450, shopImage: #imageLiteral(resourceName: "shopblackwaterbowl.png"), image: #imageLiteral(resourceName: "nowaterblack.png"), description: "Black Water Bowl", type: .waterbowl)
     
     
     // Toys
-    static let mouse = StoreItem(id: 1, name: "Mouse", price: 0, shopImage: #imageLiteral(resourceName: "shopmouse"), image: #imageLiteral(resourceName: "mouse"), description: "Basic Mouse", type: .toy)
+    static let mouse = StoreItem(id: 1, name: "Mouse", price: 0, shopImage: #imageLiteral(resourceName: "shopmouse"), image: #imageLiteral(resourceName: "mouse.png"), description: "Basic Mouse", type: .toy)
     
     static let ball = StoreItem(id: 23, name: "Ball", price: 300, shopImage: #imageLiteral(resourceName: "shopball.png"), image: #imageLiteral(resourceName: "ball.png"), description: "Ball Toy", type: .toy)
     
@@ -49,11 +49,11 @@ struct StoreInventory {
     
     static let fish = StoreItem(id: 26, name: "Fishie", price: 600, shopImage: #imageLiteral(resourceName: "shopfish.png"), image: #imageLiteral(resourceName: "fish.png"), description: "Fish Toy", type: .toy)
     
-    static let candycane = StoreItem(id: 40, name: "Candycane", price: 300, shopImage: #imageLiteral(resourceName: "shopcandycane.png"), image: #imageLiteral(resourceName: "candycane.png"), description: "Candycane Toy", type: .toy)
+    static let candycane = StoreItem(id: 40, name: "Candycane", price: 300, shopImage: #imageLiteral(resourceName: "shopcandycane.png"), image: #imageLiteral(resourceName: "peppermint.png"), description: "Candycane Toy", type: .toy)
     
 
     // Pictures
-    static let picture = StoreItem(id: 3, name: "Ocean Picture", price: 0, shopImage: #imageLiteral(resourceName: "shoppicture"), image: #imageLiteral(resourceName: "picture"), description: "Default Picture", type: .picture)
+    static let picture = StoreItem(id: 3, name: "Ocean Picture", price: 0, shopImage: #imageLiteral(resourceName: "shoppicture"), image: #imageLiteral(resourceName: "picture.png"), description: "Default Picture", type: .picture)
     
     static let forest = StoreItem(id: 32, name: "Forest Picture", price: 1800, shopImage: #imageLiteral(resourceName: "shopforest.png"), image: #imageLiteral(resourceName: "forest.png"), description: "Forest Picture", type: .picture)
     
@@ -65,21 +65,21 @@ struct StoreInventory {
     
     
     // Floors
-    static let floor = StoreItem(id: 4, name: "Basic Floor", price: 0, shopImage: #imageLiteral(resourceName: "shopfloor"), image: #imageLiteral(resourceName: "floor"), description: "Basic Starter Floor", type: .floor)
+    static let floor = StoreItem(id: 4, name: "Basic Floor", price: 0, shopImage: #imageLiteral(resourceName: "shopfloor"), image: #imageLiteral(resourceName: "floorbrown.png"), description: "Basic Starter Floor", type: .floor)
     
-    static let darkFloor = StoreItem(id: 7, name: "Walnut Floor", price: 1200, shopImage: #imageLiteral(resourceName: "shopfloordark"), image: #imageLiteral(resourceName: "floordark"), description: "Dark Floor", type: .floor)
+    static let darkFloor = StoreItem(id: 7, name: "Walnut Floor", price: 1200, shopImage: #imageLiteral(resourceName: "shopfloordark"), image: #imageLiteral(resourceName: "floordark.png"), description: "Dark Floor", type: .floor)
     
-    static let whiteFloor = StoreItem(id: 8, name: "White Floor", price: 1200, shopImage: #imageLiteral(resourceName: "shopfloorwhite"), image: #imageLiteral(resourceName: "floorwhite"), description: "White Floor", type: .floor)
+    static let whiteFloor = StoreItem(id: 8, name: "White Floor", price: 1200, shopImage: #imageLiteral(resourceName: "shopfloorwhite"), image: #imageLiteral(resourceName: "floorwhite.png"), description: "White Floor", type: .floor)
     
-    static let blondFloor = StoreItem(id: 9, name: "Poplar Floor", price: 1800, shopImage: #imageLiteral(resourceName: "shopfloorblond"), image: #imageLiteral(resourceName: "floorblond"), description: "Light Floor", type: .floor)
+    static let blondFloor = StoreItem(id: 9, name: "Poplar Floor", price: 1800, shopImage: #imageLiteral(resourceName: "shopfloorblond"), image: #imageLiteral(resourceName: "floorblonde.png"), description: "Light Floor", type: .floor)
     
-    static let blackFloor = StoreItem(id: 10, name: "Black Floor", price: 1800, shopImage: #imageLiteral(resourceName: "shopfloorblack"), image: #imageLiteral(resourceName: "floorblack"), description: "Black Floor", type: .floor)
+    static let blackFloor = StoreItem(id: 10, name: "Black Floor", price: 1800, shopImage: #imageLiteral(resourceName: "shopfloorblack"), image: #imageLiteral(resourceName: "floorblack.png"), description: "Black Floor", type: .floor)
     
     static let redFloor = StoreItem(id: 22, name: "Cedar Floor", price: 1800, shopImage: #imageLiteral(resourceName: "shopfloorred.png"), image: #imageLiteral(resourceName: "floorred.png"), description: "Cedar Floor", type: .floor)
     
     
     // Walls
-    static let wall = StoreItem(id: 5, name: "Basic Wall", price: 0, shopImage: #imageLiteral(resourceName: "shopwall"), image: #imageLiteral(resourceName: "wall"), description: "Basic Starter Wall", type: .wall)
+    static let wall = StoreItem(id: 5, name: "Basic Wall", price: 0, shopImage: #imageLiteral(resourceName: "shopwall"), image: #imageLiteral(resourceName: "bluewall.png"), description: "Basic Starter Wall", type: .wall)
     
     static let yellowWall = StoreItem(id: 18, name: "Yellow Wall", price: 600, shopImage: #imageLiteral(resourceName: "shopwallyellow.png"), image: #imageLiteral(resourceName: "yellowwall.png"), description: "Basic Yellow Wall", type: .wall)
     
@@ -89,15 +89,15 @@ struct StoreInventory {
     
     static let redWall = StoreItem(id: 20, name: "Red Wall", price: 600, shopImage: #imageLiteral(resourceName: "shopwallred.png"), image: #imageLiteral(resourceName: "redwall.png"), description: "Basic Red Wall", type: .wall)
     
-    static let pawprintWall = StoreItem(id: 21, name: "Pawprint Wall", price: 1800, shopImage: #imageLiteral(resourceName: "shopwallpawprint.png"), image: #imageLiteral(resourceName: "pawprint.png"), description: "Pawprint Wallpaper", type: .wall)
+    static let pawprintWall = StoreItem(id: 21, name: "Pawprint Wall", price: 1800, shopImage: #imageLiteral(resourceName: "shopwallpawprint.png"), image: #imageLiteral(resourceName: "pawprintwall.png"), description: "Pawprint Wallpaper", type: .wall)
     
     static let stripedWall = StoreItem(id: 39, name: "Striped Wall", price: 1200, shopImage: #imageLiteral(resourceName: "shopwallstriped.png"), image: #imageLiteral(resourceName: "stripedwall.png"), description: "Striped Wallpaper", type: .wall)
 	
     
     // Beds
-    static let bed = StoreItem(id: 2, name: "Blue Bed", price: 0, shopImage: #imageLiteral(resourceName: "shopbed"), image: #imageLiteral(resourceName: "bed"), description: "Basic Bed", type: .bed)
+    static let bed = StoreItem(id: 2, name: "Blue Bed", price: 0, shopImage: #imageLiteral(resourceName: "shopbed"), image: #imageLiteral(resourceName: "bedblue.png"), description: "Basic Bed", type: .bed)
     
-    static let yellowBed = StoreItem(id: 6, name: "Yellow Bed", price: 300, shopImage: #imageLiteral(resourceName: "shopbedyellow"), image: #imageLiteral(resourceName: "yellowbed"), description: "Basic Yellow Bed", type: .bed)
+    static let yellowBed = StoreItem(id: 6, name: "Yellow Bed", price: 300, shopImage: #imageLiteral(resourceName: "shopbedyellow"), image: #imageLiteral(resourceName: "bedyellow.png"), description: "Basic Yellow Bed", type: .bed)
     
     static let greenBed = StoreItem(id: 11, name: "Green Bed", price: 300, shopImage: #imageLiteral(resourceName: "shopbedgreen"), image: #imageLiteral(resourceName: "bedgreen"), description: "Basic Green Bed", type: .bed)
     
@@ -109,11 +109,11 @@ struct StoreInventory {
     
     
     // Windows
-    static let basicView = StoreItem(id: 27, name: "Basic View", price: 0, shopImage: #imageLiteral(resourceName: "shopwindow.png"), image: #imageLiteral(resourceName: "basicwindow.png"), description: "Basic View", type: .window)
+    static let basicView = StoreItem(id: 27, name: "Basic View", price: 0, shopImage: #imageLiteral(resourceName: "shopwindow.png"), image: #imageLiteral(resourceName: "window.png"), description: "Basic View", type: .window)
     
     static let mountainView = StoreItem(id: 28, name: "Mountain Scene", price: 1500, shopImage: #imageLiteral(resourceName: "shopmountain.png"), image: #imageLiteral(resourceName: "mountain.png"), description: "Mountain View", type: .window)
     
-    static let winterView = StoreItem(id: 29, name: "Winter Scene", price: 1500, shopImage: #imageLiteral(resourceName: "shopwinter.png"), image: #imageLiteral(resourceName: "winter.png"), description: "Winter View", type: .window)
+    static let winterView = StoreItem(id: 29, name: "Winter Scene", price: 1500, shopImage: #imageLiteral(resourceName: "shopwinter.png"), image: #imageLiteral(resourceName: "frost.png"), description: "Winter View", type: .window)
     
     static let farmView = StoreItem(id: 30, name: "Farm Scene", price: 1500, shopImage: #imageLiteral(resourceName: "shopfarm.png"), image: #imageLiteral(resourceName: "farm.png"), description: "Farm View", type: .window)
     
@@ -125,7 +125,7 @@ struct StoreInventory {
     
     
     // Rugs
-    static let noRug = StoreItem(id: 42, name: "No Rug", price: 0, shopImage: #imageLiteral(resourceName: "shopnorug.png"), image:#imageLiteral(resourceName: "norug.png"), description: "No Rug", type: .rug)
+    static let noRug = StoreItem(id: 42, name: "No Rug", price: 0, shopImage: #imageLiteral(resourceName: "shopnorug.png"), image: #imageLiteral(resourceName: "none.png"), description: "No Rug", type: .rug)
     
     static let redRug = StoreItem(id: 43, name: "Red Rug", price: 500, shopImage: #imageLiteral(resourceName: "shopredrug.png"), image: #imageLiteral(resourceName: "redrug.png"), description: "Red Round Rug", type: .rug)
 	
@@ -133,7 +133,7 @@ struct StoreInventory {
     
     static let ecruRug = StoreItem(id: 45, name: "Ecru Rug", price: 500, shopImage: #imageLiteral(resourceName: "shopecrurug.png"), image: #imageLiteral(resourceName: "ecrurug.png"), description: "Ecru Round Rug", type: .rug)
     
-    static let christmasRug = StoreItem(id: 46, name: "Red and Green Rug", price: 800, shopImage: #imageLiteral(resourceName: "redandgreenrugshop.png"), image: #imageLiteral(resourceName: "redandgreenrug.png"), description: "Red/Green Round Rug", type: .rug)
+    static let christmasRug = StoreItem(id: 46, name: "Red and Green Rug", price: 800, shopImage: #imageLiteral(resourceName: "redandgreenrugshop.png"), image: #imageLiteral(resourceName: "christmasrug.png"), description: "Red/Green Round Rug", type: .rug)
     
     static let blueRug = StoreItem(id: 47, name: "Blue Rug", price: 500, shopImage: #imageLiteral(resourceName: "shoprugblue.png"), image: #imageLiteral(resourceName: "bluerug.png"), description: "Blue Round Rug", type: .rug)
     
@@ -141,7 +141,7 @@ struct StoreInventory {
     // Decor
     static let holly = StoreItem(id: 49, name: "Holly Hanging", price: 800, shopImage: #imageLiteral(resourceName: "shopholly.png"), image: #imageLiteral(resourceName: "holly.png"), description: "Blue Round Rug", type: .decor)
     
-    static let noDecor = StoreItem(id: 50, name: "No Decor", price: 0, shopImage: #imageLiteral(resourceName: "shopnorug.png"), image: #imageLiteral(resourceName: "norug.png"), description: "No Decor", type: .decor)
+    static let noDecor = StoreItem(id: 50, name: "No Decor", price: 0, shopImage: #imageLiteral(resourceName: "shopnorug.png"), image: #imageLiteral(resourceName: "none.png"), description: "No Decor", type: .decor)
     
 	static var inventory = [bowl, blueBowl, greenBowl, yellowBowl, whiteBowl, blackBowl, blueWaterBowl, greenWaterBowl, yellowWaterBowl, whiteWaterBowl, blackWaterBowl, bed, yellowBed, greenBed, pinkBed, whiteBed, blackBed, mouse, ball, candycane, cupcake, doughnut, fish, picture, sunset, cat, forest, abstract, noDecor, holly, wall, yellowWall, mintWall, greyWall, redWall, stripedWall, pawprintWall, basicView, mountainView, winterView, farmView, oceanView, frostView, nightView, floor, noRug, redRug, tanRug, blueRug, ecruRug, christmasRug, darkFloor, whiteFloor, blondFloor, redFloor, blackFloor]
     

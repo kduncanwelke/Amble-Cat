@@ -24,6 +24,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
      @IBOutlet weak var collectView: UIView!
      @IBOutlet weak var collectText: UILabel!
      
+     @IBOutlet weak var scrollViewContainer: UIView!
+     
      @IBOutlet var hearts: [UIImageView]!
      
      @IBOutlet weak var catArt: UIImageView!
@@ -119,7 +121,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
           let queue = DispatchQueue(label: "Monitor")
           NetworkMonitor.monitor.start(queue: queue)
         
-          animateWater()
+          loadUI()
           //beginAnimation()
     }
 	
@@ -143,7 +145,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
      
      @objc func animationEnded() {
           catArt.stopAnimating()
-          play()
+          sit()
      }
      
      @objc func addPurchasedCurrency() {
@@ -169,28 +171,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                dimView.isHidden = false
                Sound.playSound(number: Sounds.meowSound.number)
           }
-     }
-     
-     func beginAnimation() {
-          var range = [1,2,3,7]
-          
-          if CareState.hasBeenFed && CareState.hasBeenWatered && CareState.daysCaredFor >= 5 {
-               range = [1,2,3,4,5,6,7]
-          } else if CareState.hasBeenFed && CareState.hasBeenWatered && CareState.daysCaredFor >= 3 {
-               range = [1,2,3,5,6,7]
-          } else if CareState.hasBeenFed && CareState.hasBeenWatered {
-               range = [1,2,3,5,6]
-          } else if CareState.hasBeenFed && CareState.daysCaredFor > 3 {
-               range = [1,2,3,4,5]
-          } else if CareState.hasBeenWatered && CareState.daysCaredFor > 3 {
-               range = [1,2,3,4,6]
-          } else if CareState.hasBeenFed {
-               range = [1,2,3,5]
-          } else if CareState.hasBeenWatered {
-               range = [1,2,3,6]
-          }
-          
-          let animation = range.randomElement()
      }
      
      func updateHearts() {
@@ -235,7 +215,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
      // MARK: IBActions
      
      @IBAction func viewStatsPressed(_ sender: UIButton) {
-          moveToToy()
+          moveToMiddle()
           //performSegue(withIdentifier: "viewStatistics", sender: Any?.self)
      }
      

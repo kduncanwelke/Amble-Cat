@@ -43,24 +43,24 @@ struct AnimationManager {
         }
     }
     
-    static var standUp: [UIImage] {
+    static var standUp: UIImage {
         get {
             switch AnimationManager.direction {
             case .left:
-                return [#imageLiteral(resourceName: "leftsit.png"),#imageLiteral(resourceName: "left.png")]
+                return #imageLiteral(resourceName: "left.png")
             case .right:
-                return [#imageLiteral(resourceName: "rightsit.png"),#imageLiteral(resourceName: "right.png")]
+                return #imageLiteral(resourceName: "right.png")
             }
         }
     }
     
-    static var sitDown: [UIImage] {
+    static var sitDown: UIImage {
         get {
             switch AnimationManager.direction {
             case .left:
-                return [#imageLiteral(resourceName: "left.png"),#imageLiteral(resourceName: "leftsit.png")]
+                return #imageLiteral(resourceName: "leftsit.png")
             case .right:
-                return [#imageLiteral(resourceName: "right.png"),#imageLiteral(resourceName: "rightsit.png")]
+                return #imageLiteral(resourceName: "rightsit.png")
             }
         }
     }
@@ -80,7 +80,7 @@ struct AnimationManager {
         get {
             switch AnimationManager.direction {
             case .left:
-                return [#imageLiteral(resourceName: "leftsit.png"),#imageLiteral(resourceName: "leftsitblink.png")]
+                return [#imageLiteral(resourceName: "leftsit.png"),#imageLiteral(resourceName: "leftsittail.png")]
             case .right:
                 return [#imageLiteral(resourceName: "rightsit.png"),#imageLiteral(resourceName: "rightsittail.png")]
             }
