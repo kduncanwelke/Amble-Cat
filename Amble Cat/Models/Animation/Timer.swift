@@ -15,7 +15,16 @@ class AnimationTimer {
     static var timer: Timer?
     
     // timer for animations
-    static func beginTimer(repeatCount: Int) {
+    static func beginTimer(once: Bool) {
+        var repeatCount = 0
+        
+        if once {
+            repeatCount = 1
+        } else {
+            repeatCount = Int.random(in: 2...8)
+        }
+    
+        print(repeatCount)
         
         timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
             seconds += 1
@@ -27,10 +36,11 @@ class AnimationTimer {
         
         timer?.fire()
     }
-
+    
     static func stopTimer() {
         timer?.invalidate()
         seconds = 0
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "animationEnded"), object: nil)
     }
 }
 

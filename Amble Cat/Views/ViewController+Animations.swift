@@ -12,35 +12,188 @@ import UIKit
 extension ViewController {
     
     func beginAnimation() {
+        print("begin animation")
+        catArt.stopAnimating()
         var staying = Bool.random()
+        
+        if staying {
+            var placeAnimation = Bool.random()
+            
+            if placeAnimation {
+                print("random place")
+                randomPlaceAnimation()
+            } else {
+                print("random staying")
+                randomStaying()
+            }
+        } else {
+            print("random move")
+            randomMove()
+        }
+    }
+    
+    func randomPlaceAnimation() {
+        var specific = Bool.random()
+        
+        switch AnimationManager.location {
+        case .middle, .right, .left:
+            randomStaying()
+        case .bed:
+            if specific {
+                sleep()
+            } else {
+                randomStaying()
+            }
+        case .bath:
+            if specific {
+                wash()
+            } else {
+                randomStaying()
+            }
+        case .food:
+            if specific {
+                eat()
+            } else {
+                randomStaying()
+            }
+        case .water:
+            if specific {
+                drink()
+            } else {
+                randomStaying()
+            }
+        case .toy:
+            if specific {
+                play()
+            } else {
+                randomStaying()
+            }
+        }
+    }
+    
+    func randomMove() {
+        var num = Int.random(in: 0...8)
+        
+        var destination = AnimationManager.Location(rawValue: num)
+        
+        switch (AnimationManager.location, destination) {
+        case (.middle, .middle), (.bed, .bed), (.bath, .bath),(.food, .food), (.water,.water), (.toy, .toy), (.right, .right), (.left, .left):
+            randomPlaceAnimation()
+            return
+        case (.middle, .bed), (.middle, .food), (.middle, .right), (.bed, .food), (.bed, .right), (.bath, .middle), (.bath, .bed), (.bath, .food), (.bath, .water), (.bath, .right), (.food, .right), (.food, .bed), (.water, .middle), (.water, .bed), (.water, .food), (.water, .right), (.toy, .middle), (.toy, .bed), (.toy, .food), (.toy, .right), (.left, .middle), (.left, .bed), (.left, .food), (.left, .water), (.left, .right):
+            AnimationManager.direction = .right
+        default:
+            AnimationManager.direction = .left
+        }
+        
+        AnimationManager.position = .standing
+        
+        switch destination {
+        case .bath:
+            moveToBath()
+        case .bed:
+            moveToBed()
+        case .food:
+            moveToFood()
+        case .left:
+            moveToLeft()
+        case .middle:
+            moveToMiddle()
+        case .right:
+            moveToRight()
+        case .toy:
+            moveToToy()
+        case .water:
+            moveToWater()
+        case .none:
+            randomPlaceAnimation()
+        }
+    }
+    
+    func randomStaying() {
+        if AnimationManager.location == .bath {
+            frontSit()
+        } else if AnimationManager.position == .standing {
+            var sitDown = Bool.random()
+            
+            if sitDown {
+                var front = Bool.random()
+                
+                if front {
+                    frontSit()
+                } else {
+                    sit()
+                }
+            } else {
+                var blink = Bool.random()
+                
+                if blink {
+                    sitBlink()
+                } else {
+                    sitTail()
+                }
+            }
+            
+            AnimationManager.position = .seated
+        } else {
+            var sitDown = Bool.random()
+            
+            if sitDown {
+                AnimationManager.position = .seated
+                var front = Bool.random()
+                
+                if front {
+                    frontSit()
+                } else {
+                    sit()
+                }
+            } else {
+                var standUp = Bool.random()
+                
+                if standUp {
+                    stand()
+                    AnimationManager.position = .standing
+                } else {
+                    AnimationManager.position = .seated
+                    sitTail()
+                }
+            }
+        }
     }
     
     func sit() {
         catArt.image = AnimationManager.sitDown
+        catArt.animationDuration = 1.0
+        catArt.startAnimating()
+        AnimationTimer.beginTimer(once: true)
     }
     
     func frontSit() {
         catArt.animationImages = AnimationManager.frontSit
         catArt.animationDuration = 1.0
-        catArt.animationRepeatCount = 1
         catArt.startAnimating()
+        AnimationTimer.beginTimer(once: true)
     }
     
     func stand() {
         catArt.image = AnimationManager.standUp
+        catArt.animationDuration = 1.0
+        catArt.startAnimating()
+        AnimationTimer.beginTimer(once: true)
     }
     
     func sitTail() {
         catArt.animationImages = AnimationManager.sitTail
         catArt.animationDuration = 2.0
         catArt.startAnimating()
+        AnimationTimer.beginTimer(once: false)
     }
     
     func sitBlink() {
         catArt.animationImages = AnimationManager.sitBlink
         catArt.animationDuration = 3.0
-        catArt.animationRepeatCount = 1
         catArt.startAnimating()
+        AnimationTimer.beginTimer(once: true)
     }
     
     func moveToMiddle() {
@@ -69,6 +222,7 @@ extension ViewController {
         catArt.animationImages = AnimationManager.eating
         catArt.animationDuration = 1.5
         catArt.startAnimating()
+        AnimationTimer.beginTimer(once: false)
     }
     
     func moveToWater() {
@@ -86,6 +240,7 @@ extension ViewController {
         catArt.animationImages = AnimationManager.drinking
         catArt.animationDuration = 1.0
         catArt.startAnimating()
+        AnimationTimer.beginTimer(once: false)
     }
     
     func moveToBed() {
@@ -103,6 +258,7 @@ extension ViewController {
         catArt.animationImages = AnimationManager.sleep
         catArt.animationDuration = 3.0
         catArt.startAnimating()
+        AnimationTimer.beginTimer(once: false)
     }
     
     func moveToToy() {
@@ -120,6 +276,7 @@ extension ViewController {
         catArt.animationImages = AnimationManager.play
         catArt.animationDuration = 1.5
         catArt.startAnimating()
+        AnimationTimer.beginTimer(once: false)
     }
     
     func moveToBath() {
@@ -138,6 +295,7 @@ extension ViewController {
         catArt.animationImages = AnimationManager.wash
         catArt.animationDuration = 2.0
         catArt.startAnimating()
+        AnimationTimer.beginTimer(once: false)
     }
     
     func animateWater() {
@@ -157,17 +315,6 @@ extension ViewController {
         AnimationManager.location = .right
     }
     
-    func moveToLowerRight() {
-        print("lower right")
-        catArt.animationImages = AnimationManager.walking
-        catArt.animationDuration = 0.5
-        catArt.startAnimating()
-        let lowerRightDestination = CGPoint(x: wallArt.frame.width/1.5, y: wallArt.frame.height/1.2)
-        
-        catArt.move(to: lowerRightDestination, duration: 2.0, options: UIView.AnimationOptions.curveEaseOut)
-        AnimationManager.location = .lowerRight
-    }
-    
     func moveToLeft() {
         print("left")
         catArt.animationImages = AnimationManager.walking
@@ -177,16 +324,5 @@ extension ViewController {
         
         catArt.move(to: rightDestination, duration: 2.0, options: UIView.AnimationOptions.curveEaseOut)
         AnimationManager.location = .left
-    }
-    
-    func moveToLowerLeft() {
-        print("lower left")
-        catArt.animationImages = AnimationManager.walking
-        catArt.animationDuration = 0.5
-        catArt.startAnimating()
-        let lowerLeftDestination = CGPoint(x: wallArt.frame.width/4, y: wallArt.frame.height/1.2)
-        
-        catArt.move(to: lowerLeftDestination, duration: 2.0, options: UIView.AnimationOptions.curveEaseOut)
-        AnimationManager.location = .lowerLeft
     }
 }

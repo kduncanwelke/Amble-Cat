@@ -13,8 +13,9 @@ struct AnimationManager {
     
     static var location: Location = .middle
     static var direction: Direction = .left
+    static var position: Position = .standing
     
-    enum Location {
+    enum Location: Int {
         case middle
         case bed
         case bath
@@ -23,13 +24,16 @@ struct AnimationManager {
         case toy
         case right
         case left
-        case lowerRight
-        case lowerLeft
     }
     
     enum Direction {
         case left
         case right
+    }
+    
+    enum Position {
+        case seated
+        case standing
     }
     
     static var standBlink: [UIImage] {

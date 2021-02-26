@@ -144,8 +144,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
      }
      
      @objc func animationEnded() {
-          catArt.stopAnimating()
-          sit()
+          beginAnimation()
      }
      
      @objc func addPurchasedCurrency() {
