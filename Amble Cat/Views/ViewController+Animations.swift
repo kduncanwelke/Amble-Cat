@@ -72,6 +72,8 @@ extension ViewController {
     }
     
     func randomMove() {
+        bathEdge.isHidden = true
+        
         var num = Int.random(in: 0...8)
         
         var destination = AnimationManager.Location(rawValue: num)

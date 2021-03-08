@@ -22,5 +22,4 @@ struct Purchases {
         50: true,
         51: true
     ]
-    
 }

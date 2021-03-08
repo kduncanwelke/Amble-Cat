@@ -20,12 +20,12 @@ class StoreViewController: UIViewController, UICollectionViewDelegate, UICollect
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var dimView: UIView!
     @IBOutlet weak var areYouSureLabel: UILabel!
-    @IBOutlet weak var backButton: UIButton!
     
     
     // MARK: Variables
     
     private let storeViewModel = StoreViewModel()
+    private let viewModel = ViewModel()
     var selection: StoreItem?
     var index: IndexPath?
     
@@ -43,14 +43,10 @@ class StoreViewController: UIViewController, UICollectionViewDelegate, UICollect
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        confirmPurchaseView.layer.cornerRadius = 20
-        insufficientFundsView.layer.cornerRadius = 20
-        backButton.layer.cornerRadius = 10
-        
         dimView.isHidden = true
 		collectionView.dataSource = self
 		collectionView.delegate = self
-        pawPoints.text = "\(Currency.userTotal)"
+        pawPoints.text = "\(viewModel.setPointsLabel())"
         
         storeViewModel.loadPurchaseState()
     }
@@ -68,7 +64,6 @@ class StoreViewController: UIViewController, UICollectionViewDelegate, UICollect
 	// MARK: IBOutlets
     
     @IBAction func segmentChanged(_ sender: UISegmentedControl) {
-        storeViewModel.switchSource(segment: segmentedControl.selectedSegmentIndex)
         collectionView.reloadData()
     }
 	
@@ -87,19 +82,15 @@ class StoreViewController: UIViewController, UICollectionViewDelegate, UICollect
         dimView.isHidden = true
         self.view.sendSubviewToBack(confirmPurchaseView)
         
-        guard let item = selection else { return }
-        
-        storeViewModel.subtractCurrency(with: item.price)
-        
+        storeViewModel.buy()
+        storeViewModel.savePurchaseState()
         pawPoints.text = storeViewModel.setPointsLabel()
         
         // make sure point total in main view reflects purchase
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "refreshPoints"), object: nil)
         
-        storeViewModel.savePurchaseState()
         Sound.playSound(number: Sounds.tingSound.number)
         collectionView.reloadData()
-        
     }
     
     @IBAction func cancelPurchase(_ sender: UIButton) {
@@ -134,23 +125,24 @@ extension StoreViewController: UICollectionViewDataSource {
 	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let cell = collectionView.cellForItem(at: indexPath) as? StoreCollectionViewCell {
                         
-            Sound.playSound(number: Sounds.blopSound.number)
-            
             cell.animatePress(completion: { [unowned self] in
                 self.isDoneAnimating = true
             })
         
-            storeViewModel.setSelected(index: indexPath)
+            storeViewModel.setSelected(segment: segmentedControl.selectedSegmentIndex, index: indexPath)
             
             if storeViewModel.getPurchaseState(index: indexPath) {
                 storeViewModel.setEquipped(index: indexPath)
                     
                 NotificationCenter.default.post(name: NSNotification.Name(rawValue: "decorChanged"), object: nil)
                 
-                Sound.playSound(number: Sounds.tingSound.number)
+                Sound.playSound(number: Sounds.blopSound.number)
                 return
             } else {
-                dimView.isHidden = false
+                if segmentedControl.selectedSegmentIndex == 1 {
+                    // don't attempt purchase in purchased view
+                    return
+                }
                 
                 if storeViewModel.sufficientFunds() {
                     // confirm purchase
@@ -164,6 +156,5 @@ extension StoreViewController: UICollectionViewDataSource {
                 }
             }
         }
-		
 	}
 }

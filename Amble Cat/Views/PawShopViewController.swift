@@ -35,7 +35,6 @@ class PawShopViewController: UIViewController, UITableViewDelegate {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.tableFooterView = UIView()
-        dismissButton.layer.cornerRadius = 10
         
         pawPointTotal.text = pawShopViewModel.getCurrencyString()
         

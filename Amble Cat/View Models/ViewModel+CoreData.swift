@@ -91,17 +91,6 @@ extension ViewModel {
                 }
             }
             
-            
-            // FIXME: set hearts
-            /*for heart in hearts {
-             if heart.tag <= CareState.daysCaredFor {
-             heart.image = UIImage(named: "heart")
-             
-             } else {
-             heart.image = UIImage(named: "heartempty")
-             }
-             }*/
-            
             print("care loaded")
             
         } catch let error as NSError {
@@ -230,5 +219,7 @@ extension ViewModel {
             // this should never be displayed but is here to cover the possibility
             //showAlert(title: "Save failed", message: "Notice: Data has not successfully been saved.")
         }
+        
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "refreshPoints"), object: nil)
     }
 }

@@ -19,33 +19,34 @@ public class StoreViewModel {
         return "\(Currency.userTotal)"
     }
     
-    func switchSource(segment: Int) {
+    func setSource(segment: Int) {
+        // reset selected item when retrieving counts aka reloading collectionview
+        selected = nil
+        
         if segment == 0 {
             currentSource = StoreInventory.inventory
+            print("inventory")
         } else if segment == 1 {
             currentSource = StoreInventory.purchased
+            print("purchased")
         } else {
             currentSource = StoreInventory.unpurchased
+            print("unpurchased")
         }
     }
     
     func retrieveCounts(segment: Int) -> Int {
         if segment == 0 {
-            currentSource = StoreInventory.inventory
             return StoreInventory.inventory.count
         } else if segment == 1 {
-            currentSource = StoreInventory.purchased
             return StoreInventory.purchased.count
         } else {
-            currentSource = StoreInventory.unpurchased
             return StoreInventory.unpurchased.count
         }
-        
-        // reset selected item when retrieving counts aka reloading collectionview
-        selected = nil
     }
     
-    func setSelected(index: IndexPath) {
+    func setSelected(segment: Int, index: IndexPath) {
+        setSource(segment: segment)
         selected = currentSource[index.row]
     }
     
@@ -96,6 +97,12 @@ public class StoreViewModel {
         }
     }
     
+    func buy() {
+        guard let purchase = selected else { return }
+        
+        subtractCurrency(with: purchase.price)
+    }
+    
     func sufficientFunds() -> Bool {
         guard let current = selected else { return false }
         
@@ -142,6 +149,8 @@ public class StoreViewModel {
                 StoreInventory.purchased.append(item)
             }
         }
+        
+        print(StoreInventory.purchased)
     }
     
     func savePurchaseState() {

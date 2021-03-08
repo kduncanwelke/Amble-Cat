@@ -59,6 +59,26 @@ public class ViewModel {
         }
     }
     
+    func monitorNetwork() {
+        NetworkMonitor.monitor.pathUpdateHandler = { path in
+            if path.status == .satisfied {
+                print("connection successful")
+                NetworkMonitor.connection = true
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "networkRestored"), object: nil)
+            } else {
+                print("no connection")
+                NetworkMonitor.connection = false
+            }
+        }
+        
+        let queue = DispatchQueue(label: "Monitor")
+        NetworkMonitor.monitor.start(queue: queue)
+    }
+    
+    func getDaysCaredFor() -> Int {
+        return Int(CareState.daysCaredFor)
+    }
+    
     func feedCat() {
         CareState.hasBeenFed = true
     }
@@ -87,10 +107,6 @@ public class ViewModel {
         return StoreInventory.inventoryDictionary[DecorManager.bedID]?.image
     }
     
-    func getBowlImage() -> UIImage? {
-        return StoreInventory.inventoryDictionary[DecorManager.bowlID]?.image
-    }
-    
     func getDecorImage() -> UIImage? {
         return StoreInventory.inventoryDictionary[DecorManager.decorID]?.image
     }
@@ -113,10 +129,6 @@ public class ViewModel {
     
     func getWallImage() -> UIImage? {
         return StoreInventory.inventoryDictionary[DecorManager.wallID]?.image
-    }
-    
-    func getWaterImage() -> UIImage? {
-        return StoreInventory.inventoryDictionary[DecorManager.waterID]?.image
     }
     
     func getWindowImage() -> UIImage? {

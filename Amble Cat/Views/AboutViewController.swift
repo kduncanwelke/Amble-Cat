@@ -13,8 +13,6 @@ class AboutViewController: UIViewController {
 
     // MARK: IBOutlets
     
-    @IBOutlet weak var dismissButton: UIButton!
-    @IBOutlet weak var tutorialButton: UIButton!
     @IBOutlet weak var zapsplatButton: UIButton!
     @IBOutlet weak var soundbibleButton: UIButton!
     @IBOutlet weak var privacyPolicyButton: UIButton!
@@ -26,8 +24,6 @@ class AboutViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        dismissButton.layer.cornerRadius = 10
-        tutorialButton.layer.cornerRadius = 10
         zapsplatButton.layer.cornerRadius = 10
         soundbibleButton.layer.cornerRadius = 10
         privacyPolicyButton.layer.cornerRadius = 10

@@ -18,13 +18,10 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
      @IBOutlet weak var distanceLabel: UILabel!
      @IBOutlet weak var measurementLabel: UILabel!
      
-     @IBOutlet weak var stepsYesterday: UILabel!
      @IBOutlet weak var currentsBackground: UIView!
      @IBOutlet weak var pointsLabel: UILabel!
      @IBOutlet weak var collectView: UIView!
      @IBOutlet weak var collectText: UILabel!
-     
-     @IBOutlet weak var scrollViewContainer: UIView!
      
      @IBOutlet var hearts: [UIImageView]!
      
@@ -44,27 +41,18 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
      @IBOutlet weak var bath: UIImageView!
      @IBOutlet weak var bathEdge: UIImageView!
      
-     @IBOutlet weak var dimView: UIView!
-     @IBOutlet weak var historyButton: UIButton!
-     
-     @IBOutlet weak var containerView: UIView!
-     @IBOutlet weak var collectionView: UICollectionView!
-     
+     @IBOutlet var buttons: [UIButton]!
      
      // MARK: Variables
 
      var earned = 0
      private let viewModel = ViewModel()
      private let stepViewModel = StepViewModel()
+     var selectedIndex = 0
    
      override func viewDidLoad() {
           super.viewDidLoad()
           // Do any additional setup after loading the view.
-          dimView.isHidden = true
-          
-          collectionView.dataSource = self
-          collectionView.delegate = self
-          
           NotificationCenter.default.addObserver(self, selector: #selector(refreshPoints), name: NSNotification.Name(rawValue: "refreshPoints"), object: nil)
           
           NotificationCenter.default.addObserver(self, selector: #selector(decorChanged), name: NSNotification.Name(rawValue: "decorChanged"), object: nil)
@@ -73,17 +61,10 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
           
           NotificationCenter.default.addObserver(self, selector: #selector(addPurchasedCurrency), name: NSNotification.Name(rawValue: "addPurchasedCurrency"), object: nil)
           
-          NotificationCenter.default.addObserver(self, selector: #selector(hideTutorial), name: NSNotification.Name(rawValue: "hideTutorial"), object: nil)
-          
-          NotificationCenter.default.addObserver(self, selector: #selector(redoTutorial), name: NSNotification.Name(rawValue: "redoTutorial"), object: nil)
-          
           NotificationCenter.default.addObserver(self, selector: #selector(unitChanged), name: NSNotification.Name(rawValue: "unitChanged"), object: nil)
           
           NotificationCenter.default.addObserver(self, selector: #selector(animationEnded), name: NSNotification.Name(rawValue: "animationEnded"), object: nil)
           
-          
-          currentsBackground.layer.cornerRadius = 20
-          historyButton.layer.cornerRadius = 10
           
           // load sounds
           Sound.loadSound(number: &Sounds.blopSound.number, resourceName: Sounds.blopSound.resourceName, type: Sounds.blopSound.type)
@@ -99,30 +80,11 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
           viewModel.loadEquipment()
           
           stepViewModel.getStepData()
+          stepsLabel.text = "\(stepViewModel.updateSteps())"
           
-          if viewModel.isAppAlreadyLaunchedOnce() {
-               containerView.isHidden = true
-          } else {
-               containerView.isHidden = false
-               dimView.isHidden = false
-          }
-          
-          NetworkMonitor.monitor.pathUpdateHandler = { path in
-               if path.status == .satisfied {
-                    print("connection successful")
-                    NetworkMonitor.connection = true
-                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "networkRestored"), object: nil)
-               } else {
-                    print("no connection")
-                    NetworkMonitor.connection = false
-               }
-          }
-          
-          let queue = DispatchQueue(label: "Monitor")
-          NetworkMonitor.monitor.start(queue: queue)
-        
+          viewModel.monitorNetwork()
           loadUI()
-          //beginAnimation()
+          beginAnimation()
     }
 	
      // MARK: Custom functions
@@ -132,6 +94,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
           stepsLabel.text = "\(stepViewModel.stepsToday())"
           distanceLabel.text = "\(stepViewModel.metersToday())"
           bowlArt.image = viewModel.showFood()
+          updateHearts()
           loadWater()
      }
      
@@ -143,6 +106,16 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
           }
      }
      
+     func changeSelection() {
+          for button in buttons {
+               if button.tag == selectedIndex {
+                    button.setBackgroundImage(UIImage(named: "select"), for: .normal)
+               } else {
+                    button.setBackgroundImage(UIImage(named: "none"), for: .normal)
+               }
+          }
+     }
+     
      @objc func animationEnded() {
           beginAnimation()
      }
@@ -151,23 +124,15 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
           viewModel.addCurrency()
      }
      
-     @objc func hideTutorial() {
-          containerView.isHidden = true
-          dimView.isHidden = true
-     }
-     
-     @objc func redoTutorial() {
-          containerView.isHidden = false
-          dimView.isHidden = false
-     }
-     
      @objc func unitChanged() {
           // update unit
      }
      
      func updateCare() {
+          updateHearts()
+          
           if viewModel.checkCareProgress() {
-               dimView.isHidden = false
+               // give reward
                Sound.playSound(number: Sounds.meowSound.number)
           }
      }
@@ -175,13 +140,14 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
      func updateHearts() {
           print("update hearts")
        
+          var days = viewModel.getDaysCaredFor()
+          
           for heart in hearts {
-               if heart.tag <= CareState.daysCaredFor {
+               if heart.tag <= days {
                     heart.image = UIImage(named: "heart")
                     
-                    if heart.tag == CareState.daysCaredFor {
+                    if heart.tag == days {
                          heart.animateHeart()
-                         Sound.playSound(number: Sounds.tingSound.number)
                     }
                } else {
                     heart.image = UIImage(named: "heartempty")
@@ -199,30 +165,91 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
      
      @objc func decorChanged() {
           bedArt.image = viewModel.getBedImage()
-          bowlArt.image = viewModel.getBowlImage()
+          bowlArt.image = viewModel.showFood()
           decorArt.image = viewModel.getDecorImage()
           floorArt.image = viewModel.getFloorImage()
           pictureArt.image = viewModel.getPictureImage()
           rugArt.image = viewModel.getRugImage()
           toyArt.image = viewModel.getToyImage()
           wallArt.image = viewModel.getWallImage()
-          waterBowlArt.image = viewModel.getWaterImage()
+          waterBowlArt.image = viewModel.showWater()
           windowArt.image = viewModel.getWindowImage()
      }
+     
+     func feed() {
+          if viewModel.hasBeenFed() {
+               return
+          } else {
+               viewModel.feedCat()
+               Sound.playSound(number: Sounds.blopSound.number)
+               updateCare()
+               bowlArt.image = viewModel.showFood()
+          }
+     }
 
+     func water() {
+          if CareState.hasBeenWatered {
+               return
+          } else {
+               viewModel.waterCat()
+               Sound.playSound(number: Sounds.blopSound.number)
+               updateCare()
+               loadWater()
+          }
+     }
     
      // MARK: IBActions
      
      @IBAction func viewStatsPressed(_ sender: UIButton) {
-          moveToMiddle()
-          //performSegue(withIdentifier: "viewStatistics", sender: Any?.self)
+          performSegue(withIdentifier: "viewStatistics", sender: Any?.self)
      }
+     
+     @IBAction func enterPressed(_ sender: UIButton) {
+          Sound.playSound(number: Sounds.blopSound.number)
+          
+          var selectedButton = buttons[selectedIndex]
+          
+          switch selectedButton.tag {
+          case 0:
+               feed()
+          case 1:
+               water()
+          case 2:
+               performSegue(withIdentifier: "viewStatistics", sender: Any?.self)
+          case 3:
+               performSegue(withIdentifier: "goToStore", sender: Any?.self)
+          case 4:
+               performSegue(withIdentifier: "goToPointShop", sender: Any?.self)
+          default:
+               return
+          }
+     }
+     
+     @IBAction func leftPressed(_ sender: UIButton) {
+          Sound.playSound(number: Sounds.blopSound.number)
+          
+          if selectedIndex != 0 {
+               selectedIndex -= 1
+          }
+          
+          changeSelection()
+     }
+     
+     @IBAction func rightPressed(_ sender: UIButton) {
+          Sound.playSound(number: Sounds.blopSound.number)
+          
+          if selectedIndex != buttons.count-1 {
+               selectedIndex += 1
+          }
+          
+          changeSelection()
+     }
+     
      
      @IBAction func collectButtonTapped(_ sender: UIButton) {
           Sound.playSound(number: Sounds.tingSound.number)
-          dimView.isHidden = true
-          
         
+          // FIXME
           viewModel.addCurrency()
           pointsLabel.text = viewModel.setPointsLabel()
           viewModel.loadCurrency()
@@ -232,102 +259,4 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
           performSegue(withIdentifier: "viewAbout", sender: Any?.self)
      }
      
-}
-
-// MARK: Collection View
-
-extension ViewController: UICollectionViewDataSource, ButtonTapDelegate {
-     func didTap(sender: ButtonCollectionViewCell) {
-          guard let path = self.collectionView.indexPath(for: sender) else { return }
-          
-          Sound.playSound(number: Sounds.blopSound.number)
-          
-          if path.row == 0 {
-               if viewModel.hasBeenFed() {
-                    return
-               } else {
-                    bowlArt.image = viewModel.showFood()
-                    viewModel.feedCat()
-                    
-                    Sound.playSound(number: Sounds.blopSound.number)
-                    updateCare()
-               }
-          } else if path.row == 1 {
-               if CareState.hasBeenWatered {
-                    return
-               } else {
-                    loadWater()
-                    viewModel.waterCat()
-                    
-                    Sound.playSound(number: Sounds.blopSound.number)
-                    updateCare()
-               }
-          } else if path.row == 2 {
-               performSegue(withIdentifier: "goToStore", sender: Any?.self)
-          } else if path.row == 3 {
-               performSegue(withIdentifier: "goToPointShop", sender: Any?.self)
-          }
-     }
-     
-     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-          return Buttons.ButtonList.count
-     }
-     
-     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-          
-          if floor(collectionView.frame.size.height / 120.0) > 1 {
-               let height = (collectionView.frame.size.height)/2.5
-               return CGSize(width: height, height: height)
-          } else {
-               print("one row")
-               let width = (self.view.frame.size.width-20)/4
-               print(width)
-               return CGSize(width: width, height: (collectionView.frame.size.height))
-          }
-     }
-
-     
-     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-          let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "buttonCell", for: indexPath) as! ButtonCollectionViewCell
-          
-          var item: ButtonInfo
-          item = Buttons.ButtonList[indexPath.row]
-     
-          cell.cellButton.setBackgroundImage(item.image, for: .normal)
-          cell.cellText.text = item.text
-          
-          cell.buttonTapDelegate = self
-          
-          return cell
-     }
-     
-     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-          
-          if floor(collectionView.frame.size.height / 130.0) > 1 {
-               print("two rows")
-               let cellWidth: CGFloat = (self.view.frame.size.width)/3
-               let edgeInsets = (self.view.frame.size.width - (2 * cellWidth)) / 2.5
-               
-               return UIEdgeInsets(top: 10, left: edgeInsets, bottom: 0, right: edgeInsets)
-          } else {
-               print("one row")
-               let cellWidth: CGFloat = (self.view.frame.size.width)/4
-               print(cellWidth)
-               let numberOfCells = floor(self.view.frame.size.width / cellWidth)
-               let edgeInsets = (self.view.frame.size.width - (numberOfCells * cellWidth)) / (numberOfCells + 1)
-              
-               return UIEdgeInsets(top: 0, left: edgeInsets, bottom: 0, right: edgeInsets)
-          }
-     }
-     
-     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-          
-          if floor(collectionView.frame.size.height / 130.0) > 1 {
-               let height = (collectionView.frame.size.height)/2.5
-               let space = collectionView.frame.size.height - (height * 2)
-               return space / 2
-          } else {
-               return 1
-          }
-     }
 }

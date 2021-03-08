@@ -66,5 +66,10 @@
 	</array>
 	<key>NSMotionUsageDescription</key>
 	<string>Needed to acquire step data from the system.</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>dogicapixel.ttf</string>
+		<string>dogicapixelbold.ttf</string>
+	</array>
 </dict>
 </plist>

@@ -11,6 +11,8 @@ import CoreMotion
 
 public class StepViewModel {
     
+    private let viewModel = ViewModel()
+    
     func checkAvailable() {
         print(CMPedometer.isStepCountingAvailable())
         // show warning if step data cannot be counted
@@ -41,15 +43,25 @@ public class StepViewModel {
     
     func updateSteps() -> Int {
         // award coins with steps, not on app launch as before
-        var newSteps = 0
+        var totalSteps = 0
         
-        Pedometer.stepCounter.startUpdates(from: Date()) { (data, error) in
-            newSteps = Int(data?.numberOfSteps ?? 0)
+        var now = Date()
+        var startDate = Calendar.current.startOfDay(for: now)
+        print("updating steps")
+        
+        Pedometer.stepCounter.startUpdates(from: startDate) { (data, error) in
+            print(data)
+            totalSteps = Int(data?.numberOfSteps ?? 0)
+        }
+    
+        // update and save coins if awarded
+        if totalSteps >= 20 {
+            var coins = totalSteps / 20
+            Currency.toAdd = coins
+            viewModel.addCurrency()
         }
         
-        // update and save coins if awarded
-        
-        return newSteps
+        return totalSteps
     }
     
     func stopUpdating() {
