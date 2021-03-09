@@ -35,6 +35,7 @@ class PawShopViewController: UIViewController, UITableViewDelegate {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.tableFooterView = UIView()
+        dismissButton.layer.cornerRadius = 10
         
         pawPointTotal.text = pawShopViewModel.getCurrencyString()
         
@@ -121,6 +122,7 @@ class PawShopViewController: UIViewController, UITableViewDelegate {
     
     @IBAction func dismissPressed(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "refreshView"), object: nil)
     }
 
 }

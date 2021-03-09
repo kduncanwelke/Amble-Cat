@@ -33,6 +33,7 @@
 		2D789157239C40FE00053B4E /* Sounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D789156239C40FE00053B4E /* Sounds.swift */; };
 		2D789159239C414700053B4E /* Blop-Mark_DiAngelo-79054334.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2D789158239C414700053B4E /* Blop-Mark_DiAngelo-79054334.wav */; };
 		2D78915B239C43F300053B4E /* Ting-Popup_Pixels-349896185.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2D78915A239C43F300053B4E /* Ting-Popup_Pixels-349896185.wav */; };
+		2D7BE30625F839B200FADF7F /* ButtonsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7BE30525F839B200FADF7F /* ButtonsManager.swift */; };
 		2D81355A25F6D34400E461ED /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D81355925F6D34400E461ED /* Colors.swift */; };
 		2D8867102399C4EC00DACD85 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D88670F2399C4EC00DACD85 /* TutorialViewController.swift */; };
 		2D96CA9B25CDFD4C00A89C32 /* Pedometer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D96CA9A25CDFD4C00A89C32 /* Pedometer.swift */; };
@@ -65,8 +66,7 @@
 		2DE8610B23552B3D00227A86 /* Amble_CatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE8610A23552B3D00227A86 /* Amble_CatUITests.swift */; };
 		2DE8611C23552CAA00227A86 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DE8611B23552CAA00227A86 /* HealthKit.framework */; };
 		2DE904D0235638790036C08A /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE904CF235638790036C08A /* StatisticsViewController.swift */; };
-		2DE904D2235639DE0036C08A /* HealthDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE904D1235639DE0036C08A /* HealthDataManager.swift */; };
-		2DE904D523563C710036C08A /* HealthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE904D423563C710036C08A /* HealthStore.swift */; };
+		2DE904D2235639DE0036C08A /* Measures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE904D1235639DE0036C08A /* Measures.swift */; };
 		6CE9D70AD78BB0417423EE4B /* Pods_Amble_Cat_Amble_CatUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2517E2D32FB94832B0607AD7 /* Pods_Amble_Cat_Amble_CatUITests.framework */; };
 		6D529731CE60D75FE59C5C6F /* Pods_Amble_CatTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2477EE2EE88484D846B5C6E6 /* Pods_Amble_CatTests.framework */; };
 		899C2FCC56CBADE8614A105E /* Pods_Amble_Cat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 808AEB5F29839BD7C5E1BA3E /* Pods_Amble_Cat.framework */; };
@@ -120,6 +120,7 @@
 		2D789156239C40FE00053B4E /* Sounds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sounds.swift; sourceTree = "<group>"; };
 		2D789158239C414700053B4E /* Blop-Mark_DiAngelo-79054334.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Blop-Mark_DiAngelo-79054334.wav"; sourceTree = "<group>"; };
 		2D78915A239C43F300053B4E /* Ting-Popup_Pixels-349896185.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Ting-Popup_Pixels-349896185.wav"; sourceTree = "<group>"; };
+		2D7BE30525F839B200FADF7F /* ButtonsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsManager.swift; sourceTree = "<group>"; };
 		2D81355925F6D34400E461ED /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		2D88670F2399C4EC00DACD85 /* TutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
 		2D96CA9A25CDFD4C00A89C32 /* Pedometer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pedometer.swift; sourceTree = "<group>"; };
@@ -159,8 +160,7 @@
 		2DE8611923552CAA00227A86 /* Amble CatDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Amble CatDebug.entitlements"; sourceTree = "<group>"; };
 		2DE8611B23552CAA00227A86 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		2DE904CF235638790036C08A /* StatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
-		2DE904D1235639DE0036C08A /* HealthDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthDataManager.swift; sourceTree = "<group>"; };
-		2DE904D423563C710036C08A /* HealthStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthStore.swift; sourceTree = "<group>"; };
+		2DE904D1235639DE0036C08A /* Measures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Measures.swift; sourceTree = "<group>"; };
 		2DF0E70223A7F84100924F4E /* Amble CatRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Amble CatRelease.entitlements"; sourceTree = "<group>"; };
 		3818FF6AF8E28BA0323F11B9 /* Pods-Amble CatTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Amble CatTests.debug.xcconfig"; path = "Target Support Files/Pods-Amble CatTests/Pods-Amble CatTests.debug.xcconfig"; sourceTree = "<group>"; };
 		421862C21F11840DBF92FA31 /* Pods-Amble Cat-Amble CatUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Amble Cat-Amble CatUITests.release.xcconfig"; path = "Target Support Files/Pods-Amble Cat-Amble CatUITests/Pods-Amble Cat-Amble CatUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -218,9 +218,11 @@
 		2D123A8925C9F293005EBFEB /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				2DE904D1235639DE0036C08A /* Measures.swift */,
 				2DA2E41E238DD71700541771 /* NetworkMonitor.swift */,
 				2DA3C65425DC716D004D831E /* UIViewExtension.swift */,
 				2D81355925F6D34400E461ED /* Colors.swift */,
+				2D7BE30525F839B200FADF7F /* ButtonsManager.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -253,15 +255,6 @@
 				2D96CA9A25CDFD4C00A89C32 /* Pedometer.swift */,
 			);
 			path = Pedometer;
-			sourceTree = "<group>";
-		};
-		2DC80B8D2384AF58006841AE /* HealthKit */ = {
-			isa = PBXGroup;
-			children = (
-				2DE904D1235639DE0036C08A /* HealthDataManager.swift */,
-				2DE904D423563C710036C08A /* HealthStore.swift */,
-			);
-			path = HealthKit;
 			sourceTree = "<group>";
 		};
 		2DC80B8E2384AF67006841AE /* Animation */ = {
@@ -411,7 +404,6 @@
 			isa = PBXGroup;
 			children = (
 				2DC80B8E2384AF67006841AE /* Animation */,
-				2DC80B8D2384AF58006841AE /* HealthKit */,
 				2D6FCA87235A1D7500560CB2 /* Currency.swift */,
 				2DDE569423809B9800398454 /* CareState.swift */,
 				2D96CA9925CDFD4000A89C32 /* Pedometer */,
@@ -673,7 +665,6 @@
 				2D7146D4235BBF130064B576 /* StoreCollectionViewCell.swift in Sources */,
 				2DA559602360FE50006B3B9D /* PurchaseState.swift in Sources */,
 				2DE860ED23552B3B00227A86 /* ViewController.swift in Sources */,
-				2DE904D523563C710036C08A /* HealthStore.swift in Sources */,
 				2D220E3F25CB5A9600D02FE7 /* PawShopViewModel.swift in Sources */,
 				2D7146D0235BB8560064B576 /* StoreInventory.swift in Sources */,
 				2D0C3CFB2363A7E300EA064A /* DecorManager.swift in Sources */,
@@ -692,7 +683,7 @@
 				2DC80B8C2384AF23006841AE /* Products.swift in Sources */,
 				2D064FAE2387193A00257315 /* Receipt.swift in Sources */,
 				2D123A8E25CA009E005EBFEB /* ViewModel+CoreData.swift in Sources */,
-				2DE904D2235639DE0036C08A /* HealthDataManager.swift in Sources */,
+				2DE904D2235639DE0036C08A /* Measures.swift in Sources */,
 				2D7146D2235BBE440064B576 /* StoreViewController.swift in Sources */,
 				2D6FCA88235A1D7500560CB2 /* Currency.swift in Sources */,
 				2DE860EB23552B3B00227A86 /* SceneDelegate.swift in Sources */,
@@ -712,6 +703,7 @@
 				2D7146CE235BB6BB0064B576 /* StoreItem.swift in Sources */,
 				2DA998EC25CCAD4200344349 /* AboutViewModel.swift in Sources */,
 				2D96CA9D25CDFF4F00A89C32 /* StepViewModel.swift in Sources */,
+				2D7BE30625F839B200FADF7F /* ButtonsManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

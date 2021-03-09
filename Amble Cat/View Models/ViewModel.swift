@@ -75,6 +75,10 @@ public class ViewModel {
         NetworkMonitor.monitor.start(queue: queue)
     }
     
+    func getLabelName(tag: Int) -> String {
+        return ButtonsManager.buttonNames[tag] ?? ""
+    }
+    
     func getDaysCaredFor() -> Int {
         return Int(CareState.daysCaredFor)
     }
@@ -136,7 +140,7 @@ public class ViewModel {
     }
     
     func setPointsLabel() -> String {
-        return "\(Currency.userTotal) Paw Points"
+        return "\(Currency.userTotal)"
     }
     
     func showFood() -> UIImage {

@@ -110,6 +110,17 @@ struct AnimationManager {
     static let sleep: [UIImage] = [#imageLiteral(resourceName: "sleep1.png"),#imageLiteral(resourceName: "sleep2.png")]
     static let wash: [UIImage] = [#imageLiteral(resourceName: "washing1.png"),#imageLiteral(resourceName: "washing2.png"),#imageLiteral(resourceName: "washing3.png"),#imageLiteral(resourceName: "washing4.png")]
     
+    static var pause: [UIImage] {
+        get {
+            switch AnimationManager.direction {
+            case .left:
+                return [#imageLiteral(resourceName: "sitting.png"),#imageLiteral(resourceName: "leftsit.png"),#imageLiteral(resourceName: "left.png"),#imageLiteral(resourceName: "front.png"),#imageLiteral(resourceName: "back.png")]
+            case .right:
+                return [#imageLiteral(resourceName: "rightsit.png"),#imageLiteral(resourceName: "right.png"),#imageLiteral(resourceName: "back.png")]
+            }
+        }
+    }
+    
     static var fountain: [UIImage] {
         get {
             if DecorManager.waterID == 51 { // blue

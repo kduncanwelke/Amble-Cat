@@ -17,6 +17,8 @@ class AboutViewController: UIViewController {
     @IBOutlet weak var soundbibleButton: UIButton!
     @IBOutlet weak var privacyPolicyButton: UIButton!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
+    @IBOutlet weak var backButton: UIButton!
+    
     
     private let aboutViewModel = AboutViewModel()
     
@@ -24,6 +26,7 @@ class AboutViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        backButton.layer.cornerRadius = 10
         zapsplatButton.layer.cornerRadius = 10
         soundbibleButton.layer.cornerRadius = 10
         privacyPolicyButton.layer.cornerRadius = 10

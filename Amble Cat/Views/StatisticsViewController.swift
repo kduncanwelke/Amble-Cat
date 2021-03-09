@@ -14,20 +14,36 @@ class StatisticsViewController: UIViewController {
     
     // MARK: IBOutlets
     
-  
+    @IBOutlet var days: [UILabel]!
+    @IBOutlet var steps: [UILabel]!
     @IBOutlet weak var dismissButton: UIButton!
     
+    // MARK: Variables
+    
+    private let stepViewModel = StepViewModel()
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         
+        dismissButton.layer.cornerRadius = 10
+        showStepHistory()
     }
     
     
     // MARK: Custom functions
     
+    func showStepHistory() {
+        for dayLabel in days {
+            dayLabel.text = stepViewModel.getDay(index: dayLabel.tag)
+        }
+        
+        for stepLabel in steps {
+            stepLabel.text = "\(stepViewModel.getSteps(index: stepLabel.tag))"
+        }
+    }
 
 
     /*

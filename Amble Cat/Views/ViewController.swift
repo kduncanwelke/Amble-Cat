@@ -43,12 +43,21 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
      
      @IBOutlet var buttons: [UIButton]!
      
+     @IBOutlet weak var enterButton: UIButton!
+     @IBOutlet weak var leftArrow: UIButton!
+     @IBOutlet weak var rightArrow: UIButton!
+     @IBOutlet weak var infoButton: UIButton!
+     
+     @IBOutlet weak var selectionLabel: UILabel!
+     
+     
      // MARK: Variables
 
      var earned = 0
      private let viewModel = ViewModel()
      private let stepViewModel = StepViewModel()
      var selectedIndex = 0
+     var paused = false
    
      override func viewDidLoad() {
           super.viewDidLoad()
@@ -74,6 +83,11 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
           Sound.loadSound(number: &Sounds.chirpSound.number, resourceName: Sounds.chirpSound.resourceName, type: Sounds.chirpSound.type)
           Sound.loadSound(number: &Sounds.failSound.number, resourceName: Sounds.failSound.resourceName, type: Sounds.failSound.type)
           
+          enterButton.layer.cornerRadius = 21
+          rightArrow.layer.cornerRadius = 21
+          leftArrow.layer.cornerRadius = 21
+          infoButton.layer.cornerRadius = 10
+          
           viewModel.loadCurrency()
           viewModel.loadMeasure()
           viewModel.loadCareState()
@@ -90,7 +104,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
      // MARK: Custom functions
      
      func loadUI() {
-          pointsLabel.text = viewModel.setPointsLabel()
+          pointsLabel.text = "\(viewModel.setPointsLabel()) Paw Points"
           stepsLabel.text = "\(stepViewModel.stepsToday())"
           distanceLabel.text = "\(stepViewModel.metersToday())"
           bowlArt.image = viewModel.showFood()
@@ -110,6 +124,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
           for button in buttons {
                if button.tag == selectedIndex {
                     button.setBackgroundImage(UIImage(named: "select"), for: .normal)
+                    selectionLabel.text = viewModel.getLabelName(tag: button.tag)
                } else {
                     button.setBackgroundImage(UIImage(named: "none"), for: .normal)
                }
@@ -160,6 +175,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
      }
      
      @objc func refreshView() {
+          paused = false
           beginAnimation()
      }
      
@@ -197,6 +213,46 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                loadWater()
           }
      }
+     
+     func randomPlaceAnimation() {
+          var specific = Bool.random()
+          
+          switch AnimationManager.location {
+          case .middle, .right, .left:
+               randomStaying()
+          case .bed:
+               if specific {
+                    sleep()
+               } else {
+                    randomStaying()
+               }
+          case .bath:
+               bathEdge.isHidden = false
+               if specific {
+                    wash()
+               } else {
+                    randomStaying()
+               }
+          case .food:
+               if specific && viewModel.hasBeenFed() {
+                    eat()
+               } else {
+                    randomStaying()
+               }
+          case .water:
+               if specific && viewModel.hasBeenWatered() {
+                    drink()
+               } else {
+                    randomStaying()
+               }
+          case .toy:
+               if specific {
+                    play()
+               } else {
+                    randomStaying()
+               }
+          }
+     }
     
      // MARK: IBActions
      
@@ -205,6 +261,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
      }
      
      @IBAction func enterPressed(_ sender: UIButton) {
+          enterButton.animateButton()
+          
           Sound.playSound(number: Sounds.blopSound.number)
           
           var selectedButton = buttons[selectedIndex]
@@ -215,10 +273,13 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
           case 1:
                water()
           case 2:
+               paused = true
                performSegue(withIdentifier: "viewStatistics", sender: Any?.self)
           case 3:
+               paused = true
                performSegue(withIdentifier: "goToStore", sender: Any?.self)
           case 4:
+               paused = true
                performSegue(withIdentifier: "goToPointShop", sender: Any?.self)
           default:
                return
@@ -226,6 +287,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
      }
      
      @IBAction func leftPressed(_ sender: UIButton) {
+          leftArrow.animateButton()
+          
           Sound.playSound(number: Sounds.blopSound.number)
           
           if selectedIndex != 0 {
@@ -236,6 +299,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
      }
      
      @IBAction func rightPressed(_ sender: UIButton) {
+          rightArrow.animateButton()
+          
           Sound.playSound(number: Sounds.blopSound.number)
           
           if selectedIndex != buttons.count-1 {

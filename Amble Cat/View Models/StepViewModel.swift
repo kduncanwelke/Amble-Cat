@@ -76,4 +76,26 @@ public class StepViewModel {
     func metersToday() -> Int  {
         return Int(Pedometer.stepData.first?.distance ?? 0)
     }
+    
+    func getDay(index: Int) -> String {
+        var now = Date()
+        
+        var day = Calendar.current.date(byAdding: .day, value: -index, to: now) ?? Date()
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "EEEE"
+        var dayOfWeek = dateFormatter.string(from: day)
+        
+        return dayOfWeek
+    }
+    
+    func getSteps(index: Int) -> Int {
+        if Pedometer.stepData.isEmpty {
+            return 0
+        }
+        
+        var steps = Int(Pedometer.stepData[index].numberOfSteps)
+        
+        return steps
+    }
 }

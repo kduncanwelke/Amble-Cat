@@ -8,23 +8,6 @@
 
 import Foundation
 
-struct HealthDataManager {
-    
-    static var stepHistory: [Double] = []
-    static var dates: [Date] = []
-    static var distances: [Double] = []
-    
-    static var startDate = -1
-    static var endDate = -6
-}
-
-
-struct GraphManager {
-    
-    static var startIndex = 0
-    static var endIndex = 6
-}
-
 struct Measures {
     static var preferred: Distance = .miles
     static var loaded: Measurement?

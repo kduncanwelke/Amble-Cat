@@ -18,8 +18,8 @@ class StoreViewController: UIViewController, UICollectionViewDelegate, UICollect
     @IBOutlet var insufficientFundsView: UIView!
     @IBOutlet weak var confirmPurchaseView: UIView!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
-    @IBOutlet weak var dimView: UIView!
     @IBOutlet weak var areYouSureLabel: UILabel!
+    @IBOutlet weak var backButton: UIButton!
     
     
     // MARK: Variables
@@ -43,7 +43,7 @@ class StoreViewController: UIViewController, UICollectionViewDelegate, UICollect
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        dimView.isHidden = true
+        backButton.layer.cornerRadius = 10
 		collectionView.dataSource = self
 		collectionView.delegate = self
         pawPoints.text = "\(viewModel.setPointsLabel())"
@@ -75,11 +75,9 @@ class StoreViewController: UIViewController, UICollectionViewDelegate, UICollect
     
     @IBAction func okPressed(_ sender: UIButton) {
         self.view.sendSubviewToBack(insufficientFundsView)
-        dimView.isHidden = true
     }
     
     @IBAction func purchase(_ sender: UIButton) {
-        dimView.isHidden = true
         self.view.sendSubviewToBack(confirmPurchaseView)
         
         storeViewModel.buy()
@@ -95,7 +93,6 @@ class StoreViewController: UIViewController, UICollectionViewDelegate, UICollect
     
     @IBAction func cancelPurchase(_ sender: UIButton) {
         self.view.sendSubviewToBack(confirmPurchaseView)
-        dimView.isHidden = true
     }
 }
 
@@ -115,12 +112,23 @@ extension StoreViewController: UICollectionViewDataSource {
 	}
 	
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        let cellWidth : CGFloat = min(200.0, ((self.view.frame.size.width - 10)/2))		
-		let numberOfCells = floor(self.view.frame.size.width / cellWidth)
-		let edgeInsets = (self.view.frame.size.width - (numberOfCells * cellWidth)) / (numberOfCells + 1)
-      
-		return UIEdgeInsets(top: 0, left: edgeInsets, bottom: 20, right: edgeInsets)
+        
+		return UIEdgeInsets(top: 0, left: 5, bottom: 20, right: 5)
 	}
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let availableWidth = collectionView.frame.width
+        var maxNumColumns = 3
+        
+        if (availableWidth / 3) < 160.0 {
+            maxNumColumns = 2
+        }
+        
+        let cellWidth = ((availableWidth-20) / CGFloat(maxNumColumns)).rounded(.down)
+        print(cellWidth)
+        
+        return CGSize(width: cellWidth, height: 200.00)
+    }
 	
 	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let cell = collectionView.cellForItem(at: indexPath) as? StoreCollectionViewCell {

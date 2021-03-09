@@ -10,10 +10,15 @@ import Foundation
 import UIKit
 
 extension ViewController {
-    
+
     func beginAnimation() {
         print("begin animation")
         catArt.stopAnimating()
+        
+        if paused {
+            return
+        }
+        
         var staying = Bool.random()
         
         if staying {
@@ -27,46 +32,13 @@ extension ViewController {
                 randomStaying()
             }
         } else {
-            print("random move")
-            randomMove()
-        }
-    }
-    
-    func randomPlaceAnimation() {
-        var specific = Bool.random()
-        
-        switch AnimationManager.location {
-        case .middle, .right, .left:
-            randomStaying()
-        case .bed:
-            if specific {
-                sleep()
+            var pause = Bool.random()
+            
+            if pause {
+                pauseCat()
             } else {
-                randomStaying()
-            }
-        case .bath:
-            if specific {
-                wash()
-            } else {
-                randomStaying()
-            }
-        case .food:
-            if specific {
-                eat()
-            } else {
-                randomStaying()
-            }
-        case .water:
-            if specific {
-                drink()
-            } else {
-                randomStaying()
-            }
-        case .toy:
-            if specific {
-                play()
-            } else {
-                randomStaying()
+                print("random move")
+                randomMove()
             }
         }
     }
@@ -114,6 +86,7 @@ extension ViewController {
     
     func randomStaying() {
         if AnimationManager.location == .bath {
+            bathEdge.isHidden = false
             frontSit()
         } else if AnimationManager.position == .standing {
             var sitDown = Bool.random()
@@ -139,8 +112,11 @@ extension ViewController {
             AnimationManager.position = .seated
         } else {
             var sitDown = Bool.random()
+            var goToSleep = Bool.random()
             
-            if sitDown {
+            if goToSleep {
+                sleep()
+            } else if sitDown {
                 AnimationManager.position = .seated
                 var front = Bool.random()
                 
@@ -161,6 +137,11 @@ extension ViewController {
                 }
             }
         }
+    }
+    
+    func pauseCat() {
+        catArt.image = AnimationManager.pause.randomElement()
+        AnimationTimer.beginTimer(once: false)
     }
     
     func sit() {

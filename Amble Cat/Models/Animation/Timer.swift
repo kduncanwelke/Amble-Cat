@@ -21,7 +21,7 @@ class AnimationTimer {
         if once {
             repeatCount = 1
         } else {
-            repeatCount = Int.random(in: 2...8)
+            repeatCount = Int.random(in: 4...8)
         }
     
         print(repeatCount)

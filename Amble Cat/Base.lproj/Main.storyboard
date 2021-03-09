@@ -26,23 +26,23 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5w5-VM-nPb">
-                                <rect key="frame" x="0.0" y="49" width="414" height="78.5"/>
+                                <rect key="frame" x="0.0" y="49" width="414" height="80"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="paw" translatesAutoresizingMaskIntoConstraints="NO" id="sMr-uU-cWy">
-                                        <rect key="frame" x="10" y="40" width="30" height="30"/>
+                                        <rect key="frame" x="10" y="43" width="30" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="d9k-bq-C3h"/>
                                             <constraint firstAttribute="width" secondItem="sMr-uU-cWy" secondAttribute="height" multiplier="1:1" id="sqM-4f-6hc"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 Paw Points" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IrE-at-fz9">
-                                        <rect key="frame" x="45" y="49" width="114" height="12"/>
+                                        <rect key="frame" x="45" y="52" width="114" height="12"/>
                                         <fontDescription key="fontDescription" name="Dogica_Pixel" family="Dogica Pixel" pointSize="12"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="dP6-ha-i7f">
-                                        <rect key="frame" x="10" y="13" width="140" height="20"/>
+                                        <rect key="frame" x="10" y="15" width="140" height="20"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heartempty" translatesAutoresizingMaskIntoConstraints="NO" id="Aau-FS-gRL">
                                                 <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
@@ -98,19 +98,19 @@
                                         </constraints>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Steps" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nRU-5R-Tmo">
-                                        <rect key="frame" x="257.5" y="10" width="146.5" height="30"/>
+                                        <rect key="frame" x="257.5" y="15" width="146.5" height="30"/>
                                         <fontDescription key="fontDescription" name="Dogica_Pixel_Bold" family="Dogica Pixel" pointSize="30"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M16-a4-U2n">
-                                        <rect key="frame" x="300" y="50" width="52" height="20.5"/>
+                                        <rect key="frame" x="300" y="55" width="52" height="13"/>
                                         <fontDescription key="fontDescription" name="Dogica_Pixel" family="Dogica Pixel" pointSize="13"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Miles" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FZX-Gw-g6e">
-                                        <rect key="frame" x="354" y="54" width="52" height="13"/>
+                                        <rect key="frame" x="354" y="55" width="52" height="13"/>
                                         <fontDescription key="fontDescription" name="Dogica_Pixel" family="Dogica Pixel" pointSize="13"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
@@ -118,16 +118,14 @@
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.75476870344964353" blue="0.71852897046363517" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="M16-a4-U2n" firstAttribute="top" secondItem="5w5-VM-nPb" secondAttribute="top" constant="50" id="7s0-VD-aP0"/>
-                                    <constraint firstItem="sMr-uU-cWy" firstAttribute="top" secondItem="dP6-ha-i7f" secondAttribute="bottom" constant="7" id="8iy-7G-e3J"/>
-                                    <constraint firstAttribute="bottom" secondItem="sMr-uU-cWy" secondAttribute="bottom" constant="8.5" id="E4q-1o-Ra2"/>
+                                    <constraint firstItem="M16-a4-U2n" firstAttribute="top" secondItem="5w5-VM-nPb" secondAttribute="top" constant="55" id="7s0-VD-aP0"/>
+                                    <constraint firstItem="sMr-uU-cWy" firstAttribute="top" secondItem="dP6-ha-i7f" secondAttribute="bottom" constant="8" id="8iy-7G-e3J"/>
                                     <constraint firstItem="FZX-Gw-g6e" firstAttribute="leading" secondItem="M16-a4-U2n" secondAttribute="trailing" constant="2" id="Oa6-e9-SjY"/>
                                     <constraint firstAttribute="trailing" secondItem="nRU-5R-Tmo" secondAttribute="trailing" constant="10" id="P4t-cd-ua0"/>
                                     <constraint firstItem="FZX-Gw-g6e" firstAttribute="centerY" secondItem="M16-a4-U2n" secondAttribute="centerY" id="YTS-n8-SBG"/>
-                                    <constraint firstAttribute="bottom" secondItem="M16-a4-U2n" secondAttribute="bottom" constant="8" id="h4T-iF-lmp"/>
-                                    <constraint firstItem="dP6-ha-i7f" firstAttribute="top" secondItem="5w5-VM-nPb" secondAttribute="top" constant="13" id="k9a-9r-UXk"/>
+                                    <constraint firstItem="dP6-ha-i7f" firstAttribute="top" secondItem="5w5-VM-nPb" secondAttribute="top" constant="15" id="k9a-9r-UXk"/>
                                     <constraint firstItem="IrE-at-fz9" firstAttribute="leading" secondItem="sMr-uU-cWy" secondAttribute="trailing" constant="5" id="m2w-o2-cK0"/>
-                                    <constraint firstItem="nRU-5R-Tmo" firstAttribute="top" secondItem="5w5-VM-nPb" secondAttribute="top" constant="10" id="pHB-6C-f6T"/>
+                                    <constraint firstItem="nRU-5R-Tmo" firstAttribute="top" secondItem="5w5-VM-nPb" secondAttribute="top" constant="15" id="pHB-6C-f6T"/>
                                     <constraint firstItem="dP6-ha-i7f" firstAttribute="leading" secondItem="5w5-VM-nPb" secondAttribute="leading" constant="10" id="ttA-Vy-taM"/>
                                     <constraint firstItem="IrE-at-fz9" firstAttribute="centerY" secondItem="sMr-uU-cWy" secondAttribute="centerY" id="xTg-5r-QdU"/>
                                     <constraint firstItem="sMr-uU-cWy" firstAttribute="leading" secondItem="5w5-VM-nPb" secondAttribute="leading" constant="10" id="xxA-JJ-oQ5"/>
@@ -135,14 +133,14 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jlK-fx-pO5">
-                                <rect key="frame" x="15" y="827" width="30" height="30"/>
+                                <rect key="frame" x="162" y="827" width="90" height="30"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="dsP-u6-lix"/>
-                                    <constraint firstAttribute="width" constant="30" id="qGV-4K-l7i"/>
+                                    <constraint firstAttribute="width" constant="90" id="qGV-4K-l7i"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Dogica_Pixel" family="Dogica Pixel" pointSize="17"/>
-                                <state key="normal" title="i">
+                                <fontDescription key="fontDescription" name="Dogica_Pixel" family="Dogica Pixel" pointSize="12"/>
+                                <state key="normal" title="info">
                                     <color key="titleColor" red="1" green="0.75476870340000002" blue="0.71852897049999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -150,7 +148,7 @@
                                 </connections>
                             </button>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6U4-Pq-RX5">
-                                <rect key="frame" x="0.0" y="177.5" width="414" height="414"/>
+                                <rect key="frame" x="0.0" y="134" width="414" height="414"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kLQ-UF-HE3">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
@@ -266,7 +264,7 @@
                                 </constraints>
                             </scrollView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="17M-Xd-B1w">
-                                <rect key="frame" x="20" y="127.5" width="374" height="50"/>
+                                <rect key="frame" x="20" y="551" width="374" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OrP-kX-PlR">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -311,44 +309,52 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="DzV-sv-ejw">
-                                <rect key="frame" x="40" y="611.5" width="334" height="45"/>
+                                <rect key="frame" x="40" y="664" width="334" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R9h-ar-feC">
-                                        <rect key="frame" x="0.0" y="0.0" width="45" height="45"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="45" id="d0a-k0-B66"/>
-                                            <constraint firstAttribute="width" constant="45" id="vvY-H9-ivA"/>
+                                            <constraint firstAttribute="height" constant="50" id="d0a-k0-B66"/>
+                                            <constraint firstAttribute="width" constant="50" id="vvY-H9-ivA"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                        <fontDescription key="fontDescription" name="Dogica_Pixel_Bold" family="Dogica Pixel" pointSize="23"/>
                                         <color key="tintColor" red="1" green="0.75476870340000002" blue="0.71852897049999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" image="a.circle.fill" catalog="system"/>
+                                        <state key="normal" title="A">
+                                            <color key="titleColor" red="1" green="0.75294117650000003" blue="0.71764705880000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="enterPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XOY-PX-p0F"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wZ8-MY-gwX">
-                                        <rect key="frame" x="204" y="0.0" width="45" height="45"/>
+                                        <rect key="frame" x="194" y="0.0" width="50" height="50"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="45" id="3FD-HR-eJN"/>
-                                            <constraint firstAttribute="width" constant="45" id="quj-IX-cT8"/>
+                                            <constraint firstAttribute="height" constant="50" id="3FD-HR-eJN"/>
+                                            <constraint firstAttribute="width" constant="50" id="quj-IX-cT8"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <color key="tintColor" red="1" green="0.75476870340000002" blue="0.71852897049999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" image="arrowtriangle.left.fill" catalog="system"/>
+                                        <state key="normal" title="◀︎">
+                                            <color key="titleColor" red="1" green="0.75294117650000003" blue="0.71764705880000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="leftPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="j6B-7e-GwW"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P0e-XR-Odj">
-                                        <rect key="frame" x="289" y="0.0" width="45" height="45"/>
+                                        <rect key="frame" x="284" y="0.0" width="50" height="50"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="45" id="1Tj-mr-jVL"/>
-                                            <constraint firstAttribute="height" constant="45" id="vdF-j0-RXC"/>
+                                            <constraint firstAttribute="width" constant="50" id="1Tj-mr-jVL"/>
+                                            <constraint firstAttribute="height" constant="50" id="vdF-j0-RXC"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <color key="tintColor" red="1" green="0.75476870340000002" blue="0.71852897049999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" image="arrowtriangle.right.fill" catalog="system"/>
+                                        <state key="normal" title="▶︎">
+                                            <color key="titleColor" red="1" green="0.75294117650000003" blue="0.71764705880000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="rightPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7SR-Je-utn"/>
                                         </connections>
@@ -358,23 +364,37 @@
                                     <constraint firstItem="P0e-XR-Odj" firstAttribute="leading" secondItem="wZ8-MY-gwX" secondAttribute="trailing" constant="40" id="YH3-ba-pFq"/>
                                 </constraints>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="feed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rs1-C2-6hF">
+                                <rect key="frame" x="0.0" y="604" width="414" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.75476870340000002" blue="0.71852897049999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="oEu-rb-qBh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Dogica_Pixel" family="Dogica Pixel" pointSize="14"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.84499601960000004" blue="0.74862455289999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6U4-Pq-RX5" firstAttribute="top" secondItem="17M-Xd-B1w" secondAttribute="bottom" id="0iy-90-bja"/>
-                            <constraint firstItem="DzV-sv-ejw" firstAttribute="top" secondItem="6U4-Pq-RX5" secondAttribute="bottom" constant="20" id="2O8-lX-6HQ"/>
+                            <constraint firstItem="rs1-C2-6hF" firstAttribute="top" secondItem="17M-Xd-B1w" secondAttribute="bottom" constant="3" id="3wD-IZ-hIy"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rs1-C2-6hF" secondAttribute="trailing" id="AeT-qM-hnz"/>
+                            <constraint firstItem="6U4-Pq-RX5" firstAttribute="top" secondItem="5w5-VM-nPb" secondAttribute="bottom" constant="5" id="Ax6-sK-Z3X"/>
                             <constraint firstItem="17M-Xd-B1w" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="BE1-te-A09"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="17M-Xd-B1w" secondAttribute="trailing" constant="20" id="BW1-Ze-EHc"/>
-                            <constraint firstItem="jlK-fx-pO5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="Def-er-aCz"/>
                             <constraint firstItem="DzV-sv-ejw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="GG4-qj-OSM"/>
                             <constraint firstItem="5w5-VM-nPb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="5" id="H5z-Kc-ITz"/>
                             <constraint firstItem="6U4-Pq-RX5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="KLz-WD-cdN"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="DzV-sv-ejw" secondAttribute="trailing" constant="40" id="Nky-zm-REV"/>
+                            <constraint firstItem="jlK-fx-pO5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="SId-yt-94D"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="jlK-fx-pO5" secondAttribute="bottom" constant="5" id="YU6-8W-nOK"/>
+                            <constraint firstItem="6U4-Pq-RX5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="90" id="Yz5-hH-AIm"/>
+                            <constraint firstItem="rs1-C2-6hF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="aZh-4T-Qw2"/>
+                            <constraint firstItem="17M-Xd-B1w" firstAttribute="top" secondItem="6U4-Pq-RX5" secondAttribute="bottom" constant="3" id="aaH-Jz-rtT"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5w5-VM-nPb" secondAttribute="trailing" id="eEc-QT-6O4"/>
-                            <constraint firstItem="17M-Xd-B1w" firstAttribute="top" secondItem="5w5-VM-nPb" secondAttribute="bottom" id="iJ9-qI-nRR"/>
                             <constraint firstItem="5w5-VM-nPb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="opc-BS-lzf"/>
                             <constraint firstItem="6U4-Pq-RX5" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="qAN-fZ-5eq"/>
+                            <constraint firstItem="DzV-sv-ejw" firstAttribute="top" secondItem="rs1-C2-6hF" secondAttribute="bottom" constant="30" id="u1T-pw-syu"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -387,11 +407,16 @@
                         <outlet property="currentsBackground" destination="5w5-VM-nPb" id="Vic-CI-aju"/>
                         <outlet property="decorArt" destination="RIM-GI-Cjl" id="P2h-QP-WDd"/>
                         <outlet property="distanceLabel" destination="M16-a4-U2n" id="udj-dC-Rwt"/>
+                        <outlet property="enterButton" destination="R9h-ar-feC" id="lu8-nx-R6O"/>
                         <outlet property="floorArt" destination="oFB-lV-nW2" id="zx9-4Z-z2f"/>
+                        <outlet property="infoButton" destination="jlK-fx-pO5" id="eXW-NJ-4Xl"/>
+                        <outlet property="leftArrow" destination="wZ8-MY-gwX" id="cpo-vu-uMr"/>
                         <outlet property="measurementLabel" destination="FZX-Gw-g6e" id="XOM-6L-qmA"/>
                         <outlet property="pictureArt" destination="xqr-Er-2jF" id="KSL-3i-Jj4"/>
                         <outlet property="pointsLabel" destination="IrE-at-fz9" id="o9n-Gx-LIy"/>
+                        <outlet property="rightArrow" destination="P0e-XR-Odj" id="YOW-BI-mZq"/>
                         <outlet property="rugArt" destination="fbB-UU-SLQ" id="P3r-5a-xJl"/>
+                        <outlet property="selectionLabel" destination="rs1-C2-6hF" id="fUx-EJ-dLW"/>
                         <outlet property="stepsLabel" destination="nRU-5R-Tmo" id="duM-LE-BVi"/>
                         <outlet property="toyArt" destination="EGI-IM-dbU" id="D8I-fd-BTK"/>
                         <outlet property="wallArt" destination="ZX0-Qb-1jX" id="yBZ-fr-0gS"/>
@@ -427,28 +452,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="bottom" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="8wf-QQ-F6S">
-                                <rect key="frame" x="20" y="179" width="374" height="15"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZAu-A7-MUJ">
-                                        <rect key="frame" x="0.0" y="0.0" width="182" height="15"/>
-                                        <fontDescription key="fontDescription" name="Dogica_Pixel" family="Dogica Pixel" pointSize="15"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Steps" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hiH-zX-a9j">
-                                        <rect key="frame" x="192" y="0.0" width="182" height="15"/>
-                                        <fontDescription key="fontDescription" name="Dogica_Pixel" family="Dogica Pixel" pointSize="15"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3R5-Cg-sFz">
+                                <rect key="frame" x="0.0" y="49" width="414" height="98"/>
+                                <color key="backgroundColor" red="1" green="0.75476870340000002" blue="0.71852897049999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="36d-UQ-qdW">
-                                <rect key="frame" x="128" y="804" width="158" height="28"/>
+                                <rect key="frame" x="162" y="802" width="90" height="30"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name="Dogica_Pixel_Bold" family="Dogica Pixel" pointSize="16"/>
-                                <state key="normal" title="   Dismiss   ">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="FY8-HB-b7W"/>
+                                    <constraint firstAttribute="height" constant="30" id="YCX-H3-5bj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Dogica_Pixel" family="Dogica Pixel" pointSize="12"/>
+                                <state key="normal" title="back">
                                     <color key="titleColor" red="1" green="0.75476870340000002" blue="0.71852897049999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -456,7 +472,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="4bt-eb-d3g">
-                                <rect key="frame" x="20" y="147" width="374" height="15"/>
+                                <rect key="frame" x="20" y="187" width="374" height="15"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hyC-Na-jP4">
                                         <rect key="frame" x="0.0" y="0.0" width="182" height="15"/>
@@ -473,44 +489,160 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Step History" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a2L-Ie-zTp">
-                                <rect key="frame" x="115.5" y="54" width="183" height="17"/>
+                                <rect key="frame" x="115.5" y="74" width="183" height="17"/>
                                 <fontDescription key="fontDescription" name="Dogica_Pixel_Bold" family="Dogica Pixel" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Steps over the last seven days" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BD8-OP-0cl">
-                                <rect key="frame" x="20" y="85" width="374" height="12"/>
+                                <rect key="frame" x="20" y="105" width="374" height="12"/>
                                 <fontDescription key="fontDescription" name="Dogica_Pixel" family="Dogica Pixel" pointSize="12"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="117" translatesAutoresizingMaskIntoConstraints="NO" id="VcJ-ex-RBD">
+                                <rect key="frame" x="77.5" y="232" width="259" height="310"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="33" translatesAutoresizingMaskIntoConstraints="NO" id="LGc-4Y-Eqs">
+                                        <rect key="frame" x="0.0" y="0.0" width="74" height="310"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yqJ-Vh-b7H">
+                                                <rect key="frame" x="0.0" y="0.0" width="74" height="16"/>
+                                                <fontDescription key="fontDescription" name="Dogica_Pixel_Bold" family="Dogica Pixel" pointSize="16"/>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eWd-Vr-ROL">
+                                                <rect key="frame" x="0.0" y="49" width="74" height="16"/>
+                                                <fontDescription key="fontDescription" name="Dogica_Pixel_Bold" family="Dogica Pixel" pointSize="16"/>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bFh-7g-O8i">
+                                                <rect key="frame" x="0.0" y="98" width="74" height="16"/>
+                                                <fontDescription key="fontDescription" name="Dogica_Pixel_Bold" family="Dogica Pixel" pointSize="16"/>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kmp-ov-DFE">
+                                                <rect key="frame" x="0.0" y="147" width="74" height="16"/>
+                                                <fontDescription key="fontDescription" name="Dogica_Pixel_Bold" family="Dogica Pixel" pointSize="16"/>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" tag="4" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="St9-Qt-6cA">
+                                                <rect key="frame" x="0.0" y="196" width="74" height="16"/>
+                                                <fontDescription key="fontDescription" name="Dogica_Pixel_Bold" family="Dogica Pixel" pointSize="16"/>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" tag="5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3xQ-K3-FSg">
+                                                <rect key="frame" x="0.0" y="245" width="74" height="16"/>
+                                                <fontDescription key="fontDescription" name="Dogica_Pixel_Bold" family="Dogica Pixel" pointSize="16"/>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" tag="6" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Xh-Kx-1Z4">
+                                                <rect key="frame" x="0.0" y="294" width="74" height="16"/>
+                                                <fontDescription key="fontDescription" name="Dogica_Pixel_Bold" family="Dogica Pixel" pointSize="16"/>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="33" translatesAutoresizingMaskIntoConstraints="NO" id="uzw-HY-Tng">
+                                        <rect key="frame" x="191" y="0.0" width="68" height="310"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Steps" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Osl-VA-uPt">
+                                                <rect key="frame" x="0.0" y="0.0" width="68" height="16"/>
+                                                <fontDescription key="fontDescription" name="Dogica_Pixel" family="Dogica Pixel" pointSize="16"/>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Steps" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eWh-gk-gps">
+                                                <rect key="frame" x="0.0" y="49" width="68" height="16"/>
+                                                <fontDescription key="fontDescription" name="Dogica_Pixel" family="Dogica Pixel" pointSize="16"/>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Steps" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uQz-lw-IUs">
+                                                <rect key="frame" x="0.0" y="98" width="68" height="16"/>
+                                                <fontDescription key="fontDescription" name="Dogica_Pixel" family="Dogica Pixel" pointSize="16"/>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Steps" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fiS-KM-MKS">
+                                                <rect key="frame" x="0.0" y="147" width="68" height="16"/>
+                                                <fontDescription key="fontDescription" name="Dogica_Pixel" family="Dogica Pixel" pointSize="16"/>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" tag="4" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Steps" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vzn-As-NBA">
+                                                <rect key="frame" x="0.0" y="196" width="68" height="16"/>
+                                                <fontDescription key="fontDescription" name="Dogica_Pixel" family="Dogica Pixel" pointSize="16"/>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" tag="5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Steps" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6SR-s1-3fN">
+                                                <rect key="frame" x="0.0" y="245" width="68" height="16"/>
+                                                <fontDescription key="fontDescription" name="Dogica_Pixel" family="Dogica Pixel" pointSize="16"/>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" tag="6" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Steps" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tb6-Ga-Svy">
+                                                <rect key="frame" x="0.0" y="294" width="68" height="16"/>
+                                                <fontDescription key="fontDescription" name="Dogica_Pixel" family="Dogica Pixel" pointSize="16"/>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.84499601960000004" blue="0.74862455289999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="8wf-QQ-F6S" firstAttribute="leading" secondItem="44q-xn-kxS" secondAttribute="leading" constant="20" id="0Eg-Xt-kSx"/>
                             <constraint firstItem="44q-xn-kxS" firstAttribute="trailing" secondItem="BD8-OP-0cl" secondAttribute="trailing" constant="20" id="5wA-LC-Naf"/>
-                            <constraint firstItem="4bt-eb-d3g" firstAttribute="top" secondItem="BD8-OP-0cl" secondAttribute="bottom" constant="50" id="956-gP-9jK"/>
-                            <constraint firstItem="8wf-QQ-F6S" firstAttribute="top" secondItem="4bt-eb-d3g" secondAttribute="bottom" constant="17" id="BEH-Re-kYX"/>
+                            <constraint firstItem="4bt-eb-d3g" firstAttribute="top" secondItem="BD8-OP-0cl" secondAttribute="bottom" constant="70" id="956-gP-9jK"/>
                             <constraint firstItem="4bt-eb-d3g" firstAttribute="leading" secondItem="44q-xn-kxS" secondAttribute="leading" constant="20" id="E7N-Ey-Vho"/>
                             <constraint firstItem="36d-UQ-qdW" firstAttribute="centerX" secondItem="fhF-EE-wec" secondAttribute="centerX" id="HeD-BN-ReK"/>
-                            <constraint firstItem="44q-xn-kxS" firstAttribute="trailing" secondItem="8wf-QQ-F6S" secondAttribute="trailing" constant="20" id="K4v-ca-IYV"/>
+                            <constraint firstItem="3R5-Cg-sFz" firstAttribute="top" secondItem="44q-xn-kxS" secondAttribute="top" constant="5" id="JzN-fa-L5M"/>
+                            <constraint firstItem="4bt-eb-d3g" firstAttribute="top" secondItem="3R5-Cg-sFz" secondAttribute="bottom" constant="40" id="LrQ-8R-AcF"/>
+                            <constraint firstItem="3R5-Cg-sFz" firstAttribute="leading" secondItem="44q-xn-kxS" secondAttribute="leading" id="Q7E-uk-cLU"/>
                             <constraint firstItem="a2L-Ie-zTp" firstAttribute="centerX" secondItem="fhF-EE-wec" secondAttribute="centerX" id="UbT-Fn-v3H"/>
-                            <constraint firstItem="a2L-Ie-zTp" firstAttribute="top" secondItem="44q-xn-kxS" secondAttribute="top" constant="10" id="Y6R-OA-gLb"/>
+                            <constraint firstItem="a2L-Ie-zTp" firstAttribute="top" secondItem="44q-xn-kxS" secondAttribute="top" constant="30" id="Y6R-OA-gLb"/>
                             <constraint firstItem="44q-xn-kxS" firstAttribute="trailing" secondItem="4bt-eb-d3g" secondAttribute="trailing" constant="20" id="gbD-pe-JDN"/>
+                            <constraint firstItem="VcJ-ex-RBD" firstAttribute="centerX" secondItem="fhF-EE-wec" secondAttribute="centerX" id="h0C-4m-x7A"/>
                             <constraint firstItem="BD8-OP-0cl" firstAttribute="leading" secondItem="44q-xn-kxS" secondAttribute="leading" constant="20" id="hTf-3q-M3z"/>
                             <constraint firstItem="BD8-OP-0cl" firstAttribute="top" secondItem="a2L-Ie-zTp" secondAttribute="bottom" constant="14" id="mki-64-9vo"/>
                             <constraint firstItem="BD8-OP-0cl" firstAttribute="centerX" secondItem="fhF-EE-wec" secondAttribute="centerX" id="qdw-6A-s5I"/>
+                            <constraint firstItem="3R5-Cg-sFz" firstAttribute="trailing" secondItem="44q-xn-kxS" secondAttribute="trailing" id="t88-jh-0uk"/>
+                            <constraint firstItem="VcJ-ex-RBD" firstAttribute="top" secondItem="4bt-eb-d3g" secondAttribute="bottom" constant="30" id="tlI-0f-IkB"/>
                             <constraint firstItem="44q-xn-kxS" firstAttribute="bottom" secondItem="36d-UQ-qdW" secondAttribute="bottom" constant="30" id="xvM-Lt-la7"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="44q-xn-kxS"/>
                     </view>
                     <connections>
                         <outlet property="dismissButton" destination="36d-UQ-qdW" id="84D-Na-jL0"/>
+                        <outletCollection property="days" destination="yqJ-Vh-b7H" collectionClass="NSMutableArray" id="zGp-dh-0Ht"/>
+                        <outletCollection property="days" destination="eWd-Vr-ROL" collectionClass="NSMutableArray" id="Bbi-Vd-hb0"/>
+                        <outletCollection property="days" destination="bFh-7g-O8i" collectionClass="NSMutableArray" id="UVS-MW-fhG"/>
+                        <outletCollection property="days" destination="kmp-ov-DFE" collectionClass="NSMutableArray" id="tzi-dn-Jun"/>
+                        <outletCollection property="days" destination="St9-Qt-6cA" collectionClass="NSMutableArray" id="6dY-ES-qna"/>
+                        <outletCollection property="days" destination="3xQ-K3-FSg" collectionClass="NSMutableArray" id="i11-Yu-AQ6"/>
+                        <outletCollection property="days" destination="5Xh-Kx-1Z4" collectionClass="NSMutableArray" id="NMc-5M-MdE"/>
+                        <outletCollection property="steps" destination="Osl-VA-uPt" collectionClass="NSMutableArray" id="7kw-5G-O2B"/>
+                        <outletCollection property="steps" destination="eWh-gk-gps" collectionClass="NSMutableArray" id="dbg-FZ-cvD"/>
+                        <outletCollection property="steps" destination="uQz-lw-IUs" collectionClass="NSMutableArray" id="Hmf-cD-dPo"/>
+                        <outletCollection property="steps" destination="fiS-KM-MKS" collectionClass="NSMutableArray" id="sj9-iW-CYp"/>
+                        <outletCollection property="steps" destination="Vzn-As-NBA" collectionClass="NSMutableArray" id="TQI-DY-oGA"/>
+                        <outletCollection property="steps" destination="6SR-s1-3fN" collectionClass="NSMutableArray" id="BPM-fg-gGl"/>
+                        <outletCollection property="steps" destination="Tb6-Ga-Svy" collectionClass="NSMutableArray" id="3dq-fj-Q6v"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tn5-Z3-OBr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1020" y="7"/>
+            <point key="canvasLocation" x="1018.840579710145" y="6.6964285714285712"/>
         </scene>
         <!--About View Controller-->
         <scene sceneID="Jya-I8-ARn">
@@ -524,7 +656,7 @@
                                 <rect key="frame" x="20" y="54" width="374" height="798"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="AGg-dw-MHp">
-                                        <rect key="frame" x="7" y="0.0" width="360.5" height="297"/>
+                                        <rect key="frame" x="7" y="0.0" width="360.5" height="309"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="bhv-N3-eno">
                                                 <rect key="frame" x="31.5" y="0.0" width="297" height="89.5"/>
@@ -562,22 +694,32 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="vQV-9t-Wfe">
-                                                <rect key="frame" x="10.5" y="234" width="339" height="24"/>
+                                                <rect key="frame" x="10.5" y="234" width="339" height="30"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Qu-UW-FXN">
-                                                        <rect key="frame" x="0.0" y="0.0" width="155" height="24"/>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="155" height="30"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="UDx-r4-5m3"/>
+                                                        </constraints>
                                                         <fontDescription key="fontDescription" name="Dogica_Pixel" family="Dogica Pixel" pointSize="12"/>
-                                                        <state key="normal" title="   Zapsplat.com   "/>
+                                                        <state key="normal" title="   Zapsplat.com   ">
+                                                            <color key="titleColor" red="1" green="0.75476870340000002" blue="0.71852897049999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
                                                         <connections>
                                                             <action selector="zapsplat:" destination="n5Z-Ee-q2v" eventType="touchUpInside" id="F5x-oY-9nq"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bf2-pp-Ugi">
-                                                        <rect key="frame" x="165" y="0.0" width="174" height="24"/>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <rect key="frame" x="165" y="0.0" width="174" height="30"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="ddl-e3-NVp"/>
+                                                        </constraints>
                                                         <fontDescription key="fontDescription" name="Dogica_Pixel" family="Dogica Pixel" pointSize="12"/>
-                                                        <state key="normal" title="   Soundbible.com   "/>
+                                                        <state key="normal" title="   Soundbible.com   ">
+                                                            <color key="titleColor" red="1" green="0.75476870340000002" blue="0.71852897049999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
                                                         <connections>
                                                             <action selector="soundBible:" destination="n5Z-Ee-q2v" eventType="touchUpInside" id="SnG-8k-61n"/>
                                                         </connections>
@@ -585,10 +727,15 @@
                                                 </subviews>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ar8-uD-Yjn">
-                                                <rect key="frame" x="53" y="273" width="254" height="24"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <rect key="frame" x="53" y="279" width="254" height="30"/>
+                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="wgf-yR-SAF"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" name="Dogica_Pixel" family="Dogica Pixel" pointSize="12"/>
-                                                <state key="normal" title="   AmbleCat Privacy Policy   "/>
+                                                <state key="normal" title="   AmbleCat Privacy Policy   ">
+                                                    <color key="titleColor" red="1" green="0.75476870340000002" blue="0.71852897049999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="privacyPolicy:" destination="n5Z-Ee-q2v" eventType="touchUpInside" id="mCu-HN-fYv"/>
                                                 </connections>
@@ -596,7 +743,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Isc-9B-6nI">
-                                        <rect key="frame" x="62" y="488" width="250.5" height="91.5"/>
+                                        <rect key="frame" x="62" y="493" width="250.5" height="91.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Options" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mgu-Hj-ywQ">
                                                 <rect key="frame" x="72" y="0.0" width="106" height="16"/>
@@ -623,10 +770,14 @@
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rot-dJ-65R">
-                                        <rect key="frame" x="108" y="770" width="158" height="28"/>
+                                        <rect key="frame" x="142" y="768" width="90" height="30"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" name="Dogica_Pixel_Bold" family="Dogica Pixel" pointSize="16"/>
-                                        <state key="normal" title="   Dismiss   ">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="90" id="0Gk-jq-Qfq"/>
+                                            <constraint firstAttribute="height" constant="30" id="joh-5v-LND"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Dogica_Pixel" family="Dogica Pixel" pointSize="12"/>
+                                        <state key="normal" title="back">
                                             <color key="titleColor" red="1" green="0.75476870340000002" blue="0.71852897049999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
@@ -649,6 +800,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="mht-T3-nua"/>
                     <connections>
+                        <outlet property="backButton" destination="Rot-dJ-65R" id="7iI-9b-bux"/>
                         <outlet property="privacyPolicyButton" destination="Ar8-uD-Yjn" id="asw-6R-pNj"/>
                         <outlet property="segmentedControl" destination="Pv3-Yw-Ikq" id="2Lq-Jd-Dau"/>
                         <outlet property="soundbibleButton" destination="Bf2-pp-Ugi" id="fS7-vl-o3a"/>
@@ -668,8 +820,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Point Shop" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RKm-jq-2as">
-                                <rect key="frame" x="143" y="59" width="128" height="16"/>
-                                <fontDescription key="fontDescription" name="Dogica_Pixel" family="Dogica Pixel" pointSize="16"/>
+                                <rect key="frame" x="129.5" y="74" width="155.5" height="17"/>
+                                <fontDescription key="fontDescription" name="Dogica_Pixel_Bold" family="Dogica Pixel" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -681,19 +833,19 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Purchased points will be added to your current total" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="peM-Be-2Lg">
-                                <rect key="frame" x="20" y="100" width="374" height="24"/>
+                                <rect key="frame" x="20" y="116" width="374" height="24"/>
                                 <fontDescription key="fontDescription" name="Dogica_Pixel" family="Dogica Pixel" pointSize="12"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5sD-uS-Tzx">
-                                <rect key="frame" x="53" y="57.5" width="70" height="16"/>
+                                <rect key="frame" x="53" y="57.5" width="14" height="16"/>
                                 <fontDescription key="fontDescription" name="Dogica_Pixel" family="Dogica Pixel" pointSize="16"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Bz4-3S-FNX">
-                                <rect key="frame" x="20" y="149" width="374" height="630"/>
+                                <rect key="frame" x="20" y="165" width="374" height="612"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="pawShopCell" rowHeight="185" id="DD8-Mq-hOF" customClass="PawShopTableViewCell" customModule="Amble_Cat" customModuleProvider="target">
@@ -766,10 +918,14 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e8l-Eh-sBp">
-                                <rect key="frame" x="128" y="804" width="158" height="28"/>
+                                <rect key="frame" x="162" y="802" width="90" height="30"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name="Dogica_Pixel_Bold" family="Dogica Pixel" pointSize="16"/>
-                                <state key="normal" title="   Dismiss   ">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="OTs-39-GTP"/>
+                                    <constraint firstAttribute="width" constant="90" id="jCc-K0-JKU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Dogica_Pixel" family="Dogica Pixel" pointSize="12"/>
+                                <state key="normal" title="back">
                                     <color key="titleColor" red="1" green="0.75476870340000002" blue="0.71852897049999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -779,13 +935,11 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.84499601960000004" blue="0.74862455289999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="RKm-jq-2as" firstAttribute="leading" secondItem="5sD-uS-Tzx" secondAttribute="trailing" constant="20" id="7iB-fc-LZp"/>
                             <constraint firstItem="e8l-Eh-sBp" firstAttribute="centerX" secondItem="15n-Cl-UTK" secondAttribute="centerX" id="9ZV-qc-DWR"/>
                             <constraint firstItem="sY6-gs-gnx" firstAttribute="trailing" secondItem="Bz4-3S-FNX" secondAttribute="trailing" constant="20" id="Bew-Gi-wSt"/>
-                            <constraint firstItem="e8l-Eh-sBp" firstAttribute="centerX" secondItem="15n-Cl-UTK" secondAttribute="centerX" id="GFO-IG-MRa"/>
                             <constraint firstItem="f1p-XZ-Mvq" firstAttribute="top" secondItem="sY6-gs-gnx" secondAttribute="top" constant="5" id="ICO-nC-Brf"/>
                             <constraint firstItem="peM-Be-2Lg" firstAttribute="top" secondItem="RKm-jq-2as" secondAttribute="bottom" constant="25" id="NKG-pT-d0W"/>
-                            <constraint firstItem="RKm-jq-2as" firstAttribute="top" secondItem="sY6-gs-gnx" secondAttribute="top" constant="15" id="YT6-if-Fjl"/>
+                            <constraint firstItem="RKm-jq-2as" firstAttribute="top" secondItem="sY6-gs-gnx" secondAttribute="top" constant="30" id="YT6-if-Fjl"/>
                             <constraint firstItem="5sD-uS-Tzx" firstAttribute="leading" secondItem="f1p-XZ-Mvq" secondAttribute="trailing" constant="5" id="aPh-5u-Fv3"/>
                             <constraint firstItem="Bz4-3S-FNX" firstAttribute="top" secondItem="peM-Be-2Lg" secondAttribute="bottom" constant="25" id="cOX-kt-15c"/>
                             <constraint firstItem="sY6-gs-gnx" firstAttribute="bottom" secondItem="e8l-Eh-sBp" secondAttribute="bottom" constant="30" id="dQU-au-EMf"/>
@@ -802,6 +956,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="pea-gl-6NY"/>
                     <connections>
+                        <outlet property="dismissButton" destination="e8l-Eh-sBp" id="1hy-1q-Oab"/>
                         <outlet property="pawPointTotal" destination="5sD-uS-Tzx" id="gAB-Vx-CYc"/>
                         <outlet property="tableView" destination="Bz4-3S-FNX" id="Etj-QP-hSd"/>
                     </connections>
@@ -819,7 +974,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b2Q-AA-KJ8">
-                                <rect key="frame" x="70" y="261" width="274" height="200"/>
+                                <rect key="frame" x="70" y="277" width="274" height="200"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="3zj-mQ-pcX">
                                         <rect key="frame" x="15" y="38.5" width="244" height="123"/>
@@ -877,7 +1032,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E63-Zf-tMi">
-                                <rect key="frame" x="70" y="261" width="274" height="200"/>
+                                <rect key="frame" x="70" y="277" width="274" height="200"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="3cs-Ph-Txo">
                                         <rect key="frame" x="15" y="38.5" width="244" height="123"/>
@@ -917,7 +1072,7 @@
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" prefetchingEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qX2-rb-aAr">
-                                <rect key="frame" x="20" y="176" width="374" height="608"/>
+                                <rect key="frame" x="20" y="192" width="374" height="590"/>
                                 <color key="backgroundColor" red="1" green="0.84499601960000004" blue="0.74862455289999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="0.0" id="nsk-a3-gkq">
                                     <size key="itemSize" width="160" height="200"/>
@@ -997,16 +1152,20 @@
                                 </cells>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Decor Shop" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IOi-Nb-cBJ">
-                                <rect key="frame" x="140" y="59" width="134" height="16"/>
-                                <fontDescription key="fontDescription" name="Dogica_Pixel" family="Dogica Pixel" pointSize="16"/>
+                                <rect key="frame" x="126.5" y="74" width="161.5" height="17"/>
+                                <fontDescription key="fontDescription" name="Dogica_Pixel_Bold" family="Dogica Pixel" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lyf-0S-IDj">
-                                <rect key="frame" x="151" y="804" width="112" height="28"/>
+                                <rect key="frame" x="162" y="802" width="90" height="30"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name="Dogica_Pixel_Bold" family="Dogica Pixel" pointSize="16"/>
-                                <state key="normal" title="   Back   ">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="hHM-Xj-mup"/>
+                                    <constraint firstAttribute="width" constant="90" id="k1o-WY-dgt"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Dogica_Pixel" family="Dogica Pixel" pointSize="12"/>
+                                <state key="normal" title="back">
                                     <color key="titleColor" red="1" green="0.75476870340000002" blue="0.71852897049999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -1021,13 +1180,13 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="15H-kJ-68U">
-                                <rect key="frame" x="53" y="57.5" width="67" height="16"/>
+                                <rect key="frame" x="53" y="57.5" width="14" height="16"/>
                                 <fontDescription key="fontDescription" name="Dogica_Pixel" family="Dogica Pixel" pointSize="16"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="d1R-7p-jYH">
-                                <rect key="frame" x="20" y="132" width="374" height="32"/>
+                                <rect key="frame" x="20" y="148" width="374" height="32"/>
                                 <segments>
                                     <segment title="All"/>
                                     <segment title="Purchased"/>
@@ -1038,15 +1197,11 @@
                                 </connections>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap a purchased item to equip it" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Rr-ah-CcR">
-                                <rect key="frame" x="58.5" y="91" width="297" height="17"/>
+                                <rect key="frame" x="58.5" y="107" width="297" height="17"/>
                                 <fontDescription key="fontDescription" name="Dogica_Pixel" family="Dogica Pixel" pointSize="12"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mf9-B9-z1l">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.34812389964788731" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.84499601960000004" blue="0.74862455289999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -1054,11 +1209,9 @@
                             <constraint firstItem="b2Q-AA-KJ8" firstAttribute="top" secondItem="IOi-Nb-cBJ" secondAttribute="bottom" constant="186" id="Cho-2I-YWo"/>
                             <constraint firstItem="Phe-N1-Fn7" firstAttribute="trailing" secondItem="b2Q-AA-KJ8" secondAttribute="trailing" constant="70" id="E6Q-yX-7UO"/>
                             <constraint firstItem="5Rr-ah-CcR" firstAttribute="top" secondItem="IOi-Nb-cBJ" secondAttribute="bottom" constant="16" id="IUJ-x5-CTU"/>
-                            <constraint firstItem="mf9-B9-z1l" firstAttribute="leading" secondItem="Phe-N1-Fn7" secondAttribute="leading" id="MZm-Fi-aLO"/>
                             <constraint firstItem="Phe-N1-Fn7" firstAttribute="trailing" secondItem="d1R-7p-jYH" secondAttribute="trailing" constant="20" id="MpB-Xo-Mef"/>
-                            <constraint firstItem="IOi-Nb-cBJ" firstAttribute="leading" secondItem="15H-kJ-68U" secondAttribute="trailing" constant="20" id="PCH-K5-DZ1"/>
                             <constraint firstItem="qX2-rb-aAr" firstAttribute="leading" secondItem="Phe-N1-Fn7" secondAttribute="leading" constant="20" id="Pkt-9F-rrR"/>
-                            <constraint firstItem="IOi-Nb-cBJ" firstAttribute="top" secondItem="Phe-N1-Fn7" secondAttribute="top" constant="15" id="Q9A-XF-wh2"/>
+                            <constraint firstItem="IOi-Nb-cBJ" firstAttribute="top" secondItem="Phe-N1-Fn7" secondAttribute="top" constant="30" id="Q9A-XF-wh2"/>
                             <constraint firstItem="d1R-7p-jYH" firstAttribute="top" secondItem="5Rr-ah-CcR" secondAttribute="bottom" constant="24" id="ScS-QH-4Nt"/>
                             <constraint firstItem="E63-Zf-tMi" firstAttribute="leading" secondItem="iP6-zW-noY" secondAttribute="leading" constant="70" id="Srh-f7-3Jv"/>
                             <constraint firstItem="dRf-Kd-cnk" firstAttribute="top" secondItem="Phe-N1-Fn7" secondAttribute="top" constant="5" id="Ubd-MW-vuF"/>
@@ -1068,12 +1221,9 @@
                             <constraint firstItem="5Rr-ah-CcR" firstAttribute="centerX" secondItem="iP6-zW-noY" secondAttribute="centerX" id="Yum-5K-JJa"/>
                             <constraint firstItem="15H-kJ-68U" firstAttribute="leading" secondItem="dRf-Kd-cnk" secondAttribute="trailing" constant="5" id="ZZh-qE-gur"/>
                             <constraint firstItem="15H-kJ-68U" firstAttribute="centerY" secondItem="dRf-Kd-cnk" secondAttribute="centerY" id="ZvJ-jL-yY1"/>
-                            <constraint firstAttribute="bottom" secondItem="mf9-B9-z1l" secondAttribute="bottom" id="b7x-ce-gTt"/>
-                            <constraint firstItem="Phe-N1-Fn7" firstAttribute="trailing" secondItem="mf9-B9-z1l" secondAttribute="trailing" id="bAb-nI-qE0"/>
                             <constraint firstItem="d1R-7p-jYH" firstAttribute="leading" secondItem="Phe-N1-Fn7" secondAttribute="leading" constant="20" id="cNT-dh-d65"/>
                             <constraint firstItem="Lyf-0S-IDj" firstAttribute="top" secondItem="qX2-rb-aAr" secondAttribute="bottom" constant="20" id="cr5-0f-XED"/>
                             <constraint firstItem="qX2-rb-aAr" firstAttribute="top" secondItem="d1R-7p-jYH" secondAttribute="bottom" constant="13" id="jgM-zN-SIF"/>
-                            <constraint firstItem="mf9-B9-z1l" firstAttribute="top" secondItem="iP6-zW-noY" secondAttribute="top" id="kkK-gb-Iyr"/>
                             <constraint firstItem="b2Q-AA-KJ8" firstAttribute="leading" secondItem="Phe-N1-Fn7" secondAttribute="leading" constant="70" id="pCy-CW-Ljn"/>
                             <constraint firstItem="d1R-7p-jYH" firstAttribute="top" secondItem="IOi-Nb-cBJ" secondAttribute="bottom" constant="57" id="rzz-aM-St8"/>
                             <constraint firstItem="Phe-N1-Fn7" firstAttribute="bottom" secondItem="Lyf-0S-IDj" secondAttribute="bottom" constant="30" id="s4B-z0-4Xx"/>
@@ -1081,18 +1231,13 @@
                             <constraint firstItem="dRf-Kd-cnk" firstAttribute="leading" secondItem="Phe-N1-Fn7" secondAttribute="leading" constant="15" id="z3H-HW-ZHU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Phe-N1-Fn7"/>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="mf9-B9-z1l"/>
-                            </mask>
-                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="hGb-AN-iJm"/>
                     <connections>
                         <outlet property="areYouSureLabel" destination="63G-Sk-ydG" id="w0L-9z-HD6"/>
+                        <outlet property="backButton" destination="Lyf-0S-IDj" id="Ee8-MQ-PxI"/>
                         <outlet property="collectionView" destination="qX2-rb-aAr" id="yND-RC-jxY"/>
                         <outlet property="confirmPurchaseView" destination="b2Q-AA-KJ8" id="tJ1-dk-Dvu"/>
-                        <outlet property="dimView" destination="mf9-B9-z1l" id="bbI-7O-2Gs"/>
                         <outlet property="insufficientFundsView" destination="E63-Zf-tMi" id="n0B-6P-dnV"/>
                         <outlet property="pawPoints" destination="15H-kJ-68U" id="lQS-rP-btb"/>
                         <outlet property="segmentedControl" destination="d1R-7p-jYH" id="gkN-uy-cV0"/>
@@ -1119,9 +1264,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="a.circle.fill" catalog="system" width="64" height="60"/>
-        <image name="arrowtriangle.left.fill" catalog="system" width="64" height="56"/>
-        <image name="arrowtriangle.right.fill" catalog="system" width="64" height="56"/>
         <image name="bath" width="3000" height="3000"/>
         <image name="bathedge" width="3000" height="3000"/>
         <image name="bedblue" width="3000" height="3000"/>
