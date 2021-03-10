@@ -1247,21 +1247,6 @@
             </objects>
             <point key="canvasLocation" x="847.82608695652175" y="844.41964285714278"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="4tj-Ja-EP3">
-            <objects>
-                <viewController id="mE0-mz-BpH" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="ng5-2S-Ul5">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="881-Zu-Gcs"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bqx-Cy-IBR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="361" y="-1012"/>
-        </scene>
     </scenes>
     <resources>
         <image name="bath" width="3000" height="3000"/>

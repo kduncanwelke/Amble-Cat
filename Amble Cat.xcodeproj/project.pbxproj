@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -64,7 +64,6 @@
 		2DE860F523552B3C00227A86 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DE860F323552B3C00227A86 /* LaunchScreen.storyboard */; };
 		2DE8610023552B3C00227A86 /* Amble_CatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE860FF23552B3C00227A86 /* Amble_CatTests.swift */; };
 		2DE8610B23552B3D00227A86 /* Amble_CatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE8610A23552B3D00227A86 /* Amble_CatUITests.swift */; };
-		2DE8611C23552CAA00227A86 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DE8611B23552CAA00227A86 /* HealthKit.framework */; };
 		2DE904D0235638790036C08A /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE904CF235638790036C08A /* StatisticsViewController.swift */; };
 		2DE904D2235639DE0036C08A /* Measures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE904D1235639DE0036C08A /* Measures.swift */; };
 		6CE9D70AD78BB0417423EE4B /* Pods_Amble_Cat_Amble_CatUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2517E2D32FB94832B0607AD7 /* Pods_Amble_Cat_Amble_CatUITests.framework */; };
@@ -178,7 +177,6 @@
 				2D064FB623873C5B00257315 /* libssl.a in Frameworks */,
 				2D064FB523873C4A00257315 /* libcrypto.a in Frameworks */,
 				2DC80B922384B314006841AE /* StoreKit.framework in Frameworks */,
-				2DE8611C23552CAA00227A86 /* HealthKit.framework in Frameworks */,
 				899C2FCC56CBADE8614A105E /* Pods_Amble_Cat.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -425,7 +423,6 @@
 				2DE860E123552B3B00227A86 /* Sources */,
 				2DE860E223552B3B00227A86 /* Frameworks */,
 				2DE860E323552B3B00227A86 /* Resources */,
-				5DC0474D20D3EBCA14930851 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -463,7 +460,6 @@
 				2DE8610223552B3D00227A86 /* Sources */,
 				2DE8610323552B3D00227A86 /* Frameworks */,
 				2DE8610423552B3D00227A86 /* Resources */,
-				C785AE24761C6A9FBB8F5154 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -555,23 +551,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		5DC0474D20D3EBCA14930851 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Amble Cat/Pods-Amble Cat-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Amble Cat/Pods-Amble Cat-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Amble Cat/Pods-Amble Cat-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		9A3227E94657D0F38A35555E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -636,23 +615,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C785AE24761C6A9FBB8F5154 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Amble Cat-Amble CatUITests/Pods-Amble Cat-Amble CatUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Amble Cat-Amble CatUITests/Pods-Amble Cat-Amble CatUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Amble Cat-Amble CatUITests/Pods-Amble Cat-Amble CatUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -876,7 +838,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2759230948DF39ADB5338DD8 /* Pods-Amble Cat.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Amble Cat/Amble CatDebug.entitlements";
@@ -893,21 +854,14 @@
 					"@executable_path/Frameworks",
 				);
 				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/Pods/OpenSSL-Universal/ios/lib";
-				MARKETING_VERSION = 1.4;
-				OTHER_LDFLAGS = (
-					"-ObjC",
-					"-lcrypto",
-					"-lssl",
-					"-framework",
-					"\"Charts\"",
-					"$(inherited)",
-				);
+				MARKETING_VERSION = 1.5;
+				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kduncan-welke.AmbleCat";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "/Users/kateduncan-welke/Documents/Stuffs/Treehouse/AmbleCat/Amble-Cat/Amble Cat/Header.h";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/Pods/OpenSSL-Universal/ios/include";
 			};
 			name = Debug;
@@ -916,7 +870,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4E045E3AD807650B6A8840DF /* Pods-Amble Cat.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Amble Cat/Amble CatRelease.entitlements";
@@ -934,21 +887,14 @@
 					"@executable_path/Frameworks",
 				);
 				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/Pods/OpenSSL-Universal/ios/lib";
-				MARKETING_VERSION = 1.4;
-				OTHER_LDFLAGS = (
-					"-ObjC",
-					"-lcrypto",
-					"-lssl",
-					"-framework",
-					"\"Charts\"",
-					"$(inherited)",
-				);
+				MARKETING_VERSION = 1.5;
+				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kduncan-welke.AmbleCat";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "/Users/kateduncan-welke/Documents/Stuffs/Treehouse/AmbleCat/Amble-Cat/Amble Cat/Header.h";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/Pods/OpenSSL-Universal/ios/include";
 			};
 			name = Release;

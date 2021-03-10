@@ -7,7 +7,6 @@ target 'Amble Cat' do
 
   # Pods for Amble Cat
   
-  pod 'Charts'
   pod 'OpenSSL-Universal'
 
   target 'Amble CatTests' do

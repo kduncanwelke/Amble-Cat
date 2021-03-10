@@ -8,7 +8,6 @@
 
 import UIKit
 import HealthKit
-import Charts
 
 class StatisticsViewController: UIViewController {
     
