@@ -9,6 +9,7 @@
 import UIKit
 import HealthKit
 import CoreData
+import CoreMotion
 
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
@@ -74,6 +75,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
           
           NotificationCenter.default.addObserver(self, selector: #selector(animationEnded), name: NSNotification.Name(rawValue: "animationEnded"), object: nil)
           
+          stepViewModel.getStepData()
           
           // load sounds
           Sound.loadSound(number: &Sounds.blopSound.number, resourceName: Sounds.blopSound.resourceName, type: Sounds.blopSound.type)
@@ -92,10 +94,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
           viewModel.loadMeasure()
           viewModel.loadCareState()
           viewModel.loadEquipment()
-          
-          stepViewModel.getStepData()
-          stepsLabel.text = "\(stepViewModel.updateSteps())"
-          
+                    
           viewModel.monitorNetwork()
           loadUI()
           beginAnimation()
@@ -105,11 +104,13 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
      
      func loadUI() {
           pointsLabel.text = "\(viewModel.setPointsLabel()) Paw Points"
-          stepsLabel.text = "\(stepViewModel.stepsToday())"
-          distanceLabel.text = "\(stepViewModel.metersToday())"
           bowlArt.image = viewModel.showFood()
           updateHearts()
           loadWater()
+          stepsLabel.text = "\(stepViewModel.stepsToday())"
+          measurementLabel.text = stepViewModel.distanceMeasure()
+          distanceLabel.text = "\(stepViewModel.distanceToday())"
+          stepsLabel.text = "\(stepViewModel.updateSteps())"
      }
      
      func loadWater() {

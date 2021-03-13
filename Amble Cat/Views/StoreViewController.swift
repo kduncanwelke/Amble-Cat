@@ -125,8 +125,7 @@ extension StoreViewController: UICollectionViewDataSource {
         }
         
         let cellWidth = ((availableWidth-20) / CGFloat(maxNumColumns)).rounded(.down)
-        print(cellWidth)
-        
+      
         return CGSize(width: cellWidth, height: 200.00)
     }
 	

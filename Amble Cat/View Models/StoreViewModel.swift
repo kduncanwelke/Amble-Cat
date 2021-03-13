@@ -149,8 +149,6 @@ public class StoreViewModel {
                 StoreInventory.purchased.append(item)
             }
         }
-        
-        print(StoreInventory.purchased)
     }
     
     func savePurchaseState() {

@@ -20,14 +20,11 @@ public class StepViewModel {
     
     func getStepData() {
         let calendar = Calendar.current
-        let now = Date()
+        var day = Date()
+        var nextDay = Date()
         
-        var day = now
-        
-        for i in 1...6 {
-            var nextDay = calendar.date(byAdding: .day, value: -1, to: day) ?? Date()
-            
-            Pedometer.stepCounter.queryPedometerData(from: day, to: nextDay) { (data, error) in
+        for i in 1...7 {
+            Pedometer.stepCounter.queryPedometerData(from: calendar.startOfDay(for: nextDay), to: day) { (data, error) in
                 print("steps")
                 print(data?.numberOfSteps)
                 print(data?.endDate)
@@ -37,19 +34,20 @@ public class StepViewModel {
                 }
             }
             
-            day = calendar.date(byAdding: .day, value: -i, to: now) ?? Date()
+            day = calendar.date(byAdding: .day, value: -i, to: day) ?? Date()
+            nextDay = calendar.date(byAdding: .day, value: -i, to: day) ?? Date()
         }
     }
     
     func updateSteps() -> Int {
         // award coins with steps, not on app launch as before
         var totalSteps = 0
-        
-        var now = Date()
-        var startDate = Calendar.current.startOfDay(for: now)
+    
         print("updating steps")
         
-        Pedometer.stepCounter.startUpdates(from: startDate) { (data, error) in
+        var now = Date()
+        
+        Pedometer.stepCounter.startUpdates(from: now) { (data, error) in
             print(data)
             totalSteps = Int(data?.numberOfSteps ?? 0)
         }
@@ -61,7 +59,7 @@ public class StepViewModel {
             viewModel.addCurrency()
         }
         
-        return totalSteps
+        return totalSteps + Int(Pedometer.stepData.first?.numberOfSteps ?? 0)
     }
     
     func stopUpdating() {
@@ -73,18 +71,27 @@ public class StepViewModel {
         return Int(Pedometer.stepData.first?.numberOfSteps ?? 0)
     }
     
-    func metersToday() -> Int  {
-        return Int(Pedometer.stepData.first?.distance ?? 0)
+    func distanceToday() -> Int {
+        if Measures.preferred == .miles {
+            var meters = Double(Pedometer.stepData.first?.distance ?? 0)
+            return Int(meters * 0.000621371)
+        } else {
+            return Int(Pedometer.stepData.first?.distance ?? 0)
+        }
+    }
+    
+    func distanceMeasure() -> String {
+        if Measures.preferred == .miles {
+            return "Miles"
+        } else {
+            return "Meters"
+        }
     }
     
     func getDay(index: Int) -> String {
-        var now = Date()
-        
-        var day = Calendar.current.date(byAdding: .day, value: -index, to: now) ?? Date()
-        
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "EEEE"
-        var dayOfWeek = dateFormatter.string(from: day)
+        dateFormatter.dateFormat = "E, MMM d"
+        var dayOfWeek = dateFormatter.string(from: Pedometer.stepData[index].endDate)
         
         return dayOfWeek
     }
