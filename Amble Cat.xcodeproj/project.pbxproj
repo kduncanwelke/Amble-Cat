@@ -56,6 +56,7 @@
 		2DCB2B5F239EF3B40080DC93 /* animals_cat_meow_003.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2DCB2B5E239EF3B40080DC93 /* animals_cat_meow_003.mp3 */; };
 		2DCB2B61239EF6980080DC93 /* sound_ex_machina_Buttons+-+Glass+Button.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2DCB2B60239EF6980080DC93 /* sound_ex_machina_Buttons+-+Glass+Button.mp3 */; };
 		2DDE569523809B9800398454 /* CareState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DDE569423809B9800398454 /* CareState.swift */; };
+		2DE0BC442603F3CE00D811FF /* StepTotalDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE0BC432603F3CE00D811FF /* StepTotalDelegate.swift */; };
 		2DE860E923552B3B00227A86 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE860E823552B3B00227A86 /* AppDelegate.swift */; };
 		2DE860EB23552B3B00227A86 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE860EA23552B3B00227A86 /* SceneDelegate.swift */; };
 		2DE860ED23552B3B00227A86 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE860EC23552B3B00227A86 /* ViewController.swift */; };
@@ -142,6 +143,7 @@
 		2DCB2B5E239EF3B40080DC93 /* animals_cat_meow_003.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = animals_cat_meow_003.mp3; sourceTree = "<group>"; };
 		2DCB2B60239EF6980080DC93 /* sound_ex_machina_Buttons+-+Glass+Button.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "sound_ex_machina_Buttons+-+Glass+Button.mp3"; sourceTree = "<group>"; };
 		2DDE569423809B9800398454 /* CareState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareState.swift; sourceTree = "<group>"; };
+		2DE0BC432603F3CE00D811FF /* StepTotalDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepTotalDelegate.swift; sourceTree = "<group>"; };
 		2DE860E523552B3B00227A86 /* Amble Cat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Amble Cat.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DE860E823552B3B00227A86 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2DE860EA23552B3B00227A86 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -221,6 +223,7 @@
 				2DA3C65425DC716D004D831E /* UIViewExtension.swift */,
 				2D81355925F6D34400E461ED /* Colors.swift */,
 				2D7BE30525F839B200FADF7F /* ButtonsManager.swift */,
+				2DE0BC432603F3CE00D811FF /* StepTotalDelegate.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -627,6 +630,7 @@
 				2D7146D4235BBF130064B576 /* StoreCollectionViewCell.swift in Sources */,
 				2DA559602360FE50006B3B9D /* PurchaseState.swift in Sources */,
 				2DE860ED23552B3B00227A86 /* ViewController.swift in Sources */,
+				2DE0BC442603F3CE00D811FF /* StepTotalDelegate.swift in Sources */,
 				2D220E3F25CB5A9600D02FE7 /* PawShopViewModel.swift in Sources */,
 				2D7146D0235BB8560064B576 /* StoreInventory.swift in Sources */,
 				2D0C3CFB2363A7E300EA064A /* DecorManager.swift in Sources */,

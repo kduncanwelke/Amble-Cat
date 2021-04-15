@@ -11,7 +11,7 @@ import HealthKit
 import CoreData
 import CoreMotion
 
-class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, StepTotalDelegate {
     
      // MARK: IBOutlets
 
@@ -21,8 +21,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
      
      @IBOutlet weak var currentsBackground: UIView!
      @IBOutlet weak var pointsLabel: UILabel!
-     @IBOutlet weak var collectView: UIView!
-     @IBOutlet weak var collectText: UILabel!
      
      @IBOutlet var hearts: [UIImageView]!
      
@@ -75,8 +73,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
           
           NotificationCenter.default.addObserver(self, selector: #selector(animationEnded), name: NSNotification.Name(rawValue: "animationEnded"), object: nil)
           
-          stepViewModel.getStepData()
-          
           // load sounds
           Sound.loadSound(number: &Sounds.blopSound.number, resourceName: Sounds.blopSound.resourceName, type: Sounds.blopSound.type)
           Sound.loadSound(number: &Sounds.tingSound.number, resourceName: Sounds.tingSound.resourceName, type: Sounds.tingSound.type)
@@ -84,6 +80,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
           Sound.loadSound(number: &Sounds.meowSound.number, resourceName: Sounds.meowSound.resourceName, type: Sounds.meowSound.type)
           Sound.loadSound(number: &Sounds.chirpSound.number, resourceName: Sounds.chirpSound.resourceName, type: Sounds.chirpSound.type)
           Sound.loadSound(number: &Sounds.failSound.number, resourceName: Sounds.failSound.resourceName, type: Sounds.failSound.type)
+          
+          stepViewModel.stepTotalDelegate = self
+          stepViewModel.getStepData()
           
           enterButton.layer.cornerRadius = 21
           rightArrow.layer.cornerRadius = 21
@@ -94,15 +93,19 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
           viewModel.loadMeasure()
           viewModel.loadCareState()
           viewModel.loadEquipment()
-                    
-          viewModel.monitorNetwork()
+          
           loadUI()
+          
+          stepViewModel.addCoinsForMissedSteps()
+          stepViewModel.updateSteps()
+          
           beginAnimation()
     }
 	
      // MARK: Custom functions
      
      func loadUI() {
+          print("load ui")
           pointsLabel.text = "\(viewModel.setPointsLabel()) Paw Points"
           bowlArt.image = viewModel.showFood()
           updateHearts()
@@ -110,9 +113,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
           stepsLabel.text = "\(stepViewModel.stepsToday())"
           measurementLabel.text = stepViewModel.distanceMeasure()
           distanceLabel.text = "\(stepViewModel.distanceToday())"
-          stepsLabel.text = "\(stepViewModel.updateSteps())"
      }
-     
+
      func loadWater() {
           if let empty = viewModel.showWater() {
                waterBowlArt.image = empty
@@ -130,6 +132,11 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                     button.setBackgroundImage(UIImage(named: "none"), for: .normal)
                }
           }
+     }
+     
+     // delegate
+     func updateSteps(stepTotal: Int) {
+          stepsLabel.text = "\(stepTotal)"
      }
      
      @objc func animationEnded() {
@@ -172,7 +179,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
      }
      
      @objc func refreshPoints() {
-          pointsLabel.text = "\(Currency.userTotal) Paw Points"
+          DispatchQueue.main.async {
+               self.pointsLabel.text = "\(Currency.userTotal) Paw Points"
+          }
      }
      
      @objc func refreshView() {
@@ -257,10 +266,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
      // MARK: IBActions
      
-     @IBAction func viewStatsPressed(_ sender: UIButton) {
-          performSegue(withIdentifier: "viewStatistics", sender: Any?.self)
-     }
-     
      @IBAction func enterPressed(_ sender: UIButton) {
           enterButton.animateButton()
           
@@ -309,16 +314,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
           }
           
           changeSelection()
-     }
-     
-     
-     @IBAction func collectButtonTapped(_ sender: UIButton) {
-          Sound.playSound(number: Sounds.tingSound.number)
-        
-          // FIXME
-          viewModel.addCurrency()
-          pointsLabel.text = viewModel.setPointsLabel()
-          viewModel.loadCurrency()
      }
      
      @IBAction func viewInfoTapped(_ sender: UIButton) {

@@ -12,6 +12,5 @@ import StoreKit
 struct StoreManager {
     
     static var request: SKProductsRequest!
-    
     static var products = [SKProduct]()
 }

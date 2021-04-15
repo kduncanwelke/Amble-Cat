@@ -11,6 +11,22 @@ import StoreKit
 
 public class PawShopViewModel {
     
+    func monitorNetwork() {
+        NetworkMonitor.monitor.pathUpdateHandler = { path in
+            if path.status == .satisfied {
+                print("connection successful")
+                NetworkMonitor.connection = true
+                //NotificationCenter.default.post(name: NSNotification.Name(rawValue: "networkRestored"), object: nil)
+            } else {
+                print("no connection")
+                NetworkMonitor.connection = false
+            }
+        }
+        
+        let queue = DispatchQueue(label: "Monitor")
+        NetworkMonitor.monitor.start(queue: queue)
+    }
+    
     var toPurchase: SKProduct?
     var receipt: Receipt?
     
@@ -41,7 +57,6 @@ public class PawShopViewModel {
     func addProducts(products: [SKProduct]) {
         StoreManager.products = products
     }
-
     
     func getTitle(index: IndexPath) -> String {
         return StoreManager.products[index.row].localizedTitle

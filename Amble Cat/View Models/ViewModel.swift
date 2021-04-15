@@ -13,34 +13,6 @@ public class ViewModel {
     
     let userDefaultDate = "userDefaultDate"
     
-    func isAppAlreadyLaunchedOnce() -> Bool {
-        let defaults = UserDefaults.standard
-        
-        if let isAppAlreadyLaunchedOnce = defaults.string(forKey: "isAppAlreadyLaunchedOnce") {
-            print("App already launched : \(isAppAlreadyLaunchedOnce)")
-            return true
-        } else {
-            defaults.set(true, forKey: "isAppAlreadyLaunchedOnce")
-            print("App launched first time")
-            return false
-        }
-    }
-    
-    func isSameDay() -> Bool {
-        let date = Date()
-        let calendar = Calendar.current
-        let dateToCompare = calendar.component(.day , from: date)
-        
-        let userDefaultDate = UserDefaults.standard.integer(forKey: "userDefaultDate")
-        
-        if userDefaultDate != dateToCompare {
-            UserDefaults.standard.set(dateToCompare, forKey: self.userDefaultDate)
-            return false
-        } else {
-            return true
-        }
-    }
-    
     func checkCareProgress() -> Bool {
         print("care progress")
         
@@ -58,23 +30,7 @@ public class ViewModel {
             return false
         }
     }
-    
-    func monitorNetwork() {
-        NetworkMonitor.monitor.pathUpdateHandler = { path in
-            if path.status == .satisfied {
-                print("connection successful")
-                NetworkMonitor.connection = true
-                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "networkRestored"), object: nil)
-            } else {
-                print("no connection")
-                NetworkMonitor.connection = false
-            }
-        }
-        
-        let queue = DispatchQueue(label: "Monitor")
-        NetworkMonitor.monitor.start(queue: queue)
-    }
-    
+
     func getLabelName(tag: Int) -> String {
         return ButtonsManager.buttonNames[tag] ?? ""
     }

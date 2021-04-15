@@ -39,8 +39,17 @@ class PawShopViewController: UIViewController, UITableViewDelegate {
         
         pawPointTotal.text = pawShopViewModel.getCurrencyString()
         
+        pawShopViewModel.monitorNetwork()
+        
         getProducts()
- 
+        
+        if pawShopViewModel.checkForReceipt() {
+            validateReceipt()
+            print("validate on load")
+        } else {
+            refreshReceipt()
+            print("refresh on load")
+        }
     }
 
     // MARK: Custom functions
@@ -48,14 +57,6 @@ class PawShopViewController: UIViewController, UITableViewDelegate {
     @objc func networkRestored() {
         if pawShopViewModel.isProductsEmpty() {
             getProducts()
-        }
-        
-        if Receipt.isReceiptPresent() {
-            validateReceipt()
-            print("validate on load")
-        } else {
-            refreshReceipt()
-            print("refresh on load")
         }
     }
     
@@ -174,9 +175,16 @@ extension PawShopViewController: UITableViewDataSource {
 
 extension PawShopViewController: SKProductsRequestDelegate {
     func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
-        if response.products.count == pawShopViewModel.getProductsCount() {
+        if !response.products.isEmpty {
+            var products = response.products
             
-            pawShopViewModel.addProducts(products: response.products)
+            pawShopViewModel.addProducts(products: products)
+            
+            for product in products {
+                print(product.localizedTitle)
+                print(product.price)
+                print(product.priceLocale)
+            }
             
             DispatchQueue.main.async { [weak self] in
                 self?.tableView.reloadData()

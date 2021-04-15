@@ -267,7 +267,7 @@ extension ViewController {
         catArt.animationImages = AnimationManager.walking
         catArt.animationDuration = 0.5
         catArt.startAnimating()
-        let bathDestination = CGPoint(x: wallArt.frame.width/3.6, y: wallArt.frame.height/1.93)
+        let bathDestination = CGPoint(x: wallArt.frame.width/3.6, y: wallArt.frame.height/1.90)
         
         catArt.move(to: bathDestination, duration: 2.0, options: UIView.AnimationOptions.curveEaseOut)
         AnimationManager.location = .bath

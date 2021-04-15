@@ -202,6 +202,8 @@ extension ViewModel {
                 //showAlert(title: "Save failed", message: "Notice: Data has not successfully been saved.")
             }
             
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "refreshPoints"), object: nil)
+            
             Currency.toAdd = 0
             return
         }

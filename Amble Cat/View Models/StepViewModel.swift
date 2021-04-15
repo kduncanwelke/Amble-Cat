@@ -12,6 +12,8 @@ import CoreMotion
 public class StepViewModel {
     
     private let viewModel = ViewModel()
+    weak var stepTotalDelegate: StepTotalDelegate?
+    let userDefaultDate = "userDefaultDate"
     
     func checkAvailable() {
         print(CMPedometer.isStepCountingAvailable())
@@ -39,36 +41,80 @@ public class StepViewModel {
         }
     }
     
-    func updateSteps() -> Int {
+    func addCoinsForMissedSteps() {
+        let userDefaultDate = UserDefaults.standard.object(forKey: "userDefaultDate") as? Date ?? Date()
+        
+        Pedometer.stepCounter.queryPedometerData(from: userDefaultDate, to: Date()) { (data, error) in
+            print("steps")
+            print(data?.numberOfSteps)
+            var stepsMissed = Int(data?.numberOfSteps ?? 0)
+           
+            print("steps missed \(stepsMissed)")
+            
+            if stepsMissed >= 20 {
+                var coins = stepsMissed / 20
+                print("coins added for missed \(coins)")
+                Currency.toAdd = coins
+                self.viewModel.addCurrency()
+            }
+        }
+    }
+    
+    func updateSteps() {
         // award coins with steps, not on app launch as before
-        var totalSteps = 0
-    
+        var addedSteps = 0
+        
+        var newSteps: Int = 0 {
+            willSet(newTotal) {
+                print("About to set totalSteps to \(newTotal)")
+            }
+            didSet {
+                if newSteps > oldValue  {
+                    print("Added \(newSteps - oldValue) steps")
+                    addedSteps += (newSteps - oldValue)
+                }
+            }
+        }
+        
         print("updating steps")
-        
-        var now = Date()
-        
-        Pedometer.stepCounter.startUpdates(from: now) { (data, error) in
-            print(data)
-            totalSteps = Int(data?.numberOfSteps ?? 0)
-        }
     
-        // update and save coins if awarded
-        if totalSteps >= 20 {
-            var coins = totalSteps / 20
-            Currency.toAdd = coins
-            viewModel.addCurrency()
+        Pedometer.stepCounter.startUpdates(from: Date()) { (data, error) in
+            print(data?.numberOfSteps)
+            newSteps = Int(data?.numberOfSteps ?? 0)
+            
+            var stepTotal = Int(Pedometer.stepData.first?.numberOfSteps ?? 0) + newSteps
+            
+            DispatchQueue.main.async {
+                self.stepTotalDelegate?.updateSteps(stepTotal: stepTotal)
+                
+                // update and save coins if awarded
+                if addedSteps >= 20 {
+                    var coins = addedSteps / 20
+                    print("coins \(coins)")
+                    Currency.toAdd = coins
+                    self.viewModel.addCurrency()
+                    
+                    var newValue = addedSteps % 20
+                    addedSteps = newValue
+                    print(newValue)
+                }
+            }
         }
-        
-        return totalSteps + Int(Pedometer.stepData.first?.numberOfSteps ?? 0)
     }
     
     func stopUpdating() {
         // stop when app is in background/terminated
+        print("stop updating")
         Pedometer.stepCounter.stopUpdates()
+        
+        // set userdefaults date, used to track last time steps were added
+        let now = Date()
+        UserDefaults.standard.set(now, forKey: self.userDefaultDate)
     }
     
     func stepsToday() -> Int  {
-        return Int(Pedometer.stepData.first?.numberOfSteps ?? 0)
+        print("steps today")
+        return getSteps(index: 0)
     }
     
     func distanceToday() -> Int {
@@ -98,6 +144,7 @@ public class StepViewModel {
     
     func getSteps(index: Int) -> Int {
         if Pedometer.stepData.isEmpty {
+            print("data empty")
             return 0
         }
         
