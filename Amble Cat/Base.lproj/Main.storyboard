@@ -195,15 +195,23 @@
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nowaterblue" translatesAutoresizingMaskIntoConstraints="NO" id="nr0-kZ-WzT">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
                                             </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="outside1" translatesAutoresizingMaskIntoConstraints="NO" id="Cld-Vm-rnL">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="walkleft" translatesAutoresizingMaskIntoConstraints="NO" id="y7V-ho-qCH">
+                                                <rect key="frame" x="136.5" y="204" width="141" height="91"/>
+                                            </imageView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
                                             <constraint firstItem="2pe-Vp-Fyw" firstAttribute="height" secondItem="kLQ-UF-HE3" secondAttribute="height" multiplier="0.219807" id="2k9-1s-7IR"/>
+                                            <constraint firstItem="y7V-ho-qCH" firstAttribute="height" secondItem="2pe-Vp-Fyw" secondAttribute="height" id="2kd-8c-TTj"/>
                                             <constraint firstItem="e59-3N-6cE" firstAttribute="height" secondItem="kLQ-UF-HE3" secondAttribute="height" id="31V-o5-cAP"/>
                                             <constraint firstItem="fbB-UU-SLQ" firstAttribute="centerX" secondItem="kLQ-UF-HE3" secondAttribute="centerX" id="31n-aN-hOD"/>
                                             <constraint firstItem="bdQ-Et-KHy" firstAttribute="width" secondItem="kLQ-UF-HE3" secondAttribute="width" id="4Lj-T7-tsE"/>
                                             <constraint firstItem="kmY-BW-XTE" firstAttribute="centerX" secondItem="kLQ-UF-HE3" secondAttribute="centerX" id="6ey-VC-3hW"/>
                                             <constraint firstItem="xqr-Er-2jF" firstAttribute="centerX" secondItem="kLQ-UF-HE3" secondAttribute="centerX" id="7lR-qV-mCy"/>
+                                            <constraint firstItem="Cld-Vm-rnL" firstAttribute="width" secondItem="ZX0-Qb-1jX" secondAttribute="width" id="88N-ih-wHb"/>
                                             <constraint firstAttribute="trailing" secondItem="2pe-Vp-Fyw" secondAttribute="trailing" id="8am-pJ-ykP"/>
                                             <constraint firstItem="fbB-UU-SLQ" firstAttribute="width" secondItem="kLQ-UF-HE3" secondAttribute="width" id="8fN-GZ-xfT"/>
                                             <constraint firstItem="xqr-Er-2jF" firstAttribute="centerY" secondItem="kLQ-UF-HE3" secondAttribute="centerY" id="BZa-K2-65O"/>
@@ -216,9 +224,11 @@
                                             <constraint firstItem="oFB-lV-nW2" firstAttribute="centerY" secondItem="kLQ-UF-HE3" secondAttribute="centerY" id="Ial-E6-f0g"/>
                                             <constraint firstItem="e59-3N-6cE" firstAttribute="centerX" secondItem="kLQ-UF-HE3" secondAttribute="centerX" id="Ixy-ua-q1e"/>
                                             <constraint firstItem="oFB-lV-nW2" firstAttribute="height" secondItem="kLQ-UF-HE3" secondAttribute="height" id="Jyr-h8-eQm"/>
+                                            <constraint firstItem="y7V-ho-qCH" firstAttribute="centerX" secondItem="Cld-Vm-rnL" secondAttribute="centerX" id="KRP-dc-59U"/>
                                             <constraint firstItem="ZX0-Qb-1jX" firstAttribute="centerY" secondItem="kLQ-UF-HE3" secondAttribute="centerY" id="Kmt-A9-krg"/>
                                             <constraint firstItem="xqr-Er-2jF" firstAttribute="height" secondItem="kLQ-UF-HE3" secondAttribute="height" id="LZP-dx-pSj"/>
                                             <constraint firstItem="2pe-Vp-Fyw" firstAttribute="width" secondItem="kLQ-UF-HE3" secondAttribute="width" multiplier="0.34" id="M4m-Ip-1QO"/>
+                                            <constraint firstItem="Cld-Vm-rnL" firstAttribute="height" secondItem="ZX0-Qb-1jX" secondAttribute="height" id="N4j-iH-rrX"/>
                                             <constraint firstItem="e59-3N-6cE" firstAttribute="centerY" secondItem="kLQ-UF-HE3" secondAttribute="centerY" id="NMs-Qh-edh"/>
                                             <constraint firstItem="nr0-kZ-WzT" firstAttribute="centerX" secondItem="kLQ-UF-HE3" secondAttribute="centerX" id="Nkh-9p-f7e"/>
                                             <constraint firstAttribute="bottom" secondItem="2pe-Vp-Fyw" secondAttribute="bottom" constant="74" id="PN6-dp-pw0"/>
@@ -233,17 +243,21 @@
                                             <constraint firstItem="fbB-UU-SLQ" firstAttribute="height" secondItem="kLQ-UF-HE3" secondAttribute="height" id="Xx6-6F-phQ"/>
                                             <constraint firstItem="e59-3N-6cE" firstAttribute="width" secondItem="kLQ-UF-HE3" secondAttribute="width" id="YN6-v9-ahk"/>
                                             <constraint firstItem="lG3-Ds-PDX" firstAttribute="centerX" secondItem="ZX0-Qb-1jX" secondAttribute="centerX" id="aNr-Zf-Mv6"/>
+                                            <constraint firstItem="y7V-ho-qCH" firstAttribute="width" secondItem="2pe-Vp-Fyw" secondAttribute="width" id="arS-ri-7m5"/>
                                             <constraint firstItem="oFB-lV-nW2" firstAttribute="width" secondItem="kLQ-UF-HE3" secondAttribute="width" id="bk2-Yi-hzI"/>
                                             <constraint firstItem="ZX0-Qb-1jX" firstAttribute="height" secondItem="kLQ-UF-HE3" secondAttribute="height" id="c8t-MH-1W5"/>
                                             <constraint firstItem="nCD-I7-M00" firstAttribute="width" secondItem="kLQ-UF-HE3" secondAttribute="width" id="d3d-WB-mVb"/>
                                             <constraint firstItem="EGI-IM-dbU" firstAttribute="centerX" secondItem="kLQ-UF-HE3" secondAttribute="centerX" id="eDD-KT-rnK"/>
                                             <constraint firstItem="nCD-I7-M00" firstAttribute="centerY" secondItem="kLQ-UF-HE3" secondAttribute="centerY" id="gWN-6D-YYm"/>
+                                            <constraint firstItem="y7V-ho-qCH" firstAttribute="top" secondItem="Cld-Vm-rnL" secondAttribute="bottom" constant="-210" id="iIQ-r2-7e1"/>
                                             <constraint firstItem="EGI-IM-dbU" firstAttribute="centerY" secondItem="kLQ-UF-HE3" secondAttribute="centerY" id="iJL-Ga-npV"/>
                                             <constraint firstItem="RIM-GI-Cjl" firstAttribute="height" secondItem="kLQ-UF-HE3" secondAttribute="height" id="jfY-qL-euX"/>
                                             <constraint firstItem="EGI-IM-dbU" firstAttribute="width" secondItem="kLQ-UF-HE3" secondAttribute="width" id="loJ-F0-lRs"/>
                                             <constraint firstItem="bdQ-Et-KHy" firstAttribute="centerX" secondItem="kLQ-UF-HE3" secondAttribute="centerX" id="mE0-tG-Cii"/>
+                                            <constraint firstItem="Cld-Vm-rnL" firstAttribute="centerY" secondItem="ZX0-Qb-1jX" secondAttribute="centerY" id="mdw-xM-KgU"/>
                                             <constraint firstItem="lG3-Ds-PDX" firstAttribute="height" secondItem="ZX0-Qb-1jX" secondAttribute="height" id="oee-HB-MOJ"/>
                                             <constraint firstItem="ZX0-Qb-1jX" firstAttribute="width" secondItem="kLQ-UF-HE3" secondAttribute="width" id="ohF-SD-JLp"/>
+                                            <constraint firstItem="Cld-Vm-rnL" firstAttribute="centerX" secondItem="ZX0-Qb-1jX" secondAttribute="centerX" id="p0d-ik-Fzt"/>
                                             <constraint firstItem="bdQ-Et-KHy" firstAttribute="height" secondItem="kLQ-UF-HE3" secondAttribute="height" id="p58-or-ZjN"/>
                                             <constraint firstItem="RIM-GI-Cjl" firstAttribute="width" secondItem="kLQ-UF-HE3" secondAttribute="width" id="p6S-S2-vlr"/>
                                             <constraint firstItem="lG3-Ds-PDX" firstAttribute="width" secondItem="ZX0-Qb-1jX" secondAttribute="width" id="sq1-QL-heZ"/>
@@ -416,6 +430,7 @@
                         <outlet property="infoButton" destination="jlK-fx-pO5" id="eXW-NJ-4Xl"/>
                         <outlet property="leftArrow" destination="wZ8-MY-gwX" id="cpo-vu-uMr"/>
                         <outlet property="measurementLabel" destination="FZX-Gw-g6e" id="XOM-6L-qmA"/>
+                        <outlet property="outsideBackground" destination="Cld-Vm-rnL" id="Qcw-Vr-iso"/>
                         <outlet property="pictureArt" destination="xqr-Er-2jF" id="KSL-3i-Jj4"/>
                         <outlet property="pointsLabel" destination="IrE-at-fz9" id="o9n-Gx-LIy"/>
                         <outlet property="rightArrow" destination="P0e-XR-Odj" id="YOW-BI-mZq"/>
@@ -423,6 +438,7 @@
                         <outlet property="selectionLabel" destination="rs1-C2-6hF" id="fUx-EJ-dLW"/>
                         <outlet property="stepsLabel" destination="nRU-5R-Tmo" id="duM-LE-BVi"/>
                         <outlet property="toyArt" destination="EGI-IM-dbU" id="D8I-fd-BTK"/>
+                        <outlet property="walkingOutside" destination="y7V-ho-qCH" id="kwi-T3-M3g"/>
                         <outlet property="wallArt" destination="ZX0-Qb-1jX" id="yBZ-fr-0gS"/>
                         <outlet property="waterBowlArt" destination="nr0-kZ-WzT" id="FeU-Wn-AYN"/>
                         <outlet property="windowArt" destination="e59-3N-6cE" id="BuH-eX-bzd"/>
@@ -1270,10 +1286,12 @@
         <image name="lucyphoto" width="300" height="300"/>
         <image name="none" width="3000" height="3000"/>
         <image name="nowaterblue" width="3000" height="3000"/>
+        <image name="outside1" width="3000" height="3000"/>
         <image name="paw" width="75" height="75"/>
         <image name="picture" width="3000" height="3000"/>
         <image name="pointshop" width="450" height="450"/>
         <image name="select" width="450" height="450"/>
+        <image name="walkleft" width="1000" height="653"/>
         <image name="window" width="3000" height="3000"/>
     </resources>
 </document>

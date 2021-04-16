@@ -39,6 +39,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
      
      @IBOutlet weak var bath: UIImageView!
      @IBOutlet weak var bathEdge: UIImageView!
+     @IBOutlet weak var outsideBackground: UIImageView!
+     @IBOutlet weak var walkingOutside: UIImageView!
      
      @IBOutlet var buttons: [UIButton]!
      
@@ -113,6 +115,12 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
           stepsLabel.text = "\(stepViewModel.stepsToday())"
           measurementLabel.text = stepViewModel.distanceMeasure()
           distanceLabel.text = "\(stepViewModel.distanceToday())"
+     }
+     
+     func toggleOutside() {
+          // toggle view of outside or not
+          outsideBackground.isHidden = true
+          walkingOutside.isHidden = true
      }
 
      func loadWater() {

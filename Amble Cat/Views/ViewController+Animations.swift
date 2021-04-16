@@ -139,6 +139,12 @@ extension ViewController {
         }
     }
     
+    func animateOutside() {
+        outsideBackground.animationImages = AnimationManager.outside
+        outsideBackground.animationDuration = 3.0
+        outsideBackground.startAnimating()
+    }
+    
     func pauseCat() {
         catArt.image = AnimationManager.pause.randomElement()
         AnimationTimer.beginTimer(once: false)
