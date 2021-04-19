@@ -101,7 +101,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
           stepViewModel.addCoinsForMissedSteps()
           stepViewModel.updateSteps()
           
-          beginAnimation()
+          animateOutside()
+          
+          //beginAnimation()
     }
 	
      // MARK: Custom functions
@@ -320,7 +322,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
           if selectedIndex != buttons.count-1 {
                selectedIndex += 1
           }
-          
+     
           changeSelection()
      }
      

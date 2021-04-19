@@ -15,30 +15,36 @@ extension ViewController {
         print("begin animation")
         catArt.stopAnimating()
         
-        if paused {
-            return
-        }
-        
-        var staying = Bool.random()
-        
-        if staying {
-            var placeAnimation = Bool.random()
-            
-            if placeAnimation {
-                print("random place")
-                randomPlaceAnimation()
-            } else {
-                print("random staying")
-                randomStaying()
-            }
+        if outsideBackground.isAnimating || walkingOutside.isAnimating {
+            outsideBackground.stopAnimating()
+            randomOutside()
         } else {
-            var pause = Bool.random()
             
-            if pause {
-                pauseCat()
+            if paused {
+                return
+            }
+            
+            var staying = Bool.random()
+            
+            if staying {
+                var placeAnimation = Bool.random()
+                
+                if placeAnimation {
+                    print("random place")
+                    randomPlaceAnimation()
+                } else {
+                    print("random staying")
+                    randomStaying()
+                }
             } else {
-                print("random move")
-                randomMove()
+                var pause = Bool.random()
+                
+                if pause {
+                    pauseCat()
+                } else {
+                    print("random move")
+                    randomMove()
+                }
             }
         }
     }
@@ -139,50 +145,104 @@ extension ViewController {
         }
     }
     
+    // MARK: Outdoor animations
+    
     func animateOutside() {
         outsideBackground.animationImages = AnimationManager.outside
-        outsideBackground.animationDuration = 3.0
+        outsideBackground.animationDuration = 6.5
         outsideBackground.startAnimating()
+        
+        walkingOutside.animationImages = AnimationManager.walking
+        walkingOutside.animationDuration = 1.0
+        walkingOutside.startAnimating()
+        AnimationTimer.beginTimer(once: false, outdoors: true)
+    }
+    
+    func randomOutside() {
+        var staying = Bool.random()
+        
+        if staying {
+            var tail = Bool.random()
+            var washing = Bool.random()
+            
+            if tail {
+                sitTailOutside()
+            } else if washing {
+                washOutside()
+            } else {
+                sitBlinkOutside()
+            }
+        } else {
+            animateOutside()
+        }
+    }
+    
+    func sitTailOutside() {
+        walkingOutside.animationImages = AnimationManager.sitTail
+        walkingOutside.animationDuration = 2.0
+        walkingOutside.startAnimating()
+        AnimationTimer.beginTimer(once: false, outdoors: false)
+    }
+    
+    func sitBlinkOutside() {
+        walkingOutside.animationImages = AnimationManager.sitBlink
+        walkingOutside.animationDuration = 3.0
+        walkingOutside.startAnimating()
+        AnimationTimer.beginTimer(once: true, outdoors: false)
+    }
+    
+    func washOutside() {
+        walkingOutside.animationImages = AnimationManager.wash
+        walkingOutside.animationDuration = 2.0
+        walkingOutside.startAnimating()
+        AnimationTimer.beginTimer(once: false, outdoors: false)
+    }
+    
+    // MARK: Indoor animations
+    
+    func stopWalkingOutside() {
+        walkingOutside.stopAnimating()
+        outsideBackground.stopAnimating()
     }
     
     func pauseCat() {
         catArt.image = AnimationManager.pause.randomElement()
-        AnimationTimer.beginTimer(once: false)
+        AnimationTimer.beginTimer(once: false, outdoors: false)
     }
     
     func sit() {
         catArt.image = AnimationManager.sitDown
         catArt.animationDuration = 1.0
         catArt.startAnimating()
-        AnimationTimer.beginTimer(once: true)
+        AnimationTimer.beginTimer(once: true, outdoors: false)
     }
     
     func frontSit() {
         catArt.animationImages = AnimationManager.frontSit
         catArt.animationDuration = 1.0
         catArt.startAnimating()
-        AnimationTimer.beginTimer(once: true)
+        AnimationTimer.beginTimer(once: true, outdoors: false)
     }
     
     func stand() {
         catArt.image = AnimationManager.standUp
         catArt.animationDuration = 1.0
         catArt.startAnimating()
-        AnimationTimer.beginTimer(once: true)
+        AnimationTimer.beginTimer(once: true, outdoors: false)
     }
     
     func sitTail() {
         catArt.animationImages = AnimationManager.sitTail
         catArt.animationDuration = 2.0
         catArt.startAnimating()
-        AnimationTimer.beginTimer(once: false)
+        AnimationTimer.beginTimer(once: false, outdoors: false)
     }
     
     func sitBlink() {
         catArt.animationImages = AnimationManager.sitBlink
         catArt.animationDuration = 3.0
         catArt.startAnimating()
-        AnimationTimer.beginTimer(once: true)
+        AnimationTimer.beginTimer(once: true, outdoors: false)
     }
     
     func moveToMiddle() {
@@ -211,7 +271,7 @@ extension ViewController {
         catArt.animationImages = AnimationManager.eating
         catArt.animationDuration = 1.5
         catArt.startAnimating()
-        AnimationTimer.beginTimer(once: false)
+        AnimationTimer.beginTimer(once: false, outdoors: false)
     }
     
     func moveToWater() {
@@ -229,7 +289,7 @@ extension ViewController {
         catArt.animationImages = AnimationManager.drinking
         catArt.animationDuration = 1.0
         catArt.startAnimating()
-        AnimationTimer.beginTimer(once: false)
+        AnimationTimer.beginTimer(once: false, outdoors: false)
     }
     
     func moveToBed() {
@@ -247,7 +307,7 @@ extension ViewController {
         catArt.animationImages = AnimationManager.sleep
         catArt.animationDuration = 3.0
         catArt.startAnimating()
-        AnimationTimer.beginTimer(once: false)
+        AnimationTimer.beginTimer(once: false, outdoors: false)
     }
     
     func moveToToy() {
@@ -265,7 +325,7 @@ extension ViewController {
         catArt.animationImages = AnimationManager.play
         catArt.animationDuration = 1.5
         catArt.startAnimating()
-        AnimationTimer.beginTimer(once: false)
+        AnimationTimer.beginTimer(once: false, outdoors: false)
     }
     
     func moveToBath() {
@@ -284,7 +344,7 @@ extension ViewController {
         catArt.animationImages = AnimationManager.wash
         catArt.animationDuration = 2.0
         catArt.startAnimating()
-        AnimationTimer.beginTimer(once: false)
+        AnimationTimer.beginTimer(once: false, outdoors: false)
     }
     
     func animateWater() {

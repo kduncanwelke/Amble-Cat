@@ -198,7 +198,7 @@
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="outside1" translatesAutoresizingMaskIntoConstraints="NO" id="Cld-Vm-rnL">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="walkleft" translatesAutoresizingMaskIntoConstraints="NO" id="y7V-ho-qCH">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sideleft" translatesAutoresizingMaskIntoConstraints="NO" id="y7V-ho-qCH">
                                                 <rect key="frame" x="136.5" y="204" width="141" height="91"/>
                                             </imageView>
                                         </subviews>
@@ -840,7 +840,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Point Shop" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RKm-jq-2as">
-                                <rect key="frame" x="129.5" y="74" width="155.5" height="17"/>
+                                <rect key="frame" x="165" y="74" width="84.5" height="20"/>
                                 <fontDescription key="fontDescription" name="Dogica_Pixel_Bold" family="Dogica Pixel" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -853,19 +853,19 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Purchased points will be added to your current total" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="peM-Be-2Lg">
-                                <rect key="frame" x="20" y="116" width="374" height="24"/>
+                                <rect key="frame" x="20" y="119" width="374" height="14"/>
                                 <fontDescription key="fontDescription" name="Dogica_Pixel" family="Dogica Pixel" pointSize="12"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5sD-uS-Tzx">
-                                <rect key="frame" x="53" y="57.5" width="14" height="16"/>
+                                <rect key="frame" x="53" y="56" width="9" height="19"/>
                                 <fontDescription key="fontDescription" name="Dogica_Pixel" family="Dogica Pixel" pointSize="16"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Bz4-3S-FNX">
-                                <rect key="frame" x="20" y="165" width="374" height="612"/>
+                                <rect key="frame" x="20" y="158" width="374" height="619"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="pawShopCell" rowHeight="185" id="DD8-Mq-hOF" customClass="PawShopTableViewCell" customModule="Amble_Cat" customModuleProvider="target">
@@ -889,22 +889,22 @@
                                                     </constraints>
                                                 </view>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="JJq-Bh-8HU">
-                                                    <rect key="frame" x="152" y="53.5" width="202" height="66.5"/>
+                                                    <rect key="frame" x="152" y="49.5" width="202" height="74"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Eg-Lf-nAo">
-                                                            <rect key="frame" x="0.0" y="0.0" width="202" height="17"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="202" height="20"/>
                                                             <fontDescription key="fontDescription" name="Dogica_Pixel_Bold" family="Dogica Pixel" pointSize="17"/>
                                                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bVi-m2-ggr">
-                                                            <rect key="frame" x="0.0" y="27" width="202" height="15"/>
+                                                            <rect key="frame" x="0.0" y="30" width="202" height="17.5"/>
                                                             <fontDescription key="fontDescription" name="Dogica_Pixel" family="Dogica Pixel" pointSize="15"/>
                                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zS4-88-Nrw">
-                                                            <rect key="frame" x="0.0" y="52" width="202" height="14.5"/>
+                                                            <rect key="frame" x="0.0" y="57.5" width="202" height="16.5"/>
                                                             <fontDescription key="fontDescription" name="Dogica_Pixel" family="Dogica Pixel" pointSize="14"/>
                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
@@ -1291,7 +1291,7 @@
         <image name="picture" width="3000" height="3000"/>
         <image name="pointshop" width="450" height="450"/>
         <image name="select" width="450" height="450"/>
-        <image name="walkleft" width="1000" height="653"/>
+        <image name="sideleft" width="1000" height="653"/>
         <image name="window" width="3000" height="3000"/>
     </resources>
 </document>
