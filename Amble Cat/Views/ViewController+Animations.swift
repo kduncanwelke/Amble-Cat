@@ -11,14 +11,20 @@ import UIKit
 
 extension ViewController {
 
-    func beginAnimation() {
+    func beginAnimation(inMotion: Bool) {
         print("begin animation")
         catArt.stopAnimating()
         
-        if outsideBackground.isAnimating || walkingOutside.isAnimating {
+        var showOutside = Bool.random()
+            
+        if showOutside && inMotion && (outsideBackground.isHidden && walkingOutside.isHidden) {
+            toggleOutside()
+            randomOutside(moving: inMotion)
+        } else if outsideBackground.isAnimating || walkingOutside.isAnimating {
             outsideBackground.stopAnimating()
-            randomOutside()
+            randomOutside(moving: inMotion)
         } else {
+            disappearOutside()
             
             if paused {
                 return
@@ -158,10 +164,10 @@ extension ViewController {
         AnimationTimer.beginTimer(once: false, outdoors: true)
     }
     
-    func randomOutside() {
-        var staying = Bool.random()
-        
-        if staying {
+    func randomOutside(moving: Bool) {
+        if moving {
+            animateOutside()
+        } else {
             var tail = Bool.random()
             var washing = Bool.random()
             
@@ -172,8 +178,6 @@ extension ViewController {
             } else {
                 sitBlinkOutside()
             }
-        } else {
-            animateOutside()
         }
     }
     

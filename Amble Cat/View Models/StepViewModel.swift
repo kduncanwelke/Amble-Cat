@@ -112,6 +112,18 @@ public class StepViewModel {
         UserDefaults.standard.set(now, forKey: self.userDefaultDate)
     }
     
+    func startMotionUpdates() {
+        Pedometer.motionManager.startAccelerometerUpdates()
+    }
+    
+    func isMoving() -> Bool {
+        if Pedometer.motionManager.accelerometerData != nil {
+            return true
+        } else {
+            return false
+        }
+    }
+    
     func stepsToday() -> Int  {
         print("steps today")
         return getSteps(index: 0)
@@ -137,9 +149,15 @@ public class StepViewModel {
     func getDay(index: Int) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "E, MMM d"
-        var dayOfWeek = dateFormatter.string(from: Pedometer.stepData[index].endDate)
         
-        return dayOfWeek
+        if !Pedometer.stepData.isEmpty {
+            var dayOfWeek = dateFormatter.string(from: Pedometer.stepData[index].endDate)
+            return dayOfWeek
+        } else {
+            var day = Calendar.current.date(byAdding: .day, value: -index, to: Date())
+            var dayOfWeek = dateFormatter.string(from: Date())
+            return dayOfWeek
+        }
     }
     
     func getSteps(index: Int) -> Int {

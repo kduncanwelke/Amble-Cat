@@ -13,4 +13,6 @@ struct Pedometer {
     
     static let stepCounter = CMPedometer()
     static var stepData: [CMPedometerData] = []
+    
+    static let motionManager = CMMotionManager()
 }

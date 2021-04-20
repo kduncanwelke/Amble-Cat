@@ -85,6 +85,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
           
           stepViewModel.stepTotalDelegate = self
           stepViewModel.getStepData()
+          stepViewModel.startMotionUpdates()
           
           enterButton.layer.cornerRadius = 21
           rightArrow.layer.cornerRadius = 21
@@ -101,9 +102,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
           stepViewModel.addCoinsForMissedSteps()
           stepViewModel.updateSteps()
           
-          animateOutside()
+          //animateOutside()
           
-          //beginAnimation()
+          beginAnimation(inMotion: stepViewModel.isMoving())
     }
 	
      // MARK: Custom functions
@@ -119,10 +120,14 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
           distanceLabel.text = "\(stepViewModel.distanceToday())"
      }
      
-     func toggleOutside() {
-          // toggle view of outside or not
+     func disappearOutside() {
           outsideBackground.isHidden = true
           walkingOutside.isHidden = true
+     }
+     
+     func toggleOutside() {
+          outsideBackground.isHidden = false
+          walkingOutside.isHidden = false
      }
 
      func loadWater() {
@@ -150,7 +155,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
      }
      
      @objc func animationEnded() {
-          beginAnimation()
+          beginAnimation(inMotion: stepViewModel.isMoving())
      }
      
      @objc func addPurchasedCurrency() {
@@ -196,7 +201,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
      
      @objc func refreshView() {
           paused = false
-          beginAnimation()
+          beginAnimation(inMotion: stepViewModel.isMoving())
      }
      
      @objc func decorChanged() {
