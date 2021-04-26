@@ -195,6 +195,16 @@
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nowaterblue" translatesAutoresizingMaskIntoConstraints="NO" id="nr0-kZ-WzT">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
                                             </imageView>
+                                            <imageView hidden="YES" clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="paw" translatesAutoresizingMaskIntoConstraints="NO" id="dmh-ju-GUJ">
+                                                <rect key="frame" x="182" y="264" width="50" height="49.5"/>
+                                                <gestureRecognizers/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="dmh-ju-GUJ" secondAttribute="height" multiplier="1:1" id="9WK-2X-ccn"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="luI-0f-oTB" appends="YES" id="Z08-xQ-Phx"/>
+                                                </connections>
+                                            </imageView>
                                             <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="outside1" translatesAutoresizingMaskIntoConstraints="NO" id="Cld-Vm-rnL">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
                                             </imageView>
@@ -216,10 +226,12 @@
                                             <constraint firstItem="fbB-UU-SLQ" firstAttribute="width" secondItem="kLQ-UF-HE3" secondAttribute="width" id="8fN-GZ-xfT"/>
                                             <constraint firstItem="xqr-Er-2jF" firstAttribute="centerY" secondItem="kLQ-UF-HE3" secondAttribute="centerY" id="BZa-K2-65O"/>
                                             <constraint firstItem="nr0-kZ-WzT" firstAttribute="height" secondItem="kLQ-UF-HE3" secondAttribute="height" id="BvG-tO-HSx"/>
+                                            <constraint firstItem="dmh-ju-GUJ" firstAttribute="width" secondItem="ZX0-Qb-1jX" secondAttribute="width" multiplier="0.12" id="CoI-wh-eAe"/>
                                             <constraint firstItem="nCD-I7-M00" firstAttribute="centerX" secondItem="kLQ-UF-HE3" secondAttribute="centerX" id="EjR-vT-ISc"/>
                                             <constraint firstItem="EGI-IM-dbU" firstAttribute="height" secondItem="kLQ-UF-HE3" secondAttribute="height" id="GHH-BT-a6a"/>
                                             <constraint firstItem="kmY-BW-XTE" firstAttribute="height" secondItem="kLQ-UF-HE3" secondAttribute="height" id="HAz-mi-9kM"/>
                                             <constraint firstItem="ZX0-Qb-1jX" firstAttribute="centerX" secondItem="kLQ-UF-HE3" secondAttribute="centerX" id="HID-za-Yys"/>
+                                            <constraint firstItem="dmh-ju-GUJ" firstAttribute="centerX" secondItem="ZX0-Qb-1jX" secondAttribute="centerX" id="HIh-tM-UXc"/>
                                             <constraint firstItem="kmY-BW-XTE" firstAttribute="centerY" secondItem="kLQ-UF-HE3" secondAttribute="centerY" id="IaM-UL-Q0I"/>
                                             <constraint firstItem="oFB-lV-nW2" firstAttribute="centerY" secondItem="kLQ-UF-HE3" secondAttribute="centerY" id="Ial-E6-f0g"/>
                                             <constraint firstItem="e59-3N-6cE" firstAttribute="centerX" secondItem="kLQ-UF-HE3" secondAttribute="centerX" id="Ixy-ua-q1e"/>
@@ -260,6 +272,7 @@
                                             <constraint firstItem="Cld-Vm-rnL" firstAttribute="centerX" secondItem="ZX0-Qb-1jX" secondAttribute="centerX" id="p0d-ik-Fzt"/>
                                             <constraint firstItem="bdQ-Et-KHy" firstAttribute="height" secondItem="kLQ-UF-HE3" secondAttribute="height" id="p58-or-ZjN"/>
                                             <constraint firstItem="RIM-GI-Cjl" firstAttribute="width" secondItem="kLQ-UF-HE3" secondAttribute="width" id="p6S-S2-vlr"/>
+                                            <constraint firstItem="dmh-ju-GUJ" firstAttribute="top" secondItem="ZX0-Qb-1jX" secondAttribute="bottom" constant="-150" id="qwH-vK-Ll5"/>
                                             <constraint firstItem="lG3-Ds-PDX" firstAttribute="width" secondItem="ZX0-Qb-1jX" secondAttribute="width" id="sq1-QL-heZ"/>
                                             <constraint firstItem="xqr-Er-2jF" firstAttribute="width" secondItem="kLQ-UF-HE3" secondAttribute="width" id="tqX-jA-Kaj"/>
                                             <constraint firstItem="nr0-kZ-WzT" firstAttribute="centerY" secondItem="kLQ-UF-HE3" secondAttribute="centerY" id="uIW-N7-H90"/>
@@ -420,6 +433,7 @@
                         <outlet property="bath" destination="bdQ-Et-KHy" id="oXE-PJ-FTp"/>
                         <outlet property="bathEdge" destination="lG3-Ds-PDX" id="sbo-tg-hft"/>
                         <outlet property="bedArt" destination="kmY-BW-XTE" id="pfb-wD-xdg"/>
+                        <outlet property="bonus" destination="dmh-ju-GUJ" id="Rfe-1L-SOU"/>
                         <outlet property="bowlArt" destination="nCD-I7-M00" id="X5A-Qm-i5S"/>
                         <outlet property="catArt" destination="2pe-Vp-Fyw" id="GGP-EN-Fsx"/>
                         <outlet property="currentsBackground" destination="5w5-VM-nPb" id="Vic-CI-aju"/>
@@ -461,6 +475,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="luI-0f-oTB">
+                    <connections>
+                        <action selector="bonusTapped:" destination="BYZ-38-t0r" id="t4d-3y-34b"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="116.51785714285714"/>
         </scene>
@@ -676,10 +695,10 @@
                                 <rect key="frame" x="20" y="54" width="374" height="798"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="AGg-dw-MHp">
-                                        <rect key="frame" x="7" y="0.0" width="360.5" height="309"/>
+                                        <rect key="frame" x="0.5" y="0.0" width="373" height="383.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="bhv-N3-eno">
-                                                <rect key="frame" x="31.5" y="0.0" width="297" height="89.5"/>
+                                                <rect key="frame" x="38" y="0.0" width="297" height="89.5"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lucyphoto" translatesAutoresizingMaskIntoConstraints="NO" id="8O1-4d-wrL">
                                                         <rect key="frame" x="0.0" y="0.0" width="90" height="89.5"/>
@@ -696,25 +715,25 @@
                                                 </subviews>
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pictured is the real-life Lucy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SU0-Db-uvl">
-                                                <rect key="frame" x="44.5" y="104.5" width="271.5" height="12"/>
+                                                <rect key="frame" x="51" y="104.5" width="271.5" height="12"/>
                                                 <fontDescription key="fontDescription" name="Dogica_Pixel" family="Dogica Pixel" pointSize="12"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="App and art by kduncan-welke.com" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aUz-K5-enj">
-                                                <rect key="frame" x="55.5" y="131.5" width="249.5" height="30"/>
+                                                <rect key="frame" x="62" y="131.5" width="249.5" height="30"/>
                                                 <fontDescription key="fontDescription" name="Dogica_Pixel_Bold" family="Dogica Pixel" pointSize="15"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sounds by zapsplat.com, and Mark DiAngelo and Popup Pixels on soundbible.com " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EPb-Hw-hFJ">
-                                                <rect key="frame" x="0.0" y="176.5" width="360.5" height="42.5"/>
+                                                <rect key="frame" x="6.5" y="176.5" width="360.5" height="42.5"/>
                                                 <fontDescription key="fontDescription" name="Dogica_Pixel" family="Dogica Pixel" pointSize="14"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="vQV-9t-Wfe">
-                                                <rect key="frame" x="10.5" y="234" width="339" height="30"/>
+                                                <rect key="frame" x="17" y="234" width="339" height="30"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Qu-UW-FXN">
                                                         <rect key="frame" x="0.0" y="0.0" width="155" height="30"/>
@@ -724,7 +743,7 @@
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="Dogica_Pixel" family="Dogica Pixel" pointSize="12"/>
                                                         <state key="normal" title="   Zapsplat.com   ">
-                                                            <color key="titleColor" red="1" green="0.75476870340000002" blue="0.71852897049999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="titleColor" red="1" green="0.75294117647058822" blue="0.71764705882352942" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
                                                         <connections>
                                                             <action selector="zapsplat:" destination="n5Z-Ee-q2v" eventType="touchUpInside" id="F5x-oY-9nq"/>
@@ -747,7 +766,7 @@
                                                 </subviews>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ar8-uD-Yjn">
-                                                <rect key="frame" x="53" y="279" width="254" height="30"/>
+                                                <rect key="frame" x="59.5" y="279" width="254" height="30"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="wgf-yR-SAF"/>
@@ -760,10 +779,30 @@
                                                     <action selector="privacyPolicy:" destination="n5Z-Ee-q2v" eventType="touchUpInside" id="mCu-HN-fYv"/>
                                                 </connections>
                                             </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dogica Pixel font by Roberto Mocci" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SoX-Ai-MHb">
+                                                <rect key="frame" x="0.0" y="324" width="373" height="14.5"/>
+                                                <fontDescription key="fontDescription" name="Dogica_Pixel" family="Dogica Pixel" pointSize="14"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UFf-P8-wKE">
+                                                <rect key="frame" x="47" y="353.5" width="279" height="30"/>
+                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="I6r-xN-dSA"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Dogica_Pixel" family="Dogica Pixel" pointSize="12"/>
+                                                <state key="normal" title="   View Dogical Pixel License   ">
+                                                    <color key="titleColor" red="1" green="0.75476870340000002" blue="0.71852897049999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="viewLicense:" destination="n5Z-Ee-q2v" eventType="touchUpInside" id="UtZ-OU-RfM"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Isc-9B-6nI">
-                                        <rect key="frame" x="62" y="493" width="250.5" height="91.5"/>
+                                        <rect key="frame" x="62" y="530" width="250.5" height="91.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Options" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mgu-Hj-ywQ">
                                                 <rect key="frame" x="72" y="0.0" width="106" height="16"/>
@@ -806,6 +845,135 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ft8-da-yDS">
+                                <rect key="frame" x="52" y="189.5" width="310.5" height="517.5"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="xnV-Ah-jG4">
+                                        <rect key="frame" x="5" y="5" width="300.5" height="462.5"/>
+                                        <mutableString key="text">Copyright (c) 2020, Roberto Mocci (&lt;patreon.com/rmocci | da.iosonor@gmail.com&gt;),
+with Reserved Font Name Dogica Pixel.
+
+This Font Software is licensed under the SIL Open Font License, Version 1.1.
+This license is copied below, and is also available with a FAQ at:
+http://scripts.sil.org/OFL
+
+
+-----------------------------------------------------------
+SIL OPEN FONT LICENSE Version 1.1 - 26 February 2007
+-----------------------------------------------------------
+
+PREAMBLE
+The goals of the Open Font License (OFL) are to stimulate worldwide
+development of collaborative font projects, to support the font creation
+efforts of academic and linguistic communities, and to provide a free and
+open framework in which fonts may be shared and improved in partnership
+with others.
+
+The OFL allows the licensed fonts to be used, studied, modified and
+redistributed freely as long as they are not sold by themselves. The
+fonts, including any derivative works, can be bundled, embedded, 
+redistributed and/or sold with any software provided that any reserved
+names are not used by derivative works. The fonts and derivatives,
+however, cannot be released under any other type of license. The
+requirement for fonts to remain under this license does not apply
+to any document created using the fonts or their derivatives.
+
+DEFINITIONS
+"Font Software" refers to the set of files released by the Copyright
+Holder(s) under this license and clearly marked as such. This may
+include source files, build scripts and documentation.
+
+"Reserved Font Name" refers to any names specified as such after the
+copyright statement(s).
+
+"Original Version" refers to the collection of Font Software components as
+distributed by the Copyright Holder(s).
+
+"Modified Version" refers to any derivative made by adding to, deleting,
+or substituting -- in part or in whole -- any of the components of the
+Original Version, by changing formats or by porting the Font Software to a
+new environment.
+
+"Author" refers to any designer, engineer, programmer, technical
+writer or other person who contributed to the Font Software.
+
+PERMISSION &amp; CONDITIONS
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of the Font Software, to use, study, copy, merge, embed, modify,
+redistribute, and sell modified and unmodified copies of the Font
+Software, subject to the following conditions:
+
+1) Neither the Font Software nor any of its individual components,
+in Original or Modified Versions, may be sold by itself.
+
+2) Original or Modified Versions of the Font Software may be bundled,
+redistributed and/or sold with any software, provided that each copy
+contains the above copyright notice and this license. These can be
+included either as stand-alone text files, human-readable headers or
+in the appropriate machine-readable metadata fields within text or
+binary files as long as those fields can be easily viewed by the user.
+
+3) No Modified Version of the Font Software may use the Reserved Font
+Name(s) unless explicit written permission is granted by the corresponding
+Copyright Holder. This restriction only applies to the primary font name as
+presented to the users.
+
+4) The name(s) of the Copyright Holder(s) or the Author(s) of the Font
+Software shall not be used to promote, endorse or advertise any
+Modified Version, except to acknowledge the contribution(s) of the
+Copyright Holder(s) and the Author(s) or with their explicit written
+permission.
+
+5) The Font Software, modified or unmodified, in part or in whole,
+must be distributed entirely under this license, and must not be
+distributed under any other license. The requirement for fonts to
+remain under this license does not apply to any document created
+using the Font Software.
+
+TERMINATION
+This license becomes null and void if any of the above conditions are
+not met.
+
+DISCLAIMER
+THE FONT SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT
+OF COPYRIGHT, PATENT, TRADEMARK, OR OTHER RIGHT. IN NO EVENT SHALL THE
+COPYRIGHT HOLDER BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+INCLUDING ANY GENERAL, SPECIAL, INDIRECT, INCIDENTAL, OR CONSEQUENTIAL
+DAMAGES, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF THE USE OR INABILITY TO USE THE FONT SOFTWARE OR FROM
+OTHER DEALINGS IN THE FONT SOFTWARE.</mutableString>
+                                        <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mWV-LI-UrK">
+                                        <rect key="frame" x="112" y="477.5" width="86" height="30"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="hF1-tk-6yd"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Dogica_Pixel" family="Dogica Pixel" pointSize="12"/>
+                                        <state key="normal" title="   close   ">
+                                            <color key="titleColor" red="1" green="0.75294117650000003" blue="0.71764705880000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="closeLicense:" destination="n5Z-Ee-q2v" eventType="touchUpInside" id="jXu-dW-fBE"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.75294117650000003" blue="0.71764705880000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="xnV-Ah-jG4" firstAttribute="leading" secondItem="Ft8-da-yDS" secondAttribute="leading" constant="5" id="IRR-8h-8Eh"/>
+                                    <constraint firstItem="mWV-LI-UrK" firstAttribute="top" secondItem="xnV-Ah-jG4" secondAttribute="bottom" constant="10" id="PqL-aN-OWL"/>
+                                    <constraint firstAttribute="bottom" secondItem="mWV-LI-UrK" secondAttribute="bottom" constant="10" id="SVl-96-fkv"/>
+                                    <constraint firstAttribute="width" secondItem="Ft8-da-yDS" secondAttribute="height" multiplier="3:5" id="VM8-PG-EG5"/>
+                                    <constraint firstAttribute="trailing" secondItem="xnV-Ah-jG4" secondAttribute="trailing" constant="5" id="eUv-FT-oRb"/>
+                                    <constraint firstItem="mWV-LI-UrK" firstAttribute="centerX" secondItem="Ft8-da-yDS" secondAttribute="centerX" id="ovH-Gt-BYj"/>
+                                    <constraint firstItem="xnV-Ah-jG4" firstAttribute="top" secondItem="Ft8-da-yDS" secondAttribute="top" constant="5" id="pgP-bx-CJi"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.84499601960000004" blue="0.74862455289999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -813,6 +981,9 @@
                             <constraint firstItem="Iqo-AF-jux" firstAttribute="centerY" secondItem="TJT-8l-lMu" secondAttribute="centerY" id="8Nk-Aq-dNb"/>
                             <constraint firstItem="TJT-8l-lMu" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Iqo-AF-jux" secondAttribute="bottom" constant="10" id="Erp-Rq-g5N"/>
                             <constraint firstAttribute="trailing" secondItem="Iqo-AF-jux" secondAttribute="trailing" constant="20" id="OmK-zY-fpK"/>
+                            <constraint firstItem="Ft8-da-yDS" firstAttribute="centerY" secondItem="Q5i-cN-Eda" secondAttribute="centerY" id="ULo-mW-RIJ"/>
+                            <constraint firstItem="Ft8-da-yDS" firstAttribute="centerX" secondItem="Q5i-cN-Eda" secondAttribute="centerX" id="VQP-ou-vkd"/>
+                            <constraint firstItem="Ft8-da-yDS" firstAttribute="width" secondItem="Q5i-cN-Eda" secondAttribute="width" multiplier="0.75" id="Vc1-0X-xoW"/>
                             <constraint firstItem="Iqo-AF-jux" firstAttribute="top" secondItem="TJT-8l-lMu" secondAttribute="top" constant="10" id="fNW-nA-6bi"/>
                             <constraint firstItem="8O1-4d-wrL" firstAttribute="height" secondItem="Q5i-cN-Eda" secondAttribute="height" multiplier="0.1" id="pzl-NH-vMY"/>
                         </constraints>
@@ -821,6 +992,7 @@
                     <navigationItem key="navigationItem" id="mht-T3-nua"/>
                     <connections>
                         <outlet property="backButton" destination="Rot-dJ-65R" id="7iI-9b-bux"/>
+                        <outlet property="licenseView" destination="Ft8-da-yDS" id="wCl-Wc-DYt"/>
                         <outlet property="privacyPolicyButton" destination="Ar8-uD-Yjn" id="asw-6R-pNj"/>
                         <outlet property="segmentedControl" destination="Pv3-Yw-Ikq" id="2Lq-Jd-Dau"/>
                         <outlet property="soundbibleButton" destination="Bf2-pp-Ugi" id="fS7-vl-o3a"/>

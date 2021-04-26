@@ -43,6 +43,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
      @IBOutlet weak var walkingOutside: UIImageView!
      
      @IBOutlet var buttons: [UIButton]!
+     @IBOutlet weak var bonus: UIImageView!
      
      @IBOutlet weak var enterButton: UIButton!
      @IBOutlet weak var leftArrow: UIButton!
@@ -64,6 +65,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
           super.viewDidLoad()
           // Do any additional setup after loading the view.
           NotificationCenter.default.addObserver(self, selector: #selector(refreshPoints), name: NSNotification.Name(rawValue: "refreshPoints"), object: nil)
+          
+          NotificationCenter.default.addObserver(self, selector: #selector(updateHearts), name: NSNotification.Name(rawValue: "updateHearts"), object: nil)
           
           NotificationCenter.default.addObserver(self, selector: #selector(decorChanged), name: NSNotification.Name(rawValue: "decorChanged"), object: nil)
           
@@ -170,12 +173,12 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
           updateHearts()
           
           if viewModel.checkCareProgress() {
-               // give reward
-               Sound.playSound(number: Sounds.meowSound.number)
+               // show collectable coin
+               bonus.isHidden = false
           }
      }
      
-     func updateHearts() {
+     @objc func updateHearts() {
           print("update hearts")
        
           var days = viewModel.getDaysCaredFor()
@@ -329,6 +332,12 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
           }
      
           changeSelection()
+     }
+     
+     @IBAction func bonusTapped(_ sender: UITapGestureRecognizer) {
+          viewModel.addCurrency()
+          Sound.playSound(number: Sounds.meowSound.number)
+          bonus.isHidden = true
      }
      
      @IBAction func viewInfoTapped(_ sender: UIButton) {

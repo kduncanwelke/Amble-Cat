@@ -126,8 +126,7 @@ extension ViewModel {
             }
             
             if CareState.hasBeenFed && CareState.hasBeenWatered {
-                // FIXME: update hearts
-                // updateHearts()
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "updateHearts"), object: nil)
             }
             
             return
@@ -152,8 +151,7 @@ extension ViewModel {
         }
         
         if CareState.hasBeenFed && CareState.hasBeenWatered {
-            // FIXME: update hearts
-            // updateHearts()
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "updateHearts"), object: nil)
         }
     }
     

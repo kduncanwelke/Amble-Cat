@@ -18,6 +18,7 @@ class AboutViewController: UIViewController {
     @IBOutlet weak var privacyPolicyButton: UIButton!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var backButton: UIButton!
+    @IBOutlet weak var licenseView: UIView!
     
     
     private let aboutViewModel = AboutViewModel()
@@ -30,6 +31,7 @@ class AboutViewController: UIViewController {
         zapsplatButton.layer.cornerRadius = 10
         soundbibleButton.layer.cornerRadius = 10
         privacyPolicyButton.layer.cornerRadius = 10
+        licenseView.layer.cornerRadius = 10
         
         if aboutViewModel.milesSelected() {
             segmentedControl.selectedSegmentIndex = 0
@@ -65,9 +67,12 @@ class AboutViewController: UIViewController {
         UIApplication.shared.open(url, options: [:], completionHandler: nil)
     }
     
-    @IBAction func retakeTutorial(_ sender: UIButton) {
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "redoTutorial"), object: nil)
-        self.dismiss(animated: true, completion: nil)
+    @IBAction func viewLicense(_ sender: UIButton) {
+        licenseView.isHidden = false
+    }
+    
+    @IBAction func closeLicense(_ sender: UIButton) {
+        licenseView.isHidden = true
     }
     
     @IBAction func measurementChanged(_ sender: UISegmentedControl) {

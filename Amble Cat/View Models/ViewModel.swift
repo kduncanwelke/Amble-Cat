@@ -22,7 +22,7 @@ public class ViewModel {
             
             return false
         } else if CareState.daysCaredFor == 7 {
-            Currency.toAdd = 50
+            Currency.toAdd = 100
             saveCare()
             
             return true
