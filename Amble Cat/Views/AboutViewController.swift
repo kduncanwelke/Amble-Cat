@@ -31,7 +31,7 @@ class AboutViewController: UIViewController {
         zapsplatButton.layer.cornerRadius = 10
         soundbibleButton.layer.cornerRadius = 10
         privacyPolicyButton.layer.cornerRadius = 10
-        licenseView.layer.cornerRadius = 10
+        //.layer.cornerRadius = 10
         
         if aboutViewModel.milesSelected() {
             segmentedControl.selectedSegmentIndex = 0

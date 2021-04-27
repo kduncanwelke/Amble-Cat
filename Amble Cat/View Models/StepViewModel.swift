@@ -154,8 +154,8 @@ public class StepViewModel {
             var dayOfWeek = dateFormatter.string(from: Pedometer.stepData[index].endDate)
             return dayOfWeek
         } else {
-            var day = Calendar.current.date(byAdding: .day, value: -index, to: Date())
-            var dayOfWeek = dateFormatter.string(from: Date())
+            var day = Calendar.current.date(byAdding: .day, value: -index, to: Date()) ?? Date()
+            var dayOfWeek = dateFormatter.string(from: day)
             return dayOfWeek
         }
     }
