@@ -14,15 +14,20 @@ extension ViewController {
     func beginAnimation(inMotion: Bool) {
         print("begin animation")
         catArt.stopAnimating()
+        outsideBackground.stopAnimating()
+        walkingOutside.stopAnimating()
         
         var showOutside = Bool.random()
+        print("in motion \(inMotion)")
             
         if showOutside && inMotion && (outsideBackground.isHidden && walkingOutside.isHidden) {
+            print("all true show outside")
             toggleOutside()
             randomOutside(moving: inMotion)
         } else if outsideBackground.isAnimating || walkingOutside.isAnimating {
             outsideBackground.stopAnimating()
             randomOutside(moving: inMotion)
+            print("random outside")
         } else {
             disappearOutside()
             
@@ -158,6 +163,7 @@ extension ViewController {
         outsideBackground.animationDuration = 6.5
         outsideBackground.startAnimating()
         
+        AnimationManager.direction = .left
         walkingOutside.animationImages = AnimationManager.walking
         walkingOutside.animationDuration = 1.0
         walkingOutside.startAnimating()

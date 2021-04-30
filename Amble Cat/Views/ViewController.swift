@@ -87,8 +87,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
           Sound.loadSound(number: &Sounds.failSound.number, resourceName: Sounds.failSound.resourceName, type: Sounds.failSound.type)
           
           stepViewModel.stepTotalDelegate = self
-          stepViewModel.getStepData()
+          
           stepViewModel.startMotionUpdates()
+          stepViewModel.getStepData()
           
           enterButton.layer.cornerRadius = 21
           rightArrow.layer.cornerRadius = 21
@@ -104,8 +105,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
           
           stepViewModel.addCoinsForMissedSteps()
           stepViewModel.updateSteps()
-          
-          //animateOutside()
           
           beginAnimation(inMotion: stepViewModel.isMoving())
     }

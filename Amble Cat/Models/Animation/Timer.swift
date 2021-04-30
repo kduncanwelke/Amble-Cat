@@ -21,14 +21,12 @@ class AnimationTimer {
         
         if once {
             repeatCount = 1
-        } else {
-            repeatCount = Int.random(in: 4...8)
-        }
-        
-        if outdoors {
+        } else if outdoors {
             interval = 6.5
+            repeatCount = Int.random(in: 1...4)
         } else {
             interval = 1.0
+            repeatCount = Int.random(in: 4...8)
         }
     
         print(repeatCount)

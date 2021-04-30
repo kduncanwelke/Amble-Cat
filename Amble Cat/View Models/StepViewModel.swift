@@ -14,6 +14,7 @@ public class StepViewModel {
     private let viewModel = ViewModel()
     weak var stepTotalDelegate: StepTotalDelegate?
     let userDefaultDate = "userDefaultDate"
+    var addingSteps = false
     
     func checkAvailable() {
         print(CMPedometer.isStepCountingAvailable())
@@ -98,6 +99,12 @@ public class StepViewModel {
                     addedSteps = newValue
                     print(newValue)
                 }
+                
+                if addedSteps != 0 {
+                    self.addingSteps = true
+                } else {
+                    self.addingSteps = false
+                }
             }
         }
     }
@@ -117,11 +124,7 @@ public class StepViewModel {
     }
     
     func isMoving() -> Bool {
-        if Pedometer.motionManager.accelerometerData != nil {
-            return true
-        } else {
-            return false
-        }
+        return addingSteps
     }
     
     func stepsToday() -> Int  {
