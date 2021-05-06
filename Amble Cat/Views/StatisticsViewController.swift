@@ -21,12 +21,11 @@ class StatisticsViewController: UIViewController {
     
     private let stepViewModel = StepViewModel()
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
+        stepViewModel.getStepsToday()
         dismissButton.layer.cornerRadius = 10
         showStepHistory()
     }
@@ -39,11 +38,12 @@ class StatisticsViewController: UIViewController {
             dayLabel.text = stepViewModel.getDay(index: dayLabel.tag)
         }
         
-        for stepLabel in steps {
-            stepLabel.text = "\(stepViewModel.getSteps(index: stepLabel.tag))"
+        for i in 1...6 {
+            steps[i].text = "\(stepViewModel.getSteps(index: steps[i].tag))"
         }
+        
+        steps[0].text = "\(stepViewModel.stepsToday())"
     }
-
 
     /*
     // MARK: - Navigation
@@ -56,13 +56,11 @@ class StatisticsViewController: UIViewController {
     */
     
     
-    
     // MARK: IBActions
     
     @IBAction func dismissTapped(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "refreshView"), object: nil)
     }
-
 }
 

@@ -41,14 +41,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func applicationWillTerminate(_ application: UIApplication) {
         SKPaymentQueue.default().remove(StoreObserver.iapObserver)
+        print("terminate")
         stepViewModel.stopUpdating()
     }
     
     func applicationWillResignActive(_ application: UIApplication) {
+        print("resign")
         stepViewModel.stopUpdating()
     }
     
     func applicationDidBecomeActive(_ application: UIApplication) {
+        print("active")
         stepViewModel.updateSteps()
     }
 }

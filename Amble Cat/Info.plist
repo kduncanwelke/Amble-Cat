@@ -20,10 +20,6 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-	<key>NSHealthShareUsageDescription</key>
-	<string>Required for step statistics access.</string>
-	<key>NSHealthUpdateUsageDescription</key>
-	<string>Required for step statistics access.</string>
 	<key>NSMotionUsageDescription</key>
 	<string>Needed to acquire step data from the system.</string>
 	<key>UIAppFonts</key>
@@ -71,5 +67,7 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>UIUserInterfaceStyle</key>
+	<string>Light</string>
 </dict>
 </plist>

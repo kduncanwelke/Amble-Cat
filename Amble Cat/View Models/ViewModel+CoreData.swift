@@ -175,6 +175,7 @@ extension ViewModel {
                 DecorManager.waterID = loaded.waterbowl
                 DecorManager.windowID = loaded.window
                 
+                print(DecorManager.rugID)
                 print("equipment loaded")
             }
         } catch let error as NSError {

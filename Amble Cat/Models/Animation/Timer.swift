@@ -21,6 +21,7 @@ class AnimationTimer {
         
         if once {
             repeatCount = 1
+            interval = 1.0
         } else if outdoors {
             interval = 6.5
             repeatCount = Int.random(in: 1...4)

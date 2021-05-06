@@ -87,8 +87,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
           Sound.loadSound(number: &Sounds.failSound.number, resourceName: Sounds.failSound.resourceName, type: Sounds.failSound.type)
           
           stepViewModel.stepTotalDelegate = self
+          stepViewModel.getStepsToday()
           
-          stepViewModel.startMotionUpdates()
+          stepViewModel.trackMovementType()
           stepViewModel.getStepData()
           
           enterButton.layer.cornerRadius = 21
@@ -96,10 +97,10 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
           leftArrow.layer.cornerRadius = 21
           infoButton.layer.cornerRadius = 10
           
+          viewModel.loadEquipment()
           viewModel.loadCurrency()
           viewModel.loadMeasure()
           viewModel.loadCareState()
-          viewModel.loadEquipment()
           
           loadUI()
           
@@ -107,8 +108,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
           stepViewModel.updateSteps()
           
           beginAnimation(inMotion: stepViewModel.isMoving())
-    }
-	
+     }
+     
      // MARK: Custom functions
      
      func loadUI() {
@@ -120,6 +121,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
           stepsLabel.text = "\(stepViewModel.stepsToday())"
           measurementLabel.text = stepViewModel.distanceMeasure()
           distanceLabel.text = "\(stepViewModel.distanceToday())"
+          decorChanged()
      }
      
      func disappearOutside() {

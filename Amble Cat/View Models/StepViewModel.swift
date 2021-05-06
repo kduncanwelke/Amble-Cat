@@ -14,11 +14,11 @@ public class StepViewModel {
     private let viewModel = ViewModel()
     weak var stepTotalDelegate: StepTotalDelegate?
     let userDefaultDate = "userDefaultDate"
-    var addingSteps = false
-    
+    private var moving = false
+   
     func checkAvailable() {
         print(CMPedometer.isStepCountingAvailable())
-        // show warning if step data cannot be counted
+        // show warning if device cannot count step data
     }
     
     func getStepData() {
@@ -39,6 +39,24 @@ public class StepViewModel {
             
             day = calendar.date(byAdding: .day, value: -i, to: day) ?? Date()
             nextDay = calendar.date(byAdding: .day, value: -i, to: day) ?? Date()
+        }
+    }
+    
+    func getStepsToday() {
+        let calendar = Calendar.current
+        var steps = 0
+        
+        Pedometer.stepCounter.queryPedometerData(from: calendar.startOfDay(for: Date()), to: Date()) { (data, error) in
+            print("steps today")
+            print(data?.numberOfSteps)
+           
+            steps = Int(data?.numberOfSteps ?? 0)
+            print("stupid \(steps)")
+            Pedometer.today = steps
+            
+            DispatchQueue.main.async {
+                self.stepTotalDelegate?.updateSteps(stepTotal: steps)
+            }
         }
     }
     
@@ -84,7 +102,7 @@ public class StepViewModel {
             newSteps = Int(data?.numberOfSteps ?? 0)
             
             var stepTotal = Int(Pedometer.stepData.first?.numberOfSteps ?? 0) + newSteps
-            
+
             DispatchQueue.main.async {
                 self.stepTotalDelegate?.updateSteps(stepTotal: stepTotal)
                 
@@ -99,11 +117,21 @@ public class StepViewModel {
                     addedSteps = newValue
                     print(newValue)
                 }
-                
-                if addedSteps != 0 {
-                    self.addingSteps = true
+            }
+        }
+    }
+    
+    func trackMovementType() {
+        Pedometer.motionManager.startActivityUpdates(to: OperationQueue.main) { (activity: CMMotionActivity?) in
+            guard let currentActivity = activity else { return }
+           
+            DispatchQueue.main.async {
+                if currentActivity.automotive == true || currentActivity.stationary == true || currentActivity.unknown == true {
+                    self.moving = false
+                } else if currentActivity.walking == true || currentActivity.running == true || currentActivity.cycling == true {
+                    self.moving = true
                 } else {
-                    self.addingSteps = false
+                    self.moving = false
                 }
             }
         }
@@ -113,6 +141,7 @@ public class StepViewModel {
         // stop when app is in background/terminated
         print("stop updating")
         Pedometer.stepCounter.stopUpdates()
+        Pedometer.motionManager.stopActivityUpdates()
         
         // set userdefaults date, used to track last time steps were added
         let now = Date()
@@ -120,16 +149,16 @@ public class StepViewModel {
     }
     
     func startMotionUpdates() {
-        Pedometer.motionManager.startAccelerometerUpdates()
+        Pedometer.motion.startDeviceMotionUpdates()
     }
     
     func isMoving() -> Bool {
-        return addingSteps
+        return moving
     }
     
-    func stepsToday() -> Int  {
+    func stepsToday() -> Int {
         print("steps today")
-        return getSteps(index: 0)
+        return Pedometer.today
     }
     
     func distanceToday() -> Int {

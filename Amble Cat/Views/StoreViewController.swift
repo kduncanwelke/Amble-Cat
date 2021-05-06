@@ -140,7 +140,8 @@ extension StoreViewController: UICollectionViewDataSource {
             
             if storeViewModel.getPurchaseState(index: indexPath) {
                 storeViewModel.setEquipped(index: indexPath)
-                    
+                storeViewModel.saveEquipment()
+                
                 NotificationCenter.default.post(name: NSNotification.Name(rawValue: "decorChanged"), object: nil)
                 
                 Sound.playSound(number: Sounds.blopSound.number)
