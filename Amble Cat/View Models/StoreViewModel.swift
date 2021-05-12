@@ -78,6 +78,8 @@ public class StoreViewModel {
             DecorManager.bedID = current.id
         case .bowl:
             DecorManager.bowlID = current.id
+        case .couch:
+            DecorManager.couchID = current.id
         case .decor:
             DecorManager.decorID = current.id
         case .floor:

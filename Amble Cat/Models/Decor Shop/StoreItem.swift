@@ -22,6 +22,7 @@ struct StoreItem {
     enum ItemType {
         case bed
         case bowl
+        case couch
         case decor
         case toy
         case picture

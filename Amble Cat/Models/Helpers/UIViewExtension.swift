@@ -20,6 +20,15 @@ extension UIView {
         })
     }
     
+    func moveWithJump(to destination: CGPoint, duration: TimeInterval,
+              options: UIView.AnimationOptions) {
+        UIView.animate(withDuration: duration, delay: 0, options: options, animations: {
+            self.center = destination
+        }, completion: {(finished: Bool) in
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "jumpUp"), object: nil)
+        })
+    }
+    
     func animateButton() {
         UIView.animate(withDuration: 0.1, animations: {
             self.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)

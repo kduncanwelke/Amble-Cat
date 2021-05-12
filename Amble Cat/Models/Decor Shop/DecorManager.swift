@@ -22,4 +22,5 @@ struct DecorManager {
     static var rugID: Int64 = 42
     static var decorID: Int64 = 50
     static var waterID: Int64 = 51
+    static var couchID: Int64 = 56
 }

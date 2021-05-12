@@ -33,12 +33,22 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
      @IBOutlet weak var pictureArt: UIImageView!
      @IBOutlet weak var floorArt: UIImageView!
      @IBOutlet weak var rugArt: UIImageView!
+     @IBOutlet weak var couchArt: UIImageView!
      @IBOutlet weak var wallArt: UIImageView!
      @IBOutlet weak var waterBowlArt: UIImageView!
      @IBOutlet weak var windowArt: UIImageView!
      
+     @IBOutlet weak var bathroomView: UIView!
+     @IBOutlet weak var bathroomWall: UIImageView!
+     @IBOutlet weak var wallTile: UIImageView!
+     @IBOutlet weak var floorTile: UIImageView!
+     @IBOutlet weak var cabinet: UIImageView!
+     @IBOutlet weak var towels: UIImageView!
+     @IBOutlet weak var bathmat: UIImageView!
+     @IBOutlet weak var bathroomCat: UIImageView!
      @IBOutlet weak var bath: UIImageView!
-     @IBOutlet weak var bathEdge: UIImageView!
+     
+     @IBOutlet weak var outsideView: UIView!
      @IBOutlet weak var outsideBackground: UIImageView!
      @IBOutlet weak var walkingOutside: UIImageView!
      
@@ -77,6 +87,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
           NotificationCenter.default.addObserver(self, selector: #selector(unitChanged), name: NSNotification.Name(rawValue: "unitChanged"), object: nil)
           
           NotificationCenter.default.addObserver(self, selector: #selector(animationEnded), name: NSNotification.Name(rawValue: "animationEnded"), object: nil)
+          
+          NotificationCenter.default.addObserver(self, selector: #selector(jumpUp), name: NSNotification.Name(rawValue: "jumpUp"), object: nil)
           
           // load sounds
           Sound.loadSound(number: &Sounds.blopSound.number, resourceName: Sounds.blopSound.resourceName, type: Sounds.blopSound.type)
@@ -125,13 +137,11 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
      }
      
      func disappearOutside() {
-          outsideBackground.isHidden = true
-          walkingOutside.isHidden = true
+          outsideView.isHidden = true
      }
      
      func toggleOutside() {
-          outsideBackground.isHidden = false
-          walkingOutside.isHidden = false
+          outsideView.isHidden = false
      }
 
      func loadWater() {
@@ -255,10 +265,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                } else {
                     randomStaying()
                }
-          case .bath:
-               bathEdge.isHidden = false
+          case .couch:
                if specific {
-                    wash()
+                    jumpDown()
                } else {
                     randomStaying()
                }

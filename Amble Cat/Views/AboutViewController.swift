@@ -20,7 +20,7 @@ class AboutViewController: UIViewController {
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var licenseView: UIView!
     @IBOutlet weak var licenseButton: UIButton!
-    
+    @IBOutlet weak var close: UIButton!
     
     private let aboutViewModel = AboutViewModel()
     
@@ -33,6 +33,7 @@ class AboutViewController: UIViewController {
         soundbibleButton.layer.cornerRadius = 10
         privacyPolicyButton.layer.cornerRadius = 10
         licenseButton.layer.cornerRadius = 10
+        close.layer.cornerRadius = 10
         
         if aboutViewModel.milesSelected() {
             segmentedControl.selectedSegmentIndex = 0

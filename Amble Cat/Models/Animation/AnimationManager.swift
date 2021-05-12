@@ -18,7 +18,7 @@ struct AnimationManager {
     enum Location: Int {
         case middle
         case bed
-        case bath
+        case couch
         case food
         case water
         case toy
@@ -101,6 +101,9 @@ struct AnimationManager {
             }
         }
     }
+    
+    static let jump: [UIImage] = [#imageLiteral(resourceName: "jumpup.png"),#imageLiteral(resourceName: "back.png")]
+    static let jumpDown: [UIImage] = [#imageLiteral(resourceName: "jumpdown.png"),#imageLiteral(resourceName: "sitting.png")]
     
     static let back: [UIImage] = [#imageLiteral(resourceName: "back.png")]
     static let drinking: [UIImage] = [#imageLiteral(resourceName: "drink1.png"),#imageLiteral(resourceName: "drink2.png"),#imageLiteral(resourceName: "drink3.png")]

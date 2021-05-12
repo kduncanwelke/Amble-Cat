@@ -136,13 +136,26 @@ struct StoreInventory {
     
     static let blueRug = StoreItem(id: 47, name: "Blue Rug", price: 500, shopImage: #imageLiteral(resourceName: "shoprugblue.png"), image: #imageLiteral(resourceName: "bluerug.png"), description: "Blue Round Rug", type: .rug)
     
+    // Couches
+    
+    static let greenCouch = StoreItem(id: 56, name: "Green Couch", price: 1000, shopImage: #imageLiteral(resourceName: "shopcouchgreen.png"), image: #imageLiteral(resourceName: "couchgreen.png"), description: "Green Cozy Couch", type: .couch)
+    
+    static let yellowCouch = StoreItem(id: 57, name: "Yellow Couch", price: 1000, shopImage: #imageLiteral(resourceName: "shopcouchyellow.png"), image: #imageLiteral(resourceName: "couchyellow.png"), description: "Yellow Cozy Couch", type: .couch)
+    
+    static let blueCouch = StoreItem(id: 58, name: "Blue Couch", price: 1000, shopImage: #imageLiteral(resourceName: "shopcouchgreen.png"), image: #imageLiteral(resourceName: "couchgreen.png"), description: "Blue Cozy Couch", type: .couch)
+    
+    static let pinkCouch = StoreItem(id: 59, name: "Pink Couch", price: 1000, shopImage: #imageLiteral(resourceName: "shopcouchpink.png"), image: #imageLiteral(resourceName: "couchpink.png"), description: "Pink Cozy Couch", type: .couch)
+    
+    static let whiteCouch = StoreItem(id: 60, name: "White Couch", price: 1200, shopImage: #imageLiteral(resourceName: "shopcouchwhite.png"), image: #imageLiteral(resourceName: "couchwhite.png"), description: "White Cozy Couch", type: .couch)
+    
+    static let blackCouch = StoreItem(id: 61, name: "Black Couch", price: 1200, shopImage: #imageLiteral(resourceName: "shopcouchblack.png"), image: #imageLiteral(resourceName: "couchblack.png"), description: "Black Cozy Couch", type: .couch)
     
     // Decor
     static let holly = StoreItem(id: 49, name: "Holly Hanging", price: 800, shopImage: #imageLiteral(resourceName: "shopholly.png"), image: #imageLiteral(resourceName: "holly.png"), description: "Holly Window Hanging", type: .decor)
     
     static let noDecor = StoreItem(id: 50, name: "No Decor", price: 0, shopImage: #imageLiteral(resourceName: "shopnorug.png"), image: #imageLiteral(resourceName: "none.png"), description: "No Decor", type: .decor)
     
-	static var inventory = [bowl, blueBowl, greenBowl, yellowBowl, whiteBowl, blackBowl, blueWaterBowl, greenWaterBowl, yellowWaterBowl, whiteWaterBowl, blackWaterBowl, bed, yellowBed, greenBed, pinkBed, whiteBed, blackBed, mouse, ball, candycane, cupcake, doughnut, fish, picture, sunset, cat, forest, abstract, noDecor, holly, wall, yellowWall, mintWall, greyWall, redWall, stripedWall, pawprintWall, basicView, mountainView, winterView, farmView, oceanView, frostView, nightView, floor, noRug, redRug, tanRug, blueRug, ecruRug, christmasRug, darkFloor, whiteFloor, blondFloor, redFloor, blackFloor]
+	static var inventory = [bowl, blueBowl, greenBowl, yellowBowl, whiteBowl, blackBowl, blueWaterBowl, greenWaterBowl, yellowWaterBowl, whiteWaterBowl, blackWaterBowl, bed, yellowBed, greenBed, pinkBed, whiteBed, blackBed, mouse, ball, candycane, cupcake, doughnut, fish, picture, sunset, cat, forest, abstract, greenCouch, yellowCouch, blueCouch, pinkCouch, whiteCouch, blackCouch, noDecor, holly, wall, yellowWall, mintWall, greyWall, redWall, stripedWall, pawprintWall, basicView, mountainView, winterView, farmView, oceanView, frostView, nightView, noRug, redRug, tanRug, blueRug, ecruRug, christmasRug, floor, darkFloor, whiteFloor, blondFloor, redFloor, blackFloor]
     
     static let inventoryDictionary: [Int64: StoreItem] = [
         0: bowl,
@@ -200,7 +213,13 @@ struct StoreInventory {
         52: greenWaterBowl,
         53: yellowWaterBowl,
         54: whiteWaterBowl,
-        55: blackWaterBowl
+        55: blackWaterBowl,
+        56: greenCouch,
+        57: yellowCouch,
+        58: blueCouch,
+        59: pinkCouch,
+        60: whiteCouch,
+        61: blackCouch
     ]
     
     static var purchased: [StoreItem] = []

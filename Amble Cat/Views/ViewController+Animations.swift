@@ -20,7 +20,7 @@ extension ViewController {
         var showOutside = Bool.random()
         print("in motion \(inMotion)")
             
-        if showOutside && inMotion && (outsideBackground.isHidden && walkingOutside.isHidden) {
+        if showOutside && inMotion && outsideView.isHidden {
             print("all true show outside")
             toggleOutside()
             randomOutside(moving: inMotion)
@@ -54,24 +54,26 @@ extension ViewController {
                     pauseCat()
                 } else {
                     print("random move")
-                    randomMove()
+                    if AnimationManager.location == .couch {
+                        jumpDown()
+                    } else {
+                        randomMove()
+                    }
                 }
             }
         }
     }
     
     func randomMove() {
-        bathEdge.isHidden = true
-        
         var num = Int.random(in: 0...8)
         
         var destination = AnimationManager.Location(rawValue: num)
         
         switch (AnimationManager.location, destination) {
-        case (.middle, .middle), (.bed, .bed), (.bath, .bath),(.food, .food), (.water,.water), (.toy, .toy), (.right, .right), (.left, .left):
+        case (.middle, .middle), (.bed, .bed), (.couch, .couch),(.food, .food), (.water,.water), (.toy, .toy), (.right, .right), (.left, .left):
             randomPlaceAnimation()
             return
-        case (.middle, .bed), (.middle, .food), (.middle, .right), (.bed, .food), (.bed, .right), (.bath, .middle), (.bath, .bed), (.bath, .food), (.bath, .water), (.bath, .right), (.food, .right), (.food, .bed), (.water, .middle), (.water, .bed), (.water, .food), (.water, .right), (.toy, .middle), (.toy, .bed), (.toy, .food), (.toy, .right), (.left, .middle), (.left, .bed), (.left, .food), (.left, .water), (.left, .right):
+        case (.middle, .bed), (.middle, .food), (.middle, .right), (.bed, .food), (.bed, .right), (.couch, .middle), (.couch, .bed), (.couch, .food), (.couch, .water), (.couch, .right), (.food, .right), (.food, .bed), (.water, .middle), (.water, .bed), (.water, .food), (.water, .right), (.toy, .middle), (.toy, .bed), (.toy, .food), (.toy, .right), (.left, .middle), (.left, .bed), (.left, .food), (.left, .water), (.left, .right):
             AnimationManager.direction = .right
         default:
             AnimationManager.direction = .left
@@ -80,8 +82,8 @@ extension ViewController {
         AnimationManager.position = .standing
         
         switch destination {
-        case .bath:
-            moveToBath()
+        case .couch:
+            moveToCouch()
         case .bed:
             moveToBed()
         case .food:
@@ -102,10 +104,7 @@ extension ViewController {
     }
     
     func randomStaying() {
-        if AnimationManager.location == .bath {
-            bathEdge.isHidden = false
-            frontSit()
-        } else if AnimationManager.position == .standing {
+        if AnimationManager.position == .standing {
             var sitDown = Bool.random()
             
             if sitDown {
@@ -154,6 +153,27 @@ extension ViewController {
                 }
             }
         }
+    }
+    
+    @objc func jumpUp() {
+        print("jump")
+        catArt.animationImages = AnimationManager.jump
+        catArt.animationDuration = 1.0
+        catArt.startAnimating()
+        let jumpDestination = CGPoint(x: wallArt.frame.width/2.5, y: wallArt.frame.height/2.0)
+        
+        catArt.move(to: jumpDestination, duration: 1.0, options: UIView.AnimationOptions.curveEaseOut)
+    }
+    
+    func jumpDown() {
+        print("jump down")
+        catArt.animationImages = AnimationManager.jumpDown
+        catArt.animationDuration = 1.0
+        catArt.startAnimating()
+        let jumpDownDestination = CGPoint(x: wallArt.frame.width/2.5, y: wallArt.frame.height/1.6)
+        
+        catArt.move(to: jumpDownDestination, duration: 1.0, options: UIView.AnimationOptions.curveEaseOut)
+        AnimationManager.location = .left
     }
     
     // MARK: Outdoor animations
@@ -260,7 +280,7 @@ extension ViewController {
         catArt.animationImages = AnimationManager.walking
         catArt.animationDuration = 0.5
         catArt.startAnimating()
-        let middleDestination = CGPoint(x: wallArt.frame.width/2, y: wallArt.frame.height/1.8)
+        let middleDestination = CGPoint(x: wallArt.frame.width/1.5, y: wallArt.frame.height/1.8)
         
         catArt.move(to: middleDestination, duration: 2.0, options: UIView.AnimationOptions.curveEaseOut)
         AnimationManager.location = .middle
@@ -338,19 +358,19 @@ extension ViewController {
         AnimationTimer.beginTimer(once: false, outdoors: false)
     }
     
-    func moveToBath() {
-        print("bath")
+    func moveToCouch() {
+        print("couch")
         catArt.animationImages = AnimationManager.walking
         catArt.animationDuration = 0.5
         catArt.startAnimating()
-        let bathDestination = CGPoint(x: wallArt.frame.width/3.6, y: wallArt.frame.height/1.90)
+        let couchDestination = CGPoint(x: wallArt.frame.width/2.5, y: wallArt.frame.height/1.6)
         
-        catArt.move(to: bathDestination, duration: 2.0, options: UIView.AnimationOptions.curveEaseOut)
-        AnimationManager.location = .bath
+        catArt.moveWithJump(to: couchDestination, duration: 2.0, options: UIView.AnimationOptions.curveEaseOut)
+        AnimationManager.location = .couch
     }
     
     func wash() {
-        bathEdge.isHidden = false
+       // bathEdge.isHidden = false
         catArt.animationImages = AnimationManager.wash
         catArt.animationDuration = 2.0
         catArt.startAnimating()
@@ -379,9 +399,9 @@ extension ViewController {
         catArt.animationImages = AnimationManager.walking
         catArt.animationDuration = 0.5
         catArt.startAnimating()
-        let rightDestination = CGPoint(x: wallArt.frame.width/5, y: wallArt.frame.height/1.6)
+        let leftDestination = CGPoint(x: wallArt.frame.width/5, y: wallArt.frame.height/1.6)
         
-        catArt.move(to: rightDestination, duration: 2.0, options: UIView.AnimationOptions.curveEaseOut)
+        catArt.move(to: leftDestination, duration: 2.5, options: UIView.AnimationOptions.curveEaseOut)
         AnimationManager.location = .left
     }
 }
