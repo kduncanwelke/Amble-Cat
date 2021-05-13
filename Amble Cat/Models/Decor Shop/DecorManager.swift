@@ -23,4 +23,12 @@ struct DecorManager {
     static var decorID: Int64 = 50
     static var waterID: Int64 = 51
     static var couchID: Int64 = 56
+    static var bathtoyID: Int64 = 62
+    static var towelID: Int64 = 67
+    static var cabinetID: Int64 = 77
+    static var bathID: Int64 = 78
+    static var bathmatID: Int64 = 89
+    static var tilewallID: Int64 = 94
+    static var tilefloorID: Int64 = 101
+    static var bathwallID: Int64 = 102
 }

@@ -22,5 +22,13 @@ struct Purchases {
         50: true,
         51: true,
         56: true,
+        62: true,
+        67: true,
+        77: true,
+        78: true,
+        89: true,
+        94: true,
+        101: true,
+        102: true,
     ]
 }

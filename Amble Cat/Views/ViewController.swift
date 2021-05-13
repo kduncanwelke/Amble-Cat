@@ -47,6 +47,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
      @IBOutlet weak var bathmat: UIImageView!
      @IBOutlet weak var bathroomCat: UIImageView!
      @IBOutlet weak var bath: UIImageView!
+     @IBOutlet weak var bathToy: UIImageView!
+     @IBOutlet weak var bathWater: UIImageView!
      
      @IBOutlet weak var outsideView: UIView!
      @IBOutlet weak var outsideBackground: UIImageView!

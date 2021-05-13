@@ -58,6 +58,10 @@ public class StoreViewModel {
         return currentSource[index.row].name
     }
     
+    func getDescription(index: IndexPath) -> String {
+        return currentSource[index.row].description
+    }
+    
     func getPurchaseState(index: IndexPath) -> Bool {
         if Purchases.purchaseStatus[currentSource[index.row].id] != nil {
             return true
@@ -96,6 +100,22 @@ public class StoreViewModel {
             DecorManager.waterID = current.id
         case .window:
             DecorManager.windowID = current.id
+        case .bathtoy:
+            DecorManager.bathtoyID = current.id
+        case .towel:
+            DecorManager.towelID = current.id
+        case .cabinet:
+            DecorManager.cabinetID = current.id
+        case .bath:
+            DecorManager.bathID = current.id
+        case .bathmat:
+            DecorManager.bathmatID = current.id
+        case .tilewall:
+            DecorManager.tilewallID = current.id
+        case .tilefloor:
+            DecorManager.tilewallID = current.id
+        case .bathwall:
+            DecorManager.bathwallID = current.id
         }
     }
     

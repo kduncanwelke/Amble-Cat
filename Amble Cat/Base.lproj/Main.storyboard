@@ -283,7 +283,7 @@
                                             <constraint firstItem="y7V-ho-qCH" firstAttribute="height" secondItem="YEV-Y8-KsQ" secondAttribute="height" multiplier="0.219807" id="rY3-kS-b0L"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pWQ-ER-MwM">
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pWQ-ER-MwM">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bathwallecru" translatesAutoresizingMaskIntoConstraints="NO" id="A1h-HL-TWO">
@@ -328,13 +328,25 @@
                                                     <constraint firstAttribute="width" secondItem="mZN-rI-cqV" secondAttribute="height" multiplier="1:1" id="8vy-k8-n9w"/>
                                                 </constraints>
                                             </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="soap" translatesAutoresizingMaskIntoConstraints="NO" id="Pd9-HD-CaF">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="Pd9-HD-CaF" secondAttribute="height" multiplier="1:1" id="Yw9-yY-k4m"/>
+                                                </constraints>
+                                            </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="right" translatesAutoresizingMaskIntoConstraints="NO" id="8zf-oa-Wuh">
                                                 <rect key="frame" x="30" y="210" width="141" height="91"/>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bath" translatesAutoresizingMaskIntoConstraints="NO" id="IxU-qh-R7y">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bathblue" translatesAutoresizingMaskIntoConstraints="NO" id="IxU-qh-R7y">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="IxU-qh-R7y" secondAttribute="height" multiplier="1:1" id="WcT-12-kxY"/>
+                                                </constraints>
+                                            </imageView>
+                                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bathwater" translatesAutoresizingMaskIntoConstraints="NO" id="a4z-sm-IOS">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="a4z-sm-IOS" secondAttribute="height" multiplier="1:1" id="aMD-98-j3Q"/>
                                                 </constraints>
                                             </imageView>
                                         </subviews>
@@ -345,13 +357,17 @@
                                             <constraint firstItem="mZN-rI-cqV" firstAttribute="centerX" secondItem="pWQ-ER-MwM" secondAttribute="centerX" id="3AR-Yn-fmm"/>
                                             <constraint firstItem="7Ae-W8-1HU" firstAttribute="centerX" secondItem="pWQ-ER-MwM" secondAttribute="centerX" id="3PP-Im-9kd"/>
                                             <constraint firstItem="IxU-qh-R7y" firstAttribute="centerY" secondItem="pWQ-ER-MwM" secondAttribute="centerY" id="44g-N6-7eB"/>
+                                            <constraint firstItem="a4z-sm-IOS" firstAttribute="centerX" secondItem="pWQ-ER-MwM" secondAttribute="centerX" id="47w-f5-VqD"/>
                                             <constraint firstItem="A1h-HL-TWO" firstAttribute="centerY" secondItem="pWQ-ER-MwM" secondAttribute="centerY" id="62V-Za-6C7"/>
                                             <constraint firstItem="7Ae-W8-1HU" firstAttribute="width" secondItem="pWQ-ER-MwM" secondAttribute="width" id="89f-Sd-tOW"/>
                                             <constraint firstItem="mWT-yU-L2S" firstAttribute="width" secondItem="pWQ-ER-MwM" secondAttribute="width" id="Agb-4v-TNu"/>
+                                            <constraint firstItem="Pd9-HD-CaF" firstAttribute="centerX" secondItem="pWQ-ER-MwM" secondAttribute="centerX" id="BaT-U0-Mbk"/>
+                                            <constraint firstItem="a4z-sm-IOS" firstAttribute="centerY" secondItem="pWQ-ER-MwM" secondAttribute="centerY" id="Ck7-rC-U2u"/>
                                             <constraint firstItem="mWT-yU-L2S" firstAttribute="centerX" secondItem="pWQ-ER-MwM" secondAttribute="centerX" id="DgR-SV-cnO"/>
                                             <constraint firstItem="ebB-rR-SbR" firstAttribute="width" secondItem="pWQ-ER-MwM" secondAttribute="width" id="EH2-LA-kxQ"/>
                                             <constraint firstItem="8zf-oa-Wuh" firstAttribute="height" secondItem="pWQ-ER-MwM" secondAttribute="height" multiplier="0.219807" id="Eho-b0-7Zr"/>
                                             <constraint firstItem="A1h-HL-TWO" firstAttribute="centerX" secondItem="pWQ-ER-MwM" secondAttribute="centerX" id="FA2-v9-fMX"/>
+                                            <constraint firstItem="Pd9-HD-CaF" firstAttribute="height" secondItem="pWQ-ER-MwM" secondAttribute="height" id="H4U-8E-AQ8"/>
                                             <constraint firstItem="mWT-yU-L2S" firstAttribute="height" secondItem="pWQ-ER-MwM" secondAttribute="height" id="H9s-8E-DYl"/>
                                             <constraint firstItem="IxU-qh-R7y" firstAttribute="width" secondItem="pWQ-ER-MwM" secondAttribute="width" id="HYe-ry-f0c"/>
                                             <constraint firstItem="ebB-rR-SbR" firstAttribute="centerY" secondItem="pWQ-ER-MwM" secondAttribute="centerY" id="Hfi-bn-Vp5"/>
@@ -361,15 +377,19 @@
                                             <constraint firstItem="A1h-HL-TWO" firstAttribute="width" secondItem="pWQ-ER-MwM" secondAttribute="width" id="Pxz-Eb-AH3"/>
                                             <constraint firstItem="8zf-oa-Wuh" firstAttribute="leading" secondItem="pWQ-ER-MwM" secondAttribute="leading" constant="30" id="TNL-Sr-FQd"/>
                                             <constraint firstItem="qLG-eQ-Bec" firstAttribute="centerY" secondItem="pWQ-ER-MwM" secondAttribute="centerY" id="TOv-Er-IfI"/>
+                                            <constraint firstItem="a4z-sm-IOS" firstAttribute="height" secondItem="pWQ-ER-MwM" secondAttribute="height" id="Ynx-6R-IYA"/>
                                             <constraint firstItem="mWT-yU-L2S" firstAttribute="centerY" secondItem="pWQ-ER-MwM" secondAttribute="centerY" id="ZXm-lI-7o4"/>
                                             <constraint firstItem="8zf-oa-Wuh" firstAttribute="width" secondItem="pWQ-ER-MwM" secondAttribute="width" multiplier="0.34" id="aX5-s4-qbQ"/>
                                             <constraint firstItem="mZN-rI-cqV" firstAttribute="width" secondItem="pWQ-ER-MwM" secondAttribute="width" id="apc-rv-fWI"/>
                                             <constraint firstItem="7Ae-W8-1HU" firstAttribute="centerY" secondItem="pWQ-ER-MwM" secondAttribute="centerY" id="bMo-BY-Egb"/>
                                             <constraint firstItem="ebB-rR-SbR" firstAttribute="height" secondItem="pWQ-ER-MwM" secondAttribute="height" id="cUs-h1-OIy"/>
+                                            <constraint firstItem="Pd9-HD-CaF" firstAttribute="centerY" secondItem="pWQ-ER-MwM" secondAttribute="centerY" id="dNF-xj-dS4"/>
                                             <constraint firstItem="mZN-rI-cqV" firstAttribute="centerY" secondItem="pWQ-ER-MwM" secondAttribute="centerY" id="ep2-U1-sMg"/>
                                             <constraint firstItem="qLG-eQ-Bec" firstAttribute="centerX" secondItem="pWQ-ER-MwM" secondAttribute="centerX" id="esq-ik-Cie"/>
                                             <constraint firstItem="8oi-3M-t6o" firstAttribute="height" secondItem="pWQ-ER-MwM" secondAttribute="height" id="gpy-fS-B4s"/>
                                             <constraint firstItem="8zf-oa-Wuh" firstAttribute="top" secondItem="pWQ-ER-MwM" secondAttribute="top" constant="210" id="hgT-uI-olP"/>
+                                            <constraint firstItem="a4z-sm-IOS" firstAttribute="width" secondItem="pWQ-ER-MwM" secondAttribute="width" id="kCJ-nK-PcO"/>
+                                            <constraint firstItem="Pd9-HD-CaF" firstAttribute="width" secondItem="pWQ-ER-MwM" secondAttribute="width" id="kCV-mQ-khq"/>
                                             <constraint firstItem="mZN-rI-cqV" firstAttribute="height" secondItem="pWQ-ER-MwM" secondAttribute="height" id="kov-4p-pos"/>
                                             <constraint firstItem="8oi-3M-t6o" firstAttribute="width" secondItem="pWQ-ER-MwM" secondAttribute="width" id="qj0-Oq-Ep7"/>
                                             <constraint firstItem="IxU-qh-R7y" firstAttribute="height" secondItem="pWQ-ER-MwM" secondAttribute="height" id="rKW-QO-Mmc"/>
@@ -546,6 +566,8 @@
                     </view>
                     <connections>
                         <outlet property="bath" destination="IxU-qh-R7y" id="9k0-vV-SgT"/>
+                        <outlet property="bathToy" destination="Pd9-HD-CaF" id="3CY-Ud-zkj"/>
+                        <outlet property="bathWater" destination="a4z-sm-IOS" id="vTA-ea-5gJ"/>
                         <outlet property="bathmat" destination="mZN-rI-cqV" id="tWZ-KD-bbI"/>
                         <outlet property="bathroomCat" destination="8zf-oa-Wuh" id="z0c-dM-EpD"/>
                         <outlet property="bathroomView" destination="pWQ-ER-MwM" id="Yvs-kK-C1Z"/>
@@ -1573,9 +1595,10 @@ OTHER DEALINGS IN THE FONT SOFTWARE.</string>
     </scenes>
     <resources>
         <image name="50" width="285" height="285"/>
-        <image name="bath" width="3000" height="3000"/>
+        <image name="bathblue" width="3000" height="3000"/>
         <image name="bathmatwhite" width="3000" height="3000"/>
         <image name="bathwallecru" width="3000" height="3000"/>
+        <image name="bathwater" width="3000" height="3000"/>
         <image name="bedblue" width="3000" height="3000"/>
         <image name="bluewall" width="3000" height="3000"/>
         <image name="bowlpink" width="3000" height="3000"/>
@@ -1600,6 +1623,7 @@ OTHER DEALINGS IN THE FONT SOFTWARE.</string>
         <image name="right" width="1000" height="653"/>
         <image name="select" width="450" height="450"/>
         <image name="sideleft" width="1000" height="653"/>
+        <image name="soap" width="3000" height="3000"/>
         <image name="tilewallpink" width="3000" height="3000"/>
         <image name="tilewhite" width="3000" height="3000"/>
         <image name="towelsyellow" width="3000" height="3000"/>

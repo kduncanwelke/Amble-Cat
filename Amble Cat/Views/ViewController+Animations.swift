@@ -155,27 +155,6 @@ extension ViewController {
         }
     }
     
-    @objc func jumpUp() {
-        print("jump")
-        catArt.animationImages = AnimationManager.jump
-        catArt.animationDuration = 1.0
-        catArt.startAnimating()
-        let jumpDestination = CGPoint(x: wallArt.frame.width/2.5, y: wallArt.frame.height/2.0)
-        
-        catArt.move(to: jumpDestination, duration: 1.0, options: UIView.AnimationOptions.curveEaseOut)
-    }
-    
-    func jumpDown() {
-        print("jump down")
-        catArt.animationImages = AnimationManager.jumpDown
-        catArt.animationDuration = 1.0
-        catArt.startAnimating()
-        let jumpDownDestination = CGPoint(x: wallArt.frame.width/2.5, y: wallArt.frame.height/1.6)
-        
-        catArt.move(to: jumpDownDestination, duration: 1.0, options: UIView.AnimationOptions.curveEaseOut)
-        AnimationManager.location = .left
-    }
-    
     // MARK: Outdoor animations
     
     func animateOutside() {
@@ -207,6 +186,11 @@ extension ViewController {
         }
     }
     
+    func stopWalkingOutside() {
+        walkingOutside.stopAnimating()
+        outsideBackground.stopAnimating()
+    }
+    
     func sitTailOutside() {
         walkingOutside.animationImages = AnimationManager.sitTail
         walkingOutside.animationDuration = 2.0
@@ -229,12 +213,27 @@ extension ViewController {
     }
     
     // MARK: Indoor animations
-    
-    func stopWalkingOutside() {
-        walkingOutside.stopAnimating()
-        outsideBackground.stopAnimating()
+
+    @objc func jumpUp() {
+        print("jump")
+        catArt.animationImages = AnimationManager.jump
+        catArt.animationDuration = 1.0
+        catArt.startAnimating()
+        let jumpDestination = CGPoint(x: wallArt.frame.width/2.5, y: wallArt.frame.height/2.0)
+        
+        catArt.move(to: jumpDestination, duration: 1.0, options: UIView.AnimationOptions.curveEaseOut)
     }
     
+    func jumpDown() {
+        print("jump down")
+        catArt.animationImages = AnimationManager.jumpDown
+        catArt.animationDuration = 1.0
+        catArt.startAnimating()
+        let jumpDownDestination = CGPoint(x: wallArt.frame.width/5, y: wallArt.frame.height/1.6)
+        
+        catArt.move(to: jumpDownDestination, duration: 1.0, options: UIView.AnimationOptions.curveEaseOut)
+        AnimationManager.location = .left
+    }
     func pauseCat() {
         catArt.image = AnimationManager.pause.randomElement()
         AnimationTimer.beginTimer(once: false, outdoors: false)
@@ -369,14 +368,6 @@ extension ViewController {
         AnimationManager.location = .couch
     }
     
-    func wash() {
-       // bathEdge.isHidden = false
-        catArt.animationImages = AnimationManager.wash
-        catArt.animationDuration = 2.0
-        catArt.startAnimating()
-        AnimationTimer.beginTimer(once: false, outdoors: false)
-    }
-    
     func animateWater() {
         waterBowlArt.animationImages = AnimationManager.fountain
         waterBowlArt.animationDuration = 0.5
@@ -404,4 +395,15 @@ extension ViewController {
         catArt.move(to: leftDestination, duration: 2.5, options: UIView.AnimationOptions.curveEaseOut)
         AnimationManager.location = .left
     }
+    
+    // MARK: Bathroom animations
+    
+    func wash() {
+        bathWater.isHidden = false
+        catArt.animationImages = AnimationManager.wash
+        catArt.animationDuration = 2.0
+        catArt.startAnimating()
+        AnimationTimer.beginTimer(once: false, outdoors: false)
+    }
+    
 }

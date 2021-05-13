@@ -31,6 +31,15 @@ struct StoreItem {
         case wall
         case waterbowl
         case window
+        
+        case bathtoy
+        case towel
+        case cabinet
+        case bath
+        case bathmat
+        case tilewall
+        case tilefloor
+        case bathwall
     }
     
 }

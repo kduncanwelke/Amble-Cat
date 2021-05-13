@@ -155,7 +155,7 @@ extension StoreViewController: UICollectionViewDataSource {
                 if storeViewModel.sufficientFunds() {
                     // confirm purchase
                     Sound.playSound(number: Sounds.chirpSound.number)
-                    areYouSureLabel.text = "Are you sure you want to buy the \(storeViewModel.getName(index: indexPath))?"
+                    areYouSureLabel.text = "Are you sure you want to buy the \(storeViewModel.getDescription(index: indexPath))?"
                     self.view.bringSubviewToFront(confirmPurchaseView)
                 } else {
                     // show alert for insufficient funds
