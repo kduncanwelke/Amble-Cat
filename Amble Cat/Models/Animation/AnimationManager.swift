@@ -11,9 +11,21 @@ import UIKit
 
 struct AnimationManager {
     
+    static var currentView: CurrentView = .room
+    
     static var location: Location = .middle
     static var direction: Direction = .left
     static var position: Position = .standing
+    
+    static var bathroomLocation: BathroomLocation = .mat
+    static var bathroomDirection: Direction = .left
+    static var bathroomPosition: Position = .standing
+    
+    enum CurrentView: Int {
+        case room
+        case bathroom
+        case outside
+    }
     
     enum Location: Int {
         case middle
@@ -36,68 +48,136 @@ struct AnimationManager {
         case standing
     }
     
+    enum BathroomLocation: Int {
+        case bath
+        case counter
+        case mat
+        case bathtoy
+        case right
+    }
+    
     static var standBlink: [UIImage] {
         get {
-            switch AnimationManager.direction {
-            case .left:
-                return [#imageLiteral(resourceName: "left.png"),#imageLiteral(resourceName: "leftblink.png")]
-            case .right:
-                return [#imageLiteral(resourceName: "right.png"),#imageLiteral(resourceName: "rightblink.png")]
+            switch currentView {
+            case .room, .outside:
+                switch AnimationManager.direction {
+                case .left:
+                    return [#imageLiteral(resourceName: "left.png"),#imageLiteral(resourceName: "leftblink.png")]
+                case .right:
+                    return [#imageLiteral(resourceName: "right.png"),#imageLiteral(resourceName: "rightblink.png")]
+                }
+            case .bathroom:
+                switch AnimationManager.bathroomDirection {
+                case .left:
+                    return [#imageLiteral(resourceName: "left.png"),#imageLiteral(resourceName: "leftblink.png")]
+                case .right:
+                    return [#imageLiteral(resourceName: "right.png"),#imageLiteral(resourceName: "rightblink.png")]
+                }
             }
         }
     }
     
     static var standUp: UIImage {
         get {
-            switch AnimationManager.direction {
-            case .left:
-                return #imageLiteral(resourceName: "left.png")
-            case .right:
-                return #imageLiteral(resourceName: "right.png")
+            switch currentView {
+            case .room, .outside:
+                switch AnimationManager.direction {
+                case .left:
+                    return #imageLiteral(resourceName: "left.png")
+                case .right:
+                    return #imageLiteral(resourceName: "right.png")
+                }
+            case .bathroom:
+                switch AnimationManager.bathroomDirection {
+                case .left:
+                    return #imageLiteral(resourceName: "left.png")
+                case .right:
+                    return #imageLiteral(resourceName: "right.png")
+                }
             }
         }
     }
     
     static var sitDown: UIImage {
         get {
-            switch AnimationManager.direction {
-            case .left:
-                return #imageLiteral(resourceName: "leftsit.png")
-            case .right:
-                return #imageLiteral(resourceName: "rightsit.png")
+            switch currentView {
+            case .room, .outside:
+                switch AnimationManager.direction {
+                case .left:
+                    return #imageLiteral(resourceName: "leftsit.png")
+                case .right:
+                    return #imageLiteral(resourceName: "rightsit.png")
+                }
+            case .bathroom:
+                switch AnimationManager.bathroomDirection {
+                case .left:
+                    return #imageLiteral(resourceName: "leftsit.png")
+                case .right:
+                    return #imageLiteral(resourceName: "rightsit.png")
+                }
             }
         }
     }
     
     static var sitBlink: [UIImage] {
         get {
-            switch AnimationManager.direction {
-            case .left:
-                return [#imageLiteral(resourceName: "leftsit.png"),#imageLiteral(resourceName: "leftsitblink.png")]
-            case .right:
-                return [#imageLiteral(resourceName: "rightsit.png"),#imageLiteral(resourceName: "rightsitblink.png")]
+            switch currentView {
+            case .room, .outside:
+                switch AnimationManager.direction {
+                case .left:
+                    return [#imageLiteral(resourceName: "leftsit.png"),#imageLiteral(resourceName: "leftsitblink.png")]
+                case .right:
+                    return [#imageLiteral(resourceName: "rightsit.png"),#imageLiteral(resourceName: "rightsitblink.png")]
+                }
+            case .bathroom:
+                switch AnimationManager.bathroomDirection {
+                case .left:
+                    return [#imageLiteral(resourceName: "leftsit.png"),#imageLiteral(resourceName: "leftsitblink.png")]
+                case .right:
+                    return [#imageLiteral(resourceName: "rightsit.png"),#imageLiteral(resourceName: "rightsitblink.png")]
+                }
             }
         }
     }
     
     static var sitTail: [UIImage] {
         get {
-            switch AnimationManager.direction {
-            case .left:
-                return [#imageLiteral(resourceName: "leftsit.png"),#imageLiteral(resourceName: "leftsittail.png")]
-            case .right:
-                return [#imageLiteral(resourceName: "rightsit.png"),#imageLiteral(resourceName: "rightsittail.png")]
+            switch currentView {
+            case .room, .outside:
+                switch AnimationManager.direction {
+                case .left:
+                    return [#imageLiteral(resourceName: "leftsit.png"),#imageLiteral(resourceName: "leftsittail.png")]
+                case .right:
+                    return [#imageLiteral(resourceName: "rightsit.png"),#imageLiteral(resourceName: "rightsittail.png")]
+                }
+            case .bathroom:
+                switch AnimationManager.bathroomDirection {
+                case .left:
+                    return [#imageLiteral(resourceName: "leftsit.png"),#imageLiteral(resourceName: "leftsittail.png")]
+                case .right:
+                    return [#imageLiteral(resourceName: "rightsit.png"),#imageLiteral(resourceName: "rightsittail.png")]
+                }
             }
         }
     }
     
     static var walking: [UIImage] {
         get {
-            switch AnimationManager.direction {
-            case .left:
-                return [#imageLiteral(resourceName: "sideleft.png"),#imageLiteral(resourceName: "walkleft.png"),#imageLiteral(resourceName: "walkleft1.png"),#imageLiteral(resourceName: "walkleft2.png"),#imageLiteral(resourceName: "walkleft3.png")]
-            case .right:
-                return [#imageLiteral(resourceName: "sideright.png"),#imageLiteral(resourceName: "walkright.png"),#imageLiteral(resourceName: "walkright1.png"),#imageLiteral(resourceName: "walkright2.png"),#imageLiteral(resourceName: "walkright3.png")]
+            switch currentView {
+            case .room, .outside:
+                switch AnimationManager.direction {
+                case .left:
+                    return [#imageLiteral(resourceName: "sideleft.png"),#imageLiteral(resourceName: "walkleft.png"),#imageLiteral(resourceName: "walkleft1.png"),#imageLiteral(resourceName: "walkleft2.png"),#imageLiteral(resourceName: "walkleft3.png")]
+                case .right:
+                    return [#imageLiteral(resourceName: "sideright.png"),#imageLiteral(resourceName: "walkright.png"),#imageLiteral(resourceName: "walkright1.png"),#imageLiteral(resourceName: "walkright2.png"),#imageLiteral(resourceName: "walkright3.png")]
+                }
+            case .bathroom:
+                switch AnimationManager.bathroomDirection {
+                case .left:
+                    return [#imageLiteral(resourceName: "sideleft.png"),#imageLiteral(resourceName: "walkleft.png"),#imageLiteral(resourceName: "walkleft1.png"),#imageLiteral(resourceName: "walkleft2.png"),#imageLiteral(resourceName: "walkleft3.png")]
+                case .right:
+                    return [#imageLiteral(resourceName: "sideright.png"),#imageLiteral(resourceName: "walkright.png"),#imageLiteral(resourceName: "walkright1.png"),#imageLiteral(resourceName: "walkright2.png"),#imageLiteral(resourceName: "walkright3.png")]
+                }
             }
         }
     }
@@ -117,11 +197,21 @@ struct AnimationManager {
     
     static var pause: [UIImage] {
         get {
-            switch AnimationManager.direction {
-            case .left:
-                return [#imageLiteral(resourceName: "sitting.png"),#imageLiteral(resourceName: "leftsit.png"),#imageLiteral(resourceName: "left.png"),#imageLiteral(resourceName: "front.png"),#imageLiteral(resourceName: "back.png")]
-            case .right:
-                return [#imageLiteral(resourceName: "rightsit.png"),#imageLiteral(resourceName: "right.png"),#imageLiteral(resourceName: "back.png")]
+            switch currentView {
+            case .room, .outside:
+                switch AnimationManager.direction {
+                case .left:
+                    return [#imageLiteral(resourceName: "sitting.png"),#imageLiteral(resourceName: "leftsit.png"),#imageLiteral(resourceName: "left.png"),#imageLiteral(resourceName: "front.png"),#imageLiteral(resourceName: "back.png")]
+                case .right:
+                    return [#imageLiteral(resourceName: "rightsit.png"),#imageLiteral(resourceName: "right.png"),#imageLiteral(resourceName: "back.png")]
+                }
+            case .bathroom:
+                switch AnimationManager.bathroomDirection {
+                case .left:
+                    return [#imageLiteral(resourceName: "sitting.png"),#imageLiteral(resourceName: "leftsit.png"),#imageLiteral(resourceName: "left.png"),#imageLiteral(resourceName: "front.png"),#imageLiteral(resourceName: "back.png")]
+                case .right:
+                    return [#imageLiteral(resourceName: "rightsit.png"),#imageLiteral(resourceName: "right.png"),#imageLiteral(resourceName: "back.png")]
+                }
             }
         }
     }

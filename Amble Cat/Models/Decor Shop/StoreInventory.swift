@@ -106,6 +106,10 @@ struct StoreInventory {
     
     static let blackBed = StoreItem(id: 38, name: "Black Bed", price: 500, shopImage: #imageLiteral(resourceName: "shopbedblack.png"), image: #imageLiteral(resourceName: "bedblack.png"), description: "Black Cozy Bed", type: .bed)
     
+    static let orangeBed = StoreItem(id: 111, name: "Orange Bed", price: 600, shopImage: #imageLiteral(resourceName: "shopbedorange.png"), image: #imageLiteral(resourceName: "bedorange.png"), description: "Orange Cozy Bed", type: .bed)
+    
+    static let mintBed = StoreItem(id: 112, name: "Mint Bed", price: 600, shopImage: #imageLiteral(resourceName: "shopbedmint.png"), image: #imageLiteral(resourceName: "bedmint.png"), description: "Mint Cozy Bed", type: .bed)
+    
     
     // Windows
     static let basicView = StoreItem(id: 27, name: "Blue Sky", price: 0, shopImage: #imageLiteral(resourceName: "shopwindow.png"), image: #imageLiteral(resourceName: "window.png"), description: "Clear Sky View", type: .window)
@@ -136,6 +140,10 @@ struct StoreInventory {
     
     static let blueRug = StoreItem(id: 47, name: "Blue Rug", price: 500, shopImage: #imageLiteral(resourceName: "shoprugblue.png"), image: #imageLiteral(resourceName: "bluerug.png"), description: "Blue Round Rug", type: .rug)
     
+    static let orangeRug = StoreItem(id: 109, name: "Orange Rug", price: 700, shopImage: #imageLiteral(resourceName: "shoporangerug.png"), image: #imageLiteral(resourceName: "orangerug.png"), description: "Orange Round Rug", type: .rug)
+    
+    static let mintRug = StoreItem(id: 110, name: "Mint Rug", price: 700, shopImage: #imageLiteral(resourceName: "shopmintrug.png"), image: #imageLiteral(resourceName: "mintrug.png"), description: "Mint Round Rug", type: .rug)
+    
     // Couches
     
     static let greenCouch = StoreItem(id: 56, name: "Green Couch", price: 1000, shopImage: #imageLiteral(resourceName: "shopcouchgreen.png"), image: #imageLiteral(resourceName: "couchgreen.png"), description: "Green Cozy Couch", type: .couch)
@@ -149,6 +157,10 @@ struct StoreInventory {
     static let whiteCouch = StoreItem(id: 60, name: "White Couch", price: 1200, shopImage: #imageLiteral(resourceName: "shopcouchwhite.png"), image: #imageLiteral(resourceName: "couchwhite.png"), description: "White Cozy Couch", type: .couch)
     
     static let blackCouch = StoreItem(id: 61, name: "Black Couch", price: 1200, shopImage: #imageLiteral(resourceName: "shopcouchblack.png"), image: #imageLiteral(resourceName: "couchblack.png"), description: "Black Cozy Couch", type: .couch)
+    
+    static let orangeCouch = StoreItem(id: 113, name: "Orange Couch", price: 1200, shopImage: #imageLiteral(resourceName: "shopcouchorange.png"), image: #imageLiteral(resourceName: "couchorange.png"), description: "Orange Cozy Couch", type: .couch)
+    
+    static let mintCouch = StoreItem(id: 114, name: "Mint Couch", price: 1200, shopImage: #imageLiteral(resourceName: "shopcouchmint.png"), image: #imageLiteral(resourceName: "couchmint.png"), description: "Mint Cozy Couch", type: .couch)
     
     // Bath toys
     
@@ -265,7 +277,7 @@ struct StoreInventory {
     
     static let noDecor = StoreItem(id: 50, name: "No Decor", price: 0, shopImage: #imageLiteral(resourceName: "shopnorug.png"), image: #imageLiteral(resourceName: "none.png"), description: "No Decor", type: .decor)
     
-	static var inventory = [bowl, blueBowl, greenBowl, yellowBowl, whiteBowl, blackBowl, blueWaterBowl, greenWaterBowl, yellowWaterBowl, whiteWaterBowl, blackWaterBowl, bed, yellowBed, greenBed, pinkBed, whiteBed, blackBed, mouse, ball, candycane, cupcake, doughnut, fish, picture, sunset, cat, forest, abstract, greenCouch, yellowCouch, blueCouch, pinkCouch, whiteCouch, blackCouch, soap, toothbrush, shark, starfish, blackTowels, yellowTowels, blueTowels, greenTowels, whiteTowels, pinkTowels, brownCabinet, redCabinet, whiteCabinet, blackCabinet, darkCabinet, blondCabinet, blueBath, roseBath, purpleBath, whiteBath, yellowBath, greenBath, yellowMat, blackMat, blueMat, greenMat, pinkMat, whiteMat, orangeTileWall, yellowTileWall, mintTileWall, blueTileWall, pinkTileWall, whiteTileWall, orangeTile, mintTile, yellowTile, blueTile, pinkTile, whiteTile, ecruBathroom, roseBathroom, seafoamBathroom, lemonBathroom, whiteBathroom, skyBathroom, lavenderBathroom, noDecor, holly, wall, yellowWall, mintWall, greyWall, redWall, stripedWall, pawprintWall, basicView, mountainView, winterView, farmView, oceanView, frostView, nightView, noRug, redRug, tanRug, blueRug, ecruRug, christmasRug, floor, darkFloor, whiteFloor, blondFloor, redFloor, blackFloor]
+	static var inventory = [bowl, blueBowl, greenBowl, yellowBowl, whiteBowl, blackBowl, blueWaterBowl, greenWaterBowl, yellowWaterBowl, whiteWaterBowl, blackWaterBowl, bed, yellowBed, greenBed, pinkBed, whiteBed, blackBed, orangeBed, mintBed, mouse, ball, candycane, cupcake, doughnut, fish, picture, sunset, cat, forest, abstract, greenCouch, yellowCouch, blueCouch, pinkCouch, whiteCouch, blackCouch, orangeCouch, mintCouch, soap, toothbrush, shark, starfish, blackTowels, yellowTowels, blueTowels, greenTowels, whiteTowels, pinkTowels, brownCabinet, redCabinet, whiteCabinet, blackCabinet, darkCabinet, blondCabinet, blueBath, roseBath, purpleBath, whiteBath, yellowBath, greenBath, yellowMat, blackMat, blueMat, greenMat, pinkMat, whiteMat, orangeTileWall, yellowTileWall, mintTileWall, blueTileWall, pinkTileWall, whiteTileWall, orangeTile, mintTile, yellowTile, blueTile, pinkTile, whiteTile, ecruBathroom, roseBathroom, seafoamBathroom, lemonBathroom, whiteBathroom, skyBathroom, lavenderBathroom, noDecor, holly, wall, yellowWall, mintWall, greyWall, redWall, stripedWall, pawprintWall, basicView, mountainView, winterView, farmView, oceanView, frostView, nightView, noRug, redRug, tanRug, blueRug, ecruRug, orangeRug, mintRug, christmasRug, floor, darkFloor, whiteFloor, blondFloor, redFloor, blackFloor]
     
     static let inventoryDictionary: [Int64: StoreItem] = [
         0: bowl,
@@ -376,7 +388,13 @@ struct StoreInventory {
         105: lemonBathroom,
         106: whiteBathroom,
         107: skyBathroom,
-        108: lavenderBathroom
+        108: lavenderBathroom,
+        109: orangeRug,
+        110: mintRug,
+        111: orangeBed,
+        112: mintBed,
+        113: orangeCouch,
+        114: mintCouch,
     ]
     
     static var purchased: [StoreItem] = []

@@ -92,6 +92,10 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
           
           NotificationCenter.default.addObserver(self, selector: #selector(jumpUp), name: NSNotification.Name(rawValue: "jumpUp"), object: nil)
           
+           NotificationCenter.default.addObserver(self, selector: #selector(jumpToBath), name: NSNotification.Name(rawValue: "jumpToBath"), object: nil)
+          
+           NotificationCenter.default.addObserver(self, selector: #selector(jumpToCounter), name: NSNotification.Name(rawValue: "jumpToCounter"), object: nil)
+          
           // load sounds
           Sound.loadSound(number: &Sounds.blopSound.number, resourceName: Sounds.blopSound.resourceName, type: Sounds.blopSound.type)
           Sound.loadSound(number: &Sounds.tingSound.number, resourceName: Sounds.tingSound.resourceName, type: Sounds.tingSound.type)
@@ -121,6 +125,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
           stepViewModel.addCoinsForMissedSteps()
           stepViewModel.updateSteps()
           
+          toggleBathroom()
           beginAnimation(inMotion: stepViewModel.isMoving())
      }
      
@@ -140,6 +145,14 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
      
      func disappearOutside() {
           outsideView.isHidden = true
+     }
+     
+     func disappearBathroom() {
+          bathroomView.isHidden = true
+     }
+     
+     func toggleBathroom() {
+          bathroomView.isHidden = false
      }
      
      func toggleOutside() {
@@ -353,7 +366,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
      }
      
      @IBAction func viewInfoTapped(_ sender: UIButton) {
-          performSegue(withIdentifier: "viewAbout", sender: Any?.self)
+          
+          //performSegue(withIdentifier: "viewAbout", sender: Any?.self)
      }
      
 }
