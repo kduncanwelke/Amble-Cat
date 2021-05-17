@@ -67,6 +67,7 @@
 		2DE8610B23552B3D00227A86 /* Amble_CatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE8610A23552B3D00227A86 /* Amble_CatUITests.swift */; };
 		2DE904D0235638790036C08A /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE904CF235638790036C08A /* StatisticsViewController.swift */; };
 		2DE904D2235639DE0036C08A /* Measures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE904D1235639DE0036C08A /* Measures.swift */; };
+		2DF3B3F4265307EA00718334 /* WhackamouseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF3B3F3265307EA00718334 /* WhackamouseViewController.swift */; };
 		6CE9D70AD78BB0417423EE4B /* Pods_Amble_Cat_Amble_CatUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2517E2D32FB94832B0607AD7 /* Pods_Amble_Cat_Amble_CatUITests.framework */; };
 		6D529731CE60D75FE59C5C6F /* Pods_Amble_CatTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2477EE2EE88484D846B5C6E6 /* Pods_Amble_CatTests.framework */; };
 		899C2FCC56CBADE8614A105E /* Pods_Amble_Cat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 808AEB5F29839BD7C5E1BA3E /* Pods_Amble_Cat.framework */; };
@@ -163,6 +164,7 @@
 		2DE904CF235638790036C08A /* StatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
 		2DE904D1235639DE0036C08A /* Measures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Measures.swift; sourceTree = "<group>"; };
 		2DF0E70223A7F84100924F4E /* Amble CatRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Amble CatRelease.entitlements"; sourceTree = "<group>"; };
+		2DF3B3F3265307EA00718334 /* WhackamouseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhackamouseViewController.swift; sourceTree = "<group>"; };
 		3818FF6AF8E28BA0323F11B9 /* Pods-Amble CatTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Amble CatTests.debug.xcconfig"; path = "Target Support Files/Pods-Amble CatTests/Pods-Amble CatTests.debug.xcconfig"; sourceTree = "<group>"; };
 		421862C21F11840DBF92FA31 /* Pods-Amble Cat-Amble CatUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Amble Cat-Amble CatUITests.release.xcconfig"; path = "Target Support Files/Pods-Amble Cat-Amble CatUITests/Pods-Amble Cat-Amble CatUITests.release.xcconfig"; sourceTree = "<group>"; };
 		4E045E3AD807650B6A8840DF /* Pods-Amble Cat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Amble Cat.release.xcconfig"; path = "Target Support Files/Pods-Amble Cat/Pods-Amble Cat.release.xcconfig"; sourceTree = "<group>"; };
@@ -390,6 +392,7 @@
 			children = (
 				2DE860EC23552B3B00227A86 /* ViewController.swift */,
 				2DA3C65625DC7AD7004D831E /* ViewController+Animations.swift */,
+				2DF3B3F3265307EA00718334 /* WhackamouseViewController.swift */,
 				2D7146D1235BBE440064B576 /* StoreViewController.swift */,
 				2D7146D3235BBF130064B576 /* StoreCollectionViewCell.swift */,
 				2D88670F2399C4EC00DACD85 /* TutorialViewController.swift */,
@@ -644,6 +647,7 @@
 				2D6FCA8D235A596100560CB2 /* Timer.swift in Sources */,
 				2D96CA9B25CDFD4C00A89C32 /* Pedometer.swift in Sources */,
 				2DC80B882384AC62006841AE /* PawShopViewController.swift in Sources */,
+				2DF3B3F4265307EA00718334 /* WhackamouseViewController.swift in Sources */,
 				2DA3C65725DC7AD7004D831E /* ViewController+Animations.swift in Sources */,
 				2DA3C65525DC716D004D831E /* UIViewExtension.swift in Sources */,
 				2DC80B8C2384AF23006841AE /* Products.swift in Sources */,

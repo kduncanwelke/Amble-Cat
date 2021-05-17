@@ -25,13 +25,10 @@ public class StoreViewModel {
         
         if segment == 0 {
             currentSource = StoreInventory.inventory
-            print("inventory")
         } else if segment == 1 {
             currentSource = StoreInventory.purchased
-            print("purchased")
         } else {
             currentSource = StoreInventory.unpurchased
-            print("unpurchased")
         }
     }
     

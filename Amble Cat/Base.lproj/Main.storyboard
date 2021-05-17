@@ -35,7 +35,7 @@
                                             <constraint firstAttribute="width" secondItem="sMr-uU-cWy" secondAttribute="height" multiplier="1:1" id="sqM-4f-6hc"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 Paw Points" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IrE-at-fz9">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="0 Paw Points" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IrE-at-fz9">
                                         <rect key="frame" x="45" y="44" width="114" height="12"/>
                                         <fontDescription key="fontDescription" name="Dogica_Pixel" family="Dogica Pixel" pointSize="12"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -629,6 +629,239 @@
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="116.51785714285714"/>
         </scene>
+        <!--Whackamouse View Controller-->
+        <scene sceneID="0Pe-yL-DY0">
+            <objects>
+                <viewController id="85s-W0-cbS" customClass="WhackamouseViewController" customModule="Amble_Cat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hgC-P0-OhI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j3d-VP-b9H">
+                                <rect key="frame" x="0.0" y="49" width="414" height="98"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="paw" translatesAutoresizingMaskIntoConstraints="NO" id="UwM-MI-Wr0">
+                                        <rect key="frame" x="10" y="51" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="UwM-MI-Wr0" secondAttribute="height" multiplier="1:1" id="3o6-AW-eJl"/>
+                                            <constraint firstAttribute="width" constant="30" id="ws7-JJ-kob"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 Paw Points" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S8f-Kf-hkZ">
+                                        <rect key="frame" x="45" y="60" width="114" height="12"/>
+                                        <fontDescription key="fontDescription" name="Dogica_Pixel" family="Dogica Pixel" pointSize="12"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.75294117650000003" blue="0.71764705880000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="S8f-Kf-hkZ" firstAttribute="centerY" secondItem="UwM-MI-Wr0" secondAttribute="centerY" id="2Rk-Vy-wen"/>
+                                    <constraint firstAttribute="bottom" secondItem="UwM-MI-Wr0" secondAttribute="bottom" constant="17" id="Cmq-iX-ORH"/>
+                                    <constraint firstItem="S8f-Kf-hkZ" firstAttribute="leading" secondItem="UwM-MI-Wr0" secondAttribute="trailing" constant="5" id="O7b-3x-O2N"/>
+                                    <constraint firstItem="UwM-MI-Wr0" firstAttribute="leading" secondItem="j3d-VP-b9H" secondAttribute="leading" constant="10" id="ONN-9Y-jTo"/>
+                                    <constraint firstAttribute="height" constant="98" id="TQH-VW-aEM"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bap-a-Mouse" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bf5-gs-mh3">
+                                <rect key="frame" x="199" y="74" width="185" height="17"/>
+                                <fontDescription key="fontDescription" name="Dogica_Pixel_Bold" family="Dogica Pixel" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Test your reflexes!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iZe-rf-lua">
+                                <rect key="frame" x="208.5" y="105" width="175.5" height="12"/>
+                                <fontDescription key="fontDescription" name="Dogica_Pixel" family="Dogica Pixel" pointSize="12"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s4a-He-eBY">
+                                <rect key="frame" x="162" y="802" width="90" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="wrs-Ez-4Me"/>
+                                    <constraint firstAttribute="width" constant="90" id="xce-Bw-gxr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Dogica_Pixel" family="Dogica Pixel" pointSize="12"/>
+                                <state key="normal" title="back">
+                                    <color key="titleColor" red="1" green="0.75294117650000003" blue="0.71764705880000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="backTapped:" destination="85s-W0-cbS" eventType="touchUpInside" id="KVQ-gZ-E7O"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whackamouse" translatesAutoresizingMaskIntoConstraints="NO" id="M8A-kA-yNC">
+                                <rect key="frame" x="0.0" y="152" width="414" height="414"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="M8A-kA-yNC" secondAttribute="height" multiplier="1:1" id="qWM-Hs-rcm"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whackablemouse" translatesAutoresizingMaskIntoConstraints="NO" id="PvS-xl-do1">
+                                <rect key="frame" x="14" y="169" width="86.5" height="86.5"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="PvS-xl-do1" secondAttribute="height" multiplier="1:1" id="MfG-Kk-IVb"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="qUN-2M-wj0" appends="YES" id="LAi-RX-yfV"/>
+                                </connections>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whackablemouse" translatesAutoresizingMaskIntoConstraints="NO" id="ABb-qh-Wk6">
+                                <rect key="frame" x="212.5" y="169" width="86.5" height="86.5"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="ABb-qh-Wk6" secondAttribute="height" multiplier="1:1" id="GtV-cB-laN"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="y5I-FA-9xY" appends="YES" id="fXv-eP-SSE"/>
+                                </connections>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whackablemouse" translatesAutoresizingMaskIntoConstraints="NO" id="kfG-6e-h6D">
+                                <rect key="frame" x="113" y="267.5" width="86.5" height="86.5"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="boJ-Yy-0Qt" appends="YES" id="32k-h0-DbY"/>
+                                </connections>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whackablemouse" translatesAutoresizingMaskIntoConstraints="NO" id="akh-ge-5cn">
+                                <rect key="frame" x="311.5" y="267.5" width="86.5" height="86.5"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Srg-cu-qTT" appends="YES" id="3IF-k9-MCw"/>
+                                </connections>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whackablemouse" translatesAutoresizingMaskIntoConstraints="NO" id="Zef-O8-7W5">
+                                <rect key="frame" x="14" y="367" width="86.5" height="86.5"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="GX6-tC-NAC" appends="YES" id="uEN-1U-oOV"/>
+                                </connections>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whackablemouse" translatesAutoresizingMaskIntoConstraints="NO" id="ag9-uq-3e5">
+                                <rect key="frame" x="212.5" y="367" width="86.5" height="86.5"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="b4H-Hn-Ghf" appends="YES" id="7Qc-sn-mwE"/>
+                                </connections>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whackablemouse" translatesAutoresizingMaskIntoConstraints="NO" id="Ms3-jn-F9g">
+                                <rect key="frame" x="113" y="466.5" width="86.5" height="86.5"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="kri-Jc-gbM" appends="YES" id="Hcz-3A-Ja6"/>
+                                </connections>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whackablemouse" translatesAutoresizingMaskIntoConstraints="NO" id="x4g-6V-Pw6">
+                                <rect key="frame" x="311.5" y="466.5" width="86.5" height="86.5"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="oEK-sN-PKw" appends="YES" id="Fyf-9T-pjl"/>
+                                </connections>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.84313725490000002" blue="0.74901960779999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Zef-O8-7W5" firstAttribute="top" secondItem="kfG-6e-h6D" secondAttribute="bottom" constant="13" id="0N1-n3-U96"/>
+                            <constraint firstItem="ag9-uq-3e5" firstAttribute="top" secondItem="akh-ge-5cn" secondAttribute="bottom" constant="13" id="0sL-h1-xgX"/>
+                            <constraint firstItem="Zef-O8-7W5" firstAttribute="width" secondItem="kfG-6e-h6D" secondAttribute="width" id="1Py-dJ-fsV"/>
+                            <constraint firstItem="s4a-He-eBY" firstAttribute="centerX" secondItem="hgC-P0-OhI" secondAttribute="centerX" id="37a-NX-lFG"/>
+                            <constraint firstItem="Ms3-jn-F9g" firstAttribute="width" secondItem="Ms3-jn-F9g" secondAttribute="height" multiplier="1:1" id="3tg-ON-K8W"/>
+                            <constraint firstItem="Zef-O8-7W5" firstAttribute="width" secondItem="Zef-O8-7W5" secondAttribute="height" multiplier="1:1" id="4XL-yn-Qqc"/>
+                            <constraint firstItem="I1X-gI-fML" firstAttribute="bottom" secondItem="s4a-He-eBY" secondAttribute="bottom" constant="30" id="5f7-9V-KzH"/>
+                            <constraint firstItem="j3d-VP-b9H" firstAttribute="leading" secondItem="I1X-gI-fML" secondAttribute="leading" id="7wg-Ee-eiZ"/>
+                            <constraint firstItem="akh-ge-5cn" firstAttribute="width" secondItem="akh-ge-5cn" secondAttribute="height" multiplier="1:1" id="9Uj-tp-eP0"/>
+                            <constraint firstItem="j3d-VP-b9H" firstAttribute="trailing" secondItem="I1X-gI-fML" secondAttribute="trailing" id="Asu-48-Wma"/>
+                            <constraint firstItem="I1X-gI-fML" firstAttribute="trailing" secondItem="M8A-kA-yNC" secondAttribute="trailing" id="ENR-uF-1xX"/>
+                            <constraint firstItem="Ms3-jn-F9g" firstAttribute="width" secondItem="ag9-uq-3e5" secondAttribute="width" id="FLo-Ys-m1J"/>
+                            <constraint firstItem="kfG-6e-h6D" firstAttribute="top" secondItem="ABb-qh-Wk6" secondAttribute="bottom" constant="12" id="FYf-YU-HRe"/>
+                            <constraint firstItem="I1X-gI-fML" firstAttribute="trailing" secondItem="Bf5-gs-mh3" secondAttribute="trailing" constant="30" id="Frp-BU-Jh2"/>
+                            <constraint firstItem="I1X-gI-fML" firstAttribute="trailing" secondItem="ABb-qh-Wk6" secondAttribute="trailing" constant="115" id="HGg-8k-epa"/>
+                            <constraint firstItem="j3d-VP-b9H" firstAttribute="top" secondItem="I1X-gI-fML" secondAttribute="top" constant="5" id="HhD-3x-G9h"/>
+                            <constraint firstItem="ag9-uq-3e5" firstAttribute="width" secondItem="ag9-uq-3e5" secondAttribute="height" multiplier="1:1" id="Hnt-bc-d4l"/>
+                            <constraint firstItem="Zef-O8-7W5" firstAttribute="leading" secondItem="I1X-gI-fML" secondAttribute="leading" constant="14" id="Ihn-ts-N9d"/>
+                            <constraint firstItem="PvS-xl-do1" firstAttribute="width" secondItem="M8A-kA-yNC" secondAttribute="width" multiplier="0.209" id="J5M-N9-V3s"/>
+                            <constraint firstItem="Ms3-jn-F9g" firstAttribute="leading" secondItem="I1X-gI-fML" secondAttribute="leading" constant="113" id="M9R-rQ-Awb"/>
+                            <constraint firstItem="x4g-6V-Pw6" firstAttribute="width" secondItem="Ms3-jn-F9g" secondAttribute="width" id="SaM-Bi-frB"/>
+                            <constraint firstItem="M8A-kA-yNC" firstAttribute="top" secondItem="j3d-VP-b9H" secondAttribute="bottom" constant="5" id="TQv-Sh-JvF"/>
+                            <constraint firstItem="ag9-uq-3e5" firstAttribute="width" secondItem="Zef-O8-7W5" secondAttribute="width" id="VoT-Rw-zid"/>
+                            <constraint firstItem="I1X-gI-fML" firstAttribute="trailing" secondItem="ag9-uq-3e5" secondAttribute="trailing" constant="115" id="W9V-xe-Gd8"/>
+                            <constraint firstItem="ABb-qh-Wk6" firstAttribute="top" secondItem="M8A-kA-yNC" secondAttribute="top" constant="17" id="YGU-Rq-wNM"/>
+                            <constraint firstItem="akh-ge-5cn" firstAttribute="top" secondItem="ABb-qh-Wk6" secondAttribute="bottom" constant="12" id="YpO-57-JPt"/>
+                            <constraint firstItem="akh-ge-5cn" firstAttribute="width" secondItem="kfG-6e-h6D" secondAttribute="width" id="a0b-BD-y2k"/>
+                            <constraint firstItem="Ms3-jn-F9g" firstAttribute="top" secondItem="ag9-uq-3e5" secondAttribute="bottom" constant="13" id="cn6-Gz-ncz"/>
+                            <constraint firstItem="kfG-6e-h6D" firstAttribute="width" secondItem="kfG-6e-h6D" secondAttribute="height" multiplier="1:1" id="cvM-Zc-6mG"/>
+                            <constraint firstItem="iZe-rf-lua" firstAttribute="top" secondItem="Bf5-gs-mh3" secondAttribute="bottom" constant="14" id="eKb-xv-87I"/>
+                            <constraint firstItem="I1X-gI-fML" firstAttribute="trailing" secondItem="akh-ge-5cn" secondAttribute="trailing" constant="16" id="gbH-Pi-h1F"/>
+                            <constraint firstItem="M8A-kA-yNC" firstAttribute="leading" secondItem="I1X-gI-fML" secondAttribute="leading" id="j5Q-M0-9PX"/>
+                            <constraint firstItem="iZe-rf-lua" firstAttribute="trailing" secondItem="Bf5-gs-mh3" secondAttribute="trailing" id="jLc-K0-Y5c"/>
+                            <constraint firstItem="M8A-kA-yNC" firstAttribute="top" secondItem="PvS-xl-do1" secondAttribute="top" constant="-17" id="mKy-eE-8Rl"/>
+                            <constraint firstItem="ABb-qh-Wk6" firstAttribute="width" secondItem="PvS-xl-do1" secondAttribute="width" id="nCh-ga-ts9"/>
+                            <constraint firstItem="Bf5-gs-mh3" firstAttribute="top" secondItem="I1X-gI-fML" secondAttribute="top" constant="30" id="pJS-wM-VdL"/>
+                            <constraint firstItem="I1X-gI-fML" firstAttribute="trailing" secondItem="x4g-6V-Pw6" secondAttribute="trailing" constant="16" id="rBE-Lv-UC5"/>
+                            <constraint firstItem="x4g-6V-Pw6" firstAttribute="top" secondItem="ag9-uq-3e5" secondAttribute="bottom" constant="13" id="rfP-ts-0ct"/>
+                            <constraint firstItem="x4g-6V-Pw6" firstAttribute="width" secondItem="x4g-6V-Pw6" secondAttribute="height" multiplier="1:1" id="s5h-gg-jXj"/>
+                            <constraint firstItem="kfG-6e-h6D" firstAttribute="leading" secondItem="I1X-gI-fML" secondAttribute="leading" constant="113" id="v5W-nP-tPY"/>
+                            <constraint firstItem="kfG-6e-h6D" firstAttribute="width" secondItem="PvS-xl-do1" secondAttribute="width" id="yW3-hB-pho"/>
+                            <constraint firstItem="PvS-xl-do1" firstAttribute="leading" secondItem="M8A-kA-yNC" secondAttribute="leading" constant="14" id="ycM-cM-M6y"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="I1X-gI-fML"/>
+                    </view>
+                    <connections>
+                        <outlet property="back" destination="s4a-He-eBY" id="vcc-7y-wY7"/>
+                        <outletCollection property="mice" destination="PvS-xl-do1" collectionClass="NSMutableArray" id="5WU-sF-6lp"/>
+                        <outletCollection property="mice" destination="ABb-qh-Wk6" collectionClass="NSMutableArray" id="ANo-B2-2xY"/>
+                        <outletCollection property="mice" destination="kfG-6e-h6D" collectionClass="NSMutableArray" id="1J6-mB-sk5"/>
+                        <outletCollection property="mice" destination="akh-ge-5cn" collectionClass="NSMutableArray" id="xT3-FA-zD1"/>
+                        <outletCollection property="mice" destination="Zef-O8-7W5" collectionClass="NSMutableArray" id="Gii-vj-Hik"/>
+                        <outletCollection property="mice" destination="ag9-uq-3e5" collectionClass="NSMutableArray" id="NFG-9P-khX"/>
+                        <outletCollection property="mice" destination="Ms3-jn-F9g" collectionClass="NSMutableArray" id="TjP-cn-4c1"/>
+                        <outletCollection property="mice" destination="x4g-6V-Pw6" collectionClass="NSMutableArray" id="wmq-DU-2IM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vjg-Kj-alo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="qUN-2M-wj0">
+                    <connections>
+                        <action selector="tappedMouse1:" destination="85s-W0-cbS" id="e0B-Zi-9af"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="y5I-FA-9xY">
+                    <connections>
+                        <action selector="tappedMouse2:" destination="85s-W0-cbS" id="Mnw-Z6-WFc"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="boJ-Yy-0Qt">
+                    <connections>
+                        <action selector="tappedMouse3:" destination="85s-W0-cbS" id="h5B-w0-QrX"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="Srg-cu-qTT">
+                    <connections>
+                        <action selector="tappedMouse4:" destination="85s-W0-cbS" id="RBc-IN-96z"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="GX6-tC-NAC">
+                    <connections>
+                        <action selector="tappedMouse5:" destination="85s-W0-cbS" id="v6j-9E-7Se"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="b4H-Hn-Ghf">
+                    <connections>
+                        <action selector="tappedMouse6:" destination="85s-W0-cbS" id="6Ox-Cg-Bic"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="kri-Jc-gbM">
+                    <connections>
+                        <action selector="tappedMouse7:" destination="85s-W0-cbS" id="isW-WF-sya"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="oEK-sN-PKw">
+                    <connections>
+                        <action selector="tappedMouse8:" destination="85s-W0-cbS" id="7vw-5h-TFL"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1069.5652173913045" y="88.392857142857139"/>
+        </scene>
         <!--Statistics View Controller-->
         <scene sceneID="I2n-0j-Dzg">
             <objects>
@@ -640,6 +873,9 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3R5-Cg-sFz">
                                 <rect key="frame" x="0.0" y="49" width="414" height="98"/>
                                 <color key="backgroundColor" red="1" green="0.75476870340000002" blue="0.71852897049999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="98" id="Gav-cp-CnR"/>
+                                </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="36d-UQ-qdW">
                                 <rect key="frame" x="162" y="802" width="90" height="30"/>
@@ -788,7 +1024,6 @@
                         <color key="backgroundColor" red="1" green="0.84499601960000004" blue="0.74862455289999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="44q-xn-kxS" firstAttribute="trailing" secondItem="BD8-OP-0cl" secondAttribute="trailing" constant="20" id="5wA-LC-Naf"/>
-                            <constraint firstItem="4bt-eb-d3g" firstAttribute="top" secondItem="BD8-OP-0cl" secondAttribute="bottom" constant="70" id="956-gP-9jK"/>
                             <constraint firstItem="4bt-eb-d3g" firstAttribute="leading" secondItem="44q-xn-kxS" secondAttribute="leading" constant="20" id="E7N-Ey-Vho"/>
                             <constraint firstItem="36d-UQ-qdW" firstAttribute="centerX" secondItem="fhF-EE-wec" secondAttribute="centerX" id="HeD-BN-ReK"/>
                             <constraint firstItem="3R5-Cg-sFz" firstAttribute="top" secondItem="44q-xn-kxS" secondAttribute="top" constant="5" id="JzN-fa-L5M"/>
@@ -827,7 +1062,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tn5-Z3-OBr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1018.840579710145" y="6.6964285714285712"/>
+            <point key="canvasLocation" x="1770" y="616"/>
         </scene>
         <!--About View Controller-->
         <scene sceneID="Jya-I8-ARn">
@@ -1160,7 +1395,7 @@ OTHER DEALINGS IN THE FONT SOFTWARE.</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Point Shop" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RKm-jq-2as">
-                                <rect key="frame" x="129.5" y="74" width="155.5" height="17"/>
+                                <rect key="frame" x="165" y="74" width="84.5" height="20"/>
                                 <fontDescription key="fontDescription" name="Dogica_Pixel_Bold" family="Dogica Pixel" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -1173,19 +1408,19 @@ OTHER DEALINGS IN THE FONT SOFTWARE.</string>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Purchased points will be added to your current total" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="peM-Be-2Lg">
-                                <rect key="frame" x="20" y="116" width="374" height="24"/>
+                                <rect key="frame" x="20" y="119" width="374" height="14"/>
                                 <fontDescription key="fontDescription" name="Dogica_Pixel" family="Dogica Pixel" pointSize="12"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5sD-uS-Tzx">
-                                <rect key="frame" x="53" y="57.5" width="14" height="16"/>
+                                <rect key="frame" x="53" y="56" width="9" height="19"/>
                                 <fontDescription key="fontDescription" name="Dogica_Pixel" family="Dogica Pixel" pointSize="16"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Bz4-3S-FNX">
-                                <rect key="frame" x="20" y="165" width="374" height="612"/>
+                                <rect key="frame" x="20" y="158" width="374" height="619"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="pawShopCell" rowHeight="230" id="DD8-Mq-hOF" customClass="PawShopTableViewCell" customModule="Amble_Cat" customModuleProvider="target">
@@ -1196,7 +1431,7 @@ OTHER DEALINGS IN THE FONT SOFTWARE.</string>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Eg-Lf-nAo">
-                                                    <rect key="frame" x="150" y="16" width="74.5" height="22"/>
+                                                    <rect key="frame" x="171" y="16" width="32" height="22"/>
                                                     <fontDescription key="fontDescription" name="Dogica_Pixel_Bold" family="Dogica Pixel" pointSize="17"/>
                                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -1627,6 +1862,8 @@ OTHER DEALINGS IN THE FONT SOFTWARE.</string>
         <image name="tilewallpink" width="3000" height="3000"/>
         <image name="tilewhite" width="3000" height="3000"/>
         <image name="towelsyellow" width="3000" height="3000"/>
+        <image name="whackablemouse" width="945" height="945"/>
+        <image name="whackamouse" width="4260" height="4260"/>
         <image name="window" width="3000" height="3000"/>
     </resources>
 </document>
