@@ -10,10 +10,11 @@ import Foundation
 
 struct ButtonsManager {
     static let buttonNames: [Int : String] = [
-        0: "feed",
-        1: "water",
-        2: "step history",
-        3: "decor shop",
-        4: "paw point shop"
+        0: "play game",
+        1: "step history",
+        2: "feed",
+        3: "water",
+        4: "decor shop",
+        5: "paw point shop"
     ]
 }

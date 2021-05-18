@@ -318,16 +318,19 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
           
           switch selectedButton.tag {
           case 0:
-               feed()
+               paused = true
+               performSegue(withIdentifier: "playGame", sender: Any?.self)
           case 1:
-               water()
-          case 2:
                paused = true
                performSegue(withIdentifier: "viewStatistics", sender: Any?.self)
+          case 2:
+               feed()
           case 3:
+               water()
+          case 4:
                paused = true
                performSegue(withIdentifier: "goToStore", sender: Any?.self)
-          case 4:
+          case 5:
                paused = true
                performSegue(withIdentifier: "goToPointShop", sender: Any?.self)
           default:
@@ -366,8 +369,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
      }
      
      @IBAction func viewInfoTapped(_ sender: UIButton) {
-          
-          //performSegue(withIdentifier: "viewAbout", sender: Any?.self)
+          performSegue(withIdentifier: "viewAbout", sender: Any?.self)
      }
      
 }

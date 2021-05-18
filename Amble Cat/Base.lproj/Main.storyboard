@@ -428,39 +428,47 @@
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="17M-Xd-B1w">
                                 <rect key="frame" x="20" y="528" width="374" height="50"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OrP-kX-PlR">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9OZ-I7-suY">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="TY8-6W-ne4"/>
-                                            <constraint firstAttribute="width" constant="50" id="fX3-f9-XK4"/>
+                                            <constraint firstAttribute="width" constant="50" id="3hT-7L-CJZ"/>
+                                            <constraint firstAttribute="height" constant="50" id="yRq-t8-O3Q"/>
                                         </constraints>
-                                        <state key="normal" image="feed" backgroundImage="select"/>
+                                        <state key="normal" image="play" backgroundImage="select"/>
                                     </button>
-                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3HO-7a-zSL">
-                                        <rect key="frame" x="81" y="0.0" width="50" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="Pft-zg-myt"/>
-                                            <constraint firstAttribute="width" constant="50" id="aeE-ke-PSD"/>
-                                        </constraints>
-                                        <state key="normal" title="Button" image="givewater" backgroundImage="none"/>
-                                    </button>
-                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DmN-iO-TNa">
-                                        <rect key="frame" x="162" y="0.0" width="50" height="50"/>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DmN-iO-TNa">
+                                        <rect key="frame" x="65" y="0.0" width="50" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="5EL-he-CiG"/>
                                             <constraint firstAttribute="width" constant="50" id="u4m-5t-hpa"/>
                                         </constraints>
                                         <state key="normal" image="history" backgroundImage="none"/>
                                     </button>
-                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IyJ-a3-osq">
-                                        <rect key="frame" x="243" y="0.0" width="50" height="50"/>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OrP-kX-PlR">
+                                        <rect key="frame" x="129.5" y="0.0" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="TY8-6W-ne4"/>
+                                            <constraint firstAttribute="width" constant="50" id="fX3-f9-XK4"/>
+                                        </constraints>
+                                        <state key="normal" image="feed" backgroundImage="none"/>
+                                    </button>
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3HO-7a-zSL">
+                                        <rect key="frame" x="194.5" y="0.0" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="Pft-zg-myt"/>
+                                            <constraint firstAttribute="width" constant="50" id="aeE-ke-PSD"/>
+                                        </constraints>
+                                        <state key="normal" image="givewater" backgroundImage="none"/>
+                                    </button>
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IyJ-a3-osq">
+                                        <rect key="frame" x="259" y="0.0" width="50" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="7c3-aw-6cI"/>
                                             <constraint firstAttribute="width" constant="50" id="RgV-t7-TPP"/>
                                         </constraints>
-                                        <state key="normal" title="Button" image="decorshop" backgroundImage="none"/>
+                                        <state key="normal" image="decorshop" backgroundImage="none"/>
                                     </button>
-                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="StT-Oy-JOn">
+                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="StT-Oy-JOn">
                                         <rect key="frame" x="324" y="0.0" width="50" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="50" id="M0d-UY-NaG"/>
@@ -526,7 +534,7 @@
                                     <constraint firstItem="P0e-XR-Odj" firstAttribute="leading" secondItem="wZ8-MY-gwX" secondAttribute="trailing" constant="40" id="YH3-ba-pFq"/>
                                 </constraints>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="feed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rs1-C2-6hF">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="play game" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rs1-C2-6hF">
                                 <rect key="frame" x="0.0" y="580" width="414" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.75294117647058822" blue="0.71764705882352942" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -609,15 +617,17 @@
                         <outletCollection property="hearts" destination="rez-TH-Lvx" collectionClass="NSMutableArray" id="NLE-03-sVx"/>
                         <outletCollection property="hearts" destination="z7N-xn-IM6" collectionClass="NSMutableArray" id="mmN-DC-Fbu"/>
                         <outletCollection property="hearts" destination="NHD-ey-dcA" collectionClass="NSMutableArray" id="3C2-qk-0Nh"/>
-                        <outletCollection property="buttons" destination="OrP-kX-PlR" collectionClass="NSMutableArray" id="qVA-DC-fiV"/>
-                        <outletCollection property="buttons" destination="3HO-7a-zSL" collectionClass="NSMutableArray" id="vtb-Xx-6Aj"/>
-                        <outletCollection property="buttons" destination="DmN-iO-TNa" collectionClass="NSMutableArray" id="9vW-XZ-vUe"/>
-                        <outletCollection property="buttons" destination="IyJ-a3-osq" collectionClass="NSMutableArray" id="7B1-h2-zMV"/>
-                        <outletCollection property="buttons" destination="StT-Oy-JOn" collectionClass="NSMutableArray" id="lKc-rr-bzP"/>
+                        <outletCollection property="buttons" destination="9OZ-I7-suY" collectionClass="NSMutableArray" id="u8N-pc-CpJ"/>
+                        <outletCollection property="buttons" destination="DmN-iO-TNa" collectionClass="NSMutableArray" id="Ykd-Ar-9x3"/>
+                        <outletCollection property="buttons" destination="OrP-kX-PlR" collectionClass="NSMutableArray" id="lVa-4U-Fpp"/>
+                        <outletCollection property="buttons" destination="3HO-7a-zSL" collectionClass="NSMutableArray" id="LQm-xt-KRI"/>
+                        <outletCollection property="buttons" destination="IyJ-a3-osq" collectionClass="NSMutableArray" id="vVZ-75-uLd"/>
+                        <outletCollection property="buttons" destination="StT-Oy-JOn" collectionClass="NSMutableArray" id="u5E-wN-eFt"/>
                         <segue destination="edN-Ly-Sbe" kind="showDetail" identifier="viewStatistics" id="bYH-FW-lFG"/>
                         <segue destination="a4u-U3-FqG" kind="show" identifier="goToStore" id="t8C-Rc-FlI"/>
                         <segue destination="puM-ZC-pgh" kind="show" identifier="goToPointShop" id="UKi-aU-Lpd"/>
                         <segue destination="n5Z-Ee-q2v" kind="show" identifier="viewAbout" id="gbJ-Ml-veE"/>
+                        <segue destination="85s-W0-cbS" kind="showDetail" identifier="playGame" id="pIh-xZ-x1V"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -632,7 +642,7 @@
         <!--Whackamouse View Controller-->
         <scene sceneID="0Pe-yL-DY0">
             <objects>
-                <viewController id="85s-W0-cbS" customClass="WhackamouseViewController" customModule="Amble_Cat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="85s-W0-cbS" customClass="WhackamouseViewController" customModule="Amble_Cat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hgC-P0-OhI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -647,8 +657,8 @@
                                             <constraint firstAttribute="width" constant="30" id="ws7-JJ-kob"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 Paw Points" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S8f-Kf-hkZ">
-                                        <rect key="frame" x="45" y="60" width="114" height="12"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0 Paw Points" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S8f-Kf-hkZ">
+                                        <rect key="frame" x="45" y="59" width="126" height="14"/>
                                         <fontDescription key="fontDescription" name="Dogica_Pixel" family="Dogica Pixel" pointSize="12"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -696,8 +706,8 @@
                                     <constraint firstAttribute="width" secondItem="M8A-kA-yNC" secondAttribute="height" multiplier="1:1" id="qWM-Hs-rcm"/>
                                 </constraints>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whackablemouse" translatesAutoresizingMaskIntoConstraints="NO" id="PvS-xl-do1">
-                                <rect key="frame" x="14" y="169" width="86.5" height="86.5"/>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whackablemouse" translatesAutoresizingMaskIntoConstraints="NO" id="PvS-xl-do1">
+                                <rect key="frame" x="19" y="172" width="80" height="80"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="PvS-xl-do1" secondAttribute="height" multiplier="1:1" id="MfG-Kk-IVb"/>
@@ -706,8 +716,8 @@
                                     <outletCollection property="gestureRecognizers" destination="qUN-2M-wj0" appends="YES" id="LAi-RX-yfV"/>
                                 </connections>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whackablemouse" translatesAutoresizingMaskIntoConstraints="NO" id="ABb-qh-Wk6">
-                                <rect key="frame" x="212.5" y="169" width="86.5" height="86.5"/>
+                            <imageView clipsSubviews="YES" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whackablemouse" translatesAutoresizingMaskIntoConstraints="NO" id="ABb-qh-Wk6">
+                                <rect key="frame" x="219" y="172" width="79.5" height="80"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="ABb-qh-Wk6" secondAttribute="height" multiplier="1:1" id="GtV-cB-laN"/>
@@ -716,98 +726,118 @@
                                     <outletCollection property="gestureRecognizers" destination="y5I-FA-9xY" appends="YES" id="fXv-eP-SSE"/>
                                 </connections>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whackablemouse" translatesAutoresizingMaskIntoConstraints="NO" id="kfG-6e-h6D">
-                                <rect key="frame" x="113" y="267.5" width="86.5" height="86.5"/>
+                            <imageView clipsSubviews="YES" tag="2" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whackablemouse" translatesAutoresizingMaskIntoConstraints="NO" id="kfG-6e-h6D">
+                                <rect key="frame" x="119.5" y="272" width="79.5" height="80"/>
                                 <gestureRecognizers/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="boJ-Yy-0Qt" appends="YES" id="32k-h0-DbY"/>
                                 </connections>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whackablemouse" translatesAutoresizingMaskIntoConstraints="NO" id="akh-ge-5cn">
-                                <rect key="frame" x="311.5" y="267.5" width="86.5" height="86.5"/>
+                            <imageView clipsSubviews="YES" tag="3" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whackablemouse" translatesAutoresizingMaskIntoConstraints="NO" id="akh-ge-5cn">
+                                <rect key="frame" x="317" y="272" width="80" height="80"/>
                                 <gestureRecognizers/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="Srg-cu-qTT" appends="YES" id="3IF-k9-MCw"/>
                                 </connections>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whackablemouse" translatesAutoresizingMaskIntoConstraints="NO" id="Zef-O8-7W5">
-                                <rect key="frame" x="14" y="367" width="86.5" height="86.5"/>
+                            <imageView clipsSubviews="YES" tag="4" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whackablemouse" translatesAutoresizingMaskIntoConstraints="NO" id="Zef-O8-7W5">
+                                <rect key="frame" x="19" y="370.5" width="80" height="79.5"/>
                                 <gestureRecognizers/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="GX6-tC-NAC" appends="YES" id="uEN-1U-oOV"/>
                                 </connections>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whackablemouse" translatesAutoresizingMaskIntoConstraints="NO" id="ag9-uq-3e5">
-                                <rect key="frame" x="212.5" y="367" width="86.5" height="86.5"/>
+                            <imageView clipsSubviews="YES" tag="5" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whackablemouse" translatesAutoresizingMaskIntoConstraints="NO" id="ag9-uq-3e5">
+                                <rect key="frame" x="219" y="370.5" width="79.5" height="79.5"/>
                                 <gestureRecognizers/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="b4H-Hn-Ghf" appends="YES" id="7Qc-sn-mwE"/>
                                 </connections>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whackablemouse" translatesAutoresizingMaskIntoConstraints="NO" id="Ms3-jn-F9g">
-                                <rect key="frame" x="113" y="466.5" width="86.5" height="86.5"/>
+                            <imageView clipsSubviews="YES" tag="6" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whackablemouse" translatesAutoresizingMaskIntoConstraints="NO" id="Ms3-jn-F9g">
+                                <rect key="frame" x="119.5" y="469.5" width="79.5" height="79.5"/>
                                 <gestureRecognizers/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="kri-Jc-gbM" appends="YES" id="Hcz-3A-Ja6"/>
                                 </connections>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whackablemouse" translatesAutoresizingMaskIntoConstraints="NO" id="x4g-6V-Pw6">
-                                <rect key="frame" x="311.5" y="466.5" width="86.5" height="86.5"/>
+                            <imageView clipsSubviews="YES" tag="7" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whackablemouse" translatesAutoresizingMaskIntoConstraints="NO" id="x4g-6V-Pw6">
+                                <rect key="frame" x="317" y="469.5" width="80" height="79.5"/>
                                 <gestureRecognizers/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="oEK-sN-PKw" appends="YES" id="Fyf-9T-pjl"/>
                                 </connections>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kF6-Uh-f7C">
+                                <rect key="frame" x="119.5" y="629" width="175" height="50"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="175" id="JcE-aE-sNP"/>
+                                    <constraint firstAttribute="height" constant="50" id="ipD-I1-kQ8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Dogica_Pixel" family="Dogica Pixel" pointSize="16"/>
+                                <state key="normal" title="begin game">
+                                    <color key="titleColor" red="1" green="0.75294117650000003" blue="0.71764705880000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="beginPressed:" destination="85s-W0-cbS" eventType="touchUpInside" id="gom-X3-dSq"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.84313725490000002" blue="0.74901960779999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Zef-O8-7W5" firstAttribute="top" secondItem="kfG-6e-h6D" secondAttribute="bottom" constant="13" id="0N1-n3-U96"/>
-                            <constraint firstItem="ag9-uq-3e5" firstAttribute="top" secondItem="akh-ge-5cn" secondAttribute="bottom" constant="13" id="0sL-h1-xgX"/>
                             <constraint firstItem="Zef-O8-7W5" firstAttribute="width" secondItem="kfG-6e-h6D" secondAttribute="width" id="1Py-dJ-fsV"/>
+                            <constraint firstItem="x4g-6V-Pw6" firstAttribute="centerX" secondItem="M8A-kA-yNC" secondAttribute="centerX" multiplier="1:0.58" id="2A2-fJ-lid"/>
                             <constraint firstItem="s4a-He-eBY" firstAttribute="centerX" secondItem="hgC-P0-OhI" secondAttribute="centerX" id="37a-NX-lFG"/>
+                            <constraint firstItem="Zef-O8-7W5" firstAttribute="centerY" secondItem="M8A-kA-yNC" secondAttribute="centerY" multiplier="1:0.875" id="3h6-hP-OuT"/>
                             <constraint firstItem="Ms3-jn-F9g" firstAttribute="width" secondItem="Ms3-jn-F9g" secondAttribute="height" multiplier="1:1" id="3tg-ON-K8W"/>
                             <constraint firstItem="Zef-O8-7W5" firstAttribute="width" secondItem="Zef-O8-7W5" secondAttribute="height" multiplier="1:1" id="4XL-yn-Qqc"/>
                             <constraint firstItem="I1X-gI-fML" firstAttribute="bottom" secondItem="s4a-He-eBY" secondAttribute="bottom" constant="30" id="5f7-9V-KzH"/>
+                            <constraint firstItem="ABb-qh-Wk6" firstAttribute="centerX" secondItem="M8A-kA-yNC" secondAttribute="centerX" multiplier="1:0.8" id="6Pb-z6-MTC"/>
                             <constraint firstItem="j3d-VP-b9H" firstAttribute="leading" secondItem="I1X-gI-fML" secondAttribute="leading" id="7wg-Ee-eiZ"/>
                             <constraint firstItem="akh-ge-5cn" firstAttribute="width" secondItem="akh-ge-5cn" secondAttribute="height" multiplier="1:1" id="9Uj-tp-eP0"/>
+                            <constraint firstItem="kF6-Uh-f7C" firstAttribute="centerX" secondItem="hgC-P0-OhI" secondAttribute="centerX" id="9u9-vh-xll"/>
                             <constraint firstItem="j3d-VP-b9H" firstAttribute="trailing" secondItem="I1X-gI-fML" secondAttribute="trailing" id="Asu-48-Wma"/>
                             <constraint firstItem="I1X-gI-fML" firstAttribute="trailing" secondItem="M8A-kA-yNC" secondAttribute="trailing" id="ENR-uF-1xX"/>
+                            <constraint firstItem="Zef-O8-7W5" firstAttribute="centerX" secondItem="M8A-kA-yNC" secondAttribute="centerX" multiplier="1:3.5" id="Eeq-pm-euM"/>
                             <constraint firstItem="Ms3-jn-F9g" firstAttribute="width" secondItem="ag9-uq-3e5" secondAttribute="width" id="FLo-Ys-m1J"/>
-                            <constraint firstItem="kfG-6e-h6D" firstAttribute="top" secondItem="ABb-qh-Wk6" secondAttribute="bottom" constant="12" id="FYf-YU-HRe"/>
                             <constraint firstItem="I1X-gI-fML" firstAttribute="trailing" secondItem="Bf5-gs-mh3" secondAttribute="trailing" constant="30" id="Frp-BU-Jh2"/>
-                            <constraint firstItem="I1X-gI-fML" firstAttribute="trailing" secondItem="ABb-qh-Wk6" secondAttribute="trailing" constant="115" id="HGg-8k-epa"/>
                             <constraint firstItem="j3d-VP-b9H" firstAttribute="top" secondItem="I1X-gI-fML" secondAttribute="top" constant="5" id="HhD-3x-G9h"/>
                             <constraint firstItem="ag9-uq-3e5" firstAttribute="width" secondItem="ag9-uq-3e5" secondAttribute="height" multiplier="1:1" id="Hnt-bc-d4l"/>
-                            <constraint firstItem="Zef-O8-7W5" firstAttribute="leading" secondItem="I1X-gI-fML" secondAttribute="leading" constant="14" id="Ihn-ts-N9d"/>
-                            <constraint firstItem="PvS-xl-do1" firstAttribute="width" secondItem="M8A-kA-yNC" secondAttribute="width" multiplier="0.209" id="J5M-N9-V3s"/>
-                            <constraint firstItem="Ms3-jn-F9g" firstAttribute="leading" secondItem="I1X-gI-fML" secondAttribute="leading" constant="113" id="M9R-rQ-Awb"/>
+                            <constraint firstItem="PvS-xl-do1" firstAttribute="width" secondItem="M8A-kA-yNC" secondAttribute="width" multiplier="0.193" id="J5M-N9-V3s"/>
+                            <constraint firstItem="kfG-6e-h6D" firstAttribute="centerX" secondItem="M8A-kA-yNC" secondAttribute="centerX" multiplier="1:1.3" id="NdV-DE-SWB"/>
+                            <constraint firstItem="x4g-6V-Pw6" firstAttribute="centerY" secondItem="Ms3-jn-F9g" secondAttribute="centerY" id="Qtg-hG-w9K"/>
                             <constraint firstItem="x4g-6V-Pw6" firstAttribute="width" secondItem="Ms3-jn-F9g" secondAttribute="width" id="SaM-Bi-frB"/>
+                            <constraint firstItem="ag9-uq-3e5" firstAttribute="centerX" secondItem="M8A-kA-yNC" secondAttribute="centerX" multiplier="1:0.8" id="TIr-zu-Cmp"/>
                             <constraint firstItem="M8A-kA-yNC" firstAttribute="top" secondItem="j3d-VP-b9H" secondAttribute="bottom" constant="5" id="TQv-Sh-JvF"/>
                             <constraint firstItem="ag9-uq-3e5" firstAttribute="width" secondItem="Zef-O8-7W5" secondAttribute="width" id="VoT-Rw-zid"/>
-                            <constraint firstItem="I1X-gI-fML" firstAttribute="trailing" secondItem="ag9-uq-3e5" secondAttribute="trailing" constant="115" id="W9V-xe-Gd8"/>
-                            <constraint firstItem="ABb-qh-Wk6" firstAttribute="top" secondItem="M8A-kA-yNC" secondAttribute="top" constant="17" id="YGU-Rq-wNM"/>
-                            <constraint firstItem="akh-ge-5cn" firstAttribute="top" secondItem="ABb-qh-Wk6" secondAttribute="bottom" constant="12" id="YpO-57-JPt"/>
+                            <constraint firstItem="akh-ge-5cn" firstAttribute="centerY" secondItem="kfG-6e-h6D" secondAttribute="centerY" id="Y1g-Ub-eCZ"/>
                             <constraint firstItem="akh-ge-5cn" firstAttribute="width" secondItem="kfG-6e-h6D" secondAttribute="width" id="a0b-BD-y2k"/>
-                            <constraint firstItem="Ms3-jn-F9g" firstAttribute="top" secondItem="ag9-uq-3e5" secondAttribute="bottom" constant="13" id="cn6-Gz-ncz"/>
+                            <constraint firstItem="Ms3-jn-F9g" firstAttribute="centerX" secondItem="M8A-kA-yNC" secondAttribute="centerX" multiplier="1:1.3" id="bBK-U5-6AK"/>
+                            <constraint firstItem="kfG-6e-h6D" firstAttribute="centerY" secondItem="M8A-kA-yNC" secondAttribute="centerY" multiplier="1:1.15" id="bqd-7W-V6L"/>
                             <constraint firstItem="kfG-6e-h6D" firstAttribute="width" secondItem="kfG-6e-h6D" secondAttribute="height" multiplier="1:1" id="cvM-Zc-6mG"/>
+                            <constraint firstItem="akh-ge-5cn" firstAttribute="centerX" secondItem="M8A-kA-yNC" secondAttribute="centerX" multiplier="1:0.58" id="dx9-JI-O8r"/>
                             <constraint firstItem="iZe-rf-lua" firstAttribute="top" secondItem="Bf5-gs-mh3" secondAttribute="bottom" constant="14" id="eKb-xv-87I"/>
-                            <constraint firstItem="I1X-gI-fML" firstAttribute="trailing" secondItem="akh-ge-5cn" secondAttribute="trailing" constant="16" id="gbH-Pi-h1F"/>
                             <constraint firstItem="M8A-kA-yNC" firstAttribute="leading" secondItem="I1X-gI-fML" secondAttribute="leading" id="j5Q-M0-9PX"/>
                             <constraint firstItem="iZe-rf-lua" firstAttribute="trailing" secondItem="Bf5-gs-mh3" secondAttribute="trailing" id="jLc-K0-Y5c"/>
-                            <constraint firstItem="M8A-kA-yNC" firstAttribute="top" secondItem="PvS-xl-do1" secondAttribute="top" constant="-17" id="mKy-eE-8Rl"/>
+                            <constraint firstItem="PvS-xl-do1" firstAttribute="centerY" secondItem="M8A-kA-yNC" secondAttribute="centerY" multiplier="0.59:1" id="mKy-eE-8Rl"/>
+                            <constraint firstItem="kF6-Uh-f7C" firstAttribute="top" secondItem="M8A-kA-yNC" secondAttribute="bottom" constant="63" id="mi9-b0-2vK"/>
                             <constraint firstItem="ABb-qh-Wk6" firstAttribute="width" secondItem="PvS-xl-do1" secondAttribute="width" id="nCh-ga-ts9"/>
+                            <constraint firstItem="ag9-uq-3e5" firstAttribute="centerY" secondItem="Zef-O8-7W5" secondAttribute="centerY" id="oCB-PQ-Pro"/>
+                            <constraint firstItem="Ms3-jn-F9g" firstAttribute="centerY" secondItem="M8A-kA-yNC" secondAttribute="centerY" multiplier="1:0.705" id="ohp-KY-imR"/>
                             <constraint firstItem="Bf5-gs-mh3" firstAttribute="top" secondItem="I1X-gI-fML" secondAttribute="top" constant="30" id="pJS-wM-VdL"/>
-                            <constraint firstItem="I1X-gI-fML" firstAttribute="trailing" secondItem="x4g-6V-Pw6" secondAttribute="trailing" constant="16" id="rBE-Lv-UC5"/>
-                            <constraint firstItem="x4g-6V-Pw6" firstAttribute="top" secondItem="ag9-uq-3e5" secondAttribute="bottom" constant="13" id="rfP-ts-0ct"/>
                             <constraint firstItem="x4g-6V-Pw6" firstAttribute="width" secondItem="x4g-6V-Pw6" secondAttribute="height" multiplier="1:1" id="s5h-gg-jXj"/>
-                            <constraint firstItem="kfG-6e-h6D" firstAttribute="leading" secondItem="I1X-gI-fML" secondAttribute="leading" constant="113" id="v5W-nP-tPY"/>
+                            <constraint firstItem="ABb-qh-Wk6" firstAttribute="centerY" secondItem="PvS-xl-do1" secondAttribute="centerY" id="u5i-EC-Gnq"/>
                             <constraint firstItem="kfG-6e-h6D" firstAttribute="width" secondItem="PvS-xl-do1" secondAttribute="width" id="yW3-hB-pho"/>
-                            <constraint firstItem="PvS-xl-do1" firstAttribute="leading" secondItem="M8A-kA-yNC" secondAttribute="leading" constant="14" id="ycM-cM-M6y"/>
+                            <constraint firstItem="PvS-xl-do1" firstAttribute="centerX" secondItem="M8A-kA-yNC" secondAttribute="centerX" multiplier="1:3.5" id="ycM-cM-M6y"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="I1X-gI-fML"/>
                     </view>
+                    <navigationItem key="navigationItem" id="OR2-jx-xiC"/>
                     <connections>
                         <outlet property="back" destination="s4a-He-eBY" id="vcc-7y-wY7"/>
+                        <outlet property="beginButton" destination="kF6-Uh-f7C" id="cz7-Sa-4VW"/>
+                        <outlet property="pawPointLabel" destination="S8f-Kf-hkZ" id="guH-6E-QFB"/>
                         <outletCollection property="mice" destination="PvS-xl-do1" collectionClass="NSMutableArray" id="5WU-sF-6lp"/>
                         <outletCollection property="mice" destination="ABb-qh-Wk6" collectionClass="NSMutableArray" id="ANo-B2-2xY"/>
                         <outletCollection property="mice" destination="kfG-6e-h6D" collectionClass="NSMutableArray" id="1J6-mB-sk5"/>
@@ -893,16 +923,16 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="4bt-eb-d3g">
-                                <rect key="frame" x="20" y="187" width="374" height="15"/>
+                                <rect key="frame" x="20" y="187" width="374" height="17.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hyC-Na-jP4">
-                                        <rect key="frame" x="0.0" y="0.0" width="182" height="15"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="182" height="17.5"/>
                                         <fontDescription key="fontDescription" name="Dogica_Pixel_Bold" family="Dogica Pixel" pointSize="15"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Steps" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O9J-ix-8ro">
-                                        <rect key="frame" x="192" y="0.0" width="182" height="15"/>
+                                        <rect key="frame" x="192" y="0.0" width="182" height="17.5"/>
                                         <fontDescription key="fontDescription" name="Dogica_Pixel_Bold" family="Dogica Pixel" pointSize="15"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
@@ -910,61 +940,61 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Step History" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a2L-Ie-zTp">
-                                <rect key="frame" x="115.5" y="74" width="183" height="17"/>
+                                <rect key="frame" x="160" y="74" width="94.5" height="20"/>
                                 <fontDescription key="fontDescription" name="Dogica_Pixel_Bold" family="Dogica Pixel" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last seven days of step activity" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BD8-OP-0cl">
-                                <rect key="frame" x="20" y="105" width="374" height="12"/>
+                                <rect key="frame" x="20" y="108" width="374" height="14"/>
                                 <fontDescription key="fontDescription" name="Dogica_Pixel" family="Dogica Pixel" pointSize="12"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="117" translatesAutoresizingMaskIntoConstraints="NO" id="VcJ-ex-RBD">
-                                <rect key="frame" x="77.5" y="232" width="259" height="310"/>
+                                <rect key="frame" x="108" y="234.5" width="198" height="331"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="33" translatesAutoresizingMaskIntoConstraints="NO" id="LGc-4Y-Eqs">
-                                        <rect key="frame" x="0.0" y="0.0" width="74" height="310"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="39.5" height="331"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yqJ-Vh-b7H">
-                                                <rect key="frame" x="0.0" y="0.0" width="74" height="16"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="39.5" height="19"/>
                                                 <fontDescription key="fontDescription" name="Dogica_Pixel_Bold" family="Dogica Pixel" pointSize="16"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eWd-Vr-ROL">
-                                                <rect key="frame" x="0.0" y="49" width="74" height="16"/>
+                                                <rect key="frame" x="0.0" y="52" width="39.5" height="19"/>
                                                 <fontDescription key="fontDescription" name="Dogica_Pixel_Bold" family="Dogica Pixel" pointSize="16"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bFh-7g-O8i">
-                                                <rect key="frame" x="0.0" y="98" width="74" height="16"/>
+                                                <rect key="frame" x="0.0" y="104" width="39.5" height="19"/>
                                                 <fontDescription key="fontDescription" name="Dogica_Pixel_Bold" family="Dogica Pixel" pointSize="16"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kmp-ov-DFE">
-                                                <rect key="frame" x="0.0" y="147" width="74" height="16"/>
+                                                <rect key="frame" x="0.0" y="156" width="39.5" height="19"/>
                                                 <fontDescription key="fontDescription" name="Dogica_Pixel_Bold" family="Dogica Pixel" pointSize="16"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" tag="4" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="St9-Qt-6cA">
-                                                <rect key="frame" x="0.0" y="196" width="74" height="16"/>
+                                                <rect key="frame" x="0.0" y="208" width="39.5" height="19"/>
                                                 <fontDescription key="fontDescription" name="Dogica_Pixel_Bold" family="Dogica Pixel" pointSize="16"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" tag="5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3xQ-K3-FSg">
-                                                <rect key="frame" x="0.0" y="245" width="74" height="16"/>
+                                                <rect key="frame" x="0.0" y="260" width="39.5" height="19"/>
                                                 <fontDescription key="fontDescription" name="Dogica_Pixel_Bold" family="Dogica Pixel" pointSize="16"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" tag="6" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Xh-Kx-1Z4">
-                                                <rect key="frame" x="0.0" y="294" width="74" height="16"/>
+                                                <rect key="frame" x="0.0" y="312" width="39.5" height="19"/>
                                                 <fontDescription key="fontDescription" name="Dogica_Pixel_Bold" family="Dogica Pixel" pointSize="16"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -972,46 +1002,46 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="33" translatesAutoresizingMaskIntoConstraints="NO" id="uzw-HY-Tng">
-                                        <rect key="frame" x="191" y="0.0" width="68" height="310"/>
+                                        <rect key="frame" x="156.5" y="0.0" width="41.5" height="331"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Steps" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Osl-VA-uPt">
-                                                <rect key="frame" x="0.0" y="0.0" width="68" height="16"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="41.5" height="19"/>
                                                 <fontDescription key="fontDescription" name="Dogica_Pixel" family="Dogica Pixel" pointSize="16"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Steps" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eWh-gk-gps">
-                                                <rect key="frame" x="0.0" y="49" width="68" height="16"/>
+                                                <rect key="frame" x="0.0" y="52" width="41.5" height="19"/>
                                                 <fontDescription key="fontDescription" name="Dogica_Pixel" family="Dogica Pixel" pointSize="16"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Steps" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uQz-lw-IUs">
-                                                <rect key="frame" x="0.0" y="98" width="68" height="16"/>
+                                                <rect key="frame" x="0.0" y="104" width="41.5" height="19"/>
                                                 <fontDescription key="fontDescription" name="Dogica_Pixel" family="Dogica Pixel" pointSize="16"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Steps" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fiS-KM-MKS">
-                                                <rect key="frame" x="0.0" y="147" width="68" height="16"/>
+                                                <rect key="frame" x="0.0" y="156" width="41.5" height="19"/>
                                                 <fontDescription key="fontDescription" name="Dogica_Pixel" family="Dogica Pixel" pointSize="16"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" tag="4" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Steps" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vzn-As-NBA">
-                                                <rect key="frame" x="0.0" y="196" width="68" height="16"/>
+                                                <rect key="frame" x="0.0" y="208" width="41.5" height="19"/>
                                                 <fontDescription key="fontDescription" name="Dogica_Pixel" family="Dogica Pixel" pointSize="16"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" tag="5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Steps" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6SR-s1-3fN">
-                                                <rect key="frame" x="0.0" y="245" width="68" height="16"/>
+                                                <rect key="frame" x="0.0" y="260" width="41.5" height="19"/>
                                                 <fontDescription key="fontDescription" name="Dogica_Pixel" family="Dogica Pixel" pointSize="16"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" tag="6" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Steps" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tb6-Ga-Svy">
-                                                <rect key="frame" x="0.0" y="294" width="68" height="16"/>
+                                                <rect key="frame" x="0.0" y="312" width="41.5" height="19"/>
                                                 <fontDescription key="fontDescription" name="Dogica_Pixel" family="Dogica Pixel" pointSize="16"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -1076,10 +1106,10 @@
                                 <rect key="frame" x="20" y="54" width="374" height="798"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="AGg-dw-MHp">
-                                        <rect key="frame" x="0.5" y="0.0" width="373" height="383.5"/>
+                                        <rect key="frame" x="7.5" y="0.0" width="359.5" height="365.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="bhv-N3-eno">
-                                                <rect key="frame" x="38" y="0.0" width="297" height="89.5"/>
+                                                <rect key="frame" x="74" y="0.0" width="211" height="89.5"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lucyphoto" translatesAutoresizingMaskIntoConstraints="NO" id="8O1-4d-wrL">
                                                         <rect key="frame" x="0.0" y="0.0" width="90" height="89.5"/>
@@ -1088,7 +1118,7 @@
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AmbleCat" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="imS-lt-fel">
-                                                        <rect key="frame" x="100" y="0.0" width="197" height="89.5"/>
+                                                        <rect key="frame" x="100" y="0.0" width="111" height="89.5"/>
                                                         <fontDescription key="fontDescription" name="Dogica_Pixel_Bold" family="Dogica Pixel" pointSize="25"/>
                                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         <nil key="highlightedColor"/>
@@ -1096,28 +1126,28 @@
                                                 </subviews>
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pictured is the real-life Lucy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SU0-Db-uvl">
-                                                <rect key="frame" x="51" y="104.5" width="271.5" height="12"/>
+                                                <rect key="frame" x="105" y="104.5" width="149" height="14"/>
                                                 <fontDescription key="fontDescription" name="Dogica_Pixel" family="Dogica Pixel" pointSize="12"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="App and art by kduncan-welke.com" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aUz-K5-enj">
-                                                <rect key="frame" x="62" y="131.5" width="249.5" height="30"/>
+                                                <rect key="frame" x="59.5" y="133.5" width="240" height="17.5"/>
                                                 <fontDescription key="fontDescription" name="Dogica_Pixel_Bold" family="Dogica Pixel" pointSize="15"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sounds by zapsplat.com, and Mark DiAngelo and Popup Pixels on soundbible.com " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EPb-Hw-hFJ">
-                                                <rect key="frame" x="6.5" y="176.5" width="360.5" height="42.5"/>
+                                                <rect key="frame" x="0.0" y="166" width="359.5" height="33"/>
                                                 <fontDescription key="fontDescription" name="Dogica_Pixel" family="Dogica Pixel" pointSize="14"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="vQV-9t-Wfe">
-                                                <rect key="frame" x="17" y="234" width="339" height="30"/>
+                                                <rect key="frame" x="73" y="214" width="213" height="30"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Qu-UW-FXN">
-                                                        <rect key="frame" x="0.0" y="0.0" width="155" height="30"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="94" height="30"/>
                                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="UDx-r4-5m3"/>
@@ -1131,7 +1161,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bf2-pp-Ugi">
-                                                        <rect key="frame" x="165" y="0.0" width="174" height="30"/>
+                                                        <rect key="frame" x="104" y="0.0" width="109" height="30"/>
                                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="ddl-e3-NVp"/>
@@ -1147,7 +1177,7 @@
                                                 </subviews>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ar8-uD-Yjn">
-                                                <rect key="frame" x="59.5" y="279" width="254" height="30"/>
+                                                <rect key="frame" x="103.5" y="259" width="152" height="30"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="wgf-yR-SAF"/>
@@ -1161,13 +1191,13 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dogica Pixel font by Roberto Mocci" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SoX-Ai-MHb">
-                                                <rect key="frame" x="0.0" y="324" width="373" height="14.5"/>
+                                                <rect key="frame" x="68.5" y="304" width="222.5" height="16.5"/>
                                                 <fontDescription key="fontDescription" name="Dogica_Pixel" family="Dogica Pixel" pointSize="14"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UFf-P8-wKE">
-                                                <rect key="frame" x="47" y="353.5" width="279" height="30"/>
+                                                <rect key="frame" x="98" y="335.5" width="163" height="30"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="I6r-xN-dSA"/>
@@ -1183,22 +1213,22 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Isc-9B-6nI">
-                                        <rect key="frame" x="62" y="530" width="250.5" height="91.5"/>
+                                        <rect key="frame" x="113.5" y="518.5" width="147" height="96.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Options" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mgu-Hj-ywQ">
-                                                <rect key="frame" x="72" y="0.0" width="106" height="16"/>
+                                                <rect key="frame" x="45.5" y="0.0" width="56.5" height="19"/>
                                                 <fontDescription key="fontDescription" name="Dogica_Pixel_Bold" family="Dogica Pixel" pointSize="16"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Preferred measurement" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qTF-p8-IDv">
-                                                <rect key="frame" x="0.0" y="31" width="250.5" height="14.5"/>
+                                                <rect key="frame" x="0.0" y="34" width="147" height="16.5"/>
                                                 <fontDescription key="fontDescription" name="Dogica_Pixel" family="Dogica Pixel" pointSize="14"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="fill" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Pv3-Yw-Ikq">
-                                                <rect key="frame" x="62.5" y="60.5" width="125" height="32"/>
+                                                <rect key="frame" x="11" y="65.5" width="125" height="32"/>
                                                 <segments>
                                                     <segment title="Miles"/>
                                                     <segment title="Meters"/>
@@ -1330,7 +1360,7 @@ OTHER DEALINGS IN THE FONT SOFTWARE.</string>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mWV-LI-UrK">
-                                        <rect key="frame" x="112" y="477.5" width="86" height="30"/>
+                                        <rect key="frame" x="130.5" y="477.5" width="49" height="30"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="hF1-tk-6yd"/>
@@ -1554,19 +1584,19 @@ OTHER DEALINGS IN THE FONT SOFTWARE.</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b2Q-AA-KJ8">
-                                <rect key="frame" x="70" y="277" width="274" height="200"/>
+                                <rect key="frame" x="70" y="280" width="274" height="200"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="3zj-mQ-pcX">
-                                        <rect key="frame" x="15" y="38.5" width="244" height="123"/>
+                                        <rect key="frame" x="15" y="44" width="244" height="112.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Are you sure you want to buy this item?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="63G-Sk-ydG">
-                                                <rect key="frame" x="0.0" y="0.0" width="244" height="48"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="244" height="37.5"/>
                                                 <fontDescription key="fontDescription" name="Dogica_Pixel" family="Dogica Pixel" pointSize="16"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="08D-Pe-gsh">
-                                                <rect key="frame" x="0.0" y="73" width="244" height="50"/>
+                                                <rect key="frame" x="0.0" y="62.5" width="244" height="50"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Sw-7G-QhW">
                                                         <rect key="frame" x="0.0" y="0.0" width="117" height="50"/>
@@ -1612,19 +1642,19 @@ OTHER DEALINGS IN THE FONT SOFTWARE.</string>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E63-Zf-tMi">
-                                <rect key="frame" x="70" y="277" width="274" height="200"/>
+                                <rect key="frame" x="70" y="280" width="274" height="200"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="3cs-Ph-Txo">
-                                        <rect key="frame" x="15" y="38.5" width="244" height="123"/>
+                                        <rect key="frame" x="15" y="44" width="244" height="112.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You don't have enough Paw Points for this purchase!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ilc-rI-EZH">
-                                                <rect key="frame" x="7" y="0.0" width="230" height="48"/>
+                                                <rect key="frame" x="19.5" y="0.0" width="205" height="37.5"/>
                                                 <fontDescription key="fontDescription" name="Dogica_Pixel" family="Dogica Pixel" pointSize="16"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="76G-A6-0ru">
-                                                <rect key="frame" x="72" y="73" width="100" height="50"/>
+                                                <rect key="frame" x="72" y="62.5" width="100" height="50"/>
                                                 <color key="backgroundColor" red="1" green="0.75476870340000002" blue="0.71852897049999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="kPf-gZ-JGr"/>
@@ -1652,7 +1682,7 @@ OTHER DEALINGS IN THE FONT SOFTWARE.</string>
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" prefetchingEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qX2-rb-aAr">
-                                <rect key="frame" x="20" y="192" width="374" height="590"/>
+                                <rect key="frame" x="20" y="195" width="374" height="587"/>
                                 <color key="backgroundColor" red="1" green="0.84499601960000004" blue="0.74862455289999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="0.0" id="nsk-a3-gkq">
                                     <size key="itemSize" width="160" height="200"/>
@@ -1675,7 +1705,7 @@ OTHER DEALINGS IN THE FONT SOFTWARE.</string>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="LB9-yN-aOQ">
-                                                    <rect key="frame" x="37.5" y="168.5" width="85" height="20"/>
+                                                    <rect key="frame" x="50.5" y="168.5" width="59.5" height="20"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="paw" translatesAutoresizingMaskIntoConstraints="NO" id="egY-VZ-UuE">
                                                             <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
@@ -1685,7 +1715,7 @@ OTHER DEALINGS IN THE FONT SOFTWARE.</string>
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jR0-ue-0mf">
-                                                            <rect key="frame" x="25" y="2.5" width="60" height="15"/>
+                                                            <rect key="frame" x="25" y="1.5" width="34.5" height="17.5"/>
                                                             <fontDescription key="fontDescription" name="Dogica_Pixel" family="Dogica Pixel" pointSize="15"/>
                                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                             <nil key="highlightedColor"/>
@@ -1693,7 +1723,7 @@ OTHER DEALINGS IN THE FONT SOFTWARE.</string>
                                                     </subviews>
                                                 </stackView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Purchased" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iKa-bs-aIC">
-                                                    <rect key="frame" x="22" y="168.5" width="116.5" height="20.5"/>
+                                                    <rect key="frame" x="44" y="168.5" width="72" height="20.5"/>
                                                     <fontDescription key="fontDescription" name="Dogica_Pixel" family="Dogica Pixel" pointSize="15"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
@@ -1732,7 +1762,7 @@ OTHER DEALINGS IN THE FONT SOFTWARE.</string>
                                 </cells>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Decor Shop" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IOi-Nb-cBJ">
-                                <rect key="frame" x="126.5" y="74" width="161.5" height="17"/>
+                                <rect key="frame" x="161.5" y="74" width="91" height="20"/>
                                 <fontDescription key="fontDescription" name="Dogica_Pixel_Bold" family="Dogica Pixel" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -1760,13 +1790,13 @@ OTHER DEALINGS IN THE FONT SOFTWARE.</string>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="15H-kJ-68U">
-                                <rect key="frame" x="53" y="57.5" width="14" height="16"/>
+                                <rect key="frame" x="53" y="56" width="9" height="19"/>
                                 <fontDescription key="fontDescription" name="Dogica_Pixel" family="Dogica Pixel" pointSize="16"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="d1R-7p-jYH">
-                                <rect key="frame" x="20" y="148" width="374" height="32"/>
+                                <rect key="frame" x="20" y="151" width="374" height="32"/>
                                 <segments>
                                     <segment title="All"/>
                                     <segment title="Purchased"/>
@@ -1777,7 +1807,7 @@ OTHER DEALINGS IN THE FONT SOFTWARE.</string>
                                 </connections>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap a purchased item to equip it" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Rr-ah-CcR">
-                                <rect key="frame" x="58.5" y="107" width="297" height="17"/>
+                                <rect key="frame" x="120.5" y="110" width="173" height="17"/>
                                 <fontDescription key="fontDescription" name="Dogica_Pixel" family="Dogica Pixel" pointSize="12"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -1854,6 +1884,7 @@ OTHER DEALINGS IN THE FONT SOFTWARE.</string>
         <image name="outside1" width="3000" height="3000"/>
         <image name="paw" width="75" height="75"/>
         <image name="picture" width="3000" height="3000"/>
+        <image name="play" width="450" height="450"/>
         <image name="pointshop" width="450" height="450"/>
         <image name="right" width="1000" height="653"/>
         <image name="select" width="450" height="450"/>
@@ -1862,8 +1893,8 @@ OTHER DEALINGS IN THE FONT SOFTWARE.</string>
         <image name="tilewallpink" width="3000" height="3000"/>
         <image name="tilewhite" width="3000" height="3000"/>
         <image name="towelsyellow" width="3000" height="3000"/>
-        <image name="whackablemouse" width="945" height="945"/>
-        <image name="whackamouse" width="4260" height="4260"/>
+        <image name="whackablemouse" width="580" height="580"/>
+        <image name="whackamouse" width="3000" height="3000"/>
         <image name="window" width="3000" height="3000"/>
     </resources>
 </document>
