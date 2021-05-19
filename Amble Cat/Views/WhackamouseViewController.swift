@@ -70,6 +70,8 @@ class WhackamouseViewController: UIViewController {
         if let image = sender.view {
             if gameViewModel.checkIfCorrect(image: image.tag) {
                 Sound.playSound(number: Sounds.tingSound.number)
+                hideMouse()
+                // if bonked successfully, play sound and make mouse disappear, as if it was smacked down
                 print("success")
             }
         }
