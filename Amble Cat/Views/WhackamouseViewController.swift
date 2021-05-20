@@ -14,6 +14,9 @@ class WhackamouseViewController: UIViewController {
     
     @IBOutlet weak var pawPointLabel: UILabel!
     @IBOutlet var mice: [UIImageView]!
+    @IBOutlet weak var gameOver: UIView!
+    @IBOutlet weak var bapSummary: UILabel!
+    @IBOutlet weak var winningsSummary: UILabel!
     @IBOutlet weak var beginButton: UIButton!
     @IBOutlet weak var back: UIButton!
     
@@ -28,10 +31,19 @@ class WhackamouseViewController: UIViewController {
         back.layer.cornerRadius = 10
         beginButton.layer.cornerRadius = 10
         
-        NotificationCenter.default.addObserver(self, selector: #selector(hideMouse), name: NSNotification.Name(rawValue: "hideMouse"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(showMouse), name: NSNotification.Name(rawValue: "showMouse"), object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(start), name: NSNotification.Name(rawValue: "start"), object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(newRound), name: NSNotification.Name(rawValue: "newRound"), object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(gameEnd), name: NSNotification.Name(rawValue: "gameEnd"), object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(updateTotal), name: NSNotification.Name(rawValue: "updateTotal"), object: nil)
         
+        NotificationCenter.default.addObserver(self, selector: #selector(reset), name: NSNotification.Name(rawValue: "reset"), object: nil)
+        
+        gameOver.isHidden = true
         hideMouse()
         updateTotal()
     }
@@ -42,21 +54,27 @@ class WhackamouseViewController: UIViewController {
         pawPointLabel.text = "\(gameViewModel.setPointsLabel()) Paw Points"
     }
     
-    @objc func hideMouse() {
+    func hideMouse() {
         for mouse in mice {
             mouse.isHidden = true
+            mouse.image = UIImage(named: "whackablemouse")
         }
     }
     
-    func newGame() {
-        gameViewModel.randomizePosition()
-        showMouse()
-        gameViewModel.randomizeTime()
+    @objc func reset() {
+        hideMouse()
     }
     
-    func showMouse() {
+    @objc func start() {
+        print("start notif")
+        hideMouse()
+        gameViewModel.newRound()
+    }
+    
+    @objc func showMouse() {
         var mouseToShow = gameViewModel.setMouse()
-        
+        print("mouse to show \(mouseToShow)")
+        print("show mouse")
         for mouse in mice {
             if mouse.tag == mouseToShow {
                 mouse.isHidden = false
@@ -66,15 +84,38 @@ class WhackamouseViewController: UIViewController {
         }
     }
     
+    @objc func newRound() {
+        print("new round notif")
+        gameViewModel.newRound()
+    }
+    
+    @objc func gameEnd() {
+        winningsSummary.text = "You won \(gameViewModel.winningsSummary()) points!"
+        bapSummary.text = "Successful baps: \(gameViewModel.bapsSummary())"
+        gameOver.isHidden = false
+        gameViewModel.resetData()
+    }
+    
     func checkForSuccess(sender: UITapGestureRecognizer) {
-        if let image = sender.view {
+        if let image = sender.view as? UIImageView {
             if gameViewModel.checkIfCorrect(image: image.tag) {
+                image.image = UIImage(named: "hitmouse")
                 Sound.playSound(number: Sounds.tingSound.number)
-                hideMouse()
-                // if bonked successfully, play sound and make mouse disappear, as if it was smacked down
-                print("success")
+                
+                // if bonked successfully, play sound and change mouse image as if it were smacked down
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [unowned self] in
+                    self.hideMouse()
+                    self.gameViewModel.beginGame()
+                }
             }
         }
+    }
+    
+    func startNewGame() {
+        gameViewModel.beginGame()
+        
+        // take money
+        Sound.playSound(number: Sounds.blopSound.number)
     }
 
     /*
@@ -90,8 +131,18 @@ class WhackamouseViewController: UIViewController {
     // MARK: IBActions
     
     @IBAction func beginPressed(_ sender: UIButton) {
-        newGame()
-        // take money
+        startNewGame()
+        beginButton.isEnabled = false
+    }
+    
+    @IBAction func playAgain(_ sender: UIButton) {
+        gameOver.isHidden = true
+        startNewGame()
+    }
+    
+    @IBAction func quit(_ sender: UIButton) {
+        gameOver.isHidden = true
+        beginButton.isEnabled = true
     }
     
     @IBAction func tappedMouse1(_ sender: UITapGestureRecognizer) {

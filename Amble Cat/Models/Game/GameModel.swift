@@ -11,6 +11,9 @@ import Foundation
 struct GameModel {
     static var currentPosition = 0
     static var timeToHit = 0
+    static var waitTime = 0
+    static var rounds = 6
     
     static var winnings = 0
+    static var baps = 0
 }

@@ -92,9 +92,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
           
           NotificationCenter.default.addObserver(self, selector: #selector(jumpUp), name: NSNotification.Name(rawValue: "jumpUp"), object: nil)
           
-           NotificationCenter.default.addObserver(self, selector: #selector(jumpToBath), name: NSNotification.Name(rawValue: "jumpToBath"), object: nil)
+          NotificationCenter.default.addObserver(self, selector: #selector(jumpToBath), name: NSNotification.Name(rawValue: "jumpToBath"), object: nil)
           
-           NotificationCenter.default.addObserver(self, selector: #selector(jumpToCounter), name: NSNotification.Name(rawValue: "jumpToCounter"), object: nil)
+          NotificationCenter.default.addObserver(self, selector: #selector(jumpToCounter), name: NSNotification.Name(rawValue: "jumpToCounter"), object: nil)
           
           // load sounds
           Sound.loadSound(number: &Sounds.blopSound.number, resourceName: Sounds.blopSound.resourceName, type: Sounds.blopSound.type)

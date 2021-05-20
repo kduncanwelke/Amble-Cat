@@ -17,6 +17,7 @@ public class GameViewModel {
     func randomizePosition() {
         var pos = Int.random(in: 0...7)
         GameModel.currentPosition = pos
+        print("position \(pos)")
     }
     
     func setMouse() -> Int {
@@ -24,16 +25,40 @@ public class GameViewModel {
     }
     
     func randomizeTime() {
-        var time = Int.random(in: 1...3)
+        var time = Int.random(in: 2...3)
         GameModel.timeToHit = time
         
         GameTimer.beginTimer(repeatCount: GameModel.timeToHit)
+    }
+    
+    func wait() {
+        print("wait")
+        var time = Int.random(in: 2...5)
+        GameModel.waitTime = time
+        GameTimer.waitTimer(repeatCount: time)
+    }
+    
+    func newRound() {
+        GameModel.rounds -= 1
+        
+        if GameModel.rounds <= 0 {
+            gameOver()
+        } else {
+            randomizePosition()
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "showMouse"), object: nil)
+            randomizeTime()
+        }
+        
+        print("new round \(GameModel.rounds)")
     }
     
     func checkIfCorrect(image: Int) -> Bool {
         // check if timer is running aka tap occured within allotted time
         if GameTimer.timer?.isValid ?? false {
             if image == GameModel.currentPosition {
+                GameTimer.cancelTimer()
+                GameModel.baps += 1
+                GameModel.winnings += 1
                 return true
             } else {
                 return false
@@ -41,6 +66,37 @@ public class GameViewModel {
         } else {
             return false
         }
+    }
+    
+    func beginGame() {
+        print("begin game")
+       
+        if GameModel.rounds <= 0 {
+            gameOver()
+        } else {
+            wait()
+            print(GameModel.rounds)
+        }
+    }
+    
+    func gameOver() {
+        GameTimer.cancelTimer()
+        GameTimer.cancelWaitTimer()
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "gameEnd"), object: nil)
+    }
+    
+    func resetData() {
+        GameModel.rounds = 6
+        GameModel.winnings = 0
+        GameModel.baps = 0
+    }
+    
+    func winningsSummary() -> Int {
+        return GameModel.winnings
+    }
+    
+    func bapsSummary() -> Int {
+        return GameModel.baps
     }
     
     func subtractCurrency(with amount: Int) {

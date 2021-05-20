@@ -839,6 +839,77 @@
                                     <constraint firstAttribute="width" secondItem="91I-Cy-xTd" secondAttribute="height" multiplier="119:114" id="b3f-qJ-0fF"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cnC-yw-KbI">
+                                <rect key="frame" x="62" y="244.5" width="290" height="229"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="2G7-fl-ASM">
+                                        <rect key="frame" x="10" y="30" width="270" height="86"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game Over!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mte-Qv-tka">
+                                                <rect key="frame" x="21" y="0.0" width="228.5" height="25"/>
+                                                <fontDescription key="fontDescription" name="Dogica_Pixel_Bold" family="Dogica Pixel" pointSize="25"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Successful baps: #" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VgJ-mh-rQf">
+                                                <rect key="frame" x="34.5" y="41" width="201.5" height="14.5"/>
+                                                <fontDescription key="fontDescription" name="Dogica_Pixel" family="Dogica Pixel" pointSize="14"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You won # points!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k1c-wj-esh">
+                                                <rect key="frame" x="43" y="71.5" width="184" height="14.5"/>
+                                                <fontDescription key="fontDescription" name="Dogica_Pixel" family="Dogica Pixel" pointSize="14"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="LnD-ZD-wwK">
+                                        <rect key="frame" x="10" y="149" width="270" height="50"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kup-T9-Al2">
+                                                <rect key="frame" x="0.0" y="0.0" width="130" height="50"/>
+                                                <color key="backgroundColor" red="1" green="0.75294117650000003" blue="0.71764705880000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="0XO-9o-jUN"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Dogica_Pixel" family="Dogica Pixel" pointSize="14"/>
+                                                <state key="normal" title="play again">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="playAgain:" destination="85s-W0-cbS" eventType="touchUpInside" id="1Cg-1l-U2V"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IYn-Tp-Ghi">
+                                                <rect key="frame" x="140" y="0.0" width="130" height="50"/>
+                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="xSx-Db-Y8A"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Dogica_Pixel" family="Dogica Pixel" pointSize="14"/>
+                                                <state key="normal" title="quit">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="quit:" destination="85s-W0-cbS" eventType="touchUpInside" id="Q69-FX-wpv"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="LnD-ZD-wwK" secondAttribute="trailing" constant="10" id="0ID-tn-13G"/>
+                                    <constraint firstItem="LnD-ZD-wwK" firstAttribute="leading" secondItem="cnC-yw-KbI" secondAttribute="leading" constant="10" id="LEq-Un-JHN"/>
+                                    <constraint firstItem="LnD-ZD-wwK" firstAttribute="top" secondItem="2G7-fl-ASM" secondAttribute="bottom" constant="33" id="lpS-LW-mZe"/>
+                                    <constraint firstAttribute="trailing" secondItem="2G7-fl-ASM" secondAttribute="trailing" constant="10" id="n2f-UL-5XL"/>
+                                    <constraint firstItem="2G7-fl-ASM" firstAttribute="leading" secondItem="cnC-yw-KbI" secondAttribute="leading" constant="10" id="or5-Jy-QKA"/>
+                                    <constraint firstItem="2G7-fl-ASM" firstAttribute="top" secondItem="cnC-yw-KbI" secondAttribute="top" constant="30" id="pic-iV-SH9"/>
+                                    <constraint firstAttribute="bottom" secondItem="LnD-ZD-wwK" secondAttribute="bottom" constant="30" id="tu8-SU-DvP"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.84313725490000002" blue="0.74901960779999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -860,6 +931,7 @@
                             <constraint firstItem="urE-0A-XsR" firstAttribute="leading" secondItem="Zef-O8-7W5" secondAttribute="trailing" id="BZH-DZ-t1u"/>
                             <constraint firstItem="Qmn-qX-xiA" firstAttribute="leading" secondItem="ag9-uq-3e5" secondAttribute="trailing" id="Bw1-2K-JNK"/>
                             <constraint firstItem="I1X-gI-fML" firstAttribute="trailing" secondItem="M8A-kA-yNC" secondAttribute="trailing" id="ENR-uF-1xX"/>
+                            <constraint firstItem="cnC-yw-KbI" firstAttribute="centerX" secondItem="M8A-kA-yNC" secondAttribute="centerX" id="EQ0-MC-HLP"/>
                             <constraint firstItem="Ms3-jn-F9g" firstAttribute="width" secondItem="ag9-uq-3e5" secondAttribute="width" id="FLo-Ys-m1J"/>
                             <constraint firstItem="ag9-uq-3e5" firstAttribute="bottom" secondItem="hzS-lY-QPv" secondAttribute="top" id="Fdr-Z8-due"/>
                             <constraint firstItem="I1X-gI-fML" firstAttribute="trailing" secondItem="Bf5-gs-mh3" secondAttribute="trailing" constant="30" id="Frp-BU-Jh2"/>
@@ -889,6 +961,7 @@
                             <constraint firstItem="iZe-rf-lua" firstAttribute="top" secondItem="Bf5-gs-mh3" secondAttribute="bottom" constant="14" id="eKb-xv-87I"/>
                             <constraint firstItem="gm4-qS-UKC" firstAttribute="leading" secondItem="kfG-6e-h6D" secondAttribute="trailing" id="efq-qY-TFD"/>
                             <constraint firstItem="PlG-Ve-RLy" firstAttribute="height" secondItem="M8A-kA-yNC" secondAttribute="height" multiplier="0.288" id="fb9-aV-rYJ"/>
+                            <constraint firstItem="cnC-yw-KbI" firstAttribute="width" secondItem="M8A-kA-yNC" secondAttribute="width" multiplier="0.7" id="fdm-Hw-pDE"/>
                             <constraint firstItem="pwb-ng-Bfu" firstAttribute="leading" secondItem="PvS-xl-do1" secondAttribute="trailing" id="g3J-9X-ORu"/>
                             <constraint firstItem="gm4-qS-UKC" firstAttribute="height" secondItem="M8A-kA-yNC" secondAttribute="height" multiplier="0.285" id="gRY-a2-xPX"/>
                             <constraint firstItem="uDP-5x-sGP" firstAttribute="leading" secondItem="ABb-qh-Wk6" secondAttribute="trailing" id="hNg-ET-exM"/>
@@ -898,6 +971,7 @@
                             <constraint firstItem="iZe-rf-lua" firstAttribute="trailing" secondItem="Bf5-gs-mh3" secondAttribute="trailing" id="jLc-K0-Y5c"/>
                             <constraint firstItem="urE-0A-XsR" firstAttribute="bottom" secondItem="Ms3-jn-F9g" secondAttribute="top" id="kJs-YG-ZdW"/>
                             <constraint firstItem="hzS-lY-QPv" firstAttribute="leading" secondItem="Ms3-jn-F9g" secondAttribute="trailing" id="kv1-MG-qRg"/>
+                            <constraint firstItem="cnC-yw-KbI" firstAttribute="centerY" secondItem="M8A-kA-yNC" secondAttribute="centerY" id="lIl-jw-jz8"/>
                             <constraint firstItem="akh-ge-5cn" firstAttribute="top" secondItem="uDP-5x-sGP" secondAttribute="bottom" id="mDk-AD-gtw"/>
                             <constraint firstItem="kF6-Uh-f7C" firstAttribute="top" secondItem="M8A-kA-yNC" secondAttribute="bottom" constant="63" id="mi9-b0-2vK"/>
                             <constraint firstItem="ABb-qh-Wk6" firstAttribute="width" secondItem="PvS-xl-do1" secondAttribute="width" id="nCh-ga-ts9"/>
@@ -916,8 +990,11 @@
                     <navigationItem key="navigationItem" id="OR2-jx-xiC"/>
                     <connections>
                         <outlet property="back" destination="s4a-He-eBY" id="vcc-7y-wY7"/>
+                        <outlet property="bapSummary" destination="VgJ-mh-rQf" id="qCz-Ay-eDh"/>
                         <outlet property="beginButton" destination="kF6-Uh-f7C" id="cz7-Sa-4VW"/>
+                        <outlet property="gameOver" destination="cnC-yw-KbI" id="t3p-3n-KER"/>
                         <outlet property="pawPointLabel" destination="S8f-Kf-hkZ" id="guH-6E-QFB"/>
+                        <outlet property="winningsSummary" destination="k1c-wj-esh" id="lck-4z-Zac"/>
                         <outletCollection property="mice" destination="PvS-xl-do1" collectionClass="NSMutableArray" id="5WU-sF-6lp"/>
                         <outletCollection property="mice" destination="ABb-qh-Wk6" collectionClass="NSMutableArray" id="ANo-B2-2xY"/>
                         <outletCollection property="mice" destination="kfG-6e-h6D" collectionClass="NSMutableArray" id="1J6-mB-sk5"/>
