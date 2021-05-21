@@ -10,6 +10,14 @@ import Foundation
 import UIKit
 
 extension ViewController {
+    
+    func switchViews() {
+        loadingView.isHidden = false
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [unowned self] in
+            self.loadingView.isHidden = true
+        }
+    }
 
     func beginAnimation(inMotion: Bool) {
         print("begin animation")
@@ -23,7 +31,7 @@ extension ViewController {
         
         // randomize view
         var range = [0,1,2]
-        var willChange = Bool.random()
+        var willChange = Random.randomChance()
         
         // allow for outside view only if device is in motion
         if inMotion {
@@ -41,6 +49,7 @@ extension ViewController {
         case .outside:
             if AnimationManager.currentView != .outside {
                 print("all true show outside")
+                switchViews()
                 disappearBathroom()
                 toggleOutside()
                 randomOutside(moving: inMotion)
@@ -52,6 +61,7 @@ extension ViewController {
             AnimationManager.currentView = .outside
         case .bathroom:
             if AnimationManager.currentView != .bathroom {
+                switchViews()
                 disappearOutside()
                 toggleBathroom()
             }
@@ -92,6 +102,7 @@ extension ViewController {
             }
         case .room:
             if AnimationManager.currentView != .room {
+                switchViews()
                 disappearOutside()
                 disappearBathroom()
             }

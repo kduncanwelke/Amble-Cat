@@ -175,7 +175,46 @@ extension ViewModel {
                 DecorManager.waterID = loaded.waterbowl
                 DecorManager.windowID = loaded.window
                 
-                print(DecorManager.rugID)
+                if loaded.couch != 0 {
+                    DecorManager.couchID = loaded.couch
+                }
+                
+                if loaded.bathwall != 0 {
+                    DecorManager.bathwallID = loaded.bathwall
+                }
+                
+                if loaded.bathtoy != 0 {
+                    DecorManager.bathtoyID = loaded.bathtoy
+                }
+                
+                if loaded.towel != 0 {
+                    DecorManager.towelID = loaded.towel
+                }
+                
+                if loaded.cabinet != 0 {
+                    DecorManager.cabinetID = loaded.cabinet
+                }
+                
+                if loaded.bath != 0 {
+                    DecorManager.bathID = loaded.bath
+                }
+                
+                if loaded.bathmat != 0 {
+                    DecorManager.bathmatID = loaded.bathmat
+                }
+                
+                if loaded.tilewall != 0 {
+                    DecorManager.tilewallID = loaded.tilewall
+                }
+                
+                if loaded.tilefloor != 0 {
+                    DecorManager.tilefloorID = loaded.tilefloor
+                }
+                
+                print(DecorManager.towelID)
+                print(DecorManager.cabinetID)
+                print(DecorManager.bathwallID)
+                
                 print("equipment loaded")
             }
         } catch let error as NSError {

@@ -26,6 +26,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
      
      @IBOutlet weak var catArt: UIImageView!
 
+     @IBOutlet weak var loadingView: UIView!
+     
      @IBOutlet weak var bedArt: UIImageView!
      @IBOutlet weak var bowlArt: UIImageView!
      @IBOutlet weak var decorArt: UIImageView!
@@ -236,6 +238,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
      @objc func decorChanged() {
           bedArt.image = viewModel.getBedImage()
           bowlArt.image = viewModel.showFood()
+          couchArt.image = viewModel.getCouchImage()
           decorArt.image = viewModel.getDecorImage()
           floorArt.image = viewModel.getFloorImage()
           pictureArt.image = viewModel.getPictureImage()
@@ -244,6 +247,14 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
           wallArt.image = viewModel.getWallImage()
           waterBowlArt.image = viewModel.showWater()
           windowArt.image = viewModel.getWindowImage()
+          bathToy.image = viewModel.getBathtoyImage()
+          towels.image = viewModel.getTowelImage()
+          cabinet.image = viewModel.getCabinetImage()
+          bath.image = viewModel.getBathImage()
+          bathmat.image = viewModel.getBathmatImage()
+          wallTile.image = viewModel.getTilewallImage()
+          floorTile.image = viewModel.getTilefloorImage()
+          bathroomWall.image = viewModel.getBathwallImage()
      }
      
      func feed() {
@@ -312,25 +323,37 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
      @IBAction func enterPressed(_ sender: UIButton) {
           enterButton.animateButton()
           
-          Sound.playSound(number: Sounds.blopSound.number)
-          
           var selectedButton = buttons[selectedIndex]
           
           switch selectedButton.tag {
           case 0:
+               Sound.playSound(number: Sounds.blopSound.number)
                paused = true
                performSegue(withIdentifier: "playGame", sender: Any?.self)
           case 1:
+               Sound.playSound(number: Sounds.blopSound.number)
                paused = true
                performSegue(withIdentifier: "viewStatistics", sender: Any?.self)
           case 2:
-               feed()
+               if viewModel.isViewIndoors() {
+                    Sound.playSound(number: Sounds.blopSound.number)
+                    feed()
+               } else {
+                    Sound.playSound(number: Sounds.failSound.number)
+               }
           case 3:
-               water()
+               if viewModel.isViewIndoors() {
+                    Sound.playSound(number: Sounds.blopSound.number)
+                    water()
+               } else {
+                    Sound.playSound(number: Sounds.failSound.number)
+               }
           case 4:
+               Sound.playSound(number: Sounds.blopSound.number)
                paused = true
                performSegue(withIdentifier: "goToStore", sender: Any?.self)
           case 5:
+               Sound.playSound(number: Sounds.blopSound.number)
                paused = true
                performSegue(withIdentifier: "goToPointShop", sender: Any?.self)
           default:

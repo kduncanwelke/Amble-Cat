@@ -14,6 +14,33 @@ public class GameViewModel {
         return "\(Currency.userTotal)"
     }
     
+    func enoughToPlay() -> Bool {
+        print("current total \(Currency.userTotal)")
+        if Currency.userTotal < 5 {
+            return false
+        } else {
+            return true
+        }
+    }
+    
+    func payToBegin() {
+        subtractCurrency(with: 5)
+    }
+    
+    func inProgress() -> Bool {
+        if GameTimer.timer?.isValid ?? false || GameTimer.waitTimer?.isValid ?? false {
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    func randomWinnings() {
+        var amount = Random.randomWinning()
+        GameModel.winnings += amount
+        addCurrency(with: amount)
+    }
+    
     func randomizePosition() {
         var pos = Int.random(in: 0...7)
         GameModel.currentPosition = pos
@@ -58,7 +85,7 @@ public class GameViewModel {
             if image == GameModel.currentPosition {
                 GameTimer.cancelTimer()
                 GameModel.baps += 1
-                GameModel.winnings += 1
+                randomWinnings()
                 return true
             } else {
                 return false

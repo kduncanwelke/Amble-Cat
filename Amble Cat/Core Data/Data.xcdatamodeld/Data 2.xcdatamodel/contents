@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="18G9028" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="CareStatus" representedClassName="CareStatus" syncable="YES" codeGenerationType="class">
+        <attribute name="dateOfLastCare" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="daysOfConsecutiveCare" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="hasBeenFed" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="hasBeenWatered" attributeType="Boolean" usesScalarValueType="YES"/>
+    </entity>
+    <entity name="Equipped" representedClassName="Equipped" syncable="YES" codeGenerationType="class">
+        <attribute name="bath" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="bathmat" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="bathtoy" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="bathwall" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="bed" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="bowl" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="cabinet" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="couch" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="decor" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="floor" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="picture" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="rug" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="tilefloor" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="tilewall" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="towel" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="toy" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="wall" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="waterbowl" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="window" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+    </entity>
+    <entity name="Measurement" representedClassName="Measurement" syncable="YES" codeGenerationType="class">
+        <attribute name="selection" attributeType="String"/>
+    </entity>
+    <entity name="Points" representedClassName="Points" syncable="YES" codeGenerationType="class">
+        <attribute name="total" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+    </entity>
+    <entity name="PurchaseState" representedClassName="PurchaseState" syncable="YES" codeGenerationType="class">
+        <attribute name="id" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="isPurchased" attributeType="Boolean" usesScalarValueType="YES"/>
+    </entity>
+    <elements>
+        <element name="CareStatus" positionX="-63" positionY="63" width="128" height="103"/>
+        <element name="Equipped" positionX="-63" positionY="0" width="128" height="328"/>
+        <element name="Measurement" positionX="-63" positionY="63" width="128" height="58"/>
+        <element name="Points" positionX="-63" positionY="-18" width="128" height="58"/>
+        <element name="PurchaseState" positionX="-63" positionY="-9" width="128" height="73"/>
+    </elements>
+</model>

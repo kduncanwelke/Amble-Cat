@@ -67,6 +67,10 @@ public class ViewModel {
         return StoreInventory.inventoryDictionary[DecorManager.bedID]?.image
     }
     
+    func getCouchImage() -> UIImage? {
+        return StoreInventory.inventoryDictionary[DecorManager.couchID]?.image
+    }
+    
     func getDecorImage() -> UIImage? {
         return StoreInventory.inventoryDictionary[DecorManager.decorID]?.image
     }
@@ -95,6 +99,38 @@ public class ViewModel {
         return StoreInventory.inventoryDictionary[DecorManager.windowID]?.image
     }
     
+    func getBathtoyImage() -> UIImage? {
+        return StoreInventory.inventoryDictionary[DecorManager.bathtoyID]?.image
+    }
+    
+    func getTowelImage() -> UIImage? {
+        return StoreInventory.inventoryDictionary[DecorManager.towelID]?.image
+    }
+    
+    func getCabinetImage() -> UIImage? {
+        return StoreInventory.inventoryDictionary[DecorManager.cabinetID]?.image
+    }
+    
+    func getBathImage() -> UIImage? {
+        return StoreInventory.inventoryDictionary[DecorManager.bathID]?.image
+    }
+    
+    func getBathmatImage() -> UIImage? {
+        return StoreInventory.inventoryDictionary[DecorManager.bathmatID]?.image
+    }
+    
+    func getTilewallImage() -> UIImage? {
+        return StoreInventory.inventoryDictionary[DecorManager.tilewallID]?.image
+    }
+    
+    func getTilefloorImage() -> UIImage? {
+        return StoreInventory.inventoryDictionary[DecorManager.tilefloorID]?.image
+    }
+    
+    func getBathwallImage() -> UIImage? {
+        return StoreInventory.inventoryDictionary[DecorManager.bathwallID]?.image
+    }
+    
     func setPointsLabel() -> String {
         return "\(Currency.userTotal)"
     }
@@ -112,6 +148,15 @@ public class ViewModel {
             return nil
         } else {
             return StoreInventory.inventoryDictionary[DecorManager.waterID]?.image ?? #imageLiteral(resourceName: "nowaterblue.png")
+        }
+    }
+    
+    func isViewIndoors() -> Bool {
+        switch AnimationManager.currentView {
+        case .room:
+            return true
+        default:
+            return false
         }
     }
 }

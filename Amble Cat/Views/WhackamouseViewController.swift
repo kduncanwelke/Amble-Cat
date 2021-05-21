@@ -17,8 +17,11 @@ class WhackamouseViewController: UIViewController {
     @IBOutlet weak var gameOver: UIView!
     @IBOutlet weak var bapSummary: UILabel!
     @IBOutlet weak var winningsSummary: UILabel!
+    @IBOutlet weak var beginLabel: UILabel!
     @IBOutlet weak var beginButton: UIButton!
     @IBOutlet weak var back: UIButton!
+    @IBOutlet weak var insufficientFunds: UILabel!
+    @IBOutlet weak var playAgainButton: UIButton!
     
     // MARK: Variables
     
@@ -46,6 +49,7 @@ class WhackamouseViewController: UIViewController {
         gameOver.isHidden = true
         hideMouse()
         updateTotal()
+        //gameViewModel.addCurrency(with: 10)
     }
     
     // MARK: Custom functions
@@ -68,7 +72,7 @@ class WhackamouseViewController: UIViewController {
     @objc func start() {
         print("start notif")
         hideMouse()
-        gameViewModel.newRound()
+        gameViewModel.beginGame()
     }
     
     @objc func showMouse() {
@@ -93,7 +97,29 @@ class WhackamouseViewController: UIViewController {
         winningsSummary.text = "You won \(gameViewModel.winningsSummary()) points!"
         bapSummary.text = "Successful baps: \(gameViewModel.bapsSummary())"
         gameOver.isHidden = false
+        
+        if gameViewModel.enoughToPlay() {
+            playAgainButton.isHidden = false
+        } else {
+            playAgainButton.isHidden = true
+        }
+        
         gameViewModel.resetData()
+    }
+    
+    func canPlay() -> Bool {
+        if gameViewModel.enoughToPlay() {
+            return true
+        } else {
+            Sound.playSound(number: Sounds.failSound.number)
+            insufficientFunds.isHidden = false
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) { [unowned self] in
+                self.insufficientFunds.isHidden = true
+            }
+            
+            return false
+        }
     }
     
     func checkForSuccess(sender: UITapGestureRecognizer) {
@@ -101,9 +127,10 @@ class WhackamouseViewController: UIViewController {
             if gameViewModel.checkIfCorrect(image: image.tag) {
                 image.image = UIImage(named: "hitmouse")
                 Sound.playSound(number: Sounds.tingSound.number)
+                updateTotal()
                 
                 // if bonked successfully, play sound and change mouse image as if it were smacked down
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [unowned self] in
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) { [unowned self] in
                     self.hideMouse()
                     self.gameViewModel.beginGame()
                 }
@@ -112,10 +139,19 @@ class WhackamouseViewController: UIViewController {
     }
     
     func startNewGame() {
+        beginLabel.isHidden = false
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) { [unowned self] in
+            self.beginLabel.isHidden = true
+        }
+        
+        beginButton.setTitle("...", for: .normal)
         gameViewModel.beginGame()
         
         // take money
-        Sound.playSound(number: Sounds.blopSound.number)
+        gameViewModel.payToBegin()
+        Sound.playSound(number: Sounds.registerSound.number)
+        updateTotal()
     }
 
     /*
@@ -131,6 +167,10 @@ class WhackamouseViewController: UIViewController {
     // MARK: IBActions
     
     @IBAction func beginPressed(_ sender: UIButton) {
+        if !canPlay() {
+            return
+        }
+        
         startNewGame()
         beginButton.isEnabled = false
     }
@@ -143,6 +183,7 @@ class WhackamouseViewController: UIViewController {
     @IBAction func quit(_ sender: UIButton) {
         gameOver.isHidden = true
         beginButton.isEnabled = true
+        beginButton.setTitle("begin game", for: .normal)
     }
     
     @IBAction func tappedMouse1(_ sender: UITapGestureRecognizer) {
@@ -178,6 +219,11 @@ class WhackamouseViewController: UIViewController {
     }
     
     @IBAction func backTapped(_ sender: UIButton) {
+        // prevent leaving if game is in progress 
+        if gameViewModel.inProgress() {
+            return
+        }
+        
         self.dismiss(animated: true, completion: nil)
     }
 
