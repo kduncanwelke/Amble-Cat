@@ -49,6 +49,11 @@ class AnimationTimer {
         
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "animationEnded"), object: nil)
     }
+    
+    static func stop() {
+        timer?.invalidate()
+        seconds = 0
+    }
 }
 
 class TextTimer {

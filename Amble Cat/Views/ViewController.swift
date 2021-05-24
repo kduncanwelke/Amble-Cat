@@ -320,6 +320,63 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
      // MARK: IBActions
      
+     @IBAction func catTouched(_ sender: UIPanGestureRecognizer) {
+          if AnimationManager.currentView != .room {
+               return
+          }
+          
+          if sender.state == .began {
+               if !viewModel.isMoving() {
+                    print("pet")
+                    AnimationTimer.stop()
+                    catArt.stopAnimating()
+                    catArt.animationImages = AnimationManager.petting
+                    catArt.animationDuration = 1.0
+                    catArt.startAnimating()
+               }
+          } else if sender.state == .ended || sender.state == .cancelled {
+               animationEnded()
+          }
+     }
+     
+     @IBAction func bathroomCatTouched(_ sender: UIPanGestureRecognizer) {
+          if AnimationManager.currentView != .bathroom {
+               return
+          }
+          
+          if sender.state == .began {
+               if !viewModel.isMoving() {
+                    print("pet")
+                    AnimationTimer.stop()
+                    bathroomCat.stopAnimating()
+                    bathroomCat.animationImages = AnimationManager.petting
+                    bathroomCat.animationDuration = 1.0
+                    bathroomCat.startAnimating()
+               }
+          } else if sender.state == .ended || sender.state == .cancelled {
+               animationEnded()
+          }
+     }
+     
+     @IBAction func outsideCatTouched(_ sender: UIPanGestureRecognizer) {
+          if AnimationManager.currentView != .outside {
+               return
+          }
+          
+          if sender.state == .began {
+               if !viewModel.isMoving() {
+                    print("pet")
+                    AnimationTimer.stop()
+                    walkingOutside.stopAnimating()
+                    walkingOutside.animationImages = AnimationManager.petting
+                    walkingOutside.animationDuration = 1.0
+                    walkingOutside.startAnimating()
+               }
+          } else if sender.state == .ended || sender.state == .cancelled {
+               animationEnded()
+          }
+     }
+     
      @IBAction func enterPressed(_ sender: UIButton) {
           enterButton.animateButton()
           

@@ -182,6 +182,27 @@ struct AnimationManager {
         }
     }
     
+    static var petting: [UIImage] {
+        get {
+            switch currentView {
+            case .room, .outside:
+                switch AnimationManager.direction {
+                case .left:
+                    return [#imageLiteral(resourceName: "pet1.png"),#imageLiteral(resourceName: "pet2.png")]
+                case .right:
+                    return [#imageLiteral(resourceName: "petright1.png"),#imageLiteral(resourceName: "petright2.png")]
+                }
+            case .bathroom:
+                switch AnimationManager.bathroomDirection {
+                case .left:
+                    return [#imageLiteral(resourceName: "pet1.png"),#imageLiteral(resourceName: "pet2.png")]
+                case .right:
+                    return [#imageLiteral(resourceName: "petright1.png"),#imageLiteral(resourceName: "petright2.png")]
+                }
+            }
+        }
+    }
+    
     static let jump: [UIImage] = [#imageLiteral(resourceName: "jumpup.png"),#imageLiteral(resourceName: "back.png")]
     static let jumpDown: [UIImage] = [#imageLiteral(resourceName: "jumpdown.png"),#imageLiteral(resourceName: "sitting.png")]
     

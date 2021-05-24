@@ -30,6 +30,14 @@ public class ViewModel {
             return false
         }
     }
+    
+    func isMoving() -> Bool {
+        if AnimationTimer.timer?.isValid ?? true {
+            return false
+        } else {
+            return true
+        }
+    }
 
     func getLabelName(tag: Int) -> String {
         return ButtonsManager.buttonNames[tag] ?? ""
