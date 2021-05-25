@@ -55,7 +55,7 @@ class WhackamouseViewController: UIViewController {
     // MARK: Custom functions
     
     @objc func updateTotal() {
-        pawPointLabel.text = "\(gameViewModel.setPointsLabel()) Paw Points"
+        pawPointLabel.text = "\(gameViewModel.setPointsLabel())"
     }
     
     func hideMouse() {

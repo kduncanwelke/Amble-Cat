@@ -52,7 +52,7 @@ public class GameViewModel {
     }
     
     func randomizeTime() {
-        var time = Int.random(in: 2...3)
+        var time = Int.random(in: 1...4)
         GameModel.timeToHit = time
         
         GameTimer.beginTimer(repeatCount: GameModel.timeToHit)

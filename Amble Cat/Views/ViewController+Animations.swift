@@ -13,6 +13,7 @@ extension ViewController {
     
     func switchViews() {
         loadingView.isHidden = false
+        print("switch views")
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [unowned self] in
             self.loadingView.isHidden = true
@@ -27,7 +28,9 @@ extension ViewController {
         outsideBackground.stopAnimating()
         walkingOutside.stopAnimating()
         bathroomCat.stopAnimating()
-        bathWater.isHidden = true
+        if AnimationManager.bathroomLocation != .bath {
+            bathWater.isHidden = true
+        }
         
         // randomize view
         var range = [0,1,2]
@@ -44,10 +47,11 @@ extension ViewController {
         
         var changeView = AnimationManager.CurrentView(rawValue: range.randomElement()!)
         print("in motion \(inMotion)")
+        print("view \(changeView)")
             
         switch changeView {
         case .outside:
-            if AnimationManager.currentView != .outside {
+            if AnimationManager.currentView != changeView {
                 print("all true show outside")
                 switchViews()
                 disappearBathroom()
@@ -60,7 +64,7 @@ extension ViewController {
             
             AnimationManager.currentView = .outside
         case .bathroom:
-            if AnimationManager.currentView != .bathroom {
+            if AnimationManager.currentView != changeView {
                 switchViews()
                 disappearOutside()
                 toggleBathroom()
@@ -80,6 +84,8 @@ extension ViewController {
                 if placeAnimation {
                     print("random place")
                     randomBathroomPlaceAnimation()
+                } else if AnimationManager.bathroomLocation == .bath {
+                    wash()
                 } else {
                     print("random staying")
                     randomStaying()
@@ -101,11 +107,12 @@ extension ViewController {
                 }
             }
         case .room:
-            if AnimationManager.currentView != .room {
+            if AnimationManager.currentView != changeView {
                 switchViews()
-                disappearOutside()
-                disappearBathroom()
             }
+            
+            disappearOutside()
+            disappearBathroom()
             
             AnimationManager.currentView = .room
             
@@ -619,8 +626,8 @@ extension ViewController {
         bathroomCat.animationImages = AnimationManager.walking
         bathroomCat.animationDuration = 0.5
         bathroomCat.startAnimating()
-        
         let matDestination = CGPoint(x: wallArt.frame.width/5, y: wallArt.frame.height/1.6)
+        
         bathroomCat.moveWithCounterJump(to: matDestination, duration: 2.5, options: UIView.AnimationOptions.curveEaseOut)
         AnimationManager.bathroomLocation = .counter
     }
@@ -646,15 +653,30 @@ extension ViewController {
         AnimationManager.bathroomLocation = .mat
     }
     
+    func moveToBath() {
+        print("bath")
+        bathroomCat.animationImages = AnimationManager.walking
+        bathroomCat.animationDuration = 0.5
+        bathroomCat.startAnimating()
+        let rightDestination = CGPoint(x: wallArt.frame.width/1.2, y: wallArt.frame.height/1.6)
+        
+        bathroomCat.moveWithBathJump(to: rightDestination, duration: 2.5, options: UIView.AnimationOptions.curveEaseOut)
+        
+        AnimationManager.bathroomLocation = .bath
+    }
+    
     @objc func jumpToBath() {
         print("jump to bath")
+        //bathroomView.exchangeSubview(at: 8, withSubviewAt: 9)
+        
         bathroomCat.animationImages = AnimationManager.jumpDown
         bathroomCat.animationDuration = 1.0
         bathroomCat.startAnimating()
         let jumpDestination = CGPoint(x: wallArt.frame.width/1.25, y: wallArt.frame.height/1.3)
        
-        bathroomCat.move(to: jumpDestination, duration: 1.0, options: UIView.AnimationOptions.curveEaseOut)
         bathWater.isHidden = false
+        
+        bathroomCat.move(to: jumpDestination, duration: 1.0, options: UIView.AnimationOptions.curveEaseOut)
     }
     
     func jumpFromBath() {
@@ -662,11 +684,13 @@ extension ViewController {
         bathroomCat.animationImages = AnimationManager.jump
         bathroomCat.animationDuration = 1.0
         bathroomCat.startAnimating()
-        let jumpDownDestination = CGPoint(x: wallArt.frame.width/1.2, y: wallArt.frame.height/1.6)
         
-        bathroomCat.move(to: jumpDownDestination, duration: 1.0, options: UIView.AnimationOptions.curveEaseOut)
+        //bathroomView.exchangeSubview(at: 8, withSubviewAt: 9)
+        
+        let jumpDestination = CGPoint(x: wallArt.frame.width/1.2, y: wallArt.frame.height/1.6)
+        
+        bathroomCat.move(to: jumpDestination, duration: 1.0, options: UIView.AnimationOptions.curveEaseOut)
         AnimationManager.bathroomLocation = .right
-        bathroomView.exchangeSubview(at: 8, withSubviewAt: 9)
     }
     
     func moveToBathroomRight() {
@@ -700,18 +724,5 @@ extension ViewController {
         
         bathroomCat.move(to: toyDestination, duration: 3.0, options: UIView.AnimationOptions.curveEaseOut)
         AnimationManager.bathroomLocation = .bathtoy
-    }
-    
-    func moveToBath() {
-        print("bath")
-        bathroomCat.animationImages = AnimationManager.walking
-        bathroomCat.animationDuration = 0.5
-        bathroomCat.startAnimating()
-        let rightDestination = CGPoint(x: wallArt.frame.width/1.2, y: wallArt.frame.height/1.6)
-        
-        bathroomCat.moveWithBathJump(to: rightDestination, duration: 2.0, options: UIView.AnimationOptions.curveEaseOut)
-        
-        bathroomView.exchangeSubview(at: 8, withSubviewAt: 9)
-        AnimationManager.bathroomLocation = .bath
     }
 }

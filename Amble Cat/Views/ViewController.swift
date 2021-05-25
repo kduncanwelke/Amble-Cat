@@ -56,7 +56,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
      @IBOutlet weak var outsideBackground: UIImageView!
      @IBOutlet weak var walkingOutside: UIImageView!
      
-     @IBOutlet var buttons: [UIButton]!
+     @IBOutlet var options: [UIButton]!
+     
      @IBOutlet weak var bonus: UIImageView!
      
      @IBOutlet weak var enterButton: UIButton!
@@ -170,7 +171,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
      }
      
      func changeSelection() {
-          for button in buttons {
+          for button in options {
                if button.tag == selectedIndex {
                     button.setBackgroundImage(UIImage(named: "select"), for: .normal)
                     selectionLabel.text = viewModel.getLabelName(tag: button.tag)
@@ -380,7 +381,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
      @IBAction func enterPressed(_ sender: UIButton) {
           enterButton.animateButton()
           
-          var selectedButton = buttons[selectedIndex]
+          var selectedButton = options[selectedIndex]
           
           switch selectedButton.tag {
           case 0:
@@ -435,7 +436,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
           
           Sound.playSound(number: Sounds.blopSound.number)
           
-          if selectedIndex != buttons.count-1 {
+          if selectedIndex != options.count-1 {
                selectedIndex += 1
           }
      

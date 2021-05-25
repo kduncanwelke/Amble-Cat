@@ -19,7 +19,7 @@ class GameTimer {
     // timer for animations
     static func beginTimer(repeatCount: Int) {
         
-        timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
+        timer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true) { timer in
             seconds += 1
             
             print("timer seconds \(seconds)")

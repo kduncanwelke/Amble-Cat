@@ -12,7 +12,7 @@ struct Random {
     static func randomChance() -> Bool {
         var randomInt = Int.random(in: 1...100)
         
-        if randomInt < 21 {
+        if randomInt < 16 {
             return true
         } else {
             return false
