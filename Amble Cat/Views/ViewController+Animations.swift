@@ -15,7 +15,7 @@ extension ViewController {
         loadingView.isHidden = false
         print("switch views")
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [unowned self] in
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) { [unowned self] in
             self.loadingView.isHidden = true
         }
     }
@@ -30,6 +30,8 @@ extension ViewController {
         bathroomCat.stopAnimating()
         if AnimationManager.bathroomLocation != .bath {
             bathWater.isHidden = true
+            bathBehind.isHidden = true
+            bath.isHidden = false
         }
         
         // randomize view
@@ -47,7 +49,6 @@ extension ViewController {
         
         var changeView = AnimationManager.CurrentView(rawValue: range.randomElement()!)
         print("in motion \(inMotion)")
-        print("view \(changeView)")
             
         switch changeView {
         case .outside:
@@ -202,6 +203,8 @@ extension ViewController {
             } else {
                 jumpFromBath()
                 bathWater.isHidden = true
+                bathBehind.isHidden = true
+                bath.isHidden = false
             }
         case .bathtoy:
             if specific {
@@ -667,14 +670,14 @@ extension ViewController {
     
     @objc func jumpToBath() {
         print("jump to bath")
-        //bathroomView.exchangeSubview(at: 8, withSubviewAt: 9)
-        
         bathroomCat.animationImages = AnimationManager.jumpDown
         bathroomCat.animationDuration = 1.0
         bathroomCat.startAnimating()
-        let jumpDestination = CGPoint(x: wallArt.frame.width/1.25, y: wallArt.frame.height/1.3)
+        let jumpDestination = CGPoint(x: wallArt.frame.width/1.26, y: wallArt.frame.height/1.27)
        
         bathWater.isHidden = false
+        bathBehind.isHidden = false
+        bath.isHidden = true
         
         bathroomCat.move(to: jumpDestination, duration: 1.0, options: UIView.AnimationOptions.curveEaseOut)
     }
@@ -684,9 +687,6 @@ extension ViewController {
         bathroomCat.animationImages = AnimationManager.jump
         bathroomCat.animationDuration = 1.0
         bathroomCat.startAnimating()
-        
-        //bathroomView.exchangeSubview(at: 8, withSubviewAt: 9)
-        
         let jumpDestination = CGPoint(x: wallArt.frame.width/1.2, y: wallArt.frame.height/1.6)
         
         bathroomCat.move(to: jumpDestination, duration: 1.0, options: UIView.AnimationOptions.curveEaseOut)

@@ -21,7 +21,6 @@ class StoreViewController: UIViewController, UICollectionViewDelegate, UICollect
     @IBOutlet weak var areYouSureLabel: UILabel!
     @IBOutlet weak var backButton: UIButton!
     
-    
     // MARK: Variables
     
     private let storeViewModel = StoreViewModel()

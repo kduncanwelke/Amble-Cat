@@ -9,6 +9,7 @@
 import Foundation
 
 struct Random {
+    // random 15% chance generator
     static func randomChance() -> Bool {
         var randomInt = Int.random(in: 1...100)
         

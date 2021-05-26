@@ -50,6 +50,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
      @IBOutlet weak var bathroomCat: UIImageView!
      @IBOutlet weak var bath: UIImageView!
      @IBOutlet weak var bathToy: UIImageView!
+     @IBOutlet weak var bathBehind: UIImageView!
      @IBOutlet weak var bathWater: UIImageView!
      
      @IBOutlet weak var outsideView: UIView!
@@ -252,6 +253,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
           towels.image = viewModel.getTowelImage()
           cabinet.image = viewModel.getCabinetImage()
           bath.image = viewModel.getBathImage()
+          bathBehind.image = viewModel.getBathImage()
           bathmat.image = viewModel.getBathmatImage()
           wallTile.image = viewModel.getTilewallImage()
           floorTile.image = viewModel.getTilefloorImage()
