@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import Amble_Cat
+@testable import Micro_Kitty
 
 class Amble_CatTests: XCTestCase {
 

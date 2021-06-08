@@ -28,6 +28,7 @@ extension ViewController {
         outsideBackground.stopAnimating()
         walkingOutside.stopAnimating()
         bathroomCat.stopAnimating()
+        
         if AnimationManager.bathroomLocation != .bath {
             bathWater.isHidden = true
             bathBehind.isHidden = true
@@ -82,11 +83,11 @@ extension ViewController {
             if staying {
                 var placeAnimation = Bool.random()
                 
-                if placeAnimation {
+                if AnimationManager.bathroomLocation == .bath {
+                    wash()
+                } else if placeAnimation {
                     print("random place")
                     randomBathroomPlaceAnimation()
-                } else if AnimationManager.bathroomLocation == .bath {
-                    wash()
                 } else {
                     print("random staying")
                     randomStaying()
@@ -94,14 +95,14 @@ extension ViewController {
             } else {
                 var pause = Bool.random()
                 
-                if pause {
+                if AnimationManager.bathroomLocation == .bath {
+                    jumpFromBath()
+                } else if pause {
                     pauseCat()
                 } else {
                     print("random move")
                     if AnimationManager.bathroomLocation == .counter {
                         jumpDownFromCounter()
-                    } else if AnimationManager.bathroomLocation == .bath {
-                        jumpFromBath()
                     } else {
                         randomBathroomMove()
                     }

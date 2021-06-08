@@ -1,6 +1,0 @@
-framework module Pods_Amble_CatTests {
-  umbrella header "Pods-Amble CatTests-umbrella.h"
-
-  export *
-  module * { export * }
-}

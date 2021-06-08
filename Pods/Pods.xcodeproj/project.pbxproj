@@ -9,43 +9,45 @@
 /* Begin PBXAggregateTarget section */
 		B9ED5194E665042005069EF06C82A050 /* OpenSSL-Universal */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = 741581A7361AF4537A921DAD19E3B1ED /* Build configuration list for PBXAggregateTarget "OpenSSL-Universal" */;
+			buildConfigurationList = C1D72BC345233EADF30A97D462F723B7 /* Build configuration list for PBXAggregateTarget "OpenSSL-Universal" */;
 			buildPhases = (
+				DAEA2BAAFED7B7865CB41712646E4160 /* [CP] Copy XCFrameworks */,
 			);
 			dependencies = (
 			);
 			name = "OpenSSL-Universal";
+			productName = "OpenSSL-Universal";
 		};
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		0D6FA9EDFC4419CB66CE892D8BB83DD0 /* Pods-Amble CatTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FDEE7709E1BA705870DE32E8B3791B9B /* Pods-Amble CatTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2D659868C9485EB6347E83CA53984F52 /* Pods-Amble Cat-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 23C91F73E3091D7956E784E3D86E0A65 /* Pods-Amble Cat-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		31B3C52F4482FB4BBDFB667D6E281ADF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		4ADEDDF79548EEC1AD73A84A2FCE691E /* Pods-Amble Cat-Amble CatUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E9F3FB4B0D6AE970E5168CBF60EB8567 /* Pods-Amble Cat-Amble CatUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5FB6097EB917ECAE70C17E930BCEB37B /* Pods-Amble Cat-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 62D7AA05CC16CC8C7323DD44DE6E3492 /* Pods-Amble Cat-dummy.m */; };
-		82F839F4A90038449E09E34BF9B111E3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		CEEA716126EC3C514ADC4C79B829AB9E /* Pods-Amble CatTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D5FDF7F309BE4AFE9A1B9D76C1ACB060 /* Pods-Amble CatTests-dummy.m */; };
-		E5006C9C1B18F6A07F6804BE96B4EE8B /* Pods-Amble Cat-Amble CatUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E4517130D3EAD2E13C8F8F6E6F1812D6 /* Pods-Amble Cat-Amble CatUITests-dummy.m */; };
-		FB87F3E3C60A922694A807746A114C4C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		6FEC8A48D66C75F7DBCA274ED4489D5B /* Pods-Micro Kitty-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2DCE9ACD707688BD06D729E69EECC473 /* Pods-Micro Kitty-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8B7FD38212465B3E25DF43759B57ABC4 /* Pods-Micro KittyTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4BD041F58BF3DDDF30A8CB4E49EE66A8 /* Pods-Micro KittyTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A1022AE62BE984D2D7B74659611697A5 /* Pods-Micro Kitty-Micro KittyUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 459E23C5F02076524BBF1FA1E92D7815 /* Pods-Micro Kitty-Micro KittyUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A254A51D3AE42CFDA8053F8F3FAF995D /* Pods-Micro Kitty-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F29B0AE6C98F9A49DD9370C52256455D /* Pods-Micro Kitty-dummy.m */; };
+		C705FE087B00C039137D7EB9F819C066 /* Pods-Micro KittyTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8624E34752DCC7C929669C8DA66A38A0 /* Pods-Micro KittyTests-dummy.m */; };
+		D48460CDCABE1FD4D3AB90C0113F609B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		E0ADB473FE8F2549412B88FF1596B31C /* Pods-Micro Kitty-Micro KittyUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CD5805E11C9099052A7537F3B654B63 /* Pods-Micro Kitty-Micro KittyUITests-dummy.m */; };
+		F0D1B30D7666F10B457B7453594D33B9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		FF5020CD9BF81018804F214372FF4804 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		031D2D967A92A84E02FEA4BBA97624C5 /* PBXContainerItemProxy */ = {
+		30875C49B200E83F70FA1B62F655D55B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = B9ED5194E665042005069EF06C82A050;
 			remoteInfo = "OpenSSL-Universal";
 		};
-		6AC7789F57B94908015F428CEE366814 /* PBXContainerItemProxy */ = {
+		41AD5A750A436BA2827F446E9FBEA56D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 9959812FD3FD324B670B99A5B8E08A57;
-			remoteInfo = "Pods-Amble Cat";
+			remoteGlobalIDString = 025629871BE844D8AA2B324152BD2BCA;
+			remoteInfo = "Pods-Micro Kitty";
 		};
-		A684B920D7A273D130DD5B4DDABFD8BD /* PBXContainerItemProxy */ = {
+		F6D6C74A8F4D35B4D3F8FAB9DDBFBC26 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
@@ -55,190 +57,123 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0616150A38D5E04B7A79DDECD8572C18 /* Pods-Amble CatTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Amble CatTests-acknowledgements.plist"; sourceTree = "<group>"; };
-		0719DEDD7CA461D7C61D58F95F52BA06 /* Pods-Amble CatTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Amble CatTests.release.xcconfig"; sourceTree = "<group>"; };
-		08B851FBD6661AE0C9428FE3E47A73F9 /* bn.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = bn.h; path = ios/include/openssl/bn.h; sourceTree = "<group>"; };
-		08ECEB8F8A664EC9D75680836ED5A678 /* Pods-Amble Cat-Amble CatUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Amble Cat-Amble CatUITests-Info.plist"; sourceTree = "<group>"; };
-		0E0C731C1CA760BDF2D048381A777985 /* opensslconf-x86_64.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "opensslconf-x86_64.h"; path = "ios/include/openssl/opensslconf-x86_64.h"; sourceTree = "<group>"; };
-		0EA262D23FE616D01E82958C96814D91 /* e_os2.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = e_os2.h; path = ios/include/openssl/e_os2.h; sourceTree = "<group>"; };
-		104CF54BBFD3CF633F4A4B764499F330 /* ebcdic.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ebcdic.h; path = ios/include/openssl/ebcdic.h; sourceTree = "<group>"; };
-		15C79D3001CE29875442114180C1AF92 /* whrlpool.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = whrlpool.h; path = ios/include/openssl/whrlpool.h; sourceTree = "<group>"; };
-		19D0382069DC755371013699445C6528 /* ts.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ts.h; path = ios/include/openssl/ts.h; sourceTree = "<group>"; };
-		1A95A87D9610658F7CB79621E80410CD /* ui.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ui.h; path = ios/include/openssl/ui.h; sourceTree = "<group>"; };
-		1E4E0360E1BF49D93046ED659EE76F20 /* ssl.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ssl.h; path = ios/include/openssl/ssl.h; sourceTree = "<group>"; };
-		1F4B62615D9CE86638F7D1FBB0B2D66B /* dh.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = dh.h; path = ios/include/openssl/dh.h; sourceTree = "<group>"; };
-		1F7BD415C18A7FC4B05A4EA24689ED5C /* Pods_Amble_CatTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Amble_CatTests.framework; path = "Pods-Amble CatTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		23C91F73E3091D7956E784E3D86E0A65 /* Pods-Amble Cat-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Amble Cat-umbrella.h"; sourceTree = "<group>"; };
-		251285B7608C9D869B2B399E6B9FC909 /* OpenSSL-Universal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "OpenSSL-Universal.debug.xcconfig"; sourceTree = "<group>"; };
-		252AB5F58423A7FA0E4382B384690638 /* ec.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ec.h; path = ios/include/openssl/ec.h; sourceTree = "<group>"; };
-		26E2DA12001E438E945FC010D277FF02 /* Pods-Amble Cat-Amble CatUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Amble Cat-Amble CatUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		286C7FA634F521AE986CBE5F7EA94321 /* asn1_mac.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = asn1_mac.h; path = ios/include/openssl/asn1_mac.h; sourceTree = "<group>"; };
-		28D04AF454F82ABD2CB3A08987D0A441 /* rand.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = rand.h; path = ios/include/openssl/rand.h; sourceTree = "<group>"; };
-		2D7528E1A131FB7478A069884DB8FEFD /* ssl2.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ssl2.h; path = ios/include/openssl/ssl2.h; sourceTree = "<group>"; };
-		3149A08CBABABC2535315A0EFE197187 /* ecdh.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ecdh.h; path = ios/include/openssl/ecdh.h; sourceTree = "<group>"; };
-		36CE91A78389D943B1662E004AB9E933 /* ssl3.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ssl3.h; path = ios/include/openssl/ssl3.h; sourceTree = "<group>"; };
-		389E335256E38697D5986DFBF9B28E0B /* sha.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = sha.h; path = ios/include/openssl/sha.h; sourceTree = "<group>"; };
-		3AA46AA63A242B252060ABAE578671D1 /* asn1.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = asn1.h; path = ios/include/openssl/asn1.h; sourceTree = "<group>"; };
-		3B94863F2F43B1A558AEA4A87F32170B /* rc4.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = rc4.h; path = ios/include/openssl/rc4.h; sourceTree = "<group>"; };
-		3F175D15C57C88B1FED99BC704C2A927 /* Pods-Amble Cat-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Amble Cat-acknowledgements.plist"; sourceTree = "<group>"; };
-		40CFEDAB3996AA204577A1EA3F8F141E /* pem2.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = pem2.h; path = ios/include/openssl/pem2.h; sourceTree = "<group>"; };
-		42D7DFC394E894E9072BF17745D81298 /* Pods-Amble Cat.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Amble Cat.modulemap"; sourceTree = "<group>"; };
-		44D2899ACAF19603E0AA34B2F49E27A8 /* Pods-Amble Cat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Amble Cat.debug.xcconfig"; sourceTree = "<group>"; };
-		454690EF6913F4BEADFBE904A83AD6C3 /* x509.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = x509.h; path = ios/include/openssl/x509.h; sourceTree = "<group>"; };
-		4884D46681B26B05BAD7D3B4A5DECDC6 /* rsa.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = rsa.h; path = ios/include/openssl/rsa.h; sourceTree = "<group>"; };
-		4C32BFAA81ACA270F848AF3588321CEC /* libssl.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libssl.a; path = ios/lib/libssl.a; sourceTree = "<group>"; };
-		4DF30A1C20F72552A97837549C91EE14 /* symhacks.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = symhacks.h; path = ios/include/openssl/symhacks.h; sourceTree = "<group>"; };
-		52473EF190638F8B70BB7B106E956029 /* pem.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = pem.h; path = ios/include/openssl/pem.h; sourceTree = "<group>"; };
-		533FF7104E4BC795F0D4D8967A3623FD /* Pods-Amble Cat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Amble Cat.release.xcconfig"; sourceTree = "<group>"; };
-		573D11CCD45B2D7C7BB5CFF9DE25E52C /* obj_mac.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = obj_mac.h; path = ios/include/openssl/obj_mac.h; sourceTree = "<group>"; };
-		5BEF8EB470CB77C08B6B4A0CAB72C8F0 /* asn1t.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = asn1t.h; path = ios/include/openssl/asn1t.h; sourceTree = "<group>"; };
-		5CB831F04DA9BAFEE7DF154FEFBC9628 /* shim.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = shim.h; path = ios/include/openssl/shim.h; sourceTree = "<group>"; };
-		5F1EAC28DEA6267500B3B56A25EB453E /* pqueue.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = pqueue.h; path = ios/include/openssl/pqueue.h; sourceTree = "<group>"; };
-		5FB853532AA33FFA03211994D88A34C4 /* opensslconf.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = opensslconf.h; path = ios/include/openssl/opensslconf.h; sourceTree = "<group>"; };
-		60F659933A0EDC3406DBE1AAF1B30F10 /* OpenSSL-Universal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "OpenSSL-Universal.release.xcconfig"; sourceTree = "<group>"; };
-		62D7AA05CC16CC8C7323DD44DE6E3492 /* Pods-Amble Cat-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Amble Cat-dummy.m"; sourceTree = "<group>"; };
-		655C312DA6FA77AC8F085F361C19D840 /* buffer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = buffer.h; path = ios/include/openssl/buffer.h; sourceTree = "<group>"; };
-		65C7FA8A8B0E4F07B49BC7701B5BFD19 /* lhash.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = lhash.h; path = ios/include/openssl/lhash.h; sourceTree = "<group>"; };
-		678721A5E4F09C55B825DFE759E94004 /* Pods-Amble CatTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Amble CatTests.debug.xcconfig"; sourceTree = "<group>"; };
-		693B00854E3F9CF8CD807027FED10C49 /* srp.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = srp.h; path = ios/include/openssl/srp.h; sourceTree = "<group>"; };
-		6C6DF29D6C3418F10A5CFA8B5E30C684 /* objects.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = objects.h; path = ios/include/openssl/objects.h; sourceTree = "<group>"; };
-		6C913E7FC0921FCE5F05D1EB975511FB /* ossl_typ.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ossl_typ.h; path = ios/include/openssl/ossl_typ.h; sourceTree = "<group>"; };
-		71C63C575EF17A2DBBABDBC060E3B0D9 /* x509_vfy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = x509_vfy.h; path = ios/include/openssl/x509_vfy.h; sourceTree = "<group>"; };
+		0686C2620F377038DC954FA943080141 /* Pods-Micro Kitty-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Micro Kitty-acknowledgements.markdown"; sourceTree = "<group>"; };
+		0CADBCAD94AC697F156E4A29B32CF592 /* Pods-Micro KittyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Micro KittyTests.release.xcconfig"; sourceTree = "<group>"; };
+		1245E829286742FF564F3E9CD98AC4B5 /* Pods-Micro Kitty.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Micro Kitty.release.xcconfig"; sourceTree = "<group>"; };
+		1DBF5A30163348AC28BA177CE3FB5AD5 /* Pods-Micro Kitty-Micro KittyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Micro Kitty-Micro KittyUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		1F5A7A3F58CB5F0F5C21CF92675D3C89 /* OpenSSL-Universal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "OpenSSL-Universal.release.xcconfig"; sourceTree = "<group>"; };
+		2A9411DF48715BF2476EF70540F84675 /* Pods-Micro Kitty-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Micro Kitty-Info.plist"; sourceTree = "<group>"; };
+		2B6320679347B40DE9181C753ACEEBF4 /* Pods-Micro Kitty-Micro KittyUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Micro Kitty-Micro KittyUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		2DCE9ACD707688BD06D729E69EECC473 /* Pods-Micro Kitty-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Micro Kitty-umbrella.h"; sourceTree = "<group>"; };
+		3CD5805E11C9099052A7537F3B654B63 /* Pods-Micro Kitty-Micro KittyUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Micro Kitty-Micro KittyUITests-dummy.m"; sourceTree = "<group>"; };
+		3E5496E0ED0B7F47EEC8611A3D150C7A /* Pods_Micro_Kitty.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Micro_Kitty.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3FA74D7A7426BB69941D9F2EEC586A73 /* Pods-Micro Kitty-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Micro Kitty-acknowledgements.plist"; sourceTree = "<group>"; };
+		459E23C5F02076524BBF1FA1E92D7815 /* Pods-Micro Kitty-Micro KittyUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Micro Kitty-Micro KittyUITests-umbrella.h"; sourceTree = "<group>"; };
+		4BD041F58BF3DDDF30A8CB4E49EE66A8 /* Pods-Micro KittyTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Micro KittyTests-umbrella.h"; sourceTree = "<group>"; };
+		59874D14BD717DBC71C126B3C4FB14CE /* Pods-Micro Kitty.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Micro Kitty.debug.xcconfig"; sourceTree = "<group>"; };
 		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		73CE6E893C4DE00F62F33B3890A19D6D /* cms.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = cms.h; path = ios/include/openssl/cms.h; sourceTree = "<group>"; };
-		7601E906317C44AFF808451B65F3F86C /* idea.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = idea.h; path = ios/include/openssl/idea.h; sourceTree = "<group>"; };
-		7C04CB8F9C60CA901FCF79B3A746A78E /* libcrypto.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libcrypto.a; path = ios/lib/libcrypto.a; sourceTree = "<group>"; };
-		7F4EAF28DF885DE55BE604255E7F5F49 /* seed.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = seed.h; path = ios/include/openssl/seed.h; sourceTree = "<group>"; };
-		816AA0E621BE46CA079AE75C18F60483 /* Pods-Amble Cat-Amble CatUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Amble Cat-Amble CatUITests.release.xcconfig"; sourceTree = "<group>"; };
-		81DB13BFE2B83B1CB61D1284C815DD0B /* opensslconf-i386.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "opensslconf-i386.h"; path = "ios/include/openssl/opensslconf-i386.h"; sourceTree = "<group>"; };
-		88445F26375AA6A2EF899EF55235BAD4 /* md4.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = md4.h; path = ios/include/openssl/md4.h; sourceTree = "<group>"; };
-		88BBB5682E23D921A6B44339AE02D9FD /* evp.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = evp.h; path = ios/include/openssl/evp.h; sourceTree = "<group>"; };
-		899A4A4C07F9E166A98356908E6A5671 /* dtls1.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = dtls1.h; path = ios/include/openssl/dtls1.h; sourceTree = "<group>"; };
-		8F1FFCB14E8CDD6550C3739C5E9C6ED7 /* tls1.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = tls1.h; path = ios/include/openssl/tls1.h; sourceTree = "<group>"; };
-		900E12CCB7C91C2620232582B2842190 /* stack.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = stack.h; path = ios/include/openssl/stack.h; sourceTree = "<group>"; };
-		921F8E0DE8BEC10D9EA917D1CBD7B82E /* des_old.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = des_old.h; path = ios/include/openssl/des_old.h; sourceTree = "<group>"; };
-		9331C27B43215366B04AE2A21144D97B /* ui_compat.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ui_compat.h; path = ios/include/openssl/ui_compat.h; sourceTree = "<group>"; };
-		93CC9E37275CBA868EF39430ED033928 /* safestack.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = safestack.h; path = ios/include/openssl/safestack.h; sourceTree = "<group>"; };
-		955466EDE2479D5063AAFEFD00808574 /* ripemd.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ripemd.h; path = ios/include/openssl/ripemd.h; sourceTree = "<group>"; };
-		957EBCD8081C17C154B44077D4E20758 /* Pods-Amble CatTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Amble CatTests-Info.plist"; sourceTree = "<group>"; };
-		9633EDDCD090315BB480ABBF728B63BE /* Pods-Amble Cat-Amble CatUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Amble Cat-Amble CatUITests.modulemap"; sourceTree = "<group>"; };
-		9736842361C536D76A5AE196FCFE294D /* opensslconf-arm64.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "opensslconf-arm64.h"; path = "ios/include/openssl/opensslconf-arm64.h"; sourceTree = "<group>"; };
-		9773AEAA16553FBA92C4C1E4D87BA002 /* comp.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = comp.h; path = ios/include/openssl/comp.h; sourceTree = "<group>"; };
-		97D0F1AA01D35CC0DF4DA07FE2FC5A03 /* Pods-Amble Cat-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Amble Cat-Info.plist"; sourceTree = "<group>"; };
-		992AF82D5D6B3A8B5FDCF51E035BECD5 /* pkcs7.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = pkcs7.h; path = ios/include/openssl/pkcs7.h; sourceTree = "<group>"; };
-		9A80A9813E5DC9C72CDC0FAB87FAECF7 /* ecdsa.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ecdsa.h; path = ios/include/openssl/ecdsa.h; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A05651A28BB0BA1F8F2C99A942758B62 /* md5.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = md5.h; path = ios/include/openssl/md5.h; sourceTree = "<group>"; };
-		A4C3C0E2ED409AF99FE89B021A2749B3 /* srtp.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = srtp.h; path = ios/include/openssl/srtp.h; sourceTree = "<group>"; };
-		A638434BF044CAA27D67194ACDD5A688 /* conf.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = conf.h; path = ios/include/openssl/conf.h; sourceTree = "<group>"; };
-		AC193B48BBE76B8B26FDCAED9C6968EC /* krb5_asn.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = krb5_asn.h; path = ios/include/openssl/krb5_asn.h; sourceTree = "<group>"; };
-		B2BF7DF28E0BCA52AB584A1F56BF3923 /* Pods_Amble_Cat_Amble_CatUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Amble_Cat_Amble_CatUITests.framework; path = "Pods-Amble Cat-Amble CatUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		B6DA019CCDBBCA7FD501F5F855226547 /* Pods-Amble Cat-Amble CatUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Amble Cat-Amble CatUITests-acknowledgements.plist"; sourceTree = "<group>"; };
-		BA0D7F9C3D2EE4C2DE8E3282DA1F00F6 /* Pods-Amble CatTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Amble CatTests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		BAC47C1A6E8E4864A4F8C1F9AF229A12 /* err.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = err.h; path = ios/include/openssl/err.h; sourceTree = "<group>"; };
-		BDBD7224D16A5CEEFFD77F8ACA196ABB /* dso.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = dso.h; path = ios/include/openssl/dso.h; sourceTree = "<group>"; };
-		C1B77D67A959BF7EEC4ECA884F0572EF /* Pods_Amble_Cat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Amble_Cat.framework; path = "Pods-Amble Cat.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C2CE75CEF148E08F5A90D484ED3B14BA /* blowfish.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = blowfish.h; path = ios/include/openssl/blowfish.h; sourceTree = "<group>"; };
-		C7EBA7F5C53E4F865A69524A5A7F721D /* txt_db.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = txt_db.h; path = ios/include/openssl/txt_db.h; sourceTree = "<group>"; };
-		C8809C3B3D672CC4CEF2759C0CFC01C7 /* opensslv.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = opensslv.h; path = ios/include/openssl/opensslv.h; sourceTree = "<group>"; };
-		CA00CF3D55CC760EC0F7423345EB8851 /* mdc2.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = mdc2.h; path = ios/include/openssl/mdc2.h; sourceTree = "<group>"; };
-		CB168D95937E27E4684CA3C53D1FE4FE /* camellia.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = camellia.h; path = ios/include/openssl/camellia.h; sourceTree = "<group>"; };
-		CCA370595AFDDF0A2CB2B4E497F61F51 /* cast.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = cast.h; path = ios/include/openssl/cast.h; sourceTree = "<group>"; };
-		CD49E7CF2BA150B72C60EB24C26533E7 /* Pods-Amble Cat-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Amble Cat-acknowledgements.markdown"; sourceTree = "<group>"; };
-		D33245484BCFC973E8D3F477700F7EC6 /* modes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = modes.h; path = ios/include/openssl/modes.h; sourceTree = "<group>"; };
-		D5FDF7F309BE4AFE9A1B9D76C1ACB060 /* Pods-Amble CatTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Amble CatTests-dummy.m"; sourceTree = "<group>"; };
-		D60FE2DE2644A676D28BA84A9E45AD38 /* pkcs12.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = pkcs12.h; path = ios/include/openssl/pkcs12.h; sourceTree = "<group>"; };
-		D9BF7F38A18BCE41FD33E57EE32E38BE /* engine.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = engine.h; path = ios/include/openssl/engine.h; sourceTree = "<group>"; };
-		D9FC721A09B8E304F4F35960D3668571 /* x509v3.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = x509v3.h; path = ios/include/openssl/x509v3.h; sourceTree = "<group>"; };
-		DA36A093350F13354DD376D6C2EBCF78 /* opensslconf-armv7s.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "opensslconf-armv7s.h"; path = "ios/include/openssl/opensslconf-armv7s.h"; sourceTree = "<group>"; };
-		E23B564BAE419CA928B3757975169B4B /* des.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = des.h; path = ios/include/openssl/des.h; sourceTree = "<group>"; };
-		E4517130D3EAD2E13C8F8F6E6F1812D6 /* Pods-Amble Cat-Amble CatUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Amble Cat-Amble CatUITests-dummy.m"; sourceTree = "<group>"; };
-		E45439292464F2FA7A648AEC405B2666 /* conf_api.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = conf_api.h; path = ios/include/openssl/conf_api.h; sourceTree = "<group>"; };
-		E49294E97502AB9F1DF36C46487E1CC4 /* hmac.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = hmac.h; path = ios/include/openssl/hmac.h; sourceTree = "<group>"; };
-		E9E1304AE8005354EFE3ABEA0635DD1C /* opensslconf-armv7.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "opensslconf-armv7.h"; path = "ios/include/openssl/opensslconf-armv7.h"; sourceTree = "<group>"; };
-		E9F3FB4B0D6AE970E5168CBF60EB8567 /* Pods-Amble Cat-Amble CatUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Amble Cat-Amble CatUITests-umbrella.h"; sourceTree = "<group>"; };
-		EB8CF5CF29F5A682D8089A71AA3CB5BC /* ssl23.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ssl23.h; path = ios/include/openssl/ssl23.h; sourceTree = "<group>"; };
-		EC478FFE4430FE35F20F00BCC10ADBD4 /* Pods-Amble CatTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Amble CatTests.modulemap"; sourceTree = "<group>"; };
-		ECBAC663564AE92904E03B16744BAB7C /* ocsp.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ocsp.h; path = ios/include/openssl/ocsp.h; sourceTree = "<group>"; };
-		ED5C044BE346A6DA5C5F14EA8443F08D /* Pods-Amble Cat-Amble CatUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Amble Cat-Amble CatUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		EFCF9AB9B534CC94E3B4925607EBD44F /* crypto.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = crypto.h; path = ios/include/openssl/crypto.h; sourceTree = "<group>"; };
-		F05701AADE07AE1DE3414B249D1BA650 /* bio.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = bio.h; path = ios/include/openssl/bio.h; sourceTree = "<group>"; };
-		F1C72257B08601AD26DAF775122C6855 /* dsa.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = dsa.h; path = ios/include/openssl/dsa.h; sourceTree = "<group>"; };
-		FA2D6BD8DDE8E93CFB8EAC2BAD1F607C /* aes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = aes.h; path = ios/include/openssl/aes.h; sourceTree = "<group>"; };
-		FD8EF19720631C466AB88605FE5F7FED /* rc2.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = rc2.h; path = ios/include/openssl/rc2.h; sourceTree = "<group>"; };
-		FDEE7709E1BA705870DE32E8B3791B9B /* Pods-Amble CatTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Amble CatTests-umbrella.h"; sourceTree = "<group>"; };
-		FEE3A0B48309397581F000C7731A9ABA /* cmac.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = cmac.h; path = ios/include/openssl/cmac.h; sourceTree = "<group>"; };
-		FFA8601C46B22B4C821F2A811D0129F5 /* kssl.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = kssl.h; path = ios/include/openssl/kssl.h; sourceTree = "<group>"; };
+		7AC8A691055703D6FC2EE87D0BBF1F0F /* Pods-Micro Kitty.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Micro Kitty.modulemap"; sourceTree = "<group>"; };
+		8624E34752DCC7C929669C8DA66A38A0 /* Pods-Micro KittyTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Micro KittyTests-dummy.m"; sourceTree = "<group>"; };
+		94B1D04CC94B57CB91E7CA0217D0E833 /* Pods-Micro Kitty-Micro KittyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Micro Kitty-Micro KittyUITests.release.xcconfig"; sourceTree = "<group>"; };
+		99E90A6A47F965EC5BCD4A2BB7FD5EB8 /* Pods-Micro Kitty-Micro KittyUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Micro Kitty-Micro KittyUITests.modulemap"; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A00901BCB93A4430578C33A30A47A8DB /* OpenSSL-Universal-xcframeworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "OpenSSL-Universal-xcframeworks.sh"; sourceTree = "<group>"; };
+		A0779CD655D5CF3DC686F08EA7209815 /* Pods-Micro KittyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Micro KittyTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A0C75EA4B3F11FCFE91DB5FDC6B2D59D /* Pods-Micro KittyTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Micro KittyTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		A3C4F493ACE3324CF8CF4D0A0BAA11DF /* Pods-Micro Kitty-Micro KittyUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Micro Kitty-Micro KittyUITests-frameworks.sh"; sourceTree = "<group>"; };
+		AADCA1D8F987E5153FA1ECE55D2B2351 /* OpenSSL.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.xcframework; name = OpenSSL.xcframework; path = Frameworks/OpenSSL.xcframework; sourceTree = "<group>"; };
+		BC88601AC50D3957CB401D36D492E1FA /* Pods_Micro_Kitty_Micro_KittyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Micro_Kitty_Micro_KittyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD01809A8A046159FAC3DCC86C949FE8 /* Pods-Micro Kitty-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Micro Kitty-frameworks.sh"; sourceTree = "<group>"; };
+		C3C18235E4833948DE19D9C3B7A65129 /* Pods-Micro KittyTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Micro KittyTests-Info.plist"; sourceTree = "<group>"; };
+		C49EC5F49479B286B4379DBDA7800D75 /* Pods-Micro KittyTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Micro KittyTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		CA40195578F9C57585A53C480462E17F /* Pods-Micro KittyTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Micro KittyTests.modulemap"; sourceTree = "<group>"; };
+		CBA942D70B67070CCEF49DF777ACD982 /* OpenSSL-Universal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "OpenSSL-Universal.debug.xcconfig"; sourceTree = "<group>"; };
+		F0570408B879A583428D6DEE3B23D1F9 /* Pods_Micro_KittyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Micro_KittyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F0D864F41BE0A68CB3C55F4D68081DD0 /* Pods-Micro Kitty-Micro KittyUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Micro Kitty-Micro KittyUITests-Info.plist"; sourceTree = "<group>"; };
+		F29B0AE6C98F9A49DD9370C52256455D /* Pods-Micro Kitty-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Micro Kitty-dummy.m"; sourceTree = "<group>"; };
+		F811CDE22F487B4C30B4A60D7F037AAD /* Pods-Micro Kitty-Micro KittyUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Micro Kitty-Micro KittyUITests-acknowledgements.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		22981681906AB2CE311D29BF4B10BB5B /* Frameworks */ = {
+		00308B0656482F057E04031D625B6544 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				31B3C52F4482FB4BBDFB667D6E281ADF /* Foundation.framework in Frameworks */,
+				FF5020CD9BF81018804F214372FF4804 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6934621E98332DCD12064A311C405118 /* Frameworks */ = {
+		345889354776104D3B483F8E17E23571 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				82F839F4A90038449E09E34BF9B111E3 /* Foundation.framework in Frameworks */,
+				F0D1B30D7666F10B457B7453594D33B9 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DA56142EF41780D2A4AC845EC9C36044 /* Frameworks */ = {
+		BF1D0A853441B9BD4D983BEF9DF6EB3A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FB87F3E3C60A922694A807746A114C4C /* Foundation.framework in Frameworks */,
+				D48460CDCABE1FD4D3AB90C0113F609B /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2E6AE8FFB4AF5B384451FA12798EDDF1 /* Support Files */ = {
+		2D8C8302E198D06CDF276F3269E7D929 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				251285B7608C9D869B2B399E6B9FC909 /* OpenSSL-Universal.debug.xcconfig */,
-				60F659933A0EDC3406DBE1AAF1B30F10 /* OpenSSL-Universal.release.xcconfig */,
+				AADCA1D8F987E5153FA1ECE55D2B2351 /* OpenSSL.xcframework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		316A4EE1495B6DA8B1957F93D95A92A7 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				A00901BCB93A4430578C33A30A47A8DB /* OpenSSL-Universal-xcframeworks.sh */,
+				CBA942D70B67070CCEF49DF777ACD982 /* OpenSSL-Universal.debug.xcconfig */,
+				1F5A7A3F58CB5F0F5C21CF92675D3C89 /* OpenSSL-Universal.release.xcconfig */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/OpenSSL-Universal";
 			sourceTree = "<group>";
 		};
-		3BED00340E36CDE61845624E11A0E1F0 /* Pods-Amble Cat-Amble CatUITests */ = {
+		36B7B98C21523CC326A83733C52E935E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9633EDDCD090315BB480ABBF728B63BE /* Pods-Amble Cat-Amble CatUITests.modulemap */,
-				26E2DA12001E438E945FC010D277FF02 /* Pods-Amble Cat-Amble CatUITests-acknowledgements.markdown */,
-				B6DA019CCDBBCA7FD501F5F855226547 /* Pods-Amble Cat-Amble CatUITests-acknowledgements.plist */,
-				E4517130D3EAD2E13C8F8F6E6F1812D6 /* Pods-Amble Cat-Amble CatUITests-dummy.m */,
-				08ECEB8F8A664EC9D75680836ED5A678 /* Pods-Amble Cat-Amble CatUITests-Info.plist */,
-				E9F3FB4B0D6AE970E5168CBF60EB8567 /* Pods-Amble Cat-Amble CatUITests-umbrella.h */,
-				ED5C044BE346A6DA5C5F14EA8443F08D /* Pods-Amble Cat-Amble CatUITests.debug.xcconfig */,
-				816AA0E621BE46CA079AE75C18F60483 /* Pods-Amble Cat-Amble CatUITests.release.xcconfig */,
+				3E5496E0ED0B7F47EEC8611A3D150C7A /* Pods_Micro_Kitty.framework */,
+				BC88601AC50D3957CB401D36D492E1FA /* Pods_Micro_Kitty_Micro_KittyUITests.framework */,
+				F0570408B879A583428D6DEE3B23D1F9 /* Pods_Micro_KittyTests.framework */,
 			);
-			name = "Pods-Amble Cat-Amble CatUITests";
-			path = "Target Support Files/Pods-Amble Cat-Amble CatUITests";
+			name = Products;
 			sourceTree = "<group>";
 		};
-		522FB076C2C08326158C90F9CC98787D /* Pods-Amble CatTests */ = {
+		4E62780B97D6C66BACF776DF12651B8A /* OpenSSL-Universal */ = {
 			isa = PBXGroup;
 			children = (
-				EC478FFE4430FE35F20F00BCC10ADBD4 /* Pods-Amble CatTests.modulemap */,
-				BA0D7F9C3D2EE4C2DE8E3282DA1F00F6 /* Pods-Amble CatTests-acknowledgements.markdown */,
-				0616150A38D5E04B7A79DDECD8572C18 /* Pods-Amble CatTests-acknowledgements.plist */,
-				D5FDF7F309BE4AFE9A1B9D76C1ACB060 /* Pods-Amble CatTests-dummy.m */,
-				957EBCD8081C17C154B44077D4E20758 /* Pods-Amble CatTests-Info.plist */,
-				FDEE7709E1BA705870DE32E8B3791B9B /* Pods-Amble CatTests-umbrella.h */,
-				678721A5E4F09C55B825DFE759E94004 /* Pods-Amble CatTests.debug.xcconfig */,
-				0719DEDD7CA461D7C61D58F95F52BA06 /* Pods-Amble CatTests.release.xcconfig */,
+				2D8C8302E198D06CDF276F3269E7D929 /* Frameworks */,
+				316A4EE1495B6DA8B1957F93D95A92A7 /* Support Files */,
 			);
-			name = "Pods-Amble CatTests";
-			path = "Target Support Files/Pods-Amble CatTests";
+			path = "OpenSSL-Universal";
+			sourceTree = "<group>";
+		};
+		501EE372233B885714C1ABF2E184BEC1 /* Pods-Micro KittyTests */ = {
+			isa = PBXGroup;
+			children = (
+				CA40195578F9C57585A53C480462E17F /* Pods-Micro KittyTests.modulemap */,
+				C49EC5F49479B286B4379DBDA7800D75 /* Pods-Micro KittyTests-acknowledgements.markdown */,
+				A0C75EA4B3F11FCFE91DB5FDC6B2D59D /* Pods-Micro KittyTests-acknowledgements.plist */,
+				8624E34752DCC7C929669C8DA66A38A0 /* Pods-Micro KittyTests-dummy.m */,
+				C3C18235E4833948DE19D9C3B7A65129 /* Pods-Micro KittyTests-Info.plist */,
+				4BD041F58BF3DDDF30A8CB4E49EE66A8 /* Pods-Micro KittyTests-umbrella.h */,
+				A0779CD655D5CF3DC686F08EA7209815 /* Pods-Micro KittyTests.debug.xcconfig */,
+				0CADBCAD94AC697F156E4A29B32CF592 /* Pods-Micro KittyTests.release.xcconfig */,
+			);
+			name = "Pods-Micro KittyTests";
+			path = "Target Support Files/Pods-Micro KittyTests";
 			sourceTree = "<group>";
 		};
 		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
@@ -249,156 +184,39 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		62DB39DFEE4813CBF758850C2C12D65F /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				7C04CB8F9C60CA901FCF79B3A746A78E /* libcrypto.a */,
-				4C32BFAA81ACA270F848AF3588321CEC /* libssl.a */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		8479BAA8FF147F675C3CCF6774776249 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				9897DA8C1900E88B50FDD4D0F512EA4F /* OpenSSL-Universal */,
+				4E62780B97D6C66BACF776DF12651B8A /* OpenSSL-Universal */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		8C21F129792630466CA3ACD1B1E59184 /* Pods-Amble Cat */ = {
+		A26A24D33BC5F066DE77893BA91E0AFD /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				42D7DFC394E894E9072BF17745D81298 /* Pods-Amble Cat.modulemap */,
-				CD49E7CF2BA150B72C60EB24C26533E7 /* Pods-Amble Cat-acknowledgements.markdown */,
-				3F175D15C57C88B1FED99BC704C2A927 /* Pods-Amble Cat-acknowledgements.plist */,
-				62D7AA05CC16CC8C7323DD44DE6E3492 /* Pods-Amble Cat-dummy.m */,
-				97D0F1AA01D35CC0DF4DA07FE2FC5A03 /* Pods-Amble Cat-Info.plist */,
-				23C91F73E3091D7956E784E3D86E0A65 /* Pods-Amble Cat-umbrella.h */,
-				44D2899ACAF19603E0AA34B2F49E27A8 /* Pods-Amble Cat.debug.xcconfig */,
-				533FF7104E4BC795F0D4D8967A3623FD /* Pods-Amble Cat.release.xcconfig */,
-			);
-			name = "Pods-Amble Cat";
-			path = "Target Support Files/Pods-Amble Cat";
-			sourceTree = "<group>";
-		};
-		9897DA8C1900E88B50FDD4D0F512EA4F /* OpenSSL-Universal */ = {
-			isa = PBXGroup;
-			children = (
-				C5F22BB3ED14443B508C82F3913211B9 /* Static */,
-				2E6AE8FFB4AF5B384451FA12798EDDF1 /* Support Files */,
-			);
-			name = "OpenSSL-Universal";
-			path = "OpenSSL-Universal";
-			sourceTree = "<group>";
-		};
-		C5F22BB3ED14443B508C82F3913211B9 /* Static */ = {
-			isa = PBXGroup;
-			children = (
-				FA2D6BD8DDE8E93CFB8EAC2BAD1F607C /* aes.h */,
-				3AA46AA63A242B252060ABAE578671D1 /* asn1.h */,
-				286C7FA634F521AE986CBE5F7EA94321 /* asn1_mac.h */,
-				5BEF8EB470CB77C08B6B4A0CAB72C8F0 /* asn1t.h */,
-				F05701AADE07AE1DE3414B249D1BA650 /* bio.h */,
-				C2CE75CEF148E08F5A90D484ED3B14BA /* blowfish.h */,
-				08B851FBD6661AE0C9428FE3E47A73F9 /* bn.h */,
-				655C312DA6FA77AC8F085F361C19D840 /* buffer.h */,
-				CB168D95937E27E4684CA3C53D1FE4FE /* camellia.h */,
-				CCA370595AFDDF0A2CB2B4E497F61F51 /* cast.h */,
-				FEE3A0B48309397581F000C7731A9ABA /* cmac.h */,
-				73CE6E893C4DE00F62F33B3890A19D6D /* cms.h */,
-				9773AEAA16553FBA92C4C1E4D87BA002 /* comp.h */,
-				A638434BF044CAA27D67194ACDD5A688 /* conf.h */,
-				E45439292464F2FA7A648AEC405B2666 /* conf_api.h */,
-				EFCF9AB9B534CC94E3B4925607EBD44F /* crypto.h */,
-				E23B564BAE419CA928B3757975169B4B /* des.h */,
-				921F8E0DE8BEC10D9EA917D1CBD7B82E /* des_old.h */,
-				1F4B62615D9CE86638F7D1FBB0B2D66B /* dh.h */,
-				F1C72257B08601AD26DAF775122C6855 /* dsa.h */,
-				BDBD7224D16A5CEEFFD77F8ACA196ABB /* dso.h */,
-				899A4A4C07F9E166A98356908E6A5671 /* dtls1.h */,
-				0EA262D23FE616D01E82958C96814D91 /* e_os2.h */,
-				104CF54BBFD3CF633F4A4B764499F330 /* ebcdic.h */,
-				252AB5F58423A7FA0E4382B384690638 /* ec.h */,
-				3149A08CBABABC2535315A0EFE197187 /* ecdh.h */,
-				9A80A9813E5DC9C72CDC0FAB87FAECF7 /* ecdsa.h */,
-				D9BF7F38A18BCE41FD33E57EE32E38BE /* engine.h */,
-				BAC47C1A6E8E4864A4F8C1F9AF229A12 /* err.h */,
-				88BBB5682E23D921A6B44339AE02D9FD /* evp.h */,
-				E49294E97502AB9F1DF36C46487E1CC4 /* hmac.h */,
-				7601E906317C44AFF808451B65F3F86C /* idea.h */,
-				AC193B48BBE76B8B26FDCAED9C6968EC /* krb5_asn.h */,
-				FFA8601C46B22B4C821F2A811D0129F5 /* kssl.h */,
-				65C7FA8A8B0E4F07B49BC7701B5BFD19 /* lhash.h */,
-				88445F26375AA6A2EF899EF55235BAD4 /* md4.h */,
-				A05651A28BB0BA1F8F2C99A942758B62 /* md5.h */,
-				CA00CF3D55CC760EC0F7423345EB8851 /* mdc2.h */,
-				D33245484BCFC973E8D3F477700F7EC6 /* modes.h */,
-				573D11CCD45B2D7C7BB5CFF9DE25E52C /* obj_mac.h */,
-				6C6DF29D6C3418F10A5CFA8B5E30C684 /* objects.h */,
-				ECBAC663564AE92904E03B16744BAB7C /* ocsp.h */,
-				5FB853532AA33FFA03211994D88A34C4 /* opensslconf.h */,
-				9736842361C536D76A5AE196FCFE294D /* opensslconf-arm64.h */,
-				E9E1304AE8005354EFE3ABEA0635DD1C /* opensslconf-armv7.h */,
-				DA36A093350F13354DD376D6C2EBCF78 /* opensslconf-armv7s.h */,
-				81DB13BFE2B83B1CB61D1284C815DD0B /* opensslconf-i386.h */,
-				0E0C731C1CA760BDF2D048381A777985 /* opensslconf-x86_64.h */,
-				C8809C3B3D672CC4CEF2759C0CFC01C7 /* opensslv.h */,
-				6C913E7FC0921FCE5F05D1EB975511FB /* ossl_typ.h */,
-				52473EF190638F8B70BB7B106E956029 /* pem.h */,
-				40CFEDAB3996AA204577A1EA3F8F141E /* pem2.h */,
-				D60FE2DE2644A676D28BA84A9E45AD38 /* pkcs12.h */,
-				992AF82D5D6B3A8B5FDCF51E035BECD5 /* pkcs7.h */,
-				5F1EAC28DEA6267500B3B56A25EB453E /* pqueue.h */,
-				28D04AF454F82ABD2CB3A08987D0A441 /* rand.h */,
-				FD8EF19720631C466AB88605FE5F7FED /* rc2.h */,
-				3B94863F2F43B1A558AEA4A87F32170B /* rc4.h */,
-				955466EDE2479D5063AAFEFD00808574 /* ripemd.h */,
-				4884D46681B26B05BAD7D3B4A5DECDC6 /* rsa.h */,
-				93CC9E37275CBA868EF39430ED033928 /* safestack.h */,
-				7F4EAF28DF885DE55BE604255E7F5F49 /* seed.h */,
-				389E335256E38697D5986DFBF9B28E0B /* sha.h */,
-				5CB831F04DA9BAFEE7DF154FEFBC9628 /* shim.h */,
-				693B00854E3F9CF8CD807027FED10C49 /* srp.h */,
-				A4C3C0E2ED409AF99FE89B021A2749B3 /* srtp.h */,
-				1E4E0360E1BF49D93046ED659EE76F20 /* ssl.h */,
-				2D7528E1A131FB7478A069884DB8FEFD /* ssl2.h */,
-				EB8CF5CF29F5A682D8089A71AA3CB5BC /* ssl23.h */,
-				36CE91A78389D943B1662E004AB9E933 /* ssl3.h */,
-				900E12CCB7C91C2620232582B2842190 /* stack.h */,
-				4DF30A1C20F72552A97837549C91EE14 /* symhacks.h */,
-				8F1FFCB14E8CDD6550C3739C5E9C6ED7 /* tls1.h */,
-				19D0382069DC755371013699445C6528 /* ts.h */,
-				C7EBA7F5C53E4F865A69524A5A7F721D /* txt_db.h */,
-				1A95A87D9610658F7CB79621E80410CD /* ui.h */,
-				9331C27B43215366B04AE2A21144D97B /* ui_compat.h */,
-				15C79D3001CE29875442114180C1AF92 /* whrlpool.h */,
-				454690EF6913F4BEADFBE904A83AD6C3 /* x509.h */,
-				71C63C575EF17A2DBBABDBC060E3B0D9 /* x509_vfy.h */,
-				D9FC721A09B8E304F4F35960D3668571 /* x509v3.h */,
-				62DB39DFEE4813CBF758850C2C12D65F /* Frameworks */,
-			);
-			name = Static;
-			sourceTree = "<group>";
-		};
-		C7470E87B10088684584323872FD8875 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				C1B77D67A959BF7EEC4ECA884F0572EF /* Pods_Amble_Cat.framework */,
-				B2BF7DF28E0BCA52AB584A1F56BF3923 /* Pods_Amble_Cat_Amble_CatUITests.framework */,
-				1F7BD415C18A7FC4B05A4EA24689ED5C /* Pods_Amble_CatTests.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		CD3011B483D9F28F2965D486002C0AB6 /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				8C21F129792630466CA3ACD1B1E59184 /* Pods-Amble Cat */,
-				3BED00340E36CDE61845624E11A0E1F0 /* Pods-Amble Cat-Amble CatUITests */,
-				522FB076C2C08326158C90F9CC98787D /* Pods-Amble CatTests */,
+				B2F07A7F65CB960FCF27EAAB8F474FCA /* Pods-Micro Kitty */,
+				DDDBE55D95B2B9967058168E9E215503 /* Pods-Micro Kitty-Micro KittyUITests */,
+				501EE372233B885714C1ABF2E184BEC1 /* Pods-Micro KittyTests */,
 			);
 			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		B2F07A7F65CB960FCF27EAAB8F474FCA /* Pods-Micro Kitty */ = {
+			isa = PBXGroup;
+			children = (
+				7AC8A691055703D6FC2EE87D0BBF1F0F /* Pods-Micro Kitty.modulemap */,
+				0686C2620F377038DC954FA943080141 /* Pods-Micro Kitty-acknowledgements.markdown */,
+				3FA74D7A7426BB69941D9F2EEC586A73 /* Pods-Micro Kitty-acknowledgements.plist */,
+				F29B0AE6C98F9A49DD9370C52256455D /* Pods-Micro Kitty-dummy.m */,
+				BD01809A8A046159FAC3DCC86C949FE8 /* Pods-Micro Kitty-frameworks.sh */,
+				2A9411DF48715BF2476EF70540F84675 /* Pods-Micro Kitty-Info.plist */,
+				2DCE9ACD707688BD06D729E69EECC473 /* Pods-Micro Kitty-umbrella.h */,
+				59874D14BD717DBC71C126B3C4FB14CE /* Pods-Micro Kitty.debug.xcconfig */,
+				1245E829286742FF564F3E9CD98AC4B5 /* Pods-Micro Kitty.release.xcconfig */,
+			);
+			name = "Pods-Micro Kitty";
+			path = "Target Support Files/Pods-Micro Kitty";
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
@@ -407,8 +225,8 @@
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
 				8479BAA8FF147F675C3CCF6774776249 /* Pods */,
-				C7470E87B10088684584323872FD8875 /* Products */,
-				CD3011B483D9F28F2965D486002C0AB6 /* Targets Support Files */,
+				36B7B98C21523CC326A83733C52E935E /* Products */,
+				A26A24D33BC5F066DE77893BA91E0AFD /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
@@ -420,91 +238,108 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		DDDBE55D95B2B9967058168E9E215503 /* Pods-Micro Kitty-Micro KittyUITests */ = {
+			isa = PBXGroup;
+			children = (
+				99E90A6A47F965EC5BCD4A2BB7FD5EB8 /* Pods-Micro Kitty-Micro KittyUITests.modulemap */,
+				2B6320679347B40DE9181C753ACEEBF4 /* Pods-Micro Kitty-Micro KittyUITests-acknowledgements.markdown */,
+				F811CDE22F487B4C30B4A60D7F037AAD /* Pods-Micro Kitty-Micro KittyUITests-acknowledgements.plist */,
+				3CD5805E11C9099052A7537F3B654B63 /* Pods-Micro Kitty-Micro KittyUITests-dummy.m */,
+				A3C4F493ACE3324CF8CF4D0A0BAA11DF /* Pods-Micro Kitty-Micro KittyUITests-frameworks.sh */,
+				F0D864F41BE0A68CB3C55F4D68081DD0 /* Pods-Micro Kitty-Micro KittyUITests-Info.plist */,
+				459E23C5F02076524BBF1FA1E92D7815 /* Pods-Micro Kitty-Micro KittyUITests-umbrella.h */,
+				1DBF5A30163348AC28BA177CE3FB5AD5 /* Pods-Micro Kitty-Micro KittyUITests.debug.xcconfig */,
+				94B1D04CC94B57CB91E7CA0217D0E833 /* Pods-Micro Kitty-Micro KittyUITests.release.xcconfig */,
+			);
+			name = "Pods-Micro Kitty-Micro KittyUITests";
+			path = "Target Support Files/Pods-Micro Kitty-Micro KittyUITests";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		117BA464F90BCEC0874ADE783B0768A8 /* Headers */ = {
+		0412AA29B83F4AEED1313DACB3B953F4 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2D659868C9485EB6347E83CA53984F52 /* Pods-Amble Cat-umbrella.h in Headers */,
+				A1022AE62BE984D2D7B74659611697A5 /* Pods-Micro Kitty-Micro KittyUITests-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5802B4F2F9EF3EB929C193591569BEE8 /* Headers */ = {
+		BF2340941F9D3080F3E7B47FDD2A8DEC /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4ADEDDF79548EEC1AD73A84A2FCE691E /* Pods-Amble Cat-Amble CatUITests-umbrella.h in Headers */,
+				8B7FD38212465B3E25DF43759B57ABC4 /* Pods-Micro KittyTests-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		EFD555EC8BF5CD22ABF12C1DBCBDD80C /* Headers */ = {
+		D33E09EB3546507469189B39A1C8030E /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0D6FA9EDFC4419CB66CE892D8BB83DD0 /* Pods-Amble CatTests-umbrella.h in Headers */,
+				6FEC8A48D66C75F7DBCA274ED4489D5B /* Pods-Micro Kitty-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		847F6375AE5A625913531F1C2693BB9A /* Pods-Amble CatTests */ = {
+		025629871BE844D8AA2B324152BD2BCA /* Pods-Micro Kitty */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BF9B7BA8BB19A9DD84E6BB8DB82ADCDD /* Build configuration list for PBXNativeTarget "Pods-Amble CatTests" */;
+			buildConfigurationList = 75864A56D7A5B0082620E9C041BBDD43 /* Build configuration list for PBXNativeTarget "Pods-Micro Kitty" */;
 			buildPhases = (
-				EFD555EC8BF5CD22ABF12C1DBCBDD80C /* Headers */,
-				A2E94C1288856660194BB080EF2C1061 /* Sources */,
-				6934621E98332DCD12064A311C405118 /* Frameworks */,
-				5910646ACC4830AE27CD1AAAAA973000 /* Resources */,
+				D33E09EB3546507469189B39A1C8030E /* Headers */,
+				3AB9AE762DA8D8AF547A058F1AEED838 /* Sources */,
+				345889354776104D3B483F8E17E23571 /* Frameworks */,
+				8BB993588AFD0187591447FB7420046B /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				261DC099A7842031E7F47BC676AEA183 /* PBXTargetDependency */,
+				363A1ABE8E835204BE4936F8A84343E0 /* PBXTargetDependency */,
 			);
-			name = "Pods-Amble CatTests";
-			productName = "Pods-Amble CatTests";
-			productReference = 1F7BD415C18A7FC4B05A4EA24689ED5C /* Pods_Amble_CatTests.framework */;
+			name = "Pods-Micro Kitty";
+			productName = "Pods-Micro Kitty";
+			productReference = 3E5496E0ED0B7F47EEC8611A3D150C7A /* Pods_Micro_Kitty.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		9959812FD3FD324B670B99A5B8E08A57 /* Pods-Amble Cat */ = {
+		4951A6E6B87A849241CFCE2EBE3E6619 /* Pods-Micro KittyTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1DCED0542BFE80198EF3A8205082203A /* Build configuration list for PBXNativeTarget "Pods-Amble Cat" */;
+			buildConfigurationList = BECEAAC4DEB45B0AB821C6DDA9EA9A0A /* Build configuration list for PBXNativeTarget "Pods-Micro KittyTests" */;
 			buildPhases = (
-				117BA464F90BCEC0874ADE783B0768A8 /* Headers */,
-				3D9F42E3F2A51F7FAD417DCEB74056A7 /* Sources */,
-				22981681906AB2CE311D29BF4B10BB5B /* Frameworks */,
-				B088C6A5AE24D85F9442209D39C1E973 /* Resources */,
+				BF2340941F9D3080F3E7B47FDD2A8DEC /* Headers */,
+				97C0A459A0006C8716C5467EDF133E41 /* Sources */,
+				BF1D0A853441B9BD4D983BEF9DF6EB3A /* Frameworks */,
+				035366E9EC3B07D5E7FDFDCC5E605008 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				E7026CBBC3F858F45DB5BAE277F7F9B3 /* PBXTargetDependency */,
+				B84435D965F84A56D65F9BA2D069E8DD /* PBXTargetDependency */,
 			);
-			name = "Pods-Amble Cat";
-			productName = "Pods-Amble Cat";
-			productReference = C1B77D67A959BF7EEC4ECA884F0572EF /* Pods_Amble_Cat.framework */;
+			name = "Pods-Micro KittyTests";
+			productName = "Pods-Micro KittyTests";
+			productReference = F0570408B879A583428D6DEE3B23D1F9 /* Pods_Micro_KittyTests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		BE1DBCF82331BB90EA3C008DDE7F28F6 /* Pods-Amble Cat-Amble CatUITests */ = {
+		96CB16585D8424798359E751D5329BDC /* Pods-Micro Kitty-Micro KittyUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7C809F5A9D455628835437330BB7997D /* Build configuration list for PBXNativeTarget "Pods-Amble Cat-Amble CatUITests" */;
+			buildConfigurationList = 9FA70211410FE7F0F7EDA3F5BF4F715C /* Build configuration list for PBXNativeTarget "Pods-Micro Kitty-Micro KittyUITests" */;
 			buildPhases = (
-				5802B4F2F9EF3EB929C193591569BEE8 /* Headers */,
-				455A732079BE612F518EB440C5A07D60 /* Sources */,
-				DA56142EF41780D2A4AC845EC9C36044 /* Frameworks */,
-				23B8F590DD3275F280993065CA2C3478 /* Resources */,
+				0412AA29B83F4AEED1313DACB3B953F4 /* Headers */,
+				5648463CBBE446F731B042C49AC52A8A /* Sources */,
+				00308B0656482F057E04031D625B6544 /* Frameworks */,
+				2F268030DA7E04BEF45B4595AD32BD59 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				C8CAF9773802B73A09D4495A9FED0FE2 /* PBXTargetDependency */,
+				5BE09B36E7E58AFD0042F216471A24CA /* PBXTargetDependency */,
 			);
-			name = "Pods-Amble Cat-Amble CatUITests";
-			productName = "Pods-Amble Cat-Amble CatUITests";
-			productReference = B2BF7DF28E0BCA52AB584A1F56BF3923 /* Pods_Amble_Cat_Amble_CatUITests.framework */;
+			name = "Pods-Micro Kitty-Micro KittyUITests";
+			productName = "Pods-Micro Kitty-Micro KittyUITests";
+			productReference = BC88601AC50D3957CB401D36D492E1FA /* Pods_Micro_Kitty_Micro_KittyUITests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -514,7 +349,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1100;
-				LastUpgradeCheck = 1100;
+				LastUpgradeCheck = 1250;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 10.0";
@@ -525,34 +360,34 @@
 				Base,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = C7470E87B10088684584323872FD8875 /* Products */;
+			productRefGroup = 36B7B98C21523CC326A83733C52E935E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				B9ED5194E665042005069EF06C82A050 /* OpenSSL-Universal */,
-				9959812FD3FD324B670B99A5B8E08A57 /* Pods-Amble Cat */,
-				BE1DBCF82331BB90EA3C008DDE7F28F6 /* Pods-Amble Cat-Amble CatUITests */,
-				847F6375AE5A625913531F1C2693BB9A /* Pods-Amble CatTests */,
+				025629871BE844D8AA2B324152BD2BCA /* Pods-Micro Kitty */,
+				96CB16585D8424798359E751D5329BDC /* Pods-Micro Kitty-Micro KittyUITests */,
+				4951A6E6B87A849241CFCE2EBE3E6619 /* Pods-Micro KittyTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		23B8F590DD3275F280993065CA2C3478 /* Resources */ = {
+		035366E9EC3B07D5E7FDFDCC5E605008 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5910646ACC4830AE27CD1AAAAA973000 /* Resources */ = {
+		2F268030DA7E04BEF45B4595AD32BD59 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B088C6A5AE24D85F9442209D39C1E973 /* Resources */ = {
+		8BB993588AFD0187591447FB7420046B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -561,74 +396,78 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		DAEA2BAAFED7B7865CB41712646E4160 /* [CP] Copy XCFrameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/OpenSSL-Universal/OpenSSL-Universal-xcframeworks-input-files.xcfilelist",
+			);
+			name = "[CP] Copy XCFrameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/OpenSSL-Universal/OpenSSL-Universal-xcframeworks-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/OpenSSL-Universal/OpenSSL-Universal-xcframeworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
-		3D9F42E3F2A51F7FAD417DCEB74056A7 /* Sources */ = {
+		3AB9AE762DA8D8AF547A058F1AEED838 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5FB6097EB917ECAE70C17E930BCEB37B /* Pods-Amble Cat-dummy.m in Sources */,
+				A254A51D3AE42CFDA8053F8F3FAF995D /* Pods-Micro Kitty-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		455A732079BE612F518EB440C5A07D60 /* Sources */ = {
+		5648463CBBE446F731B042C49AC52A8A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E5006C9C1B18F6A07F6804BE96B4EE8B /* Pods-Amble Cat-Amble CatUITests-dummy.m in Sources */,
+				E0ADB473FE8F2549412B88FF1596B31C /* Pods-Micro Kitty-Micro KittyUITests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A2E94C1288856660194BB080EF2C1061 /* Sources */ = {
+		97C0A459A0006C8716C5467EDF133E41 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CEEA716126EC3C514ADC4C79B829AB9E /* Pods-Amble CatTests-dummy.m in Sources */,
+				C705FE087B00C039137D7EB9F819C066 /* Pods-Micro KittyTests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		261DC099A7842031E7F47BC676AEA183 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Pods-Amble Cat";
-			target = 9959812FD3FD324B670B99A5B8E08A57 /* Pods-Amble Cat */;
-			targetProxy = 6AC7789F57B94908015F428CEE366814 /* PBXContainerItemProxy */;
-		};
-		C8CAF9773802B73A09D4495A9FED0FE2 /* PBXTargetDependency */ = {
+		363A1ABE8E835204BE4936F8A84343E0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "OpenSSL-Universal";
 			target = B9ED5194E665042005069EF06C82A050 /* OpenSSL-Universal */;
-			targetProxy = 031D2D967A92A84E02FEA4BBA97624C5 /* PBXContainerItemProxy */;
+			targetProxy = F6D6C74A8F4D35B4D3F8FAB9DDBFBC26 /* PBXContainerItemProxy */;
 		};
-		E7026CBBC3F858F45DB5BAE277F7F9B3 /* PBXTargetDependency */ = {
+		5BE09B36E7E58AFD0042F216471A24CA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "OpenSSL-Universal";
 			target = B9ED5194E665042005069EF06C82A050 /* OpenSSL-Universal */;
-			targetProxy = A684B920D7A273D130DD5B4DDABFD8BD /* PBXContainerItemProxy */;
+			targetProxy = 30875C49B200E83F70FA1B62F655D55B /* PBXContainerItemProxy */;
+		};
+		B84435D965F84A56D65F9BA2D069E8DD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-Micro Kitty";
+			target = 025629871BE844D8AA2B324152BD2BCA /* Pods-Micro Kitty */;
+			targetProxy = 41AD5A750A436BA2827F446E9FBEA56D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		11D5DD59C821CAF83E519D9F1D28639F /* Debug */ = {
+		1CACBB3F70E19F981159A90082C5885E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 251285B7608C9D869B2B399E6B9FC909 /* OpenSSL-Universal.debug.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		19685C48CC147843F224EF44A552FEF2 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = ED5C044BE346A6DA5C5F14EA8443F08D /* Pods-Amble Cat-Amble CatUITests.debug.xcconfig */;
+			baseConfigurationReference = A0779CD655D5CF3DC686F08EA7209815 /* Pods-Micro KittyTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -639,52 +478,16 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-Amble Cat-Amble CatUITests/Pods-Amble Cat-Amble CatUITests-Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-Micro KittyTests/Pods-Micro KittyTests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
 				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Amble Cat-Amble CatUITests/Pods-Amble Cat-Amble CatUITests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		21F81DEE449AB9FEA467DF0F1F4E6297 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 44D2899ACAF19603E0AA34B2F49E27A8 /* Pods-Amble Cat.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-Amble Cat/Pods-Amble Cat-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Amble Cat/Pods-Amble Cat.modulemap";
+				MODULEMAP_FILE = "Target Support Files/Pods-Micro KittyTests/Pods-Micro KittyTests.modulemap";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -751,7 +554,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -764,9 +567,9 @@
 			};
 			name = Debug;
 		};
-		3CD6D7F66F284F13CB06685D7B7FF352 /* Release */ = {
+		2D0BD4B74DEF462B19F26E571AA8F3D7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 816AA0E621BE46CA079AE75C18F60483 /* Pods-Amble Cat-Amble CatUITests.release.xcconfig */;
+			baseConfigurationReference = 94B1D04CC94B57CB91E7CA0217D0E833 /* Pods-Micro Kitty-Micro KittyUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -777,16 +580,16 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-Amble Cat-Amble CatUITests/Pods-Amble Cat-Amble CatUITests-Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-Micro Kitty-Micro KittyUITests/Pods-Micro Kitty-Micro KittyUITests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
 				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Amble Cat-Amble CatUITests/Pods-Amble Cat-Amble CatUITests.modulemap";
+				MODULEMAP_FILE = "Target Support Files/Pods-Micro Kitty-Micro KittyUITests/Pods-Micro Kitty-Micro KittyUITests.modulemap";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -801,9 +604,9 @@
 			};
 			name = Release;
 		};
-		795B91D05BDF5349CCCA6400B53E7E6A /* Release */ = {
+		39DF518312BF6C83545E38ACFEA1841F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0719DEDD7CA461D7C61D58F95F52BA06 /* Pods-Amble CatTests.release.xcconfig */;
+			baseConfigurationReference = 1DBF5A30163348AC28BA177CE3FB5AD5 /* Pods-Micro Kitty-Micro KittyUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -814,53 +617,16 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-Amble CatTests/Pods-Amble CatTests-Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-Micro Kitty-Micro KittyUITests/Pods-Micro Kitty-Micro KittyUITests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
 				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Amble CatTests/Pods-Amble CatTests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		8B6E804A33FCE3BFA486B06C35540BE1 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 678721A5E4F09C55B825DFE759E94004 /* Pods-Amble CatTests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-Amble CatTests/Pods-Amble CatTests-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Amble CatTests/Pods-Amble CatTests.modulemap";
+				MODULEMAP_FILE = "Target Support Files/Pods-Micro Kitty-Micro KittyUITests/Pods-Micro Kitty-Micro KittyUITests.modulemap";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -874,13 +640,13 @@
 			};
 			name = Debug;
 		};
-		A56A33601CE9B3BFBC7F5B802E79FC08 /* Release */ = {
+		45843BD8C9A61FAA80B9C1553E421D86 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 60F659933A0EDC3406DBE1AAF1B30F10 /* OpenSSL-Universal.release.xcconfig */;
+			baseConfigurationReference = 1F5A7A3F58CB5F0F5C21CF92675D3C89 /* OpenSSL-Universal.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -891,9 +657,9 @@
 			};
 			name = Release;
 		};
-		C1BD3453B86AC6B0E76AD50681FF0B0C /* Release */ = {
+		62746859565851E8375AF2AAFAFB0F9D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 533FF7104E4BC795F0D4D8967A3623FD /* Pods-Amble Cat.release.xcconfig */;
+			baseConfigurationReference = 1245E829286742FF564F3E9CD98AC4B5 /* Pods-Micro Kitty.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -904,16 +670,89 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-Amble Cat/Pods-Amble Cat-Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-Micro Kitty/Pods-Micro Kitty-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
 				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Amble Cat/Pods-Amble Cat.modulemap";
+				MODULEMAP_FILE = "Target Support Files/Pods-Micro Kitty/Pods-Micro Kitty.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		9B3666B17F8628B42AE3998DB2C3185D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 59874D14BD717DBC71C126B3C4FB14CE /* Pods-Micro Kitty.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Micro Kitty/Pods-Micro Kitty-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Micro Kitty/Pods-Micro Kitty.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B2E85074A3C0D693D96D4FB3BE0AD4A8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0CADBCAD94AC697F156E4A29B32CF592 /* Pods-Micro KittyTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Micro KittyTests/Pods-Micro KittyTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Micro KittyTests/Pods-Micro KittyTests.modulemap";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -978,7 +817,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -990,18 +829,25 @@
 			};
 			name = Release;
 		};
+		F70FB2C772CB3A9B68A75AA06B76A888 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CBA942D70B67070CCEF49DF777ACD982 /* OpenSSL-Universal.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1DCED0542BFE80198EF3A8205082203A /* Build configuration list for PBXNativeTarget "Pods-Amble Cat" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				21F81DEE449AB9FEA467DF0F1F4E6297 /* Debug */,
-				C1BD3453B86AC6B0E76AD50681FF0B0C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1011,29 +857,38 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		741581A7361AF4537A921DAD19E3B1ED /* Build configuration list for PBXAggregateTarget "OpenSSL-Universal" */ = {
+		75864A56D7A5B0082620E9C041BBDD43 /* Build configuration list for PBXNativeTarget "Pods-Micro Kitty" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				11D5DD59C821CAF83E519D9F1D28639F /* Debug */,
-				A56A33601CE9B3BFBC7F5B802E79FC08 /* Release */,
+				9B3666B17F8628B42AE3998DB2C3185D /* Debug */,
+				62746859565851E8375AF2AAFAFB0F9D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7C809F5A9D455628835437330BB7997D /* Build configuration list for PBXNativeTarget "Pods-Amble Cat-Amble CatUITests" */ = {
+		9FA70211410FE7F0F7EDA3F5BF4F715C /* Build configuration list for PBXNativeTarget "Pods-Micro Kitty-Micro KittyUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				19685C48CC147843F224EF44A552FEF2 /* Debug */,
-				3CD6D7F66F284F13CB06685D7B7FF352 /* Release */,
+				39DF518312BF6C83545E38ACFEA1841F /* Debug */,
+				2D0BD4B74DEF462B19F26E571AA8F3D7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BF9B7BA8BB19A9DD84E6BB8DB82ADCDD /* Build configuration list for PBXNativeTarget "Pods-Amble CatTests" */ = {
+		BECEAAC4DEB45B0AB821C6DDA9EA9A0A /* Build configuration list for PBXNativeTarget "Pods-Micro KittyTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				8B6E804A33FCE3BFA486B06C35540BE1 /* Debug */,
-				795B91D05BDF5349CCCA6400B53E7E6A /* Release */,
+				1CACBB3F70E19F981159A90082C5885E /* Debug */,
+				B2E85074A3C0D693D96D4FB3BE0AD4A8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C1D72BC345233EADF30A97D462F723B7 /* Build configuration list for PBXAggregateTarget "OpenSSL-Universal" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F70FB2C772CB3A9B68A75AA06B76A888 /* Debug */,
+				45843BD8C9A61FAA80B9C1553E421D86 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
