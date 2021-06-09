@@ -24,7 +24,7 @@
             buildForTesting = "YES"
             buildForRunning = "YES"
             buildForProfiling = "YES"
-            buildForArchiving = "YES"
+            buildForArchiving = "NO"
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
@@ -38,7 +38,7 @@
             buildForTesting = "YES"
             buildForRunning = "YES"
             buildForProfiling = "YES"
-            buildForArchiving = "YES"
+            buildForArchiving = "NO"
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
@@ -96,7 +96,8 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
-      debugDocumentVersioning = "YES">
+      debugDocumentVersioning = "YES"
+      enableTestabilityWhenProfilingTests = "No">
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"

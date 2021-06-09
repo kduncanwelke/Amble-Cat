@@ -52,7 +52,7 @@ public class GameViewModel {
     }
     
     func randomizeTime() {
-        var time = Int.random(in: 1...4)
+        var time = Int.random(in: 2...4)
         GameModel.timeToHit = time
         
         GameTimer.beginTimer(repeatCount: GameModel.timeToHit)
@@ -73,6 +73,7 @@ public class GameViewModel {
         } else {
             randomizePosition()
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "showMouse"), object: nil)
+            print("show mouse round \(GameModel.rounds)")
             randomizeTime()
         }
         

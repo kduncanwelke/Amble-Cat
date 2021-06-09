@@ -49,7 +49,6 @@ class WhackamouseViewController: UIViewController {
         gameOver.isHidden = true
         hideMouse()
         updateTotal()
-        //gameViewModel.addCurrency(with: 10)
     }
     
     // MARK: Custom functions
@@ -114,8 +113,8 @@ class WhackamouseViewController: UIViewController {
             Sound.playSound(number: Sounds.failSound.number)
             insufficientFunds.isHidden = false
             
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) { [unowned self] in
-                self.insufficientFunds.isHidden = true
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) { [weak self] in
+                self?.insufficientFunds.isHidden = true
             }
             
             return false
@@ -183,7 +182,7 @@ class WhackamouseViewController: UIViewController {
     @IBAction func quit(_ sender: UIButton) {
         gameOver.isHidden = true
         beginButton.isEnabled = true
-        beginButton.setTitle("begin game", for: .normal)
+        beginButton.setTitle("5 points to play", for: .normal)
     }
     
     @IBAction func tappedMouse1(_ sender: UITapGestureRecognizer) {
@@ -225,6 +224,7 @@ class WhackamouseViewController: UIViewController {
         }
         
         self.dismiss(animated: true, completion: nil)
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "refreshView"), object: nil)
     }
 
 }
