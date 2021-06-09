@@ -65,7 +65,7 @@ class AboutViewController: UIViewController {
     }
     
     @IBAction func privacyPolicy(_ sender: UIButton) {
-        guard let url = URL(string: "http://kduncan-welke.com/amblecatprivacy.php") else { return }
+        guard let url = URL(string: "http://kduncan-welke.com/microkittyprivacy.php") else { return }
         UIApplication.shared.open(url, options: [:], completionHandler: nil)
     }
     

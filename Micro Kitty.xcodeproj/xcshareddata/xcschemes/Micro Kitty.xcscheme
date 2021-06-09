@@ -68,6 +68,16 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "2DE860E423552B3B00227A86"
+            BuildableName = "Micro Kitty.app"
+            BlueprintName = "Micro Kitty"
+            ReferencedContainer = "container:Micro Kitty.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
       <AdditionalOptions>
          <AdditionalOption
             key = "MallocStackLogging"

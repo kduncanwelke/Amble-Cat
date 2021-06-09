@@ -1608,7 +1608,7 @@ OTHER DEALINGS IN THE FONT SOFTWARE.</string>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="TJT-8l-lMu"/>
-                        <color key="backgroundColor" red="1" green="0.78431367870000002" blue="0.74901962280000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="1" green="0.82352941176470584" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="Iqo-AF-jux" firstAttribute="leading" secondItem="TJT-8l-lMu" secondAttribute="leading" constant="20" id="8LM-zs-q6m"/>
                             <constraint firstItem="Iqo-AF-jux" firstAttribute="centerY" secondItem="TJT-8l-lMu" secondAttribute="centerY" id="8Nk-Aq-dNb"/>
@@ -1675,20 +1675,24 @@ OTHER DEALINGS IN THE FONT SOFTWARE.</string>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="pawShopCell" id="DD8-Mq-hOF" customClass="PawShopTableViewCell" customModule="Micro_Kitty" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="24.5" width="374" height="250"/>
+                                        <rect key="frame" x="0.0" y="24.5" width="374" height="263"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DD8-Mq-hOF" id="wge-CP-kSn">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="250"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="263"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Eg-Lf-nAo">
-                                                    <rect key="frame" x="150" y="26" width="74.5" height="17"/>
+                                                    <rect key="frame" x="20" y="26" width="334" height="30"/>
+                                                    <color key="backgroundColor" red="1" green="0.62745100259999997" blue="0.65098041299999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" priority="999" constant="30" id="Bvh-F4-2dk"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" name="Dogica_Pixel_Bold" family="Dogica Pixel" pointSize="17"/>
                                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="0p5-Mh-9m4">
-                                                    <rect key="frame" x="20" y="63" width="334" height="162"/>
+                                                    <rect key="frame" x="20" y="76" width="334" height="162"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="50" translatesAutoresizingMaskIntoConstraints="NO" id="QEt-XC-E43">
                                                             <rect key="frame" x="0.0" y="0.0" width="162" height="162"/>
@@ -1719,8 +1723,8 @@ OTHER DEALINGS IN THE FONT SOFTWARE.</string>
                                                     </subviews>
                                                 </stackView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AXC-g2-HXI">
-                                                    <rect key="frame" x="0.0" y="238" width="374" height="12"/>
-                                                    <color key="backgroundColor" red="1" green="0.79607844350000001" blue="0.75686275960000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <rect key="frame" x="0.0" y="251" width="374" height="12"/>
+                                                    <color key="backgroundColor" red="1" green="0.80392158030000005" blue="0.76470589639999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="12" id="d3z-sb-KDt"/>
                                                     </constraints>
@@ -1732,13 +1736,15 @@ OTHER DEALINGS IN THE FONT SOFTWARE.</string>
                                                 <constraint firstAttribute="bottom" secondItem="AXC-g2-HXI" secondAttribute="bottom" id="Bim-LO-aT5"/>
                                                 <constraint firstAttribute="trailing" secondItem="0p5-Mh-9m4" secondAttribute="trailing" constant="20" id="I7Z-vg-KAQ"/>
                                                 <constraint firstItem="0Eg-Lf-nAo" firstAttribute="centerX" secondItem="wge-CP-kSn" secondAttribute="centerX" id="NBc-tD-t5A"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="0Eg-Lf-nAo" secondAttribute="trailing" id="bfu-A0-5qq"/>
                                                 <constraint firstItem="0p5-Mh-9m4" firstAttribute="leading" secondItem="wge-CP-kSn" secondAttribute="leading" constant="20" id="dYL-ZT-iEQ"/>
+                                                <constraint firstItem="0Eg-Lf-nAo" firstAttribute="leading" secondItem="wge-CP-kSn" secondAttribute="leadingMargin" id="qGb-3K-wZG"/>
                                                 <constraint firstItem="AXC-g2-HXI" firstAttribute="leading" secondItem="wge-CP-kSn" secondAttribute="leading" id="qNb-2X-8RL"/>
                                                 <constraint firstItem="0p5-Mh-9m4" firstAttribute="top" relation="greaterThanOrEqual" secondItem="0Eg-Lf-nAo" secondAttribute="bottom" constant="20" id="x1s-gq-Ies"/>
                                                 <constraint firstAttribute="bottom" secondItem="0p5-Mh-9m4" secondAttribute="bottom" constant="25" id="y9R-dk-vo5"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="1" green="0.86902132950759481" blue="0.84457197768531467" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" red="1" green="0.87058823529411766" blue="0.84313725490196079" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <connections>
                                             <outlet property="details" destination="zS4-88-Nrw" id="7Eq-TI-U8h"/>
                                             <outlet property="picture" destination="QEt-XC-E43" id="CJZ-bo-SVP"/>
@@ -1765,7 +1771,7 @@ OTHER DEALINGS IN THE FONT SOFTWARE.</string>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="sY6-gs-gnx"/>
-                        <color key="backgroundColor" red="1" green="0.79607844350000001" blue="0.75686275960000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="1" green="0.82352941176470584" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="e8l-Eh-sBp" firstAttribute="centerX" secondItem="15n-Cl-UTK" secondAttribute="centerX" id="9ZV-qc-DWR"/>
                             <constraint firstItem="sY6-gs-gnx" firstAttribute="trailing" secondItem="Bz4-3S-FNX" secondAttribute="trailing" constant="20" id="Bew-Gi-wSt"/>
