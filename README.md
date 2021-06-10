@@ -68,4 +68,4 @@ Various art is included in this app, from the cat and its animation to all of it
 If you experience trouble using the app, have any questions, or simply want to contact me, you can contact me via email at kduncanwelke@gmail.com. I will be happy to discuss this project.
 
 ## Acknowledgement
-Some inspiration for this app came from a group of friends - my thanks go out to them for helping provide thoughts that led to this app coming to realization. Sounds for this app came from [Zapsplat](http://zapsplat.com), and Mark DiAngelo and Popup Pixels on [Soundbible](http://soundbible.com).
+Some inspiration for this app came from a group of friends - my thanks go out to them for helping provide thoughts that led to this app coming to realization. Sounds for this app came from [Zapsplat](http://zapsplat.com), and Mark DiAngelo and Popup Pixels on [Soundbible](http://soundbible.com). [Dogica Pixel](https://www.dafont.com/dogica.font) font by Roberto Mocci.
