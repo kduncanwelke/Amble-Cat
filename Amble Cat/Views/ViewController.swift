@@ -25,8 +25,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
      @IBOutlet var hearts: [UIImageView]!
      
      @IBOutlet weak var catArt: UIImageView!
-
-     @IBOutlet weak var loadingView: UIView!
      
      @IBOutlet weak var bedArt: UIImageView!
      @IBOutlet weak var bowlArt: UIImageView!
@@ -338,7 +336,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                     catArt.startAnimating()
                }
           } else if sender.state == .ended || sender.state == .cancelled {
-               animationEnded()
+               sleep()
           }
      }
      
@@ -357,7 +355,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                     bathroomCat.startAnimating()
                }
           } else if sender.state == .ended || sender.state == .cancelled {
-               animationEnded()
+               sleep()
           }
      }
      
@@ -376,7 +374,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                     walkingOutside.startAnimating()
                }
           } else if sender.state == .ended || sender.state == .cancelled {
-               animationEnded()
+               sleep()
           }
      }
      
@@ -389,10 +387,12 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
           case 0:
                Sound.playSound(number: Sounds.blopSound.number)
                paused = true
+               AnimationTimer.stop()
                performSegue(withIdentifier: "playGame", sender: Any?.self)
           case 1:
                Sound.playSound(number: Sounds.blopSound.number)
                paused = true
+               AnimationTimer.stop()
                performSegue(withIdentifier: "viewStatistics", sender: Any?.self)
           case 2:
                if viewModel.isViewIndoors() {
@@ -411,10 +411,12 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
           case 4:
                Sound.playSound(number: Sounds.blopSound.number)
                paused = true
+               AnimationTimer.stop()
                performSegue(withIdentifier: "goToStore", sender: Any?.self)
           case 5:
                Sound.playSound(number: Sounds.blopSound.number)
                paused = true
+               AnimationTimer.stop()
                performSegue(withIdentifier: "goToPointShop", sender: Any?.self)
           default:
                return

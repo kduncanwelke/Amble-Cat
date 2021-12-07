@@ -10,15 +10,6 @@ import Foundation
 import UIKit
 
 extension ViewController {
-    
-    func switchViews() {
-        loadingView.isHidden = false
-        print("switch views")
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) { [unowned self] in
-            self.loadingView.isHidden = true
-        }
-    }
 
     func beginAnimation(inMotion: Bool) {
         print("begin animation")
@@ -55,7 +46,6 @@ extension ViewController {
         case .outside:
             if AnimationManager.currentView != changeView {
                 print("all true show outside")
-                switchViews()
                 disappearBathroom()
                 toggleOutside()
                 randomOutside(moving: inMotion)
@@ -67,7 +57,6 @@ extension ViewController {
             AnimationManager.currentView = .outside
         case .bathroom:
             if AnimationManager.currentView != changeView {
-                switchViews()
                 disappearOutside()
                 toggleBathroom()
             }
@@ -78,7 +67,7 @@ extension ViewController {
                 return
             }
             
-            var staying = Bool.random()
+            var staying = Random.randomLargeChance()
             
             if staying {
                 var placeAnimation = Bool.random()
@@ -109,10 +98,6 @@ extension ViewController {
                 }
             }
         case .room:
-            if AnimationManager.currentView != changeView {
-                switchViews()
-            }
-            
             disappearOutside()
             disappearBathroom()
             
@@ -121,8 +106,8 @@ extension ViewController {
             if paused {
                 return
             }
-            
-            var staying = Bool.random()
+
+            var staying = Random.randomLargeChance()
             
             if staying {
                 var placeAnimation = Bool.random()
@@ -482,7 +467,7 @@ extension ViewController {
         catArt.startAnimating()
         let middleDestination = CGPoint(x: wallArt.frame.width/1.5, y: wallArt.frame.height/1.6)
         
-        catArt.move(to: middleDestination, duration: 2.0, options: UIView.AnimationOptions.curveEaseOut)
+        catArt.move(to: middleDestination, duration: 2.5, options: UIView.AnimationOptions.curveEaseOut)
         AnimationManager.location = .middle
     }
     
@@ -493,7 +478,7 @@ extension ViewController {
         catArt.startAnimating()
         let foodDestination = CGPoint(x: wallArt.frame.width/1.2, y: wallArt.frame.height/1.2)
         
-        catArt.move(to: foodDestination, duration: 2.0, options: UIView.AnimationOptions.curveEaseOut)
+        catArt.move(to: foodDestination, duration: 2.5, options: UIView.AnimationOptions.curveEaseOut)
         AnimationManager.location = .food
     }
     
@@ -511,7 +496,7 @@ extension ViewController {
         catArt.startAnimating()
         let waterDestination = CGPoint(x: wallArt.frame.width/2.13, y: wallArt.frame.height/1.3)
         
-        catArt.move(to: waterDestination, duration: 2.0, options: UIView.AnimationOptions.curveEaseOut)
+        catArt.move(to: waterDestination, duration: 2.5, options: UIView.AnimationOptions.curveEaseOut)
         AnimationManager.location = .water
     }
     
@@ -529,7 +514,7 @@ extension ViewController {
         catArt.startAnimating()
         let bedDestination = CGPoint(x: wallArt.frame.width/1.26, y: wallArt.frame.height/1.85)
         
-        catArt.move(to: bedDestination, duration: 2.0, options: UIView.AnimationOptions.curveEaseOut)
+        catArt.move(to: bedDestination, duration: 2.5, options: UIView.AnimationOptions.curveEaseOut)
         AnimationManager.location = .bed
     }
     
@@ -543,8 +528,10 @@ extension ViewController {
             catArt.animationImages = AnimationManager.sleep
             catArt.animationDuration = 3.0
             catArt.startAnimating()
-        default:
-            break
+        case .outside:
+            walkingOutside.animationImages = AnimationManager.sleep
+            walkingOutside.animationDuration = 3.0
+            walkingOutside.startAnimating()
         }
        
         AnimationTimer.beginTimer(once: false, outdoors: false)
@@ -557,7 +544,7 @@ extension ViewController {
         catArt.startAnimating()
         let toyDestination = CGPoint(x: wallArt.frame.width/3.5, y: wallArt.frame.height/1.45)
         
-        catArt.move(to: toyDestination, duration: 3.0, options: UIView.AnimationOptions.curveEaseOut)
+        catArt.move(to: toyDestination, duration: 3.5, options: UIView.AnimationOptions.curveEaseOut)
         AnimationManager.location = .toy
     }
     
@@ -585,7 +572,7 @@ extension ViewController {
         catArt.startAnimating()
         let couchDestination = CGPoint(x: wallArt.frame.width/3, y: wallArt.frame.height/1.6)
         
-        catArt.moveWithJump(to: couchDestination, duration: 2.0, options: UIView.AnimationOptions.curveEaseOut)
+        catArt.moveWithJump(to: couchDestination, duration: 2.5, options: UIView.AnimationOptions.curveEaseOut)
         AnimationManager.location = .couch
     }
     
@@ -602,7 +589,7 @@ extension ViewController {
         catArt.startAnimating()
         let rightDestination = CGPoint(x: wallArt.frame.width/1.2, y: wallArt.frame.height/1.6)
         
-        catArt.move(to: rightDestination, duration: 2.0, options: UIView.AnimationOptions.curveEaseOut)
+        catArt.move(to: rightDestination, duration: 2.5, options: UIView.AnimationOptions.curveEaseOut)
         AnimationManager.location = .right
     }
     
@@ -613,7 +600,7 @@ extension ViewController {
         catArt.startAnimating()
         let leftDestination = CGPoint(x: wallArt.frame.width/4.5, y: wallArt.frame.height/1.6)
         
-        catArt.move(to: leftDestination, duration: 2.5, options: UIView.AnimationOptions.curveEaseOut)
+        catArt.move(to: leftDestination, duration: 3.0, options: UIView.AnimationOptions.curveEaseOut)
         AnimationManager.location = .left
     }
     
@@ -632,7 +619,7 @@ extension ViewController {
         bathroomCat.startAnimating()
         let matDestination = CGPoint(x: wallArt.frame.width/5, y: wallArt.frame.height/1.6)
         
-        bathroomCat.moveWithCounterJump(to: matDestination, duration: 2.5, options: UIView.AnimationOptions.curveEaseOut)
+        bathroomCat.moveWithCounterJump(to: matDestination, duration: 3.0, options: UIView.AnimationOptions.curveEaseOut)
         AnimationManager.bathroomLocation = .counter
     }
     
@@ -664,7 +651,7 @@ extension ViewController {
         bathroomCat.startAnimating()
         let rightDestination = CGPoint(x: wallArt.frame.width/1.2, y: wallArt.frame.height/1.6)
         
-        bathroomCat.moveWithBathJump(to: rightDestination, duration: 2.5, options: UIView.AnimationOptions.curveEaseOut)
+        bathroomCat.moveWithBathJump(to: rightDestination, duration: 3.0, options: UIView.AnimationOptions.curveEaseOut)
         
         AnimationManager.bathroomLocation = .bath
     }
@@ -672,7 +659,7 @@ extension ViewController {
     @objc func jumpToBath() {
         print("jump to bath")
         bathroomCat.animationImages = AnimationManager.jumpDown
-        bathroomCat.animationDuration = 1.0
+        bathroomCat.animationDuration = 1.5
         bathroomCat.startAnimating()
         let jumpDestination = CGPoint(x: wallArt.frame.width/1.26, y: wallArt.frame.height/1.27)
        
@@ -680,17 +667,17 @@ extension ViewController {
         bathBehind.isHidden = false
         bath.isHidden = true
         
-        bathroomCat.move(to: jumpDestination, duration: 1.0, options: UIView.AnimationOptions.curveEaseOut)
+        bathroomCat.move(to: jumpDestination, duration: 1.5, options: UIView.AnimationOptions.curveEaseOut)
     }
     
     func jumpFromBath() {
         print("jump out of bath")
         bathroomCat.animationImages = AnimationManager.jump
-        bathroomCat.animationDuration = 1.0
+        bathroomCat.animationDuration = 1.5
         bathroomCat.startAnimating()
         let jumpDestination = CGPoint(x: wallArt.frame.width/1.2, y: wallArt.frame.height/1.6)
         
-        bathroomCat.move(to: jumpDestination, duration: 1.0, options: UIView.AnimationOptions.curveEaseOut)
+        bathroomCat.move(to: jumpDestination, duration: 1.5, options: UIView.AnimationOptions.curveEaseOut)
         AnimationManager.bathroomLocation = .right
     }
     
@@ -701,7 +688,7 @@ extension ViewController {
         bathroomCat.startAnimating()
         let rightDestination = CGPoint(x: wallArt.frame.width/1.2, y: wallArt.frame.height/1.6)
         
-        bathroomCat.move(to: rightDestination, duration: 2.0, options: UIView.AnimationOptions.curveEaseOut)
+        bathroomCat.move(to: rightDestination, duration: 2.5, options: UIView.AnimationOptions.curveEaseOut)
         AnimationManager.bathroomLocation = .right
     }
     
@@ -712,7 +699,7 @@ extension ViewController {
         bathroomCat.startAnimating()
         let matDestination = CGPoint(x: wallArt.frame.width/4.5, y: wallArt.frame.height/1.6)
         
-        bathroomCat.move(to: matDestination, duration: 2.5, options: UIView.AnimationOptions.curveEaseOut)
+        bathroomCat.move(to: matDestination, duration: 3.0, options: UIView.AnimationOptions.curveEaseOut)
         AnimationManager.bathroomLocation = .mat
     }
     
@@ -723,7 +710,7 @@ extension ViewController {
         bathroomCat.startAnimating()
         let toyDestination = CGPoint(x: wallArt.frame.width/3.5, y: wallArt.frame.height/1.25)
         
-        bathroomCat.move(to: toyDestination, duration: 3.0, options: UIView.AnimationOptions.curveEaseOut)
+        bathroomCat.move(to: toyDestination, duration: 3.5, options: UIView.AnimationOptions.curveEaseOut)
         AnimationManager.bathroomLocation = .bathtoy
     }
 }

@@ -42,14 +42,6 @@ class PawShopViewController: UIViewController, UITableViewDelegate {
         pawShopViewModel.monitorNetwork()
         
         getProducts()
-        
-        if pawShopViewModel.checkForReceipt() {
-            validateReceipt()
-            print("validate on load")
-        } else {
-            refreshReceipt()
-            print("refresh on load")
-        }
     }
 
     // MARK: Custom functions
@@ -57,6 +49,14 @@ class PawShopViewController: UIViewController, UITableViewDelegate {
     @objc func networkRestored() {
         if pawShopViewModel.isProductsEmpty() {
             getProducts()
+        }
+
+        if pawShopViewModel.checkForReceipt() {
+            validateReceipt()
+            print("validate on load")
+        } else {
+            refreshReceipt()
+            print("refresh on load")
         }
     }
     

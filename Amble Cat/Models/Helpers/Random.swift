@@ -9,11 +9,21 @@
 import Foundation
 
 struct Random {
-    // random 15% chance generator
+    // random 11% chance generator
     static func randomChance() -> Bool {
         var randomInt = Int.random(in: 1...100)
         
-        if randomInt < 16 {
+        if randomInt < 12 {
+            return true
+        } else {
+            return false
+        }
+    }
+
+    static func randomLargeChance() -> Bool {
+        var randomInt = Int.random(in: 1...100)
+
+        if randomInt < 67 {
             return true
         } else {
             return false
