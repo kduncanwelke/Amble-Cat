@@ -27,7 +27,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
      @IBOutlet weak var catArt: UIImageView!
      
      @IBOutlet weak var bedArt: UIImageView!
-     @IBOutlet weak var bowlArt: UIImageView!
      @IBOutlet weak var decorArt: UIImageView!
      @IBOutlet weak var toyArt: UIImageView!
      @IBOutlet weak var pictureArt: UIImageView!
@@ -35,9 +34,21 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
      @IBOutlet weak var rugArt: UIImageView!
      @IBOutlet weak var couchArt: UIImageView!
      @IBOutlet weak var wallArt: UIImageView!
-     @IBOutlet weak var waterBowlArt: UIImageView!
      @IBOutlet weak var windowArt: UIImageView!
-     
+
+     @IBOutlet weak var kitchenView: UIView!
+     @IBOutlet weak var bowlArt: UIImageView!
+     @IBOutlet weak var waterBowlArt: UIImageView!
+     @IBOutlet weak var kitchenMat: UIImageView!
+     @IBOutlet weak var upperCabinet: UIImageView!
+     @IBOutlet weak var fridge: UIImageView!
+     @IBOutlet weak var stove: UIImageView!
+     @IBOutlet weak var counter: UIImageView!
+     @IBOutlet weak var lowerCabinet: UIImageView!
+     @IBOutlet weak var backsplash: UIImageView!
+     @IBOutlet weak var kitchenFloor: UIImageView!
+     @IBOutlet weak var kitchenWall: UIImageView!
+
      @IBOutlet weak var bathroomView: UIView!
      @IBOutlet weak var bathroomWall: UIImageView!
      @IBOutlet weak var wallTile: UIImageView!

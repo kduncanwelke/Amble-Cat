@@ -113,6 +113,24 @@ public class StoreViewModel {
             DecorManager.tilewallID = current.id
         case .bathwall:
             DecorManager.bathwallID = current.id
+        case .backsplash:
+            DecorManager.backsplashID = current.id
+        case .counter:
+            DecorManager.counterID = current.id
+        case .fridge:
+            DecorManager.fridgeID = current.id
+        case .kitchenFloor:
+            DecorManager.kitchenFloorID = current.id
+        case .kitchenMat:
+            DecorManager.kitchenMatID = current.id
+        case .kitchenWall:
+            DecorManager.kitchenWallID = current.id
+        case .lowerCabinet:
+            DecorManager.lowerCabinetID = current.id
+        case .stove:
+            DecorManager.stoveID = current.id
+        case .upperCabinet:
+            DecorManager.upperCabinetID = current.id
         }
     }
     

@@ -30,5 +30,14 @@ struct Purchases {
         94: true,
         101: true,
         102: true,
+        123: true,
+        131: true,
+        138: true,
+        140: true,
+        150: true,
+        155: true,
+        166: true,
+        170: true,
+        178: true,
     ]
 }

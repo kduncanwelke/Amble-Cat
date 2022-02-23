@@ -40,6 +40,16 @@ struct StoreItem {
         case tilewall
         case tilefloor
         case bathwall
+
+        case backsplash
+        case counter
+        case fridge
+        case kitchenFloor
+        case kitchenMat
+        case kitchenWall
+        case lowerCabinet
+        case stove
+        case upperCabinet
     }
     
 }
