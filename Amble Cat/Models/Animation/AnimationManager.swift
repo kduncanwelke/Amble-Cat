@@ -11,11 +11,15 @@ import UIKit
 
 struct AnimationManager {
     
-    static var currentView: CurrentView = .room
+    static var currentView: CurrentView = .kitchen
     
     static var location: Location = .middle
     static var direction: Direction = .left
     static var position: Position = .standing
+
+    static var kitchenLocation: KitchenLocation = .mat
+    static var kitchenDirection: Direction = .left
+    static var kitchenPosition: Position = .standing
     
     static var bathroomLocation: BathroomLocation = .mat
     static var bathroomDirection: Direction = .left
@@ -23,6 +27,7 @@ struct AnimationManager {
     
     enum CurrentView: Int {
         case room
+        case kitchen
         case bathroom
         case outside
     }
@@ -31,8 +36,6 @@ struct AnimationManager {
         case middle
         case bed
         case couch
-        case food
-        case water
         case toy
         case right
         case left
@@ -46,6 +49,15 @@ struct AnimationManager {
     enum Position {
         case seated
         case standing
+    }
+
+    enum KitchenLocation: Int {
+        case food
+        case water
+        case mat
+        case counter
+        case right
+        case left
     }
     
     enum BathroomLocation: Int {
@@ -61,6 +73,13 @@ struct AnimationManager {
             switch currentView {
             case .room, .outside:
                 switch AnimationManager.direction {
+                case .left:
+                    return [#imageLiteral(resourceName: "left.png"),#imageLiteral(resourceName: "leftblink.png")]
+                case .right:
+                    return [#imageLiteral(resourceName: "right.png"),#imageLiteral(resourceName: "rightblink.png")]
+                }
+            case .kitchen:
+                switch AnimationManager.kitchenDirection {
                 case .left:
                     return [#imageLiteral(resourceName: "left.png"),#imageLiteral(resourceName: "leftblink.png")]
                 case .right:
@@ -87,6 +106,13 @@ struct AnimationManager {
                 case .right:
                     return #imageLiteral(resourceName: "right.png")
                 }
+            case .kitchen:
+                switch AnimationManager.kitchenDirection {
+                case .left:
+                    return #imageLiteral(resourceName: "left.png")
+                case .right:
+                    return #imageLiteral(resourceName: "right.png")
+                }
             case .bathroom:
                 switch AnimationManager.bathroomDirection {
                 case .left:
@@ -103,6 +129,13 @@ struct AnimationManager {
             switch currentView {
             case .room, .outside:
                 switch AnimationManager.direction {
+                case .left:
+                    return #imageLiteral(resourceName: "leftsit.png")
+                case .right:
+                    return #imageLiteral(resourceName: "rightsit.png")
+                }
+            case .kitchen:
+                switch AnimationManager.kitchenDirection {
                 case .left:
                     return #imageLiteral(resourceName: "leftsit.png")
                 case .right:
@@ -129,6 +162,13 @@ struct AnimationManager {
                 case .right:
                     return [#imageLiteral(resourceName: "rightsit.png"),#imageLiteral(resourceName: "rightsitblink.png")]
                 }
+            case .kitchen:
+                switch AnimationManager.kitchenDirection {
+                case .left:
+                    return [#imageLiteral(resourceName: "leftsit.png"),#imageLiteral(resourceName: "leftsitblink.png")]
+                case .right:
+                    return [#imageLiteral(resourceName: "rightsit.png"),#imageLiteral(resourceName: "rightsitblink.png")]
+                }
             case .bathroom:
                 switch AnimationManager.bathroomDirection {
                 case .left:
@@ -145,6 +185,13 @@ struct AnimationManager {
             switch currentView {
             case .room, .outside:
                 switch AnimationManager.direction {
+                case .left:
+                    return [#imageLiteral(resourceName: "leftsit.png"),#imageLiteral(resourceName: "leftsittail.png")]
+                case .right:
+                    return [#imageLiteral(resourceName: "rightsit.png"),#imageLiteral(resourceName: "rightsittail.png")]
+                }
+            case .kitchen:
+                switch AnimationManager.kitchenDirection {
                 case .left:
                     return [#imageLiteral(resourceName: "leftsit.png"),#imageLiteral(resourceName: "leftsittail.png")]
                 case .right:
@@ -171,6 +218,13 @@ struct AnimationManager {
                 case .right:
                     return [#imageLiteral(resourceName: "sideright.png"),#imageLiteral(resourceName: "walkright.png"),#imageLiteral(resourceName: "walkright1.png"),#imageLiteral(resourceName: "walkright2.png"),#imageLiteral(resourceName: "walkright3.png")]
                 }
+            case .kitchen:
+                switch AnimationManager.kitchenDirection {
+                case .left:
+                    return [#imageLiteral(resourceName: "sideleft.png"),#imageLiteral(resourceName: "walkleft.png"),#imageLiteral(resourceName: "walkleft1.png"),#imageLiteral(resourceName: "walkleft2.png"),#imageLiteral(resourceName: "walkleft3.png")]
+                case .right:
+                    return [#imageLiteral(resourceName: "sideright.png"),#imageLiteral(resourceName: "walkright.png"),#imageLiteral(resourceName: "walkright1.png"),#imageLiteral(resourceName: "walkright2.png"),#imageLiteral(resourceName: "walkright3.png")]
+                }
             case .bathroom:
                 switch AnimationManager.bathroomDirection {
                 case .left:
@@ -187,6 +241,13 @@ struct AnimationManager {
             switch currentView {
             case .room, .outside:
                 switch AnimationManager.direction {
+                case .left:
+                    return [#imageLiteral(resourceName: "pet1.png"),#imageLiteral(resourceName: "pet2.png")]
+                case .right:
+                    return [#imageLiteral(resourceName: "petright1.png"),#imageLiteral(resourceName: "petright2.png")]
+                }
+            case .kitchen:
+                switch AnimationManager.kitchenDirection {
                 case .left:
                     return [#imageLiteral(resourceName: "pet1.png"),#imageLiteral(resourceName: "pet2.png")]
                 case .right:
@@ -221,6 +282,13 @@ struct AnimationManager {
             switch currentView {
             case .room, .outside:
                 switch AnimationManager.direction {
+                case .left:
+                    return [#imageLiteral(resourceName: "sitting.png"),#imageLiteral(resourceName: "leftsit.png"),#imageLiteral(resourceName: "left.png"),#imageLiteral(resourceName: "front.png"),#imageLiteral(resourceName: "back.png")]
+                case .right:
+                    return [#imageLiteral(resourceName: "rightsit.png"),#imageLiteral(resourceName: "right.png"),#imageLiteral(resourceName: "back.png")]
+                }
+            case .kitchen:
+                switch AnimationManager.kitchenDirection {
                 case .left:
                     return [#imageLiteral(resourceName: "sitting.png"),#imageLiteral(resourceName: "leftsit.png"),#imageLiteral(resourceName: "left.png"),#imageLiteral(resourceName: "front.png"),#imageLiteral(resourceName: "back.png")]
                 case .right:

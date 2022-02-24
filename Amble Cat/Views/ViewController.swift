@@ -37,6 +37,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
      @IBOutlet weak var windowArt: UIImageView!
 
      @IBOutlet weak var kitchenView: UIView!
+     @IBOutlet weak var kitchenCat: UIImageView!
      @IBOutlet weak var bowlArt: UIImageView!
      @IBOutlet weak var waterBowlArt: UIImageView!
      @IBOutlet weak var kitchenMat: UIImageView!
@@ -248,7 +249,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
      
      @objc func decorChanged() {
           bedArt.image = viewModel.getBedImage()
-          bowlArt.image = viewModel.showFood()
           couchArt.image = viewModel.getCouchImage()
           decorArt.image = viewModel.getDecorImage()
           floorArt.image = viewModel.getFloorImage()
@@ -256,8 +256,20 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
           rugArt.image = viewModel.getRugImage()
           toyArt.image = viewModel.getToyImage()
           wallArt.image = viewModel.getWallImage()
-          waterBowlArt.image = viewModel.showWater()
           windowArt.image = viewModel.getWindowImage()
+
+          bowlArt.image = viewModel.showFood()
+          waterBowlArt.image = viewModel.showWater()
+          kitchenMat.image = viewModel.getKitchenMat()
+          upperCabinet.image = viewModel.getUpperCabinet()
+          fridge.image = viewModel.getFridge()
+          stove.image = viewModel.getStove()
+          counter.image = viewModel.getCounter()
+          lowerCabinet.image = viewModel.getLowerCabinet()
+          backsplash.image = viewModel.getBacksplash()
+          kitchenFloor.image = viewModel.getKitchenFloor()
+          kitchenWall.image = viewModel.getKitchenWall()
+
           bathToy.image = viewModel.getBathtoyImage()
           towels.image = viewModel.getTowelImage()
           cabinet.image = viewModel.getCabinetImage()
@@ -290,22 +302,16 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                loadWater()
           }
      }
-     
-     func randomPlaceAnimation() {
+
+     func randomKitchenPlaceAnimation() {
           var specific = Bool.random()
-          
-          switch AnimationManager.location {
-          case .middle, .right, .left:
+
+          switch AnimationManager.kitchenLocation {
+          case .mat, .right, .left:
                randomStaying()
-          case .bed:
+          case .counter:
                if specific {
-                    sleep()
-               } else {
-                    randomStaying()
-               }
-          case .couch:
-               if specific {
-                    jumpDown()
+                    jumpDownFromKitchenCounter()
                } else {
                     randomStaying()
                }
@@ -318,12 +324,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
           case .water:
                if specific && viewModel.hasBeenWatered() {
                     drink()
-               } else {
-                    randomStaying()
-               }
-          case .toy:
-               if specific {
-                    play()
                } else {
                     randomStaying()
                }
@@ -369,6 +369,25 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                sleep()
           }
      }
+
+     @IBAction func kitchenCatTouched(_ sender: UIPanGestureRecognizer) {
+          if AnimationManager.currentView != .kitchen {
+               return
+          }
+
+          if sender.state == .began {
+               if !viewModel.isMoving() {
+                    print("pet")
+                    AnimationTimer.stop()
+                    kitchenCat.stopAnimating()
+                    kitchenCat.animationImages = AnimationManager.petting
+                    kitchenCat.animationDuration = 1.0
+                    kitchenCat.startAnimating()
+               }
+          } else if sender.state == .ended || sender.state == .cancelled {
+               sleep()
+          }
+     }
      
      @IBAction func outsideCatTouched(_ sender: UIPanGestureRecognizer) {
           if AnimationManager.currentView != .outside {
@@ -406,14 +425,14 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                AnimationTimer.stop()
                performSegue(withIdentifier: "viewStatistics", sender: Any?.self)
           case 2:
-               if viewModel.isViewIndoors() {
+               if viewModel.isViewKitchen() {
                     Sound.playSound(number: Sounds.blopSound.number)
                     feed()
                } else {
                     Sound.playSound(number: Sounds.failSound.number)
                }
           case 3:
-               if viewModel.isViewIndoors() {
+               if viewModel.isViewKitchen() {
                     Sound.playSound(number: Sounds.blopSound.number)
                     water()
                } else {

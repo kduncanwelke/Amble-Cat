@@ -210,10 +210,46 @@ extension ViewModel {
                 if loaded.tilefloor != 0 {
                     DecorManager.tilefloorID = loaded.tilefloor
                 }
-                
-                print(DecorManager.towelID)
-                print(DecorManager.cabinetID)
-                print(DecorManager.bathwallID)
+
+                if loaded.backsplash != 0 {
+                    DecorManager.backsplashID = loaded.backsplash
+                }
+
+                if loaded.backsplash != 0 {
+                    DecorManager.backsplashID = loaded.backsplash
+                }
+
+                if loaded.counter != 0 {
+                    DecorManager.counterID = loaded.counter
+                }
+
+                if loaded.fridge != 0 {
+                    DecorManager.fridgeID = loaded.fridge
+                }
+
+                if loaded.kitchenfloor != 0 {
+                    DecorManager.kitchenFloorID = loaded.kitchenfloor
+                }
+
+                if loaded.kitchenmat != 0 {
+                    DecorManager.kitchenMatID = loaded.kitchenmat
+                }
+
+                if loaded.kitchenwall != 0 {
+                    DecorManager.kitchenWallID = loaded.kitchenwall
+                }
+
+                if loaded.lowercabinet != 0 {
+                    DecorManager.lowerCabinetID = loaded.lowercabinet
+                }
+
+                if loaded.stove != 0 {
+                    DecorManager.stoveID = loaded.stove
+                }
+
+                if loaded.uppercabinet != 0 {
+                    DecorManager.upperCabinetID = loaded.uppercabinet
+                }
                 
                 print("equipment loaded")
             }

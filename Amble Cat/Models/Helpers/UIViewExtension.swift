@@ -37,6 +37,15 @@ extension UIView {
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "jumpToCounter"), object: nil)
         })
     }
+
+    func moveWithKitchenCounterJump(to destination: CGPoint, duration: TimeInterval,
+                      options: UIView.AnimationOptions) {
+        UIView.animate(withDuration: duration, delay: 0, options: options, animations: {
+            self.center = destination
+        }, completion: {(finished: Bool) in
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "jumpToKitchenCounter"), object: nil)
+        })
+    }
     
     func moveWithBathJump(to destination: CGPoint, duration: TimeInterval,
                              options: UIView.AnimationOptions) {

@@ -25,44 +25,23 @@ extension ViewController {
             bathBehind.isHidden = true
             bath.isHidden = false
         }
-        
-        // randomize view
-        var range = [0,1,2]
-        var willChange = Random.randomChance()
-        
-        // allow for outside view only if device is in motion
-        if inMotion {
-            range = [0,1,2]
-        } else if willChange {
-            range = [0,1]
-        } else {
-            range = [AnimationManager.currentView.rawValue]
-        }
-        
-        var changeView = AnimationManager.CurrentView(rawValue: range.randomElement()!)
+
+        // only change to outside view only if device is in motion
         print("in motion \(inMotion)")
+
+        if inMotion {
+            var changeToOutside = Bool.random()
+
+            if changeToOutside {
+                AnimationManager.currentView = .outside
+            }
+        }
             
-        switch changeView {
+        switch AnimationManager.currentView {
         case .outside:
-            if AnimationManager.currentView != changeView {
-                print("all true show outside")
-                disappearBathroom()
-                toggleOutside()
-                randomOutside(moving: inMotion)
-            } else {
-                outsideBackground.stopAnimating()
-                randomOutside(moving: inMotion)
-            }
-            
-            AnimationManager.currentView = .outside
+            outsideBackground.stopAnimating()
+            randomOutside(moving: inMotion)
         case .bathroom:
-            if AnimationManager.currentView != changeView {
-                disappearOutside()
-                toggleBathroom()
-            }
-            
-            AnimationManager.currentView = .bathroom
-            
             if paused {
                 return
             }
@@ -97,12 +76,38 @@ extension ViewController {
                     }
                 }
             }
+        case .kitchen:
+            if paused {
+                return
+            }
+
+            var staying = Random.randomLargeChance()
+
+            if staying {
+                var placeAnimation = Bool.random()
+
+                if placeAnimation {
+                    print("random place")
+                    randomKitchenPlaceAnimation()
+                } else {
+                    print("random staying")
+                    randomStaying()
+                }
+            } else {
+                var pause = Bool.random()
+
+                if pause {
+                    pauseCat()
+                } else {
+                    print("random move")
+                    if AnimationManager.kitchenLocation == .counter {
+                        jumpDownFromKitchenCounter()
+                    } else {
+                        randomKitchenMove()
+                    }
+                }
+            }
         case .room:
-            disappearOutside()
-            disappearBathroom()
-            
-            AnimationManager.currentView = .room
-            
             if paused {
                 return
             }
@@ -144,10 +149,10 @@ extension ViewController {
         var destination = AnimationManager.Location(rawValue: num)
         
         switch (AnimationManager.location, destination) {
-        case (.middle, .middle), (.bed, .bed), (.couch, .couch),(.food, .food), (.water,.water), (.toy, .toy), (.right, .right), (.left, .left):
+        case (.middle, .middle), (.bed, .bed), (.couch, .couch), (.toy, .toy), (.right, .right), (.left, .left):
             randomPlaceAnimation()
             return
-        case (.middle, .bed), (.middle, .food), (.middle, .right), (.bed, .food), (.bed, .right), (.couch, .middle), (.couch, .bed), (.couch, .food), (.couch, .water), (.couch, .right), (.food, .right), (.food, .bed), (.water, .middle), (.water, .bed), (.water, .food), (.water, .right), (.toy, .middle), (.toy, .bed), (.toy, .food), (.toy, .right), (.left, .middle), (.left, .bed), (.left, .food), (.left, .water), (.left, .right):
+        case (.middle, .bed), (.middle, .right), (.bed, .right), (.couch, .middle), (.couch, .bed), (.couch, .right), (.toy, .middle), (.toy, .bed), (.toy, .right), (.left, .middle), (.left, .bed), (.left, .right):
             AnimationManager.direction = .right
         default:
             AnimationManager.direction = .left
@@ -160,8 +165,6 @@ extension ViewController {
             moveToCouch()
         case .bed:
             moveToBed()
-        case .food:
-            moveToFood()
         case .left:
             moveToLeft()
         case .middle:
@@ -170,10 +173,70 @@ extension ViewController {
             moveToRight()
         case .toy:
             moveToToy()
-        case .water:
-            moveToWater()
         case .none:
             randomPlaceAnimation()
+        }
+    }
+
+    func randomPlaceAnimation() {
+         var specific = Bool.random()
+
+         switch AnimationManager.location {
+         case .middle, .right, .left:
+              randomStaying()
+         case .bed:
+              if specific {
+                   sleep()
+              } else {
+                   randomStaying()
+              }
+         case .couch:
+              if specific {
+                   jumpDown()
+              } else {
+                   randomStaying()
+              }
+         case .toy:
+              if specific {
+                   play()
+              } else {
+                   randomStaying()
+              }
+         }
+    }
+
+    func randomKitchenMove() {
+        var num = Int.random(in: 0...5)
+
+        var destination = AnimationManager.KitchenLocation(rawValue: num)
+
+        switch (AnimationManager.kitchenLocation, destination) {
+        case (.mat, .mat), (.counter, .counter), (.right, .right), (.food, .food), (.left, .left), (.water, .water):
+            randomKitchenPlaceAnimation()
+            return
+        case (.mat, .food), (.mat, .right), (.water, .food), (.water, .mat), (.water, .right), (.water, .counter), (.left, .counter), (.left, .water), (.left, .mat), (.left, .food), (.left, .right), (.food, .right), (.counter, .right), (.counter, .food):
+            AnimationManager.kitchenDirection = .right
+        default:
+            AnimationManager.kitchenDirection = .left
+        }
+
+        AnimationManager.kitchenPosition = .standing
+
+        switch destination {
+        case .food:
+            moveToFood()
+        case .water:
+            moveToWater()
+        case .mat:
+            moveToKitchenMat()
+        case .counter:
+            moveToKitchenCounter()
+        case .right:
+            moveToKitchenRight()
+        case .left:
+            moveToKitchenLeft()
+        case .none:
+            randomKitchenPlaceAnimation()
         }
     }
     
@@ -432,6 +495,10 @@ extension ViewController {
             catArt.animationImages = AnimationManager.sitTail
             catArt.animationDuration = 2.0
             catArt.startAnimating()
+        case .kitchen:
+            kitchenCat.animationImages = AnimationManager.sitTail
+            kitchenCat.animationDuration = 2.0
+            kitchenCat.startAnimating()
         case .outside:
             walkingOutside.animationImages = AnimationManager.sitTail
             walkingOutside.animationDuration = 2.0
@@ -451,6 +518,10 @@ extension ViewController {
             catArt.animationImages = AnimationManager.sitBlink
             catArt.animationDuration = 3.0
             catArt.startAnimating()
+        case .kitchen:
+            kitchenCat.animationImages = AnimationManager.sitBlink
+            kitchenCat.animationDuration = 3.0
+            kitchenCat.startAnimating()
         case .outside:
             walkingOutside.animationImages = AnimationManager.sitBlink
             walkingOutside.animationDuration = 3.0
@@ -459,52 +530,122 @@ extension ViewController {
        
         AnimationTimer.beginTimer(once: true, outdoors: false)
     }
+
+    // Kitchen animations
+
+    // TODO: change location
+    func moveToFood() {
+        print("food")
+        kitchenCat.animationImages = AnimationManager.walking
+        kitchenCat.animationDuration = 0.5
+        kitchenCat.startAnimating()
+        let foodDestination = CGPoint(x: wallArt.frame.width/1.2, y: wallArt.frame.height/1.2)
+        
+        kitchenCat.move(to: foodDestination, duration: 2.5, options: UIView.AnimationOptions.curveEaseOut)
+        AnimationManager.kitchenLocation = .food
+    }
     
+    func eat() {
+        kitchenCat.animationImages = AnimationManager.eating
+        kitchenCat.animationDuration = 1.5
+        kitchenCat.startAnimating()
+        AnimationTimer.beginTimer(once: false, outdoors: false)
+    }
+
+    // TODO: change location
+    func moveToWater() {
+        print("water")
+        kitchenCat.animationImages = AnimationManager.walking
+        kitchenCat.animationDuration = 0.5
+        kitchenCat.startAnimating()
+        let waterDestination = CGPoint(x: wallArt.frame.width/2.3, y: wallArt.frame.height/1.3)
+        
+        kitchenCat.move(to: waterDestination, duration: 2.5, options: UIView.AnimationOptions.curveEaseOut)
+        AnimationManager.kitchenLocation = .water
+    }
+
+    func drink() {
+        kitchenCat.animationImages = AnimationManager.drinking
+        kitchenCat.animationDuration = 1.0
+        kitchenCat.startAnimating()
+        AnimationTimer.beginTimer(once: false, outdoors: false)
+    }
+
+    func moveToKitchenMat() {
+        print("move")
+        kitchenCat.animationImages = AnimationManager.walking
+        kitchenCat.animationDuration = 0.5
+        kitchenCat.startAnimating()
+        let middleDestination = CGPoint(x: wallArt.frame.width/1.5, y: wallArt.frame.height/1.6)
+
+        kitchenCat.move(to: middleDestination, duration: 2.5, options: UIView.AnimationOptions.curveEaseOut)
+        AnimationManager.kitchenLocation = .mat
+    }
+
+    func moveToKitchenRight() {
+        print("right")
+        kitchenCat.animationImages = AnimationManager.walking
+        kitchenCat.animationDuration = 0.5
+        kitchenCat.startAnimating()
+        let rightDestination = CGPoint(x: wallArt.frame.width/1.2, y: wallArt.frame.height/1.6)
+
+        kitchenCat.move(to: rightDestination, duration: 2.5, options: UIView.AnimationOptions.curveEaseOut)
+        AnimationManager.kitchenLocation = .right
+    }
+
+    func moveToKitchenLeft() {
+        print("left")
+        kitchenCat.animationImages = AnimationManager.walking
+        kitchenCat.animationDuration = 0.5
+        kitchenCat.startAnimating()
+        let leftDestination = CGPoint(x: wallArt.frame.width/4.5, y: wallArt.frame.height/1.6)
+
+        kitchenCat.move(to: leftDestination, duration: 3.0, options: UIView.AnimationOptions.curveEaseOut)
+        AnimationManager.kitchenLocation = .left
+    }
+
+    func moveToKitchenCounter() {
+        kitchenCat.animationImages = AnimationManager.walking
+        kitchenCat.animationDuration = 0.5
+        kitchenCat.startAnimating()
+        let matDestination = CGPoint(x: wallArt.frame.width/5, y: wallArt.frame.height/1.6)
+
+        kitchenCat.moveWithKitchenCounterJump(to: matDestination, duration: 3.0, options: UIView.AnimationOptions.curveEaseOut)
+        AnimationManager.kitchenLocation = .counter
+    }
+
+    @objc func jumpToKitchenCounter() {
+        print("jump to counter")
+        kitchenCat.animationImages = AnimationManager.jump
+        kitchenCat.animationDuration = 1.0
+        kitchenCat.startAnimating()
+        let jumpDestination = CGPoint(x: wallArt.frame.width/4.5, y: wallArt.frame.height/2.6)
+
+        kitchenCat.move(to: jumpDestination, duration: 1.0, options: UIView.AnimationOptions.curveEaseOut)
+    }
+
+    func jumpDownFromKitchenCounter() {
+        print("jump down")
+        kitchenCat.animationImages = AnimationManager.jumpDown
+        kitchenCat.animationDuration = 1.0
+        kitchenCat.startAnimating()
+        let jumpDownDestination = CGPoint(x: wallArt.frame.width/4.5, y: wallArt.frame.height/1.6)
+
+        kitchenCat.move(to: jumpDownDestination, duration: 1.0, options: UIView.AnimationOptions.curveEaseOut)
+        AnimationManager.kitchenLocation = .mat
+    }
+
+    // Living room animations
+
     func moveToMiddle() {
         print("move")
         catArt.animationImages = AnimationManager.walking
         catArt.animationDuration = 0.5
         catArt.startAnimating()
         let middleDestination = CGPoint(x: wallArt.frame.width/1.5, y: wallArt.frame.height/1.6)
-        
+
         catArt.move(to: middleDestination, duration: 2.5, options: UIView.AnimationOptions.curveEaseOut)
         AnimationManager.location = .middle
-    }
-    
-    func moveToFood() {
-        print("food")
-        catArt.animationImages = AnimationManager.walking
-        catArt.animationDuration = 0.5
-        catArt.startAnimating()
-        let foodDestination = CGPoint(x: wallArt.frame.width/1.2, y: wallArt.frame.height/1.2)
-        
-        catArt.move(to: foodDestination, duration: 2.5, options: UIView.AnimationOptions.curveEaseOut)
-        AnimationManager.location = .food
-    }
-    
-    func eat() {
-        catArt.animationImages = AnimationManager.eating
-        catArt.animationDuration = 1.5
-        catArt.startAnimating()
-        AnimationTimer.beginTimer(once: false, outdoors: false)
-    }
-    
-    func moveToWater() {
-        print("water")
-        catArt.animationImages = AnimationManager.walking
-        catArt.animationDuration = 0.5
-        catArt.startAnimating()
-        let waterDestination = CGPoint(x: wallArt.frame.width/2.13, y: wallArt.frame.height/1.3)
-        
-        catArt.move(to: waterDestination, duration: 2.5, options: UIView.AnimationOptions.curveEaseOut)
-        AnimationManager.location = .water
-    }
-    
-    func drink() {
-        catArt.animationImages = AnimationManager.drinking
-        catArt.animationDuration = 1.0
-        catArt.startAnimating()
-        AnimationTimer.beginTimer(once: false, outdoors: false)
     }
     
     func moveToBed() {
@@ -528,6 +669,10 @@ extension ViewController {
             catArt.animationImages = AnimationManager.sleep
             catArt.animationDuration = 3.0
             catArt.startAnimating()
+        case .kitchen:
+            kitchenCat.animationImages = AnimationManager.sleep
+            kitchenCat.animationDuration = 3.0
+            kitchenCat.startAnimating()
         case .outside:
             walkingOutside.animationImages = AnimationManager.sleep
             walkingOutside.animationDuration = 3.0

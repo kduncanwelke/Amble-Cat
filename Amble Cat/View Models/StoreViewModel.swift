@@ -153,7 +153,7 @@ public class StoreViewModel {
     func checkIfEquipped(index: IndexPath) -> Bool {
         let item = currentSource[index.row]
         
-        if item.id == DecorManager.bedID || item.id == DecorManager.bowlID || item.id == DecorManager.couchID || item.id == DecorManager.decorID || item.id == DecorManager.floorID || item.id == DecorManager.pictureID || item.id == DecorManager.rugID || item.id == DecorManager.toyID || item.id == DecorManager.wallID || item.id == DecorManager.waterID || item.id == DecorManager.windowID || item.id == DecorManager.bathtoyID || item.id == DecorManager.towelID || item.id == DecorManager.cabinetID || item.id == DecorManager.bathID || item.id == DecorManager.bathmatID || item.id == DecorManager.tilewallID || item.id == DecorManager.tilefloorID || item.id == DecorManager.bathwallID {
+        if item.id == DecorManager.bedID || item.id == DecorManager.bowlID || item.id == DecorManager.couchID || item.id == DecorManager.decorID || item.id == DecorManager.floorID || item.id == DecorManager.pictureID || item.id == DecorManager.rugID || item.id == DecorManager.toyID || item.id == DecorManager.wallID || item.id == DecorManager.waterID || item.id == DecorManager.windowID || item.id == DecorManager.bathtoyID || item.id == DecorManager.towelID || item.id == DecorManager.cabinetID || item.id == DecorManager.bathID || item.id == DecorManager.bathmatID || item.id == DecorManager.tilewallID || item.id == DecorManager.tilefloorID || item.id == DecorManager.bathwallID || item.id == DecorManager.kitchenWallID || item.id == DecorManager.kitchenFloorID || item.id == DecorManager.backsplashID || item.id == DecorManager.lowerCabinetID || item.id == DecorManager.counterID || item.id == DecorManager.stoveID || item.id == DecorManager.fridgeID || item.id == DecorManager.upperCabinetID || item.id == DecorManager.kitchenMatID {
             return true
         } else {
             return false
@@ -247,6 +247,15 @@ public class StoreViewModel {
             equipment.tilewall = DecorManager.tilewallID
             equipment.tilefloor = DecorManager.tilefloorID
             equipment.bathwall = DecorManager.bathwallID
+            equipment.backsplash = DecorManager.backsplashID
+            equipment.counter = DecorManager.counterID
+            equipment.fridge = DecorManager.fridgeID
+            equipment.kitchenfloor = DecorManager.kitchenFloorID
+            equipment.kitchenmat = DecorManager.kitchenMatID
+            equipment.kitchenwall = DecorManager.kitchenWallID
+            equipment.lowercabinet = DecorManager.lowerCabinetID
+            equipment.stove = DecorManager.stoveID
+            equipment.uppercabinet = DecorManager.upperCabinetID
             
             do {
                 try managedContext.save()
@@ -278,6 +287,16 @@ public class StoreViewModel {
         previousSave.tilewall = DecorManager.tilewallID
         previousSave.tilefloor = DecorManager.tilefloorID
         previousSave.bathwall = DecorManager.bathwallID
+        previousSave.backsplash = DecorManager.backsplashID
+        previousSave.counter = DecorManager.counterID
+        previousSave.fridge = DecorManager.fridgeID
+        previousSave.kitchenfloor = DecorManager.kitchenFloorID
+        previousSave.kitchenmat = DecorManager.kitchenMatID
+        previousSave.kitchenwall = DecorManager.kitchenWallID
+        previousSave.lowercabinet = DecorManager.lowerCabinetID
+        previousSave.stove = DecorManager.stoveID
+        previousSave.uppercabinet = DecorManager.upperCabinetID
+
         
         do {
             try managedContext.save()

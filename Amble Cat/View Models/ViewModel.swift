@@ -106,6 +106,42 @@ public class ViewModel {
     func getWindowImage() -> UIImage? {
         return StoreInventory.inventoryDictionary[DecorManager.windowID]?.image
     }
+
+    func getKitchenMat() -> UIImage? {
+        return StoreInventory.inventoryDictionary[DecorManager.kitchenMatID]?.image
+    }
+
+    func getUpperCabinet() -> UIImage? {
+        return StoreInventory.inventoryDictionary[DecorManager.upperCabinetID]?.image
+    }
+
+    func getFridge() -> UIImage? {
+        return StoreInventory.inventoryDictionary[DecorManager.fridgeID]?.image
+    }
+
+    func getStove() -> UIImage? {
+        return StoreInventory.inventoryDictionary[DecorManager.stoveID]?.image
+    }
+
+    func getCounter() -> UIImage? {
+        return StoreInventory.inventoryDictionary[DecorManager.counterID]?.image
+    }
+
+    func getLowerCabinet() -> UIImage? {
+        return StoreInventory.inventoryDictionary[DecorManager.lowerCabinetID]?.image
+    }
+
+    func getBacksplash() -> UIImage? {
+        return StoreInventory.inventoryDictionary[DecorManager.backsplashID]?.image
+    }
+
+    func getKitchenFloor() -> UIImage? {
+        return StoreInventory.inventoryDictionary[DecorManager.kitchenFloorID]?.image
+    }
+
+    func getKitchenWall() -> UIImage? {
+        return StoreInventory.inventoryDictionary[DecorManager.kitchenWallID]?.image
+    }
     
     func getBathtoyImage() -> UIImage? {
         return StoreInventory.inventoryDictionary[DecorManager.bathtoyID]?.image
@@ -159,9 +195,9 @@ public class ViewModel {
         }
     }
     
-    func isViewIndoors() -> Bool {
+    func isViewKitchen() -> Bool {
         switch AnimationManager.currentView {
-        case .room:
+        case .kitchen:
             return true
         default:
             return false

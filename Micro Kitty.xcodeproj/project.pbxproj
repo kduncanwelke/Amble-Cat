@@ -113,6 +113,7 @@
 		2D2D6CDA27C6A6E000D9E770 /* Kitchen Items.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Kitchen Items.swift"; sourceTree = "<group>"; };
 		2D3583C0237CC1F3005A6C56 /* AnimationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationManager.swift; sourceTree = "<group>"; };
 		2D3E67E3236C9D3B00A80612 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		2D3F10EB27C812B6000C4386 /* Data 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Data 3.xcdatamodel"; sourceTree = "<group>"; };
 		2D519C9F266FD11400551452 /* AppleIncRootCertificate.cer */ = {isa = PBXFileReference; lastKnownFileType = file; name = AppleIncRootCertificate.cer; path = ../../../../Downloads/AppleIncRootCertificate.cer; sourceTree = "<group>"; };
 		2D6FCA85235A169500560CB2 /* Data.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Data.xcdatamodel; sourceTree = "<group>"; };
 		2D6FCA87235A1D7500560CB2 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
@@ -1101,10 +1102,11 @@
 		2D6FCA84235A169500560CB2 /* Data.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				2D3F10EB27C812B6000C4386 /* Data 3.xcdatamodel */,
 				2DDFFDD4265828950008193C /* Data 2.xcdatamodel */,
 				2D6FCA85235A169500560CB2 /* Data.xcdatamodel */,
 			);
-			currentVersion = 2DDFFDD4265828950008193C /* Data 2.xcdatamodel */;
+			currentVersion = 2D3F10EB27C812B6000C4386 /* Data 3.xcdatamodel */;
 			path = Data.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
