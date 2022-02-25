@@ -66,6 +66,20 @@ public class StoreViewModel {
             return false
         }
     }
+
+    func getRoomIcon(index: IndexPath) -> UIImage {
+        switch currentSource[index.row].type {
+        case .counter, .stove, .fridge, .backsplash, .upperCabinet, .lowerCabinet, .kitchenWall, .kitchenFloor, .kitchenMat, .bowl, .waterbowl:
+            // kitchen
+            return #imageLiteral(resourceName: "kitchenitem.png")
+        case .couch, .bed, .decor, .picture, .floor, .rug, .toy, .wall, .window:
+            // living
+            return #imageLiteral(resourceName: "livingroomitem.png")
+        case .bath, .bathmat, .bathtoy, .bathwall, .cabinet, .tilewall, .tilefloor, .towel:
+            // bath
+            return #imageLiteral(resourceName: "bathroomitem.png")
+        }
+    }
     
     func getPriceText(index: IndexPath) -> String {
         return "\(currentSource[index.row].price)"

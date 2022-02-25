@@ -18,7 +18,7 @@ struct StoreItem {
     let image: UIImage
     let description: String
     let type: ItemType
-    
+
     enum ItemType {
         case bed
         case bowl
@@ -51,5 +51,4 @@ struct StoreItem {
         case stove
         case upperCabinet
     }
-    
 }

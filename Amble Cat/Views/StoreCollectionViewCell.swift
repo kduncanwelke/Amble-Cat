@@ -17,6 +17,8 @@ class StoreCollectionViewCell: UICollectionViewCell {
 	@IBOutlet weak var cellPrice: UILabel!
 	@IBOutlet weak var cellImage: UIImageView!
 	@IBOutlet weak var purchasedLabel: UILabel!
+    @IBOutlet weak var typeIcon: UIImageView!
+    
     
     private let storeViewModel = StoreViewModel()
     
@@ -25,6 +27,7 @@ class StoreCollectionViewCell: UICollectionViewCell {
         
         cellImage.image = storeViewModel.getImage(index: index)
         cellName.text = storeViewModel.getName(index: index)
+        typeIcon.image = storeViewModel.getRoomIcon(index: index)
         
         if storeViewModel.getPurchaseState(index: index) {
             purchasedLabel.isHidden = false

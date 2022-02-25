@@ -18,7 +18,6 @@
 		2D220E3D25CB47CB00D02FE7 /* StoreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D220E3C25CB47CB00D02FE7 /* StoreViewModel.swift */; };
 		2D220E3F25CB5A9600D02FE7 /* PawShopViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D220E3E25CB5A9600D02FE7 /* PawShopViewModel.swift */; };
 		2D220E4125CB5B6B00D02FE7 /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D220E4025CB5B6B00D02FE7 /* StoreManager.swift */; };
-		2D2D6CD927C6A5EA00D9E770 /* Bathroom Items.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2D6CD827C6A5EA00D9E770 /* Bathroom Items.swift */; };
 		2D2D6CDB27C6A6E000D9E770 /* Kitchen Items.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2D6CDA27C6A6E000D9E770 /* Kitchen Items.swift */; };
 		2D3583C1237CC1F3005A6C56 /* AnimationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3583C0237CC1F3005A6C56 /* AnimationManager.swift */; };
 		2D3E67E4236C9D3B00A80612 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3E67E3236C9D3B00A80612 /* Extensions.swift */; };
@@ -38,6 +37,7 @@
 		2D78915B239C43F300053B4E /* Ting-Popup_Pixels-349896185.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2D78915A239C43F300053B4E /* Ting-Popup_Pixels-349896185.wav */; };
 		2D7BE30625F839B200FADF7F /* ButtonsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7BE30525F839B200FADF7F /* ButtonsManager.swift */; };
 		2D81355A25F6D34400E461ED /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D81355925F6D34400E461ED /* Colors.swift */; };
+		2D8D4EB227C977A0008FF48E /* Bathroom Items.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8D4EB127C977A0008FF48E /* Bathroom Items.swift */; };
 		2D96CA9B25CDFD4C00A89C32 /* Pedometer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D96CA9A25CDFD4C00A89C32 /* Pedometer.swift */; };
 		2D96CA9D25CDFF4F00A89C32 /* StepViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D96CA9C25CDFF4F00A89C32 /* StepViewModel.swift */; };
 		2D9B0E0125E45E52009D75ED /* Bowls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9B0E0025E45E52009D75ED /* Bowls.swift */; };
@@ -109,7 +109,6 @@
 		2D220E3C25CB47CB00D02FE7 /* StoreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreViewModel.swift; sourceTree = "<group>"; };
 		2D220E3E25CB5A9600D02FE7 /* PawShopViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PawShopViewModel.swift; sourceTree = "<group>"; };
 		2D220E4025CB5B6B00D02FE7 /* StoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreManager.swift; sourceTree = "<group>"; };
-		2D2D6CD827C6A5EA00D9E770 /* Bathroom Items.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bathroom Items.swift"; sourceTree = "<group>"; };
 		2D2D6CDA27C6A6E000D9E770 /* Kitchen Items.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Kitchen Items.swift"; sourceTree = "<group>"; };
 		2D3583C0237CC1F3005A6C56 /* AnimationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationManager.swift; sourceTree = "<group>"; };
 		2D3E67E3236C9D3B00A80612 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -131,6 +130,7 @@
 		2D78915A239C43F300053B4E /* Ting-Popup_Pixels-349896185.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Ting-Popup_Pixels-349896185.wav"; sourceTree = "<group>"; };
 		2D7BE30525F839B200FADF7F /* ButtonsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsManager.swift; sourceTree = "<group>"; };
 		2D81355925F6D34400E461ED /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		2D8D4EB127C977A0008FF48E /* Bathroom Items.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bathroom Items.swift"; sourceTree = "<group>"; usesTabs = 0; wrapsLines = 1; };
 		2D96CA9A25CDFD4C00A89C32 /* Pedometer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pedometer.swift; sourceTree = "<group>"; };
 		2D96CA9C25CDFF4F00A89C32 /* StepViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepViewModel.swift; sourceTree = "<group>"; };
 		2D9B0E0025E45E52009D75ED /* Bowls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bowls.swift; sourceTree = "<group>"; };
@@ -291,7 +291,7 @@
 				2D7146CD235BB6BB0064B576 /* StoreItem.swift */,
 				2D7146CF235BB8560064B576 /* StoreInventory.swift */,
 				2D2D6CDA27C6A6E000D9E770 /* Kitchen Items.swift */,
-				2D2D6CD827C6A5EA00D9E770 /* Bathroom Items.swift */,
+				2D8D4EB127C977A0008FF48E /* Bathroom Items.swift */,
 				2DA5595F2360FE50006B3B9D /* PurchaseState.swift */,
 				2D0C3CFA2363A7E300EA064A /* DecorManager.swift */,
 				2D9B0E0025E45E52009D75ED /* Bowls.swift */,
@@ -694,11 +694,11 @@
 				2D72E139265421F4003CE02C /* GameModel.swift in Sources */,
 				2DA2E41F238DD71700541771 /* NetworkMonitor.swift in Sources */,
 				2D3583C1237CC1F3005A6C56 /* AnimationManager.swift in Sources */,
-				2D2D6CD927C6A5EA00D9E770 /* Bathroom Items.swift in Sources */,
 				2DE860E923552B3B00227A86 /* AppDelegate.swift in Sources */,
 				2D9B0E0125E45E52009D75ED /* Bowls.swift in Sources */,
 				2D789157239C40FE00053B4E /* Sounds.swift in Sources */,
 				2D6FCA8D235A596100560CB2 /* Timer.swift in Sources */,
+				2D8D4EB227C977A0008FF48E /* Bathroom Items.swift in Sources */,
 				2D96CA9B25CDFD4C00A89C32 /* Pedometer.swift in Sources */,
 				2DC80B882384AC62006841AE /* PawShopViewController.swift in Sources */,
 				2DF3B3F4265307EA00718334 /* WhackamouseViewController.swift in Sources */,

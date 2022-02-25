@@ -19,6 +19,7 @@ extension ViewController {
         outsideBackground.stopAnimating()
         walkingOutside.stopAnimating()
         bathroomCat.stopAnimating()
+        kitchenCat.stopAnimating()
         
         if AnimationManager.bathroomLocation != .bath {
             bathWater.isHidden = true
@@ -41,7 +42,15 @@ extension ViewController {
         case .outside:
             outsideBackground.stopAnimating()
             randomOutside(moving: inMotion)
+
+            disappearBathroom()
+            disappearKitchen()
+            toggleOutside()
         case .bathroom:
+            disappearKitchen()
+            disappearOutside()
+            toggleBathroom()
+
             if paused {
                 return
             }
@@ -77,6 +86,10 @@ extension ViewController {
                 }
             }
         case .kitchen:
+            disappearOutside()
+            disappearBathroom()
+            toggleKitchen()
+
             if paused {
                 return
             }
@@ -108,6 +121,10 @@ extension ViewController {
                 }
             }
         case .room:
+            disappearOutside()
+            disappearKitchen()
+            disappearBathroom()
+
             if paused {
                 return
             }
@@ -224,18 +241,25 @@ extension ViewController {
 
         switch destination {
         case .food:
+            print("food")
             moveToFood()
         case .water:
+            print("water")
             moveToWater()
         case .mat:
+            print("mat")
             moveToKitchenMat()
         case .counter:
+            print("counter")
             moveToKitchenCounter()
         case .right:
+            print("right")
             moveToKitchenRight()
         case .left:
+            print("left")
             moveToKitchenLeft()
         case .none:
+            print("none")
             randomKitchenPlaceAnimation()
         }
     }
@@ -558,7 +582,7 @@ extension ViewController {
         kitchenCat.animationImages = AnimationManager.walking
         kitchenCat.animationDuration = 0.5
         kitchenCat.startAnimating()
-        let waterDestination = CGPoint(x: wallArt.frame.width/2.3, y: wallArt.frame.height/1.3)
+        let waterDestination = CGPoint(x: wallArt.frame.width/2.6, y: wallArt.frame.height/1.2)
         
         kitchenCat.move(to: waterDestination, duration: 2.5, options: UIView.AnimationOptions.curveEaseOut)
         AnimationManager.kitchenLocation = .water
@@ -576,7 +600,7 @@ extension ViewController {
         kitchenCat.animationImages = AnimationManager.walking
         kitchenCat.animationDuration = 0.5
         kitchenCat.startAnimating()
-        let middleDestination = CGPoint(x: wallArt.frame.width/1.5, y: wallArt.frame.height/1.6)
+        let middleDestination = CGPoint(x: wallArt.frame.width/2, y: wallArt.frame.height/1.6)
 
         kitchenCat.move(to: middleDestination, duration: 2.5, options: UIView.AnimationOptions.curveEaseOut)
         AnimationManager.kitchenLocation = .mat
@@ -619,7 +643,7 @@ extension ViewController {
         kitchenCat.animationImages = AnimationManager.jump
         kitchenCat.animationDuration = 1.0
         kitchenCat.startAnimating()
-        let jumpDestination = CGPoint(x: wallArt.frame.width/4.5, y: wallArt.frame.height/2.6)
+        let jumpDestination = CGPoint(x: wallArt.frame.width/3.7, y: wallArt.frame.height/2.6)
 
         kitchenCat.move(to: jumpDestination, duration: 1.0, options: UIView.AnimationOptions.curveEaseOut)
     }
@@ -629,7 +653,7 @@ extension ViewController {
         kitchenCat.animationImages = AnimationManager.jumpDown
         kitchenCat.animationDuration = 1.0
         kitchenCat.startAnimating()
-        let jumpDownDestination = CGPoint(x: wallArt.frame.width/4.5, y: wallArt.frame.height/1.6)
+        let jumpDownDestination = CGPoint(x: wallArt.frame.width/3.7, y: wallArt.frame.height/1.6)
 
         kitchenCat.move(to: jumpDownDestination, duration: 1.0, options: UIView.AnimationOptions.curveEaseOut)
         AnimationManager.kitchenLocation = .mat
@@ -642,7 +666,7 @@ extension ViewController {
         catArt.animationImages = AnimationManager.walking
         catArt.animationDuration = 0.5
         catArt.startAnimating()
-        let middleDestination = CGPoint(x: wallArt.frame.width/1.5, y: wallArt.frame.height/1.6)
+        let middleDestination = CGPoint(x: wallArt.frame.width/2, y: wallArt.frame.height/1.6)
 
         catArt.move(to: middleDestination, duration: 2.5, options: UIView.AnimationOptions.curveEaseOut)
         AnimationManager.location = .middle

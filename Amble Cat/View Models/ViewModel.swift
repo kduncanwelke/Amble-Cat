@@ -39,6 +39,18 @@ public class ViewModel {
         }
     }
 
+    func goToBathroom() {
+        AnimationManager.currentView = .bathroom
+    }
+
+    func goToMainRoom() {
+        AnimationManager.currentView = .room
+    }
+
+    func goToKitchen() {
+        AnimationManager.currentView = .kitchen
+    }
+
     func getLabelName(tag: Int) -> String {
         return ButtonsManager.buttonNames[tag] ?? ""
     }

@@ -249,7 +249,7 @@
                                             <constraint firstItem="RIM-GI-Cjl" firstAttribute="centerY" secondItem="kLQ-UF-HE3" secondAttribute="centerY" id="yJ5-1L-dxA"/>
                                         </constraints>
                                     </view>
-                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YEV-Y8-KsQ">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YEV-Y8-KsQ">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="outside1" translatesAutoresizingMaskIntoConstraints="NO" id="Cld-Vm-rnL">
@@ -345,7 +345,7 @@
                                                     <constraint firstAttribute="width" secondItem="IxU-qh-R7y" secondAttribute="height" multiplier="1:1" id="WcT-12-kxY"/>
                                                 </constraints>
                                             </imageView>
-                                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bathwater" translatesAutoresizingMaskIntoConstraints="NO" id="a4z-sm-IOS">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bathwater" translatesAutoresizingMaskIntoConstraints="NO" id="a4z-sm-IOS">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="a4z-sm-IOS" secondAttribute="height" multiplier="1:1" id="aMD-98-j3Q"/>
@@ -681,14 +681,66 @@
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="AHJ-yE-o3R">
+                                <rect key="frame" x="20" y="718" width="374" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mkb-A4-S1e">
+                                        <rect key="frame" x="0.0" y="0.0" width="118" height="30"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="f31-Gb-uTw"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Dogica_Pixel" family="Dogica Pixel" pointSize="12"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="bathroom">
+                                            <color key="titleColor" red="0.96078431610000004" green="0.7607843876" blue="0.7254902124" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="bathroomPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1mQ-9a-Rxg"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nb2-nc-fOt">
+                                        <rect key="frame" x="128" y="0.0" width="118" height="30"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="FXj-Pm-hKG"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Dogica_Pixel" family="Dogica Pixel" pointSize="12"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="main room">
+                                            <color key="titleColor" red="0.96078431610000004" green="0.7607843876" blue="0.7254902124" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="mainroomPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NDk-OJ-jzr"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D1X-Ll-VhY">
+                                        <rect key="frame" x="256" y="0.0" width="118" height="30"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="NP4-tJ-YJg"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Dogica_Pixel" family="Dogica Pixel" pointSize="12"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="kitchen">
+                                            <color key="titleColor" red="0.96078431610000004" green="0.7607843876" blue="0.7254902124" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="kitchenPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XLz-V3-fH6"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="1" green="0.82352941176470584" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="rs1-C2-6hF" firstAttribute="top" secondItem="17M-Xd-B1w" secondAttribute="bottom" constant="2" id="3wD-IZ-hIy"/>
+                            <constraint firstAttribute="trailing" secondItem="AHJ-yE-o3R" secondAttribute="trailing" constant="20" id="6Lh-zd-GHo"/>
                             <constraint firstItem="17M-Xd-B1w" firstAttribute="top" secondItem="6U4-Pq-RX5" secondAttribute="bottom" id="7Ml-1w-Ce3"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rs1-C2-6hF" secondAttribute="trailing" id="AeT-qM-hnz"/>
                             <constraint firstItem="6U4-Pq-RX5" firstAttribute="top" secondItem="5w5-VM-nPb" secondAttribute="bottom" id="Ax6-sK-Z3X"/>
+                            <constraint firstItem="AHJ-yE-o3R" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="B9K-9A-BE5"/>
                             <constraint firstItem="17M-Xd-B1w" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="BE1-te-A09"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="17M-Xd-B1w" secondAttribute="trailing" constant="10" id="BW1-Ze-EHc"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="6U4-Pq-RX5" secondAttribute="trailing" id="DOY-vr-uWm"/>
@@ -697,6 +749,7 @@
                             <constraint firstItem="6U4-Pq-RX5" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="IJO-MV-JFp"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="DzV-sv-ejw" secondAttribute="trailing" constant="40" id="Nky-zm-REV"/>
                             <constraint firstItem="jlK-fx-pO5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="SId-yt-94D"/>
+                            <constraint firstItem="AHJ-yE-o3R" firstAttribute="top" secondItem="DzV-sv-ejw" secondAttribute="bottom" constant="25" id="SQH-zh-8m3"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="jlK-fx-pO5" secondAttribute="bottom" constant="5" id="YU6-8W-nOK"/>
                             <constraint firstItem="6U4-Pq-RX5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="70" id="Yz5-hH-AIm"/>
                             <constraint firstItem="rs1-C2-6hF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="aZh-4T-Qw2"/>
@@ -716,6 +769,7 @@
                         <outlet property="bathToy" destination="Pd9-HD-CaF" id="3CY-Ud-zkj"/>
                         <outlet property="bathWater" destination="a4z-sm-IOS" id="vTA-ea-5gJ"/>
                         <outlet property="bathmat" destination="mZN-rI-cqV" id="tWZ-KD-bbI"/>
+                        <outlet property="bathroomButton" destination="mkb-A4-S1e" id="0LH-yg-yex"/>
                         <outlet property="bathroomCat" destination="8zf-oa-Wuh" id="z0c-dM-EpD"/>
                         <outlet property="bathroomView" destination="pWQ-ER-MwM" id="Yvs-kK-C1Z"/>
                         <outlet property="bathroomWall" destination="A1h-HL-TWO" id="BsV-gq-DHO"/>
@@ -734,6 +788,7 @@
                         <outlet property="floorTile" destination="7Ae-W8-1HU" id="Hoq-ia-YC4"/>
                         <outlet property="fridge" destination="IeA-m0-Vqr" id="8pY-7R-rQs"/>
                         <outlet property="infoButton" destination="jlK-fx-pO5" id="eXW-NJ-4Xl"/>
+                        <outlet property="kitchenButton" destination="D1X-Ll-VhY" id="0lL-UH-9m7"/>
                         <outlet property="kitchenCat" destination="tIr-Ob-cXD" id="70V-3j-TNY"/>
                         <outlet property="kitchenFloor" destination="1Mr-is-NGI" id="ak5-bF-cOS"/>
                         <outlet property="kitchenMat" destination="Bzq-97-TdZ" id="Djc-sS-ifY"/>
@@ -741,6 +796,7 @@
                         <outlet property="kitchenWall" destination="I44-kx-5Oi" id="J22-aG-PiC"/>
                         <outlet property="leftArrow" destination="wZ8-MY-gwX" id="cpo-vu-uMr"/>
                         <outlet property="lowerCabinet" destination="574-Qm-LBY" id="z9L-ca-e4Q"/>
+                        <outlet property="mainroomButton" destination="Nb2-nc-fOt" id="dOW-c3-Vx8"/>
                         <outlet property="measurementLabel" destination="FZX-Gw-g6e" id="XOM-6L-qmA"/>
                         <outlet property="outsideBackground" destination="Cld-Vm-rnL" id="Qcw-Vr-iso"/>
                         <outlet property="outsideView" destination="YEV-Y8-KsQ" id="fNc-gh-PdE"/>
@@ -2093,12 +2149,21 @@ OTHER DEALINGS IN THE FONT SOFTWARE.</string>
                                                         <constraint firstAttribute="width" secondItem="LDV-LF-za8" secondAttribute="height" multiplier="1:1" id="qJz-iE-yQi"/>
                                                     </constraints>
                                                 </imageView>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="livingroomitem" translatesAutoresizingMaskIntoConstraints="NO" id="EkL-A6-eFf">
+                                                    <rect key="frame" x="6" y="6" width="30" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="30" id="sRP-te-F31"/>
+                                                        <constraint firstAttribute="height" constant="30" id="w0M-rp-xfj"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="LB9-yN-aOQ" firstAttribute="top" secondItem="ktB-XG-kIX" secondAttribute="bottom" constant="7" id="5pg-oC-m9m"/>
                                                 <constraint firstAttribute="trailing" secondItem="ktB-XG-kIX" secondAttribute="trailing" constant="10" id="Dqc-ni-miR"/>
+                                                <constraint firstItem="EkL-A6-eFf" firstAttribute="leading" secondItem="1y4-kT-bdO" secondAttribute="leading" constant="6" id="Eb1-td-47p"/>
                                                 <constraint firstItem="LDV-LF-za8" firstAttribute="top" secondItem="1y4-kT-bdO" secondAttribute="top" constant="8" id="HxJ-2C-N8t"/>
                                                 <constraint firstItem="ktB-XG-kIX" firstAttribute="leading" secondItem="1y4-kT-bdO" secondAttribute="leading" constant="10" id="JGC-9Z-6fB"/>
+                                                <constraint firstItem="EkL-A6-eFf" firstAttribute="top" secondItem="1y4-kT-bdO" secondAttribute="top" constant="6" id="KrJ-3t-aRc"/>
                                                 <constraint firstItem="LDV-LF-za8" firstAttribute="centerX" secondItem="1y4-kT-bdO" secondAttribute="centerX" id="Lsf-8D-XSC"/>
                                                 <constraint firstItem="ktB-XG-kIX" firstAttribute="top" secondItem="LDV-LF-za8" secondAttribute="bottom" constant="8" id="PVD-KG-qFN"/>
                                                 <constraint firstAttribute="bottom" secondItem="iKa-bs-aIC" secondAttribute="bottom" constant="11" id="RJ8-my-raP"/>
@@ -2115,6 +2180,7 @@ OTHER DEALINGS IN THE FONT SOFTWARE.</string>
                                             <outlet property="cellPrice" destination="jR0-ue-0mf" id="J8O-fB-6ab"/>
                                             <outlet property="currencyImage" destination="egY-VZ-UuE" id="6gi-iC-AjX"/>
                                             <outlet property="purchasedLabel" destination="iKa-bs-aIC" id="Oj6-6s-K5Z"/>
+                                            <outlet property="typeIcon" destination="EkL-A6-eFf" id="gRd-aB-dmt"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -2242,6 +2308,7 @@ OTHER DEALINGS IN THE FONT SOFTWARE.</string>
         <image name="kitchenmatgreen" width="3000" height="3000"/>
         <image name="kitchenwallecru" width="3000" height="3000"/>
         <image name="left" width="1000" height="653"/>
+        <image name="livingroomitem" width="60" height="60"/>
         <image name="lowercabinetred" width="3000" height="3000"/>
         <image name="lucyphoto" width="300" height="300"/>
         <image name="mirrorandsink" width="3000" height="3000"/>

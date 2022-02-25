@@ -11,9 +11,9 @@ import UIKit
 
 struct AnimationManager {
     
-    static var currentView: CurrentView = .kitchen
+    static var currentView: CurrentView = .room
     
-    static var location: Location = .middle
+    static var location: Location = .right
     static var direction: Direction = .left
     static var position: Position = .standing
 

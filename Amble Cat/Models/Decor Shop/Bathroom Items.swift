@@ -2,7 +2,7 @@
 //  Bathroom Items.swift
 //  Micro Kitty
 //
-//  Created by Kate Duncan-Welke on 2/23/22.
+//  Created by Kate Duncan-Welke on 2/25/22.
 //  Copyright © 2022 Kate Duncan-Welke. All rights reserved.
 //
 
@@ -12,27 +12,27 @@ extension StoreInventory {
 
     // Bath toys
 
-    static let soap = StoreItem(id: 62, name: "Soap", price: 0, shopImage: #imageLiteral(resourceName: "shopsoap.png"), image: #imageLiteral(resourceName: "soap.png"), description: "Soap Bath Toy", type: .bathtoy)
+   static let soap = StoreItem(id: 62, name: "Soap", price: 0, shopImage: #imageLiteral(resourceName: "shopsoap.png"), image: #imageLiteral(resourceName: "soap.png"), description: "Soap Bath Toy", type: .bathtoy)
 
-    static let toothbrush = StoreItem(id: 63, name: "Toothbrush", price: 300, shopImage: #imageLiteral(resourceName: "shoptoothbrush.png"), image: #imageLiteral(resourceName: "toothbrush.png"), description: "Toothbrush Bath Toy", type: .bathtoy)
+   static let toothbrush = StoreItem(id: 63, name: "Toothbrush", price: 300, shopImage: #imageLiteral(resourceName: "shoptoothbrush.png"), image: #imageLiteral(resourceName: "toothbrush.png"), description: "Toothbrush Bath Toy", type: .bathtoy)
 
-    static let shark = StoreItem(id: 64, name: "Shark", price: 450, shopImage: #imageLiteral(resourceName: "shopshark.png"), image: #imageLiteral(resourceName: "shark.png"), description: "Shark Bath Toy", type: .bathtoy)
+   static let shark = StoreItem(id: 64, name: "Shark", price: 450, shopImage: #imageLiteral(resourceName: "shopshark.png"), image: #imageLiteral(resourceName: "shark.png"), description: "Shark Bath Toy", type: .bathtoy)
 
-    static let starfish = StoreItem(id: 65, name: "Starfish", price: 450, shopImage: #imageLiteral(resourceName: "shopstarfish.png"), image: #imageLiteral(resourceName: "starfish.png"), description: "Starfish Bath Toy", type: .bathtoy)
+   static let starfish = StoreItem(id: 65, name: "Starfish", price: 450, shopImage: #imageLiteral(resourceName: "shopstarfish.png"), image: #imageLiteral(resourceName: "starfish.png"), description: "Starfish Bath Toy", type: .bathtoy)
 
-    // Towels
+   // Towels
 
-    static let blackTowels = StoreItem(id: 66, name: "Black Towels", price: 400, shopImage: #imageLiteral(resourceName: "shoptowelsblack.png"), image: #imageLiteral(resourceName: "towelsblack.png"), description: "Black Bath Towels", type: .towel)
+   static let blackTowels = StoreItem(id: 66, name: "Black Towels", price: 400, shopImage: #imageLiteral(resourceName: "shoptowelsblack.png"), image: #imageLiteral(resourceName: "towelsblack.png"), description: "Black Bath Towels", type: .towel)
 
-    static let yellowTowels = StoreItem(id: 67, name: "Yellow Towels", price: 0, shopImage: #imageLiteral(resourceName: "shoptowelsyellow.png"), image: #imageLiteral(resourceName: "towelsyellow.png"), description: "Yellow Bath Towels", type: .towel)
+   static let yellowTowels = StoreItem(id: 67, name: "Yellow Towels", price: 0, shopImage: #imageLiteral(resourceName: "shoptowelsyellow.png"), image: #imageLiteral(resourceName: "towelsyellow.png"), description: "Yellow Bath Towels", type: .towel)
 
-    static let blueTowels = StoreItem(id: 68, name: "Blue Towels", price: 300, shopImage: #imageLiteral(resourceName: "shoptowelsblue.png"), image: #imageLiteral(resourceName: "towelsblue.png"), description: "Blue Bath Towels", type: .towel)
+   static let blueTowels = StoreItem(id: 68, name: "Blue Towels", price: 300, shopImage: #imageLiteral(resourceName: "shoptowelsblue.png"), image: #imageLiteral(resourceName: "towelsblue.png"), description: "Blue Bath Towels", type: .towel)
 
-    static let greenTowels = StoreItem(id: 69, name: "Green Towels", price: 300, shopImage: #imageLiteral(resourceName: "shoptowelsgreen.png"), image: #imageLiteral(resourceName: "towelsgreen.png"), description: "Green Bath Towels", type: .towel)
+   static let greenTowels = StoreItem(id: 69, name: "Green Towels", price: 300, shopImage: #imageLiteral(resourceName: "shoptowelsgreen.png"), image: #imageLiteral(resourceName: "towelsgreen.png"), description: "Green Bath Towels", type: .towel)
 
-    static let whiteTowels = StoreItem(id: 70, name: "White Towels", price: 400, shopImage: #imageLiteral(resourceName: "shoptowelswhite.png"), image: #imageLiteral(resourceName: "towelswhite.png"), description: "White Bath Towels", type: .towel)
+   static let whiteTowels = StoreItem(id: 70, name: "White Towels", price: 400, shopImage: #imageLiteral(resourceName: "shoptowelswhite.png"), image: #imageLiteral(resourceName: "towelswhite.png"), description: "White Bath Towels", type: .towel)
 
-    static let pinkTowels = StoreItem(id: 71, name: "Pink Towels", price: 400, shopImage: #imageLiteral(resourceName: "shoptowelspink.png"), image: #imageLiteral(resourceName: "towelspink.png"), description: "Pink Bath Towels", type: .towel)
+   static let pinkTowels = StoreItem(id: 71, name: "Pink Towels", price: 400, shopImage: #imageLiteral(resourceName: "shoptowelspink.png"), image: #imageLiteral(resourceName: "towelspink.png"), description: "Pink Bath Towels", type: .towel)
 
     // Cabinets
 
@@ -105,7 +105,7 @@ extension StoreInventory {
     static let whiteTile = StoreItem(id: 101, name: "White Tile", price: 0, shopImage: #imageLiteral(resourceName: "shoptilewhite.png"), image: #imageLiteral(resourceName: "tilewhite.png"), description: "White Tile Floor", type: .tilefloor)
 
     // Bathroom walls
-
+    
     static let ecruBathroom = StoreItem(id: 102, name: "Ecru Wall", price: 0, shopImage: #imageLiteral(resourceName: "shopbathwallecru.png"), image: #imageLiteral(resourceName: "bathwallecru.png"), description: "Ecru Bathroom Wall", type: .bathwall)
 
     static let roseBathroom = StoreItem(id: 103, name: "Rose Wall", price: 1200, shopImage: #imageLiteral(resourceName: "shopbathwallrose.png"), image: #imageLiteral(resourceName: "bathwallrose.png"), description: "Rose Bathroom Wall", type: .bathwall)

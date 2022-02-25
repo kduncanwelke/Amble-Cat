@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import HealthKit
 import CoreData
 import CoreMotion
 
@@ -77,8 +76,12 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
      @IBOutlet weak var infoButton: UIButton!
      
      @IBOutlet weak var selectionLabel: UILabel!
-     
-     
+
+     @IBOutlet weak var bathroomButton: UIButton!
+     @IBOutlet weak var mainroomButton: UIButton!
+     @IBOutlet weak var kitchenButton: UIButton!
+
+
      // MARK: Variables
 
      var earned = 0
@@ -109,6 +112,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
           NotificationCenter.default.addObserver(self, selector: #selector(jumpToBath), name: NSNotification.Name(rawValue: "jumpToBath"), object: nil)
           
           NotificationCenter.default.addObserver(self, selector: #selector(jumpToCounter), name: NSNotification.Name(rawValue: "jumpToCounter"), object: nil)
+
+          NotificationCenter.default.addObserver(self, selector: #selector(jumpToKitchenCounter), name: NSNotification.Name(rawValue: "jumpToKitchenCounter"), object: nil)
           
           // load sounds
           Sound.loadSound(number: &Sounds.blopSound.number, resourceName: Sounds.blopSound.resourceName, type: Sounds.blopSound.type)
@@ -128,6 +133,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
           rightArrow.layer.cornerRadius = 21
           leftArrow.layer.cornerRadius = 21
           infoButton.layer.cornerRadius = 10
+          bathroomButton.layer.cornerRadius = 10
+          mainroomButton.layer.cornerRadius = 10
+          kitchenButton.layer.cornerRadius = 10
           
           viewModel.loadEquipment()
           viewModel.loadCurrency()
@@ -155,6 +163,14 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
           measurementLabel.text = stepViewModel.distanceMeasure()
           distanceLabel.text = "\(stepViewModel.distanceToday())"
           decorChanged()
+     }
+
+     func disappearKitchen() {
+          kitchenView.isHidden = true
+     }
+
+     func toggleKitchen() {
+          kitchenView.isHidden = false
      }
      
      func disappearOutside() {
@@ -329,6 +345,16 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                }
           }
      }
+
+     func stopAnimations() {
+          catArt.stopAnimating()
+          catArt.layer.removeAllAnimations()
+          bathroomCat.stopAnimating()
+          bathroomCat.layer.removeAllAnimations()
+          kitchenCat.stopAnimating()
+          kitchenCat.layer.removeAllAnimations()
+          AnimationTimer.stop()
+     }
     
      // MARK: IBActions
      
@@ -417,12 +443,12 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
           case 0:
                Sound.playSound(number: Sounds.blopSound.number)
                paused = true
-               AnimationTimer.stop()
+               stopAnimations()
                performSegue(withIdentifier: "playGame", sender: Any?.self)
           case 1:
                Sound.playSound(number: Sounds.blopSound.number)
                paused = true
-               AnimationTimer.stop()
+               stopAnimations()
                performSegue(withIdentifier: "viewStatistics", sender: Any?.self)
           case 2:
                if viewModel.isViewKitchen() {
@@ -441,12 +467,12 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
           case 4:
                Sound.playSound(number: Sounds.blopSound.number)
                paused = true
-               AnimationTimer.stop()
+               stopAnimations()
                performSegue(withIdentifier: "goToStore", sender: Any?.self)
           case 5:
                Sound.playSound(number: Sounds.blopSound.number)
                paused = true
-               AnimationTimer.stop()
+               stopAnimations()
                performSegue(withIdentifier: "goToPointShop", sender: Any?.self)
           default:
                return
@@ -476,7 +502,28 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
      
           changeSelection()
      }
-     
+
+     @IBAction func bathroomPressed(_ sender: UIButton) {
+          Sound.playSound(number: Sounds.blopSound.number)
+          stopAnimations()
+          viewModel.goToBathroom()
+          beginAnimation(inMotion: false)
+     }
+
+     @IBAction func mainroomPressed(_ sender: UIButton) {
+          Sound.playSound(number: Sounds.blopSound.number)
+          stopAnimations()
+          viewModel.goToMainRoom()
+          beginAnimation(inMotion: false)
+     }
+
+     @IBAction func kitchenPressed(_ sender: UIButton) {
+          Sound.playSound(number: Sounds.blopSound.number)
+          stopAnimations()
+          viewModel.goToKitchen()
+          beginAnimation(inMotion: false)
+     }
+
      @IBAction func bonusTapped(_ sender: UITapGestureRecognizer) {
           viewModel.addCurrency()
           Sound.playSound(number: Sounds.meowSound.number)
