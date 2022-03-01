@@ -90,7 +90,11 @@ public class ViewModel {
     func getCouchImage() -> UIImage? {
         return StoreInventory.inventoryDictionary[DecorManager.couchID]?.image
     }
-    
+
+    func getCushionImage() -> UIImage? {
+        return StoreInventory.inventoryDictionary[DecorManager.cushionID]?.image
+    }
+
     func getDecorImage() -> UIImage? {
         return StoreInventory.inventoryDictionary[DecorManager.decorID]?.image
     }

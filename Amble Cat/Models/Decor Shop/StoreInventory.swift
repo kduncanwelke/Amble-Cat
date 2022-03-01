@@ -177,7 +177,55 @@ struct StoreInventory {
     
     static let noDecor = StoreItem(id: 50, name: "No Decor", price: 0, shopImage: #imageLiteral(resourceName: "shopnorug.png" ), image: #imageLiteral(resourceName: "none.png" ), description: "No Decor", type: .decor)
 
-    
+    // Cushion
+
+    static let cushionStarYellow = StoreItem(id: 185, name: "Yellow Star Cushion", price: 0, shopImage: #imageLiteral(resourceName: "shopcushionstaryellow.png"), image: #imageLiteral(resourceName: "cushionstaryellow.png"), description: "Yellow Star Floor Cushion", type: .cushion)
+
+    static let cushionStarBlack = StoreItem(id: 186, name: "Black Star Cushion", price: 200, shopImage: #imageLiteral(resourceName: "shopcushionstarblack.png"), image: #imageLiteral(resourceName: "cushionstarblack.png"), description: "Black Star Floor Cushion", type: .cushion)
+
+    static let cushionStarBlue = StoreItem(id: 187, name: "Blue Star Cushion", price: 200, shopImage: #imageLiteral(resourceName: "shopcushionstarblue.png"), image: #imageLiteral(resourceName: "cushionstarblue.png"), description: "Blue Star Floor Cushion", type: .cushion)
+
+    static let cushionStarGreen = StoreItem(id: 188, name: "Green Star Cushion", price: 200, shopImage: #imageLiteral(resourceName: "shopcushionstargreen.png"), image: #imageLiteral(resourceName: "cushionstargreen.png"), description: "Green Star Floor Cushion", type: .cushion)
+
+    static let cushionStarLilac = StoreItem(id: 189, name: "Lilac Star Cushion", price: 300, shopImage: #imageLiteral(resourceName: "shopcushionstarlilac.png"), image: #imageLiteral(resourceName: "cushionstarlilac.png"), description: "Lilac Star Floor Cushion", type: .cushion)
+
+    static let cushionStarMint = StoreItem(id: 190, name: "Mint Star Cushion", price: 300, shopImage: #imageLiteral(resourceName: "shopcushionstarmint.png"), image: #imageLiteral(resourceName: "cushionstarmint.png"), description: "Mint Star Floor Cushion", type: .cushion)
+
+    static let cushionStarOrange = StoreItem(id: 191, name: "Orange Star Cushion", price: 300, shopImage: #imageLiteral(resourceName: "shopcushionstarorange.png"), image: #imageLiteral(resourceName: "cushionstarorange.png"), description: "Orange Star Floor Cushion", type: .cushion)
+
+    static let cushionStarPink = StoreItem(id: 192, name: "Pink Star Cushion", price: 300, shopImage: #imageLiteral(resourceName: "shopcushionstarpink.png"), image: #imageLiteral(resourceName: "cushionstarpink.png"), description: "Pink Star Floor Cushion", type: .cushion)
+
+    static let cushionStarRed = StoreItem(id: 193, name: "Red Star Cushion", price: 200, shopImage: #imageLiteral(resourceName: "shopcushionstarred.png"), image: #imageLiteral(resourceName: "cushionstarred.png"), description: "Red Star Floor Cushion", type: .cushion)
+
+    static let cushionStarWhite = StoreItem(id: 194, name: "White Star Cushion", price: 200, shopImage: #imageLiteral(resourceName: "shopcushionstarwhite.png"), image: #imageLiteral(resourceName: "cushionstarwhite.png"), description: "White Star Floor Cushion", type: .cushion)
+
+
+    static let cushionHeartBlack = StoreItem(id: 195, name: "Black Heart Cushion", price: 300, shopImage: #imageLiteral(resourceName: "shopcushionheartblack.png"), image: #imageLiteral(resourceName: "cushionheartblack.png"), description: "Black Heart Floor Cushion", type: .cushion)
+
+    static let cushionHeartBlue = StoreItem(id: 196, name: "Blue Heart Cushion", price: 300, shopImage: #imageLiteral(resourceName: "shopcushionheartblue.png"), image: #imageLiteral(resourceName: "cushionheartblue.png"), description: "Blue Heart Floor Cushion", type: .cushion)
+
+    static let cushionHeartGreen = StoreItem(id: 197, name: "Green Heart Cushion", price: 200, shopImage: #imageLiteral(resourceName: "shopcushionheartgreen.png"), image: #imageLiteral(resourceName: "cushionheartgreen.png"), description: "Green Heart Floor Cushion", type: .cushion)
+
+    static let cushionHeartLilac = StoreItem(id: 198, name: "Lilac Heart Cushion", price: 300, shopImage: #imageLiteral(resourceName: "shopcushionheartlilac.png"), image: #imageLiteral(resourceName: "cushionheartlilac.png"), description: "Lilac Heart Floor Cushion", type: .cushion)
+
+    static let cushionHeartMint = StoreItem(id: 199, name: "Mint Heart Cushion", price: 300, shopImage: #imageLiteral(resourceName: "shopcushionheartmint.png"), image: #imageLiteral(resourceName: "cushionheartmint.png"), description: "Mint Heart Floor Cushion", type: .cushion)
+
+    static let cushionHeartOrange = StoreItem(id: 200, name: "Orange Heart Cushion", price: 300, shopImage: #imageLiteral(resourceName: "shopcushionheartorange.png"), image: #imageLiteral(resourceName: "cushionheartorange.png"), description: "Orange Heart Floor Cushion", type: .cushion)
+
+    static let cushionHeartPink = StoreItem(id: 201, name: "Pink Heart Cushion", price: 300, shopImage: #imageLiteral(resourceName: "shopcushionheartpink.png"), image: #imageLiteral(resourceName: "cushionheartpink.png"), description: "Pink Heart Floor Cushion", type: .cushion)
+
+    static let cushionHeartRed = StoreItem(id: 202, name: "Red Heart Cushion", price: 300, shopImage: #imageLiteral(resourceName: "shopcushionheartred.png"), image: #imageLiteral(resourceName: "cushionheartred.png"), description: "Red Heart Floor Cushion", type: .cushion)
+
+    static let cushionHeartWhite = StoreItem(id: 203, name: "White Heart Cushion", price: 200, shopImage: #imageLiteral(resourceName: "shopcushionheartwhite.png"), image: #imageLiteral(resourceName: "cushionheartwhite.png"), description: "White Heart Floor Cushion", type: .cushion)
+
+    static let cushionHeartYellow = StoreItem(id: 204, name: "Yellow Heart Cushion", price: 200, shopImage: #imageLiteral(resourceName: "shopcushionheartyellow.png"), image: #imageLiteral(resourceName: "cushionheartyellow.png"), description: "Yellow Heart Floor Cushion", type: .cushion)
+
+
+    static let cherryBlossomCushion = StoreItem(id: 205, name: "Cherry Blossom Cushion", price: 500, shopImage: #imageLiteral(resourceName: "shopcushioncherryblossom.png"), image: #imageLiteral(resourceName: "cushioncherryblossom.png"), description: "Cherry Blossom Floor Cushion", type: .cushion)
+
+    static let whiteCherryBlossomCushion = StoreItem(id: 206, name: "White Cherry Blossom Cushion", price: 500, shopImage: #imageLiteral(resourceName: "shopcushioncherryblossomwhite.png"), image: #imageLiteral(resourceName: "cushionwhitecherryblossom.png"), description: "White Cherry Blossom Floor Cushion", type: .cushion)
+
+
 	static var inventory = [
         bowl, blueBowl, greenBowl, yellowBowl, whiteBowl, blackBowl,
         blueWaterBowl, greenWaterBowl, yellowWaterBowl, whiteWaterBowl, blackWaterBowl,
@@ -185,6 +233,9 @@ struct StoreInventory {
         mouse, ball, candycane, cupcake, doughnut, fish,
         picture, sunset, cat, forest, abstract,
         greenCouch, yellowCouch, blueCouch, pinkCouch, whiteCouch, blackCouch, orangeCouch, mintCouch,
+        cushionStarYellow, cushionStarBlue, cushionStarBlack, cushionStarWhite, cushionStarRed, cushionStarGreen, cushionStarPink, cushionStarMint, cushionStarOrange, cushionStarLilac,
+        cushionHeartWhite, cushionHeartYellow, cushionHeartGreen, cushionHeartBlack, cushionHeartBlue, cushionHeartMint, cushionHeartLilac, cushionHeartRed, cushionHeartOrange, cushionHeartPink,
+        cherryBlossomCushion, whiteCherryBlossomCushion,
         noDecor, sun, rainbow, funfetti, holly, wall,
         yellowWall, mintWall, greyWall, redWall, stripedWall, pawprintWall,
         basicView, mountainView, winterView, farmView, oceanView, frostView, nightView,
@@ -397,6 +448,28 @@ struct StoreInventory {
         182: upperCabinetRed,
         183: upperCabinetWhite,
         184: upperCabinetYellow,
+        185: cushionStarYellow,
+        186: cushionStarBlack,
+        187: cushionStarBlue,
+        188: cushionStarGreen,
+        189: cushionStarLilac,
+        190: cushionStarMint,
+        191: cushionStarOrange,
+        192: cushionStarPink,
+        193: cushionStarRed,
+        194: cushionStarWhite,
+        195: cushionHeartBlack,
+        196: cushionHeartBlue,
+        197: cushionHeartGreen,
+        198: cushionHeartLilac,
+        199: cushionHeartMint,
+        200: cushionHeartPink,
+        201: cushionHeartOrange,
+        202: cushionHeartRed,
+        203: cushionHeartWhite,
+        204: cushionHeartYellow,
+        205: cherryBlossomCushion,
+        206: whiteCherryBlossomCushion,
     ]
     
     static var purchased: [StoreItem] = []

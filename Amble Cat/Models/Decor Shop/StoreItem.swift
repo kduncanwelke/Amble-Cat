@@ -21,7 +21,7 @@ struct StoreItem {
 
     enum ItemType {
         case bed
-        case bowl
+        case cushion
         case couch
         case decor
         case toy
@@ -29,7 +29,6 @@ struct StoreItem {
         case floor
         case rug
         case wall
-        case waterbowl
         case window
         
         case bathtoy
@@ -42,6 +41,7 @@ struct StoreItem {
         case bathwall
 
         case backsplash
+        case bowl
         case counter
         case fridge
         case kitchenFloor
@@ -50,5 +50,6 @@ struct StoreItem {
         case lowerCabinet
         case stove
         case upperCabinet
+        case waterbowl
     }
 }

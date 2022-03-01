@@ -166,10 +166,10 @@ extension ViewController {
         var destination = AnimationManager.Location(rawValue: num)
         
         switch (AnimationManager.location, destination) {
-        case (.middle, .middle), (.bed, .bed), (.couch, .couch), (.toy, .toy), (.right, .right), (.left, .left):
+        case (.middle, .middle), (.bed, .bed), (.couch, .couch), (.cushion, .cushion), (.toy, .toy), (.right, .right), (.left, .left):
             randomPlaceAnimation()
             return
-        case (.middle, .bed), (.middle, .right), (.bed, .right), (.couch, .middle), (.couch, .bed), (.couch, .right), (.toy, .middle), (.toy, .bed), (.toy, .right), (.left, .middle), (.left, .bed), (.left, .right):
+        case (.middle, .bed), (.middle, .right), (.bed, .right), (.couch, .middle), (.couch, .bed), (.couch, .right), (.toy, .middle), (.toy, .bed), (.toy, .right), (.toy, .couch), (.left, .middle), (.left, .bed), (.left, .right), (.left, .cushion), (.middle, .cushion), (.toy, .cushion), (.bed, .cushion), (.couch, .cushion):
             AnimationManager.direction = .right
         default:
             AnimationManager.direction = .left
@@ -182,6 +182,8 @@ extension ViewController {
             moveToCouch()
         case .bed:
             moveToBed()
+        case .cushion:
+            moveToCushion()
         case .left:
             moveToLeft()
         case .middle:
@@ -201,7 +203,7 @@ extension ViewController {
          switch AnimationManager.location {
          case .middle, .right, .left:
               randomStaying()
-         case .bed:
+         case .bed, .cushion:
               if specific {
                    sleep()
               } else {
@@ -557,7 +559,7 @@ extension ViewController {
 
     // Kitchen animations
 
-    // TODO: change location
+    // TODO: check location
     func moveToFood() {
         print("food")
         kitchenCat.animationImages = AnimationManager.walking
@@ -576,7 +578,7 @@ extension ViewController {
         AnimationTimer.beginTimer(once: false, outdoors: false)
     }
 
-    // TODO: change location
+    // TODO: check location
     func moveToWater() {
         print("water")
         kitchenCat.animationImages = AnimationManager.walking
@@ -771,6 +773,17 @@ extension ViewController {
         
         catArt.move(to: leftDestination, duration: 3.0, options: UIView.AnimationOptions.curveEaseOut)
         AnimationManager.location = .left
+    }
+
+    func moveToCushion() {
+        print("cushion")
+        catArt.animationImages = AnimationManager.walking
+        catArt.animationDuration = 0.5
+        catArt.startAnimating()
+        let cushionDestination = CGPoint(x: wallArt.frame.width/1.4, y: wallArt.frame.height/1.3)
+
+        catArt.move(to: cushionDestination, duration: 2.5, options: UIView.AnimationOptions.curveEaseOut)
+        AnimationManager.location = .cushion
     }
     
     // MARK: Bathroom animations

@@ -39,6 +39,7 @@ struct AnimationManager {
         case toy
         case right
         case left
+        case cushion
     }
     
     enum Direction {

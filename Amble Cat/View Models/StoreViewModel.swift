@@ -72,7 +72,7 @@ public class StoreViewModel {
         case .counter, .stove, .fridge, .backsplash, .upperCabinet, .lowerCabinet, .kitchenWall, .kitchenFloor, .kitchenMat, .bowl, .waterbowl:
             // kitchen
             return #imageLiteral(resourceName: "kitchenitem.png")
-        case .couch, .bed, .decor, .picture, .floor, .rug, .toy, .wall, .window:
+        case .couch, .bed, .decor, .picture, .floor, .rug, .toy, .wall, .window, .cushion:
             // living
             return #imageLiteral(resourceName: "livingroomitem.png")
         case .bath, .bathmat, .bathtoy, .bathwall, .cabinet, .tilewall, .tilefloor, .towel:
@@ -95,6 +95,8 @@ public class StoreViewModel {
             DecorManager.bowlID = current.id
         case .couch:
             DecorManager.couchID = current.id
+        case .cushion:
+            DecorManager.cushionID = current.id
         case .decor:
             DecorManager.decorID = current.id
         case .floor:
@@ -167,7 +169,7 @@ public class StoreViewModel {
     func checkIfEquipped(index: IndexPath) -> Bool {
         let item = currentSource[index.row]
         
-        if item.id == DecorManager.bedID || item.id == DecorManager.bowlID || item.id == DecorManager.couchID || item.id == DecorManager.decorID || item.id == DecorManager.floorID || item.id == DecorManager.pictureID || item.id == DecorManager.rugID || item.id == DecorManager.toyID || item.id == DecorManager.wallID || item.id == DecorManager.waterID || item.id == DecorManager.windowID || item.id == DecorManager.bathtoyID || item.id == DecorManager.towelID || item.id == DecorManager.cabinetID || item.id == DecorManager.bathID || item.id == DecorManager.bathmatID || item.id == DecorManager.tilewallID || item.id == DecorManager.tilefloorID || item.id == DecorManager.bathwallID || item.id == DecorManager.kitchenWallID || item.id == DecorManager.kitchenFloorID || item.id == DecorManager.backsplashID || item.id == DecorManager.lowerCabinetID || item.id == DecorManager.counterID || item.id == DecorManager.stoveID || item.id == DecorManager.fridgeID || item.id == DecorManager.upperCabinetID || item.id == DecorManager.kitchenMatID {
+        if item.id == DecorManager.bedID || item.id == DecorManager.bowlID || item.id == DecorManager.couchID || item.id == DecorManager.cushionID || item.id == DecorManager.decorID || item.id == DecorManager.floorID || item.id == DecorManager.pictureID || item.id == DecorManager.rugID || item.id == DecorManager.toyID || item.id == DecorManager.wallID || item.id == DecorManager.waterID || item.id == DecorManager.windowID || item.id == DecorManager.bathtoyID || item.id == DecorManager.towelID || item.id == DecorManager.cabinetID || item.id == DecorManager.bathID || item.id == DecorManager.bathmatID || item.id == DecorManager.tilewallID || item.id == DecorManager.tilefloorID || item.id == DecorManager.bathwallID || item.id == DecorManager.kitchenWallID || item.id == DecorManager.kitchenFloorID || item.id == DecorManager.backsplashID || item.id == DecorManager.lowerCabinetID || item.id == DecorManager.counterID || item.id == DecorManager.stoveID || item.id == DecorManager.fridgeID || item.id == DecorManager.upperCabinetID || item.id == DecorManager.kitchenMatID {
             return true
         } else {
             return false
@@ -245,6 +247,7 @@ public class StoreViewModel {
             equipment.bed = DecorManager.bedID
             equipment.bowl = DecorManager.bowlID
             equipment.couch = DecorManager.couchID
+            equipment.cushion = DecorManager.cushionID
             equipment.decor = DecorManager.decorID
             equipment.floor = DecorManager.floorID
             equipment.picture = DecorManager.pictureID
@@ -285,6 +288,7 @@ public class StoreViewModel {
         previousSave.bed = DecorManager.bedID
         previousSave.bowl = DecorManager.bowlID
         previousSave.couch = DecorManager.couchID
+        previousSave.cushion = DecorManager.cushionID
         previousSave.decor = DecorManager.decorID
         previousSave.floor = DecorManager.floorID
         previousSave.picture = DecorManager.pictureID

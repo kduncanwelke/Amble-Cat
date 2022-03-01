@@ -40,4 +40,5 @@ struct DecorManager {
     static var lowerCabinetID: Int64 = 166
     static var stoveID: Int64 = 170
     static var upperCabinetID: Int64 = 178
+    static var cushionID: Int64 = 185
 }

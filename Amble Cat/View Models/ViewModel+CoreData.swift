@@ -174,6 +174,10 @@ extension ViewModel {
                 DecorManager.wallID = loaded.wall
                 DecorManager.waterID = loaded.waterbowl
                 DecorManager.windowID = loaded.window
+
+                if loaded.cushion != 0 {
+                    DecorManager.cushionID = loaded.cushion
+                }
                 
                 if loaded.couch != 0 {
                     DecorManager.couchID = loaded.couch

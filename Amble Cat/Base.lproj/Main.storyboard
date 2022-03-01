@@ -181,11 +181,14 @@
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bedblue" translatesAutoresizingMaskIntoConstraints="NO" id="kmY-BW-XTE">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
                                             </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cushionstaryellow" translatesAutoresizingMaskIntoConstraints="NO" id="owg-4P-3ex">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
+                                            </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="doughnut" translatesAutoresizingMaskIntoConstraints="NO" id="EGI-IM-dbU">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
                                             </imageView>
                                             <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="left" translatesAutoresizingMaskIntoConstraints="NO" id="2pe-Vp-Fyw">
-                                                <rect key="frame" x="273" y="249" width="141" height="91"/>
+                                                <rect key="frame" x="273" y="223" width="141" height="91"/>
                                                 <gestureRecognizers/>
                                                 <connections>
                                                     <outletCollection property="gestureRecognizers" destination="rzF-iQ-44o" appends="YES" id="iWK-hr-0uq"/>
@@ -214,7 +217,9 @@
                                             <constraint firstItem="fbB-UU-SLQ" firstAttribute="width" secondItem="kLQ-UF-HE3" secondAttribute="width" id="8fN-GZ-xfT"/>
                                             <constraint firstItem="xqr-Er-2jF" firstAttribute="centerY" secondItem="kLQ-UF-HE3" secondAttribute="centerY" id="BZa-K2-65O"/>
                                             <constraint firstItem="dmh-ju-GUJ" firstAttribute="width" secondItem="ZX0-Qb-1jX" secondAttribute="width" multiplier="0.12" id="CoI-wh-eAe"/>
+                                            <constraint firstItem="owg-4P-3ex" firstAttribute="height" secondItem="kLQ-UF-HE3" secondAttribute="height" id="DM2-pj-Sny"/>
                                             <constraint firstItem="EGI-IM-dbU" firstAttribute="height" secondItem="kLQ-UF-HE3" secondAttribute="height" id="GHH-BT-a6a"/>
+                                            <constraint firstItem="owg-4P-3ex" firstAttribute="centerX" secondItem="kLQ-UF-HE3" secondAttribute="centerX" id="GNR-ft-dN6"/>
                                             <constraint firstItem="kmY-BW-XTE" firstAttribute="height" secondItem="kLQ-UF-HE3" secondAttribute="height" id="HAz-mi-9kM"/>
                                             <constraint firstItem="ZX0-Qb-1jX" firstAttribute="centerX" secondItem="kLQ-UF-HE3" secondAttribute="centerX" id="HID-za-Yys"/>
                                             <constraint firstItem="dmh-ju-GUJ" firstAttribute="centerX" secondItem="ZX0-Qb-1jX" secondAttribute="centerX" id="HIh-tM-UXc"/>
@@ -226,7 +231,8 @@
                                             <constraint firstItem="xqr-Er-2jF" firstAttribute="height" secondItem="kLQ-UF-HE3" secondAttribute="height" id="LZP-dx-pSj"/>
                                             <constraint firstItem="2pe-Vp-Fyw" firstAttribute="width" secondItem="kLQ-UF-HE3" secondAttribute="width" multiplier="0.34" id="M4m-Ip-1QO"/>
                                             <constraint firstItem="e59-3N-6cE" firstAttribute="centerY" secondItem="kLQ-UF-HE3" secondAttribute="centerY" id="NMs-Qh-edh"/>
-                                            <constraint firstAttribute="bottom" secondItem="2pe-Vp-Fyw" secondAttribute="bottom" constant="74" id="PN6-dp-pw0"/>
+                                            <constraint firstAttribute="bottom" secondItem="2pe-Vp-Fyw" secondAttribute="bottom" constant="100" id="PN6-dp-pw0"/>
+                                            <constraint firstItem="owg-4P-3ex" firstAttribute="width" secondItem="kLQ-UF-HE3" secondAttribute="width" id="PeS-9W-twD"/>
                                             <constraint firstItem="oFB-lV-nW2" firstAttribute="centerX" secondItem="kLQ-UF-HE3" secondAttribute="centerX" id="UJx-b9-Dxg"/>
                                             <constraint firstItem="fbB-UU-SLQ" firstAttribute="centerY" secondItem="kLQ-UF-HE3" secondAttribute="centerY" id="UmX-Hr-pLD"/>
                                             <constraint firstItem="kmY-BW-XTE" firstAttribute="width" secondItem="kLQ-UF-HE3" secondAttribute="width" id="VRg-PV-8rw"/>
@@ -247,6 +253,7 @@
                                             <constraint firstItem="dmh-ju-GUJ" firstAttribute="top" secondItem="ZX0-Qb-1jX" secondAttribute="bottom" constant="-150" id="qwH-vK-Ll5"/>
                                             <constraint firstItem="xqr-Er-2jF" firstAttribute="width" secondItem="kLQ-UF-HE3" secondAttribute="width" id="tqX-jA-Kaj"/>
                                             <constraint firstItem="RIM-GI-Cjl" firstAttribute="centerY" secondItem="kLQ-UF-HE3" secondAttribute="centerY" id="yJ5-1L-dxA"/>
+                                            <constraint firstItem="owg-4P-3ex" firstAttribute="centerY" secondItem="kLQ-UF-HE3" secondAttribute="centerY" id="zeT-lx-ad3"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YEV-Y8-KsQ">
@@ -781,6 +788,7 @@
                         <outlet property="couchArt" destination="bdQ-Et-KHy" id="yTL-Ba-9zB"/>
                         <outlet property="counter" destination="keE-ql-aZC" id="LLe-Rk-PUo"/>
                         <outlet property="currentsBackground" destination="5w5-VM-nPb" id="Vic-CI-aju"/>
+                        <outlet property="cushionArt" destination="owg-4P-3ex" id="3G4-Lb-6VS"/>
                         <outlet property="decorArt" destination="RIM-GI-Cjl" id="P2h-QP-WDd"/>
                         <outlet property="distanceLabel" destination="M16-a4-U2n" id="udj-dC-Rwt"/>
                         <outlet property="enterButton" destination="R9h-ar-feC" id="lu8-nx-R6O"/>
@@ -2296,6 +2304,7 @@ OTHER DEALINGS IN THE FONT SOFTWARE.</string>
         <image name="cabinetblonde" width="3000" height="3000"/>
         <image name="couchgreen" width="3000" height="3000"/>
         <image name="counterwhite" width="3000" height="3000"/>
+        <image name="cushionstaryellow" width="3000" height="3000"/>
         <image name="decorshop" width="450" height="450"/>
         <image name="doughnut" width="3000" height="3000"/>
         <image name="feed" width="450" height="450"/>

@@ -32,6 +32,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
      @IBOutlet weak var floorArt: UIImageView!
      @IBOutlet weak var rugArt: UIImageView!
      @IBOutlet weak var couchArt: UIImageView!
+     @IBOutlet weak var cushionArt: UIImageView!
      @IBOutlet weak var wallArt: UIImageView!
      @IBOutlet weak var windowArt: UIImageView!
 
@@ -266,6 +267,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
      @objc func decorChanged() {
           bedArt.image = viewModel.getBedImage()
           couchArt.image = viewModel.getCouchImage()
+          cushionArt.image = viewModel.getCushionImage()
           decorArt.image = viewModel.getDecorImage()
           floorArt.image = viewModel.getFloorImage()
           pictureArt.image = viewModel.getPictureImage()
