@@ -233,7 +233,7 @@ extension ViewController {
         case (.mat, .mat), (.counter, .counter), (.right, .right), (.food, .food), (.left, .left), (.water, .water):
             randomKitchenPlaceAnimation()
             return
-        case (.mat, .food), (.mat, .right), (.water, .food), (.water, .mat), (.water, .right), (.water, .counter), (.left, .counter), (.left, .water), (.left, .mat), (.left, .food), (.left, .right), (.food, .right), (.counter, .right), (.counter, .food):
+        case (.mat, .food), (.mat, .right), (.mat, .water), (.water, .food), (.water, .mat), (.water, .right), (.water, .counter), (.left, .counter), (.left, .water), (.left, .mat), (.left, .food), (.left, .right), (.food, .right), (.counter, .right), (.counter, .food):
             AnimationManager.kitchenDirection = .right
         default:
             AnimationManager.kitchenDirection = .left
@@ -243,25 +243,22 @@ extension ViewController {
 
         switch destination {
         case .food:
-            print("food")
             moveToFood()
         case .water:
-            print("water")
             moveToWater()
         case .mat:
-            print("mat")
             moveToKitchenMat()
         case .counter:
-            print("counter")
-            moveToKitchenCounter()
+            if AnimationManager.kitchenLocation == .left {
+                jumpToKitchenCounter()
+            } else {
+                moveToKitchenCounter()
+            }
         case .right:
-            print("right")
             moveToKitchenRight()
         case .left:
-            print("left")
             moveToKitchenLeft()
         case .none:
-            print("none")
             randomKitchenPlaceAnimation()
         }
     }
@@ -559,13 +556,12 @@ extension ViewController {
 
     // Kitchen animations
 
-    // TODO: check location
     func moveToFood() {
         print("food")
         kitchenCat.animationImages = AnimationManager.walking
         kitchenCat.animationDuration = 0.5
         kitchenCat.startAnimating()
-        let foodDestination = CGPoint(x: wallArt.frame.width/1.2, y: wallArt.frame.height/1.2)
+        let foodDestination = CGPoint(x: wallArt.frame.width/1.24, y: wallArt.frame.height/1.2)
         
         kitchenCat.move(to: foodDestination, duration: 2.5, options: UIView.AnimationOptions.curveEaseOut)
         AnimationManager.kitchenLocation = .food
@@ -578,13 +574,12 @@ extension ViewController {
         AnimationTimer.beginTimer(once: false, outdoors: false)
     }
 
-    // TODO: check location
     func moveToWater() {
         print("water")
         kitchenCat.animationImages = AnimationManager.walking
         kitchenCat.animationDuration = 0.5
         kitchenCat.startAnimating()
-        let waterDestination = CGPoint(x: wallArt.frame.width/2.6, y: wallArt.frame.height/1.2)
+        let waterDestination = CGPoint(x: wallArt.frame.width/2.6, y: wallArt.frame.height/1.25)
         
         kitchenCat.move(to: waterDestination, duration: 2.5, options: UIView.AnimationOptions.curveEaseOut)
         AnimationManager.kitchenLocation = .water
@@ -634,9 +629,9 @@ extension ViewController {
         kitchenCat.animationImages = AnimationManager.walking
         kitchenCat.animationDuration = 0.5
         kitchenCat.startAnimating()
-        let matDestination = CGPoint(x: wallArt.frame.width/5, y: wallArt.frame.height/1.6)
+        let floorDestination = CGPoint(x: wallArt.frame.width/5, y: wallArt.frame.height/1.6)
 
-        kitchenCat.moveWithKitchenCounterJump(to: matDestination, duration: 3.0, options: UIView.AnimationOptions.curveEaseOut)
+        kitchenCat.moveWithKitchenCounterJump(to: floorDestination, duration: 3.0, options: UIView.AnimationOptions.curveEaseOut)
         AnimationManager.kitchenLocation = .counter
     }
 
@@ -648,6 +643,7 @@ extension ViewController {
         let jumpDestination = CGPoint(x: wallArt.frame.width/3.7, y: wallArt.frame.height/2.6)
 
         kitchenCat.move(to: jumpDestination, duration: 1.0, options: UIView.AnimationOptions.curveEaseOut)
+        AnimationManager.kitchenLocation = .counter
     }
 
     func jumpDownFromKitchenCounter() {
@@ -658,7 +654,7 @@ extension ViewController {
         let jumpDownDestination = CGPoint(x: wallArt.frame.width/3.7, y: wallArt.frame.height/1.6)
 
         kitchenCat.move(to: jumpDownDestination, duration: 1.0, options: UIView.AnimationOptions.curveEaseOut)
-        AnimationManager.kitchenLocation = .mat
+        AnimationManager.kitchenLocation = .left
     }
 
     // Living room animations

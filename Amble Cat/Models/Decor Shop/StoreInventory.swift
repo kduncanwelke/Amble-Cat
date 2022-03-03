@@ -242,15 +242,6 @@ struct StoreInventory {
         noRug, redRug, tanRug, blueRug, ecruRug, orangeRug, mintRug, whiteRug, christmasRug,
         floor, darkFloor, whiteFloor, blondFloor, redFloor, blackFloor,
 
-        soap, toothbrush, shark, starfish,
-        blackTowels, yellowTowels, blueTowels, greenTowels, whiteTowels, pinkTowels,
-        brownCabinet, redCabinet, whiteCabinet, blackCabinet, darkCabinet, blondCabinet,
-        blueBath, roseBath, purpleBath, whiteBath, yellowBath, greenBath,
-        yellowMat, blackMat, blueMat, greenMat, pinkMat, whiteMat,
-        orangeTileWall, yellowTileWall, mintTileWall, blueTileWall, pinkTileWall, whiteTileWall,
-        orangeTile, mintTile, yellowTile, blueTile, pinkTile, whiteTile,
-        ecruBathroom, roseBathroom, seafoamBathroom, lemonBathroom, whiteBathroom, skyBathroom, lavenderBathroom,
-
         backsplashWhite, backsplashYellow, backsplashBlue, backsplashPink, backsplashMint, backsplashOrange,
         counterWhite, counterBlue, counterPink, counterMarble, counterBlackMarble, counterWhiteSparkle, counterBlackSparkle,
         fridgeWhite, fridgeBlack, fridgeGreen, fridgeYellow, fridgeOrange, fridgeBlue, fridgePink, fridgeMint,
@@ -259,7 +250,16 @@ struct StoreInventory {
         kitchenWallEcru, kitchenWallSky, kitchenWallSunshine, kitchenWallDenim, kitchenWallWhite, kitchenWallJade, kitchenWallPink,
         stoveBlue, stoveBlack, stoveWhite, stoveGreen, stoveYellow, stoveMint, stovePink, stoveOrange,
         lowerCabinetRed, lowerCabinetBlue, lowerCabinetGreen, lowerCabinetYellow, lowerCabinetBlack, lowerCabinetWhite, lowerCabinetBlonde, lowerCabinetDark,
-        upperCabinetBlonde, upperCabinetBlue, upperCabinetGreen, upperCabinetYellow, upperCabinetBlack, upperCabinetWhite, upperCabinetDark, upperCabinetRed
+        upperCabinetBlonde, upperCabinetBlue, upperCabinetGreen, upperCabinetYellow, upperCabinetBlack, upperCabinetWhite, upperCabinetDark, upperCabinetRed,
+
+        soap, toothbrush, shark, starfish,
+        blackTowels, yellowTowels, blueTowels, greenTowels, whiteTowels, pinkTowels,
+        brownCabinet, redCabinet, whiteCabinet, blackCabinet, darkCabinet, blondCabinet,
+        blueBath, roseBath, purpleBath, whiteBath, yellowBath, greenBath,
+        yellowMat, blackMat, blueMat, greenMat, pinkMat, whiteMat,
+        orangeTileWall, yellowTileWall, mintTileWall, blueTileWall, pinkTileWall, whiteTileWall,
+        orangeTile, mintTile, yellowTile, blueTile, pinkTile, whiteTile,
+        ecruBathroom, roseBathroom, seafoamBathroom, lemonBathroom, whiteBathroom, skyBathroom, lavenderBathroom
       ]
     
     static let inventoryDictionary: [Int64: StoreItem] = [

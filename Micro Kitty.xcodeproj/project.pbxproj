@@ -921,7 +921,7 @@
 					"@executable_path/Frameworks",
 				);
 				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/Pods/OpenSSL-Universal/Frameworks/OpenSSL.xcframework";
-				MARKETING_VERSION = 2.0.1;
+				MARKETING_VERSION = 3.0;
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kduncan-welke.AmbleCat";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -955,7 +955,7 @@
 					"@executable_path/Frameworks",
 				);
 				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/Pods/OpenSSL-Universal/Frameworks/OpenSSL.xcframework";
-				MARKETING_VERSION = 2.0.1;
+				MARKETING_VERSION = 3.0;
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kduncan-welke.AmbleCat";
 				PRODUCT_NAME = "$(TARGET_NAME)";

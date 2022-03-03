@@ -218,7 +218,7 @@ public class StoreViewModel {
         
         do {
             try managedContext.save()
-            print("saved")
+            print("saved purchase")
         } catch {
             // this should never be displayed but is here to cover the possibility
             //showAlert(title: "Save failed", message: "Notice: Data has not successfully been saved.")
@@ -315,7 +315,6 @@ public class StoreViewModel {
         previousSave.stove = DecorManager.stoveID
         previousSave.uppercabinet = DecorManager.upperCabinetID
 
-        
         do {
             try managedContext.save()
             print("decor resaved")

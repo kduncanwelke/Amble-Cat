@@ -278,6 +278,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
 
           bowlArt.image = viewModel.showFood()
           waterBowlArt.image = viewModel.showWater()
+          loadWater()
           kitchenMat.image = viewModel.getKitchenMat()
           upperCabinet.image = viewModel.getUpperCabinet()
           fridge.image = viewModel.getFridge()

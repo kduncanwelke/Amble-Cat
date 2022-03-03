@@ -582,8 +582,8 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9OZ-I7-suY">
                                         <rect key="frame" x="0.0" y="0.0" width="63" height="63"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="3M0-lv-rnA"/>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="J3B-ee-uCf"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="45" id="3M0-lv-rnA"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="45" id="J3B-ee-uCf"/>
                                             <constraint firstAttribute="width" secondItem="9OZ-I7-suY" secondAttribute="height" multiplier="1:1" id="W2o-A8-UgI"/>
                                         </constraints>
                                         <state key="normal" image="play" backgroundImage="select"/>
@@ -623,7 +623,7 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="DzV-sv-ejw">
-                                <rect key="frame" x="40" y="643" width="334" height="50"/>
+                                <rect key="frame" x="40" y="636" width="334" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R9h-ar-feC">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -679,7 +679,7 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="play game" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rs1-C2-6hF">
-                                <rect key="frame" x="0.0" y="593" width="414" height="30"/>
+                                <rect key="frame" x="0.0" y="591" width="414" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.66666668650000005" blue="0.66666668650000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="oEu-rb-qBh"/>
@@ -689,7 +689,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="AHJ-yE-o3R">
-                                <rect key="frame" x="20" y="718" width="374" height="30"/>
+                                <rect key="frame" x="20" y="706" width="374" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mkb-A4-S1e">
                                         <rect key="frame" x="0.0" y="0.0" width="118" height="30"/>
@@ -699,7 +699,7 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Dogica_Pixel" family="Dogica Pixel" pointSize="12"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" title="bathroom">
+                                        <state key="normal" title="bath">
                                             <color key="titleColor" red="0.96078431610000004" green="0.7607843876" blue="0.7254902124" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
                                         <connections>
@@ -714,7 +714,7 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Dogica_Pixel" family="Dogica Pixel" pointSize="12"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" title="main room">
+                                        <state key="normal" title="main">
                                             <color key="titleColor" red="0.96078431610000004" green="0.7607843876" blue="0.7254902124" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
                                         <connections>
@@ -742,7 +742,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="1" green="0.82352941176470584" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="rs1-C2-6hF" firstAttribute="top" secondItem="17M-Xd-B1w" secondAttribute="bottom" constant="2" id="3wD-IZ-hIy"/>
+                            <constraint firstItem="rs1-C2-6hF" firstAttribute="top" secondItem="17M-Xd-B1w" secondAttribute="bottom" id="3wD-IZ-hIy"/>
                             <constraint firstAttribute="trailing" secondItem="AHJ-yE-o3R" secondAttribute="trailing" constant="20" id="6Lh-zd-GHo"/>
                             <constraint firstItem="17M-Xd-B1w" firstAttribute="top" secondItem="6U4-Pq-RX5" secondAttribute="bottom" id="7Ml-1w-Ce3"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rs1-C2-6hF" secondAttribute="trailing" id="AeT-qM-hnz"/>
@@ -756,17 +756,17 @@
                             <constraint firstItem="6U4-Pq-RX5" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="IJO-MV-JFp"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="DzV-sv-ejw" secondAttribute="trailing" constant="40" id="Nky-zm-REV"/>
                             <constraint firstItem="jlK-fx-pO5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="SId-yt-94D"/>
-                            <constraint firstItem="AHJ-yE-o3R" firstAttribute="top" secondItem="DzV-sv-ejw" secondAttribute="bottom" constant="25" id="SQH-zh-8m3"/>
+                            <constraint firstItem="AHJ-yE-o3R" firstAttribute="top" secondItem="DzV-sv-ejw" secondAttribute="bottom" constant="20" id="SQH-zh-8m3"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="jlK-fx-pO5" secondAttribute="bottom" constant="5" id="YU6-8W-nOK"/>
                             <constraint firstItem="6U4-Pq-RX5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="70" id="Yz5-hH-AIm"/>
                             <constraint firstItem="rs1-C2-6hF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="aZh-4T-Qw2"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5w5-VM-nPb" secondAttribute="trailing" id="eEc-QT-6O4"/>
                             <constraint firstItem="6U4-Pq-RX5" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" priority="250" id="h6A-QS-1FD"/>
-                            <constraint firstItem="jlK-fx-pO5" firstAttribute="top" relation="greaterThanOrEqual" secondItem="DzV-sv-ejw" secondAttribute="bottom" constant="25" id="hJ3-ad-ufW"/>
                             <constraint firstItem="5w5-VM-nPb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="opc-BS-lzf"/>
                             <constraint firstItem="6U4-Pq-RX5" firstAttribute="height" relation="lessThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="height" multiplier="0.6" id="p2W-Hd-ssy"/>
+                            <constraint firstItem="jlK-fx-pO5" firstAttribute="top" relation="greaterThanOrEqual" secondItem="AHJ-yE-o3R" secondAttribute="bottom" constant="15" id="qPa-mp-abz"/>
                             <constraint firstItem="6U4-Pq-RX5" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="tJT-Wo-z77"/>
-                            <constraint firstItem="DzV-sv-ejw" firstAttribute="top" secondItem="rs1-C2-6hF" secondAttribute="bottom" constant="20" id="u1T-pw-syu"/>
+                            <constraint firstItem="DzV-sv-ejw" firstAttribute="top" secondItem="rs1-C2-6hF" secondAttribute="bottom" constant="15" id="u1T-pw-syu"/>
                         </constraints>
                     </view>
                     <connections>
@@ -1368,10 +1368,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="117" translatesAutoresizingMaskIntoConstraints="NO" id="VcJ-ex-RBD">
-                                <rect key="frame" x="77.5" y="194" width="259" height="310"/>
+                                <rect key="frame" x="77.5" y="194" width="259" height="232"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="33" translatesAutoresizingMaskIntoConstraints="NO" id="LGc-4Y-Eqs">
-                                        <rect key="frame" x="0.0" y="0.0" width="74" height="310"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="LGc-4Y-Eqs">
+                                        <rect key="frame" x="0.0" y="0.0" width="74" height="232"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yqJ-Vh-b7H">
                                                 <rect key="frame" x="0.0" y="0.0" width="74" height="16"/>
@@ -1380,45 +1380,45 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eWd-Vr-ROL">
-                                                <rect key="frame" x="0.0" y="49" width="74" height="16"/>
+                                                <rect key="frame" x="0.0" y="36" width="74" height="16"/>
                                                 <fontDescription key="fontDescription" name="Dogica_Pixel_Bold" family="Dogica Pixel" pointSize="16"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bFh-7g-O8i">
-                                                <rect key="frame" x="0.0" y="98" width="74" height="16"/>
+                                                <rect key="frame" x="0.0" y="72" width="74" height="16"/>
                                                 <fontDescription key="fontDescription" name="Dogica_Pixel_Bold" family="Dogica Pixel" pointSize="16"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kmp-ov-DFE">
-                                                <rect key="frame" x="0.0" y="147" width="74" height="16"/>
+                                                <rect key="frame" x="0.0" y="108" width="74" height="16"/>
                                                 <fontDescription key="fontDescription" name="Dogica_Pixel_Bold" family="Dogica Pixel" pointSize="16"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" tag="4" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="St9-Qt-6cA">
-                                                <rect key="frame" x="0.0" y="196" width="74" height="16"/>
+                                                <rect key="frame" x="0.0" y="144" width="74" height="16"/>
                                                 <fontDescription key="fontDescription" name="Dogica_Pixel_Bold" family="Dogica Pixel" pointSize="16"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" tag="5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3xQ-K3-FSg">
-                                                <rect key="frame" x="0.0" y="245" width="74" height="16"/>
+                                                <rect key="frame" x="0.0" y="180" width="74" height="16"/>
                                                 <fontDescription key="fontDescription" name="Dogica_Pixel_Bold" family="Dogica Pixel" pointSize="16"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" tag="6" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Xh-Kx-1Z4">
-                                                <rect key="frame" x="0.0" y="294" width="74" height="16"/>
+                                                <rect key="frame" x="0.0" y="216" width="74" height="16"/>
                                                 <fontDescription key="fontDescription" name="Dogica_Pixel_Bold" family="Dogica Pixel" pointSize="16"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="33" translatesAutoresizingMaskIntoConstraints="NO" id="uzw-HY-Tng">
-                                        <rect key="frame" x="191" y="0.0" width="68" height="310"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="uzw-HY-Tng">
+                                        <rect key="frame" x="191" y="0.0" width="68" height="232"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Steps" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Osl-VA-uPt">
                                                 <rect key="frame" x="0.0" y="0.0" width="68" height="16"/>
@@ -1427,37 +1427,37 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Steps" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eWh-gk-gps">
-                                                <rect key="frame" x="0.0" y="49" width="68" height="16"/>
+                                                <rect key="frame" x="0.0" y="36" width="68" height="16"/>
                                                 <fontDescription key="fontDescription" name="Dogica_Pixel" family="Dogica Pixel" pointSize="16"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Steps" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uQz-lw-IUs">
-                                                <rect key="frame" x="0.0" y="98" width="68" height="16"/>
+                                                <rect key="frame" x="0.0" y="72" width="68" height="16"/>
                                                 <fontDescription key="fontDescription" name="Dogica_Pixel" family="Dogica Pixel" pointSize="16"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Steps" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fiS-KM-MKS">
-                                                <rect key="frame" x="0.0" y="147" width="68" height="16"/>
+                                                <rect key="frame" x="0.0" y="108" width="68" height="16"/>
                                                 <fontDescription key="fontDescription" name="Dogica_Pixel" family="Dogica Pixel" pointSize="16"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" tag="4" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Steps" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vzn-As-NBA">
-                                                <rect key="frame" x="0.0" y="196" width="68" height="16"/>
+                                                <rect key="frame" x="0.0" y="144" width="68" height="16"/>
                                                 <fontDescription key="fontDescription" name="Dogica_Pixel" family="Dogica Pixel" pointSize="16"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" tag="5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Steps" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6SR-s1-3fN">
-                                                <rect key="frame" x="0.0" y="245" width="68" height="16"/>
+                                                <rect key="frame" x="0.0" y="180" width="68" height="16"/>
                                                 <fontDescription key="fontDescription" name="Dogica_Pixel" family="Dogica Pixel" pointSize="16"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" tag="6" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Steps" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tb6-Ga-Svy">
-                                                <rect key="frame" x="0.0" y="294" width="68" height="16"/>
+                                                <rect key="frame" x="0.0" y="216" width="68" height="16"/>
                                                 <fontDescription key="fontDescription" name="Dogica_Pixel" family="Dogica Pixel" pointSize="16"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -1475,6 +1475,7 @@
                             <constraint firstItem="36d-UQ-qdW" firstAttribute="centerX" secondItem="fhF-EE-wec" secondAttribute="centerX" id="HeD-BN-ReK"/>
                             <constraint firstItem="3R5-Cg-sFz" firstAttribute="top" secondItem="44q-xn-kxS" secondAttribute="top" id="JzN-fa-L5M"/>
                             <constraint firstItem="4bt-eb-d3g" firstAttribute="top" secondItem="3R5-Cg-sFz" secondAttribute="bottom" constant="25" id="LrQ-8R-AcF"/>
+                            <constraint firstItem="36d-UQ-qdW" firstAttribute="top" relation="greaterThanOrEqual" secondItem="VcJ-ex-RBD" secondAttribute="bottom" constant="20" id="ORI-xr-wpc"/>
                             <constraint firstItem="3R5-Cg-sFz" firstAttribute="leading" secondItem="44q-xn-kxS" secondAttribute="leading" id="Q7E-uk-cLU"/>
                             <constraint firstItem="a2L-Ie-zTp" firstAttribute="centerX" secondItem="fhF-EE-wec" secondAttribute="centerX" id="UbT-Fn-v3H"/>
                             <constraint firstItem="a2L-Ie-zTp" firstAttribute="top" secondItem="44q-xn-kxS" secondAttribute="top" constant="20" id="Y6R-OA-gLb"/>
@@ -2006,7 +2007,7 @@ OTHER DEALINGS IN THE FONT SOFTWARE.</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b2Q-AA-KJ8">
-                                <rect key="frame" x="70" y="277" width="274" height="200"/>
+                                <rect key="frame" x="70" y="241" width="274" height="200"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="3zj-mQ-pcX">
                                         <rect key="frame" x="15" y="38.5" width="244" height="123"/>
@@ -2064,7 +2065,7 @@ OTHER DEALINGS IN THE FONT SOFTWARE.</string>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E63-Zf-tMi">
-                                <rect key="frame" x="70" y="277" width="274" height="200"/>
+                                <rect key="frame" x="70" y="241" width="274" height="200"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="3cs-Ph-Txo">
                                         <rect key="frame" x="15" y="38.5" width="244" height="123"/>
@@ -2250,7 +2251,7 @@ OTHER DEALINGS IN THE FONT SOFTWARE.</string>
                         <color key="backgroundColor" red="1" green="0.81176471709999998" blue="0.77254903320000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="IOi-Nb-cBJ" firstAttribute="centerX" secondItem="iP6-zW-noY" secondAttribute="centerX" id="58x-LB-igV"/>
-                            <constraint firstItem="b2Q-AA-KJ8" firstAttribute="top" secondItem="IOi-Nb-cBJ" secondAttribute="bottom" constant="186" id="Cho-2I-YWo"/>
+                            <constraint firstItem="b2Q-AA-KJ8" firstAttribute="top" secondItem="IOi-Nb-cBJ" secondAttribute="bottom" constant="150" id="Cho-2I-YWo"/>
                             <constraint firstItem="Phe-N1-Fn7" firstAttribute="trailing" secondItem="b2Q-AA-KJ8" secondAttribute="trailing" constant="70" id="E6Q-yX-7UO"/>
                             <constraint firstItem="5Rr-ah-CcR" firstAttribute="top" secondItem="IOi-Nb-cBJ" secondAttribute="bottom" constant="16" id="IUJ-x5-CTU"/>
                             <constraint firstItem="Phe-N1-Fn7" firstAttribute="trailing" secondItem="d1R-7p-jYH" secondAttribute="trailing" constant="20" id="MpB-Xo-Mef"/>
@@ -2271,7 +2272,7 @@ OTHER DEALINGS IN THE FONT SOFTWARE.</string>
                             <constraint firstItem="b2Q-AA-KJ8" firstAttribute="leading" secondItem="Phe-N1-Fn7" secondAttribute="leading" constant="70" id="pCy-CW-Ljn"/>
                             <constraint firstItem="d1R-7p-jYH" firstAttribute="top" secondItem="IOi-Nb-cBJ" secondAttribute="bottom" constant="57" id="rzz-aM-St8"/>
                             <constraint firstItem="Phe-N1-Fn7" firstAttribute="bottom" secondItem="Lyf-0S-IDj" secondAttribute="bottom" constant="30" id="s4B-z0-4Xx"/>
-                            <constraint firstItem="E63-Zf-tMi" firstAttribute="top" secondItem="IOi-Nb-cBJ" secondAttribute="bottom" constant="186" id="sGS-CV-bU7"/>
+                            <constraint firstItem="E63-Zf-tMi" firstAttribute="top" secondItem="IOi-Nb-cBJ" secondAttribute="bottom" constant="150" id="sGS-CV-bU7"/>
                             <constraint firstItem="dRf-Kd-cnk" firstAttribute="leading" secondItem="Phe-N1-Fn7" secondAttribute="leading" constant="5" id="z3H-HW-ZHU"/>
                         </constraints>
                     </view>
