@@ -3,7 +3,7 @@ Step tracking made cute!
 
 Micro Kitty (formerly Amble Cat) accesses Core Motion on a user's device to provide step tracking data in a fun and easy format. Current step count for the day is displayed on the main view, with step history displayed in list format. The user cares for a cat, which acts as their companion, featuring cute art and customizable rooms. By walking, a user earns Paw Points based on their step count, and they may even see kitty walk with them. This in-app currency can then be used to spent in the decor shop to purchase new styles of items. Working towards new purchases helps provide a fun, simple motivation for a user to keep walking regularly. The app also features a Paw Point shop, which allows real money to be used for in-app purchases that will get the user more Paw Points to spend. 
 
-<img src="http://kduncan-welke.com/MicroKitty1.png" width="23%"> <img src="http://kduncan-welke.com/MicroKitty2.png" width="23%"> <img src="http://kduncan-welke.com/MicroKitty3.png" width="23%"> <img src="http://kduncan-welke.com/MicroKitty4.png" width="23%">
+<img src="https://i.ibb.co/2N2YnKM/Screen-Shot-2022-03-11-at-2-23-25-PM.png">
 
 ## Description
 Micro Kitty brings you step tracking with a twist!
@@ -14,12 +14,10 @@ With an easy to use interface, cute retro pixel-themed art art, and accurate ste
 
 Features include:
 
-Features include:
-
-* New look! Refreshed interface and art
 * Earn Paw Points live as you walk!
-* New bathroom and outdoor views added
-* New Bap the Mouse mini game!
+* Main room, kitchen, bathroom and outdoor views
+* Toggle between room views
+* Bap the Mouse mini game!
 * More decor items available!
 * Purchase new decor items to customize your cat's room
 * More animations and locations for a more immersive experience
@@ -43,7 +41,7 @@ pod 'OpenSSL-Universal'
 Details on use of each dependency and the Cocoapods manager itself can be found in the links already included.
 
 ## Features
-This app features a main view with a room (instead of the other way around) where the cat is shown in a decorated space. This view will randomly change between the main room and the new bathroom view, with a walking view outdoors which may be toggled when the user is moving.
+This app features a main view with a room (instead of the other way around) where the cat is shown in a decorated space. The user can switch rooms by tapping one of the three buttons to make their choice. A walking view outdoors may also be toggled when the user is moving with the device.
 
 Above this view is an area with current step count and distane covered, along with hearts (which symbolize consecutive days of care for the cat), and the current Paw Point total. Below are buttons for care actions, and links to the decor shop and paw point store.
 
