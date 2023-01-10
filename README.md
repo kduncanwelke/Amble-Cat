@@ -43,13 +43,13 @@ Details on use of each dependency and the Cocoapods manager itself can be found 
 ## Features
 This app features a main view with a room (instead of the other way around) where the cat is shown in a decorated space. The user can switch rooms by tapping one of the three buttons to make their choice. A walking view outdoors may also be toggled when the user is moving with the device.
 
-Above this view is an area with current step count and distane covered, along with hearts (which symbolize consecutive days of care for the cat), and the current Paw Point total. Below are buttons for care actions, and links to the decor shop and paw point store.
+Above this view is an area with current step count and distance covered, along with hearts (which symbolize consecutive days of care for the cat), and the current Paw Point total. Below are buttons for care actions, and links to the decor shop and paw point store.
 
 Small animations for the cat are displayed, some based on care actions the user has taken. 
 
 Paw Points for walking are credited as the user walks, so they earn points as they accrue steps. A small bonus may be present if the user has filled all seven of the care indication hearts as well.
 
-The user navigates through the app primarily by using on screen buttons, which mimick the experience of a virtual pet toy. The user can give the cat food and water via the buttons, visit the decor shop, or the point shop.
+The user navigates through the app primarily by using on screen buttons, which mimic the experience of a virtual pet toy. The user can give the cat food and water via the buttons, visit the decor shop, or the point shop.
 
 The first button - a mouse image - leads to a mini-game of Bap-a-Mouse, in style similar to whack-a-mole. Each round costs 5 Paw Points to play, and a player wins a random PP amount from each successful bap.
 
