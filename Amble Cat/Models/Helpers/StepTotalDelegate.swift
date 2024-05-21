@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol StepTotalDelegate: class {
-    func updateSteps(stepTotal: Int) 
+protocol StepTotalDelegate: AnyObject {
+    func updateSteps(stepTotal: Int)
 }
