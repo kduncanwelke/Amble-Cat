@@ -3,7 +3,7 @@ Step tracking made cute!
 
 Micro Kitty (formerly Amble Cat) accesses Core Motion on a user's device to provide step tracking data in a fun and easy format. Current step count for the day is displayed on the main view, with step history displayed in list format. The user cares for a cat, which acts as their companion, featuring cute art and customizable rooms. By walking, a user earns Paw Points based on their step count, and they may even see kitty walk with them. This in-app currency can then be used to spent in the decor shop to purchase new styles of items. Working towards new purchases helps provide a fun, simple motivation for a user to keep walking regularly. The app also features a Paw Point shop, which allows real money to be used for in-app purchases that will get the user more Paw Points to spend. 
 
-<img src="https://i.ibb.co/2N2YnKM/Screen-Shot-2022-03-11-at-2-23-25-PM.png">
+<img src="https://kduncanwelkecom.ipage.com/Micro%20Kitty%20Preview.png">
 
 ## Description
 Micro Kitty brings you step tracking with a twist!
