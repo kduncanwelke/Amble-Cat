@@ -26,13 +26,14 @@
 	<string>Needed to acquire step data from the system.</string>
 	<key>UIAppFonts</key>
 	<array>
-		<string>dogicalpixel.ttf</string>
-		<string>dogicapixelbold.ttf</string>
+		<string>dogicapixel.otf</string>
+		<string>dogicapixelbold.otf</string>
+		<string>04b.ttf</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
-		<false/>
+		<true/>
 		<key>UISceneConfigurations</key>
 		<dict>
 			<key>UIWindowSceneSessionRoleApplication</key>

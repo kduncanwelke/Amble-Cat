@@ -9,9 +9,11 @@
 import UIKit
 import CoreData
 import CoreMotion
+import WatchConnectivity
+import SwiftUICore
 
+@available(iOS 13.0, *)
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, StepTotalDelegate {
-    
      // MARK: IBOutlets
 
      @IBOutlet weak var stepsLabel: UILabel!
@@ -90,6 +92,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
      private let stepViewModel = StepViewModel()
      var selectedIndex = 0
      var paused = false
+     @ObservedObject var data = PhoneDataModel.shared
    
      override func viewDidLoad() {
           super.viewDidLoad()
@@ -212,6 +215,13 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
      // delegate
      func updateSteps(stepTotal: Int) {
           stepsLabel.text = "\(stepTotal)"
+          var distance = stepViewModel.distanceToday()
+          var points = Currency.userTotal
+          
+          // send message to watch
+          if WCSession.default.isReachable && WCSession.default.isPaired && WCSession.default.isWatchAppInstalled {
+               WCSession.default.sendMessage(["steps": stepTotal, "distance": distance, "points": points], replyHandler: nil)
+          }
      }
      
      @objc func animationEnded() {
@@ -536,5 +546,4 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
      @IBAction func viewInfoTapped(_ sender: UIButton) {
           performSegue(withIdentifier: "viewAbout", sender: Any?.self)
      }
-     
 }

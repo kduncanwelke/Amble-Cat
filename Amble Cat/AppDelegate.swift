@@ -8,17 +8,26 @@
 
 import UIKit
 import StoreKit
+import WatchConnectivity
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate {
     
     var window : UIWindow?
     private var stepViewModel = StepViewModel()
+    let session = WCSession.default
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
         SKPaymentQueue.default().add(StoreObserver.iapObserver)
+        
+        if WCSession.isSupported() {
+            session.delegate = self
+            session.activate()
+        } else {
+            print("Watch connectivity not supported")
+        }
         
         return true
     }
@@ -53,6 +62,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidBecomeActive(_ application: UIApplication) {
         print("active")
         stepViewModel.updateSteps()
+    }
+    
+    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: (any Error)?) {
+        
+    }
+    
+    func sessionDidBecomeInactive(_ session: WCSession) {
+        
+    }
+    
+    func sessionDidDeactivate(_ session: WCSession) {
+        
     }
 }
 
