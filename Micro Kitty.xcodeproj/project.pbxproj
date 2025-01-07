@@ -3,18 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 70;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		060C8D3C2CA607FB00612D9C /* PhoneDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060C8D3B2CA607FB00612D9C /* PhoneDataModel.swift */; };
 		060C8D3D2CA607FB00612D9C /* PhoneDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060C8D3B2CA607FB00612D9C /* PhoneDataModel.swift */; };
-		0610F9642BF9157000D34275 /* OpenSSL.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0610F9632BF9157000D34275 /* OpenSSL.xcframework */; };
 		0655E4712CADA5F0000CF4B8 /* 04b.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 06D8739A2CA740BA00B7B732 /* 04b.ttf */; };
 		0655E4722CADA5F6000CF4B8 /* dogicapixel.otf in Resources */ = {isa = PBXBuildFile; fileRef = 06D873942CA7409500B7B732 /* dogicapixel.otf */; };
 		0655E4732CADA5FC000CF4B8 /* dogicapixelbold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 06D873972CA7409F00B7B732 /* dogicapixelbold.otf */; };
-		0680782C2BF7F4DC00DE70E8 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DC80B912384B314006841AE /* StoreKit.framework */; };
-		0680782D2BF7F4DC00DE70E8 /* StoreKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2DC80B912384B314006841AE /* StoreKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		068F394E2CA1E63E003409B0 /* MicroKittyWatch Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 068F39412CA1E63C003409B0 /* MicroKittyWatch Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		068F39522CA1E995003409B0 /* StepViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D96CA9C25CDFF4F00A89C32 /* StepViewModel.swift */; };
 		068F39532CA1E99F003409B0 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D123A8B25C9F50E005EBFEB /* ViewModel.swift */; };
@@ -38,6 +35,14 @@
 		068F39652CA1EC40003409B0 /* Bowls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9B0E0025E45E52009D75ED /* Bowls.swift */; };
 		068F39662CA1EC5C003409B0 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6FCA8C235A596100560CB2 /* Timer.swift */; };
 		068F39692CA1EF7C003409B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DE860F123552B3C00227A86 /* Assets.xcassets */; };
+		06AB0C4C2CB05B6A00171B65 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DC80B912384B314006841AE /* StoreKit.framework */; };
+		06AB0C622CB0621200171B65 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06AB0C5A2CB0621200171B65 /* Preview Assets.xcassets */; };
+		06AB0C632CB0621200171B65 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06AB0C5C2CB0621200171B65 /* Assets.xcassets */; };
+		06AB0C642CB0621200171B65 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06AB0C5D2CB0621200171B65 /* ContentView.swift */; };
+		06AB0C652CB0621200171B65 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06AB0C5E2CB0621200171B65 /* InterfaceController.swift */; };
+		06AB0C662CB0621200171B65 /* MicroKittyWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06AB0C5F2CB0621200171B65 /* MicroKittyWatchApp.swift */; };
+		06AB0C672CB0621200171B65 /* WatchDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06AB0C602CB0621200171B65 /* WatchDataModel.swift */; };
+		06AB0C682CB06E1F00171B65 /* OpenSSL.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0610F9632BF9157000D34275 /* OpenSSL.xcframework */; };
 		06D873952CA7409500B7B732 /* dogicapixel.otf in Resources */ = {isa = PBXBuildFile; fileRef = 06D873942CA7409500B7B732 /* dogicapixel.otf */; };
 		06D873992CA7409F00B7B732 /* dogicapixelbold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 06D873972CA7409F00B7B732 /* dogicapixelbold.otf */; };
 		06D8739B2CA740BA00B7B732 /* 04b.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 06D8739A2CA740BA00B7B732 /* 04b.ttf */; };
@@ -99,6 +104,7 @@
 		2DE904D0235638790036C08A /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE904CF235638790036C08A /* StatisticsViewController.swift */; };
 		2DE904D2235639DE0036C08A /* Measures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE904D1235639DE0036C08A /* Measures.swift */; };
 		2DF3B3F4265307EA00718334 /* WhackamouseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF3B3F3265307EA00718334 /* WhackamouseViewController.swift */; };
+		C0361F4340511F9F1D37DC66 /* Pods_Micro_Kitty.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3038748BE0CA7E73FC8A77D9 /* Pods_Micro_Kitty.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -123,17 +129,6 @@
 			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0680782B2BF7F4DB00DE70E8 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 8;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				0680782D2BF7F4DC00DE70E8 /* StoreKit.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 1;
-		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -142,10 +137,15 @@
 		061FEDC12CA48112008FAB7E /* WatchConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchConnectivity.framework; path = System/Library/Frameworks/WatchConnectivity.framework; sourceTree = SDKROOT; };
 		068F393C2CA1E206003409B0 /* Micro Kitty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Micro Kitty.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		068F39412CA1E63C003409B0 /* MicroKittyWatch Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MicroKittyWatch Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		06AB0C5A2CB0621200171B65 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		06AB0C5C2CB0621200171B65 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		06AB0C5D2CB0621200171B65 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		06AB0C5E2CB0621200171B65 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		06AB0C5F2CB0621200171B65 /* MicroKittyWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicroKittyWatchApp.swift; sourceTree = "<group>"; };
+		06AB0C602CB0621200171B65 /* WatchDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchDataModel.swift; sourceTree = "<group>"; };
 		06D873942CA7409500B7B732 /* dogicapixel.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = dogicapixel.otf; sourceTree = "<group>"; };
 		06D873972CA7409F00B7B732 /* dogicapixelbold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = dogicapixelbold.otf; sourceTree = "<group>"; };
 		06D8739A2CA740BA00B7B732 /* 04b.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = 04b.ttf; sourceTree = "<group>"; };
-		128EF8D2ED0030ABE520592C /* Pods-Micro KittyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Micro KittyTests.release.xcconfig"; path = "Target Support Files/Pods-Micro KittyTests/Pods-Micro KittyTests.release.xcconfig"; sourceTree = "<group>"; };
 		2D064FAD2387193A00257315 /* Receipt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Receipt.swift; sourceTree = "<group>"; };
 		2D064FB02387227B00257315 /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 		2D064FB123872A6B00257315 /* ReceiptItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptItem.swift; sourceTree = "<group>"; };
@@ -215,16 +215,10 @@
 		2DE904CF235638790036C08A /* StatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
 		2DE904D1235639DE0036C08A /* Measures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Measures.swift; sourceTree = "<group>"; };
 		2DF3B3F3265307EA00718334 /* WhackamouseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhackamouseViewController.swift; sourceTree = "<group>"; };
-		71AA2EED0D4EE90C0A147F4F /* Pods-Micro KittyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Micro KittyTests.debug.xcconfig"; path = "Target Support Files/Pods-Micro KittyTests/Pods-Micro KittyTests.debug.xcconfig"; sourceTree = "<group>"; };
-		74AC6636ABEF03DA37181F32 /* Pods-Micro Kitty.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Micro Kitty.debug.xcconfig"; path = "Target Support Files/Pods-Micro Kitty/Pods-Micro Kitty.debug.xcconfig"; sourceTree = "<group>"; };
-		90FD1F98864D55BE442049AD /* Pods-Micro Kitty-Micro KittyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Micro Kitty-Micro KittyUITests.release.xcconfig"; path = "Target Support Files/Pods-Micro Kitty-Micro KittyUITests/Pods-Micro Kitty-Micro KittyUITests.release.xcconfig"; sourceTree = "<group>"; };
-		A812273E455FEA7F12ADC8B0 /* Pods-Micro Kitty.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Micro Kitty.release.xcconfig"; path = "Target Support Files/Pods-Micro Kitty/Pods-Micro Kitty.release.xcconfig"; sourceTree = "<group>"; };
-		BEBB5DC8054B7257A3729F6F /* Pods-Micro Kitty-Micro KittyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Micro Kitty-Micro KittyUITests.debug.xcconfig"; path = "Target Support Files/Pods-Micro Kitty-Micro KittyUITests/Pods-Micro Kitty-Micro KittyUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		3038748BE0CA7E73FC8A77D9 /* Pods_Micro_Kitty.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Micro_Kitty.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		75455377BB84DB06FFBDC3EE /* Pods-Micro Kitty.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Micro Kitty.debug.xcconfig"; path = "Target Support Files/Pods-Micro Kitty/Pods-Micro Kitty.debug.xcconfig"; sourceTree = "<group>"; };
+		A763B888E7AFAF17B4104815 /* Pods-Micro Kitty.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Micro Kitty.release.xcconfig"; path = "Target Support Files/Pods-Micro Kitty/Pods-Micro Kitty.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		068F39422CA1E63C003409B0 /* MicroKittyWatch Watch App */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = "MicroKittyWatch Watch App"; sourceTree = "<group>"; };
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		068F393E2CA1E63C003409B0 /* Frameworks */ = {
@@ -238,23 +232,41 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0610F9642BF9157000D34275 /* OpenSSL.xcframework in Frameworks */,
-				0680782C2BF7F4DC00DE70E8 /* StoreKit.framework in Frameworks */,
+				06AB0C682CB06E1F00171B65 /* OpenSSL.xcframework in Frameworks */,
+				06AB0C4C2CB05B6A00171B65 /* StoreKit.framework in Frameworks */,
+				C0361F4340511F9F1D37DC66 /* Pods_Micro_Kitty.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		06AB0C5B2CB0621200171B65 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				06AB0C5A2CB0621200171B65 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		06AB0C612CB0621200171B65 /* MicroKittyWatch Watch App */ = {
+			isa = PBXGroup;
+			children = (
+				06AB0C5B2CB0621200171B65 /* Preview Content */,
+				06AB0C5C2CB0621200171B65 /* Assets.xcassets */,
+				06AB0C5D2CB0621200171B65 /* ContentView.swift */,
+				06AB0C5E2CB0621200171B65 /* InterfaceController.swift */,
+				06AB0C5F2CB0621200171B65 /* MicroKittyWatchApp.swift */,
+				06AB0C602CB0621200171B65 /* WatchDataModel.swift */,
+			);
+			path = "MicroKittyWatch Watch App";
+			sourceTree = "<group>";
+		};
 		1294E9DE63409045269B25ED /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				74AC6636ABEF03DA37181F32 /* Pods-Micro Kitty.debug.xcconfig */,
-				A812273E455FEA7F12ADC8B0 /* Pods-Micro Kitty.release.xcconfig */,
-				BEBB5DC8054B7257A3729F6F /* Pods-Micro Kitty-Micro KittyUITests.debug.xcconfig */,
-				90FD1F98864D55BE442049AD /* Pods-Micro Kitty-Micro KittyUITests.release.xcconfig */,
-				71AA2EED0D4EE90C0A147F4F /* Pods-Micro KittyTests.debug.xcconfig */,
-				128EF8D2ED0030ABE520592C /* Pods-Micro KittyTests.release.xcconfig */,
+				75455377BB84DB06FFBDC3EE /* Pods-Micro Kitty.debug.xcconfig */,
+				A763B888E7AFAF17B4104815 /* Pods-Micro Kitty.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -370,7 +382,7 @@
 				2DE860E723552B3B00227A86 /* Amble Cat */,
 				2DE860FE23552B3C00227A86 /* Amble CatTests */,
 				2DE8610923552B3D00227A86 /* Amble CatUITests */,
-				068F39422CA1E63C003409B0 /* MicroKittyWatch Watch App */,
+				06AB0C612CB0621200171B65 /* MicroKittyWatch Watch App */,
 				2DE8611A23552CAA00227A86 /* Frameworks */,
 				1294E9DE63409045269B25ED /* Pods */,
 				068F393C2CA1E206003409B0 /* Micro Kitty.app */,
@@ -426,6 +438,7 @@
 				0610F9632BF9157000D34275 /* OpenSSL.xcframework */,
 				2DC80B912384B314006841AE /* StoreKit.framework */,
 				2DE8611B23552CAA00227A86 /* HealthKit.framework */,
+				3038748BE0CA7E73FC8A77D9 /* Pods_Micro_Kitty.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -477,12 +490,7 @@
 			);
 			dependencies = (
 			);
-			fileSystemSynchronizedGroups = (
-				068F39422CA1E63C003409B0 /* MicroKittyWatch Watch App */,
-			);
 			name = "MicroKittyWatch Watch App";
-			packageProductDependencies = (
-			);
 			productName = "MicroKittyWatch Watch App";
 			productReference = 068F39412CA1E63C003409B0 /* MicroKittyWatch Watch App.app */;
 			productType = "com.apple.product-type.application";
@@ -491,13 +499,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2DE8610F23552B3D00227A86 /* Build configuration list for PBXNativeTarget "Micro Kitty" */;
 			buildPhases = (
-				BF21380E1A5DBD193B5BABB9 /* [CP] Check Pods Manifest.lock */,
+				431BBA4BE754DF6F05FE7EE9 /* [CP] Check Pods Manifest.lock */,
 				2DE860E123552B3B00227A86 /* Sources */,
 				2DE860E223552B3B00227A86 /* Frameworks */,
 				2DE860E323552B3B00227A86 /* Resources */,
-				7673E0B6E7B88B37232D6D51 /* [CP] Embed Pods Frameworks */,
 				060A91B32BF7DB97009C3E06 /* Embed Watch Content */,
-				0680782B2BF7F4DB00DE70E8 /* Embed Frameworks */,
+				1BA0A79986FF7052DBB85921 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -529,7 +536,7 @@
 				};
 			};
 			buildConfigurationList = 2DE860E023552B3B00227A86 /* Build configuration list for PBXProject "Micro Kitty" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 15.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -552,6 +559,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06AB0C622CB0621200171B65 /* Preview Assets.xcassets in Resources */,
+				06AB0C632CB0621200171B65 /* Assets.xcassets in Resources */,
 				0655E4712CADA5F0000CF4B8 /* 04b.ttf in Resources */,
 				0655E4722CADA5F6000CF4B8 /* dogicapixel.otf in Resources */,
 				0655E4732CADA5FC000CF4B8 /* dogicapixelbold.otf in Resources */,
@@ -581,7 +590,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		7673E0B6E7B88B37232D6D51 /* [CP] Embed Pods Frameworks */ = {
+		1BA0A79986FF7052DBB85921 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -598,7 +607,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Micro Kitty/Pods-Micro Kitty-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		BF21380E1A5DBD193B5BABB9 /* [CP] Check Pods Manifest.lock */ = {
+		431BBA4BE754DF6F05FE7EE9 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -632,6 +641,10 @@
 				068F395B2CA1EB9C003409B0 /* ViewModel+CoreData.swift in Sources */,
 				068F39552CA1E9EE003409B0 /* Data.xcdatamodeld in Sources */,
 				068F39582CA1EB57003409B0 /* Pedometer.swift in Sources */,
+				06AB0C642CB0621200171B65 /* ContentView.swift in Sources */,
+				06AB0C652CB0621200171B65 /* InterfaceController.swift in Sources */,
+				06AB0C662CB0621200171B65 /* MicroKittyWatchApp.swift in Sources */,
+				06AB0C672CB0621200171B65 /* WatchDataModel.swift in Sources */,
 				068F395D2CA1EBC0003409B0 /* AnimationManager.swift in Sources */,
 				068F395F2CA1EBE9003409B0 /* DecorManager.swift in Sources */,
 				068F39622CA1EC30003409B0 /* Kitchen Items.swift in Sources */,
@@ -751,7 +764,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"MicroKittyWatch Watch App/Preview Content\"";
 				DEVELOPMENT_TEAM = A8R365GJ52;
 				ENABLE_PREVIEWS = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "MicroKittyWatch-Watch-App-Info.plist";
@@ -790,7 +803,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"MicroKittyWatch Watch App/Preview Content\"";
 				DEVELOPMENT_TEAM = A8R365GJ52;
 				ENABLE_PREVIEWS = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "MicroKittyWatch-Watch-App-Info.plist";
@@ -852,6 +865,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -913,6 +927,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -933,7 +948,7 @@
 		};
 		2DE8611023552B3D00227A86 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 74AC6636ABEF03DA37181F32 /* Pods-Micro Kitty.debug.xcconfig */;
+			baseConfigurationReference = 75455377BB84DB06FFBDC3EE /* Pods-Micro Kitty.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -943,17 +958,19 @@
 				DEVELOPMENT_TEAM = A8R365GJ52;
 				ENABLE_BITCODE = NO;
 				ENABLE_MODULE_VERIFIER = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/Amble Cat/Header.h\"";
 				INFOPLIST_FILE = "Amble Cat/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Micro Kitty";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
-				MARKETING_VERSION = 3.0;
+				MARKETING_VERSION = 3.1.2;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu11 gnu++14";
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kduncan-welke.AmbleCat";
@@ -968,7 +985,7 @@
 		};
 		2DE8611123552B3D00227A86 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A812273E455FEA7F12ADC8B0 /* Pods-Micro Kitty.release.xcconfig */;
+			baseConfigurationReference = A763B888E7AFAF17B4104815 /* Pods-Micro Kitty.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -979,17 +996,19 @@
 				DEVELOPMENT_TEAM = A8R365GJ52;
 				ENABLE_BITCODE = NO;
 				ENABLE_MODULE_VERIFIER = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/Amble Cat/Header.h\"";
 				INFOPLIST_FILE = "Amble Cat/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Micro Kitty";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
-				MARKETING_VERSION = 3.0;
+				MARKETING_VERSION = 3.1.2;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu11 gnu++14";
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kduncan-welke.AmbleCat";

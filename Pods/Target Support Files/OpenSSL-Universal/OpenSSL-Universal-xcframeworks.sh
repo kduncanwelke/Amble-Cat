@@ -17,6 +17,9 @@ RSYNC_PROTECT_TMP_FILES=(--filter "P .*.??????")
 variant_for_slice()
 {
   case "$1" in
+  "OpenSSL.xcframework/ios-arm64")
+    echo ""
+    ;;
   "OpenSSL.xcframework/ios-arm64_x86_64-maccatalyst")
     echo "maccatalyst"
     ;;
@@ -26,15 +29,15 @@ variant_for_slice()
   "OpenSSL.xcframework/macos-arm64_x86_64")
     echo ""
     ;;
-  "OpenSSL.xcframework/ios-arm64")
-    echo ""
-    ;;
   esac
 }
 
 archs_for_slice()
 {
   case "$1" in
+  "OpenSSL.xcframework/ios-arm64")
+    echo "arm64"
+    ;;
   "OpenSSL.xcframework/ios-arm64_x86_64-maccatalyst")
     echo "arm64 x86_64"
     ;;
@@ -43,9 +46,6 @@ archs_for_slice()
     ;;
   "OpenSSL.xcframework/macos-arm64_x86_64")
     echo "arm64 x86_64"
-    ;;
-  "OpenSSL.xcframework/ios-arm64")
-    echo "arm64"
     ;;
   esac
 }
@@ -129,5 +129,5 @@ install_xcframework() {
   echo "Copied $source to $destination"
 }
 
-install_xcframework "${PODS_ROOT}/OpenSSL-Universal/Frameworks/OpenSSL.xcframework" "OpenSSL-Universal" "framework" "ios-arm64_x86_64-maccatalyst" "ios-arm64_x86_64-simulator" "ios-arm64"
+install_xcframework "${PODS_ROOT}/OpenSSL-Universal/Frameworks/OpenSSL.xcframework" "OpenSSL-Universal" "framework" "ios-arm64" "ios-arm64_x86_64-maccatalyst" "ios-arm64_x86_64-simulator"
 

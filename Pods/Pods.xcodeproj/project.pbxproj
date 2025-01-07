@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 54;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXAggregateTarget section */
@@ -20,32 +20,12 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		018BCE2E6F127C1FA53BC4280018A0CA /* Pods-Micro Kitty-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2DCE9ACD707688BD06D729E69EECC473 /* Pods-Micro Kitty-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		040D5408CAD3CFF8DEC5BEEAD463E347 /* Pods-Micro Kitty-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F29B0AE6C98F9A49DD9370C52256455D /* Pods-Micro Kitty-dummy.m */; };
-		2E3B9B573E8251D5B22CAD5444702E6A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		018BCE2E6F127C1FA53BC4280018A0CA /* Pods-Micro Kitty-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F32C6E25AABC07278974AFB77777F9A7 /* Pods-Micro Kitty-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		040D5408CAD3CFF8DEC5BEEAD463E347 /* Pods-Micro Kitty-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DD4B2FA663EB956A2559618B29B2AB04 /* Pods-Micro Kitty-dummy.m */; };
 		2F9C7A498DAC3C2F7D4632305A5D43CD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		4CF4ACA17E0FD3C4DFE4EDAC4A5A355A /* Pods-Micro Kitty-Micro KittyUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CD5805E11C9099052A7537F3B654B63 /* Pods-Micro Kitty-Micro KittyUITests-dummy.m */; };
-		97A42934A406E140DDA56FA07B6F6B60 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		9FE3C5ECBF4CC1609E1BDF1FA60C9ED5 /* Pods-Micro KittyTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4BD041F58BF3DDDF30A8CB4E49EE66A8 /* Pods-Micro KittyTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BB7C19B8C4B2E7C104A699BCAB956CBF /* Pods-Micro KittyTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8624E34752DCC7C929669C8DA66A38A0 /* Pods-Micro KittyTests-dummy.m */; };
-		FBBCA77844132423B32796D1195BD199 /* Pods-Micro Kitty-Micro KittyUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 459E23C5F02076524BBF1FA1E92D7815 /* Pods-Micro Kitty-Micro KittyUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		0CE881F5A78733412908ED7DD4DED9F5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = B9ED5194E665042005069EF06C82A050;
-			remoteInfo = "OpenSSL-Universal";
-		};
-		35C9664032BD0E822B259EFD82802428 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 025629871BE844D8AA2B324152BD2BCA;
-			remoteInfo = "Pods-Micro Kitty";
-		};
 		E831F2E50885DFA0F9AA318460795AA5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
@@ -56,41 +36,22 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0686C2620F377038DC954FA943080141 /* Pods-Micro Kitty-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Micro Kitty-acknowledgements.markdown"; sourceTree = "<group>"; };
-		0CADBCAD94AC697F156E4A29B32CF592 /* Pods-Micro KittyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Micro KittyTests.release.xcconfig"; sourceTree = "<group>"; };
-		1245E829286742FF564F3E9CD98AC4B5 /* Pods-Micro Kitty.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Micro Kitty.release.xcconfig"; sourceTree = "<group>"; };
-		1DBF5A30163348AC28BA177CE3FB5AD5 /* Pods-Micro Kitty-Micro KittyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Micro Kitty-Micro KittyUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		1F5A7A3F58CB5F0F5C21CF92675D3C89 /* OpenSSL-Universal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "OpenSSL-Universal.release.xcconfig"; sourceTree = "<group>"; };
-		2A9411DF48715BF2476EF70540F84675 /* Pods-Micro Kitty-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Micro Kitty-Info.plist"; sourceTree = "<group>"; };
-		2B6320679347B40DE9181C753ACEEBF4 /* Pods-Micro Kitty-Micro KittyUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Micro Kitty-Micro KittyUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		2DCE9ACD707688BD06D729E69EECC473 /* Pods-Micro Kitty-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Micro Kitty-umbrella.h"; sourceTree = "<group>"; };
-		3CD5805E11C9099052A7537F3B654B63 /* Pods-Micro Kitty-Micro KittyUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Micro Kitty-Micro KittyUITests-dummy.m"; sourceTree = "<group>"; };
+		204394BA52DFEEF444F3ABB864AEE4BF /* Pods-Micro Kitty-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Micro Kitty-frameworks.sh"; sourceTree = "<group>"; };
+		27DFEDAEB066C3805879C68F02B41A03 /* Pods-Micro Kitty.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Micro Kitty.debug.xcconfig"; sourceTree = "<group>"; };
 		3E5496E0ED0B7F47EEC8611A3D150C7A /* Pods-Micro Kitty */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-Micro Kitty"; path = Pods_Micro_Kitty.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3FA74D7A7426BB69941D9F2EEC586A73 /* Pods-Micro Kitty-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Micro Kitty-acknowledgements.plist"; sourceTree = "<group>"; };
-		459E23C5F02076524BBF1FA1E92D7815 /* Pods-Micro Kitty-Micro KittyUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Micro Kitty-Micro KittyUITests-umbrella.h"; sourceTree = "<group>"; };
-		4BD041F58BF3DDDF30A8CB4E49EE66A8 /* Pods-Micro KittyTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Micro KittyTests-umbrella.h"; sourceTree = "<group>"; };
-		59874D14BD717DBC71C126B3C4FB14CE /* Pods-Micro Kitty.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Micro Kitty.debug.xcconfig"; sourceTree = "<group>"; };
+		5E3CD268764988200E2D690CC4DA0E3E /* Pods-Micro Kitty-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Micro Kitty-acknowledgements.markdown"; sourceTree = "<group>"; };
 		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		7AC8A691055703D6FC2EE87D0BBF1F0F /* Pods-Micro Kitty.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Micro Kitty.modulemap"; sourceTree = "<group>"; };
-		8624E34752DCC7C929669C8DA66A38A0 /* Pods-Micro KittyTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Micro KittyTests-dummy.m"; sourceTree = "<group>"; };
-		94B1D04CC94B57CB91E7CA0217D0E833 /* Pods-Micro Kitty-Micro KittyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Micro Kitty-Micro KittyUITests.release.xcconfig"; sourceTree = "<group>"; };
-		99E90A6A47F965EC5BCD4A2BB7FD5EB8 /* Pods-Micro Kitty-Micro KittyUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Micro Kitty-Micro KittyUITests.modulemap"; sourceTree = "<group>"; };
+		88A3287DF1D15D12AA5ACD597D0D7E21 /* Pods-Micro Kitty.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Micro Kitty.release.xcconfig"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A00901BCB93A4430578C33A30A47A8DB /* OpenSSL-Universal-xcframeworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "OpenSSL-Universal-xcframeworks.sh"; sourceTree = "<group>"; };
-		A0779CD655D5CF3DC686F08EA7209815 /* Pods-Micro KittyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Micro KittyTests.debug.xcconfig"; sourceTree = "<group>"; };
-		A0C75EA4B3F11FCFE91DB5FDC6B2D59D /* Pods-Micro KittyTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Micro KittyTests-acknowledgements.plist"; sourceTree = "<group>"; };
-		A3C4F493ACE3324CF8CF4D0A0BAA11DF /* Pods-Micro Kitty-Micro KittyUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Micro Kitty-Micro KittyUITests-frameworks.sh"; sourceTree = "<group>"; };
+		A24D00CAC70A46E0A10DB8DC99A10851 /* Pods-Micro Kitty.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Micro Kitty.modulemap"; sourceTree = "<group>"; };
 		AADCA1D8F987E5153FA1ECE55D2B2351 /* OpenSSL.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = OpenSSL.xcframework; path = Frameworks/OpenSSL.xcframework; sourceTree = "<group>"; };
-		BC88601AC50D3957CB401D36D492E1FA /* Pods-Micro Kitty-Micro KittyUITests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-Micro Kitty-Micro KittyUITests"; path = Pods_Micro_Kitty_Micro_KittyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BD01809A8A046159FAC3DCC86C949FE8 /* Pods-Micro Kitty-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Micro Kitty-frameworks.sh"; sourceTree = "<group>"; };
-		C3C18235E4833948DE19D9C3B7A65129 /* Pods-Micro KittyTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Micro KittyTests-Info.plist"; sourceTree = "<group>"; };
-		C49EC5F49479B286B4379DBDA7800D75 /* Pods-Micro KittyTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Micro KittyTests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		CA40195578F9C57585A53C480462E17F /* Pods-Micro KittyTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Micro KittyTests.modulemap"; sourceTree = "<group>"; };
+		C45D25454F576CB505B58455D26A81A9 /* Pods-Micro Kitty-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Micro Kitty-Info.plist"; sourceTree = "<group>"; };
 		CBA942D70B67070CCEF49DF777ACD982 /* OpenSSL-Universal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "OpenSSL-Universal.debug.xcconfig"; sourceTree = "<group>"; };
-		F0570408B879A583428D6DEE3B23D1F9 /* Pods-Micro KittyTests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-Micro KittyTests"; path = Pods_Micro_KittyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F0D864F41BE0A68CB3C55F4D68081DD0 /* Pods-Micro Kitty-Micro KittyUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Micro Kitty-Micro KittyUITests-Info.plist"; sourceTree = "<group>"; };
-		F29B0AE6C98F9A49DD9370C52256455D /* Pods-Micro Kitty-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Micro Kitty-dummy.m"; sourceTree = "<group>"; };
-		F811CDE22F487B4C30B4A60D7F037AAD /* Pods-Micro Kitty-Micro KittyUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Micro Kitty-Micro KittyUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		DA86DBB9B0F69D8E947BD0D021F8ACEC /* Pods-Micro Kitty-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Micro Kitty-acknowledgements.plist"; sourceTree = "<group>"; };
+		DD4B2FA663EB956A2559618B29B2AB04 /* Pods-Micro Kitty-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Micro Kitty-dummy.m"; sourceTree = "<group>"; };
+		F32C6E25AABC07278974AFB77777F9A7 /* Pods-Micro Kitty-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Micro Kitty-umbrella.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,22 +60,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				2F9C7A498DAC3C2F7D4632305A5D43CD /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		0ED23A5E77DB6EA044DFC86A284B0021 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				97A42934A406E140DDA56FA07B6F6B60 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FD192F167E50580F2F44D5BE3F9ACC50 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2E3B9B573E8251D5B22CAD5444702E6A /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,6 +85,23 @@
 			path = "../Target Support Files/OpenSSL-Universal";
 			sourceTree = "<group>";
 		};
+		3DE4F22D161414737624282859FA21EA /* Pods-Micro Kitty */ = {
+			isa = PBXGroup;
+			children = (
+				A24D00CAC70A46E0A10DB8DC99A10851 /* Pods-Micro Kitty.modulemap */,
+				5E3CD268764988200E2D690CC4DA0E3E /* Pods-Micro Kitty-acknowledgements.markdown */,
+				DA86DBB9B0F69D8E947BD0D021F8ACEC /* Pods-Micro Kitty-acknowledgements.plist */,
+				DD4B2FA663EB956A2559618B29B2AB04 /* Pods-Micro Kitty-dummy.m */,
+				204394BA52DFEEF444F3ABB864AEE4BF /* Pods-Micro Kitty-frameworks.sh */,
+				C45D25454F576CB505B58455D26A81A9 /* Pods-Micro Kitty-Info.plist */,
+				F32C6E25AABC07278974AFB77777F9A7 /* Pods-Micro Kitty-umbrella.h */,
+				27DFEDAEB066C3805879C68F02B41A03 /* Pods-Micro Kitty.debug.xcconfig */,
+				88A3287DF1D15D12AA5ACD597D0D7E21 /* Pods-Micro Kitty.release.xcconfig */,
+			);
+			name = "Pods-Micro Kitty";
+			path = "Target Support Files/Pods-Micro Kitty";
+			sourceTree = "<group>";
+		};
 		4E62780B97D6C66BACF776DF12651B8A /* OpenSSL-Universal */ = {
 			isa = PBXGroup;
 			children = (
@@ -150,28 +112,20 @@
 			path = "OpenSSL-Universal";
 			sourceTree = "<group>";
 		};
-		501EE372233B885714C1ABF2E184BEC1 /* Pods-Micro KittyTests */ = {
-			isa = PBXGroup;
-			children = (
-				CA40195578F9C57585A53C480462E17F /* Pods-Micro KittyTests.modulemap */,
-				C49EC5F49479B286B4379DBDA7800D75 /* Pods-Micro KittyTests-acknowledgements.markdown */,
-				A0C75EA4B3F11FCFE91DB5FDC6B2D59D /* Pods-Micro KittyTests-acknowledgements.plist */,
-				8624E34752DCC7C929669C8DA66A38A0 /* Pods-Micro KittyTests-dummy.m */,
-				C3C18235E4833948DE19D9C3B7A65129 /* Pods-Micro KittyTests-Info.plist */,
-				4BD041F58BF3DDDF30A8CB4E49EE66A8 /* Pods-Micro KittyTests-umbrella.h */,
-				A0779CD655D5CF3DC686F08EA7209815 /* Pods-Micro KittyTests.debug.xcconfig */,
-				0CADBCAD94AC697F156E4A29B32CF592 /* Pods-Micro KittyTests.release.xcconfig */,
-			);
-			name = "Pods-Micro KittyTests";
-			path = "Target Support Files/Pods-Micro KittyTests";
-			sourceTree = "<group>";
-		};
 		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
 			isa = PBXGroup;
 			children = (
 				73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */,
 			);
 			name = iOS;
+			sourceTree = "<group>";
+		};
+		762E9485A967615C6F055A30DF70C868 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				3DE4F22D161414737624282859FA21EA /* Pods-Micro Kitty */,
+			);
+			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
 		8479BAA8FF147F675C3CCF6774776249 /* Pods */ = {
@@ -182,51 +136,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		8E7F16E67810E981A765B6CE07160B05 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				3E5496E0ED0B7F47EEC8611A3D150C7A /* Pods-Micro Kitty */,
-				BC88601AC50D3957CB401D36D492E1FA /* Pods-Micro Kitty-Micro KittyUITests */,
-				F0570408B879A583428D6DEE3B23D1F9 /* Pods-Micro KittyTests */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		A26A24D33BC5F066DE77893BA91E0AFD /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				B2F07A7F65CB960FCF27EAAB8F474FCA /* Pods-Micro Kitty */,
-				DDDBE55D95B2B9967058168E9E215503 /* Pods-Micro Kitty-Micro KittyUITests */,
-				501EE372233B885714C1ABF2E184BEC1 /* Pods-Micro KittyTests */,
-			);
-			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		B2F07A7F65CB960FCF27EAAB8F474FCA /* Pods-Micro Kitty */ = {
-			isa = PBXGroup;
-			children = (
-				7AC8A691055703D6FC2EE87D0BBF1F0F /* Pods-Micro Kitty.modulemap */,
-				0686C2620F377038DC954FA943080141 /* Pods-Micro Kitty-acknowledgements.markdown */,
-				3FA74D7A7426BB69941D9F2EEC586A73 /* Pods-Micro Kitty-acknowledgements.plist */,
-				F29B0AE6C98F9A49DD9370C52256455D /* Pods-Micro Kitty-dummy.m */,
-				BD01809A8A046159FAC3DCC86C949FE8 /* Pods-Micro Kitty-frameworks.sh */,
-				2A9411DF48715BF2476EF70540F84675 /* Pods-Micro Kitty-Info.plist */,
-				2DCE9ACD707688BD06D729E69EECC473 /* Pods-Micro Kitty-umbrella.h */,
-				59874D14BD717DBC71C126B3C4FB14CE /* Pods-Micro Kitty.debug.xcconfig */,
-				1245E829286742FF564F3E9CD98AC4B5 /* Pods-Micro Kitty.release.xcconfig */,
-			);
-			name = "Pods-Micro Kitty";
-			path = "Target Support Files/Pods-Micro Kitty";
-			sourceTree = "<group>";
-		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
 				8479BAA8FF147F675C3CCF6774776249 /* Pods */,
-				8E7F16E67810E981A765B6CE07160B05 /* Products */,
-				A26A24D33BC5F066DE77893BA91E0AFD /* Targets Support Files */,
+				FA5163F99438F51BD4E68DE466081C73 /* Products */,
+				762E9485A967615C6F055A30DF70C868 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
@@ -238,21 +155,12 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		DDDBE55D95B2B9967058168E9E215503 /* Pods-Micro Kitty-Micro KittyUITests */ = {
+		FA5163F99438F51BD4E68DE466081C73 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				99E90A6A47F965EC5BCD4A2BB7FD5EB8 /* Pods-Micro Kitty-Micro KittyUITests.modulemap */,
-				2B6320679347B40DE9181C753ACEEBF4 /* Pods-Micro Kitty-Micro KittyUITests-acknowledgements.markdown */,
-				F811CDE22F487B4C30B4A60D7F037AAD /* Pods-Micro Kitty-Micro KittyUITests-acknowledgements.plist */,
-				3CD5805E11C9099052A7537F3B654B63 /* Pods-Micro Kitty-Micro KittyUITests-dummy.m */,
-				A3C4F493ACE3324CF8CF4D0A0BAA11DF /* Pods-Micro Kitty-Micro KittyUITests-frameworks.sh */,
-				F0D864F41BE0A68CB3C55F4D68081DD0 /* Pods-Micro Kitty-Micro KittyUITests-Info.plist */,
-				459E23C5F02076524BBF1FA1E92D7815 /* Pods-Micro Kitty-Micro KittyUITests-umbrella.h */,
-				1DBF5A30163348AC28BA177CE3FB5AD5 /* Pods-Micro Kitty-Micro KittyUITests.debug.xcconfig */,
-				94B1D04CC94B57CB91E7CA0217D0E833 /* Pods-Micro Kitty-Micro KittyUITests.release.xcconfig */,
+				3E5496E0ED0B7F47EEC8611A3D150C7A /* Pods-Micro Kitty */,
 			);
-			name = "Pods-Micro Kitty-Micro KittyUITests";
-			path = "Target Support Files/Pods-Micro Kitty-Micro KittyUITests";
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,22 +171,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				018BCE2E6F127C1FA53BC4280018A0CA /* Pods-Micro Kitty-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4DE63FC9AFD9971C7AA362F36B9CAD33 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FBBCA77844132423B32796D1195BD199 /* Pods-Micro Kitty-Micro KittyUITests-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FCBA0A196BB6006FE3096857BB301CEF /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9FE3C5ECBF4CC1609E1BDF1FA60C9ED5 /* Pods-Micro KittyTests-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,55 +196,17 @@
 			productReference = 3E5496E0ED0B7F47EEC8611A3D150C7A /* Pods-Micro Kitty */;
 			productType = "com.apple.product-type.framework";
 		};
-		4951A6E6B87A849241CFCE2EBE3E6619 /* Pods-Micro KittyTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = FE8A60962BACDFA616F1BDED6F116B80 /* Build configuration list for PBXNativeTarget "Pods-Micro KittyTests" */;
-			buildPhases = (
-				FCBA0A196BB6006FE3096857BB301CEF /* Headers */,
-				CCBE988CC73B16B6225E1918DC29AE03 /* Sources */,
-				0ED23A5E77DB6EA044DFC86A284B0021 /* Frameworks */,
-				B77FD5D63651934FE1FCCD8718E56BC2 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				9AEE07921C3C201226323238158390AB /* PBXTargetDependency */,
-			);
-			name = "Pods-Micro KittyTests";
-			productName = Pods_Micro_KittyTests;
-			productReference = F0570408B879A583428D6DEE3B23D1F9 /* Pods-Micro KittyTests */;
-			productType = "com.apple.product-type.framework";
-		};
-		96CB16585D8424798359E751D5329BDC /* Pods-Micro Kitty-Micro KittyUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 917D2DA07E8C578ED38E21336C31DF43 /* Build configuration list for PBXNativeTarget "Pods-Micro Kitty-Micro KittyUITests" */;
-			buildPhases = (
-				4DE63FC9AFD9971C7AA362F36B9CAD33 /* Headers */,
-				7345B286CF5F648B5257B2005693D41C /* Sources */,
-				FD192F167E50580F2F44D5BE3F9ACC50 /* Frameworks */,
-				0559287D2A1341A661EA0EC68BDD934B /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				DE1AC47EF601D5582C19612E0FAA10C3 /* PBXTargetDependency */,
-			);
-			name = "Pods-Micro Kitty-Micro KittyUITests";
-			productName = Pods_Micro_Kitty_Micro_KittyUITests;
-			productReference = BC88601AC50D3957CB401D36D492E1FA /* Pods-Micro Kitty-Micro KittyUITests */;
-			productType = "com.apple.product-type.framework";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1300;
-				LastUpgradeCheck = 1300;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
-			compatibilityVersion = "Xcode 12.0";
+			compatibilityVersion = "Xcode 15.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -360,33 +214,17 @@
 				en,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = 8E7F16E67810E981A765B6CE07160B05 /* Products */;
+			productRefGroup = FA5163F99438F51BD4E68DE466081C73 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				B9ED5194E665042005069EF06C82A050 /* OpenSSL-Universal */,
 				025629871BE844D8AA2B324152BD2BCA /* Pods-Micro Kitty */,
-				96CB16585D8424798359E751D5329BDC /* Pods-Micro Kitty-Micro KittyUITests */,
-				4951A6E6B87A849241CFCE2EBE3E6619 /* Pods-Micro KittyTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		0559287D2A1341A661EA0EC68BDD934B /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B77FD5D63651934FE1FCCD8718E56BC2 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		F45E2B93101031D8F1719BCAF77E1FDA /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -417,27 +255,11 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		7345B286CF5F648B5257B2005693D41C /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4CF4ACA17E0FD3C4DFE4EDAC4A5A355A /* Pods-Micro Kitty-Micro KittyUITests-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		A1347E0106FE598C17359B8D666A5790 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				040D5408CAD3CFF8DEC5BEEAD463E347 /* Pods-Micro Kitty-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CCBE988CC73B16B6225E1918DC29AE03 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				BB7C19B8C4B2E7C104A699BCAB956CBF /* Pods-Micro KittyTests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -450,22 +272,102 @@
 			target = B9ED5194E665042005069EF06C82A050 /* OpenSSL-Universal */;
 			targetProxy = E831F2E50885DFA0F9AA318460795AA5 /* PBXContainerItemProxy */;
 		};
-		9AEE07921C3C201226323238158390AB /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Pods-Micro Kitty";
-			target = 025629871BE844D8AA2B324152BD2BCA /* Pods-Micro Kitty */;
-			targetProxy = 35C9664032BD0E822B259EFD82802428 /* PBXContainerItemProxy */;
-		};
-		DE1AC47EF601D5582C19612E0FAA10C3 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "OpenSSL-Universal";
-			target = B9ED5194E665042005069EF06C82A050 /* OpenSSL-Universal */;
-			targetProxy = 0CE881F5A78733412908ED7DD4DED9F5 /* PBXContainerItemProxy */;
-		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		25AD9454612BF454A1E3DC4CD4FA8C6D /* Debug */ = {
+		196DA742360CDC8047B8D4AB3CDD99F6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 88A3287DF1D15D12AA5ACD597D0D7E21 /* Pods-Micro Kitty.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Micro Kitty/Pods-Micro Kitty-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Micro Kitty/Pods-Micro Kitty.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		45843BD8C9A61FAA80B9C1553E421D86 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1F5A7A3F58CB5F0F5C21CF92675D3C89 /* OpenSSL-Universal.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		58D55D44C55940F79816D3D7F34CCB3F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 27DFEDAEB066C3805879C68F02B41A03 /* Pods-Micro Kitty.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Micro Kitty/Pods-Micro Kitty-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Micro Kitty/Pods-Micro Kitty.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		8DE5143C03248BB6CD542DE3963D6F3A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -518,7 +420,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -531,207 +433,7 @@
 			};
 			name = Debug;
 		};
-		45843BD8C9A61FAA80B9C1553E421D86 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1F5A7A3F58CB5F0F5C21CF92675D3C89 /* OpenSSL-Universal.release.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		514048375D60C0A02F60DB0D42217319 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = A0779CD655D5CF3DC686F08EA7209815 /* Pods-Micro KittyTests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-Micro KittyTests/Pods-Micro KittyTests-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Micro KittyTests/Pods-Micro KittyTests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		7BD1BB94B675ECEDFF2CF2F92C762428 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0CADBCAD94AC697F156E4A29B32CF592 /* Pods-Micro KittyTests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-Micro KittyTests/Pods-Micro KittyTests-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Micro KittyTests/Pods-Micro KittyTests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		8249A451E6D4020C3F43EABA81646858 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1DBF5A30163348AC28BA177CE3FB5AD5 /* Pods-Micro Kitty-Micro KittyUITests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-Micro Kitty-Micro KittyUITests/Pods-Micro Kitty-Micro KittyUITests-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Micro Kitty-Micro KittyUITests/Pods-Micro Kitty-Micro KittyUITests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		A9C058260BCAADE4AD67A80BD08C9AE1 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 94B1D04CC94B57CB91E7CA0217D0E833 /* Pods-Micro Kitty-Micro KittyUITests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-Micro Kitty-Micro KittyUITests/Pods-Micro Kitty-Micro KittyUITests-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Micro Kitty-Micro KittyUITests/Pods-Micro Kitty-Micro KittyUITests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		C84F4841E94C517D5EF2EB8EF4C47B26 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1245E829286742FF564F3E9CD98AC4B5 /* Pods-Micro Kitty.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-Micro Kitty/Pods-Micro Kitty-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Micro Kitty/Pods-Micro Kitty.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		CA547D2C7E9A8A153DC2B27FBE00B112 /* Release */ = {
+		9E406C6AAF85E580207CD97B0044DEAB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -781,7 +483,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -792,42 +494,6 @@
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Release;
-		};
-		F4548AD43016BD723ABF1DFD49711A40 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 59874D14BD717DBC71C126B3C4FB14CE /* Pods-Micro Kitty.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-Micro Kitty/Pods-Micro Kitty-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Micro Kitty/Pods-Micro Kitty.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
 		};
 		F70FB2C772CB3A9B68A75AA06B76A888 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -851,17 +517,8 @@
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				25AD9454612BF454A1E3DC4CD4FA8C6D /* Debug */,
-				CA547D2C7E9A8A153DC2B27FBE00B112 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		917D2DA07E8C578ED38E21336C31DF43 /* Build configuration list for PBXNativeTarget "Pods-Micro Kitty-Micro KittyUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				8249A451E6D4020C3F43EABA81646858 /* Debug */,
-				A9C058260BCAADE4AD67A80BD08C9AE1 /* Release */,
+				8DE5143C03248BB6CD542DE3963D6F3A /* Debug */,
+				9E406C6AAF85E580207CD97B0044DEAB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -869,8 +526,8 @@
 		BA4FCE89629153FF56AAE183E879E156 /* Build configuration list for PBXNativeTarget "Pods-Micro Kitty" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F4548AD43016BD723ABF1DFD49711A40 /* Debug */,
-				C84F4841E94C517D5EF2EB8EF4C47B26 /* Release */,
+				58D55D44C55940F79816D3D7F34CCB3F /* Debug */,
+				196DA742360CDC8047B8D4AB3CDD99F6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -880,15 +537,6 @@
 			buildConfigurations = (
 				F70FB2C772CB3A9B68A75AA06B76A888 /* Debug */,
 				45843BD8C9A61FAA80B9C1553E421D86 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		FE8A60962BACDFA616F1BDED6F116B80 /* Build configuration list for PBXNativeTarget "Pods-Micro KittyTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				514048375D60C0A02F60DB0D42217319 /* Debug */,
-				7BD1BB94B675ECEDFF2CF2F92C762428 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

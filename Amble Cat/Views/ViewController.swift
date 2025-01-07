@@ -12,7 +12,6 @@ import CoreMotion
 import WatchConnectivity
 import SwiftUICore
 
-@available(iOS 13.0, *)
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, StepTotalDelegate {
      // MARK: IBOutlets
 
