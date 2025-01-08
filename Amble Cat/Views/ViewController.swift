@@ -91,7 +91,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
      private let stepViewModel = StepViewModel()
      var selectedIndex = 0
      var paused = false
-     @ObservedObject var data = PhoneDataModel.shared
    
      override func viewDidLoad() {
           super.viewDidLoad()
@@ -216,11 +215,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
           stepsLabel.text = "\(stepTotal)"
           var distance = stepViewModel.distanceToday()
           var points = Currency.userTotal
-          
-          // send message to watch
-          if WCSession.default.isReachable && WCSession.default.isPaired && WCSession.default.isWatchAppInstalled {
-               WCSession.default.sendMessage(["steps": stepTotal, "distance": distance, "points": points], replyHandler: nil)
-          }
      }
      
      @objc func animationEnded() {

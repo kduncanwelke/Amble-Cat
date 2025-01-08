@@ -15,19 +15,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate {
     
     var window : UIWindow?
     private var stepViewModel = StepViewModel()
-    let session = WCSession.default
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
         SKPaymentQueue.default().add(StoreObserver.iapObserver)
-        
-        if WCSession.isSupported() {
-            session.delegate = self
-            session.activate()
-        } else {
-            print("Watch connectivity not supported")
-        }
         
         return true
     }

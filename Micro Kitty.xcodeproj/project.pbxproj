@@ -7,41 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		060C8D3C2CA607FB00612D9C /* PhoneDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060C8D3B2CA607FB00612D9C /* PhoneDataModel.swift */; };
-		060C8D3D2CA607FB00612D9C /* PhoneDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060C8D3B2CA607FB00612D9C /* PhoneDataModel.swift */; };
-		0655E4712CADA5F0000CF4B8 /* 04b.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 06D8739A2CA740BA00B7B732 /* 04b.ttf */; };
-		0655E4722CADA5F6000CF4B8 /* dogicapixel.otf in Resources */ = {isa = PBXBuildFile; fileRef = 06D873942CA7409500B7B732 /* dogicapixel.otf */; };
-		0655E4732CADA5FC000CF4B8 /* dogicapixelbold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 06D873972CA7409F00B7B732 /* dogicapixelbold.otf */; };
-		068F394E2CA1E63E003409B0 /* MicroKittyWatch Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 068F39412CA1E63C003409B0 /* MicroKittyWatch Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		068F39522CA1E995003409B0 /* StepViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D96CA9C25CDFF4F00A89C32 /* StepViewModel.swift */; };
-		068F39532CA1E99F003409B0 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D123A8B25C9F50E005EBFEB /* ViewModel.swift */; };
-		068F39542CA1E9AC003409B0 /* CareState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DDE569423809B9800398454 /* CareState.swift */; };
-		068F39552CA1E9EE003409B0 /* Data.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2D6FCA84235A169500560CB2 /* Data.xcdatamodeld */; };
-		068F39562CA1EA02003409B0 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D81355925F6D34400E461ED /* Colors.swift */; };
-		068F39572CA1EB4A003409B0 /* StepTotalDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE0BC432603F3CE00D811FF /* StepTotalDelegate.swift */; };
-		068F39582CA1EB57003409B0 /* Pedometer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D96CA9A25CDFD4C00A89C32 /* Pedometer.swift */; };
-		068F39592CA1EB75003409B0 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6FCA87235A1D7500560CB2 /* Currency.swift */; };
-		068F395A2CA1EB86003409B0 /* Measures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE904D1235639DE0036C08A /* Measures.swift */; };
-		068F395B2CA1EB9C003409B0 /* ViewModel+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D123A8D25CA009E005EBFEB /* ViewModel+CoreData.swift */; };
-		068F395C2CA1EBB0003409B0 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6FCA89235A1DFC00560CB2 /* CoreDataManager.swift */; };
-		068F395D2CA1EBC0003409B0 /* AnimationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3583C0237CC1F3005A6C56 /* AnimationManager.swift */; };
-		068F395E2CA1EBCA003409B0 /* ButtonsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7BE30525F839B200FADF7F /* ButtonsManager.swift */; };
-		068F395F2CA1EBE9003409B0 /* DecorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0C3CFA2363A7E300EA064A /* DecorManager.swift */; };
-		068F39602CA1EBF9003409B0 /* StoreInventory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7146CF235BB8560064B576 /* StoreInventory.swift */; };
-		068F39612CA1EC0B003409B0 /* StoreItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7146CD235BB6BB0064B576 /* StoreItem.swift */; };
-		068F39622CA1EC30003409B0 /* Kitchen Items.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2D6CDA27C6A6E000D9E770 /* Kitchen Items.swift */; };
-		068F39632CA1EC35003409B0 /* Bathroom Items.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8D4EB127C977A0008FF48E /* Bathroom Items.swift */; };
-		068F39642CA1EC3A003409B0 /* PurchaseState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA5595F2360FE50006B3B9D /* PurchaseState.swift */; };
-		068F39652CA1EC40003409B0 /* Bowls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9B0E0025E45E52009D75ED /* Bowls.swift */; };
-		068F39662CA1EC5C003409B0 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6FCA8C235A596100560CB2 /* Timer.swift */; };
-		068F39692CA1EF7C003409B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DE860F123552B3C00227A86 /* Assets.xcassets */; };
 		06AB0C4C2CB05B6A00171B65 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DC80B912384B314006841AE /* StoreKit.framework */; };
-		06AB0C622CB0621200171B65 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06AB0C5A2CB0621200171B65 /* Preview Assets.xcassets */; };
-		06AB0C632CB0621200171B65 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06AB0C5C2CB0621200171B65 /* Assets.xcassets */; };
-		06AB0C642CB0621200171B65 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06AB0C5D2CB0621200171B65 /* ContentView.swift */; };
-		06AB0C652CB0621200171B65 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06AB0C5E2CB0621200171B65 /* InterfaceController.swift */; };
-		06AB0C662CB0621200171B65 /* MicroKittyWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06AB0C5F2CB0621200171B65 /* MicroKittyWatchApp.swift */; };
-		06AB0C672CB0621200171B65 /* WatchDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06AB0C602CB0621200171B65 /* WatchDataModel.swift */; };
 		06AB0C682CB06E1F00171B65 /* OpenSSL.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0610F9632BF9157000D34275 /* OpenSSL.xcframework */; };
 		06D873952CA7409500B7B732 /* dogicapixel.otf in Resources */ = {isa = PBXBuildFile; fileRef = 06D873942CA7409500B7B732 /* dogicapixel.otf */; };
 		06D873992CA7409F00B7B732 /* dogicapixelbold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 06D873972CA7409F00B7B732 /* dogicapixelbold.otf */; };
@@ -107,16 +73,6 @@
 		C0361F4340511F9F1D37DC66 /* Pods_Micro_Kitty.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3038748BE0CA7E73FC8A77D9 /* Pods_Micro_Kitty.framework */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		068F394C2CA1E63E003409B0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2DE860DD23552B3B00227A86 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 068F39402CA1E63C003409B0;
-			remoteInfo = "MicroKittyWatch Watch App";
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXCopyFilesBuildPhase section */
 		060A91B32BF7DB97009C3E06 /* Embed Watch Content */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -124,7 +80,6 @@
 			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
 			dstSubfolderSpec = 16;
 			files = (
-				068F394E2CA1E63E003409B0 /* MicroKittyWatch Watch App.app in Embed Watch Content */,
 			);
 			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -132,17 +87,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		060C8D3B2CA607FB00612D9C /* PhoneDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneDataModel.swift; sourceTree = "<group>"; };
 		0610F9632BF9157000D34275 /* OpenSSL.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = OpenSSL.xcframework; path = "Pods/OpenSSL-Universal/Frameworks/OpenSSL.xcframework"; sourceTree = "<group>"; };
-		061FEDC12CA48112008FAB7E /* WatchConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchConnectivity.framework; path = System/Library/Frameworks/WatchConnectivity.framework; sourceTree = SDKROOT; };
 		068F393C2CA1E206003409B0 /* Micro Kitty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Micro Kitty.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		068F39412CA1E63C003409B0 /* MicroKittyWatch Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MicroKittyWatch Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		06AB0C5A2CB0621200171B65 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		06AB0C5C2CB0621200171B65 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		06AB0C5D2CB0621200171B65 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		06AB0C5E2CB0621200171B65 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
-		06AB0C5F2CB0621200171B65 /* MicroKittyWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicroKittyWatchApp.swift; sourceTree = "<group>"; };
-		06AB0C602CB0621200171B65 /* WatchDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchDataModel.swift; sourceTree = "<group>"; };
 		06D873942CA7409500B7B732 /* dogicapixel.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = dogicapixel.otf; sourceTree = "<group>"; };
 		06D873972CA7409F00B7B732 /* dogicapixelbold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = dogicapixelbold.otf; sourceTree = "<group>"; };
 		06D8739A2CA740BA00B7B732 /* 04b.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = 04b.ttf; sourceTree = "<group>"; };
@@ -221,13 +167,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		068F393E2CA1E63C003409B0 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		2DE860E223552B3B00227A86 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -241,27 +180,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		06AB0C5B2CB0621200171B65 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				06AB0C5A2CB0621200171B65 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		06AB0C612CB0621200171B65 /* MicroKittyWatch Watch App */ = {
-			isa = PBXGroup;
-			children = (
-				06AB0C5B2CB0621200171B65 /* Preview Content */,
-				06AB0C5C2CB0621200171B65 /* Assets.xcassets */,
-				06AB0C5D2CB0621200171B65 /* ContentView.swift */,
-				06AB0C5E2CB0621200171B65 /* InterfaceController.swift */,
-				06AB0C5F2CB0621200171B65 /* MicroKittyWatchApp.swift */,
-				06AB0C602CB0621200171B65 /* WatchDataModel.swift */,
-			);
-			path = "MicroKittyWatch Watch App";
-			sourceTree = "<group>";
-		};
 		1294E9DE63409045269B25ED /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -289,7 +207,6 @@
 			isa = PBXGroup;
 			children = (
 				2D96CA9C25CDFF4F00A89C32 /* StepViewModel.swift */,
-				060C8D3B2CA607FB00612D9C /* PhoneDataModel.swift */,
 				2D123A8B25C9F50E005EBFEB /* ViewModel.swift */,
 				2D123A8D25CA009E005EBFEB /* ViewModel+CoreData.swift */,
 				2D72E136265421BA003CE02C /* GameViewModel.swift */,
@@ -382,11 +299,9 @@
 				2DE860E723552B3B00227A86 /* Amble Cat */,
 				2DE860FE23552B3C00227A86 /* Amble CatTests */,
 				2DE8610923552B3D00227A86 /* Amble CatUITests */,
-				06AB0C612CB0621200171B65 /* MicroKittyWatch Watch App */,
 				2DE8611A23552CAA00227A86 /* Frameworks */,
 				1294E9DE63409045269B25ED /* Pods */,
 				068F393C2CA1E206003409B0 /* Micro Kitty.app */,
-				068F39412CA1E63C003409B0 /* MicroKittyWatch Watch App.app */,
 			);
 			sourceTree = "<group>";
 		};
@@ -434,7 +349,6 @@
 		2DE8611A23552CAA00227A86 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				061FEDC12CA48112008FAB7E /* WatchConnectivity.framework */,
 				0610F9632BF9157000D34275 /* OpenSSL.xcframework */,
 				2DC80B912384B314006841AE /* StoreKit.framework */,
 				2DE8611B23552CAA00227A86 /* HealthKit.framework */,
@@ -478,23 +392,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		068F39402CA1E63C003409B0 /* MicroKittyWatch Watch App */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 068F39512CA1E63E003409B0 /* Build configuration list for PBXNativeTarget "MicroKittyWatch Watch App" */;
-			buildPhases = (
-				068F393D2CA1E63C003409B0 /* Sources */,
-				068F393E2CA1E63C003409B0 /* Frameworks */,
-				068F393F2CA1E63C003409B0 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "MicroKittyWatch Watch App";
-			productName = "MicroKittyWatch Watch App";
-			productReference = 068F39412CA1E63C003409B0 /* MicroKittyWatch Watch App.app */;
-			productType = "com.apple.product-type.application";
-		};
 		2DE860E423552B3B00227A86 /* Micro Kitty */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2DE8610F23552B3D00227A86 /* Build configuration list for PBXNativeTarget "Micro Kitty" */;
@@ -509,7 +406,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				068F394D2CA1E63E003409B0 /* PBXTargetDependency */,
 			);
 			name = "Micro Kitty";
 			productName = "Amble Cat";
@@ -527,9 +423,6 @@
 				LastUpgradeCheck = 1600;
 				ORGANIZATIONNAME = "Kate Duncan-Welke";
 				TargetAttributes = {
-					068F39402CA1E63C003409B0 = {
-						CreatedOnToolsVersion = 16.0;
-					};
 					2DE860E423552B3B00227A86 = {
 						CreatedOnToolsVersion = 11.0;
 					};
@@ -549,25 +442,11 @@
 			projectRoot = "";
 			targets = (
 				2DE860E423552B3B00227A86 /* Micro Kitty */,
-				068F39402CA1E63C003409B0 /* MicroKittyWatch Watch App */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		068F393F2CA1E63C003409B0 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				06AB0C622CB0621200171B65 /* Preview Assets.xcassets in Resources */,
-				06AB0C632CB0621200171B65 /* Assets.xcassets in Resources */,
-				0655E4712CADA5F0000CF4B8 /* 04b.ttf in Resources */,
-				0655E4722CADA5F6000CF4B8 /* dogicapixel.otf in Resources */,
-				0655E4732CADA5FC000CF4B8 /* dogicapixelbold.otf in Resources */,
-				068F39692CA1EF7C003409B0 /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		2DE860E323552B3B00227A86 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -632,39 +511,6 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		068F393D2CA1E63C003409B0 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				068F39522CA1E995003409B0 /* StepViewModel.swift in Sources */,
-				068F39602CA1EBF9003409B0 /* StoreInventory.swift in Sources */,
-				068F395B2CA1EB9C003409B0 /* ViewModel+CoreData.swift in Sources */,
-				068F39552CA1E9EE003409B0 /* Data.xcdatamodeld in Sources */,
-				068F39582CA1EB57003409B0 /* Pedometer.swift in Sources */,
-				06AB0C642CB0621200171B65 /* ContentView.swift in Sources */,
-				06AB0C652CB0621200171B65 /* InterfaceController.swift in Sources */,
-				06AB0C662CB0621200171B65 /* MicroKittyWatchApp.swift in Sources */,
-				06AB0C672CB0621200171B65 /* WatchDataModel.swift in Sources */,
-				068F395D2CA1EBC0003409B0 /* AnimationManager.swift in Sources */,
-				068F395F2CA1EBE9003409B0 /* DecorManager.swift in Sources */,
-				068F39622CA1EC30003409B0 /* Kitchen Items.swift in Sources */,
-				068F39542CA1E9AC003409B0 /* CareState.swift in Sources */,
-				060C8D3D2CA607FB00612D9C /* PhoneDataModel.swift in Sources */,
-				068F39562CA1EA02003409B0 /* Colors.swift in Sources */,
-				068F395C2CA1EBB0003409B0 /* CoreDataManager.swift in Sources */,
-				068F395A2CA1EB86003409B0 /* Measures.swift in Sources */,
-				068F39652CA1EC40003409B0 /* Bowls.swift in Sources */,
-				068F39632CA1EC35003409B0 /* Bathroom Items.swift in Sources */,
-				068F39612CA1EC0B003409B0 /* StoreItem.swift in Sources */,
-				068F39592CA1EB75003409B0 /* Currency.swift in Sources */,
-				068F39642CA1EC3A003409B0 /* PurchaseState.swift in Sources */,
-				068F395E2CA1EBCA003409B0 /* ButtonsManager.swift in Sources */,
-				068F39572CA1EB4A003409B0 /* StepTotalDelegate.swift in Sources */,
-				068F39532CA1E99F003409B0 /* ViewModel.swift in Sources */,
-				068F39662CA1EC5C003409B0 /* Timer.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		2DE860E123552B3B00227A86 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -717,20 +563,11 @@
 				2D7146CE235BB6BB0064B576 /* StoreItem.swift in Sources */,
 				2DA998EC25CCAD4200344349 /* AboutViewModel.swift in Sources */,
 				2D96CA9D25CDFF4F00A89C32 /* StepViewModel.swift in Sources */,
-				060C8D3C2CA607FB00612D9C /* PhoneDataModel.swift in Sources */,
 				2D7BE30625F839B200FADF7F /* ButtonsManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		068F394D2CA1E63E003409B0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 068F39402CA1E63C003409B0 /* MicroKittyWatch Watch App */;
-			targetProxy = 068F394C2CA1E63E003409B0 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		2DE860EE23552B3B00227A86 /* Main.storyboard */ = {
@@ -752,82 +589,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		068F394F2CA1E63E003409B0 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"MicroKittyWatch Watch App/Preview Content\"";
-				DEVELOPMENT_TEAM = A8R365GJ52;
-				ENABLE_PREVIEWS = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu17;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "MicroKittyWatch-Watch-App-Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = MicroKittyWatch;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "com.kduncan-welke.AmbleCat";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.kduncan-welke.AmbleCat.watchkitapp";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 11.0;
-			};
-			name = Debug;
-		};
-		068F39502CA1E63E003409B0 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_ASSET_PATHS = "\"MicroKittyWatch Watch App/Preview Content\"";
-				DEVELOPMENT_TEAM = A8R365GJ52;
-				ENABLE_PREVIEWS = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu17;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "MicroKittyWatch-Watch-App-Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = MicroKittyWatch;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "com.kduncan-welke.AmbleCat";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.kduncan-welke.AmbleCat.watchkitapp";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 11.0;
-			};
-			name = Release;
-		};
 		2DE8610D23552B3D00227A86 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1024,15 +785,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		068F39512CA1E63E003409B0 /* Build configuration list for PBXNativeTarget "MicroKittyWatch Watch App" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				068F394F2CA1E63E003409B0 /* Debug */,
-				068F39502CA1E63E003409B0 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		2DE860E023552B3B00227A86 /* Build configuration list for PBXProject "Micro Kitty" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
