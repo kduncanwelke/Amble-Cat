@@ -91,7 +91,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
      private let stepViewModel = StepViewModel()
      var selectedIndex = 0
      var paused = false
-
+     
      override func viewDidLoad() {
           super.viewDidLoad()
           // Do any additional setup after loading the view.
