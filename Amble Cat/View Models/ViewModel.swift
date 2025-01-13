@@ -195,6 +195,10 @@ public class ViewModel {
         return "\(Currency.userTotal)"
     }
     
+    func getPoints() -> Int {
+        return Currency.userTotal
+    }
+    
     func showFood() -> UIImage {
         if CareState.hasBeenFed {
             return Bowls.fullBowls[DecorManager.bowlID] ?? #imageLiteral(resourceName: "foodbowlpink.png")

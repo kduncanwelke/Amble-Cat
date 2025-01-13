@@ -31,30 +31,33 @@ struct ContentView: View {
                                .font(.custom("04b30", size: 30))
                                .foregroundStyle(.black)
                        }
-                       .padding(.bottom, 15)
+                       .padding(.bottom, 5)
                    }
                    
-                   .padding(.bottom, 5)
+                   .padding(.bottom, 15)
                    
                    Image(availableImages.randomElement() ?? "leftsit")
                        .resizable()
                        .scaledToFit()
-                       .frame(width: 160, height: 104)
+                       .scaleEffect(1.7)
+                       .padding(.top, 5)
                        .padding(.bottom, 5)
                    
                    HStack {
                        Image("paw")
                            .resizable()
                            .scaledToFit()
-                           .frame(width: 30, height: 30)
+                           .frame(width: 20, height: 20)
                        Text("\(data.points) points")
                            .font(.custom("Dogica_Pixel", size: 12))
                            .foregroundStyle(.black)
                    }
                    
-                   .padding(.bottom, 5)
+                   .padding(.top, 15)
                }
            }
+           .frame(maxWidth: .infinity, maxHeight:  .infinity)
+           .padding(.bottom, 15)
        }
 }
 

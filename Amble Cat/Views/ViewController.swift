@@ -13,6 +13,7 @@ import WatchConnectivity
 import SwiftUICore
 
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, StepTotalDelegate {
+     
      // MARK: IBOutlets
 
      @IBOutlet weak var stepsLabel: UILabel!
@@ -150,6 +151,11 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
           stepViewModel.addCoinsForMissedSteps()
           stepViewModel.updateSteps()
           
+          if WCSession.default.isWatchAppInstalled {
+               // send update to watch to prevent stale data
+               updateSteps(stepTotal: stepViewModel.stepsToday())
+          }
+          
           toggleBathroom()
           beginAnimation(inMotion: stepViewModel.isMoving())
      }
@@ -215,7 +221,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
      func updateSteps(stepTotal: Int) {
           stepsLabel.text = "\(stepTotal)"
           var distance = stepViewModel.distanceToday()
-          var points = Currency.userTotal
+          var points = viewModel.getPoints()
           
           // send message to watch
           if WCSession.default.isReachable && WCSession.default.isPaired && WCSession.default.isWatchAppInstalled {
@@ -544,5 +550,28 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
      
      @IBAction func viewInfoTapped(_ sender: UIButton) {
           performSegue(withIdentifier: "viewAbout", sender: Any?.self)
+     }
+}
+
+extension ViewController: WCSessionDelegate {
+     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: (any Error)?) {
+     }
+     
+     func sessionDidBecomeInactive(_ session: WCSession) {
+     }
+     
+     func sessionDidDeactivate(_ session: WCSession) {
+     }
+     
+     func sessionReachabilityDidChange(_ session: WCSession) {
+          print("session reachability changed")
+          // send message to watch
+          if WCSession.default.isReachable && WCSession.default.isPaired && WCSession.default.isWatchAppInstalled {
+               var stepTotal = stepViewModel.stepsToday()
+               var distance = stepViewModel.distanceToday()
+               var points = viewModel.getPoints()
+               
+               WCSession.default.sendMessage(["steps": stepTotal, "distance": distance, "points": points], replyHandler: nil)
+          }
      }
 }

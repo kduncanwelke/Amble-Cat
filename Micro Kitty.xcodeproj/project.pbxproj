@@ -768,7 +768,7 @@
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "MicroKittyWatch-Watch-App-Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = MicroKittyWatch;
+				INFOPLIST_KEY_CFBundleDisplayName = "Micro Kitty";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "com.kduncan-welke.AmbleCat";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -807,7 +807,7 @@
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "MicroKittyWatch-Watch-App-Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = MicroKittyWatch;
+				INFOPLIST_KEY_CFBundleDisplayName = "Micro Kitty";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "com.kduncan-welke.AmbleCat";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
